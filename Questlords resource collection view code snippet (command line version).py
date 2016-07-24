@@ -18,7 +18,7 @@ while True:
     iron += 0.5
     food += 0.8
     elixir += 0.4
-    time.sleep(0.7)
+    time.sleep(0.6)
 
     print('Wood = ' + str(int(wood)) + ' Stone = ' + str(int(stone)) + ' Water = ' + str(
         int(water)) + ' Iron = ' + str(int(iron)) + ' Food = ' + str(int(food)) + ' Elixir = ' + str(
