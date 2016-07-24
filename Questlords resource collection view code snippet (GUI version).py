@@ -31,7 +31,7 @@ while True:
     elixir += 0.4
     time.sleep(0.7)
 
-    #print('Wood = ' + str(int(wood)) + ' Stone = ' + str(int(stone)) + ' Water = ' + str(int(water)) + ' Iron = ' + str(int(iron)) + ' Food = ' + str(int(food)) + ' Elixir = ' + str(int(elixir)))
+   
     root.update()
 
 
