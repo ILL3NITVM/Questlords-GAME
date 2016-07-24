@@ -1,2 +1,3 @@
 # Questlords-GAME
-An alpha open source command line (at the moment) game 
+An alpha open source game 
+Development started: Sunday, 24 July 2016
