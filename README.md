@@ -9,6 +9,10 @@ npm install
 npm run dev
 ```
 
+## Single-file demo
+
+Open `standalone.html` directly in a browser to run a minimal, build-free demo of the 6502 core.
+
 ## Tests
 
 ```bash
