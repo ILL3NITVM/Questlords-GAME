@@ -3,10 +3,324 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6502 Emulator IDE</title>
+    <title>6502 Emulator IDE - Single File Demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+        background: #0f172a;
+        color: #0f172a;
+      }
+
+      body {
+        margin: 0;
+        padding: 2rem;
+        background: #0f172a;
+      }
+
+      .shell {
+        max-width: 1080px;
+        margin: 0 auto;
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3);
+      }
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      button {
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        background: #38bdf8;
+        color: #0f172a;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button.secondary {
+        background: #e2e8f0;
+      }
+
+      main {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      section {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: inset 0 0 0 1px #e2e8f0;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 220px;
+        font-family: "JetBrains Mono", "SFMono-Regular", monospace;
+        font-size: 0.95rem;
+        padding: 0.75rem;
+        border-radius: 10px;
+        border: 1px solid #cbd5f5;
+      }
+
+      .grid {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .registers {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+      }
+
+      .reg {
+        background: #f8fafc;
+        border-radius: 10px;
+        padding: 0.5rem;
+        font-family: "JetBrains Mono", "SFMono-Regular", monospace;
+      }
+
+      .status {
+        font-size: 0.9rem;
+        color: #475569;
+      }
+
+      .memory {
+        font-family: "JetBrains Mono", "SFMono-Regular", monospace;
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 0.75rem;
+        border-radius: 10px;
+        min-height: 140px;
+        white-space: pre;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="shell">
+      <header>
+        <div>
+          <h1>6502 Emulator IDE - Single File Demo</h1>
+          <div class="status">Minimal CPU core demo (LDA/STA/INX/BRK).</div>
+        </div>
+        <div class="toolbar">
+          <button id="reset">Reset</button>
+          <button id="step" class="secondary">Step</button>
+          <button id="run">Run</button>
+        </div>
+      </header>
+      <main>
+        <section class="grid">
+          <div>
+            <strong>Program (hex bytes at $8000)</strong>
+            <textarea id="program">
+A9 2A
+8D 00 02
+E8
+A9 55
+8D 01 02
+00
+            </textarea>
+          </div>
+          <div class="status">
+            Instructions supported: LDA #imm (A9), STA abs (8D), INX (E8), BRK (00).
+          </div>
+        </section>
+        <section class="grid">
+          <div>
+            <strong>CPU Registers</strong>
+            <div class="registers" id="registers"></div>
+          </div>
+          <div>
+            <strong>Memory $0200-$020F</strong>
+            <div class="memory" id="memory"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      class Memory {
+        constructor(size) {
+          this.data = new Uint8Array(size);
+        }
+        read8(addr) {
+          return this.data[addr] ?? 0;
+        }
+        write8(addr, value) {
+          this.data[addr] = value & 0xff;
+        }
+      }
+
+      class Cpu6502 {
+        constructor(memory) {
+          this.memory = memory;
+          this.a = 0;
+          this.x = 0;
+          this.y = 0;
+          this.sp = 0xfd;
+          this.status = 0x24;
+          this.pc = 0;
+          this.halted = false;
+        }
+
+        reset() {
+          this.a = 0;
+          this.x = 0;
+          this.y = 0;
+          this.sp = 0xfd;
+          this.status = 0x24;
+          this.pc = this.read16(0xfffc);
+          this.halted = false;
+        }
+
+        stepInstruction() {
+          if (this.halted) {
+            return;
+          }
+          const opcode = this.memory.read8(this.pc);
+          switch (opcode) {
+            case 0xa9: {
+              const value = this.memory.read8(this.pc + 1);
+              this.a = value;
+              this.pc += 2;
+              break;
+            }
+            case 0x8d: {
+              const lo = this.memory.read8(this.pc + 1);
+              const hi = this.memory.read8(this.pc + 2);
+              const addr = (hi << 8) | lo;
+              this.memory.write8(addr, this.a);
+              this.pc += 3;
+              break;
+            }
+            case 0xe8: {
+              this.x = (this.x + 1) & 0xff;
+              this.pc += 1;
+              break;
+            }
+            case 0x00: {
+              this.halted = true;
+              this.pc += 1;
+              break;
+            }
+            default:
+              throw new Error(`Unsupported opcode $${opcode.toString(16)}`);
+          }
+        }
+
+        read16(addr) {
+          const lo = this.memory.read8(addr);
+          const hi = this.memory.read8(addr + 1);
+          return (hi << 8) | lo;
+        }
+      }
+
+      const memory = new Memory(0x10000);
+      const cpu = new Cpu6502(memory);
+
+      const programEl = document.getElementById("program");
+      const registersEl = document.getElementById("registers");
+      const memoryEl = document.getElementById("memory");
+
+      function loadProgram() {
+        memory.data.fill(0);
+        const tokens = programEl.value
+          .replace(/[^0-9a-fA-F\s]/g, " ")
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+        tokens.forEach((token, index) => {
+          const value = parseInt(token, 16);
+          if (!Number.isNaN(value)) {
+            memory.write8(0x8000 + index, value);
+          }
+        });
+        memory.write8(0xfffc, 0x00);
+        memory.write8(0xfffd, 0x80);
+        cpu.reset();
+      }
+
+      function renderState() {
+        const regData = [
+          ["A", cpu.a],
+          ["X", cpu.x],
+          ["Y", cpu.y],
+          ["PC", cpu.pc],
+          ["SP", cpu.sp]
+        ];
+        registersEl.innerHTML = regData
+          .map(
+            ([label, value]) =>
+              `<div class="reg"><strong>${label}:</strong> $${value
+                .toString(16)
+                .padStart(2, "0")}</div>`
+          )
+          .join("");
+
+        let lines = "";
+        for (let row = 0; row < 2; row += 1) {
+          const base = 0x0200 + row * 8;
+          const bytes = [];
+          for (let col = 0; col < 8; col += 1) {
+            bytes.push(memory.read8(base + col).toString(16).padStart(2, "0"));
+          }
+          lines += `$${base.toString(16).padStart(4, "0")}: ${bytes.join(" ")}\n`;
+        }
+        memoryEl.textContent = lines.trimEnd();
+      }
+
+      document.getElementById("reset").addEventListener("click", () => {
+        loadProgram();
+        renderState();
+      });
+
+      document.getElementById("step").addEventListener("click", () => {
+        if (cpu.halted) {
+          return;
+        }
+        cpu.stepInstruction();
+        renderState();
+      });
+
+      document.getElementById("run").addEventListener("click", () => {
+        let safety = 0;
+        while (!cpu.halted && safety < 1000) {
+          cpu.stepInstruction();
+          safety += 1;
+        }
+        renderState();
+      });
+
+      loadProgram();
+      renderState();
+    </script>
   </body>
 </html>

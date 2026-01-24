@@ -2,16 +2,9 @@
 
 A production-quality, browser-based 6502 emulator + simulator + programmable IDE. This repository now contains the scaffolding and Milestone 1 core CPU implementation.
 
-## Getting Started
+## Single-file demo (no build required)
 
-```bash
-npm install
-npm run dev
-```
-
-## Single-file demo
-
-Open `standalone.html` directly in a browser to run a minimal, build-free demo of the 6502 core.
+Open `index.html` directly in a browser to run a minimal, build-free demo of the 6502 core.
 
 ## Tests
 
