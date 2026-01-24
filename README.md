@@ -1,4 +1,4 @@
-# Questlords 6502 IDE
+# 6502 Emulator IDE
 
 A production-quality, browser-based 6502 emulator + simulator + programmable IDE. This repository now contains the scaffolding and Milestone 1 core CPU implementation.
 

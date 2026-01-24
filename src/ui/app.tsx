@@ -23,7 +23,7 @@ export function App() {
     <div className="app-shell">
       <header className="app-header">
         <div>
-          <h1>Questlords 6502 IDE</h1>
+          <h1>6502 Emulator IDE</h1>
           <p>Core CPU scaffolding with a production-ready architecture.</p>
         </div>
         <ButtonBar status={status} />
