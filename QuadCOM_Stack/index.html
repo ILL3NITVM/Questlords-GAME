@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="QuadCOM">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon-512.png">
+<link rel="apple-touch-icon" href="icon-512.png">
+<link rel="stylesheet" href="./styles/theme.css">
+<link rel="stylesheet" href="./styles/app.css">
+<title>QuadCOM Desk Lite MAX | Front-End Stack</title>
+</head>
+<body>
+<div id="appShell" class="app locked">
+  <header class="topbar">
+    <img class="mark" alt="QuadCOM" src="./icon-512.png">
+    <div class="brand">
+      <b>QuadCOM Desk Lite MAX</b>
+      <span>BTC/USD.SYN | Bitcoin Synthetic | Perpetual Core</span>
+    </div>
+    <div class="net">
+      <span id="accountPill" class="pill ok">OPR: LOCKED</span>
+      <button id="logoutBtn" class="pill logout" type="button">LOGOUT</button>
+      <span id="swPill" class="pill warn">SW INIT</span>
+    </div>
+    <button id="arm" class="arm" type="button">ARM</button>
+  </header>
+
+  <div id="oracleStrip" class="oracle-strip"><span><b>ORACLE</b> | WAIT | CONF 0 | CONF BELOW | HOLD | BID 64500.00 | ASK 64501.00</span><span class="watch">WATCH</span></div>
+
+  <main id="views" class="views">
+    <section id="view-desk" class="view view-desk active" data-view="desk" aria-label="Desk runtime">
+      <section class="chart-panel" aria-label="BTC synthetic chart">
+        <div class="chart-head">
+          <div class="inst">
+            <b>BTC/USD.SYN</b>
+            <span>Bitcoin Synthetic / Perpetual Core</span>
+          </div>
+          <div class="quote">
+            <div><div id="lastTop" class="last">64500.00</div><div class="micro">last</div></div>
+            <div><div id="chgTop" class="last chg up">+0.00</div><div class="micro">session</div></div>
+            <div><div id="sprTop" class="last">1.00</div><div class="micro">spread</div></div>
+          </div>
+        </div>
+        <div class="stage" id="stage">
+          <canvas id="chart"></canvas>
+          <div class="watermark">BTC SYNTHETIC SUBSTRATE</div>
+          <div id="lastTag" class="last-tag">64500.00</div>
+          <div id="tip" class="tip"></div>
+        </div>
+        <div class="chart-foot">
+          <div class="stat"><span>High</span><b id="hi">64500.00</b></div>
+          <div class="stat"><span>Low</span><b id="lo">64500.00</b></div>
+          <div class="stat"><span>VWAP</span><b id="vwap">64500.00</b></div>
+          <div class="stat"><span>POC</span><b id="poc">64500.00</b></div>
+          <div class="stat"><span>Regime</span><b id="regime" class="a">COMP</b></div>
+          <div class="stat"><span>Microprice</span><b id="microPx">64500.00</b></div>
+        </div>
+      </section>
+      <div id="deskBody" class="desk-micro-row"></div>
+    </section>
+
+    <section id="view-exec" class="view view-exec" data-view="exec" aria-label="Execution autopilot">
+      <div class="panel-grid one">
+        <section class="panel-card">
+          <div class="panel-head"><span>Autopilot Engine</span><span id="autoMode">OFF</span></div>
+          <div class="panel-body">
+            <button id="autopilotBtn" class="autopilot-btn" type="button">ENABLE AUTOPILOT</button>
+            <div id="autopilotReadouts" class="readout-grid" style="margin-top:6px"></div>
+          </div>
+        </section>
+        <section class="rail" aria-label="Execution rail">
+          <div class="rail-top">
+            <div class="rail-title">Execution layer | BTC/USD.SYN live tape</div>
+            <div id="railState" class="rail-meta">Open 0/2 | payout 92%</div>
+          </div>
+          <div class="ticket">
+            <div class="field"><label for="expiry">Expiry</label><input id="expiry" inputmode="numeric" value="30"></div>
+            <div class="field"><label for="stake">Stake</label><input id="stake" inputmode="decimal" value="100.00"></div>
+            <div class="field"><label for="slots">Max open</label><input id="slots" inputmode="numeric" value="2"></div>
+            <div class="field"><label for="gate">Min conf</label><input id="gate" inputmode="numeric" value="62"></div>
+            <button id="call" class="deal call" type="button">CALL<small>ask entry</small></button>
+            <button id="put" class="deal put" type="button">PUT<small>bid entry</small></button>
+          </div>
+          <div class="rail-foot"><span id="mathLine"><b>stake debited on entry</b> | win credits stake+payout</span><span id="balanceLine">BAL $0.00</span></div>
+        </section>
+        <section class="panel-card">
+          <div class="panel-head"><span>Position Book</span><span id="posMeta">0 open</span></div>
+          <div id="posBook" class="panel-body scroll"></div>
+        </section>
+        <section class="panel-card">
+          <div class="panel-head"><span>Execution Tape</span><span>lifecycle only</span></div>
+          <div id="execTape" class="panel-body scroll"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="view-council" class="view" data-view="council" aria-label="Council chamber">
+      <nav class="subtabs" aria-label="Council tabs">
+        <button class="subtab active" data-council-tab="votes" type="button">Votes</button>
+        <button class="subtab" data-council-tab="consensus" type="button">Consensus</button>
+        <button class="subtab" data-council-tab="chamber" type="button">Chamber</button>
+      </nav>
+      <div id="councilBody"></div>
+    </section>
+
+    <section id="view-gov" class="view" data-view="gov" aria-label="Governor">
+      <nav class="subtabs" aria-label="Governor tabs">
+        <button class="subtab active" data-gov-tab="capital" type="button">Capital</button>
+        <button class="subtab" data-gov-tab="pressure" type="button">Pressure</button>
+        <button class="subtab" data-gov-tab="guard" type="button">Guard</button>
+      </nav>
+      <div id="govBody"></div>
+    </section>
+
+    <section id="view-more" class="view" data-view="more" aria-label="App map">
+      <div id="mapBody"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary routes">
+    <button class="nav-btn active" data-route="desk" type="button"><span>D</span><b>Desk</b><small>Runtime</small></button>
+    <button class="nav-btn" data-route="exec" type="button"><span>X</span><b>Exec</b><small>Gated</small></button>
+    <button class="nav-btn" data-route="council" type="button"><span>C</span><b>Council</b><small>Hold</small></button>
+    <button class="nav-btn" data-route="gov" type="button"><span>G</span><b>Gov</b><small>Clear</small></button>
+    <button class="nav-btn" data-route="more" type="button"><span>M</span><b>More</b><small>App map</small></button>
+  </nav>
+</div>
+<div id="gateway" class="gateway active" role="dialog" aria-modal="true" aria-labelledby="gatewayTitle">
+  <section class="gateway-card">
+    <div class="gateway-head">
+      <b id="gatewayTitle">QUADCOM SECURE GATEWAY</b>
+      <span>Simulated account gateway | isolated local ledger</span>
+    </div>
+    <div class="gateway-body">
+      <input id="operatorInput" autocomplete="off" spellcheck="false" placeholder="OPTIONAL OPERATOR ID">
+      <button id="connectBtn" type="button">SIMULATE WALLET CONNECT</button>
+      <div id="gatewayNote" class="gateway-note">No active operator session. Connect to create or restore an account. New accounts begin at $0.00 and must deposit from the testnet faucet before trading.</div>
+    </div>
+  </section>
+</div>
+<div class="landscape">PORTRAIT TERMINAL<br>BTC/USD.SYN</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
