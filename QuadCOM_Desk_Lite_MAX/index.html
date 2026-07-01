@@ -66,7 +66,7 @@ input{min-width:0;border:0;outline:none}
 .panel-card{min-width:0;border:1px solid rgba(216,183,63,.22);background:linear-gradient(180deg,#090b10,#050609);border-radius:7px;overflow:hidden}
 .panel-head{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 7px;border-bottom:1px solid var(--line);color:var(--gold);font-size:7px;font-weight:950;text-transform:uppercase;letter-spacing:.06em}
 .panel-body{padding:7px;min-height:0}
-.panel-body.scroll{max-height:230px;overflow:hidden}
+.panel-body.scroll{max-height:230px;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .readout-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
 .readout{min-width:0;border:1px solid rgba(42,48,64,.78);background:#030406;border-radius:4px;padding:5px;overflow:hidden}
 .readout span{display:block;color:var(--muted);font-size:6px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -267,6 +267,10 @@ input{min-width:0;border:0;outline:none}
             <button id="put" class="deal put" type="button">PUT<small>bid entry</small></button>
           </div>
           <div class="rail-foot"><span id="mathLine"><b>stake debited on entry</b> | win credits stake+payout</span><span id="balanceLine">BAL $0.00</span></div>
+        </section>
+        <section class="panel-card">
+          <div class="panel-head"><span>Position Book</span><span id="posMeta">0 open</span></div>
+          <div id="posBook" class="panel-body scroll"></div>
         </section>
         <section class="panel-card">
           <div class="panel-head"><span>Execution Tape</span><span>lifecycle only</span></div>
@@ -617,8 +621,20 @@ const app={
       ["Macro",c.macro>=50?"CALL":"PUT",Math.round(c.macro)],
       ["Flow",c.flow>=50?"CALL":"PUT",Math.round(c.flow)],
       ["Gate",c.allowed?c.action:"HOLD",Math.round(c.gate)],
-      ["Structure",this.market.regime==="COMP"?"COMPRESSION":this.market.regime,Math.round(c.structure)]
+      ["Structure",this.market.regime==="COMP"?"COMPRESSION":this.market.regime,Math.round(c.structure)],
+      ["Retail",c.retail>=50?"PUT":"CALL",Math.round(c.retail)]
     ];
+  },
+  positionRows(){
+    const m=this.market;
+    if(!this.positions.length)return `<div class="tape-row"><span>${now()}</span><b>FLAT</b><span>no open positions</span></div>`;
+    return this.positions.map(p=>{
+      const left=Math.max(0,(p.expires-Date.now())/1000);
+      const lead=p.dir==="CALL"?m.bid-p.entry:p.entry-m.ask;
+      const winning=lead>0;
+      const proj=winning?p.stake*p.payout:-p.stake;
+      return `<div class="tape-row ${winning?"in":"out"}"><span>${p.dir}${p.src==="AUTO"?" A":""}</span><b>${fmt(p.entry)}</b><span>${left.toFixed(0)}s ${winning?"▲":"▼"}${fmt(Math.abs(lead))} ${(proj>=0?"+":"")+money(proj)}</span></div>`;
+    }).join("");
   },
   lifecycleRows(limit=18){
     return this.ledger.filter(x=>/^(CALL|PUT|WIN|LOSS|REFUND|MAX|CASH|BLOCK|AUTO|ARM)$/.test(x.tag)).slice(0,limit);
@@ -673,6 +689,8 @@ const app={
       this.readout("Gate",s.gate),
       this.readout("Size","1.00x","good")
     ].join("");
+    $("posMeta").textContent=`${this.positions.length}/${s.slots} open`;
+    $("posBook").innerHTML=`<div class="tape">${this.positionRows()}</div>`;
     $("execTape").innerHTML=`<div class="tape">${this.lifecycleRows().map(x=>`<div class="tape-row"><span>${x.t}</span><b>${x.tag}</b><span>${x.txt}</span></div>`).join("")||"<div class='tape-row'><span>"+now()+"</span><b>READY</b><span>lifecycle tape waiting</span></div>"}</div>`;
   },
   renderCouncilView(){
@@ -707,6 +725,9 @@ const app={
       ${this.readout("Win Rate",this.winRate().toFixed(0)+"%")}
       ${this.readout("Edge",this.edgePoints().toFixed(1)+"pt",this.edgePoints()>=0?"good":"bad")}
       ${this.readout("Governor",g.state,g.state==="CLEAR"?"good":"bad")}
+      ${this.readout("Open",`${this.positions.length}/${this.settings().slots}`)}
+      ${this.readout("Exposure",g.exposure.toFixed(1)+"%",g.exposure>30?"bad":"")}
+      ${this.readout("Autopilot",this.autopilot?"ON":"OFF",this.autopilot?"good":"")}
     </div><div class="module-map">
       <div class="module-card"><b>Chart</b><span>${fmt(m.high)} - ${m.regime}</span><small>overview - chart - runtime</small></div>
       <div class="module-card"><b>Micro</b><span>Depth ${Math.round(this.book.bids.at(-1).cum)} - Skew ${Math.round(m.imb*100)}</span><small>depth - spread - flow</small></div>

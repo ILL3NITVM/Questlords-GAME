@@ -1,4 +1,4 @@
-const CACHE = "quadcom-desk-lite-max-revamp-v3";
+const CACHE = "quadcom-desk-lite-max-revamp-v4";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./sw.js", "./icon-512.png"];
 
 self.addEventListener("install", event => {
