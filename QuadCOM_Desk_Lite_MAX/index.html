@@ -602,8 +602,10 @@ const app={
     const equity=this.equity(), peak=Math.max(Number(this.metrics.peakEquity)||0,equity);
     const drawdown=peak>0?Math.max(0,(peak-equity)/peak*100):0;
     const exposure=this.positions.reduce((a,p)=>a+p.stake,0)/Math.max(1,equity)*100;
-    const state=(drawdown>5||this.metrics.lossStreak>3)?"HALT":"CLEAR";
-    return {state,drawdown,exposure,equity,peak,capital:this.fundedCapital(),lossStreak:this.metrics.lossStreak,reason:drawdown>5?"DRAWDOWN":this.metrics.lossStreak>3?"LOSS STREAK":equity<=0?"AWAITING DEPOSIT":"CAPITAL CLEAR"};
+    // Governor no longer halts on losses, loss streaks, or drawdown — a losing
+    // trade never blocks execution. Drawdown/streak remain informational only.
+    const state="CLEAR";
+    return {state,drawdown,exposure,equity,peak,capital:this.fundedCapital(),lossStreak:this.metrics.lossStreak,reason:equity<=0?"AWAITING DEPOSIT":"CAPITAL CLEAR"};
   },
   winRate(){const n=this.metrics.wins+this.metrics.losses;return n?this.metrics.wins/n*100:0;},
   edgePoints(){return this.winRate()-52.08;},
@@ -683,7 +685,7 @@ const app={
     }else if(this.govTab==="pressure"){
       $("govBody").innerHTML=`<div class="panel-grid one"><section class="panel-card"><div class="panel-head"><span>Pressure Metrics</span><span>${g.state}</span></div><div class="panel-body"><div class="readout-grid">${this.readout("Drawdown %",g.drawdown.toFixed(2)+"%",g.drawdown>5?"bad":"good")}${this.readout("Exposure %",g.exposure.toFixed(1)+"%",g.exposure>30?"bad":"")}${this.readout("Loss Streak",g.lossStreak,g.lossStreak>3?"bad":"good")}${this.readout("Open",`${this.positions.length}/${this.settings().slots}`)}${this.readout("Peak Equity",money(g.peak),"gold")}${this.readout("Capital Basis",money(g.capital))}</div></div></section></div>`;
     }else{
-      $("govBody").innerHTML=`<div class="panel-grid one"><section class="panel-card"><div class="panel-head"><span>Guard Contract</span><span>${g.state==="HALT"?"EXEC BLOCKED":"EXEC CLEAR"}</span></div><div class="panel-body"><div class="tape"><div class="tape-row"><span>${now()}</span><b>DD</b><span>HALT when drawdown exceeds 5%</span></div><div class="tape-row"><span>${now()}</span><b>STREAK</b><span>HALT when loss streak exceeds 3</span></div><div class="tape-row"><span>${now()}</span><b>AUTO</b><span>${g.state==="HALT"?"blocked by governor":"allowed through gate stack"}</span></div></div></div></section></div>`;
+      $("govBody").innerHTML=`<div class="panel-grid one"><section class="panel-card"><div class="panel-head"><span>Guard Contract</span><span>${g.state==="HALT"?"EXEC BLOCKED":"EXEC CLEAR"}</span></div><div class="panel-body"><div class="tape"><div class="tape-row"><span>${now()}</span><b>DD</b><span>drawdown ${g.drawdown.toFixed(2)}% — informational, no halt</span></div><div class="tape-row"><span>${now()}</span><b>STREAK</b><span>loss streak ${g.lossStreak} — never halts execution</span></div><div class="tape-row"><span>${now()}</span><b>AUTO</b><span>allowed through gate stack</span></div></div></div></section></div>`;
     }
   },
   renderMap(){
