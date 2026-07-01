@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="QuadCOM">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon-512.png">
+<link rel="apple-touch-icon" href="icon-512.png">
+<title>QuadCOM Desk Lite MAX | BTC/USD.SYN</title>
+<style>
+:root{
+  --bg:#000000;
+  --shell:#050506;
+  --panel:#08090c;
+  --panel2:#0b0d12;
+  --panel3:#11141b;
+  --line:#1b202b;
+  --line2:#2a3040;
+  --gold:#d8b73f;
+  --gold2:#f2cc58;
+  --blue:#3498db;
+  --green:#2ecc71;
+  --red:#ef4d3f;
+  --amber:#f0a43a;
+  --muted:#7a8494;
+  --soft:#aab2c2;
+  --text:#ffffff;
+  --text2:#e2e8f0;
+  --font:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%;height:100dvh;width:100%;margin:0;background:#000;color:var(--text);font-family:var(--font);-webkit-text-size-adjust:100%;touch-action:manipulation}
+body{position:fixed;inset:0;overflow:hidden;user-select:none;-webkit-user-select:none;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+button,input{font:inherit;color:inherit}
+button{border:0;cursor:pointer;background:none;-webkit-tap-highlight-color:transparent}
+input{min-width:0;border:0;outline:none}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-thumb{background:#232a36;border-radius:3px}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ============ SHELL LAYOUT ============ */
+.app{height:100%;width:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;overflow:hidden;
+  background:radial-gradient(circle at 50% -12%,#15130a 0,#050506 30%,#000 74%);transition:filter .25s}
+.app.locked{filter:blur(9px) saturate(.55);pointer-events:none}
+
+/* ---- Top bar ---- */
+.topbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:6px;align-items:center;
+  padding:4px 7px;background:linear-gradient(180deg,#08090c,#030304);border-bottom:1px solid rgba(216,183,63,.55);min-height:0}
+.mark{width:28px;height:28px;border-radius:7px;border:1px solid rgba(216,183,63,.75);background:#000;object-fit:cover;flex:0 0 auto}
+.brand{min-width:0;line-height:1.05}
+.brand b{display:block;font-size:11px;font-weight:900;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+.brand span{display:block;margin-top:2px;font-size:6.5px;color:var(--gold);white-space:nowrap;text-transform:uppercase;letter-spacing:.08em}
+.opr-pill{height:22px;display:inline-flex;align-items:center;gap:4px;padding:0 8px;border-radius:5px;
+  border:1px solid rgba(216,183,63,.6);background:linear-gradient(180deg,rgba(216,183,63,.14),rgba(46,204,113,.05));
+  color:var(--gold2);font-size:8px;font-weight:900;letter-spacing:.04em;white-space:nowrap}
+.opr-pill i{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);font-style:normal}
+.logout-btn{height:22px;padding:0 8px;border-radius:5px;border:1px solid rgba(239,77,63,.6);
+  background:rgba(239,77,63,.08);color:var(--red);font-size:8px;font-weight:900;letter-spacing:.05em}
+.logout-btn:active{background:rgba(239,77,63,.2)}
+
+/* ---- Oracle strip ---- */
+.oracle{display:flex;align-items:center;gap:0;overflow-x:auto;padding:3px 7px;background:#030405;
+  border-bottom:1px solid var(--line);font-size:8px;font-weight:800;letter-spacing:.04em;white-space:nowrap;
+  scrollbar-width:none}
+.oracle::-webkit-scrollbar{display:none}
+.oracle .ok{color:var(--gold);font-weight:900}
+.oracle .seg{color:var(--soft)}
+.oracle .sep{color:#3a4250;padding:0 6px}
+.oracle .bid{color:var(--green)}
+.oracle .ask{color:var(--red)}
+
+/* ---- Main stage: views ---- */
+.stage{min-height:0;overflow:hidden;position:relative}
+.view{position:absolute;inset:0;display:none;flex-direction:column;min-height:0;overflow:hidden}
+.view.active{display:flex}
+
+/* ---- Bottom nav ---- */
+.tabbar{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:linear-gradient(180deg,#08090c,#000);
+  border-top:1px solid rgba(216,183,63,.5);min-height:0}
+.tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 2px 8px;color:var(--muted);
+  border-right:1px solid rgba(27,32,43,.7)}
+.tab:last-child{border-right:0}
+.tab .ico{font-size:14px;line-height:1}
+.tab .lbl{font-size:8px;font-weight:900;letter-spacing:.06em}
+.tab .sub{font-size:6px;font-weight:700;color:#4a525f;letter-spacing:.03em;text-transform:uppercase}
+.tab.active{color:var(--gold2);background:linear-gradient(180deg,rgba(216,183,63,.16),rgba(216,183,63,.03))}
+.tab.active .ico{filter:drop-shadow(0 0 5px rgba(242,204,88,.5))}
+.tab.active .sub{color:var(--gold)}
+
+/* ============ COMMON WIDGETS ============ */
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:5px 9px;
+  background:linear-gradient(90deg,#0b0d12,#06070a);border-bottom:1px solid var(--line);flex:0 0 auto}
+.section-head b{font-size:9px;font-weight:900;color:var(--gold);letter-spacing:.09em;text-transform:uppercase}
+.section-head span{font-size:7px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.subnav{display:grid;grid-auto-flow:column;gap:5px;padding:6px 8px;background:#030405;border-bottom:1px solid var(--line);flex:0 0 auto}
+.subnav button{padding:8px 4px;border:1px solid var(--line2);border-radius:5px;background:#08090c;color:var(--muted);
+  font-size:8px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.subnav button.on{color:#080600;background:linear-gradient(180deg,#f2cc58,#c69b2c);border-color:#f4d66d;
+  box-shadow:0 0 12px rgba(216,183,63,.25)}
+.scrollarea{min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1 1 auto}
+.pane{display:none;padding:9px;gap:9px;flex-direction:column}
+.pane.on{display:flex}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.metric{border:1px solid var(--line);border-radius:7px;background:linear-gradient(180deg,#0b0d12,#050609);padding:9px 10px;min-width:0}
+.metric span{display:block;font-size:7px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.metric b{display:block;margin-top:5px;font-size:16px;font-weight:900;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.metric b.g{color:var(--green)}.metric b.r{color:var(--red)}.metric b.a{color:var(--amber)}.metric b.gd{color:var(--gold2)}.metric b.bl{color:var(--blue)}
+
+.card{border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,#0a0c11,#050609);overflow:hidden}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 9px;border-bottom:1px solid var(--line);
+  font-size:8px;font-weight:900;color:var(--gold);letter-spacing:.07em;text-transform:uppercase}
+.card-h span{color:var(--muted);font-weight:700;letter-spacing:.03em}
+.card-b{padding:8px 9px}
+
+/* ============ VIEW 1: DESK ============ */
+#view-desk{display:none}
+#view-desk.active{display:flex}
+.desk-chartwrap{flex:1 1 52%;min-height:180px;position:relative;background:linear-gradient(180deg,#080a0f,#020304);
+  border-bottom:1px solid rgba(216,183,63,.4)}
+#deskChart{position:absolute;inset:0;width:100%;height:100%;display:block}
+.chart-quote{position:absolute;left:8px;top:6px;z-index:2;pointer-events:none}
+.chart-quote .inst{font-size:9px;font-weight:900;color:var(--text)}
+.chart-quote .instsub{font-size:6px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:1px}
+.chart-quote .last{font-size:20px;font-weight:900;color:#fff;line-height:1.05;margin-top:3px;text-shadow:0 0 14px rgba(0,0,0,.9)}
+.chart-quote .chg{font-size:9px;font-weight:900}
+.chart-quote .chg.up{color:var(--green)}.chart-quote .chg.down{color:var(--red)}
+.desk-subticker{flex:0 0 auto;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);background:#050609}
+.desk-subticker .st{padding:4px 5px;border-right:1px solid var(--line);min-width:0;line-height:1.1}
+.desk-subticker .st:last-child{border-right:0}
+.desk-subticker .st span{display:block;font-size:6px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.desk-subticker .st b{display:block;margin-top:2px;font-size:9px;font-weight:900;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.desk-subticker .st b.a{color:var(--amber)}
+/* Desk trade ticket */
+.desk-ticket{flex:0 0 auto;display:grid;grid-template-columns:.9fr .9fr 1.2fr 1.2fr;gap:5px;padding:7px 8px;
+  background:linear-gradient(180deg,#0a0c10,#050609);border-top:1px solid rgba(216,183,63,.34)}
+.tk-field{border:1px solid var(--line2);background:#020304;border-radius:5px;display:grid;grid-template-rows:12px 1fr;overflow:hidden}
+.tk-field label{font-size:6px;color:var(--muted);text-align:center;text-transform:uppercase;padding-top:2px;letter-spacing:.04em}
+.tk-field input{width:100%;height:100%;min-height:26px;background:#050609;color:#fff;text-align:center;font-size:13px;font-weight:900}
+.deal{border:1px solid transparent;border-radius:5px;font-size:12px;font-weight:900;letter-spacing:.05em;color:#041007;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
+.deal small{font-size:6px;font-weight:800;opacity:.78}
+.deal.call{background:linear-gradient(180deg,#42f09a,#1dae68);border-color:#69ffae}
+.deal.put{background:linear-gradient(180deg,#ff7568,#c93832);border-color:#ff8e82;color:#150202}
+.deal:active{transform:translateY(1px)}
+.desk-railfoot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 9px;
+  font-size:7px;color:var(--muted);background:#030405;border-top:1px solid var(--line)}
+.desk-railfoot b{color:var(--gold)}
+.desk-railfoot .arm-mini{padding:3px 8px;border-radius:4px;border:1px solid rgba(239,77,63,.6);background:rgba(239,77,63,.08);color:var(--red);font-weight:900;font-size:7px}
+.desk-railfoot .arm-mini.on{background:linear-gradient(180deg,#36d984,#1aa760);border-color:#58f39c;color:#001908}
+
+/* ============ VIEW 2: EXEC ============ */
+.auto-switch{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px;
+  border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#0c0e14,#050609)}
+.auto-switch .lbl b{display:block;font-size:11px;font-weight:900;color:var(--text);letter-spacing:.04em}
+.auto-switch .lbl span{display:block;margin-top:3px;font-size:7px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.toggle{width:62px;height:30px;border-radius:16px;border:1px solid var(--line2);background:#0a0c11;position:relative;flex:0 0 auto;transition:.2s}
+.toggle i{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:50%;background:#3a4250;transition:.2s}
+.toggle.on{background:linear-gradient(90deg,rgba(46,204,113,.25),rgba(46,204,113,.5));border-color:#2ecc71}
+.toggle.on i{left:34px;background:var(--green);box-shadow:0 0 10px rgba(46,204,113,.7)}
+.tape{display:flex;flex-direction:column;gap:0}
+.tape-row{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:5px 9px;border-bottom:1px solid rgba(27,32,43,.6);font-size:8px}
+.tape-row:last-child{border-bottom:0}
+.tape-row .t{color:var(--muted);font-size:7px;white-space:nowrap}
+.tape-row .m{color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tape-row .v{font-weight:900;white-space:nowrap}
+.tape-row .v.g{color:var(--green)}.tape-row .v.r{color:var(--red)}.tape-row .v.a{color:var(--amber)}.tape-row .v.b{color:var(--blue)}
+.tape-empty{padding:16px;text-align:center;color:var(--muted);font-size:8px;letter-spacing:.08em}
+
+/* ============ VIEW 3: COUNCIL ============ */
+.weightrow{display:grid;grid-template-columns:64px auto 1fr 34px;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid rgba(27,32,43,.6)}
+.weightrow:last-child{border-bottom:0}
+.weightrow .name{font-size:8px;font-weight:900;color:var(--soft);letter-spacing:.05em;text-transform:uppercase}
+.weightrow .side{font-size:7px;font-weight:900;padding:2px 6px;border-radius:4px;text-align:center;white-space:nowrap}
+.side.call{color:var(--green);background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.4)}
+.side.put{color:var(--red);background:rgba(239,77,63,.12);border:1px solid rgba(239,77,63,.4)}
+.side.hold{color:var(--amber);background:rgba(240,164,58,.12);border:1px solid rgba(240,164,58,.4)}
+.side.comp{color:var(--blue);background:rgba(52,152,219,.12);border:1px solid rgba(52,152,219,.4)}
+.wbar{height:8px;border-radius:4px;background:#0a0c11;border:1px solid var(--line);overflow:hidden}
+.wbar i{display:block;height:100%;border-radius:3px}
+.weightrow .wv{font-size:11px;font-weight:900;color:#fff;text-align:right}
+.consensus-box{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.big-num{border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#0c0e14,#050609);padding:12px;text-align:center}
+.big-num span{font-size:7px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.big-num b{display:block;margin-top:5px;font-size:30px;font-weight:900;color:var(--gold2);line-height:1}
+.big-num b.bl{color:var(--blue)}
+.tension-track{height:12px;border-radius:6px;background:#0a0c11;border:1px solid var(--line);overflow:hidden;margin-top:8px}
+.tension-track i{display:block;height:100%;background:linear-gradient(90deg,#2ecc71,#f0a43a,#ef4d3f);transition:width .3s}
+.prob-row{display:grid;grid-template-columns:96px 1fr 30px;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid rgba(27,32,43,.6)}
+.prob-row:last-child{border-bottom:0}
+.prob-row .pn{font-size:7.5px;font-weight:800;color:var(--soft);text-transform:uppercase;letter-spacing:.03em}
+.prob-track{height:9px;border-radius:5px;background:#0a0c11;border:1px solid var(--line);overflow:hidden}
+.prob-track i{display:block;height:100%;border-radius:4px;transition:width .3s}
+.prob-row .pv{font-size:10px;font-weight:900;color:#fff;text-align:right}
+
+/* ============ VIEW 4: GOVERNOR ============ */
+.gov-status{padding:14px 12px 16px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(180deg,#0c0e14,#050609)}
+.gov-status .glabel{display:flex;justify-content:space-between;font-size:7px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em}
+.gov-status .gbig{font-size:44px;font-weight:900;line-height:1;margin-top:6px;letter-spacing:.02em}
+.gov-status .gbig.clear{color:var(--green);text-shadow:0 0 20px rgba(46,204,113,.35)}
+.gov-status .gbig.halt{color:var(--red);text-shadow:0 0 20px rgba(239,77,63,.4)}
+.gov-underline{height:6px;border-radius:4px;margin-top:12px;overflow:hidden;background:#0a0c11;border:1px solid var(--line)}
+.gov-underline i{display:block;height:100%;transition:width .3s,background .3s}
+.gov-underline i.clear{background:linear-gradient(90deg,#b58d27,#f2cc58,#2ecc71)}
+.gov-underline i.halt{background:linear-gradient(90deg,#7a1a12,#ef4d3f)}
+/* Faucet */
+.faucet{display:flex;flex-direction:column;gap:9px}
+.faucet .amt{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:center}
+.faucet .amt label{font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.faucet .amt input{height:38px;border:1px solid var(--line2);border-radius:7px;background:#050609;color:#fff;
+  text-align:right;font-size:16px;font-weight:900;padding:0 12px}
+.faucet-btns{display:grid;grid-template-columns:1.35fr 1fr;gap:8px}
+.fbtn{padding:12px 8px;border-radius:8px;font-size:10px;font-weight:900;letter-spacing:.04em;line-height:1.15;text-align:center}
+.fbtn small{display:block;font-size:6.5px;opacity:.8;margin-top:2px;font-weight:800}
+.fbtn.dep{background:linear-gradient(180deg,#42f09a,#1dae68);border:1px solid #69ffae;color:#04150a}
+.fbtn.wd{background:linear-gradient(180deg,#ffb066,#c97d2c);border:1px solid #ffca8a;color:#180d02}
+.fbtn:active{transform:translateY(1px)}
+.fbtn:disabled{opacity:.4;filter:grayscale(.5)}
+.faucet-msg{min-height:12px;font-size:7.5px;font-weight:800;text-align:center;letter-spacing:.03em}
+.faucet-msg.ok{color:var(--green)}.faucet-msg.err{color:var(--red)}
+.ledger-row{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:6px 9px;border-bottom:1px solid rgba(27,32,43,.6);font-size:8px}
+.ledger-row:last-child{border-bottom:0}
+.ledger-row .lt{color:var(--muted);font-size:6.5px;white-space:nowrap}
+.ledger-row .lm{color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ledger-row .lv{font-weight:900;white-space:nowrap}
+.ledger-row .lv.in{color:var(--green)}.ledger-row .lv.out{color:var(--red)}
+
+/* ============ VIEW 5: MORE ============ */
+.map-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mapcard{border:1px solid var(--line);border-radius:8px;background:linear-gradient(180deg,#0a0c11,#050609);padding:9px 10px}
+.mapcard .mt{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:900;color:var(--gold);letter-spacing:.05em}
+.mapcard .mt i{font-style:normal;font-size:12px}
+.mapcard .mv{margin-top:6px;font-size:8px;color:var(--text2);font-weight:800;letter-spacing:.02em}
+.mapcard .ms{margin-top:3px;font-size:6.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.group-label{font-size:8px;font-weight:900;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;
+  padding-left:6px;border-left:3px solid var(--gold);margin:2px 0 -2px}
+
+/* ============ GATEWAY MODAL ============ */
+.gateway{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:22px;
+  background:rgba(0,0,0,.62);backdrop-filter:blur(3px)}
+.gateway.on{display:flex}
+.gw-card{width:100%;max-width:360px;border:1px solid rgba(216,183,63,.5);border-radius:14px;overflow:hidden;
+  background:linear-gradient(180deg,#0c0e14,#050506);box-shadow:0 20px 70px rgba(0,0,0,.75),0 0 40px rgba(216,183,63,.08)}
+.gw-head{display:flex;align-items:center;gap:9px;padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+.gw-head img{width:38px;height:38px;border-radius:9px;border:1px solid rgba(216,183,63,.7)}
+.gw-head b{font-size:14px;font-weight:900;color:var(--gold2);letter-spacing:.04em;display:block}
+.gw-head span{font-size:7px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;display:block;margin-top:3px}
+.gw-body{padding:16px}
+.gw-body p{margin:0 0 14px;font-size:9px;line-height:1.6;color:var(--soft);letter-spacing:.02em}
+.gw-connect{width:100%;padding:15px;border-radius:10px;font-size:12px;font-weight:900;letter-spacing:.05em;
+  background:linear-gradient(180deg,#f2cc58,#c69b2c);border:1px solid #f4d66d;color:#0a0600}
+.gw-connect:active{transform:translateY(1px)}
+.gw-connect.busy{background:#11141b;color:var(--gold);border-color:var(--line2)}
+.gw-addr{margin-top:14px;display:none;text-align:center}
+.gw-addr.on{display:block}
+.gw-addr .a{font-size:15px;font-weight:900;color:var(--green);letter-spacing:.06em}
+.gw-addr .h{font-size:7px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+.gw-enter{margin-top:12px;width:100%;padding:13px;border-radius:9px;font-size:11px;font-weight:900;letter-spacing:.05em;
+  background:linear-gradient(180deg,#42f09a,#1dae68);border:1px solid #69ffae;color:#04150a;display:none}
+.gw-enter.on{display:block}
+.gw-foot{padding:0 16px 16px;font-size:6.5px;color:#4a525f;text-align:center;letter-spacing:.05em;line-height:1.5}
+
+/* ============ TOAST ============ */
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);z-index:60;
+  padding:9px 16px;border-radius:8px;background:rgba(8,10,15,.96);border:1px solid var(--line2);
+  color:var(--text);font-size:9px;font-weight:800;letter-spacing:.03em;opacity:0;pointer-events:none;
+  transition:.25s;box-shadow:0 10px 30px rgba(0,0,0,.6);max-width:80vw;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.ok{border-color:rgba(46,204,113,.5);color:var(--green)}
+.toast.err{border-color:rgba(239,77,63,.5);color:var(--red)}
+</style>
+</head>
+<body>
+
+<div class="app locked" id="app">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <img class="mark" src="icon-512.png" alt="Q" onerror="this.style.visibility='hidden'">
+    <div class="brand"><b>QuadCOM Desk Lite MAX</b><span>BTC/USD.SYN · PERPETUAL INDEX</span></div>
+    <div class="opr-pill" id="oprPill"><i></i><span id="oprAddr">0x000...0000</span></div>
+    <button class="logout-btn" id="logoutBtn">LOGOUT</button>
+  </div>
+
+  <!-- ORACLE STRIP -->
+  <div class="oracle" id="oracle"></div>
+
+  <!-- STAGE -->
+  <div class="stage">
+
+    <!-- ============ VIEW 1: DESK ============ -->
+    <section class="view active" id="view-desk">
+      <div class="desk-chartwrap">
+        <canvas id="deskChart"></canvas>
+        <div class="chart-quote">
+          <div class="inst">BTC/USD.SYN</div>
+          <div class="instsub">Synthetic Bitcoin Continuous Perpetual</div>
+          <div class="last" id="deskLast">64500.00</div>
+          <div class="chg up" id="deskChg">+0.00</div>
+        </div>
+      </div>
+      <div class="desk-subticker">
+        <div class="st"><span>High</span><b id="stHigh">--</b></div>
+        <div class="st"><span>Low</span><b id="stLow">--</b></div>
+        <div class="st"><span>VWAP</span><b id="stVwap">--</b></div>
+        <div class="st"><span>POC</span><b id="stPoc">--</b></div>
+        <div class="st"><span>Regime</span><b class="a" id="stRegime">--</b></div>
+        <div class="st"><span>Microprice</span><b id="stMicro">--</b></div>
+      </div>
+      <div class="desk-ticket">
+        <div class="tk-field"><label>Stake</label><input id="tkStake" type="number" inputmode="decimal" value="25" min="1"></div>
+        <div class="tk-field"><label>Expiry s</label><input id="tkExpiry" type="number" inputmode="numeric" value="6" min="1"></div>
+        <button class="deal call" id="dealCall">CALL<small>ask entry</small></button>
+        <button class="deal put" id="dealPut">PUT<small>bid entry</small></button>
+      </div>
+      <div class="desk-railfoot">
+        <div>OPEN <b id="deskOpen">0/6</b> · PAYOUT <b>92%</b> · CONF <b id="deskConf">--</b></div>
+        <div>BAL <b id="deskBal">0.00</b> <button class="arm-mini" id="armMini">DISARMED</button></div>
+      </div>
+    </section>
+
+    <!-- ============ VIEW 2: EXEC ============ -->
+    <section class="view" id="view-exec">
+      <div class="section-head"><b>Execution Rail</b><span>Autopilot Gate</span></div>
+      <div class="scrollarea">
+        <div class="pane on" style="display:flex">
+          <div class="auto-switch">
+            <div class="lbl"><b>ENABLE AUTOPILOT</b><span id="autoState">Disciplined turnover · gate-locked</span></div>
+            <div class="toggle" id="autoToggle"><i></i></div>
+          </div>
+          <div class="grid2" style="margin-top:2px">
+            <div class="metric"><span>Status</span><b id="exStatus">OFF</b></div>
+            <div class="metric"><span>Fires</span><b id="exFires">0</b></div>
+            <div class="metric"><span>Gate</span><b class="gd" id="exGate">72</b></div>
+            <div class="metric"><span>Size</span><b class="bl" id="exSize">1.00x</b></div>
+          </div>
+          <div class="grid3" style="margin-top:2px">
+            <div class="metric"><span>Open</span><b id="exOpen">0/6</b></div>
+            <div class="metric"><span>Armed</span><b id="exArmed">NO</b></div>
+            <div class="metric"><span>Bias</span><b class="a" id="exBias">HOLD</b></div>
+          </div>
+          <div class="card" style="margin-top:2px">
+            <div class="card-h">Execution Tape<span>system lifecycle</span></div>
+            <div class="tape" id="execTape"><div class="tape-empty">NO EXECUTION EVENTS</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIEW 3: COUNCIL ============ -->
+    <section class="view" id="view-council">
+      <div class="section-head"><b>Council</b><span id="councilCrumb">COUNCIL/VOTES</span></div>
+      <div class="subnav" style="grid-template-columns:1fr 1fr 1fr">
+        <button data-council="votes" class="on">VOTES</button>
+        <button data-council="consensus">CONSENSUS</button>
+        <button data-council="chamber">CHAMBER</button>
+      </div>
+      <div class="scrollarea">
+        <!-- VOTES -->
+        <div class="pane on" data-cpane="votes">
+          <div class="card">
+            <div class="card-h">Core Engine Weights<span>algorithmic consensus</span></div>
+            <div class="card-b" id="weightList"></div>
+          </div>
+        </div>
+        <!-- CONSENSUS -->
+        <div class="pane" data-cpane="consensus">
+          <div class="consensus-box">
+            <div class="big-num"><span>Council Consensus</span><b id="consNum">0</b></div>
+            <div class="big-num"><span>Direction</span><b class="bl" id="consDir">HOLD</b></div>
+          </div>
+          <div class="card">
+            <div class="card-h">Tension Meter<span id="tensionVal">0</span></div>
+            <div class="card-b"><div class="tension-track"><i id="tensionBar" style="width:0%"></i></div>
+              <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:6.5px;color:var(--muted)">
+                <span>COHERENT</span><span>STRAINED</span><span>FRACTURED</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- CHAMBER -->
+        <div class="pane" data-cpane="chamber">
+          <div class="card">
+            <div class="card-h">Outcome Probability<span>4-band visualizer</span></div>
+            <div class="card-b" id="probList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIEW 4: GOVERNOR ============ -->
+    <section class="view" id="view-gov">
+      <div class="section-head"><b>Governor</b><span id="govCrumb">GOVERNOR/CAPITAL</span></div>
+      <div class="subnav" style="grid-template-columns:1fr 1fr 1fr">
+        <button data-gov="capital" class="on">CAPITAL</button>
+        <button data-gov="pressure">PRESSURE</button>
+        <button data-gov="guard">GUARD</button>
+      </div>
+      <div class="scrollarea">
+        <!-- CAPITAL -->
+        <div class="pane on" data-gpane="capital">
+          <div class="gov-status">
+            <div class="glabel"><span>Capital Governor</span><span id="govSubLabel">CAPITAL CLEAR</span></div>
+            <div class="gbig clear" id="govBig">CLEAR</div>
+            <div class="gov-underline"><i class="clear" id="govBar" style="width:100%"></i></div>
+          </div>
+          <div class="card">
+            <div class="card-h">Simulated Faucet Rail<span>testnet liquidity</span></div>
+            <div class="card-b">
+              <div class="faucet">
+                <div class="amt"><label>Amount</label><input id="faucetAmt" type="number" inputmode="decimal" value="1000" min="0" step="10"></div>
+                <div class="faucet-btns">
+                  <button class="fbtn dep" id="depBtn">DEPOSIT<small>TESTNET FAUCET</small></button>
+                  <button class="fbtn wd" id="wdBtn">WITHDRAW<small>to external</small></button>
+                </div>
+                <div class="faucet-msg" id="faucetMsg"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid2">
+            <div class="metric"><span>Wallet Balance</span><b class="g" id="govBal">0.00</b></div>
+            <div class="metric"><span>Net P/L</span><b id="govNet">+0.00</b></div>
+          </div>
+        </div>
+        <!-- PRESSURE -->
+        <div class="pane" data-gpane="pressure">
+          <div class="section-head" style="border-radius:8px 8px 0 0;border:1px solid var(--line);border-bottom:0"><b>Pressure</b><span>Session Restraint</span></div>
+          <div class="grid2" style="margin-top:0">
+            <div class="metric"><span>Drawdown</span><b id="prDraw">0.0%</b></div>
+            <div class="metric"><span>Exposure</span><b id="prExp">0.0%</b></div>
+            <div class="metric"><span>Loss Streak</span><b id="prStreak">0</b></div>
+            <div class="metric"><span>Peak Balance</span><b id="prPeak">0.00</b></div>
+          </div>
+        </div>
+        <!-- GUARD -->
+        <div class="pane" data-gpane="guard">
+          <div class="card">
+            <div class="card-h">Transaction Ledger<span>faucet i/o</span></div>
+            <div id="ledgerList"><div class="tape-empty">NO TRANSACTIONS</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIEW 5: MORE ============ -->
+    <section class="view" id="view-more">
+      <div class="section-head"><b>Holistic Map</b><span>system overview</span></div>
+      <div class="scrollarea">
+        <div class="pane on">
+          <div class="grid3">
+            <div class="metric"><span>Balance</span><b class="g" id="moBal">0.00</b></div>
+            <div class="metric"><span>Net P/L</span><b id="moNet">+0.00</b></div>
+            <div class="metric"><span>Turnover</span><b id="moTurn">0.00</b></div>
+          </div>
+          <div class="grid2">
+            <div class="metric"><span>Win Rate</span><b id="moWin">0%</b></div>
+            <div class="metric"><span>W / L</span><b id="moWL">0 / 0</b></div>
+          </div>
+          <div class="group-label">Modules</div>
+          <div class="map-cards" id="mapCards"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="tabbar">
+    <button class="tab active" data-view="desk"><span class="ico">▦</span><span class="lbl">DESK</span><span class="sub">Substrate</span></button>
+    <button class="tab" data-view="exec"><span class="ico">⇅</span><span class="lbl">EXEC</span><span class="sub" id="tabExecSub">Autopilot</span></button>
+    <button class="tab" data-view="council"><span class="ico">◈</span><span class="lbl">COUNCIL</span><span class="sub" id="tabCouncilSub">HOLD 0</span></button>
+    <button class="tab" data-view="gov"><span class="ico">◆</span><span class="lbl">GOV</span><span class="sub" id="tabGovSub">CLEAR</span></button>
+    <button class="tab" data-view="more"><span class="ico">☰</span><span class="lbl">MORE</span><span class="sub">App Map</span></button>
+  </nav>
+</div>
+
+<!-- GATEWAY MODAL -->
+<div class="gateway" id="gateway">
+  <div class="gw-card">
+    <div class="gw-head">
+      <img src="icon-512.png" alt="Q" onerror="this.style.visibility='hidden'">
+      <div><b>QUADCOM SECURE GATEWAY</b><span>BTC/USD.SYN · Wallet Access</span></div>
+    </div>
+    <div class="gw-body">
+      <p>Operator authentication required. Connect a synthetic wallet to open an isolated account scope. New wallets initialize at <b>$0.00</b> — fund via the GOV testnet faucet before executions clear.</p>
+      <button class="gw-connect" id="gwConnect">[ SIMULATE WALLET CONNECT ]</button>
+      <div class="gw-addr" id="gwAddr">
+        <div class="a" id="gwAddrVal">0x000...0000</div>
+        <div class="h">Public address bound</div>
+      </div>
+      <button class="gw-enter" id="gwEnter">[ ENTER DESK ]</button>
+    </div>
+    <div class="gw-foot">Simulation only · No real assets · Local isolated storage per wallet</div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+(() => {
+/* ================= CONSTANTS ================= */
+const BASE = 64500.00;         // BTC/USD.SYN base
+const TICK = 1.0;              // tickSize
+const PAYOUT = 0.92;           // 92% layout margin
+const MAX_OPEN = 6;
+const STEP_MS = 250;           // sim cadence
+const BUFFER = 260;            // chart points
+const AUTOPILOT_GATE = 72;     // confidence gate for autopilot
+const SESSION_KEY = "quadcom_session";
+const $ = id => document.getElementById(id);
+const clamp = (v,a,b)=>v<a?a:v>b?b:v;
+const fmt = v => (Number.isFinite(v)?v:0).toFixed(2);
+const snap = v => Math.round(v/TICK)*TICK;
+const nowClock = () => { const d=new Date(); return d.toTimeString().slice(0,8); };
+
+/* ================= STATE ================= */
+let wallet = null;             // active wallet address
+let account = null;            // active account data object
+let view = "desk";
+let councilPane = "votes";
+let govPane = "capital";
+let armed = false;
+
+// Market substrate
+const M = {
+  t: 0, last: BASE, open: BASE, prevMacro: 0, macroDrift: 0, vol: 22,
+  high: BASE, low: BASE, vwap: BASE, poc: BASE, micro: BASE,
+  spread: 6, bid: BASE-3, ask: BASE+3, imb: 0, regime: "COMPRESS", momentum: 0,
+  wallHigh: BASE+180, wallLow: BASE-180,
+  sar: BASE-120, sarUp: true, sarEP: BASE, sarAF: 0.02,
+  ticks: [], sarPts: [], vwapNum: 0, vwapDen: 0, poHist: new Array(48).fill(0)
+};
+
+// Council
+const C = { macro:7, flow:39, gate:51, structure:97, conf:47, dir:"HOLD", tension:0,
+  probs:{support:0,resist:0,bull:0,bear:0} };
+
+/* ================= STORAGE / ACCOUNTS ================= */
+function acctKey(addr){ return "quadcom_data_" + addr; }
+function freshAccount(addr){
+  return {
+    address: addr,
+    balance: 0.00,           // rigorous $0.00 init — must use faucet
+    peak: 0.00,
+    metrics: { turnover:0, wins:0, losses:0, refunds:0, net:0, fires:0 },
+    tape: [],                // execution lifecycle
+    ledger: [],              // faucet i/o
+    autopilot: false,
+    created: Date.now()
+  };
+}
+function loadAccount(addr){
+  try{
+    const raw = localStorage.getItem(acctKey(addr));
+    if(raw){ const d = JSON.parse(raw); return Object.assign(freshAccount(addr), d); }
+  }catch(_){}
+  return freshAccount(addr);
+}
+function saveAccount(){
+  if(!account||!wallet) return;
+  try{ localStorage.setItem(acctKey(wallet), JSON.stringify(account)); }catch(_){}
+}
+function genAddress(){
+  const hex = "0123456789ABCDEF";
+  let mid = "";
+  for(let i=0;i<12;i++) mid += hex[Math.floor(Math.random()*16)];
+  return "0x" + mid;                       // 12-char hex body
+}
+function shortAddr(a){ if(!a) return "0x000...0000"; return a.slice(0,5) + "..." + a.slice(-4); }
+
+/* Live positions are session-only (expiry timers stale across reloads) */
+let positions = [];
+let seq = 0;
+
+/* ================= GATEWAY ================= */
+function showGateway(){
+  $("app").classList.add("locked");
+  $("gateway").classList.add("on");
+  $("gwAddr").classList.remove("on");
+  $("gwEnter").classList.remove("on");
+  const c = $("gwConnect"); c.classList.remove("busy"); c.textContent = "[ SIMULATE WALLET CONNECT ]"; c.disabled=false;
+  window._pendingAddr = null;
+}
+function connectWallet(){
+  const c = $("gwConnect");
+  c.classList.add("busy"); c.disabled=true; c.textContent = "CONNECTING…";
+  setTimeout(()=>{
+    const addr = genAddress();
+    window._pendingAddr = addr;
+    $("gwAddrVal").textContent = shortAddr(addr);
+    $("gwAddr").classList.add("on");
+    $("gwEnter").classList.add("on");
+    c.textContent = "[ WALLET LINKED ]";
+  }, 620);
+}
+function enterDesk(){
+  const addr = window._pendingAddr;
+  if(!addr) return;
+  bindWallet(addr);
+  try{ localStorage.setItem(SESSION_KEY, addr); }catch(_){}
+  $("gateway").classList.remove("on");
+  $("app").classList.remove("locked");
+  toast("Operator " + shortAddr(addr) + " online", "ok");
+}
+function bindWallet(addr){
+  wallet = addr;
+  account = loadAccount(addr);
+  positions = [];               // never rehydrate live positions
+  armed = false;
+  $("oprAddr").textContent = shortAddr(addr);
+  syncAll();
+}
+function logout(){
+  saveAccount();                // keep dataset safe
+  try{ localStorage.removeItem(SESSION_KEY); }catch(_){}
+  wallet = null; account = null; positions = []; armed = false;
+  setView("desk");
+  showGateway();
+  toast("Logged out — dataset preserved", "ok");
+}
+
+/* ================= MARKET ENGINE ================= */
+function updateMarket(){
+  M.t++;
+  // Macro drift — slow AR process producing directional regimes
+  M.macroDrift = M.macroDrift*0.965 + (Math.random()-0.5)*3.4;
+  // Organic crypto wave stack (multi-frequency), $10–$50 scale swings
+  const macro = Math.sin(M.t*0.0065)*46 + Math.sin(M.t*0.017+1.1)*24 + Math.sin(M.t*0.043+0.4)*9;
+  const dMacro = macro - M.prevMacro; M.prevMacro = macro;
+  // Volatility clustering
+  M.vol = clamp(M.vol*0.94 + Math.abs(M.momentum)*0.22 + Math.abs(M.macroDrift)*0.9 + 6, 10, 60);
+  const noise = (Math.random()-0.5) * M.vol * 1.15;
+  // Wall reaction: price gets pushed back near rolling walls
+  let wallPush = 0;
+  if(M.last > M.wallHigh-14) wallPush -= (M.last-(M.wallHigh-14))*0.16;
+  if(M.last < M.wallLow+14)  wallPush += ((M.wallLow+14)-M.last)*0.16;
+  let delta = M.macroDrift*1.8 + dMacro + noise + wallPush;
+  delta = clamp(delta, -55, 55);
+  M.momentum = M.momentum*0.7 + delta*0.3;
+  M.last = snap(clamp(M.last + delta, BASE-2200, BASE+2200));
+
+  // Buffer
+  M.ticks.push(M.last);
+  if(M.ticks.length > BUFFER) M.ticks.shift();
+
+  // Rolling walls (support/resistance) from windowed extremes
+  const win = M.ticks.slice(-90);
+  const wHi = Math.max(...win), wLo = Math.min(...win);
+  M.wallHigh += (wHi + 40 - M.wallHigh)*0.06;
+  M.wallLow  += (wLo - 40 - M.wallLow)*0.06;
+
+  // Session high/low
+  M.high = Math.max(M.high, M.last);
+  M.low  = Math.min(M.low,  M.last);
+
+  // VWAP (rolling window volume-weighted)
+  const vol = 1 + Math.abs(delta)*0.4;
+  M.vwapNum += M.last*vol; M.vwapDen += vol;
+  if(M.vwapDen > 4000){ M.vwapNum*=0.85; M.vwapDen*=0.85; }
+  M.vwap = M.vwapDen>0 ? M.vwapNum/M.vwapDen : M.last;
+
+  // POC (histogram mode over recent band)
+  const bins = M.poHist.length;
+  const lo = M.wallLow-60, span = (M.wallHigh+60)-lo;
+  if(span>0){
+    let bi = Math.floor(((M.last-lo)/span)*bins);
+    bi = clamp(bi,0,bins-1);
+    for(let i=0;i<bins;i++) M.poHist[i]*=0.997;
+    M.poHist[bi] += 1;
+    let mx=0; for(let i=0;i<bins;i++) if(M.poHist[i]>M.poHist[mx]) mx=i;
+    M.poc = lo + (mx+0.5)/bins*span;
+  }
+
+  // Spread / micro / bid-ask / imbalance
+  M.spread = clamp(4 + M.vol*0.18, 3, 18);
+  M.imb = clamp(M.imb*0.8 + (Math.random()-0.5)*40 + M.momentum*3, -100, 100);
+  const skew = (M.imb/100)*M.spread*0.4;
+  M.micro = M.last + skew;
+  M.bid = snap(M.last - M.spread/2);
+  M.ask = snap(M.last + M.spread/2);
+
+  // Regime classification
+  const disp = M.last - M.vwap;
+  const compression = (M.wallHigh - M.wallLow) < 220;
+  if(compression && Math.abs(M.momentum)<6) M.regime = "COMPRESS";
+  else if(Math.abs(disp) > 90 && Math.sign(disp)!==Math.sign(M.momentum)) M.regime = "PULLBACK";
+  else if(M.momentum > 10) M.regime = "IMPULSE UP";
+  else if(M.momentum < -10) M.regime = "IMPULSE DN";
+  else if(M.momentum > 2) M.regime = "DRIFT UP";
+  else if(M.momentum < -2) M.regime = "DRIFT DN";
+  else M.regime = "PULLBACK";
+
+  // Parabolic SAR
+  updateSAR();
+  M.sarPts.push(M.sar);
+  if(M.sarPts.length > BUFFER) M.sarPts.shift();
+
+  updateCouncil();
+  settleExpiries();
+  if(account && account.autopilot) autopilotTick();
+}
+
+function updateSAR(){
+  const price = M.last;
+  const AFmax = 0.2, AFstep = 0.02;
+  if(M.sarUp){
+    if(price > M.sarEP){ M.sarEP = price; M.sarAF = Math.min(M.sarAF+AFstep, AFmax); }
+    M.sar = M.sar + M.sarAF*(M.sarEP - M.sar);
+    if(price < M.sar){ M.sarUp=false; M.sar=M.sarEP; M.sarEP=price; M.sarAF=AFstep; }
+  } else {
+    if(price < M.sarEP){ M.sarEP = price; M.sarAF = Math.min(M.sarAF+AFstep, AFmax); }
+    M.sar = M.sar + M.sarAF*(M.sarEP - M.sar);
+    if(price > M.sar){ M.sarUp=true; M.sar=M.sarEP; M.sarEP=price; M.sarAF=AFstep; }
+  }
+}
+
+/* ================= COUNCIL ENGINE ================= */
+function updateCouncil(){
+  const disp = M.last - M.vwap, pocDisp = M.last - M.poc;
+  // Live-drifting weights anchored to the doctrine reference values
+  const target = {
+    macro: clamp(50 + disp*0.35 - M.macroDrift*4, 2, 98),
+    flow:  clamp(50 + M.imb*0.4 + M.momentum*1.5, 2, 98),
+    gate:  clamp(50 + (M.regime.includes("IMPULSE")?-18:12) + pocDisp*0.1, 2, 98),
+    structure: clamp(60 + (240-(M.wallHigh-M.wallLow))*0.2, 2, 99)
+  };
+  C.macro = Math.round(C.macro + (target.macro - C.macro)*0.05);
+  C.flow  = Math.round(C.flow  + (target.flow  - C.flow )*0.05);
+  C.gate  = Math.round(C.gate  + (target.gate  - C.gate )*0.05);
+  C.structure = Math.round(C.structure + (target.structure - C.structure)*0.05);
+
+  // Aggregate consensus (weighted directional vote)
+  const bull = C.flow + (100-C.macro) + (M.momentum>0?C.gate*0.4:0);
+  const bear = C.macro + (100-C.flow) + (M.momentum<0?C.gate*0.4:0);
+  const raw = clamp(50 + (bull-bear)*0.18, 0, 100);
+  C.conf = Math.round(clamp(Math.abs(raw-50)*2, 0, 100));
+  C.dir = raw>58 ? "CALL" : raw<42 ? "PUT" : "HOLD";
+  C.tension = Math.round(clamp(C.structure*0.5 + Math.abs(M.momentum)*2 + (100-C.conf)*0.3, 0, 100));
+
+  // Outcome probabilities (4-band)
+  const nearHi = clamp(100-(M.wallHigh-M.last)*0.5,0,100);
+  const nearLo = clamp(100-(M.last-M.wallLow)*0.5,0,100);
+  C.probs.support = Math.round(clamp(nearLo*0.6 + (C.dir==="CALL"?18:0) + 20,0,100));
+  C.probs.resist  = Math.round(clamp(nearHi*0.6 + (C.dir==="PUT"?18:0) + 15,0,100));
+  C.probs.bull    = Math.round(clamp((raw-40)*1.2 + (M.momentum>0?15:0),0,100));
+  C.probs.bear    = Math.round(clamp((60-raw)*1.2 + (M.momentum<0?15:0),0,100));
+}
+
+/* ================= EXECUTION MATH ================= */
+function tape(kind, msg, cls){
+  if(!account) return;
+  account.tape.unshift({ t: nowClock(), kind, msg, cls: cls||"" });
+  if(account.tape.length > 60) account.tape.pop();
+}
+function canOpen(reason){
+  if(!account){ reason.m="no account"; return false; }
+  if(!armed){ reason.m="disarmed"; return false; }
+  if(positions.length >= MAX_OPEN){ reason.m="max open"; return false; }
+  const stake = getStake();
+  if(stake <= 0){ reason.m="stake<=0"; return false; }
+  if(account.balance < stake){ reason.m="insufficient balance"; return false; }
+  return true;
+}
+function getStake(){ return Math.max(0, Number($("tkStake").value)||0); }
+function getExpiry(){ return Math.max(1, Math.round(Number($("tkExpiry").value)||6)); }
+
+function openTrade(dir, src){
+  const reason = {};
+  if(!canOpen(reason)){ toast("BLOCKED · " + reason.m, "err"); return; }
+  const stake = getStake();
+  const expiryS = getExpiry();
+  const entry = dir==="CALL" ? M.ask : M.bid;   // CALL ask entry, PUT bid entry
+  // Immediate balance penalty — capital is committed the instant a ticket opens
+  account.balance -= stake;
+  account.metrics.turnover += stake;
+  const p = {
+    id: (seq++).toString(36) + Math.random().toString(36).slice(2,4),
+    dir, src: src||"MANUAL", stake, entry,
+    entryIdx: M.ticks.length-1,
+    opened: Date.now(), expiresAt: Date.now() + expiryS*1000,
+    conf: C.conf
+  };
+  positions.push(p);
+  tape("OPEN", `${dir} ${src||"MANUAL"} @ ${fmt(entry)} · $${fmt(stake)}`, dir==="CALL"?"g":"r");
+  toast(`${dir} committed @ ${fmt(entry)} · −$${fmt(stake)}`, dir==="CALL"?"ok":"err");
+  saveAccount(); syncAccountUI();
+}
+
+function settleExpiries(){
+  if(!account || !positions.length) return;
+  const now = Date.now();
+  const still = [];
+  for(const p of positions){
+    if(now < p.expiresAt){ still.push(p); continue; }
+    const closePx = M.last;
+    let out, credit, pnl;
+    if((p.dir==="CALL" && closePx > p.entry) || (p.dir==="PUT" && closePx < p.entry)){
+      // WIN: original stake credited back + 92% payout margin
+      credit = p.stake*(1+PAYOUT); pnl = p.stake*PAYOUT; out="WIN";
+      account.metrics.wins++;
+    } else if(closePx === p.entry){
+      // TIE / void: exact stake refunded, no premium
+      credit = p.stake; pnl = 0; out="REFUND"; account.metrics.refunds++;
+    } else {
+      // LOSS: stake forfeited (already debited)
+      credit = 0; pnl = -p.stake; out="LOSS"; account.metrics.losses++;
+    }
+    account.balance += credit;
+    account.metrics.net += pnl;
+    tape(out, `${p.dir} @ ${fmt(p.entry)} → ${fmt(closePx)} · ${pnl>=0?"+":""}$${fmt(pnl)}`,
+      out==="WIN"?"g":out==="LOSS"?"r":"a");
+  }
+  if(still.length !== positions.length){
+    positions = still;
+    account.peak = Math.max(account.peak, account.balance);
+    saveAccount(); syncAccountUI();
+  }
+}
+
+/* Autopilot: disciplined turnover — fires council bias only through the full gate */
+function autopilotTick(){
+  if(!armed || positions.length>=MAX_OPEN) return;
+  if(C.dir==="HOLD" || C.conf < AUTOPILOT_GATE) return;
+  const gov = governor();
+  if(gov.halt) return;
+  const stake = getStake()*gov.size;
+  if(stake<=0 || account.balance < stake) return;
+  // temporary stake scaling via governor size
+  const prev = $("tkStake").value;
+  openTrade(C.dir, "AUTO");
+  $("tkStake").value = prev;
+  account.metrics.fires++;
+}
+
+/* ================= GOVERNOR ================= */
+function governor(){
+  if(!account) return { state:"CLEAR", halt:false, size:1, draw:0, exp:0, streak:0 };
+  const peak = Math.max(account.peak, account.balance, 1);
+  const draw = peak>0 ? clamp((peak-account.balance)/peak*100, 0, 100) : 0;
+  const openStake = positions.reduce((a,p)=>a+p.stake,0);
+  const exp = account.balance+openStake>0 ? openStake/(account.balance+openStake)*100 : 0;
+  // rolling loss streak from tape
+  let streak=0;
+  for(const e of account.tape){ if(e.kind==="LOSS") streak++; else if(e.kind==="WIN"||e.kind==="REFUND") break; }
+  let size=1;
+  if(draw>6) size=0.6;
+  if(draw>10) size=0.4;
+  const halt = draw>15 || streak>=5;
+  if(draw>15) size=0;
+  return { state: halt?"HALT":"CLEAR", halt, size, draw, exp, streak };
+}
+
+/* ================= FAUCET ================= */
+function ledger(kind, amount){
+  account.ledger.unshift({ t: nowClock(), kind, amount });
+  if(account.ledger.length > 80) account.ledger.pop();
+}
+function deposit(){
+  if(!account) return;
+  const amt = Math.max(0, Number($("faucetAmt").value)||0);
+  if(amt<=0){ faucetMsg("Enter an amount > 0", "err"); return; }
+  account.balance += amt;
+  account.peak = Math.max(account.peak, account.balance);
+  ledger("IN", amt);
+  faucetMsg(`+ ${fmt(amt)} deposited from testnet faucet`, "ok");
+  tape("FAUCET", `+ IN $${fmt(amt)}`, "g");
+  toast(`Faucet +$${fmt(amt)}`, "ok");
+  saveAccount(); syncAccountUI();
+}
+function withdraw(){
+  if(!account) return;
+  const amt = Math.max(0, Number($("faucetAmt").value)||0);
+  if(amt<=0){ faucetMsg("Enter an amount > 0", "err"); return; }
+  if(amt > account.balance){ faucetMsg(`Withdraw exceeds balance ($${fmt(account.balance)})`, "err"); toast("Insufficient balance","err"); return; }
+  account.balance -= amt;
+  ledger("OUT", amt);
+  faucetMsg(`- ${fmt(amt)} withdrawn to external`, "ok");
+  tape("FAUCET", `- OUT $${fmt(amt)}`, "r");
+  toast(`Withdraw -$${fmt(amt)}`, "ok");
+  saveAccount(); syncAccountUI();
+}
+let faucetMsgTimer;
+function faucetMsg(m, cls){
+  const el=$("faucetMsg"); el.textContent=m; el.className="faucet-msg "+cls;
+  clearTimeout(faucetMsgTimer); faucetMsgTimer=setTimeout(()=>{ el.textContent=""; el.className="faucet-msg"; }, 3200);
+}
+
+/* ================= CHART RENDER ================= */
+const canvas = $("deskChart");
+const ctx = canvas.getContext("2d");
+let cw=0, ch=0, dpr=1;
+function resizeCanvas(){
+  const wrap = canvas.parentElement;
+  const r = wrap.getBoundingClientRect();
+  if(r.width<2 || r.height<2) return;
+  dpr = Math.min(window.devicePixelRatio||1, 2.5);
+  cw = r.width; ch = r.height;
+  canvas.width = Math.round(cw*dpr); canvas.height = Math.round(ch*dpr);
+  canvas.style.width = cw+"px"; canvas.style.height = ch+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+if(window.ResizeObserver){
+  const ro = new ResizeObserver(()=>resizeCanvas());
+  ro.observe(canvas.parentElement);
+}
+window.addEventListener("resize", resizeCanvas);
+window.addEventListener("orientationchange", ()=>setTimeout(resizeCanvas,120));
+
+function drawChart(){
+  if(!cw||!ch){ resizeCanvas(); if(!cw||!ch) return; }
+  const pts = M.ticks;
+  if(pts.length<2){ ctx.clearRect(0,0,cw,ch); return; }
+  const padR = 52, padT = 8, padB = 8;
+  const plotW = cw - padR, plotH = ch - padT - padB;
+
+  // vertical range includes walls + padding
+  let lo = Math.min(M.wallLow, ...pts.slice(-BUFFER));
+  let hi = Math.max(M.wallHigh, ...pts.slice(-BUFFER));
+  const pad = (hi-lo)*0.08 + 20; lo-=pad; hi+=pad;
+  const range = hi-lo || 1;
+  const X = i => (i/(pts.length-1))*plotW;
+  const Y = p => padT + (1-(p-lo)/range)*plotH;
+
+  ctx.clearRect(0,0,cw,ch);
+  // grid
+  ctx.strokeStyle="rgba(27,32,43,.55)"; ctx.lineWidth=1;
+  ctx.fillStyle="rgba(122,132,148,.85)"; ctx.font="8px "+getFont();
+  ctx.textAlign="left"; ctx.textBaseline="middle";
+  for(let g=0; g<=4; g++){
+    const py = padT + (g/4)*plotH;
+    const pv = hi - (g/4)*range;
+    ctx.beginPath(); ctx.moveTo(0,py); ctx.lineTo(plotW,py); ctx.stroke();
+    ctx.fillText(pv.toFixed(2), plotW+6, py);
+  }
+
+  // HIGH ROLLING WALL (red zone across upper boundary)
+  const yHi = Y(M.wallHigh);
+  const gHi = ctx.createLinearGradient(0,padT,0,yHi+18);
+  gHi.addColorStop(0,"rgba(239,77,63,.02)"); gHi.addColorStop(1,"rgba(239,77,63,.20)");
+  ctx.fillStyle=gHi; ctx.fillRect(0,padT,plotW,Math.max(0,yHi-padT+8));
+  ctx.strokeStyle="rgba(239,77,63,.8)"; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.moveTo(0,yHi); ctx.lineTo(plotW,yHi); ctx.stroke();
+  // sawtooth resistance markers
+  ctx.fillStyle="rgba(239,77,63,.5)";
+  for(let x=0;x<plotW;x+=26){ ctx.beginPath(); ctx.moveTo(x,yHi-5); ctx.lineTo(x+6,yHi); ctx.lineTo(x,yHi); ctx.fill(); }
+  ctx.fillStyle="rgba(255,140,132,.95)"; ctx.font="bold 9px "+getFont(); ctx.textAlign="left";
+  ctx.fillText("HIGH ROLLING WALL "+M.wallHigh.toFixed(2), 6, yHi+9);
+  ctx.fillStyle="rgba(239,77,63,.6)"; ctx.font="7px "+getFont();
+  ctx.fillText("RESISTANCE REJECTION LAYER", 6, yHi+18);
+
+  // LOW ROLLING WALL (green zone across lower boundary)
+  const yLo = Y(M.wallLow);
+  const gLo = ctx.createLinearGradient(0,yLo-18,0,ch-padB);
+  gLo.addColorStop(0,"rgba(46,204,113,.20)"); gLo.addColorStop(1,"rgba(46,204,113,.02)");
+  ctx.fillStyle=gLo; ctx.fillRect(0,yLo-8,plotW,Math.max(0,ch-padB-yLo+8));
+  ctx.strokeStyle="rgba(46,204,113,.8)"; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.moveTo(0,yLo); ctx.lineTo(plotW,yLo); ctx.stroke();
+  ctx.fillStyle="rgba(46,204,113,.45)";
+  for(let x=0;x<plotW;x+=26){ ctx.beginPath(); ctx.moveTo(x,yLo+5); ctx.lineTo(x+6,yLo); ctx.lineTo(x,yLo); ctx.fill(); }
+  ctx.fillStyle="rgba(120,240,170,.95)"; ctx.font="bold 9px "+getFont();
+  ctx.fillText("LOW ROLLING WALL "+M.wallLow.toFixed(2), 6, yLo-13);
+  ctx.fillStyle="rgba(46,204,113,.6)"; ctx.font="7px "+getFont();
+  ctx.fillText("SUPPORT DEFENCE LAYER", 6, yLo-4);
+
+  // VWAP + POC dashed
+  ctx.setLineDash([4,4]); ctx.lineWidth=1;
+  ctx.strokeStyle="rgba(52,152,219,.7)";
+  ctx.beginPath(); ctx.moveTo(0,Y(M.vwap)); ctx.lineTo(plotW,Y(M.vwap)); ctx.stroke();
+  ctx.strokeStyle="rgba(216,183,63,.55)";
+  ctx.beginPath(); ctx.moveTo(0,Y(M.poc)); ctx.lineTo(plotW,Y(M.poc)); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Parabolic SAR trailing points
+  ctx.fillStyle="rgba(226,232,240,.7)";
+  const sp = M.sarPts, off = pts.length - sp.length;
+  for(let i=0;i<sp.length;i++){
+    const x = X(i+off), y = Y(sp[i]);
+    ctx.beginPath(); ctx.arc(x,y,1.4,0,7); ctx.fill();
+  }
+
+  // Price line (gold)
+  ctx.lineWidth=1.8; ctx.strokeStyle="#f2cc58";
+  ctx.shadowColor="rgba(242,204,88,.4)"; ctx.shadowBlur=6;
+  ctx.beginPath();
+  for(let i=0;i<pts.length;i++){ const x=X(i), y=Y(pts[i]); i?ctx.lineTo(x,y):ctx.moveTo(x,y); }
+  ctx.stroke(); ctx.shadowBlur=0;
+
+  // Trade commitment arrows + horizontal dotted tracking rays
+  for(const p of positions){
+    const idx = clamp(p.entryIdx - (BUFFER - pts.length), 0, pts.length-1);
+    const x = X(idx), y = Y(p.entry);
+    const col = p.dir==="CALL" ? "#3498db" : "#ef4d3f";
+    // dotted ray across chart at entry price
+    ctx.setLineDash([3,4]); ctx.strokeStyle=col+"cc"; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(plotW,y); ctx.stroke();
+    ctx.setLineDash([]);
+    // arrow
+    ctx.fillStyle=col;
+    ctx.beginPath();
+    if(p.dir==="CALL"){ ctx.moveTo(x,y-9); ctx.lineTo(x-5,y+1); ctx.lineTo(x+5,y+1); }
+    else { ctx.moveTo(x,y+9); ctx.lineTo(x-5,y-1); ctx.lineTo(x+5,y-1); }
+    ctx.closePath(); ctx.fill();
+    ctx.strokeStyle=col; ctx.lineWidth=1; ctx.stroke();
+  }
+
+  // Last price tag
+  const yL = Y(M.last);
+  ctx.fillStyle="#f2cc58";
+  ctx.fillRect(plotW, yL-8, padR, 16);
+  ctx.fillStyle="#050506"; ctx.font="bold 9px "+getFont(); ctx.textAlign="left"; ctx.textBaseline="middle";
+  ctx.fillText(M.last.toFixed(2), plotW+4, yL);
+}
+function getFont(){ return 'ui-monospace,Menlo,Consolas,monospace'; }
+
+/* ================= UI SYNC ================= */
+function syncAll(){ syncOracle(); syncAccountUI(); syncCouncilUI(); syncGovUI(); syncMoreUI(); }
+
+function syncOracle(){
+  const conf = C.conf, gate = conf>=60?"CONF OK":"CONF BELOW";
+  const st = C.dir==="HOLD"?"WAIT":C.dir;
+  $("oracle").innerHTML =
+    `<span class="ok">ORACLE</span><span class="sep">|</span>`+
+    `<span class="seg">${st}</span><span class="sep">|</span>`+
+    `<span class="seg">CONF ${conf}</span><span class="sep">|</span>`+
+    `<span class="seg">${gate}</span><span class="sep">|</span>`+
+    `<span class="seg">${C.dir}</span><span class="sep">|</span>`+
+    `<span class="bid">BID ${fmt(M.bid)}</span><span class="sep">|</span>`+
+    `<span class="ask">ASK ${fmt(M.ask)}</span>`;
+}
+
+function syncAccountUI(){
+  if(!account) return;
+  const m = account.metrics;
+  // desk
+  $("deskLast").textContent = M.last.toFixed(2);
+  const chg = M.last - M.open;
+  const ce = $("deskChg"); ce.textContent = (chg>=0?"+":"")+chg.toFixed(2); ce.className = "chg "+(chg>=0?"up":"down");
+  $("stHigh").textContent = M.high.toFixed(2);
+  $("stLow").textContent = M.low.toFixed(2);
+  $("stVwap").textContent = M.vwap.toFixed(2);
+  $("stPoc").textContent = M.poc.toFixed(2);
+  $("stRegime").textContent = M.regime;
+  $("stMicro").textContent = M.micro.toFixed(2);
+  $("deskOpen").textContent = positions.length+"/"+MAX_OPEN;
+  $("deskConf").textContent = C.conf;
+  $("deskBal").textContent = fmt(account.balance);
+  const am=$("armMini"); am.textContent = armed?"ARMED":"DISARMED"; am.classList.toggle("on",armed);
+  // exec
+  const gov = governor();
+  $("exStatus").textContent = account.autopilot?"ON":"OFF";
+  $("exStatus").className = "b "+(account.autopilot?"g":"");
+  $("exStatus").classList.toggle("g",account.autopilot);
+  $("exFires").textContent = m.fires;
+  $("exGate").textContent = AUTOPILOT_GATE;
+  $("exSize").textContent = gov.size.toFixed(2)+"x";
+  $("exOpen").textContent = positions.length+"/"+MAX_OPEN;
+  $("exArmed").textContent = armed?"YES":"NO";
+  $("exBias").textContent = C.dir;
+  $("autoToggle").classList.toggle("on",account.autopilot);
+  $("autoState").textContent = account.autopilot?`Firing council bias · gate ${AUTOPILOT_GATE}`:"Disciplined turnover · gate-locked";
+  $("tabExecSub").textContent = account.autopilot?"AUTO ON":"Autopilot";
+  syncTape();
+}
+
+function syncTape(){
+  if(!account) return;
+  const el=$("execTape");
+  if(!account.tape.length){ el.innerHTML='<div class="tape-empty">NO EXECUTION EVENTS</div>'; return; }
+  el.innerHTML = account.tape.slice(0,40).map(e=>
+    `<div class="tape-row"><span class="t">${e.t}</span><span class="m">${e.kind} · ${e.msg}</span><span class="v ${e.cls}">${e.kind}</span></div>`
+  ).join("");
+}
+
+function syncCouncilUI(){
+  const rows = [
+    ["Macro","PUT","put",C.macro],
+    ["Flow","CALL","call",C.flow],
+    ["Gate","HOLD","hold",C.gate],
+    ["Structure","COMP","comp",C.structure]
+  ];
+  const colOf = {put:"#ef4d3f",call:"#2ecc71",hold:"#f0a43a",comp:"#3498db"};
+  $("weightList").innerHTML = rows.map(([n,s,cls,v])=>
+    `<div class="weightrow"><span class="name">${n}</span>`+
+    `<span class="side ${cls}">${s}</span>`+
+    `<span class="wbar"><i style="width:${v}%;background:${colOf[cls]}"></i></span>`+
+    `<span class="wv">${v}</span></div>`
+  ).join("");
+  $("consNum").textContent = C.conf;
+  const cd=$("consDir"); cd.textContent = C.dir;
+  cd.className = "bl"; cd.style.color = C.dir==="CALL"?"var(--green)":C.dir==="PUT"?"var(--red)":"var(--amber)";
+  $("tensionBar").style.width = C.tension+"%";
+  $("tensionVal").textContent = C.tension;
+  const pr = C.probs;
+  const pbands = [
+    ["Support Hold",pr.support,"#2ecc71"],
+    ["Resistance Break",pr.resist,"#ef4d3f"],
+    ["Bull Breakout",pr.bull,"#3498db"],
+    ["Bear Breakdown",pr.bear,"#f0a43a"]
+  ];
+  $("probList").innerHTML = pbands.map(([n,v,c])=>
+    `<div class="prob-row"><span class="pn">${n}</span>`+
+    `<span class="prob-track"><i style="width:${v}%;background:${c}"></i></span>`+
+    `<span class="pv">${v}</span></div>`
+  ).join("");
+  $("tabCouncilSub").textContent = C.dir+" "+C.conf;
+}
+
+function syncGovUI(){
+  if(!account) return;
+  const gov = governor();
+  const big=$("govBig"), bar=$("govBar");
+  big.textContent = gov.state; big.className = "gbig "+(gov.halt?"halt":"clear");
+  bar.className = gov.halt?"halt":"clear"; bar.style.width = (100-gov.draw).toFixed(0)+"%";
+  $("govSubLabel").textContent = "CAPITAL "+gov.state;
+  $("govBal").textContent = fmt(account.balance);
+  const net=$("govNet"); net.textContent = (account.metrics.net>=0?"+":"")+fmt(account.metrics.net);
+  net.className = account.metrics.net>=0?"g":"r";
+  $("prDraw").textContent = gov.draw.toFixed(1)+"%";
+  $("prExp").textContent = gov.exp.toFixed(1)+"%";
+  $("prStreak").textContent = gov.streak;
+  $("prPeak").textContent = fmt(account.peak);
+  $("tabGovSub").textContent = gov.state;
+  // withdraw guard
+  $("wdBtn").disabled = account.balance<=0;
+  // ledger
+  const le=$("ledgerList");
+  if(!account.ledger.length){ le.innerHTML='<div class="tape-empty">NO TRANSACTIONS</div>'; }
+  else{
+    le.innerHTML = account.ledger.slice(0,60).map(e=>
+      `<div class="ledger-row"><span class="lt">${e.t}</span>`+
+      `<span class="lm">${e.kind==="IN"?"TESTNET FAUCET":"EXTERNAL WITHDRAW"}</span>`+
+      `<span class="lv ${e.kind==="IN"?"in":"out"}">${e.kind==="IN"?"+ IN":"- OUT"} $${fmt(e.amount)}</span></div>`
+    ).join("");
+  }
+}
+
+function syncMoreUI(){
+  if(!account) return;
+  const m = account.metrics;
+  $("moBal").textContent = fmt(account.balance);
+  const net=$("moNet"); net.textContent=(m.net>=0?"+":"")+fmt(m.net); net.className=m.net>=0?"g":"r";
+  $("moTurn").textContent = fmt(m.turnover);
+  const total = m.wins+m.losses;
+  $("moWin").textContent = total? Math.round(m.wins/total*100)+"%" : "0%";
+  $("moWL").textContent = m.wins+" / "+m.losses;
+  const cards = [
+    ["▤","CHART", M.last.toFixed(2)+" · "+M.regime.split(" ")[0], "impulse · walls"],
+    ["≣","MICRO", "SKEW "+(M.imb>0?"+":"")+Math.round(M.imb/10), "depth · spread"],
+    ["▦","HEAT", "STRUCTURE "+(M.regime.includes("COMP")?"WAIT":"ACTIVE"), "zones · walls"],
+    ["≈","BREATH", "COMPRESS "+C.structure, "phase · rhythm"],
+    ["◈","COUNCIL", C.dir+" · CONF "+C.conf, "votes · consensus"],
+    ["§","DOCTRINE", (C.conf>=60?"CONF OK":"CONF BELOW"), "rules · gate"]
+  ];
+  $("mapCards").innerHTML = cards.map(([i,t,v,s])=>
+    `<div class="mapcard"><div class="mt"><i>${i}</i>${t}</div><div class="mv">${v}</div><div class="ms">${s}</div></div>`
+  ).join("");
+}
+
+/* ================= TOAST ================= */
+let toastTimer;
+function toast(msg, cls){
+  const el=$("toast"); el.textContent=msg; el.className="toast on "+(cls||"");
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>{ el.className="toast "+(cls||""); }, 1900);
+}
+
+/* ================= ROUTER ================= */
+function setView(v){
+  view=v;
+  document.querySelectorAll(".view").forEach(el=>el.classList.toggle("active", el.id==="view-"+v));
+  document.querySelectorAll(".tab").forEach(el=>el.classList.toggle("active", el.dataset.view===v));
+  if(v==="desk"){ resizeCanvas(); drawChart(); }
+}
+function setCouncilPane(p){
+  councilPane=p;
+  document.querySelectorAll("[data-council]").forEach(b=>b.classList.toggle("on",b.dataset.council===p));
+  document.querySelectorAll("[data-cpane]").forEach(el=>el.classList.toggle("on",el.dataset.cpane===p));
+  $("councilCrumb").textContent = "COUNCIL/"+p.toUpperCase();
+}
+function setGovPane(p){
+  govPane=p;
+  document.querySelectorAll("[data-gov]").forEach(b=>b.classList.toggle("on",b.dataset.gov===p));
+  document.querySelectorAll("[data-gpane]").forEach(el=>el.classList.toggle("on",el.dataset.gpane===p));
+  $("govCrumb").textContent = "GOVERNOR/"+p.toUpperCase();
+}
+
+/* ================= EVENTS ================= */
+$("gwConnect").addEventListener("click", connectWallet);
+$("gwEnter").addEventListener("click", enterDesk);
+$("logoutBtn").addEventListener("click", logout);
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
+document.querySelectorAll("[data-council]").forEach(b=>b.addEventListener("click",()=>setCouncilPane(b.dataset.council)));
+document.querySelectorAll("[data-gov]").forEach(b=>b.addEventListener("click",()=>setGovPane(b.dataset.gov)));
+$("dealCall").addEventListener("click",()=>openTrade("CALL","MANUAL"));
+$("dealPut").addEventListener("click",()=>openTrade("PUT","MANUAL"));
+$("armMini").addEventListener("click",()=>{ armed=!armed; toast(armed?"ARMED":"DISARMED", armed?"ok":"err"); syncAccountUI(); });
+$("autoToggle").addEventListener("click",()=>{
+  if(!account) return;
+  account.autopilot=!account.autopilot;
+  if(account.autopilot && !armed){ armed=true; toast("Autopilot ON · auto-armed","ok"); }
+  else toast(account.autopilot?"Autopilot ON":"Autopilot OFF", account.autopilot?"ok":"err");
+  saveAccount(); syncAccountUI();
+});
+$("depBtn").addEventListener("click",deposit);
+$("wdBtn").addEventListener("click",withdraw);
+
+/* ================= BOOT ================= */
+function boot(){
+  let sess=null;
+  try{ sess=localStorage.getItem(SESSION_KEY); }catch(_){}
+  if(sess){ bindWallet(sess); $("app").classList.remove("locked"); $("gateway").classList.remove("on"); }
+  else { showGateway(); }
+
+  // sim loop
+  setInterval(()=>{
+    updateMarket();
+    syncOracle();
+    if(!account) return;
+    if(view==="desk"){ drawChart(); syncAccountUI(); }
+    else if(view==="exec"){ syncAccountUI(); }
+    else if(view==="council"){ syncCouncilUI(); }
+    else if(view==="gov"){ syncGovUI(); }
+    else if(view==="more"){ syncMoreUI(); }
+    // lightweight cross-view chips
+    $("tabGovSub").textContent = governor().state;
+    $("tabCouncilSub").textContent = C.dir+" "+C.conf;
+  }, STEP_MS);
+
+  setTimeout(resizeCanvas, 60);
+}
+boot();
+
+/* ================= SERVICE WORKER ================= */
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker.register("./sw.js").catch(()=>{});
+  });
+}
+})();
+</script>
+</body>
+</html>

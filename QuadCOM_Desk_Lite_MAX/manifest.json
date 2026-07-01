@@ -1,0 +1,20 @@
+{
+  "name": "QuadCOM Desk Lite MAX",
+  "short_name": "QuadCOM",
+  "description": "BTC/USD.SYN synthetic crypto perpetuals cockpit — 5-view SPA with secure-wallet account simulation, testnet faucet, and disciplined autopilot execution.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
