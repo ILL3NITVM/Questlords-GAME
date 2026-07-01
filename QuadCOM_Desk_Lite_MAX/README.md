@@ -1,51 +1,52 @@
 # QuadCOM Desk Lite MAX — Phase 4
 
 **Master Crypto Perpetuals & Account Faucet.** A single-file PWA cockpit for the
-synthetic `BTC/USD.SYN` (Synthetic Bitcoin Continuous Perpetual Index),
-delivered as three assets: `index.html`, `manifest.json`, `sw.js`.
+synthetic `BTC/USD.SYN` (Bitcoin Synthetic / Perpetual Core), delivered as three
+assets: `index.html`, `manifest.json`, `sw.js` (plus `icon-512.png`).
 
 ## Substrate
 
-- Retired `SBCI.FX16`; instantiated `BTC/USD.SYN` initialized around `64500.00`.
-- `tickSize = 1.0`; organic multi-frequency crypto swings ($10–$50 intervals)
-  driven by macro drift + volatility clustering + rolling-wall reactions.
+- `BTC/USD.SYN` on a `62000–67000` band around a `64500` base, `tickSize 0.5`.
+- Regime-driven engine (COMP / DRIFT UP / DRIFT DN / IMPULSE / PULLBACK) with
+  volatility clustering, momentum, and mean-pull producing organic crypto swings.
+- Live VWAP, POC, session high/low, ±2.1σ band, order book, and microprice.
 - All prints and axis scales rendered with `.toFixed(2)`.
 
 ## 5-View Bottom-Nav SPA
 
 | View | Contents |
 |------|----------|
-| **DESK** | Oracle ticker ribbon, `ResizeObserver`-robust canvas chart with red **HIGH ROLLING WALL** / green **LOW ROLLING WALL** zones, trailing Parabolic SAR points, live CALL (blue up) / PUT (red down) commitment arrows with dotted tracking rays, VWAP/POC lines, and a HIGH/LOW/VWAP/POC/REGIME/MICROPRICE sub-ticker. Inline CALL/PUT trade ticket. |
-| **EXEC** | `ENABLE AUTOPILOT` switch, STATUS / FIRES / GATE / SIZE metric grid, and the live **Execution Tape** lifecycle log. |
-| **COUNCIL** | `VOTES · CONSENSUS · CHAMBER` sub-nav. Core engine weights (Macro/Flow/Gate/Structure), an aggregate `COUNCIL CONSENSUS` number, a `TENSION` meter, and a 4-band outcome-probability visualizer. |
-| **GOV** | `CAPITAL · PRESSURE · GUARD` sub-nav. `CLEAR`/`HALT` status typography, the **Simulated Faucet Rail** (deposit / balance-validated withdraw), and the `+ IN` / `- OUT` **Transaction Ledger**. |
-| **MORE** | 2-column holistic module map plus a Balance / Net P/L / Turnover / Win-Rate session overview. |
+| **DESK** | Oracle ticker ribbon, `ResizeObserver`-robust canvas chart with red **HIGH ROLLING WALL** / green **LOW ROLLING WALL** zones, VWAP/POC/BID/ASK reference lines, momentum dots, live CALL/PUT commitment markers with dotted tracking rays and a hover crosshair tooltip; HIGH/LOW/VWAP/POC/REGIME/MICROPRICE foot; plus an order book + microprice panel. |
+| **EXEC** | `ENABLE AUTOPILOT` switch with STATUS / FIRES / GATE / SIZE readouts, the execution rail ticket (expiry / stake / max-open / min-conf, CALL ask-entry, PUT bid-entry), and the lifecycle **Execution Tape**. |
+| **COUNCIL** | `VOTES · CONSENSUS · CHAMBER` sub-nav — Macro/Flow/Gate/Structure vote weights, an aggregate `COUNCIL CONSENSUS` score with a `TENSION` meter, and Support/Resistance/Bull/Bear probability gauges. |
+| **GOV** | `CAPITAL · PRESSURE · GUARD` sub-nav — `CLEAR`/`HALT` status typography, the simulated **testnet faucet rail** (deposit / balance-validated withdraw), the `+ IN` / `- OUT` transfer ledger, and drawdown / exposure / loss-streak pressure metrics. |
+| **MORE** | Balance / Net / Turnover / Win-Rate / Edge / Governor overview plus a holistic module map. |
 
 ## Wallet & Gateway
 
-- On boot with no session key, the layout blurs behind the mandatory
-  **QUADCOM SECURE GATEWAY** modal.
-- `[ SIMULATE WALLET CONNECT ]` mints a random 12-char hex public address
-  (`0x…`, displayed short-form `0x8F2...4A1B`).
-- Storage is isolated per wallet under `quadcom_data_<WALLET_ADDRESS>`; logout
-  wipes the active views but preserves each account dataset.
+- Boot is gated by the blurred **QUADCOM SECURE GATEWAY** modal until a wallet
+  connects.
+- `SIMULATE WALLET CONNECT` mints a random hex public address (optional operator
+  ID is normalized to `0x…`), shown as an `OPR: 0x…` pill with a `LOGOUT` control.
+- Storage is isolated per wallet under `quadcom_data_<ADDRESS>`; the active
+  session key is `quadcom_active_account`. Logout preserves each account dataset.
 - New wallets initialize at **$0.00** — the operator must use the GOV faucet
-  to deposit synthetic liquidity before executions clear.
+  before executions clear.
 
 ## Execution Math
 
-- Opening a ticket debits the stake immediately.
-- Wins credit the stake back plus the 92% payout margin; ties refund the exact
+- Opening a ticket debits the stake immediately and adds to turnover.
+- Wins credit the stake back plus the 92% payout; sub-tick ties refund the exact
   stake; losses forfeit the stake.
-- Settlement is directional versus entry price, so concurrent same-strike
-  hedging always resolves to the institutional spread loss — never a risk-free
-  premium.
+- Settlement is directional versus entry (CALL exits on bid, PUT on ask), so
+  concurrent same-strike hedging resolves to the spread loss — never risk-free.
 
 ## Fault-Tolerant PWA
 
-`sw.js` caches each asset individually and traps every fetch, so a missing
-asset (e.g. `icon-512.png` unavailable over a bare `python -m http.server`)
-is bypassed without rejecting the install or blocking script execution.
+`sw.js` caches each asset individually with per-asset `try/catch`, so a missing
+asset (e.g. `icon-512.png` unavailable over a bare `python -m http.server`) never
+breaks install; the fetch handler is cache-first with a navigation fallback to
+the cached shell.
 
 ## Run locally
 
