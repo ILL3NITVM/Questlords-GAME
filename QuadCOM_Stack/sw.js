@@ -3,7 +3,7 @@
  * is cached individually with per-asset trapping, so a single unresolvable file
  * never rejects install or blocks the pipeline. Cache-first with a navigation
  * fallback to the shell keeps the app fully offline-capable. */
-const CACHE = "quadcom-stack-v1";
+const CACHE = "quadcom-stack-v2";
 const CORE = "./index.html";
 const ASSETS = [
   "./",
@@ -28,11 +28,15 @@ const ASSETS = [
   "./src/engines/governor.js",
   "./src/engines/execution.js",
   "./src/engines/autopilot.js",
+  "./src/engines/analytics.js",
   "./src/ui/chart.js",
   "./src/ui/components.js",
   "./src/ui/render.js",
   "./src/ui/router.js",
   "./src/ui/gateway.js",
+  "./src/ui/toast.js",
+  "./src/ui/theme.js",
+  "./src/ui/sparkline.js",
   "./src/ui/views/desk.js",
   "./src/ui/views/exec.js",
   "./src/ui/views/council.js",

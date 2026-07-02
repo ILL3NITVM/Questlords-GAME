@@ -12,6 +12,13 @@ import { renderMore } from "./views/more.js";
 
 export function createRender(ctx, { wallet }) {
   const { state, settings } = ctx;
+  let prevLast = null, prevBal = null;
+  function flash(el, up) {
+    if (!el) return;
+    el.classList.remove("fl-up", "fl-down");
+    void el.offsetWidth; // force reflow so the animation restarts
+    el.classList.add(up ? "fl-up" : "fl-down");
+  }
 
   function render() {
     const m = state.market, c = state.council, s = settings(), g = governorState(state);
@@ -25,6 +32,10 @@ export function createRender(ctx, { wallet }) {
 
     $("lastTop").textContent = fmt(m.last);
     $("lastTag").textContent = fmt(m.last);
+    if (prevLast !== null && m.last !== prevLast) flash($("lastTop"), m.last > prevLast);
+    prevLast = m.last;
+    if (prevBal !== null && state.metrics.balance !== prevBal) flash($("balanceLine"), state.metrics.balance > prevBal);
+    prevBal = state.metrics.balance;
     const chg = m.last - m.open;
     $("chgTop").textContent = (chg >= 0 ? "+" : "") + fmt(chg);
     $("chgTop").className = `last chg ${chg >= 0 ? "up" : "down"}`;

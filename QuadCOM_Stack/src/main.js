@@ -11,6 +11,9 @@ import { createAutopilot } from "./engines/autopilot.js";
 import { createRender } from "./ui/render.js";
 import { createRouter } from "./ui/router.js";
 import { createGateway } from "./ui/gateway.js";
+import { createToast } from "./ui/toast.js";
+import { createTheme } from "./ui/theme.js";
+import { sampleEquity } from "./engines/analytics.js";
 import { drawChart } from "./ui/chart.js";
 import { now, clamp, $ } from "./util.js";
 
@@ -29,8 +32,11 @@ function log(tag, txt, pnl = 0) {
   if (state.ledger.length > 80) state.ledger.length = 80;
 }
 
+const toast = createToast();
+const theme = createTheme();
+
 // Context passed to every module. render/persist are filled after wiring.
-const ctx = { state, settings, log, render: () => {}, persist: () => {} };
+const ctx = { state, settings, log, toast, render: () => {}, persist: () => {} };
 
 const wallet = createWallet(ctx);
 ctx.persist = wallet.save;
@@ -47,6 +53,7 @@ const feed = createFeed(state);
 function onData() {
   computeCouncil(state, settings().gate);
   execution.settle();
+  if (state.sessionReady) sampleEquity(state);
   render();
   if (state.route === "desk") drawChart(state);
 }
@@ -70,7 +77,17 @@ function bind() {
     const gt = e.target.closest("[data-gov-tab]"); if (gt) { state.govTab = gt.dataset.govTab; render(); }
     if (e.target.closest("#depositBtn")) wallet.faucet("IN");
     if (e.target.closest("#withdrawBtn")) wallet.faucet("OUT");
+    const chip = e.target.closest("[data-stakepct]");
+    if (chip) {
+      const pct = +chip.dataset.stakepct;
+      const v = Math.max(1, Math.round(state.metrics.balance * pct));
+      $("stake").value = v.toFixed(2);
+      render();
+      toast(`Stake set ${pct === 1 ? "MAX" : (pct * 100) + "%"} · $${v.toFixed(2)}`, "");
+    }
   });
+  const logo = document.querySelector(".mark");
+  if (logo) { logo.style.cursor = "pointer"; logo.title = "Tap to cycle accent theme"; logo.addEventListener("click", () => toast("Theme · " + theme.cycle(), "")); }
   document.addEventListener("input", e => { if (e.target.id === "transferAmount") state.transferDraft = e.target.value; });
   const stage = $("stage");
   stage.addEventListener("pointermove", e => { const r = stage.getBoundingClientRect(); state.pointer = { x: e.clientX - r.left, y: e.clientY - r.top }; drawChart(state); });
@@ -91,6 +108,7 @@ async function registerSw() {
 function init() {
   const standalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
   state.mode = standalone ? "PWA" : "BROWSER";
+  theme.init();
   bind();
   if (wallet.restore()) gateway.hide(); else gateway.show();
   feed.start(onData);

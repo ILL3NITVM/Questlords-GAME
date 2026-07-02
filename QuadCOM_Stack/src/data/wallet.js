@@ -11,6 +11,7 @@ const adapter = MODE.LIVE ? liveWallet : simWallet;
 
 export function createWallet(ctx) {
   const { state, log, render } = ctx;
+  const toast = ctx.toast || (() => {});
 
   const dataKey = () => (state.accountId ? STORAGE.prefix + state.accountId : null);
   const label = (id = state.accountId) => (id ? `OPR: ${id.slice(0, 5)}...${id.slice(-4)}` : "OPR: LOCKED");
@@ -72,17 +73,19 @@ export function createWallet(ctx) {
   function faucet(side) {
     if (!state.sessionReady) return;
     const amount = Number(parseFloat(state.transferDraft).toFixed(2));
-    if (!Number.isFinite(amount) || amount <= 0) { log("WALLET", "invalid transfer amount"); render(); return; }
-    if (side === "OUT" && amount > state.metrics.balance) { log("WALLET", "withdraw exceeds available balance"); save(); render(); return; }
+    if (!Number.isFinite(amount) || amount <= 0) { log("WALLET", "invalid transfer amount"); toast("Enter an amount > 0", "err"); render(); return; }
+    if (side === "OUT" && amount > state.metrics.balance) { log("WALLET", "withdraw exceeds available balance"); toast("Withdraw exceeds balance", "err"); save(); render(); return; }
     if (side === "IN") {
       state.metrics.balance += amount;
       state.transfers.unshift({ t: now(), side: "IN", amount, balance: state.metrics.balance });
       state.metrics.peakEquity = Math.max(Number(state.metrics.peakEquity) || 0, state.metrics.balance);
       log("IN", `${MODE.LIVE ? "faucet" : "testnet faucet"} deposit ${money(amount)}`);
+      toast(`Faucet +${money(amount)}`, "ok");
     } else {
       state.metrics.balance -= amount;
       state.transfers.unshift({ t: now(), side: "OUT", amount, balance: state.metrics.balance });
       log("OUT", `wallet withdrawal ${money(amount)}`);
+      toast(`Withdraw -${money(amount)}`, "ok");
     }
     if (state.transfers.length > 80) state.transfers.length = 80;
     save(); render();

@@ -14,6 +14,7 @@ import { equity } from "./account.js";
 
 export function createExecution(ctx) {
   const { state, log, persist, render, settings } = ctx;
+  const toast = ctx.toast || (() => {});
 
   async function submitLive(order) {
     // Real-venture seam. Fire-and-reconcile; never blocks the local ledger.
@@ -24,9 +25,9 @@ export function createExecution(ctx) {
 
   function open(dir, src) {
     const s = settings();
-    if (!state.sessionReady) { log("BLOCK", "gateway locked"); return; }
-    if (state.positions.length >= s.slots) { log("MAX", `open ${state.positions.length}/${s.slots}`); return; }
-    if (state.metrics.balance < s.stake) { log("CASH", "stake unavailable"); return; }
+    if (!state.sessionReady) { log("BLOCK", "gateway locked"); toast("BLOCKED · gateway locked", "err"); return; }
+    if (state.positions.length >= s.slots) { log("MAX", `open ${state.positions.length}/${s.slots}`); toast(`BLOCKED · max ${s.slots} open`, "err"); return; }
+    if (state.metrics.balance < s.stake) { log("CASH", "stake unavailable"); toast("BLOCKED · fund via GOV faucet", "err"); return; }
     state.metrics.balance -= s.stake;
     state.metrics.turnover += s.stake;
     state.lastAuto = Date.now();
@@ -38,6 +39,7 @@ export function createExecution(ctx) {
     state.positions.push(p);
     if (MODE.LIVE) submitLive({ side: dir, price: entry, stake: s.stake, expiry: s.expiry });
     log(dir, `${src} ${dir} @ ${fmt(entry)} stake ${money(s.stake)} debited`);
+    toast(`${dir} @ ${fmt(entry)} · -${money(s.stake)}`, dir === "CALL" ? "ok" : "err");
     persist(); render();
   }
 
@@ -55,6 +57,10 @@ export function createExecution(ctx) {
       else { state.metrics.losses++; state.metrics.lossStreak++; }
       state.metrics.closed++; state.metrics.balance += credit;
       state.ledger.unshift({ t: now(), tag: out, txt: `${p.dir} ${fmt(delta)} pnl ${money(pnl)}`, pnl });
+      // Chart history marker (mapped by open timestamp so it survives buffer scroll).
+      state.tradeHistory.push({ t: p.opened, entry: p.entry, close, dir: p.dir, out, pnl });
+      if (state.tradeHistory.length > 60) state.tradeHistory.shift();
+      toast(`${out} · ${p.dir} ${(pnl >= 0 ? "+" : "") + money(pnl)}`, out === "WIN" ? "ok" : out === "LOSS" ? "err" : "");
       changed = true;
     }
     state.positions = keep;

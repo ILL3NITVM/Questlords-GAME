@@ -91,6 +91,31 @@ export function drawChart(state) {
   });
   ctx.restore();
 
+  // Past trade-order history markers — mapped by open timestamp so they hold
+  // their real chart position as the tick buffer scrolls; skipped once aged out.
+  if (state.tradeHistory && state.tradeHistory.length) {
+    const t0 = data[0].t, tN = data[data.length - 1].t, tSpan = (tN - t0) || 1;
+    const outCol = { WIN: "#2ecc71", LOSS: "#ef4d3f", REFUND: "#f0a43a" };
+    state.tradeHistory.forEach(hh => {
+      if (hh.t < t0) return;
+      const x = L + clamp((hh.t - t0) / tSpan, 0, 1) * cw, y = yAt(hh.entry);
+      const col = outCol[hh.out] || "#7a8494";
+      ctx.save();
+      ctx.globalAlpha = .85;
+      ctx.strokeStyle = col; ctx.fillStyle = col; ctx.lineWidth = 1;
+      const s = 3;
+      ctx.beginPath(); // diamond marker at entry
+      ctx.moveTo(x, y - s); ctx.lineTo(x + s, y); ctx.lineTo(x, y + s); ctx.lineTo(x - s, y); ctx.closePath();
+      if (hh.out === "WIN") ctx.fill(); else ctx.stroke();
+      // tiny dir notch above/below the diamond
+      ctx.beginPath();
+      if (hh.dir === "CALL") { ctx.moveTo(x, y - s - 3); ctx.lineTo(x - 2, y - s); ctx.lineTo(x + 2, y - s); }
+      else { ctx.moveTo(x, y + s + 3); ctx.lineTo(x - 2, y + s); ctx.lineTo(x + 2, y + s); }
+      ctx.closePath(); ctx.fill();
+      ctx.restore();
+    });
+  }
+
   state.positions.forEach(p => {
     const idx = clamp(p.idx - (state.ticks.length - data.length), 0, data.length - 1), x = xAt(idx), y = yAt(p.entry);
     const col = p.dir === "CALL" ? (varGet("--green") || "#2ecc71") : (varGet("--red") || "#ef4d3f");

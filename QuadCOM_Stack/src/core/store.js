@@ -44,8 +44,10 @@ export function createState() {
 
     // ---- Account (persisted, wallet-scoped) ----
     positions: [],
+    tradeHistory: [],   // closed-trade markers for the chart (session-only)
     ledger: [],
     transfers: [],
+    equityCurve: [],
     metrics: defaultMetrics()
   };
 }
@@ -57,8 +59,10 @@ export function resetAccountState(state) {
   state.autoStatus = "OFF";
   state.autoFires = 0;
   state.positions = [];
+  state.tradeHistory = [];
   state.ledger = [];
   state.transfers = [];
+  state.equityCurve = [];
   state.metrics = defaultMetrics();
   state.transferDraft = "250.00";
 }

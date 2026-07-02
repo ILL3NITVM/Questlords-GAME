@@ -18,3 +18,7 @@
   --amber:#f0a43a;
   --font:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
 }
+
+/* Accent themes — recolor the gold accent tokens (tap logo to cycle). */
+:root[data-theme="ice"]{--gold:#4aa8ff;--gold2:#8fd0ff}
+:root[data-theme="magma"]{--gold:#ff8a3d;--gold2:#ffb066}
