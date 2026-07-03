@@ -9,6 +9,15 @@ function timerStr(ms) {
   return (h ? h + ":" : "") + String(m).padStart(2, "0") + ":" + String(ss).padStart(2, "0");
 }
 
+/* Phase 10: crowd pressure distribution bar. */
+function crowdBar(state) {
+  const c = state.crowd, total = c.call + c.put + c.hold;
+  if (!total) return `<div class="lv-crowdbar empty">CROWD PRESSURE · awaiting votes</div>`;
+  const pc = v => (v / total * 100).toFixed(1);
+  return `<div class="lv-crowdbar"><i class="c" style="width:${pc(c.call)}%"></i><i class="h" style="width:${pc(c.hold)}%"></i><i class="p" style="width:${pc(c.put)}%"></i>
+    <span>CROWD · ${total} vote${total === 1 ? "" : "s"} · CALL ${pc(c.call)}% / HOLD ${pc(c.hold)}% / PUT ${pc(c.put)}%</span></div>`;
+}
+
 export function renderLive(state, ctx) {
   const host = $("liveOverlay");
   if (!host) return;
@@ -56,6 +65,12 @@ export function renderLive(state, ctx) {
       : "LAST RESOLVED · <b>awaiting first lab resolution</b>"}</div>
 
     <div class="lv-vote-prompt">Vote the tape: <b>CALL</b>, <b>PUT</b>, or <b>HOLD</b>.</div>
+    <div class="lv-crowd">
+      <button class="lv-cbtn call" type="button" data-act="crowd:CALL">CALL<small>${state.crowd.call}</small></button>
+      <button class="lv-cbtn hold" type="button" data-act="crowd:HOLD">HOLD<small>${state.crowd.hold}</small></button>
+      <button class="lv-cbtn put" type="button" data-act="crowd:PUT">PUT<small>${state.crowd.put}</small></button>
+    </div>
+    ${crowdBar(state)}
     <div class="lv-hero2">${BRAND.hero2}</div>
 
     <div class="lv-foot">${SAFETY}</div>

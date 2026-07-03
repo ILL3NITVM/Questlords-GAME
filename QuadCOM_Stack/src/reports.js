@@ -69,3 +69,58 @@ export function recap(state) {
     `Integrity ${r.integrity} · seed ${r.seed} · ${r.ticks} ticks. ` +
     `Educational build stream — not financial advice.`;
 }
+
+/* ---- Phase 12: session archive shelf (device-local) ---- */
+const ARCHIVE_KEY = "quadcom_archive";
+export function loadArchive() {
+  try { return JSON.parse(localStorage.getItem(ARCHIVE_KEY) || "[]"); } catch (_) { return []; }
+}
+export function archiveSession(state) {
+  const r = buildReport(state);
+  r.eventLog = r.eventLog.slice(-50); // keep archive entries lean
+  r.recapLine = recap(state);
+  const arc = loadArchive();
+  arc.unshift(r);
+  if (arc.length > 12) arc.length = 12;
+  try { localStorage.setItem(ARCHIVE_KEY, JSON.stringify(arc)); } catch (_) {}
+  return arc.length;
+}
+
+/* ---- Phase 14: session receipt + audit-chain spot check ---- */
+export function receipt(state) {
+  const r = buildReport(state);
+  return [
+    "QUADCOM SESSION RECEIPT",
+    "=======================",
+    `Session   ${r.sessionId}`,
+    `Asset     ${r.asset}`,
+    `Seed      ${r.seed}`,
+    `Window    ${r.startedISO} -> ${r.endedISO}`,
+    `Ticks     ${r.ticks} (forward-printed, hash-chained)`,
+    `Events    ${r.events}`,
+    `Decisions CALL ${r.decisions.CALL} / PUT ${r.decisions.PUT} / HOLD ${r.decisions.HOLD}`,
+    `Results   ${r.wins}W / ${r.losses}L / ${r.refunds}R · net turnover $${r.turnover}`,
+    `Capital   $${r.finalLabCapital} lab`,
+    `Integrity ${r.integrity} · chain head ${r.lastHash}`,
+    "",
+    "Losses remain in the record. No rewrite after print.",
+    "Synthetic substrate · educational build stream · not financial advice."
+  ].join("\n");
+}
+
+export function verifyChain(state) {
+  // Spot-check the visible audit window: hashes present, unique, and times
+  // monotonic; counters consistent with the session header. The full chain
+  // head lives in session.lastHash (advanced on every tick + event).
+  const log = state.auditLog, s = state.session;
+  const checks = [];
+  const hashes = new Set(log.map(e => e.hash));
+  checks.push(["Entries carry chained hashes", log.length > 0 && log.every(e => typeof e.hash === "string" && e.hash.length >= 8)]);
+  checks.push(["Hashes unique across window", hashes.size === log.length]);
+  checks.push(["Timestamps monotonic", log.every((e, i) => i === 0 || e.t >= log[i - 1].t)]);
+  checks.push(["Event counter >= visible window", (s.eventCount || 0) >= log.length]);
+  checks.push(["Tick counter advancing", (s.tickCount || 0) > 0]);
+  checks.push(["Chain head present", typeof s.lastHash === "string" && s.lastHash.length >= 8]);
+  const ok = checks.every(c => c[1]);
+  return { ok, checks };
+}

@@ -51,6 +51,7 @@ export function createState() {
     settings: defaultSettings(),
     waitlist: [],
     oracleLast: null,    // last resolved lab outcome for the broadcast card
+    crowd: { call: 0, put: 0, hold: 0 },   // Phase 10: LIVE crowd vote tallies
 
     // ---- Market data (feed-populated) ----
     ticks: [],

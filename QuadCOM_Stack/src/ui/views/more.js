@@ -64,6 +64,7 @@ export function renderMore(state, ctx) {
   <div class="module-map">
     ${card("page:fairness", "Fairness", state.session ? `${state.session.tickCount} ticks chained` : "—", "audit - seed - hash")}
     ${card("page:reports", "Reports", `${state.session ? state.session.eventCount : 0} events`, "json - csv - recap")}
+    ${card("page:replay", "Replay Lab", `${state.ticks.length} prints on record`, "scrub - play - read-only")}
     ${card("page:sharekit", "Share Kit", BRAND.vote, "titles - invites - captions")}
     ${card("page:business", "Business", "Access & watchlist", "lite - pro - demo")}
     ${card("page:settings", "Settings", `${state.asset.symbol}`, "asset - speed - data")}

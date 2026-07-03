@@ -50,6 +50,7 @@ function bootSession(seed) {
   state.auditLog = [];
   state.tradeHistory = [];
   state.oracleLast = null;
+  state.crowd = { call: 0, put: 0, hold: 0 };
 }
 bootSession();
 const audit = createAudit(state);
@@ -166,6 +167,8 @@ function sampleProduct() {
 
 /* ---- one data cycle ---- */
 function onData() {
+  // Phase 16: skip paint work while the tab is hidden (tape + audit continue).
+  if (document.hidden) { computeCouncil(state, settings().gate); execution.settle(); sampleProduct(); if (state.sessionReady) sampleEquity(state); return; }
   computeCouncil(state, settings().gate);
   const before = state.metrics.closed;
   execution.settle();
@@ -221,6 +224,15 @@ function bind() {
     if (actEl) {
       const act = actEl.dataset.act;
       if (act === "exit-live") product.toggleLive();
+      else if (act.startsWith("crowd:")) {
+        const side = act.slice(6).toLowerCase();
+        if (state.crowd[side] !== undefined) {
+          state.crowd[side]++;
+          audit.event("CROWD_VOTE", { side: side.toUpperCase() });
+          beep(side === "call" ? 760 : side === "put" ? 500 : 620, 0.05);
+          render();
+        }
+      }
       else handlePageAction(act, state, ctx);
     }
   });
@@ -232,6 +244,33 @@ function bind() {
     if (e.target.id === "setAsset") product.switchAsset(e.target.value);
     if (e.target.id === "setIntensity") product.setSetting("themeIntensity", e.target.value);
     if (e.target.id === "setTick") product.setSetting("tickSpeed", clamp(parseInt(e.target.value, 10) || 650, 120, 4000));
+    if (e.target.id === "setPreset" && e.target.value) {
+      // Phase 13: doctrine gate presets — visible, logged, reversible.
+      const presets = { strict: { gate: 75, slots: 1 }, standard: { gate: 62, slots: 2 }, aggressive: { gate: 55, slots: 4 } };
+      const pz = presets[e.target.value];
+      if (pz) {
+        $("gate").value = pz.gate; $("slots").value = pz.slots;
+        audit.event("SETTINGS_CHANGED", { key: "doctrinePreset", val: e.target.value });
+        toast(`Doctrine · ${e.target.value.toUpperCase()} (gate ${pz.gate}, ${pz.slots} slot${pz.slots > 1 ? "s" : ""})`, "ok");
+        render();
+      }
+    }
+  });
+  document.addEventListener("input", e => {
+    if (e.target.id === "replayScrub") {
+      import("./ui/pages.js").then(mod => mod.drawReplay(state, +e.target.value));
+    }
+  });
+
+  // Phase 16: keyboard shortcuts (desktop) — never while typing.
+  document.addEventListener("keydown", e => {
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    const k = e.key.toLowerCase();
+    if (k === "c") execution.open("CALL", "MANUAL");
+    else if (k === "p") execution.open("PUT", "MANUAL");
+    else if (k === "a") { state.armed = !state.armed; log("ARM", state.armed ? "lab armed" : "lab idle"); render(); }
+    else if (k === "l") product.toggleLive();
+    else if (k === "escape" && state.page) { state.page = null; render(); }
   });
 
   const logo = document.querySelector(".mark");

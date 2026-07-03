@@ -112,12 +112,19 @@ public posture is lab-only.
 - The audit hash chain is integrity-evident, not cryptographically signed.
 - Live-adapter seams (`liveFeed`, `liveWallet`) are wiring points, not enabled.
 
+## Phase log (8–17) — shipped
+
+Responsive shell (desktop left rail + two-column desk) · regime timeline ·
+LIVE crowd voting with audit · replay lab · session archive shelf · doctrine
+gate presets · session receipts + chain verification · sibling watch strip ·
+hidden-tab paint pause + keyboard shortcuts (C/P/A/L/Esc) · 19-check
+acceptance battery. See CHANGELOG.md.
+
 ## Next phase roadmap
 
-1. Crowd vote capture (poll overlay + tallied crowd pressure feed).
-2. Session archive shelf (multi-session history + comparisons).
-3. Signed session receipts and shareable session pages.
-4. Multi-desk layout (two assets side by side).
-5. Creator dashboards (custom doctrine + gate presets).
+1. Crowd vote feed as a council input (crowd pressure weight).
+2. Shareable public session pages from archived receipts.
+3. Two-asset split desk (simultaneous tapes).
+4. Creator doctrine editor (custom laws + gate curves).
 
 Ever Next Phase.

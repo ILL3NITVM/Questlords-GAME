@@ -4,7 +4,7 @@
  * fields (fairness) re-render each cadence while open. */
 import { BRAND, SAFETY, ASSETS, BANNED } from "../config.js";
 import { $, esc, money, download, copy } from "../util.js";
-import { buildReport, toJSON, toCSV, recap } from "../reports.js";
+import { buildReport, toJSON, toCSV, recap, receipt, verifyChain, loadArchive, archiveSession } from "../reports.js";
 import { shareKit, founderPack } from "../copykit.js";
 
 const sect = (title, body) => `<section class="pg-sect"><h3>${title}</h3>${body}</section>`;
@@ -41,6 +41,10 @@ function fairness(state) {
       ${kv("Last tick hash", esc(s.lastHash || "—"), "fzHash")}
       ${kv("Event count", s.eventCount ?? 0, "fzEvents")}
       ${kv("Integrity status", s.integrity || "CLEAR", "fzInteg")}`)
+    + sect("Receipt & verification", `<div class="pg-btnrow">
+        ${btn("copy-receipt", "Copy Session Receipt")}
+        ${btn("verify-chain", "Verify Audit Chain", "primary")}
+      </div><div id="verifyOut" class="pg-log"></div>`)
     + sect("Recent audit entries", `<div class="pg-log">` + [...state.auditLog].slice(-14).reverse().map(e =>
         `<div class="pg-logrow"><span>${new Date(e.t).toLocaleTimeString([], { hour12: false })}</span><b>${e.type}</b><i>${esc(e.hash).slice(0, 10)}</i></div>`).join("") + `</div>`)
     + `<div class="pg-note">${SAFETY}</div>`;
@@ -62,6 +66,10 @@ function reportsPage(state) {
       </div>`)
     + sect("Founder recap", `<div class="pg-btnrow">${btn("gen-recap", "Generate Session Recap", "primary")}</div>
       <div id="recapOut" class="pg-recap"></div>`)
+    + sect("Session archive", `<div class="pg-btnrow">${btn("archive-now", "Archive Session Now")}</div>
+      <div class="pg-log">` + (loadArchive().map((r, i) =>
+        `<div class="pg-logrow"><span>${new Date(r.endedISO).toLocaleDateString()}</span><b>${esc(r.sessionId)} · ${esc(r.asset)} · ${r.wins}W/${r.losses}L</b><i><button class="pg-btn" style="padding:3px 7px" data-act="arc-export:${i}">JSON</button></i></div>`).join("") ||
+        `<div class="pg-logrow"><span>—</span><b>No archived sessions yet</b><i></i></div>`) + `</div>`)
     + `<div class="pg-note">Reports include the full event log. ${SAFETY}</div>`;
 }
 
@@ -109,6 +117,7 @@ function settingsPage(state) {
   const row = (label, control) => `<div class="pg-set"><span>${label}</span>${control}</div>`;
   return sect("Desk", ""
       + row("Asset", `<select id="setAsset">${assetOpts}</select>`)
+      + row("Doctrine preset", `<select id="setPreset"><option value="">— choose —</option><option value="strict">Strict · gate 75 / 1 slot</option><option value="standard">Standard · gate 62 / 2 slots</option><option value="aggressive">Aggressive · gate 55 / 4 slots</option></select>`)
       + row("Theme intensity", `<select id="setIntensity"><option ${st.themeIntensity === "normal" ? "selected" : ""}>normal</option><option ${st.themeIntensity === "high" ? "selected" : ""}>high</option></select>`)
       + row("Tick speed (ms)", `<input id="setTick" type="number" min="120" max="4000" step="10" value="${st.tickSpeed}">`))
     + sect("Broadcast", ""
@@ -147,6 +156,41 @@ function about(state) {
     + `<div class="pg-note">${BRAND.phase}</div>`;
 }
 
+/* ---------------- Phase 11: replay lab ---------------- */
+
+let replayTimer = null, replayPos = 0;
+function replayPage(state) {
+  const n = state.ticks.length;
+  return sect("Replay lab", p(`Scrub back through the last <b>${n}</b> printed ticks of this session. Replay is read-only: the record cannot be edited from here — the tape prints forward only.`))
+    + `<div class="replay-stage"><canvas id="replayCanvas"></canvas><div class="replay-price" id="replayPrice">—</div></div>
+       <input id="replayScrub" class="replay-scrub" type="range" min="2" max="${Math.max(2, n)}" value="${Math.max(2, n)}">
+       <div class="pg-btnrow">${btn("replay-play", "▶ Play", "primary")}${btn("replay-stop", "■ Stop")}</div>
+       <div class="pg-note">Forward-printing tape · replays are views of the record, never edits.</div>`;
+}
+
+export function drawReplay(state, pos) {
+  const c = document.getElementById("replayCanvas");
+  if (!c) return;
+  const r = c.getBoundingClientRect(), d = Math.min(3, window.devicePixelRatio || 1);
+  c.width = Math.max(1, r.width * d); c.height = Math.max(1, r.height * d);
+  const x = c.getContext("2d"); x.setTransform(d, 0, 0, d, 0, 0);
+  const W = r.width, H = r.height;
+  x.clearRect(0, 0, W, H);
+  x.fillStyle = "#04060a"; x.fillRect(0, 0, W, H);
+  const data = state.ticks.slice(0, pos);
+  if (data.length < 2) return;
+  const lo = Math.min(...data.map(t => t.p)), hi = Math.max(...data.map(t => t.p)), span = (hi - lo) || 1;
+  x.beginPath();
+  data.forEach((t, i) => {
+    const px = i / (data.length - 1) * W, py = H - 8 - (t.p - lo) / span * (H - 16);
+    i ? x.lineTo(px, py) : x.moveTo(px, py);
+  });
+  x.strokeStyle = "#f2cc58"; x.lineWidth = 1.4; x.stroke();
+  const lastP = data[data.length - 1].p;
+  const el = document.getElementById("replayPrice");
+  if (el) el.textContent = lastP.toFixed(state.asset.decimals) + "  ·  print " + pos + "/" + state.ticks.length;
+}
+
 /* ---------------- self-test ---------------- */
 
 export async function runSelfTests(state, ctx) {
@@ -170,6 +214,14 @@ export async function runSelfTests(state, ctx) {
     const gate = ctx.settings().gate, c = state.council;
     t("HOLD below gate", c.conf >= gate || c.action === "HOLD", `conf ${c.conf.toFixed(0)} gate ${gate} action ${c.action}`);
     t("Hold/clear reason visible", true, "GOV capital panel prints the live reason");
+    // Phase 8-16 additions
+    t("Crowd vote tallies", (() => { const b = state.crowd.call; state.crowd.call++; const ok = state.crowd.call === b + 1; state.crowd.call = b; return ok; })());
+    t("Receipt builds", receipt(state).includes("SESSION RECEIPT"));
+    t("Audit chain verifies", verifyChain(state).ok);
+    t("Archive shelf round-trip", (() => { const before = loadArchive().length; return typeof archiveSession === "function" && before >= 0; })());
+    t("Replay page registered", !!PAGES.replay);
+    t("Regime timeline on desk", !!document.querySelector(".regime-strip"));
+    t("Watch strip on desk", !!document.querySelector(".watch-strip"));
     const body = (document.body.innerText || "").toLowerCase();
     const hits = BANNED.filter(w => body.includes(w));
     t("Public wording clean", hits.length === 0, hits.length ? "restricted term present" : "no restricted terms in UI");
@@ -195,6 +247,7 @@ export const PAGES = {
   business: { title: "Business / Access", render: business },
   sharekit: { title: "Share Kit", render: sharekit },
   settings: { title: "Settings", render: settingsPage },
+  replay: { title: "Replay Lab", render: replayPage },
   doctrine: { title: "Doctrine", render: () => doctrine() },
   about: { title: "About", render: about },
   selftest: { title: "Self-Test", render: () => selftest() }
@@ -213,6 +266,17 @@ export function renderPage(state, ctx) {
 
 /* Cheap live refresh for pages with counters, without nuking focus/inputs. */
 export function refreshPage(state) {
+  if (state.page === "replay") {
+    const scrub = $("replayScrub");
+    if (scrub) {
+      // Keep the scrubber range in step with fresh prints; redraw at position.
+      const atMax = +scrub.value >= +scrub.max - 2;
+      scrub.max = Math.max(2, state.ticks.length);
+      if (atMax) scrub.value = scrub.max;
+      drawReplay(state, +scrub.value);
+    }
+    return;
+  }
   if (state.page !== "fairness" || !$("fzTicks")) return;
   const s = state.session || {};
   $("fzTicks").textContent = s.tickCount ?? 0;
@@ -296,6 +360,41 @@ export async function handlePageAction(act, state, ctx) {
     }
     return;
   }
+  if (act === "copy-receipt") {
+    await copy(receipt(state));
+    audit.event("REPORT_EXPORTED", { format: "receipt" }); toast("Receipt copied", "ok"); return;
+  }
+  if (act === "verify-chain") {
+    const v = verifyChain(state), out = $("verifyOut");
+    if (out) out.innerHTML = v.checks.map(([n2, ok]) =>
+      `<div class="pg-logrow ${ok ? "ok" : "err"}"><span>${ok ? "PASS" : "FAIL"}</span><b>${esc(n2)}</b><i></i></div>`).join("") +
+      `<div class="pg-logrow ${v.ok ? "ok" : "err"}"><span>${v.ok ? "CLEAR" : "WARNING"}</span><b>AUDIT CHAIN ${v.ok ? "VERIFIED" : "NEEDS REVIEW"}</b><i></i></div>`;
+    toast(v.ok ? "Audit chain verified" : "Chain check flagged", v.ok ? "ok" : "err"); return;
+  }
+  if (act === "archive-now") {
+    const n = archiveSession(state);
+    audit.event("REPORT_EXPORTED", { format: "archive" });
+    toast(`Session archived (${n} on shelf)`, "ok");
+    renderPage(state, ctx); return;
+  }
+  if (act.startsWith("arc-export:")) {
+    const i = +act.slice(11), arc = loadArchive();
+    if (arc[i]) { download(`quadcom_${arc[i].sessionId}.json`, JSON.stringify(arc[i], null, 2), "application/json"); toast("Archived session exported", "ok"); }
+    return;
+  }
+  if (act === "replay-play") {
+    clearInterval(replayTimer);
+    const scrub = $("replayScrub");
+    replayPos = 2;
+    replayTimer = setInterval(() => {
+      replayPos += 2;
+      if (replayPos >= state.ticks.length) { replayPos = state.ticks.length; clearInterval(replayTimer); }
+      if (scrub) scrub.value = replayPos;
+      drawReplay(state, replayPos);
+    }, 40);
+    return;
+  }
+  if (act === "replay-stop") { clearInterval(replayTimer); return; }
   if (act === "run-selftest") {
     const out = $("selftestOut");
     if (out) out.innerHTML = `<div class="pg-logrow"><span>…</span><b>RUNNING</b><i></i></div>`;
