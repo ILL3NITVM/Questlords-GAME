@@ -1,14 +1,17 @@
 /* Council engine — derives the vote chamber from market + book. Source
  * agnostic: works identically for synthetic and live feeds. */
-import { TICK } from "../config.js";
 import { clamp } from "../util.js";
 
 export function computeCouncil(state, gate) {
-  const m = state.market, range = Math.max(TICK, m.high - m.low);
-  const loc = (m.last - m.low) / range, comp = clamp(100 - range / 4.2, 0, 100);
-  const flow = clamp(50 + m.momentum / 4 + m.imb * 22, 0, 100);
-  const macro = clamp(50 + (m.vwap - m.poc) * .12 + (m.last - m.vwap) * .04, 0, 100);
-  const retail = clamp(50 + (loc - .5) * -55 + (m.poc - m.last) * .06, 0, 100);
+  // Tick-normalized (Phase 7C): all pressure terms are expressed in ticks so
+  // the same council math reads every harvested instrument, from SBCI.FX16
+  // (tick 0.00001) to US30.SYN (tick 1).
+  const tick = (state.asset && state.asset.tick) || 0.5;
+  const m = state.market, range = Math.max(tick, m.high - m.low);
+  const loc = (m.last - m.low) / range, comp = clamp(100 - range / (tick * 8.4), 0, 100);
+  const flow = clamp(50 + m.momentum / (tick * 8) + m.imb * 22, 0, 100);
+  const macro = clamp(50 + ((m.vwap - m.poc) / tick) * .06 + ((m.last - m.vwap) / tick) * .02, 0, 100);
+  const retail = clamp(50 + (loc - .5) * -55 + ((m.poc - m.last) / tick) * .03, 0, 100);
   const gateW = clamp(60 + comp * .18 - Math.abs(m.imb) * 8, 0, 100);
   const callScore = (flow + macro + gateW + (100 - retail)) / 4;
   const putScore = ((100 - flow) + (100 - macro) + gateW + retail) / 4;

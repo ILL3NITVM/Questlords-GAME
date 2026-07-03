@@ -101,7 +101,11 @@ function sharekit(state) {
 
 function settingsPage(state) {
   const st = state.settings;
-  const assetOpts = Object.keys(ASSETS).map(k => `<option ${k === state.asset.symbol ? "selected" : ""}>${k}</option>`).join("");
+  // Grouped by family (harvested 42-instrument catalog).
+  const fams = {};
+  for (const k of Object.keys(ASSETS)) (fams[ASSETS[k].family || "OTHER"] ||= []).push(k);
+  const assetOpts = Object.keys(fams).map(f =>
+    `<optgroup label="${f}">` + fams[f].map(k => `<option ${k === state.asset.symbol ? "selected" : ""}>${k}</option>`).join("") + `</optgroup>`).join("");
   const row = (label, control) => `<div class="pg-set"><span>${label}</span>${control}</div>`;
   return sect("Desk", ""
       + row("Asset", `<select id="setAsset">${assetOpts}</select>`)

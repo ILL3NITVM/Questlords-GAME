@@ -1,0 +1,35 @@
+QUADCOM PHASE 7C — COMPONENT HARVEST REPORT
+=============================================
+PREDECESSOR USED   uploads/QuadCOMv40Complete.tar.gz (v19 app layer + backend)
+                   (Brief's Windows paths are unavailable in this workspace;
+                   the uploaded archive is the predecessor, QuadCOM_Stack/ the
+                   clean chassis. No Python/Pocket Option code exists in the
+                   archive — it is the JS desk lineage.)
+
+HARVESTED          1) 42-instrument synthetic catalog -> src/data/instruments.js
+                      (FX, FX_INDEX, METAL, CRYPTO, INDEX, ENERGY, AGRI, BOND,
+                      VOL) now drives config.ASSETS + family-grouped selector.
+                   2) BinanceConnector websocket logic -> src/data/liveFeed.js
+                      behind the MODE.LIVE seam. Read-only market data only;
+                      no order placement path; ships disabled.
+
+REJECTED           billing SQLite runtime state (+wal/shm), env values, nested
+                   backup tar, unverified ML engines, Stripe backend (posture:
+                   no payments), legacy runtime.
+
+CHASSIS UPGRADES   council/chart/execution math tick-normalized so one engine
+                   reads every harvested instrument (SBCI 5-dec FX ... US30).
+
+SAFETY PRESERVED   lab-only execution, forward-printing hash-chained audit,
+                   losses stay recorded, restricted-terms scan green,
+                   MODE.LIVE=false, zero runtime state copied.
+
+TESTS              node --check: all modules clean. Browser: asset switching
+                   across 5 families at correct decimals, FX lab lifecycle
+                   resolves with LAB_ENTRY audit events, acceptance self-tests
+                   12/12 PASS, 0 console errors.
+
+BLOCKER            none.
+NEXT PHASE         7D — RegimeDetectionEngine harvest into Pro analytics;
+                   crowd vote capture for LIVE mode.
+Ever Next Phase.

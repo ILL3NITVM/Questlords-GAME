@@ -1,0 +1,31 @@
+QUADCOM PHASE 7C — COMPONENT HARVEST PLAN (latest)
+====================================================
+1  SOURCE DIRECTORY CHOSEN
+   uploads/QuadCOMv40Complete.tar.gz -> QuadCOM_Full_App_ToolIndicators_Instruments_v19/
+   (Windows predecessor paths from the brief are unavailable in this Linux
+   workspace; the uploaded v40 package IS the predecessor. Target chassis:
+   QuadCOM_Stack/ — the tested, audited ES-module front-end in this repo.)
+
+2  CANDIDATES FOUND        see predecessor_inventory_latest.json
+3  WHAT THEY DO            instrument catalog; live read-only market-data
+                           connectors; regime/ML engines; Stripe billing backend
+4  MATURE / WORKING        instruments.js, BinanceConnector.js, DeribitConnector.js
+5  DANGEROUS / STALE       quadcom_billing.db(+wal/shm), env values, nested backup tar
+6  TARGET DUPLICATES/STUBS QuadCOM_Stack src/config.js ASSETS (3 hand-typed assets)
+                           duplicates instruments.js; src/data/liveFeed.js is a
+                           wiring stub that BinanceConnector already implements.
+7  COMPONENTS TO HARVEST   H1 instruments.js  -> src/data/instruments.js (pure data,
+                              provenance header) + config ASSETS built from it
+                           H2 BinanceConnector logic -> src/data/liveFeed.js
+                              (adapter pattern: keep module name/API, proven
+                              internals, MODE.LIVE still ships false)
+8  DO NOT COPY             billing DB + wal/shm, env values, legacy runtime,
+                           nested backups, ML engines (unverified)
+9  INTEGRATION STRATEGY    adapter pattern; tick-normalize council/chart/
+                           execution math so the whole catalog prints correctly;
+                           keep all safety gates: lab-only execution, forward-
+                           printing audit chain, no broker execution path,
+                           restricted-terms scan stays green
+10 TESTS TO RUN            node --check all modules; browser drive: boot, asset
+                           switch across families (BTC/XAU/SBCI), 12 built-in
+                           acceptance self-tests, 0 console errors

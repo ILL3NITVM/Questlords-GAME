@@ -32,13 +32,25 @@ export const PAYOUT = 0.92;
 export const CADENCE_MS = 650;
 export const AUTO_MS = 1000;
 
-/* Selectable synthetic instruments (educational substrate — not real markets). */
-export const ASSETS = {
-  "BTC/USD.SYN": { symbol: "BTC/USD.SYN", long: "Bitcoin Synthetic / Perpetual Core", base: 64500, tick: 0.5, min: 62000, max: 67000, decimals: 2 },
-  "ETH/USD.SYN": { symbol: "ETH/USD.SYN", long: "Ethereum Synthetic / Perpetual Core", base: 3400, tick: 0.1, min: 3100, max: 3700, decimals: 2 },
-  "SBCI.FX16":   { symbol: "SBCI.FX16", long: "Synthetic Bundled Currency Index / 16-FX Basket", base: 1.08700, tick: 0.00001, min: 1.06000, max: 1.11000, decimals: 5 }
-};
-export const DEFAULT_ASSET = "BTC/USD.SYN";
+/* Selectable synthetic instruments (educational substrate — not real markets).
+ * Built from the Phase 7C-harvested predecessor catalog (42 instruments across
+ * FX / metals / crypto / indices / energy / agri / rates / volatility). */
+import { INSTRUMENT_CATALOG } from "./data/instruments.js";
+
+function decimalsForTick(tick) {
+  const s = String(tick);
+  const frac = s.includes(".") ? s.split(".")[1].length : 0;
+  return Math.max(2, Math.min(6, frac));
+}
+export const ASSETS = {};
+for (const it of INSTRUMENT_CATALOG) {
+  ASSETS[it.id] = {
+    symbol: it.id, long: `${it.name} · ${it.alias}`, family: it.family,
+    base: it.base, tick: it.tick, min: it.min, max: it.max,
+    spreadTicks: it.spreadTicks, decimals: decimalsForTick(it.tick)
+  };
+}
+export const DEFAULT_ASSET = "BTCUSD.SYN";
 
 /* Product branding + safety copy (public-facing, compliant wording). */
 export const BRAND = Object.freeze({

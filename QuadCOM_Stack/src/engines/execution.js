@@ -8,7 +8,7 @@
  *
  * In MODE.LIVE the same lifecycle is mirrored to a real venue via
  * config.LIVE.executionApi (submit on open, reconcile on settle). */
-import { PAYOUT, TICK, MODE, LIVE } from "../config.js";
+import { PAYOUT, MODE, LIVE } from "../config.js";
 import { fmt, money, now } from "../util.js";
 import { equity } from "./account.js";
 
@@ -52,7 +52,7 @@ export function createExecution(ctx) {
       if (Date.now() < p.expires) { keep.push(p); continue; }
       const close = p.dir === "CALL" ? m.bid : m.ask;
       const delta = close - p.entry;
-      const refund = Math.abs(delta) < TICK / 2;
+      const refund = Math.abs(delta) < ((state.asset && state.asset.tick) || 0.5) / 2;
       const win = p.dir === "CALL" ? close > p.entry : close < p.entry;
       let pnl = -p.stake, credit = 0, out = "LOSS";
       if (refund) { pnl = 0; credit = p.stake; out = "REFUND"; state.metrics.refunds++; state.metrics.lossStreak = 0; }

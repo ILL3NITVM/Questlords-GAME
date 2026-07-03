@@ -1,0 +1,76 @@
+{
+  "phase": "7C \u2014 Predecessor Component Harvest + No Reinvention Repair",
+  "completed": "2026-07-03T18:46:19Z",
+  "predecessorUsed": "uploads/QuadCOMv40Complete.tar.gz (QuadCOM_Full_App_ToolIndicators_Instruments_v19)",
+  "environmentNote": "Windows paths from the brief (quadcom_evergreen_desk / Documents/quadcom) do not exist in this Linux workspace; the uploaded v40 archive is the predecessor and QuadCOM_Stack/ is the clean chassis.",
+  "filesInspected": [
+    "DEPLOYMENT_GUIDE.md",
+    "app/instruments.js",
+    "app/connectors/BinanceConnector.js",
+    "app/connectors/DeribitConnector.js",
+    "app/engines/* (25)",
+    "backend/index.js (x2)",
+    "backend/package.json",
+    ".env.example",
+    "backend/data/quadcom_billing.db*"
+  ],
+  "harvested": [
+    {
+      "from": "app/instruments.js",
+      "to": "QuadCOM_Stack/src/data/instruments.js",
+      "what": "42-instrument synthetic catalog + pure helpers",
+      "adaptation": "provenance header; trimmed state-coupled applyInstrumentToState()"
+    },
+    {
+      "from": "app/connectors/BinanceConnector.js",
+      "to": "QuadCOM_Stack/src/data/liveFeed.js",
+      "what": "read-only public market-data websocket, backoff reconnect, 24h-ticker depth cache",
+      "adaptation": "refit behind the existing MODE.LIVE seam (ships false); no order placement path exists"
+    }
+  ],
+  "rejected": [
+    {
+      "file": "backend/data/quadcom_billing.db(+wal/shm)",
+      "reason": "stale runtime ledger state"
+    },
+    {
+      "file": ".env values",
+      "reason": "secrets hygiene"
+    },
+    {
+      "file": "QuadCOM_Phases_2-4_v23-v28.tar.gz",
+      "reason": "nested backup"
+    },
+    {
+      "file": "ML engines (MetaSignal/SignalPrediction/RL/LearningLoop)",
+      "reason": "unverified decision logic \u2014 deferred"
+    },
+    {
+      "file": "Stripe billing backend",
+      "reason": "no-payments product posture \u2014 kept as reference only"
+    }
+  ],
+  "targetModulesUpgraded": [
+    "src/config.js (ASSETS now built from harvested catalog)",
+    "src/engines/council.js (tick-normalized)",
+    "src/engines/execution.js (tick-relative refund)",
+    "src/ui/chart.js (tick-relative framing)",
+    "src/ui/pages.js (family-grouped asset selector)",
+    "src/data/liveFeed.js (harvested connector)",
+    "sw.js (v4 + instruments.js)"
+  ],
+  "safetyGatesPreserved": [
+    "lab-only execution (no broker path)",
+    "forward-printing hash-chained audit",
+    "losses remain recorded",
+    "restricted-terms scan green",
+    "MODE.LIVE ships false",
+    "no runtime state copied"
+  ],
+  "testsRun": {
+    "syntax": "node --check all modules: 0 errors",
+    "browser": "42 assets; SBCI/XAU/JPY/VIX/US30 switch OK at correct decimals; FX lab entry resolved with LAB audit events; built-in acceptance self-tests 12/12 PASS; 0 console errors"
+  },
+  "currentBlocker": "none \u2014 desk fully operational on the harvested catalog",
+  "nextRecommendedPhase": "7D \u2014 harvest RegimeDetectionEngine into a Pro analytics panel; crowd vote capture"
+}

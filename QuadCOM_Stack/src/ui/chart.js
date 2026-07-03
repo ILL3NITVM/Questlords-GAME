@@ -27,9 +27,12 @@ export function drawChart(state) {
   if (data.length < 2) return;
   const L = 7, R = 64, T = 13, B = 18, cw = w - L - R, ch = h - T - B;
   let lo = Math.min(m.low, m.lower, ...data.map(x => x.p)), hi = Math.max(m.high, m.upper, ...data.map(x => x.p));
-  const minRange = 260, mid = (hi + lo) / 2;
+  // Tick-relative vertical framing (Phase 7C) so every instrument fills the
+  // stage: 520 ticks minimum window, 70-tick breathing room.
+  const tick = (state.asset && state.asset.tick) || 0.5;
+  const minRange = tick * 520, mid = (hi + lo) / 2;
   if (hi - lo < minRange) { hi = mid + minRange / 2; lo = mid - minRange / 2; }
-  hi += 35; lo -= 35;
+  hi += tick * 70; lo -= tick * 70;
   const xAt = i => L + i / (data.length - 1) * cw, yAt = p => T + (hi - p) / (hi - lo) * ch;
   const f = FONT();
 
