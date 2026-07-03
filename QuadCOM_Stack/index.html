@@ -26,8 +26,9 @@
       <span id="accountPill" class="pill ok">OPR: LOCKED</span>
       <button id="logoutBtn" class="pill logout" type="button">LOGOUT</button>
       <span id="swPill" class="pill warn">SW INIT</span>
+      <button id="liveBtn" class="pill live" type="button">LIVE</button>
     </div>
-    <button id="arm" class="arm" type="button">ARM</button>
+    <button id="arm" class="arm" type="button">ARM LAB</button>
   </header>
 
   <div id="oracleStrip" class="oracle-strip"><span><b>ORACLE</b> | WAIT | CONF 0 | CONF BELOW | HOLD | BID 64500.00 | ASK 64501.00</span><span class="watch">WATCH</span></div>
@@ -48,7 +49,7 @@
         </div>
         <div class="stage" id="stage">
           <canvas id="chart"></canvas>
-          <div class="watermark">BTC SYNTHETIC SUBSTRATE</div>
+          <div class="watermark">SYNTHETIC SUBSTRATE · LIVE TAPE</div>
           <div id="lastTag" class="last-tag">64500.00</div>
           <div id="tip" class="tip"></div>
         </div>
@@ -69,13 +70,14 @@
         <section class="panel-card">
           <div class="panel-head"><span>Autopilot Engine</span><span id="autoMode">OFF</span></div>
           <div class="panel-body">
-            <button id="autopilotBtn" class="autopilot-btn" type="button">ENABLE AUTOPILOT</button>
+            <button id="autopilotBtn" class="autopilot-btn" type="button">ENABLE AUTOPILOT LAB</button>
             <div id="autopilotReadouts" class="readout-grid" style="margin-top:6px"></div>
+            <div id="fireStatus" class="fire-status"></div>
           </div>
         </section>
         <section class="rail" aria-label="Execution rail">
           <div class="rail-top">
-            <div class="rail-title">Execution layer | BTC/USD.SYN live tape</div>
+            <div class="rail-title">Execution lab | live tape</div>
             <div id="railState" class="rail-meta">Open 0/2 | payout 92%</div>
           </div>
           <div class="ticket">
@@ -83,8 +85,8 @@
             <div class="field"><label for="stake">Stake</label><input id="stake" inputmode="decimal" value="100.00"></div>
             <div class="field"><label for="slots">Max open</label><input id="slots" inputmode="numeric" value="2"></div>
             <div class="field"><label for="gate">Min conf</label><input id="gate" inputmode="numeric" value="62"></div>
-            <button id="call" class="deal call" type="button">CALL<small>ask entry</small></button>
-            <button id="put" class="deal put" type="button">PUT<small>bid entry</small></button>
+            <button id="call" class="deal call" type="button">CALL<small>lab entry · ask</small></button>
+            <button id="put" class="deal put" type="button">PUT<small>lab entry · bid</small></button>
           </div>
           <div id="stakeChips" class="stake-chips"></div>
           <div class="rail-foot"><span id="mathLine"><b>stake debited on entry</b> | win credits stake+payout</span><span id="balanceLine">BAL $0.00</span></div>
@@ -131,6 +133,8 @@
     <button class="nav-btn" data-route="more" type="button"><span>M</span><b>More</b><small>App map</small></button>
   </nav>
 </div>
+<div id="pageOverlay" class="page-overlay"></div>
+<div id="liveOverlay" class="live-overlay"></div>
 <div id="gateway" class="gateway active" role="dialog" aria-modal="true" aria-labelledby="gatewayTitle">
   <section class="gateway-card">
     <div class="gateway-head">
@@ -140,7 +144,7 @@
     <div class="gateway-body">
       <input id="operatorInput" autocomplete="off" spellcheck="false" placeholder="OPTIONAL OPERATOR ID">
       <button id="connectBtn" type="button">SIMULATE WALLET CONNECT</button>
-      <div id="gatewayNote" class="gateway-note">No active operator session. Connect to create or restore an account. New accounts begin at $0.00 and must deposit from the testnet faucet before trading.</div>
+      <div id="gatewayNote" class="gateway-note">No active operator session. Connect to create or restore an account. New accounts begin at $0.00 and must deposit from the faucet rail before lab entries. Synthetic substrate — educational build stream — not financial advice.</div>
     </div>
   </section>
 </div>

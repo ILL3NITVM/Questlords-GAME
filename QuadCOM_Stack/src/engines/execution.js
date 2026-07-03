@@ -15,6 +15,7 @@ import { equity } from "./account.js";
 export function createExecution(ctx) {
   const { state, log, persist, render, settings } = ctx;
   const toast = ctx.toast || (() => {});
+  const audit = ctx.audit || { event() {} };
 
   async function submitLive(order) {
     // Real-venture seam. Fire-and-reconcile; never blocks the local ledger.
@@ -37,9 +38,11 @@ export function createExecution(ctx) {
       opened: Date.now(), expires: Date.now() + s.expiry * 1000, idx: state.ticks.length - 1, conf: state.council.conf
     };
     state.positions.push(p);
+    state.tally.labOpened++;
+    audit.event("LAB_ENTRY_OPENED", { dir, src, entry: +entry.toFixed(state.asset.decimals), stake: s.stake });
     if (MODE.LIVE) submitLive({ side: dir, price: entry, stake: s.stake, expiry: s.expiry });
     log(dir, `${src} ${dir} @ ${fmt(entry)} stake ${money(s.stake)} debited`);
-    toast(`${dir} @ ${fmt(entry)} · -${money(s.stake)}`, dir === "CALL" ? "ok" : "err");
+    toast(`${dir} lab entry @ ${fmt(entry)} · -${money(s.stake)}`, dir === "CALL" ? "ok" : "err");
     persist(); render();
   }
 
@@ -60,6 +63,9 @@ export function createExecution(ctx) {
       // Chart history marker (mapped by open timestamp so it survives buffer scroll).
       state.tradeHistory.push({ t: p.opened, entry: p.entry, close, dir: p.dir, out, pnl });
       if (state.tradeHistory.length > 60) state.tradeHistory.shift();
+      state.tally.labResolved++;
+      state.oracleLast = { dir: p.dir, out, pnl, t: Date.now() };
+      audit.event("LAB_ENTRY_RESOLVED", { dir: p.dir, out, pnl: +pnl.toFixed(2) });
       toast(`${out} · ${p.dir} ${(pnl >= 0 ? "+" : "") + money(pnl)}`, out === "WIN" ? "ok" : out === "LOSS" ? "err" : "");
       changed = true;
     }

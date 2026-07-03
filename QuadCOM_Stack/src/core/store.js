@@ -2,10 +2,24 @@
  * Plain, serializable state plus a tiny subscribe/notify scheduler. The state
  * is source-agnostic: the same shape is populated by the synthetic feed or the
  * live feed. Only the account slice is persisted (wallet-scoped). */
-import { BASE, TICK } from "../config.js";
+import { BASE, TICK, ASSETS, DEFAULT_ASSET } from "../config.js";
 
 export function defaultMetrics() {
   return { balance: 0, turnover: 0, wins: 0, losses: 0, refunds: 0, lossStreak: 0, closed: 0, peakEquity: 0 };
+}
+
+export function defaultTally() {
+  return { call: 0, put: 0, hold: 0, confSum: 0, confN: 0, govClears: 0, govBlocks: 0, maxExposure: 0, labOpened: 0, labResolved: 0 };
+}
+
+export function defaultSettings() {
+  return {
+    liveMode: false,
+    publicWording: false,
+    sound: false,
+    tickSpeed: 650,
+    themeIntensity: "normal"
+  };
 }
 
 export function createState() {
@@ -25,6 +39,18 @@ export function createState() {
     transferDraft: "250.00",
     accountId: null,
     sessionReady: false,
+    page: null,          // active full-screen product page (onboarding/fairness/…)
+    live: false,         // broadcast overlay visible
+
+    // ---- Product / audit ----
+    asset: { ...ASSETS[DEFAULT_ASSET] },
+    session: null,       // set by main on boot (seeded)
+    rng: Math.random,    // replaced by the seeded RNG on boot
+    auditLog: [],
+    tally: defaultTally(),
+    settings: defaultSettings(),
+    waitlist: [],
+    oracleLast: null,    // last resolved lab outcome for the broadcast card
 
     // ---- Market data (feed-populated) ----
     ticks: [],

@@ -3,6 +3,6 @@ import { MODE } from "../config.js";
 import { createSimFeed } from "./simFeed.js";
 import { createLiveFeed } from "./liveFeed.js";
 
-export function createFeed(state) {
-  return MODE.LIVE ? createLiveFeed(state) : createSimFeed(state);
+export function createFeed(ctx) {
+  return MODE.LIVE ? createLiveFeed(ctx) : createSimFeed(ctx);
 }

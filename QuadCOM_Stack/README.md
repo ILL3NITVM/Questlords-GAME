@@ -1,71 +1,29 @@
 # QuadCOM Desk Lite MAX — Front-End Stack
 
-A modular, native **ES-module** front-end for the BTC/USD.SYN synthetic crypto
-perpetuals cockpit. Same product as the single-file build in
-`../QuadCOM_Desk_Lite_MAX`, re-architected as a real front-end stack that is
-**one boolean away from a tangible live venture**.
+**Synthetic market lab · forward-printing tape · visible structure, visible restraint, visible audit.**
+Ever Next Phase.
 
-## The one boolean
+QuadCOM Desk Lite MAX is a business-facing synthetic market cockpit. A seeded
+model feed prints a **live tape** for a synthetic instrument (default
+`BTC/USD.SYN`), an **Oracle** reads structure and confidence, a five-voice
+**Council** votes CALL / PUT / HOLD, and a **Governor** explains — in plain
+language — why action is held or clear. Every tick and every action is written
+to a hash-chained audit log. Nothing is rewritten after print.
 
-```js
-// src/config.js
-export const MODE = Object.freeze({ LIVE: false });
-```
+> **Safety disclaimer** — This is an *educational build stream* on a
+> *synthetic substrate*. There is **no real broker connection, no real money,
+> no profit promises, and no financial advice**. Lab entries and lab capital
+> are research constructs. Losses remain in the record.
 
-- `LIVE: false` → fully synthetic simulation (paper venture, safe demo).
-- `LIVE: true`  → the app swaps three adapters for their live counterparts and
-  nothing else changes:
+## What is a synthetic substrate?
 
-| Concern | Simulation | Live venture |
-|---|---|---|
-| Market data | `src/data/simFeed.js` | `src/data/liveFeed.js` (websocket → same snapshot shape) |
-| Wallet | `src/data/simWallet.js` (mints local address) | `src/data/liveWallet.js` (injected EIP-1193 provider) |
-| Execution | local binary settlement | `src/engines/execution.js` LIVE branch → `config.LIVE.executionApi` |
-
-Every engine, view, the router, and the chart are **source-agnostic** — they
-consume `state` and never know which world they run in. Wire the endpoints in
-`config.LIVE` and flip the flag.
-
-## Architecture
-
-```
-index.html                 shell markup + <link> css + <script type=module>
-styles/theme.css           design tokens
-styles/app.css             layout, panels, chart, views, gateway
-src/
-  config.js                THE boolean + constants + live endpoints
-  util.js                  pure helpers
-  main.js                  composition root: wires state→feed→engines→ui, loop
-  core/store.js            central state shape + wallet-scoped reset
-  data/
-    feed.js                selector (sim | live)
-    simFeed.js  liveFeed.js
-    wallet.js              gateway connect + persistence + faucet
-    simWallet.js  liveWallet.js
-  engines/
-    account.js  council.js  governor.js  execution.js  autopilot.js
-  ui/
-    chart.js               canvas price chart + depth curve
-    components.js  render.js  router.js  gateway.js
-    views/ desk.js  exec.js  council.js  gov.js  more.js
-sw.js                      fault-tolerant cache of the whole module graph
-manifest.json
-```
-
-## Behaviour (unchanged from the single-file build)
-
-- 5-view SPA: Desk (order book / depth / microprice / structure), Exec
-  (autopilot + rail + live position book + tape), Council (votes / consensus /
-  chamber), Gov (capital / pressure / guard + faucet), More (session + map).
-- Secure gateway with per-wallet isolated storage (`quadcom_data_<address>`),
-  $0.00 init, faucet-gated execution.
-- Execution math: immediate stake debit, 92% payout on win, exact refund on tie,
-  directional settlement (same-strike hedging = spread loss).
-- Governor never halts on losses/streak/drawdown (informational only).
+A model-generated price stream — a live tape printed forward in real time from
+a seeded model feed. It is not a real market. It exists so structure,
+discipline, and decision quality can be studied and streamed openly.
 
 ## Run locally
 
-Because it uses native ES modules, serve over HTTP (not `file://`):
+Native ES modules — serve over HTTP (not `file://`):
 
 ```sh
 cd QuadCOM_Stack
@@ -73,5 +31,93 @@ python3 -m http.server 8137 --bind 127.0.0.1
 # open http://127.0.0.1:8137/
 ```
 
-No build step, no dependencies — the browser loads the module graph directly.
-Add a bundler later (esbuild/Vite) without changing the source layout.
+No build step, no dependencies.
+
+## Product layers
+
+| Layer | Where | What |
+|---|---|---|
+| Live / Broadcast mode | LIVE pill (top bar) or More → Enter Live Mode | Big-card streaming cockpit: asset, action, confidence, gate, tape phase, council bars, last resolved outcome, session timer, next-print countdown, crowd vote prompt |
+| Onboarding | More → What is this? | The format explained in 60 seconds |
+| Fairness / Audit | More → Fairness | Forward-printing rules, session ID/seed/start, tick count, chained hash, event count, integrity status, recent audit entries |
+| Session reports | More → Reports | Export JSON / CSV, copy text summary, Generate Session Recap (founder summary) |
+| Business / Access | More → Business | Lite / Pro concept / research offers + local watchlist capture (name, contact, interest — localStorage only, no payments) |
+| Share Kit | More → Share Kit | Copy-paste TikTok LIVE title, pinned comment, Telegram invite, bios, captions |
+| Settings | More → Settings | Asset selector (BTC/USD.SYN · ETH/USD.SYN · SBCI.FX16), theme intensity, live mode, public wording mode, sound, tick speed, seed regenerate, session reset, export/import data |
+| Doctrine | More → Doctrine | The seven laws of the desk |
+| Self-Test | More → Self-Test | Built-in acceptance checks (also `await QUADCOM.selfTest()` in the console) |
+
+## Public wording rules
+
+The public UI never uses: *simulator, fake, game, gambling, casino, guaranteed*.
+It uses: synthetic substrate, market lab, live tape, execution lab, model feed,
+council, forward-printing tape, educational build stream, not financial advice.
+The self-test scans the rendered UI for restricted terms.
+
+## Audit model
+
+`state = { app/session, asset, tape(ticks/book/market), oracle/council,
+governor, execution(positions/history), wallet(transfers/metrics), reports,
+waitlist, settings, auditLog }`
+
+Every tick advances a rolling session hash. Typed events append to `auditLog`:
+`TICK_PRINTED, ORACLE_UPDATED, COUNCIL_UPDATED, GOVERNOR_CLEAR, GOVERNOR_BLOCK,
+LAB_ENTRY_OPENED, LAB_ENTRY_RESOLVED, SESSION_RESET, REPORT_EXPORTED,
+WAITLIST_CAPTURED, SETTINGS_CHANGED`.
+
+## How to use Live mode
+
+Tap **LIVE** in the top bar (or More → Enter Live Mode). Frame the phone
+vertically for TikTok. The two anchor lines for viewers:
+
+> **Vote the tape: CALL, PUT, or HOLD.**
+> QuadCOM reads structure. The crowd reads pressure. The tape decides.
+
+Exit with the EXIT button. Live mode state persists in Settings.
+
+## How to export reports
+
+More → Reports → Export JSON / Export CSV / Copy Text Summary, or
+**Generate Session Recap** for the founder/business one-liner. Reports include
+the full event log, seed, and integrity hash. `Export Founder Pack` on the
+Business page bundles the recap with product framing.
+
+## Architecture
+
+```
+index.html            shell markup
+styles/theme.css      tokens + accent themes (gold/ice/magma) — tap the logo
+styles/app.css        layout + productization CSS
+src/config.js         MODE.LIVE seam · assets · branding · safety copy
+src/audit.js          hash-chained audit log
+src/reports.js        JSON/CSV/recap builders
+src/copykit.js        share kit + founder pack
+src/core/store.js     central state
+src/engines/          session(seeded rng) · council · governor · execution ·
+                      autopilot · analytics · account
+src/data/             feed selector (sim | live) · wallet adapters · faucet
+src/ui/               render · router · gateway · chart · sparkline · toast ·
+                      theme · pages (product pages) · live (broadcast) · views/
+sw.js                 fault-tolerant offline cache (whole module graph)
+```
+
+`MODE.LIVE` in `src/config.js` remains the single seam that would swap the
+synthetic feed/wallet for live adapters. It ships `false` and the product’s
+public posture is lab-only.
+
+## Known limitations
+
+- Watchlist and settings are device-local (localStorage) — no backend.
+- Crowd voting is a broadcast prompt, not a collected poll (next phase).
+- The audit hash chain is integrity-evident, not cryptographically signed.
+- Live-adapter seams (`liveFeed`, `liveWallet`) are wiring points, not enabled.
+
+## Next phase roadmap
+
+1. Crowd vote capture (poll overlay + tallied crowd pressure feed).
+2. Session archive shelf (multi-session history + comparisons).
+3. Signed session receipts and shareable session pages.
+4. Multi-desk layout (two assets side by side).
+5. Creator dashboards (custom doctrine + gate presets).
+
+Ever Next Phase.

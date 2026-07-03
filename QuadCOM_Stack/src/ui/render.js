@@ -2,13 +2,14 @@
  * dispatches every view so persisted values stay fresh. Never rewrites the
  * faucet input while it holds focus. */
 import { fmt, money, $ } from "../util.js";
-import { INSTRUMENT } from "../config.js";
 import { governorState } from "../engines/governor.js";
 import { renderDesk } from "./views/desk.js";
 import { renderExec } from "./views/exec.js";
 import { renderCouncil } from "./views/council.js";
 import { renderGov } from "./views/gov.js";
 import { renderMore } from "./views/more.js";
+import { refreshPage, renderPage } from "./pages.js";
+import { renderLive } from "./live.js";
 
 export function createRender(ctx, { wallet }) {
   const { state, settings } = ctx;
@@ -27,9 +28,11 @@ export function createRender(ctx, { wallet }) {
     $("accountPill").title = state.accountId || "";
     $("swPill").textContent = `SW ${state.sw}`;
     $("swPill").className = `pill ${state.sw === "READY" ? "ok" : "warn"}`;
-    $("arm").textContent = state.armed ? "ARMED" : "ARM";
+    $("arm").textContent = state.armed ? "LAB ARMED" : "ARM LAB";
     $("arm").classList.toggle("on", state.armed);
 
+    const instB = document.querySelector(".inst b"), instS = document.querySelector(".inst span");
+    if (instB && instB.textContent !== state.asset.symbol) { instB.textContent = state.asset.symbol; if (instS) instS.textContent = state.asset.long; }
     $("lastTop").textContent = fmt(m.last);
     $("lastTag").textContent = fmt(m.last);
     if (prevLast !== null && m.last !== prevLast) flash($("lastTop"), m.last > prevLast);
@@ -44,7 +47,7 @@ export function createRender(ctx, { wallet }) {
     $("vwap").textContent = fmt(m.vwap); $("poc").textContent = fmt(m.poc);
     $("regime").textContent = m.regime; $("microPx").textContent = fmt(m.micro);
 
-    $("oracleStrip").innerHTML = `<span><b>ORACLE</b> | ${c.action} | CONF ${c.conf.toFixed(0)} | ${c.allowed ? "PASS" : "CONF BELOW"} | ${c.reason.toUpperCase()} | BID ${fmt(m.bid)} | ASK ${fmt(m.ask)}</span><span class="watch">${INSTRUMENT}</span>`;
+    $("oracleStrip").innerHTML = `<span><b>ORACLE</b> | ${c.action} | CONF ${c.conf.toFixed(0)} | ${c.allowed ? "PASS" : "CONF BELOW"} | ${c.reason.toUpperCase()} | BID ${fmt(m.bid)} | ASK ${fmt(m.ask)}</span><span class="watch">${state.asset.symbol}</span>`;
     $("railState").textContent = `${state.autoStatus} | ${state.armed ? "ARMED" : "WAIT"} | Open ${state.positions.length}/${s.slots} | ${c.allowed ? "PASS" : "HOLD"} | GOV ${g.state}`;
     $("balanceLine").textContent = `BAL ${money(state.metrics.balance)} | TURN ${money(state.metrics.turnover)}`;
     document.querySelectorAll(".nav-btn").forEach(b => b.classList.toggle("active", b.dataset.route === state.route));
@@ -53,8 +56,19 @@ export function createRender(ctx, { wallet }) {
     renderExec(state, ctx);
     renderCouncil(state, ctx);
     if (document.activeElement && document.activeElement.id === "transferAmount") { /* keep faucet input */ }
-    else renderGov(state, { wallet });
-    renderMore(state, { wallet });
+    else renderGov(state, ctx);
+    renderMore(state, ctx);
+    // Reconcile the page overlay: mount/unmount on state change only, so open
+    // pages keep their inputs; live counters go through refreshPage instead.
+    const ov = document.getElementById("pageOverlay");
+    if (ov) {
+      const shown = ov.classList.contains("on");
+      const want = !!state.page;
+      const wrongPage = want && ov.dataset.page !== state.page;
+      if (want !== shown || wrongPage) { renderPage(state, ctx); ov.dataset.page = state.page || ""; }
+    }
+    refreshPage(state);
+    renderLive(state, ctx);
   }
 
   return { render };

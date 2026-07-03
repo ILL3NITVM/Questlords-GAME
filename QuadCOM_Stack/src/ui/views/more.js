@@ -1,27 +1,36 @@
-/* MORE view — session overview + holistic module map. */
+/* MORE view — the product hub. Session overview, performance, and a card grid
+ * where every card opens a real route or product page (no dead UI). */
 import { fmt, money, $ } from "../../util.js";
-import { MODE } from "../../config.js";
+import { MODE, BRAND } from "../../config.js";
 import { governorState } from "../../engines/governor.js";
 import { winRate, edgePoints } from "../../engines/account.js";
 import { analytics } from "../../engines/analytics.js";
 import { drawSparkline } from "../sparkline.js";
 import { readout } from "../components.js";
 
-export function renderMore(state, { wallet }) {
+const card = (open, title, value, small) =>
+  `<button class="module-card" type="button" data-open="${open}"><b>${title}</b><span>${value}</span><small>${small}</small></button>`;
+
+export function renderMore(state, ctx) {
+  const { wallet } = ctx;
   const m = state.market, g = governorState(state), net = g.equity - g.capital;
   const slots = Number(document.getElementById("slots")?.value) || 2;
   const a = analytics(state);
   const pf = !isFinite(a.profitFactor) ? "∞" : a.profitFactor.toFixed(2);
-  $("mapBody").innerHTML = `<div class="map-metrics">
-    ${readout("Balance", money(state.metrics.balance), state.metrics.balance > 0 ? "good" : "bad")}
+  const t = state.tally;
+
+  $("mapBody").innerHTML = `
+  <div class="hub-live">${state.live ? "" : `<button class="hub-livebtn" type="button" data-open="live">▶ ENTER LIVE MODE<small>broadcast cockpit · vote the tape</small></button>`}</div>
+  <div class="map-metrics">
+    ${readout("Lab Capital", money(state.metrics.balance), state.metrics.balance > 0 ? "good" : "bad")}
     ${readout("Net", (net >= 0 ? "+" : "-") + money(Math.abs(net)), net >= 0 ? "good" : "bad")}
     ${readout("Turnover", money(state.metrics.turnover), "gold")}
     ${readout("Win Rate", winRate(state).toFixed(0) + "%")}
     ${readout("Edge", edgePoints(state).toFixed(1) + "pt", edgePoints(state) >= 0 ? "good" : "bad")}
-    ${readout("Governor", g.state, g.state === "CLEAR" ? "good" : "bad")}
-    ${readout("Open", `${state.positions.length}/${slots}`)}
+    ${readout("Governor", g.state, "good")}
+    ${readout("Decisions", `${t.call}C ${t.put}P ${t.hold}H`)}
     ${readout("Exposure", g.exposure.toFixed(1) + "%", g.exposure > 30 ? "bad" : "")}
-    ${readout("Autopilot", state.autopilot ? "ON" : "OFF", state.autopilot ? "good" : "")}
+    ${readout("Session", state.session ? state.session.id : "—", "gold")}
   </div>
   <section class="panel-card perf"><div class="panel-head"><span>Session Performance</span><span>${a.trades} closed</span></div><div class="panel-body">
     <div class="spark-wrap"><canvas id="equitySpark"></canvas><span class="spark-label">EQUITY CURVE</span></div>
@@ -34,17 +43,35 @@ export function renderMore(state, { wallet }) {
       ${readout("Best / Worst", money(a.best) + " / " + money(a.worst))}
     </div>
   </div></section>
+
+  <div class="group-label">Desk</div>
   <div class="module-map">
-    <div class="module-card"><b>Chart</b><span>${fmt(m.high)} - ${m.regime}</span><small>overview - chart - runtime</small></div>
-    <div class="module-card"><b>Micro</b><span>Depth ${state.book.bids.length ? Math.round(state.book.bids.at(-1).cum) : 0} - Skew ${Math.round(m.imb * 100)}</span><small>depth - spread - flow</small></div>
-    <div class="module-card"><b>Heat</b><span>${state.council.allowed ? "STRUCTURE CLEAR" : "STRUCTURE WAIT"}</span><small>zones - walls - ladder</small></div>
-    <div class="module-card"><b>Breath</b><span>Compress ${Math.round(state.council.structure)}</span><small>phase - rhythm - fatigue</small></div>
-    <div class="module-card"><b>Council</b><span>${state.council.action} - CONF ${state.council.conf.toFixed(0)}</span><small>votes - consensus - chamber</small></div>
-    <div class="module-card"><b>Doctrine</b><span>${state.council.allowed ? "MODEL ALIGNED" : "CONF BELOW"}</span><small>rules - gate - language</small></div>
-    <div class="module-card"><b>Exec</b><span>${state.autopilot ? "AUTO ON" : "AUTO OFF"} - ${state.autoStatus}</span><small>rail - book - tape</small></div>
-    <div class="module-card"><b>Wallet</b><span>${state.transfers.length} transfers - ${wallet.label()}</span><small>deposit - withdraw - ledger</small></div>
-    <div class="module-card"><b>Runtime</b><span>${MODE.LIVE ? "LIVE" : "SIM"} - ${state.mode} - SW ${state.sw}</span><small>kernel - cache - heartbeat</small></div>
+    ${card("route:desk", "Chart", `${fmt(m.high)} - ${m.regime}`, "live tape - walls - structure")}
+    ${card("route:desk", "Micro", `Depth ${state.book.bids.length ? Math.round(state.book.bids.at(-1).cum) : 0} - Skew ${Math.round(m.imb * 100)}`, "depth - spread - flow")}
+    ${card("route:desk", "Heat", state.council.allowed ? "STRUCTURE CLEAR" : "STRUCTURE WAIT", "zones - walls - ladder")}
+    ${card("route:council", "Breath", `Compress ${Math.round(state.council.structure)}`, "phase - rhythm - fatigue")}
+  </div>
+
+  <div class="group-label">Signals</div>
+  <div class="module-map">
+    ${card("route:council", "Council", `${state.council.action} - CONF ${state.council.conf.toFixed(0)}`, "votes - consensus - chamber")}
+    ${card("page:doctrine", "Doctrine", state.council.allowed ? "MODEL ALIGNED" : "CONF BELOW", "the seven laws")}
+    ${card("route:exec", "Exec", `${state.autopilot ? "AUTO ON" : "AUTO OFF"} - ${state.autoStatus}`, "rail - book - tape")}
+    ${card("route:gov", "Wallet", `${state.transfers.length} transfers - ${wallet.label()}`, "deposit - withdraw - ledger")}
+  </div>
+
+  <div class="group-label">Product</div>
+  <div class="module-map">
+    ${card("page:fairness", "Fairness", state.session ? `${state.session.tickCount} ticks chained` : "—", "audit - seed - hash")}
+    ${card("page:reports", "Reports", `${state.session ? state.session.eventCount : 0} events`, "json - csv - recap")}
+    ${card("page:sharekit", "Share Kit", BRAND.vote, "titles - invites - captions")}
+    ${card("page:business", "Business", "Access & watchlist", "lite - pro - demo")}
+    ${card("page:settings", "Settings", `${state.asset.symbol}`, "asset - speed - data")}
+    ${card("page:onboarding", "What is this?", "Start here", "format in 60 seconds")}
+    ${card("page:selftest", "Self-Test", "Acceptance checks", "run built-in tests")}
+    ${card("page:about", "About", `${MODE.LIVE ? "LIVE" : "LAB"} - ${state.mode} - SW ${state.sw}`, BRAND.phase.toLowerCase())}
   </div>`;
+
   const accent = getComputedStyle(document.documentElement).getPropertyValue("--gold2").trim() || "#f2cc58";
   drawSparkline("equitySpark", state.equityCurve, accent);
 }

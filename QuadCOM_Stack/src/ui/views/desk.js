@@ -1,6 +1,5 @@
 /* DESK view — order book, depth curve, microprice, structure. */
 import { fmt, sizeFmt, $ } from "../../util.js";
-import { INSTRUMENT } from "../../config.js";
 import { drawDepth } from "../chart.js";
 
 export function renderDesk(state) {
@@ -12,7 +11,7 @@ export function renderDesk(state) {
     `<tr class="bid ${i === 0 ? "best" : ""}"><td class="cum">${sizeFmt(x.cum)}</td><td class="sz">${sizeFmt(x.sz)}</td><td class="px">${fmt(x.px)}</td></tr>`).join("");
   const topDepth = book.bids[0].sz + book.asks[0].sz;
   $("deskBody").innerHTML = `
-    <div class="module book"><div class="mh"><span>Order book</span><span>${INSTRUMENT}</span></div><div class="mb"><table class="ladder"><tbody>${askRows}${bidRows}</tbody></table></div></div>
+    <div class="module book"><div class="mh"><span>Order book</span><span>${state.asset.symbol}</span></div><div class="mb"><table class="ladder"><tbody>${askRows}${bidRows}</tbody></table></div></div>
     <div class="module"><div class="mh"><span>Depth</span><span>cum curve</span></div><div class="mb"><div class="depth-wrap"><canvas id="depth"></canvas><div class="legend"><span><i class="dot g"></i>bid</span><span><i class="dot r"></i>ask</span></div></div></div></div>
     <div class="module"><div class="mh"><span>Microprice</span><span>${fmt(m.micro)}</span></div><div class="mb"><div class="kv">
       <div><span>Best bid</span><b>${fmt(book.bids[0].px)}</b></div><div><span>Best ask</span><b>${fmt(book.asks[0].px)}</b></div>

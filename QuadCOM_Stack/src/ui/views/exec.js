@@ -22,9 +22,32 @@ function lifecycleRows(state, limit = 18) {
   return state.ledger.filter(x => /^(CALL|PUT|WIN|LOSS|REFUND|MAX|CASH|BLOCK|AUTO|ARM|IN|OUT)$/.test(x.tag)).slice(0, limit);
 }
 
+function readyConditions(state, s) {
+  const c = state.council;
+  return [
+    ["Lab funded", state.metrics.balance >= s.stake],
+    ["Open slot free", state.positions.length < s.slots],
+    [`Confidence ≥ gate (${c.conf.toFixed(0)}/${s.gate})`, c.conf >= s.gate],
+    ["Lab armed", state.armed],
+    ["Autopilot lab on", state.autopilot],
+    ["Spacing clear", (Date.now() - state.lastAuto) >= 4200]
+  ];
+}
+
+function whyNotFiring(state, s) {
+  const c = state.council;
+  if (!state.autopilot) return "Autopilot lab is off — manual CALL / PUT lab entries only.";
+  if (!state.armed) return "Lab is disarmed — arm the lab to allow autopilot entries.";
+  if (c.conf < s.gate) return `Confidence below threshold — execution held (${c.conf.toFixed(0)} < ${s.gate}).`;
+  if (state.positions.length >= s.slots) return "Exposure limit reached — waiting for open positions to resolve.";
+  if (state.metrics.balance < s.stake) return "Lab capital below stake — fund via GOV faucet.";
+  if ((Date.now() - state.lastAuto) < 4200) return "Spacing window — pacing entries between prints.";
+  return "Ready — autopilot lab will fire on the next qualifying tick.";
+}
+
 export function renderExec(state, ctx) {
   const s = ctx.settings(), g = governorState(state);
-  $("autopilotBtn").textContent = state.autopilot ? "AUTOPILOT ENABLED" : "ENABLE AUTOPILOT";
+  $("autopilotBtn").textContent = state.autopilot ? "AUTOPILOT LAB ENABLED" : "ENABLE AUTOPILOT LAB";
   $("autopilotBtn").classList.toggle("on", state.autopilot);
   $("autoMode").textContent = state.autopilot ? "ON" : "OFF";
   $("autopilotReadouts").innerHTML = [
@@ -33,6 +56,14 @@ export function renderExec(state, ctx) {
     readout("Gate", s.gate),
     readout("Size", "1.00x", "good")
   ].join("");
+  const fs = $("fireStatus");
+  if (fs) {
+    const ready = whyNotFiring(state, s).startsWith("Ready");
+    fs.innerHTML =
+      `<div class="why ${ready ? "ok" : ""}"><b>Why not firing?</b> ${whyNotFiring(state, s)}</div>` +
+      `<div class="ready-list">` + readyConditions(state, s).map(([l, ok]) =>
+        `<div class="ready-row ${ok ? "on" : ""}"><i>${ok ? "✓" : "○"}</i>${l}</div>`).join("") + `</div>`;
+  }
   const chips = $("stakeChips");
   if (chips) {
     const bal = state.metrics.balance;

@@ -11,7 +11,8 @@
 import { LIVE, TICK } from "../config.js";
 import { clamp } from "../util.js";
 
-export function createLiveFeed(state) {
+export function createLiveFeed(ctx) {
+  const state = ctx.state;
   let ws = null, onDataRef = null, retry = 0;
 
   function ingest(px, bid, ask, bidsDepth, asksDepth) {
@@ -64,6 +65,7 @@ export function createLiveFeed(state) {
   return {
     kind: "LIVE",
     start(onData) { onDataRef = onData; connect(); },
-    stop() { try { ws && ws.close(); } catch (_) {} ws = null; }
+    stop() { try { ws && ws.close(); } catch (_) {} ws = null; },
+    reseed() { /* live venue owns its own history */ }
   };
 }
