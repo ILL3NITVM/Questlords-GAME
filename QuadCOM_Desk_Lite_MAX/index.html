@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#030304">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="QuadCOM">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon-512.png">
+<link rel="apple-touch-icon" href="./icon-512.png">
+<title>QuadCOM Desk Lite MAX | BTC/USD.SYN</title>
+<style>
+:root{
+  --bg:#000;
+  --shell:#030304;
+  --panel:#07080b;
+  --panel2:#0a0c11;
+  --panel3:#0e1118;
+  --line:#1b202b;
+  --line2:#2a3040;
+  --gold:#d8b73f;
+  --gold2:#f2cc58;
+  --muted:#778191;
+  --soft:#aab2c2;
+  --text:#f3f6fa;
+  --green:#31d17b;
+  --red:#f05d52;
+  --blue:#4ea1ff;
+  --amber:#f0a43a;
+  --font:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%;height:100dvh;width:100%;margin:0;overflow:hidden;background:#000;color:var(--text);font-family:var(--font);-webkit-text-size-adjust:100%;touch-action:manipulation}
+body{position:fixed;inset:0;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);user-select:none;-webkit-user-select:none}
+button,input{font:inherit}
+button{border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+input{min-width:0;border:0;outline:none}
+.app{height:100%;width:100%;display:grid;grid-template-rows:35px 22px minmax(0,1fr) 58px;overflow:hidden;background:radial-gradient(circle at 50% -10%,#15130a 0,#050506 28%,#000 72%);transition:filter .18s ease}
+.app.locked{filter:blur(4px);pointer-events:none}
+.topbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:6px;align-items:center;padding:3px 6px;background:linear-gradient(180deg,#08090c,#030304);border-bottom:1px solid rgba(216,183,63,.62);min-height:0;overflow:hidden}
+.mark{width:27px;height:27px;border-radius:7px;border:1px solid rgba(216,183,63,.7);background:#000;object-fit:cover}
+.brand{min-width:0;line-height:1}
+.brand b{display:block;font-size:10px;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand span{display:block;margin-top:2px;font-size:6px;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase}
+.net{display:flex;gap:3px;align-items:center;overflow:hidden}
+.pill{height:18px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;border:1px solid var(--line2);background:#050609;color:var(--muted);border-radius:3px;font-size:6px;font-weight:900;letter-spacing:.04em;white-space:nowrap}
+.pill.ok{color:var(--green);border-color:rgba(49,209,123,.58);background:rgba(49,209,123,.07)}
+.pill.warn{color:var(--amber);border-color:rgba(240,164,58,.55);background:rgba(240,164,58,.07)}
+.pill.logout{color:var(--red);border-color:rgba(240,93,82,.55);background:rgba(240,93,82,.07)}
+.arm{height:27px;min-width:50px;border:1px solid rgba(240,93,82,.7);background:#140707;color:var(--red);border-radius:4px;font-size:8px;font-weight:950;letter-spacing:.06em}
+.arm.on{background:linear-gradient(180deg,#36d984,#1aa760);border-color:#58f39c;color:#001908}
+.oracle-strip{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;gap:7px;min-width:0;padding:4px 7px;border-bottom:1px solid rgba(216,183,63,.36);background:linear-gradient(90deg,#100b08,#030405 58%,#050609);font-size:7px;font-weight:950;text-transform:uppercase;letter-spacing:.03em;color:#fff;overflow:hidden}
+.oracle-strip span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.oracle-strip b{color:var(--gold)}.oracle-strip .watch{color:var(--soft);flex:0 0 auto}
+.views{min-height:0;overflow:hidden;position:relative}
+.view{height:100%;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;display:none;padding:6px;background:radial-gradient(circle at 12% 0,rgba(216,183,63,.06),transparent 42%),#020304}
+.view.active{display:block}
+.view-desk.active{display:grid;grid-template-rows:minmax(360px,58vh) auto;gap:6px;padding:0 0 6px}
+.view-desk .chart-panel{min-height:0;height:auto}
+.desk-micro-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 6px 6px;align-items:start}
+.desk-micro-row .module{min-height:0}
+.desk-micro-row .depth-wrap{height:132px}
+.panel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.panel-grid.one{grid-template-columns:1fr}
+.panel-card{min-width:0;border:1px solid rgba(216,183,63,.22);background:linear-gradient(180deg,#090b10,#050609);border-radius:7px;overflow:hidden}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 7px;border-bottom:1px solid var(--line);color:var(--gold);font-size:7px;font-weight:950;text-transform:uppercase;letter-spacing:.06em}
+.panel-body{padding:7px;min-height:0}
+.panel-body.scroll{max-height:230px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.readout-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+.readout{min-width:0;border:1px solid rgba(42,48,64,.78);background:#030406;border-radius:4px;padding:5px;overflow:hidden}
+.readout span{display:block;color:var(--muted);font-size:6px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.readout b{display:block;margin-top:3px;color:#fff;font-size:12px;font-weight:950;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.readout.good b{color:var(--green)}.readout.bad b{color:var(--red)}.readout.gold b{color:var(--gold2)}
+.autopilot-btn{height:32px;width:100%;border:1px solid rgba(216,183,63,.5);background:#050609;color:var(--gold);border-radius:5px;font-size:9px;font-weight:950;text-transform:uppercase;letter-spacing:.05em}
+.autopilot-btn.on{background:linear-gradient(180deg,#36d984,#1aa760);border-color:#58f39c;color:#001908}
+.subtabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:6px}
+.subtab{border:1px solid var(--line2);background:#050609;color:var(--muted);border-radius:4px;padding:6px 2px;font-size:7px;font-weight:950;text-transform:uppercase}
+.subtab.active{color:#050506;background:linear-gradient(180deg,#f0ca55,#b8912e);border-color:#f4d66d}
+.vote-row{display:grid;grid-template-columns:88px minmax(0,1fr) 44px;gap:6px;align-items:center;padding:5px 0;border-bottom:1px solid rgba(42,48,64,.55);font-size:8px;text-transform:uppercase}
+.vote-row b{color:var(--gold2)}.vote-row i{font-style:normal;color:#fff}.vote-row span{color:var(--muted);text-align:right}
+.council-score{display:grid;grid-template-columns:1fr 1fr;gap:6px}.council-score .readout b{font-size:24px}
+.gov-state{font-size:34px;font-weight:950;line-height:.95;letter-spacing:.04em;color:var(--green);padding-bottom:8px;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,var(--green),rgba(216,183,63,.7),transparent) 1;text-transform:uppercase}
+.gov-state.halt{color:var(--red);border-image:linear-gradient(90deg,var(--red),rgba(216,183,63,.7),transparent) 1}
+.map-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:8px}
+.module-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.module-card{min-width:0;min-height:76px;border:1px solid rgba(216,183,63,.24);background:linear-gradient(180deg,#0a0c11,#050609);border-radius:8px;padding:9px;display:grid;align-content:start;gap:5px}
+.module-card b{font-size:11px;color:var(--gold2);text-transform:uppercase}.module-card span{font-size:7px;color:#fff;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.module-card small{font-size:6px;color:var(--muted);text-transform:uppercase}
+.bottom-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;padding:5px 7px max(5px,env(safe-area-inset-bottom));border-top:1px solid rgba(216,183,63,.43);background:linear-gradient(0deg,#08090c,#030304);min-height:0}
+.nav-btn{min-width:0;display:grid;gap:2px;place-items:center;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--muted);padding:4px 1px}
+.nav-btn b{font-size:7px;font-weight:950;text-transform:uppercase}.nav-btn span{font-size:13px;line-height:1;color:var(--soft)}.nav-btn small{font-size:5px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.nav-btn.active{border-color:rgba(216,183,63,.55);background:rgba(216,183,63,.13);color:var(--gold2)}.nav-btn.active span,.nav-btn.active small{color:var(--gold2)}
+.chart-panel{min-height:0;overflow:hidden;display:grid;grid-template-rows:26px minmax(0,1fr) 30px;background:#030406;border-bottom:1px solid rgba(216,183,63,.45)}
+.chart-head{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center;padding:2px 7px;background:linear-gradient(90deg,#0b0d12,#06070a);border-bottom:1px solid var(--line)}
+.inst{min-width:0;line-height:1}
+.inst b{display:block;font-size:9px;font-weight:950;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.inst span{display:block;margin-top:2px;font-size:5.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase}
+.quote{display:grid;grid-template-columns:auto auto auto;gap:4px;align-items:center;text-align:right}
+.quote .last{font-size:14px;font-weight:950;color:#fff;line-height:1}
+.quote .micro{font-size:6px;color:var(--muted);text-transform:uppercase}
+.quote .chg.up{color:var(--green)}.quote .chg.down{color:var(--red)}
+.stage{position:relative;min-height:0;overflow:hidden;background:linear-gradient(180deg,#080a0f,#030406)}
+#chart{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.watermark{position:absolute;left:7px;top:7px;color:rgba(216,183,63,.14);font-size:8px;font-weight:950;letter-spacing:.12em;pointer-events:none}
+.last-tag{position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:2;background:linear-gradient(180deg,#f2cc58,#b58d27);color:#050506;border:1px solid rgba(255,236,145,.7);border-right:0;border-radius:4px 0 0 4px;padding:3px 5px;font-size:8px;font-weight:950;box-shadow:0 0 18px rgba(216,183,63,.2);pointer-events:none}
+.tip{position:absolute;z-index:3;display:none;min-width:98px;padding:5px 6px;border:1px solid rgba(216,183,63,.48);background:rgba(3,4,6,.92);backdrop-filter:blur(5px);color:#fff;border-radius:4px;font-size:7px;line-height:1.35;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.55)}
+.tip b{color:var(--gold);font-weight:950}
+.chart-foot{min-height:0;display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);background:#050609}
+.stat{min-width:0;padding:2px 4px;border-right:1px solid var(--line);line-height:1.05;overflow:hidden}
+.stat:last-child{border-right:0}
+.stat span{display:block;font-size:5.5px;color:var(--muted);text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stat b{display:block;margin-top:2px;font-size:8px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stat .g{color:var(--green)}.stat .r{color:var(--red)}.stat .a{color:var(--amber)}
+.rail{min-height:0;overflow:hidden;background:linear-gradient(180deg,#0a0c10,#050609);border-bottom:1px solid rgba(216,183,63,.36);display:grid;grid-template-rows:18px 1fr 16px;padding:2px 6px 3px;gap:2px}
+.rail-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center;min-height:0}
+.rail-title{font-size:7px;font-weight:950;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rail-meta{font-size:6px;color:var(--muted);white-space:nowrap;text-align:right}
+.ticket{display:grid;grid-template-columns:.78fr .78fr .72fr .82fr 1.05fr 1.05fr;gap:3px;align-items:stretch;min-height:0}
+.field{min-width:0;border:1px solid var(--line2);background:#020304;border-radius:3px;display:grid;grid-template-rows:10px minmax(0,1fr);overflow:hidden}
+.field label{font-size:5.5px;color:var(--muted);text-align:center;text-transform:uppercase;padding-top:1px}
+.field input{width:100%;height:100%;background:#050609;color:#fff;text-align:center;font-size:10px;font-weight:900;padding:0 2px}
+.deal{border:1px solid transparent;border-radius:3px;font-size:9px;font-weight:950;letter-spacing:.04em;min-width:0;color:#020304}
+.deal small{display:block;font-size:5.5px;font-weight:900;opacity:.72;line-height:1}
+.call{background:linear-gradient(180deg,#42f09a,#1dae68);border-color:#69ffae}
+.put{background:linear-gradient(180deg,#ff7568,#c93832);border-color:#ff8e82}
+.rail-foot{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;font-size:6px;color:var(--muted);min-height:0;overflow:hidden}
+.rail-foot b{color:var(--gold);font-weight:900}
+.lower{min-height:0;overflow:hidden;display:grid;grid-template-rows:25px minmax(0,1fr);background:#020304}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;padding:3px 4px 2px;border-bottom:1px solid var(--line);background:#050609;min-height:0}
+.tab{min-width:0;border:1px solid var(--line);background:#080a0f;color:var(--muted);border-radius:3px;padding:4px 1px;font-size:6px;font-weight:950;text-transform:uppercase;letter-spacing:.03em}
+.tab.active{color:#050506;background:linear-gradient(180deg,#f0ca55,#b8912e);border-color:#f4d66d}
+.tab-body{min-height:0;overflow:hidden;padding:4px;background:radial-gradient(circle at 10% 0,rgba(216,183,63,.08),transparent 36%),#020304}
+.module-grid{height:100%;min-height:0;display:grid;grid-template-columns:1.12fr .88fr;gap:4px;overflow:hidden}
+.module{min-height:0;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,#090b10,#050609);border-radius:4px;display:grid;grid-template-rows:16px minmax(0,1fr)}
+.mh{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:2px 5px;border-bottom:1px solid var(--line);font-size:6px;color:var(--gold);font-weight:950;text-transform:uppercase;letter-spacing:.06em;min-width:0;overflow:hidden}
+.mh span:last-child{color:var(--muted);font-weight:800;letter-spacing:0;white-space:nowrap}
+.mb{min-height:0;overflow:hidden;padding:4px}
+.ladder{width:100%;border-collapse:collapse;font-size:6.3px;line-height:1.2}
+.ladder td{padding:1px 2px;border-bottom:1px solid rgba(42,48,64,.45);white-space:nowrap}
+.ladder .px{font-weight:950;color:#fff;text-align:right}
+.ladder .ask .px{color:#ff8e82}.ladder .bid .px{color:#67ec9f}
+.ladder .best td{background:rgba(216,183,63,.08);border-top:1px solid rgba(216,183,63,.25);border-bottom:1px solid rgba(216,183,63,.25)}
+.ladder .sz{text-align:right;color:var(--soft)}
+.ladder .cum{text-align:right;color:var(--muted)}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:3px;font-size:6.2px;line-height:1.15}
+.kv div{min-width:0;background:#030406;border:1px solid rgba(42,48,64,.7);padding:3px;border-radius:3px;overflow:hidden;white-space:nowrap}
+.kv span{display:block;color:var(--muted);text-transform:uppercase}
+.kv b{display:block;color:#fff;font-size:8px;margin-top:1px}
+.depth-wrap{position:relative;min-height:0;overflow:hidden}
+#depth{width:100%;height:100%;display:block}
+.legend{position:absolute;left:5px;bottom:4px;font-size:6px;color:var(--muted);display:flex;gap:6px;pointer-events:none}
+.dot{display:inline-block;width:6px;height:6px;border-radius:6px;margin-right:3px}.dot.g{background:var(--green)}.dot.r{background:var(--red)}
+.gauges{display:grid;gap:4px}
+.gauge{display:grid;grid-template-columns:60px minmax(0,1fr) 28px;gap:4px;align-items:center;font-size:6px;color:var(--muted)}
+.bar{height:5px;background:#111722;border:1px solid rgba(42,48,64,.8);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7a6320,#e1bf48)}
+.score{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-top:4px}
+.score div{border:1px solid var(--line);background:#030406;padding:4px;border-radius:3px;font-size:6px;color:var(--muted);min-width:0;overflow:hidden}
+.score b{display:block;color:#fff;font-size:11px;margin-top:2px}
+.tape{height:100%;overflow:hidden;font-size:6.3px;line-height:1.28;color:#bfc7d5}
+.tape-row{display:grid;grid-template-columns:42px 38px minmax(0,1fr);gap:4px;padding:2px 0;border-bottom:1px solid rgba(42,48,64,.55)}
+.tape-row b{color:var(--gold);font-weight:950}.tape-row span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tape-row.in b{color:var(--green)}.tape-row.out b{color:var(--red)}
+.transfer-rail{margin-top:8px;display:grid;grid-template-columns:minmax(0,1fr) 1fr 1fr;gap:5px}
+.transfer-rail input{width:100%;height:30px;border:1px solid rgba(216,183,63,.34);background:#020304;color:#fff;border-radius:4px;text-align:center;font-size:11px;font-weight:950}
+.transfer-rail button{min-width:0;height:30px;border-radius:4px;font-size:6.5px;font-weight:950;text-transform:uppercase;letter-spacing:.03em}
+.deposit{border:1px solid rgba(49,209,123,.7);background:linear-gradient(180deg,#37d987,#178b56);color:#001908}
+.withdraw{border:1px solid rgba(240,93,82,.7);background:linear-gradient(180deg,#f06b60,#9e2524);color:#160000}
+.ledger-tape{margin-top:7px;height:72px;overflow:hidden;border:1px solid rgba(42,48,64,.72);background:#020304;border-radius:4px;padding:4px}
+.trades{height:100%;overflow:hidden;font-size:6.3px}
+.trade-row{display:grid;grid-template-columns:34px 52px 34px minmax(0,1fr);gap:4px;align-items:center;padding:2px 0;border-bottom:1px solid rgba(42,48,64,.55)}
+.trade-row b{color:#fff}.trade-row .up{color:var(--green)}.trade-row .dn{color:var(--red)}
+.runtime{height:100%;display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:6.5px;overflow:hidden}
+.tile{min-width:0;min-height:0;border:1px solid var(--line);background:#030406;border-radius:3px;padding:4px;overflow:hidden}
+.tile span{display:block;color:var(--muted);text-transform:uppercase;font-size:5.5px}.tile b{display:block;color:#fff;font-size:9px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.landscape{display:none;position:fixed;inset:0;z-index:99;background:#000;color:var(--gold);align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:950;letter-spacing:.1em}
+.gateway{position:fixed;inset:0;z-index:120;display:none;place-items:center;padding:18px;background:rgba(0,0,0,.76);backdrop-filter:blur(2px)}
+.gateway.active{display:grid}
+.gateway-card{width:min(340px,100%);border:1px solid rgba(216,183,63,.58);background:linear-gradient(180deg,#090b10,#020304);box-shadow:0 22px 80px rgba(0,0,0,.88),0 0 34px rgba(216,183,63,.12);border-radius:8px;overflow:hidden}
+.gateway-head{padding:12px 13px;border-bottom:1px solid rgba(216,183,63,.35);background:linear-gradient(90deg,#11100a,#050609)}
+.gateway-head b{display:block;color:var(--gold2);font-size:12px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}
+.gateway-head span{display:block;margin-top:4px;color:var(--muted);font-size:7px;text-transform:uppercase}
+.gateway-body{display:grid;gap:8px;padding:12px}
+.gateway-body input{height:34px;border:1px solid rgba(216,183,63,.38);background:#010203;color:#fff;border-radius:4px;text-align:center;font-size:10px;font-weight:950;text-transform:uppercase}
+.gateway-body button{height:36px;border:1px solid rgba(49,209,123,.72);background:linear-gradient(180deg,#36d984,#1aa760);color:#001908;border-radius:4px;font-size:9px;font-weight:950;text-transform:uppercase;letter-spacing:.05em}
+.gateway-note{font-size:7px;line-height:1.45;color:var(--soft);text-transform:uppercase}
+@media (max-height:740px){
+  .app{grid-template-rows:31px 20px minmax(0,1fr) 54px}
+  .topbar{padding:2px 5px}.mark{width:24px;height:24px}.brand b{font-size:9px}
+  .chart-panel{grid-template-rows:22px minmax(0,1fr) 25px}
+  .quote .last{font-size:12px}.ticket{gap:2px}.deal{font-size:8px}
+  .view-desk.active{grid-template-rows:minmax(310px,56vh) auto}.tab{font-size:5.5px;padding:3px 0}
+}
+@media (orientation:landscape) and (max-height:560px){.landscape{display:flex}.app{filter:blur(2px)}}
+</style>
+</head>
+<body>
+<div id="appShell" class="app locked">
+  <header class="topbar">
+    <img class="mark" alt="QuadCOM" src="./icon-512.png">
+    <div class="brand">
+      <b>QuadCOM Desk Lite MAX</b>
+      <span>BTC/USD.SYN | Bitcoin Synthetic | Perpetual Core</span>
+    </div>
+    <div class="net">
+      <span id="accountPill" class="pill ok">OPR: LOCKED</span>
+      <button id="logoutBtn" class="pill logout" type="button">LOGOUT</button>
+      <span id="swPill" class="pill warn">SW INIT</span>
+    </div>
+    <button id="arm" class="arm" type="button">ARM</button>
+  </header>
+
+  <div id="oracleStrip" class="oracle-strip"><span><b>ORACLE</b> | WAIT | CONF 0 | CONF BELOW | HOLD | BID 64500.00 | ASK 64501.00</span><span class="watch">WATCH</span></div>
+
+  <main id="views" class="views">
+    <section id="view-desk" class="view view-desk active" data-view="desk" aria-label="Desk runtime">
+      <section class="chart-panel" aria-label="BTC synthetic chart">
+        <div class="chart-head">
+          <div class="inst">
+            <b>BTC/USD.SYN</b>
+            <span>Bitcoin Synthetic / Perpetual Core</span>
+          </div>
+          <div class="quote">
+            <div><div id="lastTop" class="last">64500.00</div><div class="micro">last</div></div>
+            <div><div id="chgTop" class="last chg up">+0.00</div><div class="micro">session</div></div>
+            <div><div id="sprTop" class="last">1.00</div><div class="micro">spread</div></div>
+          </div>
+        </div>
+        <div class="stage" id="stage">
+          <canvas id="chart"></canvas>
+          <div class="watermark">BTC SYNTHETIC SUBSTRATE</div>
+          <div id="lastTag" class="last-tag">64500.00</div>
+          <div id="tip" class="tip"></div>
+        </div>
+        <div class="chart-foot">
+          <div class="stat"><span>High</span><b id="hi">64500.00</b></div>
+          <div class="stat"><span>Low</span><b id="lo">64500.00</b></div>
+          <div class="stat"><span>VWAP</span><b id="vwap">64500.00</b></div>
+          <div class="stat"><span>POC</span><b id="poc">64500.00</b></div>
+          <div class="stat"><span>Regime</span><b id="regime" class="a">COMP</b></div>
+          <div class="stat"><span>Microprice</span><b id="microPx">64500.00</b></div>
+        </div>
+      </section>
+      <div id="deskBody" class="desk-micro-row"></div>
+    </section>
+
+    <section id="view-exec" class="view view-exec" data-view="exec" aria-label="Execution autopilot">
+      <div class="panel-grid one">
+        <section class="panel-card">
+          <div class="panel-head"><span>Autopilot Engine</span><span id="autoMode">OFF</span></div>
+          <div class="panel-body">
+            <button id="autopilotBtn" class="autopilot-btn" type="button">ENABLE AUTOPILOT</button>
+            <div id="autopilotReadouts" class="readout-grid" style="margin-top:6px"></div>
+          </div>
+        </section>
+        <section class="rail" aria-label="Execution rail">
+          <div class="rail-top">
+            <div class="rail-title">Execution layer | BTC/USD.SYN live tape</div>
+            <div id="railState" class="rail-meta">Open 0/2 | payout 92%</div>
+          </div>
+          <div class="ticket">
+            <div class="field"><label for="expiry">Expiry</label><input id="expiry" inputmode="numeric" value="30"></div>
+            <div class="field"><label for="stake">Stake</label><input id="stake" inputmode="decimal" value="100.00"></div>
+            <div class="field"><label for="slots">Max open</label><input id="slots" inputmode="numeric" value="2"></div>
+            <div class="field"><label for="gate">Min conf</label><input id="gate" inputmode="numeric" value="62"></div>
+            <button id="call" class="deal call" type="button">CALL<small>ask entry</small></button>
+            <button id="put" class="deal put" type="button">PUT<small>bid entry</small></button>
+          </div>
+          <div class="rail-foot"><span id="mathLine"><b>stake debited on entry</b> | win credits stake+payout</span><span id="balanceLine">BAL $0.00</span></div>
+        </section>
+        <section class="panel-card">
+          <div class="panel-head"><span>Position Book</span><span id="posMeta">0 open</span></div>
+          <div id="posBook" class="panel-body scroll"></div>
+        </section>
+        <section class="panel-card">
+          <div class="panel-head"><span>Execution Tape</span><span>lifecycle only</span></div>
+          <div id="execTape" class="panel-body scroll"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="view-council" class="view" data-view="council" aria-label="Council chamber">
+      <nav class="subtabs" aria-label="Council tabs">
+        <button class="subtab active" data-council-tab="votes" type="button">Votes</button>
+        <button class="subtab" data-council-tab="consensus" type="button">Consensus</button>
+        <button class="subtab" data-council-tab="chamber" type="button">Chamber</button>
+      </nav>
+      <div id="councilBody"></div>
+    </section>
+
+    <section id="view-gov" class="view" data-view="gov" aria-label="Governor">
+      <nav class="subtabs" aria-label="Governor tabs">
+        <button class="subtab active" data-gov-tab="capital" type="button">Capital</button>
+        <button class="subtab" data-gov-tab="pressure" type="button">Pressure</button>
+        <button class="subtab" data-gov-tab="guard" type="button">Guard</button>
+      </nav>
+      <div id="govBody"></div>
+    </section>
+
+    <section id="view-more" class="view" data-view="more" aria-label="App map">
+      <div id="mapBody"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary routes">
+    <button class="nav-btn active" data-route="desk" type="button"><span>D</span><b>Desk</b><small>Runtime</small></button>
+    <button class="nav-btn" data-route="exec" type="button"><span>X</span><b>Exec</b><small>Gated</small></button>
+    <button class="nav-btn" data-route="council" type="button"><span>C</span><b>Council</b><small>Hold</small></button>
+    <button class="nav-btn" data-route="gov" type="button"><span>G</span><b>Gov</b><small>Clear</small></button>
+    <button class="nav-btn" data-route="more" type="button"><span>M</span><b>More</b><small>App map</small></button>
+  </nav>
+</div>
+<div id="gateway" class="gateway active" role="dialog" aria-modal="true" aria-labelledby="gatewayTitle">
+  <section class="gateway-card">
+    <div class="gateway-head">
+      <b id="gatewayTitle">QUADCOM SECURE GATEWAY</b>
+      <span>Simulated account gateway | isolated local ledger</span>
+    </div>
+    <div class="gateway-body">
+      <input id="operatorInput" autocomplete="off" spellcheck="false" placeholder="OPTIONAL OPERATOR ID">
+      <button id="connectBtn" type="button">SIMULATE WALLET CONNECT</button>
+      <div id="gatewayNote" class="gateway-note">No active operator session. Connect to create or restore an account. New accounts begin at $0.00 and must deposit from the testnet faucet before trading.</div>
+    </div>
+  </section>
+</div>
+<div class="landscape">PORTRAIT TERMINAL<br>BTC/USD.SYN</div>
+
+<script>
+(() => {
+"use strict";
+const INSTRUMENT="BTC/USD.SYN", INSTRUMENT_LONG="Bitcoin Synthetic / Perpetual Core";
+const TICK=0.5, MIN=62000, MAX=67000, BASE=64500, PAYOUT=0.92;
+const ACTIVE_KEY="quadcom_active_account", DATA_PREFIX="quadcom_data_";
+const $=id=>document.getElementById(id);
+const fmt=n=>(Number.isFinite(n)?n:BASE).toFixed(2);
+const money=n=>"$"+(Number.isFinite(n)?n:0).toFixed(2);
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const now=()=>new Date().toLocaleTimeString([], {hour12:false});
+function sizeFmt(n){return n>=1e6?(n/1e6).toFixed(2)+"M":(n/1e3).toFixed(0)+"K";}
+function fitCanvas(c){
+  const r=c.getBoundingClientRect(), d=Math.min(3,window.devicePixelRatio||1);
+  const w=Math.max(1,Math.floor(r.width*d)), h=Math.max(1,Math.floor(r.height*d));
+  if(c.width!==w||c.height!==h){c.width=w;c.height=h;}
+  const ctx=c.getContext("2d");
+  ctx.setTransform(d,0,0,d,0,0);
+  return {ctx,w:r.width,h:r.height,d};
+}
+function line(ctx,x1,y1,x2,y2,stroke,width=1,dash=[]){
+  ctx.save();ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.setLineDash(dash);
+  ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.restore();
+}
+const app={
+  armed:false, autopilot:false, sw:"INIT", mode:"BROWSER", routeName:"desk", councilTab:"votes", govTab:"capital", pointer:null, lastAuto:0, autoStatus:"OFF", autoFires:0,
+  accountId:null, sessionReady:false, transferDraft:"250.00",
+  ticks:[], book:{bids:[],asks:[]}, positions:[], ledger:[], transfers:[],
+  metrics:{balance:0,turnover:0,wins:0,losses:0,refunds:0,lossStreak:0,closed:0,peakEquity:0},
+  market:{last:BASE,open:BASE,high:BASE,low:BASE,vwap:BASE,poc:BASE,spread:TICK*2,mid:BASE,micro:BASE,imb:0,regime:"COMP",momentum:0,vol:22,upper:BASE+80,lower:BASE-80},
+  council:{action:"HOLD",conf:0,tension:0,allowed:false,reason:"warming substrate",macro:50,retail:50,flow:50,gate:50,structure:50,support:50,resistance:50,bull:50,bear:50},
+  init(){
+    const standalone=window.matchMedia("(display-mode: standalone)").matches||window.navigator.standalone;
+    this.mode=standalone?"PWA":"BROWSER";
+    this.seed();this.bind();this.restoreSession();this.registerSw();this.loop();
+    setInterval(()=>this.loop(),650);
+    setInterval(()=>this.auto(),1000);
+    new ResizeObserver(()=>this.draw()).observe($("stage"));
+    window.app=this;
+  },
+  bind(){
+    $("arm").addEventListener("click",()=>{this.armed=!this.armed;this.log("ARM",this.armed?"protocol armed":"protocol idle");this.saveState();this.render();});
+    $("call").addEventListener("click",()=>this.open("CALL","MANUAL"));
+    $("put").addEventListener("click",()=>this.open("PUT","MANUAL"));
+    $("autopilotBtn").addEventListener("click",()=>{this.autopilot=!this.autopilot;if(this.autopilot&&!this.armed)this.armed=true;this.log("AUTO",this.autopilot?"autopilot enabled":"autopilot disabled");this.saveState();this.render();});
+    $("connectBtn").addEventListener("click",()=>this.connectAccount($("operatorInput").value));
+    $("operatorInput").addEventListener("keydown",e=>{if(e.key==="Enter")this.connectAccount($("operatorInput").value);});
+    $("logoutBtn").addEventListener("click",()=>this.logout());
+    document.querySelectorAll("[data-route]").forEach(b=>b.addEventListener("click",()=>this.route(b.dataset.route)));
+    document.addEventListener("click",e=>{
+      const ct=e.target.closest("[data-council-tab]");if(ct){this.councilTab=ct.dataset.councilTab;this.renderCouncilView();}
+      const gt=e.target.closest("[data-gov-tab]");if(gt){this.govTab=gt.dataset.govTab;this.renderGovernor();}
+      if(e.target.closest("#depositBtn"))this.transfer("IN");
+      if(e.target.closest("#withdrawBtn"))this.transfer("OUT");
+    });
+    document.addEventListener("input",e=>{
+      if(e.target.id==="transferAmount")this.transferDraft=e.target.value;
+    });
+    const stage=$("stage");
+    stage.addEventListener("pointermove",e=>{const r=stage.getBoundingClientRect();this.pointer={x:e.clientX-r.left,y:e.clientY-r.top};this.draw();});
+    stage.addEventListener("pointerleave",()=>{this.pointer=null;$("tip").style.display="none";this.draw();});
+  },
+  route(name){
+    this.routeName=name||"desk";
+    document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.dataset.view===this.routeName));
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.route===this.routeName));
+    this.render();requestAnimationFrame(()=>this.draw());
+  },
+  settings(){
+    return {
+      expiry:clamp(parseInt($("expiry").value,10)||30,5,300),
+      stake:clamp(parseFloat($("stake").value)||100,1,99999),
+      slots:clamp(parseInt($("slots").value,10)||2,1,6),
+      gate:clamp(parseInt($("gate").value,10)||62,40,95)
+    };
+  },
+  defaultMetrics(){return {balance:0,turnover:0,wins:0,losses:0,refunds:0,lossStreak:0,closed:0,peakEquity:0};},
+  resetAccountState(){
+    this.armed=false;this.autopilot=false;this.autoStatus="OFF";this.autoFires=0;this.positions=[];this.ledger=[];this.transfers=[];this.metrics=this.defaultMetrics();this.transferDraft="250.00";
+  },
+  normalizeAccount(raw){
+    const body=String(raw||"").trim().replace(/^0x/i,"").toUpperCase();
+    return /^[0-9A-F]{6,24}$/.test(body)?"0x"+body:this.makeAccountId();
+  },
+  makeAccountId(){
+    const bytes=new Uint8Array(6);
+    crypto.getRandomValues(bytes);
+    return "0x"+Array.from(bytes,b=>b.toString(16).padStart(2,"0")).join("").toUpperCase();
+  },
+  accountLabel(id=this.accountId){return id?`OPR: ${id.slice(0,5)}...${id.slice(-4)}`:"OPR: LOCKED";},
+  dataKey(){return this.accountId?DATA_PREFIX+this.accountId:null;},
+  restoreSession(){
+    const active=localStorage.getItem(ACTIVE_KEY);
+    if(active){this.connectAccount(active,true);return true;}
+    this.resetAccountState();this.showGateway();return false;
+  },
+  connectAccount(raw,silent=false){
+    const id=this.normalizeAccount(raw);
+    this.accountId=id;this.sessionReady=true;localStorage.setItem(ACTIVE_KEY,id);
+    this.resetAccountState();
+    try{
+      const saved=JSON.parse(localStorage.getItem(this.dataKey())||"null");
+      if(saved&&saved.accountId===id){
+        this.metrics={...this.defaultMetrics(),...(saved.metrics||{})};
+        this.transfers=Array.isArray(saved.transfers)?saved.transfers.slice(0,80):[];
+        this.ledger=Array.isArray(saved.ledger)?saved.ledger.slice(0,80):[];
+        this.positions=Array.isArray(saved.positions)?saved.positions.slice(0,6):[];
+        this.autoFires=Number(saved.autoFires)||0;
+        this.transferDraft=saved.transferDraft||"250.00";
+      }
+    }catch(_){}
+    this.hideGateway();
+    if(!silent)this.log("GATEWAY",`operator ${this.accountLabel(id)} connected`);
+    this.saveState();this.render();
+  },
+  showGateway(){
+    this.sessionReady=false;
+    $("appShell").classList.add("locked");
+    $("gateway").classList.add("active");
+    $("accountPill").textContent="OPR: LOCKED";
+  },
+  hideGateway(){
+    $("appShell").classList.remove("locked");
+    $("gateway").classList.remove("active");
+    $("accountPill").textContent=this.accountLabel();
+    $("accountPill").title=this.accountId||"";
+  },
+  logout(){
+    this.saveState();
+    localStorage.removeItem(ACTIVE_KEY);
+    this.accountId=null;this.resetAccountState();this.showGateway();this.render();
+  },
+  saveState(){
+    if(!this.sessionReady||!this.accountId)return;
+    const data={accountId:this.accountId,metrics:this.metrics,transfers:this.transfers.slice(0,80),ledger:this.ledger.slice(0,80),positions:this.positions.slice(0,6),autoFires:this.autoFires,transferDraft:this.transferDraft,updated:Date.now()};
+    try{localStorage.setItem(this.dataKey(),JSON.stringify(data));}catch(_){}
+  },
+  seed(){
+    this.regimeUntil=0;this.regimeBias=0;this.market.last=BASE+(Math.random()-.5)*260;
+    for(let i=0;i<240;i++)this.step(true);
+    this.market.open=this.ticks[0].p;this.calc();
+  },
+  chooseRegime(){
+    const r=Math.random();
+    if(r<.28){this.market.regime="COMP";this.market.vol=8;this.regimeBias=(Math.random()-.5)*1.4;}
+    else if(r<.48){this.market.regime="DRIFT UP";this.market.vol=18;this.regimeBias=3+Math.random()*4;}
+    else if(r<.68){this.market.regime="DRIFT DN";this.market.vol=18;this.regimeBias=-3-Math.random()*4;}
+    else if(r<.84){this.market.regime="IMPULSE";this.market.vol=56;this.regimeBias=(Math.random()<.5?-1:1)*(12+Math.random()*18);}
+    else{this.market.regime="PULLBACK";this.market.vol=30;this.regimeBias=(BASE-this.market.last)*0.012;}
+    this.regimeUntil=Date.now()+2600+Math.random()*6500;
+  },
+  step(seed=false){
+    if(Date.now()>this.regimeUntil||seed)this.chooseRegime();
+    const m=this.market;
+    const cluster=1+Math.max(0,Math.sin(this.ticks.length/9))*0.9+(Math.random()<.05?1.3:0);
+    const shock=(Math.random()-.5)*m.vol*cluster;
+    const pull=(BASE-m.last)*0.015;
+    m.momentum=m.momentum*.72+this.regimeBias+shock+pull;
+    let next=m.last+m.momentum;
+    if(next<MIN){next=MIN+(MIN-next)*.42;m.momentum=Math.abs(m.momentum)*.36;}
+    if(next>MAX){next=MAX-(next-MAX)*.42;m.momentum=-Math.abs(m.momentum)*.36;}
+    m.last=clamp(next,MIN,MAX);
+    const spreadTicks=clamp(2+Math.floor(Math.abs(m.momentum)/7)+(m.regime==="IMPULSE"?6:0),2,80);
+    m.spread=spreadTicks*TICK;m.mid=m.last;m.bid=m.mid-m.spread/2;m.ask=m.mid+m.spread/2;
+    const volume=420000+Math.random()*2100000+(m.regime==="IMPULSE"?2800000:0)+(m.regime==="COMP"?-140000:0);
+    this.ticks.push({t:Date.now(),p:m.last,bid:m.bid,ask:m.ask,vol:Math.max(90000,volume),regime:m.regime,mom:m.momentum});
+    if(this.ticks.length>360)this.ticks.shift();
+  },
+  calc(){
+    const win=this.ticks.slice(-180), m=this.market;
+    m.high=Math.max(...win.map(x=>x.p));m.low=Math.min(...win.map(x=>x.p));
+    const sum=win.reduce((a,x)=>a+x.p*x.vol,0), vol=win.reduce((a,x)=>a+x.vol,0);m.vwap=sum/vol;
+    const bins=48, bucket=Array.from({length:bins},()=>0), lo=m.low, hi=m.high, span=Math.max(TICK,hi-lo);
+    win.forEach(x=>{bucket[clamp(Math.floor((x.p-lo)/span*bins),0,bins-1)]+=x.vol;});
+    let bi=0;bucket.forEach((v,i)=>{if(v>bucket[bi])bi=i;});m.poc=lo+(bi+.5)/bins*span;
+    const recent=win.slice(-60), avg=recent.reduce((a,x)=>a+x.p,0)/recent.length;
+    const sd=Math.sqrt(recent.reduce((a,x)=>a+(x.p-avg)*(x.p-avg),0)/recent.length);
+    m.upper=avg+sd*2.1;m.lower=avg-sd*2.1;
+    this.makeBook();this.makeCouncil();
+  },
+  makeBook(){
+    const m=this.market, levels=8, bids=[], asks=[];
+    const pressure=clamp(m.momentum/70,-1,1);
+    for(let i=1;i<=levels;i++){
+      const curve=1+i*.19, pulse=1+Math.sin((this.ticks.length+i)*.71)*.18;
+      const bidSize=(280000+i*112000)*curve*pulse*(1+Math.max(0,pressure)*.5);
+      const askSize=(280000+i*108000)*curve*(2-pulse)*(1+Math.max(0,-pressure)*.5);
+      bids.push({px:m.bid-(i-1)*TICK*2,sz:Math.max(65000,bidSize),cum:0});
+      asks.push({px:m.ask+(i-1)*TICK*2,sz:Math.max(65000,askSize),cum:0});
+    }
+    bids.reduce((a,x)=>x.cum=a+x.sz,0);asks.reduce((a,x)=>x.cum=a+x.sz,0);
+    const b=bids.slice(0,3).reduce((a,x)=>a+x.sz,0), a=asks.slice(0,3).reduce((s,x)=>s+x.sz,0);
+    m.imb=(b-a)/(b+a);m.micro=(m.ask*b+m.bid*a)/(a+b);this.book={bids,asks};
+  },
+  makeCouncil(){
+    const m=this.market, range=Math.max(TICK,m.high-m.low);
+    const loc=(m.last-m.low)/range, comp=clamp(100-range/4.2,0,100);
+    const flow=clamp(50+m.momentum/4+m.imb*22,0,100);
+    const macro=clamp(50+(m.vwap-m.poc)*.12+(m.last-m.vwap)*.04,0,100);
+    const retail=clamp(50+(loc-.5)*-55+(m.poc-m.last)*.06,0,100);
+    const gate=clamp(60+comp*.18-Math.abs(m.imb)*8,0,100);
+    const callScore=(flow+macro+gate+(100-retail))/4;
+    const putScore=((100-flow)+(100-macro)+gate+retail)/4;
+    const action=callScore>putScore?"CALL":"PUT";
+    const conf=Math.max(callScore,putScore), tension=clamp(Math.abs(callScore-putScore)*2.2,0,100);
+    this.council={
+      action:conf>=this.settings().gate?action:"HOLD",
+      conf,tension,allowed:conf>=this.settings().gate,reason:conf>=this.settings().gate?"gate aligned":"confidence below threshold",
+      macro,retail,flow,gate,structure:comp,
+      support:clamp(82-loc*58+comp*.35,0,100),
+      resistance:clamp(26+loc*62+Math.max(0,m.momentum)*.2,0,100),
+      bull:clamp(callScore+Math.max(0,m.imb)*8,0,100),
+      bear:clamp(putScore+Math.max(0,-m.imb)*8,0,100)
+    };
+  },
+  loop(){this.step();this.calc();this.settle();this.render();this.draw();},
+  auto(){
+    const gov=this.governorState();
+    if(!this.autopilot){this.autoStatus="OFF";return;}
+    if(!this.armed){this.autoStatus="DISARMED";return;}
+    if(gov.state==="HALT"){this.autoStatus="HALT";return;}
+    if(!this.council.allowed){this.autoStatus="WAIT";return;}
+    if(Date.now()-this.lastAuto<4200){this.autoStatus="SPACING";return;}
+    const before=this.metrics.turnover;
+    this.open(this.council.action,"AUTO");
+    if(this.metrics.turnover>before){this.autoFires++;this.autoStatus="ON";}
+  },
+  open(dir,src){
+    const s=this.settings(), gov=this.governorState();
+    if(!this.sessionReady){this.log("BLOCK","gateway locked");return;}
+    if(gov.state==="HALT"){this.log("BLOCK","governor halt");this.saveState();return;}
+    if(this.positions.length>=s.slots){this.log("MAX",`open ${this.positions.length}/${s.slots}`);return;}
+    if(this.metrics.balance<s.stake){this.log("CASH","stake unavailable");return;}
+    this.metrics.balance-=s.stake;this.metrics.turnover+=s.stake;this.lastAuto=Date.now();
+    const entry=dir==="CALL"?this.market.ask:this.market.bid;
+    const p={id:Date.now().toString(36),dir,src,entry,stake:s.stake,payout:PAYOUT,opened:Date.now(),expires:Date.now()+s.expiry*1000,idx:this.ticks.length-1,conf:this.council.conf};
+    this.positions.push(p);this.log(dir,`${src} ${dir} @ ${fmt(p.entry)} stake ${money(s.stake)} debited`);this.saveState();this.render();
+  },
+  settle(){
+    const keep=[];let changed=false;
+    for(const p of this.positions){
+      if(Date.now()<p.expires){keep.push(p);continue;}
+      const close=p.dir==="CALL"?this.market.bid:this.market.ask;
+      const delta=close-p.entry, refund=Math.abs(delta)<TICK/2, win=p.dir==="CALL"?close>p.entry:close<p.entry;
+      let pnl=-p.stake, credit=0, out="LOSS";
+      if(refund){pnl=0;credit=p.stake;out="REFUND";this.metrics.refunds++;this.metrics.lossStreak=0;}
+      else if(win){pnl=p.stake*p.payout;credit=p.stake*(1+p.payout);out="WIN";this.metrics.wins++;this.metrics.lossStreak=0;}
+      else{this.metrics.losses++;this.metrics.lossStreak++;}
+      this.metrics.closed++;this.metrics.balance+=credit;this.ledger.unshift({t:now(),tag:out,txt:`${p.dir} ${fmt(delta)} pnl ${money(pnl)}`,pnl});changed=true;
+    }
+    this.positions=keep;if(this.ledger.length>80)this.ledger.length=80;
+    if(changed){this.noteEquityPeak();this.saveState();}
+  },
+  log(tag,txt,pnl=0){this.ledger.unshift({t:now(),tag,txt,pnl});if(this.ledger.length>80)this.ledger.length=80;},
+  equity(){return this.metrics.balance+this.positions.reduce((a,p)=>a+p.stake,0);},
+  fundedCapital(){return this.transfers.reduce((a,x)=>a+(x.side==="IN"?x.amount:-x.amount),0);},
+  noteEquityPeak(){this.metrics.peakEquity=Math.max(Number(this.metrics.peakEquity)||0,this.equity());},
+  transfer(side){
+    if(!this.sessionReady){this.showGateway();return;}
+    const amount=Number(parseFloat(this.transferDraft).toFixed(2));
+    if(!Number.isFinite(amount)||amount<=0){this.log("WALLET","invalid transfer amount");this.render();return;}
+    if(side==="OUT"&&amount>this.metrics.balance){this.log("WALLET","withdraw exceeds available balance");this.saveState();this.render();return;}
+    if(side==="IN"){
+      this.metrics.balance+=amount;
+      this.transfers.unshift({t:now(),side:"IN",amount,balance:this.metrics.balance});
+      this.noteEquityPeak();
+      this.log("IN",`testnet faucet deposit ${money(amount)}`);
+    }else{
+      this.metrics.balance-=amount;
+      this.transfers.unshift({t:now(),side:"OUT",amount,balance:this.metrics.balance});
+      this.metrics.peakEquity=Math.max(0,Math.min(this.equity(),(Number(this.metrics.peakEquity)||0)-amount));
+      this.log("OUT",`wallet withdrawal ${money(amount)}`);
+    }
+    if(this.transfers.length>80)this.transfers.length=80;
+    this.saveState();this.render();
+  },
+  transferRows(limit=8){
+    return this.transfers.slice(0,limit).map(x=>`<div class="tape-row ${x.side==="IN"?"in":"out"}"><span>${x.t}</span><b>${x.side==="IN"?"+ IN":"- OUT"}</b><span>${money(x.amount)} | bal ${money(x.balance)}</span></div>`).join("")||`<div class="tape-row"><span>${now()}</span><b>LEDGER</b><span>no wallet transfers recorded</span></div>`;
+  },
+  governorState(){
+    const equity=this.equity(), peak=Math.max(Number(this.metrics.peakEquity)||0,equity);
+    const drawdown=peak>0?Math.max(0,(peak-equity)/peak*100):0;
+    const exposure=this.positions.reduce((a,p)=>a+p.stake,0)/Math.max(1,equity)*100;
+    // Governor no longer halts on losses, loss streaks, or drawdown — a losing
+    // trade never blocks execution. Drawdown/streak remain informational only.
+    const state="CLEAR";
+    return {state,drawdown,exposure,equity,peak,capital:this.fundedCapital(),lossStreak:this.metrics.lossStreak,reason:equity<=0?"AWAITING DEPOSIT":"CAPITAL CLEAR"};
+  },
+  winRate(){const n=this.metrics.wins+this.metrics.losses;return n?this.metrics.wins/n*100:0;},
+  edgePoints(){return this.winRate()-52.08;},
+  voteRows(){
+    const c=this.council;
+    return [
+      ["Macro",c.macro>=50?"CALL":"PUT",Math.round(c.macro)],
+      ["Flow",c.flow>=50?"CALL":"PUT",Math.round(c.flow)],
+      ["Gate",c.allowed?c.action:"HOLD",Math.round(c.gate)],
+      ["Structure",this.market.regime==="COMP"?"COMPRESSION":this.market.regime,Math.round(c.structure)],
+      ["Retail",c.retail>=50?"PUT":"CALL",Math.round(c.retail)]
+    ];
+  },
+  positionRows(){
+    const m=this.market;
+    if(!this.positions.length)return `<div class="tape-row"><span>${now()}</span><b>FLAT</b><span>no open positions</span></div>`;
+    return this.positions.map(p=>{
+      const left=Math.max(0,(p.expires-Date.now())/1000);
+      const lead=p.dir==="CALL"?m.bid-p.entry:p.entry-m.ask;
+      const winning=lead>0;
+      const proj=winning?p.stake*p.payout:-p.stake;
+      return `<div class="tape-row ${winning?"in":"out"}"><span>${p.dir}${p.src==="AUTO"?" A":""}</span><b>${fmt(p.entry)}</b><span>${left.toFixed(0)}s ${winning?"▲":"▼"}${fmt(Math.abs(lead))} ${(proj>=0?"+":"")+money(proj)}</span></div>`;
+    }).join("");
+  },
+  lifecycleRows(limit=18){
+    return this.ledger.filter(x=>/^(CALL|PUT|WIN|LOSS|REFUND|MAX|CASH|BLOCK|AUTO|ARM)$/.test(x.tag)).slice(0,limit);
+  },
+  render(){
+    const m=this.market, c=this.council, s=this.settings(), gov=this.governorState();
+    $("accountPill").textContent=this.accountLabel();$("accountPill").title=this.accountId||"";
+    $("swPill").textContent=`SW ${this.sw}`;$("swPill").className=`pill ${this.sw==="READY"?"ok":"warn"}`;
+    $("arm").textContent=this.armed?"ARMED":"ARM";$("arm").classList.toggle("on",this.armed);
+    $("lastTop").textContent=fmt(m.last);$("lastTag").textContent=fmt(m.last);
+    const chg=m.last-this.market.open;$("chgTop").textContent=(chg>=0?"+":"")+fmt(chg);$("chgTop").className=`last chg ${chg>=0?"up":"down"}`;
+    $("sprTop").textContent=fmt(m.spread);$("hi").textContent=fmt(m.high);$("lo").textContent=fmt(m.low);$("vwap").textContent=fmt(m.vwap);$("poc").textContent=fmt(m.poc);
+    $("regime").textContent=m.regime;$("microPx").textContent=fmt(m.micro);
+    $("oracleStrip").innerHTML=`<span><b>ORACLE</b> | ${c.action} | CONF ${c.conf.toFixed(0)} | ${c.allowed?"PASS":"CONF BELOW"} | ${c.reason.toUpperCase()} | BID ${fmt(m.bid)} | ASK ${fmt(m.ask)}</span><span class="watch">WATCH</span>`;
+    $("railState").textContent=`${this.autoStatus} | ${this.armed?"ARMED":"WAIT"} | Open ${this.positions.length}/${s.slots} | ${c.allowed?"PASS":"HOLD"} | GOV ${gov.state}`;
+    $("balanceLine").textContent=`BAL ${money(this.metrics.balance)} | TURN ${money(this.metrics.turnover)}`;
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.route===this.routeName));
+    this.renderDesk();this.renderExec();this.renderCouncilView();
+    if(document.activeElement?.id!=="transferAmount")this.renderGovernor();
+    this.renderMap();
+  },
+  renderDesk(){
+    const m=this.market;
+    const askRows=this.book.asks.slice().reverse().map((x,i)=>`<tr class="ask ${i===this.book.asks.length-1?"best":""}"><td class="cum">${sizeFmt(x.cum)}</td><td class="sz">${sizeFmt(x.sz)}</td><td class="px">${fmt(x.px)}</td></tr>`).join("");
+    const bidRows=this.book.bids.map((x,i)=>`<tr class="bid ${i===0?"best":""}"><td class="cum">${sizeFmt(x.cum)}</td><td class="sz">${sizeFmt(x.sz)}</td><td class="px">${fmt(x.px)}</td></tr>`).join("");
+    const topDepth=this.book.bids[0].sz+this.book.asks[0].sz;
+    $("deskBody").innerHTML=`
+      <div class="module book"><div class="mh"><span>Order book</span><span>${INSTRUMENT}</span></div><div class="mb"><table class="ladder"><tbody>${askRows}${bidRows}</tbody></table></div></div>
+      <div class="module"><div class="mh"><span>Depth</span><span>cum curve</span></div><div class="mb"><div class="depth-wrap"><canvas id="depth"></canvas><div class="legend"><span><i class="dot g"></i>bid</span><span><i class="dot r"></i>ask</span></div></div></div></div>
+      <div class="module"><div class="mh"><span>Microprice</span><span>${fmt(m.micro)}</span></div><div class="mb"><div class="kv">
+        <div><span>Best bid</span><b>${fmt(this.book.bids[0].px)}</b></div><div><span>Best ask</span><b>${fmt(this.book.asks[0].px)}</b></div>
+        <div><span>Spread</span><b>${fmt(m.spread)}</b></div><div><span>Mid</span><b>${fmt(m.mid)}</b></div>
+        <div><span>Imbalance</span><b>${(m.imb*100).toFixed(1)}%</b></div><div><span>Top depth</span><b>${sizeFmt(topDepth)}</b></div>
+      </div></div></div>
+      <div class="module"><div class="mh"><span>Structure</span><span>${m.regime}</span></div><div class="mb"><div class="kv">
+        <div><span>High</span><b>${fmt(m.high)}</b></div><div><span>Low</span><b>${fmt(m.low)}</b></div>
+        <div><span>VWAP</span><b>${fmt(m.vwap)}</b></div><div><span>POC</span><b>${fmt(m.poc)}</b></div>
+        <div><span>Band upper</span><b>${fmt(m.upper)}</b></div><div><span>Band lower</span><b>${fmt(m.lower)}</b></div>
+      </div></div></div>
+    `;
+    this.drawDepth();
+  },
+  readout(label,value,tone=""){return `<div class="readout ${tone}"><span>${label}</span><b>${value}</b></div>`;},
+  renderExec(){
+    const s=this.settings(), gov=this.governorState();
+    $("autopilotBtn").textContent=this.autopilot?"AUTOPILOT ENABLED":"ENABLE AUTOPILOT";
+    $("autopilotBtn").classList.toggle("on",this.autopilot);
+    $("autoMode").textContent=this.autopilot?"ON":"OFF";
+    $("autopilotReadouts").innerHTML=[
+      this.readout("Status",gov.state==="HALT"?"HALT":this.autoStatus,gov.state==="HALT"?"bad":this.autopilot?"good":""),
+      this.readout("Fires",this.autoFires,"gold"),
+      this.readout("Gate",s.gate),
+      this.readout("Size","1.00x","good")
+    ].join("");
+    $("posMeta").textContent=`${this.positions.length}/${s.slots} open`;
+    $("posBook").innerHTML=`<div class="tape">${this.positionRows()}</div>`;
+    $("execTape").innerHTML=`<div class="tape">${this.lifecycleRows().map(x=>`<div class="tape-row"><span>${x.t}</span><b>${x.tag}</b><span>${x.txt}</span></div>`).join("")||"<div class='tape-row'><span>"+now()+"</span><b>READY</b><span>lifecycle tape waiting</span></div>"}</div>`;
+  },
+  renderCouncilView(){
+    const c=this.council;
+    document.querySelectorAll("[data-council-tab]").forEach(b=>b.classList.toggle("active",b.dataset.councilTab===this.councilTab));
+    const g=(name,val)=>`<div class="gauge"><span>${name}</span><div class="bar"><i style="width:${val.toFixed(0)}%"></i></div><b>${val.toFixed(0)}</b></div>`;
+    if(this.councilTab==="votes"){
+      $("councilBody").innerHTML=`<div class="panel-grid one"><section class="panel-card"><div class="panel-head"><span>Vote Chamber Breakdown</span><span>${c.action}</span></div><div class="panel-body">${this.voteRows().map(v=>`<div class="vote-row"><b>${v[0]}</b><i>${v[1]}</i><span>Weight ${v[2]}</span></div>`).join("")}</div></section></div>`;
+    }else if(this.councilTab==="consensus"){
+      $("councilBody").innerHTML=`<div class="panel-grid one"><section class="panel-card"><div class="panel-head"><span>Council Consensus</span><span>${c.reason}</span></div><div class="panel-body"><div class="council-score">${this.readout("Council Consensus",c.conf.toFixed(0),c.allowed?"good":"gold")}${this.readout("Tension",c.tension.toFixed(0),c.tension>72?"bad":"")}</div><div class="score" style="margin-top:7px"><div><span>State</span><b>${c.allowed?"CLEAR":"HOLD"}</b></div><div><span>Action</span><b>${c.action}</b></div><div><span>Gate</span><b>${this.settings().gate}</b></div></div></div></section></div>`;
+    }else{
+      $("councilBody").innerHTML=`<div class="panel-grid"><section class="panel-card"><div class="panel-head"><span>Chamber Pressure</span><span>macro flow gate risk</span></div><div class="panel-body"><div class="gauges">${g("Macro",c.macro)}${g("Flow",c.flow)}${g("Gate",c.gate)}${g("Structure",c.structure)}</div></div></section><section class="panel-card"><div class="panel-head"><span>S/R Probabilities</span><span>model feed</span></div><div class="panel-body"><div class="gauges">${g("Support",c.support)}${g("Resistance",c.resistance)}${g("Bull",c.bull)}${g("Bear",c.bear)}</div></div></section></div>`;
+    }
+  },
+  renderGovernor(){
+    const g=this.governorState(), net=g.equity-g.capital;
+    document.querySelectorAll("[data-gov-tab]").forEach(b=>b.classList.toggle("active",b.dataset.govTab===this.govTab));
+    if(this.govTab==="capital"){
+      $("govBody").innerHTML=`<div class="panel-grid one"><section class="panel-card"><div class="panel-head"><span>Capital Status</span><span>${this.accountLabel()}</span></div><div class="panel-body"><div class="gov-state ${g.state==="HALT"?"halt":""}">${g.state}</div><div class="readout-grid" style="margin-top:8px">${this.readout("Balance",money(this.metrics.balance),g.state==="CLEAR"?"good":"bad")}${this.readout("Equity",money(g.equity),g.state==="CLEAR"?"good":"bad")}${this.readout("Net",(net>=0?"+":"-")+money(Math.abs(net)),net>=0?"good":"bad")}${this.readout("Reason",g.reason)}</div><div class="transfer-rail"><input id="transferAmount" inputmode="decimal" value="${this.transferDraft}" aria-label="Transfer amount"><button id="depositBtn" class="deposit" type="button">Deposit Testnet Faucet</button><button id="withdrawBtn" class="withdraw" type="button">Withdraw</button></div><div class="ledger-tape"><div class="tape">${this.transferRows()}</div></div></div></section></div>`;
+    }else if(this.govTab==="pressure"){
+      $("govBody").innerHTML=`<div class="panel-grid one"><section class="panel-card"><div class="panel-head"><span>Pressure Metrics</span><span>${g.state}</span></div><div class="panel-body"><div class="readout-grid">${this.readout("Drawdown %",g.drawdown.toFixed(2)+"%",g.drawdown>5?"bad":"good")}${this.readout("Exposure %",g.exposure.toFixed(1)+"%",g.exposure>30?"bad":"")}${this.readout("Loss Streak",g.lossStreak,g.lossStreak>3?"bad":"good")}${this.readout("Open",`${this.positions.length}/${this.settings().slots}`)}${this.readout("Peak Equity",money(g.peak),"gold")}${this.readout("Capital Basis",money(g.capital))}</div></div></section></div>`;
+    }else{
+      $("govBody").innerHTML=`<div class="panel-grid one"><section class="panel-card"><div class="panel-head"><span>Guard Contract</span><span>${g.state==="HALT"?"EXEC BLOCKED":"EXEC CLEAR"}</span></div><div class="panel-body"><div class="tape"><div class="tape-row"><span>${now()}</span><b>DD</b><span>drawdown ${g.drawdown.toFixed(2)}% — informational, no halt</span></div><div class="tape-row"><span>${now()}</span><b>STREAK</b><span>loss streak ${g.lossStreak} — never halts execution</span></div><div class="tape-row"><span>${now()}</span><b>AUTO</b><span>allowed through gate stack</span></div></div></div></section></div>`;
+    }
+  },
+  renderMap(){
+    const m=this.market, g=this.governorState(), net=g.equity-g.capital;
+    $("mapBody").innerHTML=`<div class="map-metrics">
+      ${this.readout("Balance",money(this.metrics.balance),this.metrics.balance>0?"good":"bad")}
+      ${this.readout("Net",(net>=0?"+":"-")+money(Math.abs(net)),net>=0?"good":"bad")}
+      ${this.readout("Turnover",money(this.metrics.turnover),"gold")}
+      ${this.readout("Win Rate",this.winRate().toFixed(0)+"%")}
+      ${this.readout("Edge",this.edgePoints().toFixed(1)+"pt",this.edgePoints()>=0?"good":"bad")}
+      ${this.readout("Governor",g.state,g.state==="CLEAR"?"good":"bad")}
+      ${this.readout("Open",`${this.positions.length}/${this.settings().slots}`)}
+      ${this.readout("Exposure",g.exposure.toFixed(1)+"%",g.exposure>30?"bad":"")}
+      ${this.readout("Autopilot",this.autopilot?"ON":"OFF",this.autopilot?"good":"")}
+    </div><div class="module-map">
+      <div class="module-card"><b>Chart</b><span>${fmt(m.high)} - ${m.regime}</span><small>overview - chart - runtime</small></div>
+      <div class="module-card"><b>Micro</b><span>Depth ${Math.round(this.book.bids.at(-1).cum)} - Skew ${Math.round(m.imb*100)}</span><small>depth - spread - flow</small></div>
+      <div class="module-card"><b>Heat</b><span>${this.council.allowed?"STRUCTURE CLEAR":"STRUCTURE WAIT"}</span><small>zones - walls - ladder</small></div>
+      <div class="module-card"><b>Breath</b><span>Compress ${Math.round(this.council.structure)}</span><small>phase - rhythm - fatigue</small></div>
+      <div class="module-card"><b>Council</b><span>${this.council.action} - CONF ${this.council.conf.toFixed(0)}</span><small>votes - consensus - chamber</small></div>
+      <div class="module-card"><b>Doctrine</b><span>${this.council.allowed?"MODEL ALIGNED":"CONF BELOW"}</span><small>rules - gate - language</small></div>
+      <div class="module-card"><b>Exec</b><span>${this.autopilot?"AUTO ON":"AUTO OFF"} - ${this.autoStatus}</span><small>rail - tape - sizing</small></div>
+      <div class="module-card"><b>Wallet</b><span>${this.transfers.length} transfers - ${this.accountLabel()}</span><small>deposit - withdraw - ledger</small></div>
+      <div class="module-card"><b>Runtime</b><span>${this.mode} - SW ${this.sw}</span><small>kernel - cache - heartbeat</small></div>
+    </div>`;
+  },
+  posture(){
+    if(this.positions.length>=this.settings().slots)return "GUARD";
+    if(this.equity()>this.fundedCapital()+this.metrics.turnover*.02)return "PRESS";
+    if(this.market.regime==="COMP")return "GRIND";
+    return "SCAN";
+  },
+  draw(){
+    const c=$("chart"); if(!c)return;
+    const {ctx,w,h}=fitCanvas(c); if(w<10||h<10)return;
+    ctx.clearRect(0,0,w,h);
+    const data=this.ticks.slice(-190), m=this.market;
+    const L=7,R=64,T=13,B=18, cw=w-L-R, ch=h-T-B;
+    let lo=Math.min(m.low,m.lower,...data.map(x=>x.p)), hi=Math.max(m.high,m.upper,...data.map(x=>x.p));
+    const minRange=260, mid=(hi+lo)/2;
+    if(hi-lo<minRange){hi=mid+minRange/2;lo=mid-minRange/2;}
+    hi+=35;lo-=35;
+    const xAt=i=>L+i/(data.length-1)*cw, yAt=p=>T+(hi-p)/(hi-lo)*ch;
+    const grad=ctx.createLinearGradient(0,T,0,h);grad.addColorStop(0,"#0c111a");grad.addColorStop(1,"#020304");ctx.fillStyle=grad;ctx.fillRect(0,0,w,h);
+    for(let i=0;i<5;i++){const y=T+i/4*ch;line(ctx,L,y,L+cw,y,"rgba(255,255,255,.055)",1);}
+    for(let i=0;i<7;i++){const x=L+i/6*cw;line(ctx,x,T,x,T+ch,"rgba(255,255,255,.035)",1);}
+    data.forEach((d,i)=>{if(i%8)return;const x=xAt(i), ww=cw/data.length*8;let col="rgba(78,161,255,.035)";if(d.regime==="IMPULSE")col="rgba(216,183,63,.055)";if(d.regime==="DRIFT UP")col="rgba(49,209,123,.035)";if(d.regime==="DRIFT DN")col="rgba(240,93,82,.035)";ctx.fillStyle=col;ctx.fillRect(x,T,ww,ch);});
+    const highWall=clamp(yAt(m.high),T,T+ch), lowWall=clamp(yAt(m.low),T,T+ch);
+    ctx.fillStyle="rgba(240,93,82,.16)";ctx.fillRect(L,Math.max(T,highWall-18),cw,30);
+    ctx.fillStyle="rgba(49,209,123,.16)";ctx.fillRect(L,Math.min(T+ch-30,lowWall-12),cw,30);
+    for(let x=L;x<L+cw;x+=12){line(ctx,x,Math.max(T,highWall-18),x+8,Math.max(T,highWall-18)+30,"rgba(240,93,82,.26)",1);line(ctx,x,Math.min(T+ch-30,lowWall-12)+30,x+8,Math.min(T+ch-30,lowWall-12),"rgba(49,209,123,.25)",1);}
+    ctx.fillStyle="rgba(240,93,82,.82)";ctx.font="bold 7px "+getComputedStyle(document.body).fontFamily;ctx.fillText(`HIGH ROLLING WALL ${fmt(m.high)}`,L+4,Math.max(T+8,highWall-7));
+    ctx.fillStyle="rgba(49,209,123,.82)";ctx.fillText(`LOW ROLLING WALL ${fmt(m.low)}`,L+4,Math.min(T+ch-5,lowWall+14));
+    const band=ctx.createLinearGradient(0,yAt(m.upper),0,yAt(m.lower));band.addColorStop(0,"rgba(216,183,63,.08)");band.addColorStop(.5,"rgba(216,183,63,.02)");band.addColorStop(1,"rgba(78,161,255,.06)");
+    ctx.fillStyle=band;ctx.fillRect(L,yAt(m.upper),cw,Math.max(2,yAt(m.lower)-yAt(m.upper)));
+    [[m.high,"rgba(240,93,82,.10)"],[m.low,"rgba(49,209,123,.10)"],[m.poc,"rgba(216,183,63,.13)"]].forEach(([p,col])=>{const y=yAt(p);ctx.fillStyle=col;ctx.fillRect(L,y-5,cw,10);});
+    const refs=[[m.high,"HIGH","rgba(240,93,82,.72)",[]],[m.low,"LOW","rgba(49,209,123,.72)",[]],[m.vwap,"VWAP","rgba(78,161,255,.78)",[3,3]],[m.poc,"POC","rgba(216,183,63,.86)",[5,3]],[m.bid,"BID","rgba(49,209,123,.32)",[2,2]],[m.ask,"ASK","rgba(240,93,82,.32)",[2,2]]];
+    refs.forEach(([p,label,col,dash])=>{const y=yAt(p);line(ctx,L,y,L+cw,y,col,1,dash);ctx.fillStyle=col;ctx.font="6px "+getComputedStyle(document.body).fontFamily;ctx.fillText(label,L+2,y-2);});
+    ctx.save();ctx.beginPath();data.forEach((d,i)=>{const x=xAt(i), y=yAt(d.p);i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.lineWidth=4;ctx.strokeStyle="rgba(216,183,63,.10)";ctx.stroke();ctx.lineWidth=1.4;ctx.strokeStyle="#f2cc58";ctx.stroke();ctx.restore();
+    ctx.save();data.forEach((d,i)=>{if(i%5)return;const x=xAt(i), y=yAt(d.p), yy=y+(d.mom>=0?8:-8);ctx.fillStyle=d.mom>=0?"rgba(49,209,123,.62)":"rgba(240,93,82,.62)";ctx.beginPath();ctx.arc(x,yy,1.5,0,Math.PI*2);ctx.fill();});ctx.restore();
+    this.positions.forEach(p=>{const idx=clamp(p.idx-(this.ticks.length-data.length),0,data.length-1),x=xAt(idx),y=yAt(p.entry);const col=p.dir==="CALL"?varGet("--green"):varGet("--red");line(ctx,x,y,L+cw,y,col,.9,[4,3]);ctx.fillStyle=col;ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);ctx.fill();ctx.fillStyle="#000";ctx.font="5px "+getComputedStyle(document.body).fontFamily;ctx.fillText(p.dir[0],x-1.8,y+1.8);});
+    line(ctx,L,yAt(m.last),L+cw,yAt(m.last),"rgba(255,255,255,.38)",1,[2,2]);
+    ctx.fillStyle="#050609";ctx.fillRect(w-R,0,R,h);ctx.strokeStyle="rgba(216,183,63,.35)";ctx.beginPath();ctx.moveTo(w-R,T);ctx.lineTo(w-R,T+ch);ctx.stroke();
+    for(let i=0;i<6;i++){const p=hi-i/5*(hi-lo), y=yAt(p);ctx.fillStyle="rgba(255,255,255,.68)";ctx.font="7px "+getComputedStyle(document.body).fontFamily;ctx.fillText(fmt(p),w-R+4,y+2);}
+    const ly=yAt(m.last);ctx.fillStyle="#d8b73f";ctx.fillRect(w-R+1,ly-8,R-1,16);ctx.fillStyle="#020304";ctx.font="bold 8px "+getComputedStyle(document.body).fontFamily;ctx.fillText(fmt(m.last),w-R+5,ly+3);
+    if(this.pointer){const px=clamp(this.pointer.x,L,L+cw), py=clamp(this.pointer.y,T,T+ch);line(ctx,px,T,px,T+ch,"rgba(255,255,255,.22)",1,[2,3]);line(ctx,L,py,L+cw,py,"rgba(255,255,255,.18)",1,[2,3]);const ix=clamp(Math.round((px-L)/cw*(data.length-1)),0,data.length-1), d=data[ix];const tip=$("tip");tip.style.display="block";tip.style.left=clamp(px+8,6,w-112)+"px";tip.style.top=clamp(py-45,6,h-58)+"px";tip.innerHTML=`<b>${fmt(d.p)}</b><br>${d.regime}<br>spread ${fmt(d.ask-d.bid)}`;}
+  },
+  drawDepth(){
+    const c=$("depth"); if(!c)return;
+    const {ctx,w,h}=fitCanvas(c);ctx.clearRect(0,0,w,h);
+    ctx.fillStyle="#020304";ctx.fillRect(0,0,w,h);
+    const bids=this.book.bids, asks=this.book.asks, max=Math.max(bids.at(-1).cum,asks.at(-1).cum), pad=10;
+    for(let i=0;i<4;i++){line(ctx,pad,pad+i*(h-2*pad)/3,w-pad,pad+i*(h-2*pad)/3,"rgba(255,255,255,.05)",1);}
+    function curve(rows,col,flip){
+      ctx.beginPath();rows.forEach((r,i)=>{const x=pad+r.cum/max*(w-2*pad), y=pad+i/(rows.length-1)*(h-2*pad);const xx=flip?w-x:x;i?ctx.lineTo(xx,y):ctx.moveTo(xx,y);});ctx.lineWidth=2;ctx.strokeStyle=col;ctx.stroke();
+    }
+    curve(bids,"#31d17b",true);curve(asks,"#f05d52",false);
+    line(ctx,w/2,pad,w/2,h-pad,"rgba(216,183,63,.35)",1,[3,3]);
+  },
+  async registerSw(){
+    this.render();
+    if(!("serviceWorker" in navigator)){this.sw="NONE";this.render();return;}
+    try{const reg=await navigator.serviceWorker.register("./sw.js");await navigator.serviceWorker.ready;this.sw=(reg.active||reg.waiting||reg.installing)?"READY":"INIT";}
+    catch(e){this.sw="CACHE";this.log("PWA","cache handoff pending");}
+    this.render();
+  }
+};
+window.app=app;
+globalThis.app=app;
+function varGet(name){return getComputedStyle(document.documentElement).getPropertyValue(name).trim();}
+window.addEventListener("error",e=>{try{app.log("ERR",String(e.message||e.error));app.render();}catch(_){}});
+document.addEventListener("DOMContentLoaded",()=>app.init());
+})();
+</script>
+</body>
+</html>

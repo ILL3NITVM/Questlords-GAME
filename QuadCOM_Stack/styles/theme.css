@@ -1,0 +1,24 @@
+/* Design tokens — QuadCOM cockpit palette + type */
+:root{
+  --bg:#000;
+  --shell:#030304;
+  --panel:#07080b;
+  --panel2:#0a0c11;
+  --panel3:#0e1118;
+  --line:#1b202b;
+  --line2:#2a3040;
+  --gold:#d8b73f;
+  --gold2:#f2cc58;
+  --muted:#778191;
+  --soft:#aab2c2;
+  --text:#f3f6fa;
+  --green:#31d17b;
+  --red:#f05d52;
+  --blue:#4ea1ff;
+  --amber:#f0a43a;
+  --font:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+
+/* Accent themes — recolor the gold accent tokens (tap logo to cycle). */
+:root[data-theme="ice"]{--gold:#4aa8ff;--gold2:#8fd0ff}
+:root[data-theme="magma"]{--gold:#ff8a3d;--gold2:#ffb066}

@@ -1,0 +1,86 @@
+{
+  "generated": "2026-07-03T18:41:33Z",
+  "note": "Environment correction: the Windows paths in the Phase 7C brief (quadcom_evergreen_desk, Documents/quadcom) do not exist in this Linux workspace. The operator-supplied predecessor is the uploaded QuadCOMv40Complete.tar.gz; the integration target ('clean chassis') is QuadCOM_Stack/, the tested ES-module front-end in this repo.",
+  "predecessor": {
+    "source": "uploads/QuadCOMv40Complete.tar.gz",
+    "layout": {
+      ".": 2,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19": 0,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer": 8,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app": 7,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app/modules": 21,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app/components": 13,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app/assets": 1,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app/engines": 25,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app/styles": 8,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app/activities": 23,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app/connectors": 2,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/app/legacy": 4,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/backend": 5,
+      "QuadCOM_Full_App_ToolIndicators_Instruments_v19/QuadCOM_Full_App_Structure_Layer/backend/data": 3,
+      "backend": 1
+    }
+  },
+  "candidates": [
+    {
+      "file": "app/instruments.js",
+      "role": "instrument catalog (~40 synthetic instruments: FX/metals/crypto/indices/energy/agri with base/tick/bounds/spread)",
+      "maturity": "mature, pure data",
+      "action": "HARVEST",
+      "why": "replaces our 3-asset table; zero-risk data; enables full multi-asset desk"
+    },
+    {
+      "file": "app/connectors/BinanceConnector.js",
+      "role": "read-only public market-data websocket (aggTrade) + 24h ticker depth cache, reconnect backoff",
+      "maturity": "mature",
+      "action": "HARVEST (adapt)",
+      "why": "becomes the real implementation behind QuadCOM_Stack's MODE.LIVE feed seam; read-only market data only \u2014 no broker execution, no keys"
+    },
+    {
+      "file": "app/connectors/DeribitConnector.js",
+      "role": "read-only public market-data websocket (Deribit)",
+      "maturity": "mature",
+      "action": "DEFER",
+      "why": "one live connector is enough for the seam; keep as documented alternative"
+    },
+    {
+      "file": "app/engines/RegimeDetectionEngine.js",
+      "role": "262-line regime classifier",
+      "maturity": "mature",
+      "action": "DEFER",
+      "why": "our tick-normalized classifier covers current UX; revisit for Pro analytics"
+    },
+    {
+      "file": "app/engines/{MetaSignal,SignalPrediction,ReinforcementLearningOptimizer,LearningLoop}.js",
+      "role": "ML/meta layer",
+      "maturity": "unverified",
+      "action": "DEFER",
+      "why": "no acceptance tests available here; do not integrate unverified decision logic"
+    },
+    {
+      "file": "QuadCOM_Full_App_Structure_Layer/backend/index.js (33KB) + backend/index.js (10KB)",
+      "role": "Express + better-sqlite3 + Stripe entitlement/billing server",
+      "maturity": "mature but out-of-scope",
+      "action": "REJECT for now",
+      "why": "productization posture is no-payments; keep as reference for a future Access phase"
+    }
+  ],
+  "rejected": [
+    {
+      "file": "backend/data/quadcom_billing.db (+ -wal/-shm)",
+      "reason": "stale runtime ledger state \u2014 brief forbids copying"
+    },
+    {
+      "file": "backend/.env.example values",
+      "reason": "secrets placeholders; never copy env into the app"
+    },
+    {
+      "file": "QuadCOM_Phases_2-4_v23-v28.tar.gz",
+      "reason": "nested backup archive \u2014 comparison only"
+    },
+    {
+      "file": "app/legacy/*",
+      "reason": "superseded runtime; QuadCOM_Stack already carries the proven desk logic"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "QuadCOM Desk Lite MAX \u2014 Stack",
+  "short_name": "QuadCOM",
+  "description": "QuadCOM Desk Lite MAX \u2014 synthetic market lab. Forward-printing live tape, council votes, governor restraint, session audit and reports. Educational build stream \u2014 not financial advice.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": [
+    "finance",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

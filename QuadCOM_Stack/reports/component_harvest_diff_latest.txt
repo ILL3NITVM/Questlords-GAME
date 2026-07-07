@@ -1,0 +1,8 @@
+ QuadCOM_Stack/src/config.js            |  26 +++++---
+ QuadCOM_Stack/src/data/liveFeed.js     | 107 ++++++++++++++++++++-------------
+ QuadCOM_Stack/src/engines/council.js   |  15 +++--
+ QuadCOM_Stack/src/engines/execution.js |   4 +-
+ QuadCOM_Stack/src/ui/chart.js          |   7 ++-
+ QuadCOM_Stack/src/ui/pages.js          |   6 +-
+ QuadCOM_Stack/sw.js                    |   3 +-
+ 7 files changed, 107 insertions(+), 61 deletions(-)
