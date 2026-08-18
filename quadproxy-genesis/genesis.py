@@ -149,7 +149,17 @@ def classify(s: dict) -> dict:
                     action="Publish the free tool and post genuinely useful answers on real threads.",
                     missing=[])
 
-    # No funnel telemetry. Fall back to discovery-surface evidence, and say so.
+    # Traffic exists but click telemetry does not. Discovery is no longer the constraint,
+    # and we must not fall through to the discovery-surface fallback and blame it.
+    if v30 is not None and v30 > 30:
+        return dict(code="UNKNOWN", conf="none",
+                    why=f"{int(v30)} visitors in 30d, so discovery is no longer the binding "
+                        f"constraint - but click telemetry is missing, so positioning cannot "
+                        f"be distinguished from a broken CTA.",
+                    action="Instrument the buy button, then re-classify.",
+                    missing=["buy_clicks_30d"])
+
+    # No funnel telemetry at all. Fall back to discovery-surface evidence, and say so.
     surface = []
     if indexed is not UNKNOWN and not truthy(indexed):
         surface.append("storefront absent from search index")

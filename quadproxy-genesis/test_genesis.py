@@ -19,6 +19,10 @@ CASES = [
     ("customer exists", st(first_customer="yes"), "REPEATABLE_ACQUISITION"),
     ("no evidence at all", st(), "UNKNOWN"),
     ("discovery empty only", st(storefront_indexed="no", repo_stars=0), "NO_QUALIFIED_TRAFFIC"),
+    # Regression: traffic present but no click telemetry must NOT fall through to the
+    # discovery-surface fallback and wrongly blame discovery.
+    ("traffic, no click data", st(visitors_30d=120), "UNKNOWN"),
+    ("traffic beats empty surface", st(visitors_30d=120, storefront_indexed="no", repo_stars=0), "UNKNOWN"),
 ]
 
 
