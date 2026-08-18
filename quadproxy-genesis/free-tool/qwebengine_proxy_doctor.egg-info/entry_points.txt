@@ -1,2 +1,0 @@
-[console_scripts]
-qwebengine-proxy-doctor = qwebengine_proxy_doctor:main
