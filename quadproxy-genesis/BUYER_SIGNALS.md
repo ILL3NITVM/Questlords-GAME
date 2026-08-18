@@ -91,3 +91,58 @@ The second sells verification. Verification has no free one-liner answer.
 - Never post the same text twice across platforms.
 - A thread already correctly answered is not a lead — skip it.
 - Ten excellent leads beat a thousand impressions.
+
+---
+
+# EPOCH 1 ADDENDUM — agent findings (2026-08-18)
+
+## Correction to section A
+The starter-kit repo DOES have a release: `v1.0.0`, published 2026-08-13, with only
+auto-generated source archives (no built artifact). Earlier "0 releases" was wrong.
+Discussions is enabled with 1 post. 0 stars / 0 forks / 0 watchers confirmed.
+
+## The binding constraint (both agents converged here independently)
+`LICENSE.txt` is a commercial single-customer licence and the README states
+"It is not an open-source license grant."
+
+Consequences, all verified:
+- `insideqt/awesome-qt` requires an FSF/OSI licence — submission would violate its rules.
+- The fix snippet cannot legally be copied into a Stack Overflow answer or blog post,
+  which forecloses the only realistic source of inbound links and stars.
+
+Resolution: a genuinely free, MIT-licensed standalone diagnostic — built this epoch as
+`free-tool/` (`qwebengine-proxy-doctor`). This unblocks list submissions and citation.
+
+## Live vs cold leads — honest count
+Of ten candidate threads, only FOUR have a plausibly reachable human:
+- forum.qt.io/topic/150315 — Qt WebEngine 6.5.3 never sends Proxy-Authorization. FIT 10, INTENT 9.
+- github.com/qutebrowser/qutebrowser/issues/5731 — DNS not proxied. OPEN since 2020-09-18. VERIFIED.
+- github.com/qutebrowser/qutebrowser/issues/2492 — no PAC support. OPEN since 2017. VERIFIED.
+- github.com/seleniumbase/SeleniumBase/issues/3920 — identical silent-407 mode, 2025-08-06. CLOSED.
+The remaining six are 7-11 years old. Replying to them is an SEO play for the next person who
+searches the error, not outreach to the original poster. Do not pretend otherwise.
+
+## Strongest non-obvious channel: the content gap
+A large, well-ranked corpus of "build a web browser in PyQt5" tutorials exists
+(pythonguis, GeeksforGeeks, DataFlair, TechVidvan, Medium, DEV, YouTube) and NONE cover
+proxies. Nobody owns "PyQt browser + authenticated proxy". Ownable long-tail cluster.
+
+## Curated lists — verified rules
+- `mikalv/awesome-qt-qml` (2.6k) — accepts PRs, has a Networking section, already lists
+  commercial entries. BEST TARGET.
+- `edwardtay/awesome-scrapers` — "Commercial tools/services are fine but must be clearly labeled."
+- `JulienGrv/awesome-python-qt` — low activity, low-cost attempt.
+- `PyQt5/PyQt` (7.1k stars, Chinese) has a `QWebEngineView/` examples dir — an MIT-licensed
+  authenticated-proxy example is a legitimate, useful PR.
+
+## DO NOT POST
+- qtcentre.org — rules forbid links to commercial sites. Answer only, zero links, or skip.
+- JesseTG/awesome-qt (archived 2025-01-14), chroming/awesome-pyqt-cn (archived 2025-07-13) — read-only.
+- insideqt/awesome-qt — proprietary licence violates its stated requirement.
+- Any subreddit until its sidebar is read manually. Rules could not be verified; do not guess.
+- qt-project mailing lists — technical help only, never a product announcement.
+
+## Qt Forum posting rule (verified guidance)
+"Showcase the technology, not the product nor the vendor." A product mention is tolerated only
+non-conspicuously and must not divert from the main message. Answer inline and completely;
+one disclosed affiliation line at the bottom, never the lead.

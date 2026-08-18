@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwebengine-proxy-doctor"
+version = "0.1.0"
+description = "Prove whether your Qt WebEngine / PyQt traffic actually goes through your proxy"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [{ name = "Duncan Mutinelli" }]
+keywords = ["pyqt", "pyqt5", "pyqt6", "pyside", "qtwebengine", "qwebengineview",
+            "proxy", "proxy-authentication", "qnetworkproxy", "diagnostics"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: Proxy Servers",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ILL3NITVM/qwebengine-proxy-doctor"
+
+[project.scripts]
+qwebengine-proxy-doctor = "qwebengine_proxy_doctor:main"
