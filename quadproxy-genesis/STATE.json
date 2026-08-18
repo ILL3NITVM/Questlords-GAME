@@ -25,9 +25,9 @@
       "value": "0"
     },
     "storefront_indexed": {
-      "at": "2026-08-18T19:14:04Z",
+      "at": "2026-08-18T19:25:36Z",
       "how": "verified",
-      "src": "2 web searches for quadproxy.com returned zero hits",
+      "src": "web search for quadproxy.com, 2026-08-18 post-SEO-work, still zero hits (NOTE: index lag makes this non-conclusive for today's changes)",
       "value": "no"
     }
   },
@@ -73,6 +73,13 @@
       "how": "verified",
       "src": "release v1.0.0 published 2026-08-13, source archives only (audit agent, fetched)",
       "value": "1"
+    },
+    {
+      "at": "2026-08-18T19:25:36Z",
+      "fact": "storefront_indexed",
+      "how": "verified",
+      "src": "web search for quadproxy.com, 2026-08-18 post-SEO-work, still zero hits (NOTE: index lag makes this non-conclusive for today's changes)",
+      "value": "no"
     }
   ]
 }
