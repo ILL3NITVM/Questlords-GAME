@@ -1,0 +1,85 @@
+{
+  "facts": {
+    "free_tool_published": {
+      "at": "2026-08-18T19:14:04Z",
+      "how": "verified",
+      "src": "tool exists only on branch",
+      "value": "no"
+    },
+    "helpful_posts_live": {
+      "at": "2026-08-18T19:14:04Z",
+      "how": "verified",
+      "src": "none posted",
+      "value": "0"
+    },
+    "repo_releases": {
+      "at": "2026-08-18T19:20:08Z",
+      "how": "verified",
+      "src": "release v1.0.0 published 2026-08-13, source archives only (audit agent, fetched)",
+      "value": "1"
+    },
+    "repo_stars": {
+      "at": "2026-08-18T19:14:04Z",
+      "how": "verified",
+      "src": "github.com/ILL3NITVM/qt-webengine-proxy-starter fetched 2026-08-18",
+      "value": "0"
+    },
+    "storefront_indexed": {
+      "at": "2026-08-18T19:25:36Z",
+      "how": "verified",
+      "src": "web search for quadproxy.com, 2026-08-18 post-SEO-work, still zero hits (NOTE: index lag makes this non-conclusive for today's changes)",
+      "value": "no"
+    }
+  },
+  "log": [
+    {
+      "at": "2026-08-18T19:14:04Z",
+      "fact": "repo_stars",
+      "how": "verified",
+      "src": "github.com/ILL3NITVM/qt-webengine-proxy-starter fetched 2026-08-18",
+      "value": "0"
+    },
+    {
+      "at": "2026-08-18T19:14:04Z",
+      "fact": "repo_releases",
+      "how": "verified",
+      "src": "same fetch",
+      "value": "0"
+    },
+    {
+      "at": "2026-08-18T19:14:04Z",
+      "fact": "storefront_indexed",
+      "how": "verified",
+      "src": "2 web searches for quadproxy.com returned zero hits",
+      "value": "no"
+    },
+    {
+      "at": "2026-08-18T19:14:04Z",
+      "fact": "free_tool_published",
+      "how": "verified",
+      "src": "tool exists only on branch",
+      "value": "no"
+    },
+    {
+      "at": "2026-08-18T19:14:04Z",
+      "fact": "helpful_posts_live",
+      "how": "verified",
+      "src": "none posted",
+      "value": "0"
+    },
+    {
+      "at": "2026-08-18T19:20:08Z",
+      "fact": "repo_releases",
+      "how": "verified",
+      "src": "release v1.0.0 published 2026-08-13, source archives only (audit agent, fetched)",
+      "value": "1"
+    },
+    {
+      "at": "2026-08-18T19:25:36Z",
+      "fact": "storefront_indexed",
+      "how": "verified",
+      "src": "web search for quadproxy.com, 2026-08-18 post-SEO-work, still zero hits (NOTE: index lag makes this non-conclusive for today's changes)",
+      "value": "no"
+    }
+  ]
+}
