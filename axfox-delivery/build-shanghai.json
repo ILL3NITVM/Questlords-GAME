@@ -1,0 +1,252 @@
+{
+  "compilerVersion": "0.8.24+commit.e11b9ed9.Emscripten.clang",
+  "evmVersion": "shanghai",
+  "optimizer": {
+    "enabled": true,
+    "runs": 200
+  },
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_projectName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_ticker",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_version",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_officialWebsite",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "officialWebsite",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "projectName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ticker",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "creationBytecode": "0x60a060405234801561000f575f80fd5b506040516105ea3803806105ea83398101604081905261002e91610193565b6001600160a01b0385166100925760405162461bcd60e51b815260206004820152602160248201527f4158464f5852656769737472793a207a65726f20746f6b656e206164647265736044820152607360f81b606482015260840160405180910390fd5b6001600160a01b0385166080525f6100aa85826102da565b5060016100b784826102da565b5060026100c483826102da565b5060036100d182826102da565b505050505050610399565b634e487b7160e01b5f52604160045260245ffd5b5f82601f8301126100ff575f80fd5b81516001600160401b0380821115610119576101196100dc565b604051601f8301601f19908116603f01168101908282118183101715610141576101416100dc565b816040528381526020925086602085880101111561015d575f80fd5b5f91505b8382101561017e5785820183015181830184015290820190610161565b5f602085830101528094505050505092915050565b5f805f805f60a086880312156101a7575f80fd5b85516001600160a01b03811681146101bd575f80fd5b60208701519095506001600160401b03808211156101d9575f80fd5b6101e589838a016100f0565b955060408801519150808211156101fa575f80fd5b61020689838a016100f0565b9450606088015191508082111561021b575f80fd5b61022789838a016100f0565b9350608088015191508082111561023c575f80fd5b50610249888289016100f0565b9150509295509295909350565b600181811c9082168061026a57607f821691505b60208210810361028857634e487b7160e01b5f52602260045260245ffd5b50919050565b601f8211156102d557805f5260205f20601f840160051c810160208510156102b35750805b601f840160051c820191505b818110156102d2575f81556001016102bf565b50505b505050565b81516001600160401b038111156102f3576102f36100dc565b610307816103018454610256565b8461028e565b602080601f83116001811461033a575f84156103235750858301515b5f19600386901b1c1916600185901b178555610391565b5f85815260208120601f198616915b8281101561036857888601518255948401946001909101908401610349565b508582101561038557878501515f19600388901b60f8161c191681555b505060018460011b0185555b505050505050565b60805161023a6103b05f395f6094015261023a5ff3fe608060405234801561000f575f80fd5b5060043610610055575f3560e01c806354fd4d50146100595780638ba47bdd146100775780639a33e3001461007f578063bf3d999514610087578063fc0c546a1461008f575b5f80fd5b6100616100ce565b60405161006e9190610180565b60405180910390f35b61006161015a565b610061610167565b610061610173565b6100b67f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200161006e565b600280546100db906101cc565b80601f0160208091040260200160405190810160405280929190818152602001828054610107906101cc565b80156101525780601f1061012957610100808354040283529160200191610152565b820191905f5260205f20905b81548152906001019060200180831161013557829003601f168201915b505050505081565b600180546100db906101cc565b5f80546100db906101cc565b600380546100db906101cc565b5f602080835283518060208501525f5b818110156101ac57858101830151858201604001528201610190565b505f604082860101526040601f19601f8301168501019250505092915050565b600181811c908216806101e057607f821691505b6020821081036101fe57634e487b7160e01b5f52602260045260245ffd5b5091905056fea2646970667358221220ad741a494e581640815a69ebc843210680b2a5ad84ef1539997183369ab7cb7064736f6c63430008180033",
+  "creationBytecodeLength": 1514,
+  "metadata": {
+    "compiler": {
+      "version": "0.8.24+commit.e11b9ed9"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_token",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "_projectName",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "_ticker",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "_version",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "_officialWebsite",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "officialWebsite",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "projectName",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "ticker",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "token",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "version",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "title": "AXFOXRegistry",
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "notice": "Immutable, read-only public registry identifying the canonical AXFOX token and basic project metadata. This contract has no custody, no trading, no token approvals, no upgrade path, and no privileged financial functionality of any kind — it exists purely so a project identity/version can be looked up on-chain and verified on BscScan. Deliberately excluded, by design (not oversight): - no owner/admin role - no withdrawal function - no fallback/receive function (cannot hold BNB) - no token approval/transferFrom calls - no proxy/upgrade pattern - no mutable state after construction",
+        "version": 1
+      }
+    },
+    "settings": {
+      "compilationTarget": {
+        "AXFOXRegistry.sol": "AXFOXRegistry"
+      },
+      "evmVersion": "shanghai",
+      "libraries": {},
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "remappings": []
+    },
+    "sources": {
+      "AXFOXRegistry.sol": {
+        "keccak256": "0x564849d838b6bb779dc7bc9efc90381a620c573df83064138dbc2f305e58292d",
+        "license": "MIT",
+        "urls": [
+          "bzz-raw://c7ae31f82f5a527fc184fe6459261a61c1c0c91167754b3d6c27cb8cf37c58ed",
+          "dweb:/ipfs/QmVodbXVUuJpr4KsTauhWpLtCQs4hVyVnme5dgEgveKqoj"
+        ]
+      }
+    },
+    "version": 1
+  }
+}
