@@ -1,0 +1,413 @@
+{
+  "run_id": "OCTAVIA-HERO",
+  "master_seed": 20260911,
+  "candidates_searched": 512,
+  "selected_rank": 1,
+  "hero_score": {
+    "total": 96.19,
+    "components": {
+      "framing": 0.92,
+      "focal": 1.0,
+      "aperture": 0.95,
+      "lighting": 1.0,
+      "pose_safety": 0.94,
+      "hand_safety": 0.9,
+      "feet_safety": 1.0,
+      "identity_legibility": 1.0,
+      "scene_safety": 0.88,
+      "contact_safety": 1.0,
+      "wardrobe_simplicity": 1.0
+    },
+    "risks": [],
+    "notes": []
+  },
+  "identity_mode": "descriptive",
+  "lora": {
+    "enabled": false,
+    "name": "",
+    "strength_model": 0.85,
+    "strength_clip": 0.85
+  },
+  "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a dusty pink silk-like blouse in silk-like fabric with a liquid drape, walking and turning back toward camera, eyes looking directly into the lens, head level and not tilted, a small closed-mouth smile expression, in a forest green and gold hotel suite, waist-up framing, photorealistic photograph",
+  "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+  "prompt_meta": {
+    "positive": {
+      "tier": "standard",
+      "weighting": true,
+      "segments_kept": 14,
+      "segments_dropped": 33,
+      "dropped_categories": [
+        "camera:angle",
+        "camera:focal",
+        "camera:height",
+        "head:yaw",
+        "identity:detail",
+        "identity:important",
+        "lighting",
+        "lighting:shadow",
+        "physique:detail",
+        "physique:hands",
+        "physique:important",
+        "physique:ratios",
+        "pose:hands",
+        "pose:legs",
+        "quality",
+        "scene:palette",
+        "wardrobe:bottom",
+        "wardrobe:footwear"
+      ],
+      "groups_present": [
+        "camera",
+        "expression",
+        "head",
+        "identity",
+        "physique",
+        "pose",
+        "quality",
+        "scene",
+        "subject",
+        "wardrobe"
+      ],
+      "budget": {
+        "tokens": 132,
+        "method": "heuristic-estimate",
+        "exact": false,
+        "chunks": 2,
+        "fits_single_chunk": false,
+        "tokens_in_first_chunk": 75,
+        "overflow_tokens": 57
+      },
+      "shot_emphasis": "upper_body"
+    },
+    "negative": {
+      "terms": 90,
+      "dropped": 2,
+      "budget": {
+        "tokens": 299,
+        "method": "heuristic-estimate",
+        "exact": false,
+        "chunks": 4,
+        "fits_single_chunk": false,
+        "tokens_in_first_chunk": 75,
+        "overflow_tokens": 224
+      }
+    }
+  },
+  "width": 896,
+  "height": 1152,
+  "render_plan": {
+    "passes": [
+      {
+        "name": "base",
+        "enabled": true,
+        "params": {
+          "width": 896,
+          "height": 1152,
+          "steps": 40,
+          "cfg_scale": 5.0,
+          "sampler": "dpmpp_2m_sde",
+          "scheduler": "karras"
+        },
+        "requires_capability": null,
+        "skipped_reason": null
+      },
+      {
+        "name": "hires_fix",
+        "enabled": true,
+        "params": {
+          "scale": 1.5,
+          "denoise": 0.4,
+          "steps": 20,
+          "upscaler": "latent"
+        },
+        "requires_capability": "hires_fix",
+        "skipped_reason": "backend does not report capability 'hires_fix'"
+      },
+      {
+        "name": "face_detail",
+        "enabled": true,
+        "params": {
+          "denoise": 0.3,
+          "steps": 20,
+          "padding": 32,
+          "feather": 8
+        },
+        "requires_capability": "face_restore",
+        "skipped_reason": "backend does not report capability 'face_restore'"
+      },
+      {
+        "name": "upscale",
+        "enabled": false,
+        "params": {
+          "scale": 2.0,
+          "model": "4x-UltraSharp"
+        },
+        "requires_capability": "upscale",
+        "skipped_reason": null
+      }
+    ]
+  },
+  "renderer_preflight": {
+    "backend": "mock",
+    "available": true,
+    "pillow": true,
+    "note": "Placeholder renderer. Produces no photographic output."
+  },
+  "spec": {
+    "run_id": "OCTAVIA-HERO",
+    "index": 265,
+    "frame_id": "OCTAVIA-HERO_265",
+    "campaign": "editorial",
+    "seeds": {
+      "identity_seed": 1967102404,
+      "wardrobe_seed": 3837438274,
+      "colour_seed": 3180476090,
+      "material_seed": 3646299349,
+      "scene_seed": 4147198711,
+      "pose_seed": 4141185290,
+      "camera_seed": 1513474327,
+      "lighting_seed": 2483050375,
+      "expression_seed": 2093744750
+    },
+    "wardrobe": {
+      "mode": "separates",
+      "top": {
+        "id": "silk_blouse",
+        "label": "silk-like blouse",
+        "category": "top",
+        "subtype": "silk_blouse",
+        "material": "silk-like fabric",
+        "fit": "relaxed",
+        "length": "hip",
+        "neckline": "collar",
+        "sleeve": "long",
+        "formality": [
+          "smart_casual",
+          "evening",
+          "workwear"
+        ],
+        "season": [
+          "all"
+        ],
+        "mood": [
+          "elegant",
+          "composed"
+        ],
+        "compatibility_tags": [
+          "tuckable",
+          "tailored_bottom"
+        ],
+        "weight": 1.0
+      },
+      "bottom": {
+        "id": "tailored_shorts",
+        "label": "tailored shorts",
+        "category": "bottom",
+        "subtype": "tailored_shorts",
+        "material": "structured tailoring fabric",
+        "cut": "straight",
+        "length": "short",
+        "waist": "high",
+        "formality": [
+          "smart_casual",
+          "resort"
+        ],
+        "season": [
+          "summer"
+        ],
+        "mood": [
+          "fresh",
+          "confident"
+        ],
+        "compatibility_tags": [
+          "tuckable",
+          "tailored_bottom"
+        ],
+        "weight": 1.0
+      },
+      "dress": null,
+      "outer_layer": null,
+      "footwear": {
+        "id": "knee_boots",
+        "label": "knee-high boots",
+        "category": "footwear",
+        "subtype": "knee_boots",
+        "formality": [
+          "evening",
+          "smart_casual"
+        ],
+        "season": [
+          "autumn",
+          "winter"
+        ],
+        "compatibility_tags": [
+          "outdoor_ok"
+        ],
+        "weight": 1.0
+      },
+      "accessories": [],
+      "harmony": {
+        "id": "burgundy_blush",
+        "label": "burgundy and blush",
+        "colours": [
+          "burgundy",
+          "dusty_pink",
+          "rose",
+          "champagne"
+        ],
+        "weight": 1.0
+      },
+      "colours": {
+        "top": "dusty_pink",
+        "bottom": "burgundy"
+      },
+      "families": [
+        "silk_blouse",
+        "tailored_shorts"
+      ]
+    },
+    "scene": {
+      "id": "forest_gold_hotel",
+      "label": "forest green and gold hotel suite",
+      "family": "hotel_suite",
+      "env_palette": "forest_green_gold",
+      "palette_description": "forest green walls, gold trim, dark marble",
+      "surfaces": [
+        "marble floor",
+        "panelled walls"
+      ],
+      "furniture_affordances": [
+        "upholstered headboard bed",
+        "writing desk",
+        "armchair"
+      ],
+      "lighting_options": [
+        "warm practical lamps",
+        "window backlight"
+      ],
+      "time_of_day": [
+        "evening"
+      ],
+      "mood": [
+        "elegant",
+        "confident"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    "lighting": {
+      "id": "soft_window_daylight",
+      "label": "soft diffused window daylight",
+      "kind": "natural",
+      "quality": "soft",
+      "temperature": "neutral",
+      "shadow_behaviour": "gentle wraparound shadows",
+      "weight": 1.0
+    },
+    "pose": {
+      "id": "walking_turn",
+      "label": "walking and turning back toward camera",
+      "family": "walking_candid",
+      "posture": "walking",
+      "shoulder_rotation": "twisted back",
+      "spine_orientation": "rotated",
+      "hip_orientation": "mid-stride",
+      "legs": "trailing foot planted",
+      "requires_furniture": [],
+      "weight": 0.9
+    },
+    "head": {
+      "position_id": "straight_on",
+      "yaw": -1.6,
+      "pitch": -1.2,
+      "roll": 0.9,
+      "tilt_class": "neutral",
+      "eye_direction": "camera"
+    },
+    "hands": {
+      "id": "hands_pockets",
+      "label": "hands in her pockets",
+      "compatible_postures": [
+        "standing",
+        "walking"
+      ],
+      "weight": 0.8
+    },
+    "expression": {
+      "id": "small_smile",
+      "label": "a small closed-mouth smile",
+      "mood": "warm",
+      "weight": 1.5
+    },
+    "camera": {
+      "shot": {
+        "id": "waist_up",
+        "label": "waist-up framing",
+        "emphasis": "upper_body",
+        "weight": 1.4
+      },
+      "focal": {
+        "id": "85mm",
+        "label": "85mm portrait",
+        "focal_mm": 85,
+        "description": "classic portrait compression, soft background separation",
+        "suitable_shots": [
+          "head_and_shoulders",
+          "waist_up",
+          "close_portrait",
+          "three_quarter",
+          "seated_full"
+        ],
+        "perspective_note": "flattering facial rendering",
+        "weight": 1.4
+      },
+      "height": {
+        "id": "slightly_high",
+        "label": "camera slightly above eye level",
+        "note": "gentle, opens the eyes",
+        "weight": 1.0
+      },
+      "angle": {
+        "id": "frontal",
+        "label": "square frontal angle",
+        "weight": 1.2
+      },
+      "aperture": {
+        "id": "f4",
+        "label": "f/4 \u2014 moderate separation, readable environment",
+        "weight": 1.2
+      }
+    },
+    "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a dusty pink silk-like blouse in silk-like fabric with a liquid drape, walking and turning back toward camera, eyes looking directly into the lens, head level and not tilted, a small closed-mouth smile expression, in a forest green and gold hotel suite, waist-up framing, photorealistic photograph",
+    "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+    "width": 896,
+    "height": 1152,
+    "category_keys": {
+      "wardrobe_family": "silk_blouse+tailored_shorts",
+      "wardrobe_top": "silk_blouse",
+      "wardrobe_bottom": "tailored_shorts",
+      "wardrobe_dress": "",
+      "colour_family": "burgundy_blush",
+      "scene_family": "hotel_suite",
+      "scene_id": "forest_gold_hotel",
+      "env_palette": "forest_green_gold",
+      "pose_family": "walking_candid",
+      "pose_id": "walking_turn",
+      "head_position": "straight_on",
+      "tilt_class": "neutral",
+      "hands": "hands_pockets",
+      "expression": "small_smile",
+      "camera_shot": "waist_up",
+      "camera_focal": "85mm",
+      "camera_height": "slightly_high",
+      "lighting": "soft_window_daylight"
+    }
+  },
+  "runner_up_scores": [
+    96.08,
+    96.07,
+    95.29,
+    94.99,
+    94.91
+  ]
+}
