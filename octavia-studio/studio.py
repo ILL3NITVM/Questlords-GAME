@@ -27,7 +27,11 @@ sys.path.insert(0, str(ROOT))
 
 import yaml  # noqa: E402
 
+from pipeline import hero as hero_mod  # noqa: E402
+from pipeline.prompt import build_prompts_verbose  # noqa: E402
+from pipeline.renderplan import default_plan  # noqa: E402
 from pipeline.runner import Run, load_manifest  # noqa: E402
+from pipeline.tokens import budget as token_budget  # noqa: E402
 from pipeline.seeds import reroll_axes, seed_record  # noqa: E402
 from pipeline.spec import SeedRecord  # noqa: E402
 from qc import review as review_mod  # noqa: E402
@@ -819,6 +823,183 @@ def cmd_dataset(args: argparse.Namespace) -> int:
     return 1
 
 
+
+# ======================================================================
+# hero — search for and render the single best possible frame
+# ======================================================================
+def cmd_hero(args: argparse.Namespace) -> int:
+    from pipeline.compose import Composer
+    from pipeline.history import DiversityHistory
+    from pipeline.sampler import Catalogue, Sampler
+    from pipeline.seeds import resolve_master_seed
+    from qc import headpose as hp_mod
+    from qc.rules import apply_defect_penalties, judge
+    from qc.scoring import get_scorer, overall
+
+    cfgs = load_configs()
+    cfg = cfgs["studio"]
+    hcfg = cfg.get("hero", {})
+    run_id = args.run_id or f"hero-{new_run_id()}"
+    master_seed = resolve_master_seed(args.seed)
+    candidates = args.candidates or int(hcfg.get("candidates", 512))
+    campaign = args.campaign or hcfg.get("campaign", "editorial")
+    backend = args.backend or cfg["renderer"]["backend"]
+
+    print(_c("b", f"OCTAVIA STUDIO — HERO FRAME  ({run_id})"))
+    print(f"  searching {candidates} candidate specs  seed={master_seed}  campaign={campaign}\n")
+
+    catalogue = Catalogue()
+    history = DiversityHistory(window=int(cfg["diversity"]["history_window"]))
+    sampler = Sampler(catalogue, history, cfg, feedback=load_feedback(cfg),
+                      planned_total=candidates, diversity="high")
+    composer = Composer(catalogue, sampler, cfg, cfgs["policy"])
+
+    ranked = hero_mod.search(composer, run_id, master_seed, candidates,
+                             campaign=campaign, cfg=hcfg)
+
+    print(_c("b", "  top candidates"))
+    for i, (spec, sc) in enumerate(ranked[:args.show]):
+        print(f"  {i+1:2d}. {sc.total:5.1f}  {spec.camera['shot']['id']:20s} "
+              f"{spec.camera['focal']['id']:6s} {spec.lighting['id']:22s} "
+              f"{spec.pose['id']:20s} {spec.scene['id']}")
+
+    spec, score = ranked[args.pick - 1]
+    print(_c("b", f"\n  selected candidate #{args.pick} — hero score {score.total:.1f}/100"))
+    print(_c("b", "\n  score components"))
+    for k, v in sorted(score.components.items(), key=lambda kv: -kv[1]):
+        bar = "#" * int(24 * v)
+        print(f"    {k:22s} {v:5.2f} {bar}")
+    if score.risks:
+        print(_c("y", "\n  residual risks"))
+        for r in score.risks:
+            print(_c("y", f"    ! {r}"))
+    if score.notes:
+        for n in score.notes:
+            print(_c("d", f"    - {n}"))
+
+    # --- prompt -------------------------------------------------------
+    prompt_cfg = {"tier": args.tier or hcfg.get("prompt_tier", "standard"),
+                  "weighting": hcfg.get("weighting", True)}
+    spec.prompt, spec.negative_prompt, pmeta = build_prompts_verbose(
+        spec, cfgs["identity"], cfgs["physique"], cfgs["policy"], catalogue,
+        identity_cfg=cfg.get("identity", {}), prompt_cfg=prompt_cfg)
+
+    pb = pmeta["positive"]["budget"]
+    nb = pmeta["negative"]["budget"]
+    print(_c("b", "\n  prompt"))
+    print(f"    tier            {prompt_cfg['tier']} (weighting "
+          f"{'on' if prompt_cfg['weighting'] else 'off'})")
+    print(f"    positive        {pb['tokens']} tokens / {pb['chunks']} CLIP chunk(s)"
+          f"  [{pb['method']}]")
+    print(f"    negative        {nb['tokens']} tokens / {nb['chunks']} chunk(s)")
+    print(f"    groups present  {', '.join(pmeta['positive']['groups_present'])}")
+    if pb["chunks"] > 2:
+        print(_c("y", f"    ! {pb['overflow_tokens']} tokens past chunk 1; influence "
+                      f"falls off sharply past there"))
+
+    # --- render plan --------------------------------------------------
+    plan = default_plan(cfg, spec.width, spec.height)
+    renderer = get_renderer(backend, cfg, run_dir(run_id) / "images")
+    try:
+        pre = renderer.preflight()
+    except RendererUnavailable as exc:
+        print(_c("r", f"\n  Renderer unavailable: {exc}"))
+        pre = {"backend": backend, "available": False, "error": str(exc)}
+        renderer = None
+
+    caps = list(getattr(renderer, "capabilities", []) or [])
+    if backend == "comfyui" and isinstance(pre, dict):
+        caps += [k for k, v in (pre.get("capabilities") or {}).items() if v]
+    plan.resolve(caps)
+    print(_c("b", "\n  render plan"))
+    print(f"    {plan.summary()}")
+    for ps in plan.passes:
+        if not ps.enabled:
+            print(_c("d", f"    {ps.name:12s} disabled in config"))
+        elif ps.skipped_reason:
+            print(_c("y", f"    {ps.name:12s} SKIPPED — {ps.skipped_reason}"))
+        else:
+            detail = " ".join(f"{k}={v}" for k, v in ps.params.items())
+            print(f"    {ps.name:12s} {detail}")
+
+    # --- write the recipe ---------------------------------------------
+    d = run_dir(run_id)
+    d.mkdir(parents=True, exist_ok=True)
+    recipe = {
+        "run_id": run_id,
+        "master_seed": master_seed,
+        "candidates_searched": candidates,
+        "selected_rank": args.pick,
+        "hero_score": score.to_dict(),
+        "identity_mode": cfg.get("identity", {}).get("mode"),
+        "lora": cfg.get("identity", {}).get("lora", {}),
+        "prompt": spec.prompt,
+        "negative_prompt": spec.negative_prompt,
+        "prompt_meta": pmeta,
+        "width": spec.width,
+        "height": spec.height,
+        "render_plan": plan.to_dict(),
+        "renderer_preflight": pre,
+        "spec": spec.to_dict(),
+        "runner_up_scores": [round(s.total, 2) for _, s in ranked[1:6]],
+    }
+    (d / "hero_recipe.json").write_text(json.dumps(recipe, indent=2, default=str),
+                                        encoding="utf-8")
+    (d / "hero_prompt.txt").write_text(
+        f"POSITIVE\n{spec.prompt}\n\nNEGATIVE\n{spec.negative_prompt}\n",
+        encoding="utf-8")
+
+    print(_c("b", "\n  written"))
+    print(f"    runs/{run_id}/hero_recipe.json")
+    print(f"    runs/{run_id}/hero_prompt.txt")
+
+    # --- render -------------------------------------------------------
+    if renderer is None:
+        print(_c("y", "\n  No renderer available — recipe written but nothing rendered."))
+        print(_c("d", "  Configure a backend, then re-run with the same --seed to "
+                      "reproduce this exact frame."))
+        return 2
+
+    if args.dry_run:
+        print(_c("d", "\n  --dry-run: stopping before render."))
+        return 0
+
+    print(_c("b", f"\n  rendering via {backend} ..."))
+    result = renderer.generate_image(spec)
+    if not result.ok:
+        print(_c("r", f"  render failed: {result.error}"))
+        return 1
+
+    scorer = get_scorer(cfg)
+    head = hp_mod.estimate(spec.head, result.measured_head_pose, backend == "mock")
+    scores, defects = scorer.score(spec, result.image_path, head, history)
+    scores = apply_defect_penalties(scores, defects, cfg["qc"]["defect_penalties"])
+    verdict = judge(scores, defects, cfg["qc"])
+    headline = overall(scores)
+
+    print(_c("b", "\n  result"))
+    print(f"    image        {result.image_path}")
+    print(f"    render time  {result.duration_seconds:.1f}s")
+    print(f"    QC headline  {headline:.1f}" +
+          ("  " + _c("g", "ACCEPTED") if verdict.accepted else "  " + _c("r", "REJECTED")))
+    for r in verdict.reasons:
+        print(_c("r", f"      {r}"))
+    if scorer.placeholder_metrics:
+        print(_c("y", f"    note: {len(scorer.placeholder_metrics)} QC metrics are "
+                      f"placeholders, not measurements"))
+
+    record = {**recipe, "image_path": str(result.image_path),
+              "scores": scores, "verdict": verdict.to_dict(),
+              "overall_score": headline, "scorer": scorer.kind,
+              "head_pose": head.to_dict()}
+    with open(d / "manifest.jsonl", "a", encoding="utf-8") as fh:
+        fh.write(json.dumps({**record, "index": 0, "frame_id": spec.frame_id,
+                             "category_keys": spec.category_keys(),
+                             "render_ok": True}, default=str) + "\n")
+    renderer.close()
+    return 0
+
+
 # ======================================================================
 # status
 # ======================================================================
@@ -962,6 +1143,21 @@ def main(argv: Optional[List[str]] = None) -> int:
     rr.add_argument("--diversity", default="high", choices=["low", "normal", "high"])
     rr.add_argument("--backend", default=None, choices=["mock", "comfyui", "api"])
     rr.set_defaults(func=cmd_reroll)
+
+    hr = sub.add_parser("hero", help="search for and render the single best frame")
+    hr.add_argument("--candidates", type=int, default=None)
+    hr.add_argument("--seed", type=int, default=None)
+    hr.add_argument("--campaign", default=None,
+                    choices=["wardrobe", "outdoor", "studio", "editorial"])
+    hr.add_argument("--tier", default=None, choices=["compact", "standard", "full"])
+    hr.add_argument("--pick", type=int, default=1,
+                    help="render the Nth ranked candidate (default: the best)")
+    hr.add_argument("--show", type=int, default=10, help="how many candidates to list")
+    hr.add_argument("--backend", default=None, choices=["mock", "comfyui", "api"])
+    hr.add_argument("--run-id", default=None)
+    hr.add_argument("--dry-run", action="store_true",
+                    help="write the recipe without rendering")
+    hr.set_defaults(func=cmd_hero)
 
     ds = sub.add_parser("dataset", help="curate an existing photo set for LoRA training")
     ds.add_argument("action",

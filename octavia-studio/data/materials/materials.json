@@ -8,7 +8,7 @@
       "specular": "soft directional sheen",
       "stretch": "high stretch, hugs the body",
       "thickness": "medium",
-      "drape": "close, follows contours",
+      "drape": "that hugs the contours of the body",
       "wrinkling": "fine parallel wrinkling at stress points",
       "edge_behaviour": "clean ribbed edge"
     },
@@ -19,7 +19,7 @@
       "specular": "low matte sheen",
       "stretch": "moderate stretch",
       "thickness": "thin",
-      "drape": "soft, follows the figure",
+      "drape": "that follows the figure softly",
       "wrinkling": "gentle diagonal folds",
       "edge_behaviour": "slightly rolled edge"
     },
@@ -30,7 +30,7 @@
       "specular": "matte, no highlight",
       "stretch": "low stretch, holds shape",
       "thickness": "thick",
-      "drape": "heavy, falls away from the body",
+      "drape": "that falls heavily away from the body",
       "wrinkling": "broad soft folds",
       "edge_behaviour": "thick blunt edge"
     },
@@ -41,7 +41,7 @@
       "specular": "matte",
       "stretch": "good stretch",
       "thickness": "thin-medium",
-      "drape": "soft drape close to the body",
+      "drape": "that drapes softly close to the body",
       "wrinkling": "soft rounded creasing",
       "edge_behaviour": "curling raw edge"
     },
@@ -52,7 +52,7 @@
       "specular": "matte with a dry hand",
       "stretch": "no stretch",
       "thickness": "medium",
-      "drape": "structured, stands away slightly",
+      "drape": "that holds its shape and stands slightly away",
       "wrinkling": "crisp permanent creasing",
       "edge_behaviour": "frayed-soft edge"
     },
@@ -63,7 +63,7 @@
       "specular": "low sheen on worn areas",
       "stretch": "minimal stretch",
       "thickness": "thick",
-      "drape": "stiff, holds its own shape",
+      "drape": "that is stiff and holds its own shape",
       "wrinkling": "hard whiskering at hips and knees",
       "edge_behaviour": "topstitched edge"
     },
@@ -74,7 +74,7 @@
       "specular": "strong specular highlights that travel",
       "stretch": "low stretch",
       "thickness": "thin",
-      "drape": "fluid, pools and slides",
+      "drape": "that falls fluidly and pools",
       "wrinkling": "sharp bright fold lines",
       "edge_behaviour": "clean bias edge"
     },
@@ -85,7 +85,7 @@
       "specular": "soft broad highlight",
       "stretch": "no stretch",
       "thickness": "very thin",
-      "drape": "liquid drape",
+      "drape": "with a liquid drape",
       "wrinkling": "fine soft rippling",
       "edge_behaviour": "narrow rolled hem"
     },
@@ -96,7 +96,7 @@
       "specular": "diffuse glow, semi-translucent",
       "stretch": "no stretch",
       "thickness": "very thin",
-      "drape": "floats and lifts with movement",
+      "drape": "that floats and lifts with movement",
       "wrinkling": "light irregular ripples",
       "edge_behaviour": "fine hem"
     },
@@ -107,7 +107,7 @@
       "specular": "directional light absorption and crushing",
       "stretch": "slight stretch",
       "thickness": "thick",
-      "drape": "heavy fluid drape",
+      "drape": "with a heavy fluid drape",
       "wrinkling": "soft crushed folds",
       "edge_behaviour": "plush edge"
     },
@@ -118,7 +118,7 @@
       "specular": "matte with shadow detail",
       "stretch": "slight stretch",
       "thickness": "very thin",
-      "drape": "delicate, follows the layer beneath",
+      "drape": "that follows the layer beneath delicately",
       "wrinkling": "minimal, holds pattern",
       "edge_behaviour": "scalloped edge"
     },
@@ -129,7 +129,7 @@
       "specular": "low sheen, shows what is under it",
       "stretch": "stretch",
       "thickness": "very thin",
-      "drape": "skims the layer beneath",
+      "drape": "that skims the layer beneath",
       "wrinkling": "fine gathering",
       "edge_behaviour": "raw net edge"
     },
@@ -140,7 +140,7 @@
       "specular": "matte, slightly fuzzy halo",
       "stretch": "low stretch",
       "thickness": "medium-thick",
-      "drape": "structured drape",
+      "drape": "with a structured drape",
       "wrinkling": "soft broad creasing",
       "edge_behaviour": "bound edge"
     },
@@ -151,7 +151,7 @@
       "specular": "satin-adjacent sheen on tension",
       "stretch": "very high stretch",
       "thickness": "thin",
-      "drape": "compressive, second-skin",
+      "drape": "that fits like a second skin",
       "wrinkling": "tension lines radiating from joints",
       "edge_behaviour": "flatlock seam edge"
     },
@@ -162,7 +162,7 @@
       "specular": "controlled sheen on panels",
       "stretch": "no stretch",
       "thickness": "medium",
-      "drape": "architectural, holds silhouette",
+      "drape": "that holds an architectural silhouette",
       "wrinkling": "sharp pressed creases",
       "edge_behaviour": "crisp tailored edge"
     },
@@ -173,7 +173,7 @@
       "specular": "fully matte",
       "stretch": "moderate stretch",
       "thickness": "thick",
-      "drape": "soft heavy drape",
+      "drape": "with a soft heavy drape",
       "wrinkling": "broad rounded folds",
       "edge_behaviour": "ribbed cuff edge"
     },
@@ -184,7 +184,7 @@
       "specular": "hard bright specular highlights",
       "stretch": "minimal stretch",
       "thickness": "medium",
-      "drape": "stiff, creases and holds",
+      "drape": "that is stiff and creases sharply",
       "wrinkling": "permanent hard creasing",
       "edge_behaviour": "clean cut edge"
     }

@@ -202,6 +202,106 @@ Then register it in `get_scorer()`.
 
 ---
 
+## The hero frame
+
+One image at the system's ceiling:
+
+```bash
+python studio.py hero --candidates 512 --seed 20260911
+python studio.py hero --candidates 512 --dry-run     # recipe only, no render
+python studio.py hero --candidates 512 --pick 3      # render the 3rd-ranked candidate
+```
+
+A campaign optimises for DIVERSITY; a hero frame optimises for QUALITY, and
+the two disagree almost everywhere. Diversity sampling deliberately reaches for
+the unusual crop, the awkward furniture contact, the wide lens — exactly the
+choices most likely to produce an artefact.
+
+`pipeline/hero.py` composes N candidate specs (every coherence rule still
+applies) and scores each against a risk model of where diffusion models
+actually fail: small faces, prominent hands, bare feet in frame, near-profile
+yaw, mirrors, wide-angle distortion, complex furniture contact. Identity
+legibility carries the heaviest weight — a beautiful frame of someone who is
+not recognisably Octavia has failed at this system's central job.
+
+The risk weights are **informed priors, not measurements**. They encode
+well-known failure modes rather than anything measured on your renderer. Tune
+`config/studio.yaml: hero.weights` against real output.
+
+Output is `runs/<RUN_ID>/hero_recipe.json` (full spec, seeds, prompt,
+budget report, render plan) and `hero_prompt.txt`. Re-run with the same
+`--seed` to reproduce the identical frame.
+
+### Multi-pass rendering
+
+A hero frame should not be a single sample. `pipeline/renderplan.py` declares
+`base -> hires_fix -> face_detail -> upscale`; the backend executes what it
+supports and **records a reason for every pass it skips**, so a hero frame
+never claims a refinement that did not happen.
+
+`hires_fix` and `face_detail` denoise are capped low (0.40 / 0.30) on purpose:
+above ~0.5 the refinement resamples the face freely and walks the likeness
+off-model between passes.
+
+---
+
+## Prompt construction
+
+Prompts are assembled from priority-ranked `Segment` objects, not string
+concatenation. That buys four things joining cannot:
+
+**Budget awareness.** CLIP encodes 77 tokens per chunk and influence drops
+sharply past chunk 1. An 800-token prompt is not "very detailed" — it is a
+75-token prompt followed by 700 tokens of decreasingly-effective noise.
+
+| tier | budget | use |
+|---|---|---|
+| `compact` | 1 chunk (75 tok) | maximum per-token influence, strongest identity hold |
+| `standard` | 2 chunks (150 tok) | identity plus full wardrobe, pose, scene, camera |
+| `full` | uncapped | everything, accepting chunk-7 dilution |
+
+**Deduplication.** Repeating "photorealistic" or "adult woman" wastes the
+highest-value token positions.
+
+**Parenthesis safety.** In ComfyUI and A1111 `(text)` is emphasis syntax, not
+punctuation. Literal parens from data files silently became unintended emphasis
+groups, and comma-splitting left unbalanced ones that corrupt parsing. All
+literal parens are stripped; parens now appear only where emphasis is intended.
+Tight slashes (`f/2.8`) are preserved as meaningful notation.
+
+**Grammatical integrity.** Source phrases in `config/*.yaml` are comma-free and
+self-contained, so joining cannot produce orphaned adjectives with no referent.
+
+### Round-robin selection, shot-aware ordering
+
+Segments carry a rank within their group, and assembly takes the most important
+segment of *every* group before the second of any. A tight budget then yields a
+balanced prompt rather than a deep one that spends everything on identity and
+describes no photograph.
+
+Selection order follows what is actually in frame: on a close portrait the hips
+are not visible, so physique descriptors are spent on pixels that do not exist
+while the gaze, expression and lens that define the frame get trimmed. `face`
+emphasis therefore demotes physique and promotes head, expression and camera;
+`environment` does the reverse.
+
+### What is guaranteed
+
+Protected from both quota and budget, at every tier:
+
+- the subject/age clause the content policy requires
+- all four critical identity anchors (eyes, freckles, hair, signature highlights)
+- **the head-roll clause** — the left-tilt budget in `pipeline/sampler.py` only
+  reaches the renderer through this clause. Trim it and the model reverts to its
+  own preferred tilt, while the manifest still records the roll we *asked* for.
+
+Compact cannot fit all eight content groups in 75 tokens: protected content
+alone costs ~38. That is arithmetic, not a tuning failure — compact fits about
+five groups, chosen by what the shot shows. Use `standard` when you need
+identity *and* complete scene, wardrobe and camera direction.
+
+---
+
 ## Training on your existing photo set
 
 If you already have a body of Octavia photographs, that set — not prompt text —
@@ -369,12 +469,14 @@ decision.
 python -m pytest tests/ -q
 ```
 
-113 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
+146 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
 caps, scene/pose furniture coherence, focal/shot agreement, outfit colour
 harmony, identity and policy terms reaching every prompt, identity-mode
 switching, QC floors and defect routing, review feedback targeting, a full
-end-to-end mock run, and the training subsystem (perceptual hashing, duplicate
-clustering, quality gating, identity-term stripping, kohya export).
+end-to-end mock run, the training subsystem (perceptual hashing, duplicate
+clustering, quality gating, identity-term stripping, kohya export), token
+budgeting, tier guarantees, hero-objective ranking and render-plan capability
+resolution.
 
 ---
 
@@ -386,7 +488,8 @@ octavia-studio/
   config/       identity.yaml physique.yaml studio.yaml content_policy.yaml
   data/         wardrobe/ scenes/ poses/ palettes/ materials/
   renderers/    base.py mock.py comfyui.py api.py registry.py
-  pipeline/     spec.py seeds.py sampler.py compose.py prompt.py history.py runner.py
+  pipeline/     spec.py seeds.py sampler.py compose.py prompt.py tokens.py
+                hero.py renderplan.py history.py runner.py
   qc/           scoring.py rules.py headpose.py contact_sheet.py review.py
   training/     ingest.py analyze.py caption.py export.py
   scripts/      detect_hardware.py

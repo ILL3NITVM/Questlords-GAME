@@ -21,7 +21,8 @@
       ],
       "mood": [
         "warm",
-        "romantic"
+        "romantic",
+        "playful"
       ],
       "compatibility_tags": [
         "one_piece"
@@ -46,7 +47,8 @@
       ],
       "mood": [
         "elegant",
-        "confident"
+        "confident",
+        "editorial"
       ],
       "compatibility_tags": [
         "one_piece"
@@ -73,7 +75,8 @@
       ],
       "mood": [
         "cosy",
-        "composed"
+        "composed",
+        "thoughtful"
       ],
       "compatibility_tags": [
         "one_piece"
@@ -100,7 +103,8 @@
       ],
       "mood": [
         "soft",
-        "easy"
+        "easy",
+        "playful"
       ],
       "compatibility_tags": [
         "one_piece"
@@ -126,7 +130,9 @@
       ],
       "mood": [
         "elegant",
-        "calm"
+        "calm",
+        "sleek",
+        "editorial"
       ],
       "compatibility_tags": [
         "one_piece"
@@ -179,7 +185,9 @@
       ],
       "mood": [
         "elegant",
-        "mysterious"
+        "mysterious",
+        "editorial",
+        "sleek"
       ],
       "compatibility_tags": [
         "one_piece"
@@ -206,7 +214,8 @@
       ],
       "mood": [
         "easy",
-        "fresh"
+        "fresh",
+        "energetic"
       ],
       "compatibility_tags": [
         "one_piece"

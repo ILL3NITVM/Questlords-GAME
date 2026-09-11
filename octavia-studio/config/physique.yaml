@@ -27,17 +27,43 @@ ratios:
   torso_to_leg: 0.86             # slightly leg-dominant, natural
   tolerance: 0.10                # +/- 10% before QC flags drift
 
+# Self-contained phrases with no internal commas — see the note in
+# config/identity.yaml for why that matters.
 descriptors:
-  frame: "medium frame, narrow high waist, softly rounded hips"
-  shoulders: "smooth, gently sloped, not broad or squared"
-  bust: "full and natural in proportion to the frame, with believable weight and fall"
-  waist: "defined, athletic, slight natural softness — not corseted or cinched"
-  hips: "rounded, balanced with the shoulder line"
-  thighs: "full, soft-athletic, natural contour"
-  arms: "slim with natural muscle tone, no visible definition striations"
-  legs: "long relative to torso, natural knee and ankle structure"
-  abdomen: "flat with soft natural definition, no sharply cut six-pack"
-  posture_default: "relaxed natural carriage, not stiff"
+  frame: "a medium frame with a narrow high waist and softly rounded hips"
+  shoulders: "smooth gently sloped shoulders"
+  bust: "a full natural bust in proportion to her frame"
+  waist: "a defined athletic waist with slight natural softness"
+  hips: "rounded hips balanced with the shoulder line"
+  thighs: "full soft-athletic thighs"
+  arms: "slim arms with natural muscle tone"
+  legs: "long legs relative to the torso with natural knee and ankle structure"
+  abdomen: "a flat abdomen with soft natural definition"
+  posture_default: "relaxed natural carriage"
+
+# Prompt assembly, same tiering rationale as identity.yaml.
+prompt:
+  critical:
+    - descriptors.frame
+  important:
+    - descriptors.waist
+    - descriptors.shoulders
+  detail:
+    - descriptors.hips
+    - descriptors.arms
+    - descriptors.legs
+    - descriptors.bust
+  compact:
+    descriptors.frame: "curvy hourglass figure with a narrow waist"
+    descriptors.waist: "defined waist"
+    descriptors.shoulders: "softly sloped shoulders"
+    descriptors.hips: "rounded hips"
+    descriptors.arms: "slim toned arms"
+    descriptors.legs: "long legs"
+    descriptors.bust: "natural proportionate bust"
+
+  # Ratio clause is generated from `ratios` rather than stored as prose.
+  include_ratios: true
 
 # ------------------------------------------------------------
 # Anatomy realism requirements

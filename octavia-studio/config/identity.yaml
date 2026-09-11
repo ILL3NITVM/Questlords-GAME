@@ -35,50 +35,98 @@ invariants:
 
 # ------------------------------------------------------------
 # Facial identity anchors
+#
+# Every value below is a SELF-CONTAINED noun phrase with no internal
+# commas. This is deliberate: prompt.py joins fields with ", ", so a value
+# containing its own commas fragments into orphaned adjectives ("full",
+# "smooth", "feminine") that reach the model with no referent noun.
 # ------------------------------------------------------------
 face:
   geometry:
-    face_shape: "soft oval with a gently tapered jawline"
-    cheekbones: "defined but not sharp, natural mid-face fullness"
-    chin: "rounded, slightly narrow, no cleft"
-    jaw: "smooth, feminine, no heavy angle"
-    nose: "straight narrow bridge, refined rounded tip, small nostrils"
-    lips: "full, well-defined cupid's bow, natural rose tone, upper and lower balanced"
-    philtrum: "short and clearly defined"
-    interocular_spacing: "average, slightly wide-set"
+    face_shape: "soft oval face with a gently tapered jawline"
+    cheekbones: "defined but soft cheekbones with natural mid-face fullness"
+    chin: "a rounded slightly narrow chin"
+    jaw: "a smooth feminine jawline without heavy angle"
+    nose: "a straight narrow nose with a refined rounded tip"
+    lips: "full lips with a well-defined cupid's bow in a natural rose tone"
+    philtrum: "a short clearly defined philtrum"
+    interocular_spacing: "slightly wide-set eyes"
   eyes:
-    colour: "green-hazel, warm amber flecking near the pupil, olive-green outer iris"
-    shape: "almond, slight upward outer canthal tilt"
-    lashes: "dark, natural length, no heavy falsies"
-    symmetry: "matched — both eyes identical shape and size"
+    colour: "green-hazel eyes with an olive-green outer iris and warm amber flecking near the pupil"
+    shape: "almond eyes with a slight upward outer tilt"
+    lashes: "dark lashes of natural length"
+    symmetry: "symmetrical eyes of identical shape and size"
   brows:
-    colour: "dark brown, noticeably darker than hair mid-lengths"
-    shape: "full, straight-to-softly-arched, expressive, groomed but natural"
+    phrase: "full expressive dark brown eyebrows softly arched and groomed but natural"
   skin:
-    tone: "warm light-olive"
-    freckles: "natural scattered freckles across the nose bridge and upper cheeks, light density"
-    texture: "real skin — visible pores, fine texture, natural subsurface scattering"
-    finish: "never plastic, never airbrushed, never waxy"
+    tone: "warm light-olive skin"
+    freckles: "natural freckles scattered across the nose bridge and upper cheeks"
+    texture: "real skin texture with visible pores and natural subsurface scattering"
+    finish: "never plastic or airbrushed or waxy"
 
 # ------------------------------------------------------------
 # Hair identity anchors
 # ------------------------------------------------------------
 hair:
-  base_colour: "dark brunette, cool espresso base with warmer mid-brown mid-lengths"
-  length: "long, past the collarbone"
-  texture: "thick, soft natural waves with straighter lengths"
+  phrase: "long thick dark brunette hair past the collarbone in soft natural waves"
+  base_colour: "cool espresso base with warmer mid-brown mid-lengths"
   signature_highlight:
-    description: "olive / lime-green face-framing sections"
-    placement: "front face-framing pieces on both sides of the centre-to-side part"
-    intensity: "distinct but not neon — muted chartreuse / olive-green"
+    phrase: "muted olive lime-green face-framing highlights on both sides of the part"
     required: true
-  # Styling is VARIABLE and lives in the pose/scene layer, not here.
+  # Styling is VARIABLE and lives in the pose layer, not here.
   variable_styling:
     - "worn down"
     - "half-up"
     - "messy updo"
     - "loose bun"
     - "tucked behind one ear"
+
+# ------------------------------------------------------------
+# PROMPT ASSEMBLY — which anchors matter most, and by how much.
+#
+# CLIP encodes 77 tokens per chunk and influence falls off sharply past
+# chunk 1, so the identity anchors that define recognisability must be
+# guaranteed a place there. `critical` is never dropped; `detail` is the
+# first thing sacrificed when the budget is tight.
+# ------------------------------------------------------------
+prompt:
+  critical:
+    - face.eyes.colour
+    - face.skin.freckles
+    - hair.phrase
+    - hair.signature_highlight.phrase
+  important:
+    - face.skin.texture
+    - face.geometry.face_shape
+    - face.eyes.shape
+  detail:
+    - face.brows.phrase
+    - face.geometry.nose
+    - face.geometry.lips
+    - face.skin.tone
+    - face.geometry.jaw
+    - face.eyes.symmetry
+    - face.geometry.cheekbones
+  # Terse forms used by the `compact` tier, where the whole prompt must
+  # fit one 75-token CLIP chunk. Same anchors, fewer tokens — a compact
+  # prompt that keeps identity but loses pose and scene is not a
+  # photograph specification, so identity has to give ground too.
+  compact:
+    face.eyes.colour: "green-hazel eyes"
+    face.skin.freckles: "natural freckles"
+    hair.signature_highlight.phrase: "lime-green face-framing highlights"
+    hair.phrase: "long dark brunette hair"
+    face.skin.texture: "real skin texture with visible pores"
+    face.geometry.face_shape: "soft oval face"
+    face.eyes.shape: "almond eyes"
+    face.brows.phrase: "full dark eyebrows"
+    face.skin.tone: "warm light-olive skin"
+
+  # Emphasis weights, emitted as (phrase:w) when weighting is enabled.
+  emphasis:
+    face.eyes.colour: 1.15
+    face.skin.freckles: 1.15
+    hair.signature_highlight.phrase: 1.20
 
 # ------------------------------------------------------------
 # Physique identity anchors — see also config/physique.yaml
