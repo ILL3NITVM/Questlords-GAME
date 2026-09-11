@@ -36,6 +36,11 @@ from qc.scoring import COMPUTED_METRICS, VISION_METRICS  # noqa: E402
 from renderers.base import RendererUnavailable  # noqa: E402
 from renderers.registry import available_backends, get_renderer  # noqa: E402
 from scripts.detect_hardware import full_report  # noqa: E402
+from training import analyze as tr_analyze  # noqa: E402
+from training import caption as tr_caption  # noqa: E402
+from training import export as tr_export  # noqa: E402
+from training import ingest as tr_ingest  # noqa: E402
+from training.ingest import ImageRecord  # noqa: E402
 
 REF_DIRS = ["assets/octavia/reference", "assets/octavia/face_reference",
             "assets/octavia/body_reference"]
@@ -569,7 +574,8 @@ def cmd_reroll(args: argparse.Namespace) -> int:
             seeds = reroll_axes(old, axes, master_seed, run_id, index, salt=args.salt)
             spec = composer.compose(run_id, index, seeds, campaign=rec.get("campaign", "wardrobe"))
             spec.prompt, spec.negative_prompt = build_prompts(
-                spec, cfgs["identity"], cfgs["physique"], cfgs["policy"], catalogue)
+                spec, cfgs["identity"], cfgs["physique"], cfgs["policy"], catalogue,
+                identity_cfg=cfg.get("identity", {}))
             result = renderer.generate_image(spec)
             if not result.ok:
                 print(_c("r", f"  #{index:03d} render failed: {result.error}"))
@@ -601,12 +607,226 @@ def cmd_reroll(args: argparse.Namespace) -> int:
     return 0
 
 
+
+# ======================================================================
+# dataset — training-set curation for identity LoRA training
+# ======================================================================
+def load_training_config() -> Dict[str, Any]:
+    path = ROOT / "config/training.yaml"
+    if not path.is_file():
+        raise SystemExit("config/training.yaml is missing.")
+    return yaml.safe_load(path.read_text(encoding="utf-8"))
+
+
+def _work_dir(tcfg: Dict[str, Any]) -> pathlib.Path:
+    d = ROOT / tcfg["dataset"].get("work_dir", "training_runs")
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _records_path(tcfg: Dict[str, Any]) -> pathlib.Path:
+    return _work_dir(tcfg) / "dataset_records.json"
+
+
+def _load_records(tcfg: Dict[str, Any]) -> List[ImageRecord]:
+    path = _records_path(tcfg)
+    if not path.is_file():
+        raise SystemExit(f"No dataset index found. Run: python studio.py dataset ingest")
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return [ImageRecord(**r) for r in raw["records"]]
+
+
+def _save_records(tcfg: Dict[str, Any], records: List[ImageRecord],
+                  extra: Optional[Dict[str, Any]] = None) -> pathlib.Path:
+    path = _records_path(tcfg)
+    payload = {"source_dir": tcfg["dataset"]["source_dir"],
+               "count": len(records),
+               "records": [r.to_dict() for r in records]}
+    if extra:
+        payload.update(extra)
+    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return path
+
+
+def cmd_dataset(args: argparse.Namespace) -> int:
+    tcfg = load_training_config()
+    source = pathlib.Path(args.source) if args.source else ROOT / tcfg["dataset"]["source_dir"]
+
+    # ---------------- ingest ----------------
+    if args.action == "ingest":
+        if not source.is_dir():
+            print(_c("r", f"  Source directory not found: {source}"))
+            print(f"  Put your existing Octavia photographs there, or pass --source <path>.")
+            print(_c("d", "  The directory is read-only to this studio; nothing is moved or deleted."))
+            return 1
+        print(_c("b", f"Scanning {source}"))
+        records = tr_ingest.scan(source, tcfg)
+        if not records:
+            print(_c("r", "  No images found."))
+            return 1
+        tr_analyze.cluster_near_duplicates(
+            records, threshold=int(tcfg["dedupe"]["hamming_threshold"]))
+        path = _save_records(tcfg, records)
+        readable = [r for r in records if "unreadable" not in r.flags]
+        print(f"  indexed   {len(records)} files ({len(readable)} readable)")
+        flagged = sum(1 for r in readable if r.flags)
+        print(f"  flagged   {flagged} with quality issues")
+        print(f"  written   {path.relative_to(ROOT)}")
+        print(f"\n  next: python studio.py dataset analyze")
+        return 0
+
+    records = _load_records(tcfg)
+
+    # ---------------- analyze ----------------
+    if args.action == "analyze":
+        report = tr_analyze.analyze(records, tcfg)
+        print(_c("b", "TRAINING SET ANALYSIS\n"))
+        print(f"  files            {report['total_files']}  "
+              f"(readable {report['readable']}, unreadable {report['unreadable']})")
+        print(f"  resolution       min {report['resolution']['min_side_min']}px / "
+              f"median {report['resolution']['min_side_median']}px / "
+              f"max {report['resolution']['min_side_max']}px (shorter edge)")
+        print(f"  near-dup groups  {report['near_duplicate_clusters']} "
+              f"covering {report['images_in_duplicate_clusters']} images")
+        if report["largest_clusters"]:
+            sizes = ", ".join(str(c["size"]) for c in report["largest_clusters"])
+            print(f"  largest groups   {sizes}")
+
+        if report["quality_flags"]:
+            print(_c("b", "\n  quality flags"))
+            for flag, n in sorted(report["quality_flags"].items(), key=lambda kv: -kv[1]):
+                print(f"    {flag:22s} {n}")
+
+        print(_c("b", "\n  aspect buckets"))
+        for bucket, info in list(report["aspect_buckets"].items())[:8]:
+            bar = "#" * int(30 * info["share"])
+            print(f"    {bucket:12s} {info['count']:4d} {info['share']:6.1%} {bar}")
+
+        print(_c("b", "\n  exposure distribution (mean luma)"))
+        total = max(1, report["readable"])
+        for band, n in report["exposure_histogram"].items():
+            if n:
+                print(f"    {band:10s} {n:4d} {n/total:6.1%} {'#' * int(30 * n / total)}")
+
+        print(_c("b", "\n  NOT MEASURED — needs a vision model"))
+        for axis in report["unmeasured_axes"]:
+            print(_c("d", f"    {axis['axis']:22s} requires {axis['requires']}"))
+
+        if report["warnings"]:
+            print(_c("b", "\n  warnings"))
+            for w in report["warnings"]:
+                print(_c("y", f"    ! {w}"))
+        else:
+            print(_c("g", "\n  no warnings on the measurable axes"))
+
+        print(_c("y", f"\n  {report['critical_note']}"))
+        out = _work_dir(tcfg) / "analysis.json"
+        out.write_text(json.dumps(report, indent=2), encoding="utf-8")
+        print(f"\n  written {out.relative_to(ROOT)}")
+        print(f"  next: python studio.py dataset curate")
+        return 0
+
+    # ---------------- curate ----------------
+    if args.action == "curate":
+        result = tr_analyze.curate(records, tcfg)
+        _save_records(tcfg, records, {"curation": result})
+        print(_c("b", "CURATION"))
+        print(f"  total              {result['total']}")
+        print(_c("g", f"  selected           {result['selected']}"))
+        print(f"  rejected (quality) {result['rejected_quality']}")
+        print(f"  rejected (dup cap) {result['rejected_duplicates']}")
+        print(_c("b", "\n  selected by aspect bucket"))
+        for bucket, n in sorted(result["buckets"].items(), key=lambda kv: -kv[1]):
+            print(f"    {bucket:12s} {n}")
+        print(_c("d", "\n  Nothing was deleted. Rejections are metadata only."))
+        print(f"\n  next: python studio.py dataset caption")
+        return 0
+
+    # ---------------- caption ----------------
+    if args.action == "caption":
+        trigger = tcfg["identity"]["trigger_token"]
+        class_token = tcfg["identity"].get("class_token", "")
+        sheet = _work_dir(tcfg) / "captions.csv"
+        selected = [r for r in records if r.selected]
+        if not selected:
+            print(_c("y", "  No selected images. Run: python studio.py dataset curate"))
+            return 1
+
+        existing = tr_caption.read_caption_sheet(sheet, trigger, class_token)
+        if not existing and not args.force_template:
+            tr_caption.write_caption_sheet(selected, sheet, trigger, class_token)
+            print(_c("b", "CAPTION SHEET WRITTEN"))
+            print(f"  {sheet.relative_to(ROOT)}  ({len(selected)} rows)")
+            print(_c("b", "\n  Fill these columns per image:"))
+            for name, hint in tr_caption.CAPTION_SLOTS:
+                print(f"    {name:12s} {hint}")
+            print(_c("y", "\n  CRITICAL — do NOT describe her face, eyes, freckles, hair"))
+            print(_c("y", "  colour or the green highlights. Anything you name becomes a"))
+            print(_c("y", "  variable bound to those words; anything you omit is absorbed"))
+            print(_c("y", f"  into the trigger token '{trigger}', which is what you want."))
+            print(_c("d", "\n  Identity terms are stripped automatically if they slip in."))
+            print(f"\n  then: python studio.py dataset caption   (re-run to apply)")
+            return 0
+
+        result = tr_caption.apply_captions(records, existing, trigger, class_token)
+        _save_records(tcfg, records, {"captioning": result})
+        print(_c("b", "CAPTIONS APPLIED"))
+        print(f"  from sheet     {result['captioned']}")
+        if result["templated"]:
+            print(_c("y", f"  placeholders   {result['templated']} "
+                          f"(still contain TODO_ markers)"))
+        print(f"\n  next: python studio.py dataset export")
+        return 0
+
+    # ---------------- export ----------------
+    if args.action == "export":
+        out = pathlib.Path(args.out) if args.out else _work_dir(tcfg) / "export"
+        merged = dict(tcfg)
+        merged["identity"] = tcfg["identity"]
+        if args.target == "ipadapter":
+            result = tr_export.export_ipadapter(records, out / "ipadapter", merged)
+            print(_c("b", "IPADAPTER REFERENCE SUBSET"))
+            print(f"  exported          {result['exported']} images")
+            print(f"  distinct clusters {result['distinct_clusters']}")
+            print(f"  out               {result['out_dir']}")
+            print(_c("d", f"\n  {result['note']}"))
+            return 0
+
+        result = tr_export.export_lora(records, out / "lora", merged)
+        if "error" in result:
+            print(_c("r", f"  {result['error']}"))
+            return 1
+        print(_c("b", "LoRA TRAINING SET EXPORTED"))
+        print(f"  images            {result['exported']}")
+        print(f"  num_repeats       {result['num_repeats']}")
+        print(f"  steps/epoch       {result['steps_per_epoch']}")
+        print(f"  image dir         {result['image_dir']}")
+        print(f"  dataset toml      {result['dataset_toml']}")
+        print(f"  hyperparameters   {result['hyperparameters']}")
+        if result["placeholder_captions"]:
+            print(_c("r", f"\n  ! {result['placeholder_captions']} captions still contain "
+                          f"TODO_ markers."))
+            print(_c("r", "    Training on these teaches the model the literal string "
+                          "'TODO_pose'."))
+            print(_c("r", "    Fill training_runs/captions.csv before training."))
+        print(_c("b", "\n  after training"))
+        print("    1. set identity.lora.enabled: true and identity.lora.name in config/studio.yaml")
+        print("    2. set identity.mode: lora_token")
+        print("    3. add a LoraLoader node to your ComfyUI workflow and map it in node_map")
+        return 0
+
+    print(_c("r", f"  unknown action {args.action!r}"))
+    return 1
+
+
 # ======================================================================
 # status
 # ======================================================================
 def cmd_status(args: argparse.Namespace) -> int:
     cfgs = load_configs()
     cfg = cfgs["studio"]
+    icfg = cfg.get("identity", {})
+    lora = icfg.get("lora", {}) or {}
     counts = {}
     for rel in REF_DIRS:
         d = ROOT / rel
@@ -644,6 +864,9 @@ def cmd_status(args: argparse.Namespace) -> int:
         blocking.append("render backend reachable but not fully configured")
     blocking.append("vision-based QC scorer not implemented "
                     "(identity/physique/anatomy scores are placeholders)")
+    if icfg.get("mode") == "descriptive" and not lora.get("enabled"):
+        blocking.append("identity asserted by prompt text only — no LoRA or reference "
+                        "adapter configured, so the face will drift across a long run")
 
     ready = not blocking
 
@@ -663,6 +886,20 @@ def cmd_status(args: argparse.Namespace) -> int:
           f"{len(VISION_METRICS)} placeholder metrics pending a vision scorer")
     print(f"Pose balancing:      active — left tilt capped at "
           f"{cfg['head_pose']['left_tilt_target_share']:.0%} of accepted frames")
+    lora_desc = (f"LoRA '{lora.get('name')}' @ {lora.get('strength_model')}"
+                 if lora.get("enabled") else "no LoRA")
+    print(f"Identity mode:       {icfg.get('mode','descriptive')} "
+          f"(trigger '{icfg.get('trigger_token','-')}', {lora_desc})")
+    ds_records = ROOT / "training_runs/dataset_records.json"
+    if ds_records.is_file():
+        d = json.loads(ds_records.read_text(encoding="utf-8"))
+        sel = sum(1 for r in d.get("records", []) if r.get("selected"))
+        cap = sum(1 for r in d.get("records", []) if r.get("selected") and r.get("caption")
+                  and "TODO_" not in (r.get("caption") or ""))
+        print(f"Training set:        {d.get('count',0)} indexed, {sel} selected, "
+              f"{cap} fully captioned")
+    else:
+        print("Training set:        not indexed (python studio.py dataset ingest)")
     print(f"Wardrobe database:   {wardrobe_n} garments, {len(cat.colours) if data_ok else 0} colours, "
           f"{len(cat.scenes) if data_ok else 0} scenes, {len(cat.poses) if data_ok else 0} poses")
     print(f"Ready for first real batch: {'YES' if ready else 'NO'}")
@@ -725,6 +962,16 @@ def main(argv: Optional[List[str]] = None) -> int:
     rr.add_argument("--diversity", default="high", choices=["low", "normal", "high"])
     rr.add_argument("--backend", default=None, choices=["mock", "comfyui", "api"])
     rr.set_defaults(func=cmd_reroll)
+
+    ds = sub.add_parser("dataset", help="curate an existing photo set for LoRA training")
+    ds.add_argument("action",
+                    choices=["ingest", "analyze", "curate", "caption", "export"])
+    ds.add_argument("--source", default=None, help="override dataset.source_dir")
+    ds.add_argument("--out", default=None, help="export output directory")
+    ds.add_argument("--target", default="lora", choices=["lora", "ipadapter"])
+    ds.add_argument("--force-template", action="store_true",
+                    help="apply placeholder captions without a filled sheet")
+    ds.set_defaults(func=cmd_dataset)
 
     st = sub.add_parser("status", help="print the studio status block")
     st.set_defaults(func=cmd_status)

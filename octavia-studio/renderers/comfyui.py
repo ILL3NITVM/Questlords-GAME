@@ -55,6 +55,7 @@ class ComfyUIRenderer(Renderer):
         self.client_id = str(uuid.uuid4())
         self.workflow_path = cfg.get("workflow_template")
         self.node_map: Dict[str, Any] = cfg.get("node_map", {})
+        self.lora: Dict[str, Any] = config.get("identity", {}).get("lora", {}) or {}
         self._workflow: Optional[Dict[str, Any]] = None
         self.capabilities: List[str] = []
 
@@ -143,6 +144,9 @@ class ComfyUIRenderer(Renderer):
               seed:     {node: "3",  field: "seed"}
               width:    {node: "5",  field: "width"}
               height:   {node: "5",  field: "height"}
+              lora_name:            {node: "10", field: "lora_name"}
+              lora_strength_model:  {node: "10", field: "strength_model"}
+              lora_strength_clip:   {node: "10", field: "strength_clip"}
         """
         values = {
             "positive": spec.prompt,
@@ -151,6 +155,14 @@ class ComfyUIRenderer(Renderer):
             "width": spec.width,
             "height": spec.height,
         }
+        # A trained identity LoRA, when one is configured. The workflow must
+        # already contain a LoraLoader node; node_map names its fields.
+        if self.lora.get("enabled"):
+            values.update({
+                "lora_name": self.lora.get("name", ""),
+                "lora_strength_model": float(self.lora.get("strength_model", 0.85)),
+                "lora_strength_clip": float(self.lora.get("strength_clip", 0.85)),
+            })
         for key, target in self.node_map.items():
             if key not in values or not isinstance(target, dict):
                 continue

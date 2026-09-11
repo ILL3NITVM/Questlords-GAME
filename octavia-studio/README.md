@@ -202,6 +202,106 @@ Then register it in `get_scorer()`.
 
 ---
 
+## Training on your existing photo set
+
+If you already have a body of Octavia photographs, that set — not prompt text —
+is the reliable way to hold her identity. Prompt text alone will not keep a face
+consistent across 64 images.
+
+```bash
+python studio.py dataset ingest      # scan + fingerprint (read-only)
+python studio.py dataset analyze     # bias report — read this before training
+python studio.py dataset curate      # quality gate + duplicate capping
+python studio.py dataset caption     # writes captions.csv; fill it, then re-run
+python studio.py dataset export      # kohya/sd-scripts layout + dataset.toml
+```
+
+Source files are never moved, modified or deleted. Curation decisions are
+metadata; only `export` materialises anything, and it copies.
+
+### Why `analyze` runs before training
+
+A LoRA learns whatever is over-represented, **at the weights level**. If 40% of
+the source photographs are mirror selfies with a leftward tilt in warm light, the
+adapter learns "Octavia" to mean partly that — and the prompt-side pose balancing
+in `pipeline/sampler.py` cannot override it. Weight-level bias beats prompt
+weighting every time. So the anti-collapse discipline has to start at the dataset.
+
+`analyze` measures what Pillow can measure honestly (near-duplicate clusters,
+resolution, aspect buckets, exposure and contrast distribution) and **names the
+axes it cannot**: head pose, framing, expression, wardrobe and scene variety all
+need a vision model and are reported `UNMEASURED`. Those are the axes most likely
+to carry the bias that matters, so a clean report is not evidence of a balanced
+set. Look at the images.
+
+It also warns when a quality flag fires on >90% of the set — that almost always
+means a miscalibrated threshold, not universally bad data.
+
+### The caption rule, which is counterintuitive
+
+During training, **anything you name becomes a variable bound to those words;
+anything you consistently omit is absorbed into the trigger token.**
+
+So for a persistent persona the strategy inverts:
+
+| | |
+|---|---|
+| **Never caption** | eyes, freckles, hair colour, the green highlights, skin tone, brows, the pendant |
+| **Always caption** | framing, pose, head angle, expression, clothing, setting, lighting |
+
+Naming "green hazel eyes" binds that trait to those words — it then appears only
+when you say them, and drifts when you do not. Omitting it binds it to
+`ohwx_octavia`, which is exactly what a persistent persona needs. Naming the
+variable axes lets the model factor them *out* of the identity, so the token
+means "Octavia" rather than "Octavia in a pink crop top indoors".
+
+`training/caption.py` strips identity vocabulary automatically — from your own
+sheet entries and from any automatic captioner you plug in via `CaptionBackend`.
+Off-the-shelf captioners (BLIP2, WD14, CogVLM) will happily emit "a brunette
+woman with green eyes and freckles"; `FilterCaptionBackend` removes exactly that,
+clause-aware so no grammatical debris is left behind.
+
+### After training: switch identity mode
+
+Once a LoRA exists, the full descriptive block in the prompt becomes actively
+harmful — the text encoder pushes toward its own reading of "green-hazel almond
+eyes" while the adapter pushes toward the learned face, and the result drifts
+off-model. Set in `config/studio.yaml`:
+
+```yaml
+identity:
+  mode: lora_token          # descriptive | hybrid | lora_token
+  trigger_token: "ohwx_octavia"
+  lora:
+    enabled: true
+    name: "octavia_v1.safetensors"
+    strength_model: 0.85
+```
+
+| mode | identity carried by | use when |
+|---|---|---|
+| `descriptive` | full prompt description | no adapter exists |
+| `hybrid` | trigger token + 3 anchors | LoRA still undertrained |
+| `lora_token` | trigger token alone | LoRA holds the face |
+
+The physique lock and the adult-age clause survive **every** mode — a face LoRA
+carries neither, so dropping them would be a policy hole, not an optimisation.
+
+Setting `lora_token` or `hybrid` without a trigger token raises rather than
+silently rendering a generic person.
+
+### No-training alternative
+
+```bash
+python studio.py dataset export --target ipadapter
+```
+
+Exports a small, deliberately spread reference subset (highest-quality member of
+each distinct near-duplicate cluster) for IPAdapter / InstantID conditioning.
+Weaker identity hold than a LoRA, but immediate and free.
+
+---
+
 ## Human review loop
 
 ```bash
@@ -269,10 +369,12 @@ decision.
 python -m pytest tests/ -q
 ```
 
-74 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
+113 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
 caps, scene/pose furniture coherence, focal/shot agreement, outfit colour
-harmony, identity and policy terms reaching every prompt, QC floors and defect
-routing, review feedback targeting, and a full end-to-end mock run.
+harmony, identity and policy terms reaching every prompt, identity-mode
+switching, QC floors and defect routing, review feedback targeting, a full
+end-to-end mock run, and the training subsystem (perceptual hashing, duplicate
+clustering, quality gating, identity-term stripping, kohya export).
 
 ---
 
@@ -286,6 +388,7 @@ octavia-studio/
   renderers/    base.py mock.py comfyui.py api.py registry.py
   pipeline/     spec.py seeds.py sampler.py compose.py prompt.py history.py runner.py
   qc/           scoring.py rules.py headpose.py contact_sheet.py review.py
+  training/     ingest.py analyze.py caption.py export.py
   scripts/      detect_hardware.py
   runs/<RUN_ID>/  manifest.jsonl state.json review.csv studio.log
                   images/ contact_sheets/

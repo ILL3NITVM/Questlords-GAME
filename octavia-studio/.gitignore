@@ -27,3 +27,8 @@ assets/octavia/body_reference/*.png
 assets/octavia/body_reference/*.jpg
 assets/octavia/body_reference/*.jpeg
 assets/octavia/body_reference/*.webp
+
+# Training-set working directory: indexes, caption sheets and exported
+# copies of your source photographs. Regenerate with `dataset ingest`.
+training_runs/
+assets/octavia/training_source/

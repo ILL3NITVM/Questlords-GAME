@@ -98,7 +98,8 @@ class Run:
                 seeds = seed_record(master_seed, self.run_id, index)
                 spec = composer.compose(self.run_id, index, seeds, campaign=campaign)
                 spec.prompt, spec.negative_prompt = build_prompts(
-                    spec, self.identity, self.physique, self.policy, catalogue)
+                    spec, self.identity, self.physique, self.policy, catalogue,
+                    identity_cfg=self.config.get("identity", {}))
 
                 result = renderer.generate_image(spec)
                 if not result.ok:
@@ -153,6 +154,8 @@ class Run:
             "elapsed_seconds": round(elapsed, 1),
             "scorer": scorer.kind,
             "scorer_placeholder_metrics": scorer.placeholder_metrics,
+            "identity_mode": self.config.get("identity", {}).get("mode", "descriptive"),
+            "lora": self.config.get("identity", {}).get("lora", {}),
             "renderer_preflight": preflight,
             "diversity_report": history.report(),
             "left_tilt_share": round(history.left_tilt_share(), 4),

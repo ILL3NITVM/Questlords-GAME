@@ -1,0 +1,71 @@
+# ============================================================
+# OCTAVIA — TRAINING SET CURATION AND LoRA EXPORT
+# ============================================================
+schema_version: 1
+
+identity:
+  # The trigger token. Use a rare, meaningless string so it carries no
+  # prior meaning from the base model — "octavia" alone would inherit
+  # whatever the model already associates with that name.
+  trigger_token: "ohwx_octavia"
+  # Optional class token. Helps the model place the concept, and enables
+  # regularisation images if you use them. Leave empty to skip.
+  class_token: "woman"
+
+dataset:
+  # Where your existing Octavia photographs live. Read-only — the studio
+  # never writes to, moves, or deletes anything under this path.
+  source_dir: "assets/octavia/training_source"
+  # Where curation metadata is written.
+  work_dir: "training_runs"
+
+quality:
+  min_side: 768             # shorter edge, in pixels
+  max_aspect_error: 0.25    # distance from the nearest training bucket
+  min_luma: 28              # reject near-black
+  max_luma: 232             # reject blown out
+  min_contrast: 18          # reject flat/hazy
+  reject_flags:
+    - unreadable
+    - low_resolution
+    - extreme_aspect
+
+dedupe:
+  # Perceptual-hash Hamming distance below which two images are treated as
+  # near-duplicates. 0 = identical; 6 catches burst frames and re-crops;
+  # above ~12 starts merging genuinely different shots.
+  hamming_threshold: 6
+
+balance:
+  # A near-duplicate cluster may contribute at most this many images.
+  # Without a cap, one burst of twenty similar frames dominates training.
+  max_per_duplicate_cluster: 3
+  # Warn above these shares.
+  max_duplicate_share: 0.20
+  max_bucket_share: 0.70
+
+training:
+  min_images: 20
+  resolution: "896,1152"
+  target_steps_per_epoch: 200
+  batch_size: 1
+  keep_tokens: 1            # pin the trigger token at caption position 0
+  min_bucket_reso: 640
+  max_bucket_reso: 1536
+  network_dim: 32           # 32 is ample for a single face; higher overfits faster
+  network_alpha: 16
+  learning_rate: "1e-4"
+  unet_lr: "1e-4"
+  text_encoder_lr: "5e-5"
+  lr_scheduler: "cosine_with_restarts"
+  lr_warmup_steps: 100
+  max_train_epochs: 10
+  save_every_n_epochs: 1    # test every checkpoint; the last is rarely the best
+  mixed_precision: "bf16"
+  optimizer_type: "AdamW8bit"
+  noise_offset: 0.03
+  min_snr_gamma: 5
+
+ipadapter:
+  # Size of the no-training reference subset.
+  subset_size: 12

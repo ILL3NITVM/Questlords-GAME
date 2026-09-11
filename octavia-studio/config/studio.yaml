@@ -9,6 +9,27 @@ studio:
   default_count: 64
   contact_sheet_batch: 8
 
+# ------------------------------------------------------------
+# How identity is asserted at generation time.
+# ------------------------------------------------------------
+identity:
+  # descriptive : spell every identity attribute out in the prompt.
+  #               The only option when no adapter exists, but text alone
+  #               will not hold a face across 64 images.
+  # lora_token  : lean on a trained LoRA. The trigger token carries the
+  #               identity; the descriptive block is dropped because it
+  #               COMPETES with the adapter and pulls the face off-model.
+  # hybrid      : trigger token plus a minimal anchor (eyes, freckles,
+  #               hair signature). Useful while a LoRA is undertrained.
+  mode: descriptive
+  trigger_token: "ohwx_octavia"
+  class_token: "woman"
+  lora:
+    enabled: false
+    name: ""            # filename as ComfyUI sees it, e.g. octavia_v1.safetensors
+    strength_model: 0.85
+    strength_clip: 0.85
+
 renderer:
   # active backend: mock | comfyui | api
   backend: mock

@@ -18,7 +18,7 @@ scene-text suppression list.
 """
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from pipeline.spec import FrameSpec
 
@@ -153,39 +153,74 @@ def _pose_clause(spec: FrameSpec) -> str:
             f"hips {p['hip_orientation']}, {p['legs']}, {spec.hands['label']}")
 
 
-def build_prompts(spec: FrameSpec, identity: Dict[str, Any], physique: Dict[str, Any],
-                  policy: Dict[str, Any], catalogue) -> tuple[str, str]:
+def _identity_block(identity: Dict[str, Any], policy: Dict[str, Any],
+                    mode: str, trigger: str, class_token: str) -> List[str]:
+    """Build the identity portion of the prompt for the active mode.
+
+    Mode matters more than it looks. Once a LoRA holds the face, repeating
+    a full physical description COMPETES with the adapter: the text encoder
+    pushes toward its own reading of "green-hazel almond eyes" while the
+    adapter pushes toward the learned face, and the result drifts off-model.
+    So `lora_token` deliberately drops the descriptive block rather than
+    stacking both.
+    """
     face = identity["face"]
     hair = identity["hair"]
     inv = identity["invariants"]
+    age_clause = policy["subject"]["age_clause"]
+    token = f"{trigger} {class_token}".strip()
+
+    if mode == "lora_token":
+        # The adapter carries identity. Assert only what it cannot: that the
+        # subject is a single adult person, which the content policy requires
+        # regardless of what any adapter was trained on.
+        return [f"photorealistic editorial photograph of {token}, a single {age_clause}"]
+
+    if mode == "hybrid":
+        # Trigger token plus the three highest-signal anchors, for use while
+        # a LoRA is still undertrained.
+        return [
+            f"photorealistic editorial photograph of {token}, a single {age_clause}",
+            f"eyes: {face['eyes']['colour']}",
+            f"skin: {face['skin']['freckles']}",
+            f"hair: {hair['signature_highlight']['description']}",
+        ]
+
+    # descriptive — no adapter, so spell everything out.
+    return [
+        f"photorealistic editorial photograph of a single {age_clause}, "
+        f"{inv['sex_presentation']}, {inv['apparent_age_band']}",
+        f"face: {face['geometry']['face_shape']}, {face['geometry']['nose']}, "
+        f"{face['geometry']['lips']}, {face['geometry']['jaw']}",
+        f"eyes: {face['eyes']['colour']}, {face['eyes']['shape']}, {face['eyes']['symmetry']}",
+        f"eyebrows: {face['brows']['shape']}, {face['brows']['colour']}",
+        f"skin: {face['skin']['tone']}, {face['skin']['freckles']}, {face['skin']['texture']}",
+        f"hair: {hair['length']} {hair['base_colour']}, {hair['texture']}, with "
+        f"{hair['signature_highlight']['description']} "
+        f"({hair['signature_highlight']['placement']}, "
+        f"{hair['signature_highlight']['intensity']})",
+    ]
+
+
+def build_prompts(spec: FrameSpec, identity: Dict[str, Any], physique: Dict[str, Any],
+                  policy: Dict[str, Any], catalogue,
+                  identity_cfg: Optional[Dict[str, Any]] = None) -> tuple[str, str]:
     ratios = physique["ratios"]
     desc = physique["descriptors"]
 
-    positive: List[str] = []
+    identity_cfg = identity_cfg or {}
+    mode = identity_cfg.get("mode", "descriptive")
+    trigger = identity_cfg.get("trigger_token", "")
+    class_token = identity_cfg.get("class_token", "")
+    if mode in ("lora_token", "hybrid") and not trigger:
+        raise ValueError(
+            f"identity.mode is {mode!r} but no identity.trigger_token is configured. "
+            "Without the trigger token the adapter is never invoked and every frame "
+            "would render a generic person."
+        )
 
-    # 1. medium + subject
-    positive.append(
-        f"photorealistic editorial photograph of a single {policy['subject']['age_clause']}, "
-        f"{inv['sex_presentation']}, {inv['apparent_age_band']}"
-    )
-
-    # 2. face + hair + skin (identity anchor)
-    positive.append(
-        f"face: {face['geometry']['face_shape']}, {face['geometry']['nose']}, "
-        f"{face['geometry']['lips']}, {face['geometry']['jaw']}"
-    )
-    positive.append(
-        f"eyes: {face['eyes']['colour']}, {face['eyes']['shape']}, {face['eyes']['symmetry']}"
-    )
-    positive.append(f"eyebrows: {face['brows']['shape']}, {face['brows']['colour']}")
-    positive.append(
-        f"skin: {face['skin']['tone']}, {face['skin']['freckles']}, {face['skin']['texture']}"
-    )
-    positive.append(
-        f"hair: {hair['length']} {hair['base_colour']}, {hair['texture']}, with "
-        f"{hair['signature_highlight']['description']} "
-        f"({hair['signature_highlight']['placement']}, {hair['signature_highlight']['intensity']})"
-    )
+    positive: List[str] = list(
+        _identity_block(identity, policy, mode, trigger, class_token))
 
     # 3. physique lock
     positive.append(

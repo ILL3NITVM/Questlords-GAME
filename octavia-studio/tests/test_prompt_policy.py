@@ -115,3 +115,64 @@ def test_material_behaviour_reaches_the_prompt():
         assert any(k in pos.lower() for k in ("drape", "folds", "creas", "wrinkl",
                                               "stands away", "pools", "floats",
                                               "holds", "skims", "hugs", "follows"))
+
+
+# ----------------------------------------------------------------------
+# Identity mode (descriptive / hybrid / lora_token)
+# ----------------------------------------------------------------------
+def _one_prompt(mode, trigger="ohwx_octavia", class_token="woman"):
+    from pipeline.seeds import seed_record
+    cat = Catalogue()
+    hist = DiversityHistory(24)
+    smp = Sampler(cat, hist, CFG, planned_total=1)
+    spec = Composer(cat, smp, CFG, POL).compose("M", 0, seed_record(1, "M", 0))
+    ic = {"mode": mode, "trigger_token": trigger, "class_token": class_token}
+    return build_prompts(spec, IDN, PHY, POL, cat, ic)
+
+
+def test_descriptive_mode_spells_identity_out():
+    pos, _ = _one_prompt("descriptive")
+    low = pos.lower()
+    assert "green-hazel" in low and "freckles" in low and "brunette" in low
+
+
+def test_lora_token_mode_drops_the_descriptive_block():
+    """A descriptive block competes with the adapter and pulls the face off-model."""
+    pos, _ = _one_prompt("lora_token")
+    low = pos.lower()
+    assert "ohwx_octavia" in low
+    assert "green-hazel" not in low, "eye description should not compete with the LoRA"
+    assert "almond" not in low
+    assert "cupid's bow" not in low
+
+
+def test_hybrid_mode_keeps_only_high_signal_anchors():
+    pos, _ = _one_prompt("hybrid")
+    low = pos.lower()
+    assert "ohwx_octavia" in low
+    assert "green-hazel" in low and "freckles" in low
+    assert "cupid's bow" not in low, "hybrid should be minimal, not full descriptive"
+
+
+def test_all_modes_keep_the_physique_lock_and_age_clause():
+    """Neither is carried by a face LoRA, so both must survive every mode."""
+    for mode in ("descriptive", "hybrid", "lora_token"):
+        pos, neg = _one_prompt(mode)
+        assert "shoulder-to-waist ratio" in pos.lower(), mode
+        assert POL["subject"]["age_clause"].lower() in pos.lower(), mode
+        for term in ("child", "minor", "nude"):
+            assert term in neg.lower(), f"{mode} lost policy negative {term!r}"
+
+
+def test_lora_mode_without_a_trigger_token_is_refused():
+    """Silently rendering a generic person is far worse than failing loudly."""
+    import pytest
+    for mode in ("lora_token", "hybrid"):
+        with pytest.raises(ValueError, match="trigger_token"):
+            _one_prompt(mode, trigger="")
+
+
+def test_lora_prompt_is_shorter_than_descriptive():
+    short, _ = _one_prompt("lora_token")
+    long, _ = _one_prompt("descriptive")
+    assert len(short) < len(long)
