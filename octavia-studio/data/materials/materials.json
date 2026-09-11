@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "rib_knit",
+      "label": "rib knit",
+      "surface": "vertical ribbed channels",
+      "specular": "soft directional sheen",
+      "stretch": "high stretch, hugs the body",
+      "thickness": "medium",
+      "drape": "close, follows contours",
+      "wrinkling": "fine parallel wrinkling at stress points",
+      "edge_behaviour": "clean ribbed edge"
+    },
+    {
+      "id": "fine_knit",
+      "label": "fine knit",
+      "surface": "tight smooth knit face",
+      "specular": "low matte sheen",
+      "stretch": "moderate stretch",
+      "thickness": "thin",
+      "drape": "soft, follows the figure",
+      "wrinkling": "gentle diagonal folds",
+      "edge_behaviour": "slightly rolled edge"
+    },
+    {
+      "id": "chunky_knit",
+      "label": "chunky knit",
+      "surface": "visible cable and loop structure",
+      "specular": "matte, no highlight",
+      "stretch": "low stretch, holds shape",
+      "thickness": "thick",
+      "drape": "heavy, falls away from the body",
+      "wrinkling": "broad soft folds",
+      "edge_behaviour": "thick blunt edge"
+    },
+    {
+      "id": "cotton_jersey",
+      "label": "cotton jersey",
+      "surface": "fine flat knit with faint texture",
+      "specular": "matte",
+      "stretch": "good stretch",
+      "thickness": "thin-medium",
+      "drape": "soft drape close to the body",
+      "wrinkling": "soft rounded creasing",
+      "edge_behaviour": "curling raw edge"
+    },
+    {
+      "id": "linen",
+      "label": "linen",
+      "surface": "visible slub weave",
+      "specular": "matte with a dry hand",
+      "stretch": "no stretch",
+      "thickness": "medium",
+      "drape": "structured, stands away slightly",
+      "wrinkling": "crisp permanent creasing",
+      "edge_behaviour": "frayed-soft edge"
+    },
+    {
+      "id": "denim",
+      "label": "denim",
+      "surface": "twill diagonal weave",
+      "specular": "low sheen on worn areas",
+      "stretch": "minimal stretch",
+      "thickness": "thick",
+      "drape": "stiff, holds its own shape",
+      "wrinkling": "hard whiskering at hips and knees",
+      "edge_behaviour": "topstitched edge"
+    },
+    {
+      "id": "satin",
+      "label": "satin",
+      "surface": "smooth lustrous face",
+      "specular": "strong specular highlights that travel",
+      "stretch": "low stretch",
+      "thickness": "thin",
+      "drape": "fluid, pools and slides",
+      "wrinkling": "sharp bright fold lines",
+      "edge_behaviour": "clean bias edge"
+    },
+    {
+      "id": "silk_like_fabric",
+      "label": "silk-like fabric",
+      "surface": "very fine smooth weave",
+      "specular": "soft broad highlight",
+      "stretch": "no stretch",
+      "thickness": "very thin",
+      "drape": "liquid drape",
+      "wrinkling": "fine soft rippling",
+      "edge_behaviour": "narrow rolled hem"
+    },
+    {
+      "id": "chiffon",
+      "label": "chiffon",
+      "surface": "sheer airy weave",
+      "specular": "diffuse glow, semi-translucent",
+      "stretch": "no stretch",
+      "thickness": "very thin",
+      "drape": "floats and lifts with movement",
+      "wrinkling": "light irregular ripples",
+      "edge_behaviour": "fine hem"
+    },
+    {
+      "id": "velvet",
+      "label": "velvet",
+      "surface": "dense pile nap",
+      "specular": "directional light absorption and crushing",
+      "stretch": "slight stretch",
+      "thickness": "thick",
+      "drape": "heavy fluid drape",
+      "wrinkling": "soft crushed folds",
+      "edge_behaviour": "plush edge"
+    },
+    {
+      "id": "lace",
+      "label": "lace",
+      "surface": "open floral needlework",
+      "specular": "matte with shadow detail",
+      "stretch": "slight stretch",
+      "thickness": "very thin",
+      "drape": "delicate, follows the layer beneath",
+      "wrinkling": "minimal, holds pattern",
+      "edge_behaviour": "scalloped edge"
+    },
+    {
+      "id": "mesh_layering",
+      "label": "mesh layering",
+      "surface": "fine open net",
+      "specular": "low sheen, shows what is under it",
+      "stretch": "stretch",
+      "thickness": "very thin",
+      "drape": "skims the layer beneath",
+      "wrinkling": "fine gathering",
+      "edge_behaviour": "raw net edge"
+    },
+    {
+      "id": "wool_blend",
+      "label": "wool blend",
+      "surface": "brushed fibrous surface",
+      "specular": "matte, slightly fuzzy halo",
+      "stretch": "low stretch",
+      "thickness": "medium-thick",
+      "drape": "structured drape",
+      "wrinkling": "soft broad creasing",
+      "edge_behaviour": "bound edge"
+    },
+    {
+      "id": "ribbed_stretch_fabric",
+      "label": "ribbed stretch fabric",
+      "surface": "technical rib with elastane",
+      "specular": "satin-adjacent sheen on tension",
+      "stretch": "very high stretch",
+      "thickness": "thin",
+      "drape": "compressive, second-skin",
+      "wrinkling": "tension lines radiating from joints",
+      "edge_behaviour": "flatlock seam edge"
+    },
+    {
+      "id": "structured_tailoring_fabric",
+      "label": "structured tailoring fabric",
+      "surface": "smooth dense weave",
+      "specular": "controlled sheen on panels",
+      "stretch": "no stretch",
+      "thickness": "medium",
+      "drape": "architectural, holds silhouette",
+      "wrinkling": "sharp pressed creases",
+      "edge_behaviour": "crisp tailored edge"
+    },
+    {
+      "id": "soft_fleece",
+      "label": "soft fleece",
+      "surface": "brushed loop-back pile",
+      "specular": "fully matte",
+      "stretch": "moderate stretch",
+      "thickness": "thick",
+      "drape": "soft heavy drape",
+      "wrinkling": "broad rounded folds",
+      "edge_behaviour": "ribbed cuff edge"
+    },
+    {
+      "id": "leather_look_fashion_material",
+      "label": "leather-look fashion material",
+      "surface": "smooth coated grain",
+      "specular": "hard bright specular highlights",
+      "stretch": "minimal stretch",
+      "thickness": "medium",
+      "drape": "stiff, creases and holds",
+      "wrinkling": "permanent hard creasing",
+      "edge_behaviour": "clean cut edge"
+    }
+  ]
+}

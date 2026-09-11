@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "24mm",
+      "label": "24mm environmental wide",
+      "focal_mm": 24,
+      "description": "environmental context with natural wide perspective",
+      "suitable_shots": [
+        "environmental_full_body",
+        "full_body",
+        "mirror_selfie"
+      ],
+      "perspective_note": "keep the subject away from frame edges to avoid wide-angle stretch",
+      "weight": 0.9
+    },
+    {
+      "id": "35mm",
+      "label": "35mm editorial",
+      "focal_mm": 35,
+      "description": "editorial reportage feel with mild environmental context",
+      "suitable_shots": [
+        "full_body",
+        "three_quarter",
+        "environmental_full_body",
+        "candid_detail",
+        "seated_full",
+        "mirror_selfie"
+      ],
+      "perspective_note": "natural, minimal distortion",
+      "weight": 1.3
+    },
+    {
+      "id": "50mm",
+      "label": "50mm natural",
+      "focal_mm": 50,
+      "description": "natural human-eye perspective",
+      "suitable_shots": [
+        "three_quarter",
+        "waist_up",
+        "full_body",
+        "head_and_shoulders",
+        "seated_full"
+      ],
+      "perspective_note": "neutral rendering",
+      "weight": 1.4
+    },
+    {
+      "id": "85mm",
+      "label": "85mm portrait",
+      "focal_mm": 85,
+      "description": "classic portrait compression, soft background separation",
+      "suitable_shots": [
+        "head_and_shoulders",
+        "waist_up",
+        "close_portrait",
+        "three_quarter",
+        "seated_full"
+      ],
+      "perspective_note": "flattering facial rendering",
+      "weight": 1.4
+    },
+    {
+      "id": "105mm",
+      "label": "105mm compressed portrait",
+      "focal_mm": 105,
+      "description": "strong compression, very shallow depth of field",
+      "suitable_shots": [
+        "close_portrait",
+        "head_and_shoulders"
+      ],
+      "perspective_note": "flattens features slightly \u2014 expected and correct",
+      "weight": 1.0
+    }
+  ]
+}

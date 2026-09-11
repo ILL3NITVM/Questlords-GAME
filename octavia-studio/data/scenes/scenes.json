@@ -1,0 +1,714 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "dark_walnut_apartment",
+      "label": "dark walnut apartment living room",
+      "family": "modern_apartment",
+      "env_palette": "dark_walnut_brass_amber",
+      "palette_description": "dark walnut panelling, aged brass fittings, deep amber accents",
+      "surfaces": [
+        "walnut floorboards",
+        "panelled walls",
+        "wool rug"
+      ],
+      "furniture_affordances": [
+        "low sofa",
+        "armchair",
+        "side table",
+        "floor lamp"
+      ],
+      "lighting_options": [
+        "warm lamplight",
+        "low window light",
+        "practical amber glow"
+      ],
+      "time_of_day": [
+        "evening",
+        "night"
+      ],
+      "mood": [
+        "mysterious",
+        "cosy"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "white_stone_cobalt",
+      "label": "white stone apartment with cobalt accents",
+      "family": "modern_apartment",
+      "env_palette": "white_stone_cobalt",
+      "palette_description": "white stone walls, cobalt blue textiles, pale oak",
+      "surfaces": [
+        "stone floor",
+        "plaster walls"
+      ],
+      "furniture_affordances": [
+        "linen sofa",
+        "low bench",
+        "console"
+      ],
+      "lighting_options": [
+        "bright diffuse daylight",
+        "hard window shaft"
+      ],
+      "time_of_day": [
+        "morning",
+        "midday"
+      ],
+      "mood": [
+        "fresh",
+        "composed"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "sage_timber_loft",
+      "label": "sage and natural timber loft",
+      "family": "bright_loft",
+      "env_palette": "sage_natural_timber",
+      "palette_description": "sage green walls, raw timber beams, natural jute",
+      "surfaces": [
+        "timber floor",
+        "exposed beams",
+        "jute rug"
+      ],
+      "furniture_affordances": [
+        "daybed",
+        "wooden stool",
+        "ladder shelf"
+      ],
+      "lighting_options": [
+        "large north window light",
+        "overcast soft light"
+      ],
+      "time_of_day": [
+        "morning",
+        "afternoon"
+      ],
+      "mood": [
+        "calm",
+        "easy"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "burgundy_black_lounge",
+      "label": "deep burgundy and black lounge",
+      "family": "dark_luxury_apartment",
+      "env_palette": "burgundy_black",
+      "palette_description": "deep burgundy velvet, black lacquer, smoked glass",
+      "surfaces": [
+        "dark parquet",
+        "velvet upholstery"
+      ],
+      "furniture_affordances": [
+        "velvet sofa",
+        "club chair",
+        "bar cart"
+      ],
+      "lighting_options": [
+        "single warm lamp",
+        "low key pooled light"
+      ],
+      "time_of_day": [
+        "evening",
+        "night"
+      ],
+      "mood": [
+        "elegant",
+        "mysterious"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "concrete_chrome_studio",
+      "label": "cool concrete and chrome minimal studio",
+      "family": "minimal_studio",
+      "env_palette": "concrete_chrome",
+      "palette_description": "raw concrete, brushed chrome, cool grey seamless",
+      "surfaces": [
+        "polished concrete floor",
+        "seamless backdrop"
+      ],
+      "furniture_affordances": [
+        "chrome stool",
+        "modular block"
+      ],
+      "lighting_options": [
+        "single softbox",
+        "broad studio fill",
+        "hard directional key"
+      ],
+      "time_of_day": [
+        "neutral"
+      ],
+      "mood": [
+        "editorial",
+        "sleek"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "cream_lavender_bedroom",
+      "label": "cream and lavender soft bedroom",
+      "family": "soft_bedroom",
+      "env_palette": "cream_lavender",
+      "palette_description": "cream walls, lavender bedding, pale ash furniture",
+      "surfaces": [
+        "soft carpet",
+        "linen bedding"
+      ],
+      "furniture_affordances": [
+        "bed",
+        "upholstered bench",
+        "vanity chair"
+      ],
+      "lighting_options": [
+        "soft morning window light",
+        "diffused curtain light"
+      ],
+      "time_of_day": [
+        "morning"
+      ],
+      "mood": [
+        "soft",
+        "romantic"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "navy_oak_study",
+      "label": "navy and warm oak study lounge",
+      "family": "library_lounge",
+      "env_palette": "navy_warm_oak",
+      "palette_description": "navy walls, warm oak shelving, brass reading lamps",
+      "surfaces": [
+        "oak floor",
+        "bookshelves (no legible titles)"
+      ],
+      "furniture_affordances": [
+        "reading chair",
+        "writing desk",
+        "library ladder"
+      ],
+      "lighting_options": [
+        "warm reading lamp",
+        "window side light"
+      ],
+      "time_of_day": [
+        "afternoon",
+        "evening"
+      ],
+      "mood": [
+        "thoughtful",
+        "composed"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "terracotta_linen_sunroom",
+      "label": "terracotta and linen sunroom",
+      "family": "sunroom",
+      "env_palette": "terracotta_linen",
+      "palette_description": "terracotta tile, natural linen drapes, rattan",
+      "surfaces": [
+        "terracotta tiles",
+        "linen curtains"
+      ],
+      "furniture_affordances": [
+        "rattan chair",
+        "low plant stand",
+        "window seat"
+      ],
+      "lighting_options": [
+        "strong afternoon sun",
+        "dappled plant shadow"
+      ],
+      "time_of_day": [
+        "afternoon"
+      ],
+      "mood": [
+        "warm",
+        "easy"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "forest_gold_hotel",
+      "label": "forest green and gold hotel suite",
+      "family": "hotel_suite",
+      "env_palette": "forest_green_gold",
+      "palette_description": "forest green walls, gold trim, dark marble",
+      "surfaces": [
+        "marble floor",
+        "panelled walls"
+      ],
+      "furniture_affordances": [
+        "upholstered headboard bed",
+        "writing desk",
+        "armchair"
+      ],
+      "lighting_options": [
+        "warm practical lamps",
+        "window backlight"
+      ],
+      "time_of_day": [
+        "evening"
+      ],
+      "mood": [
+        "elegant",
+        "confident"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "mono_charcoal_gallery",
+      "label": "monochrome charcoal gallery space",
+      "family": "gallery",
+      "env_palette": "monochrome_charcoal",
+      "palette_description": "charcoal walls, pale concrete floor, no signage",
+      "surfaces": [
+        "concrete floor",
+        "flat matte walls"
+      ],
+      "furniture_affordances": [
+        "bench seat",
+        "plinth"
+      ],
+      "lighting_options": [
+        "overhead gallery wash",
+        "directional spot"
+      ],
+      "time_of_day": [
+        "neutral"
+      ],
+      "mood": [
+        "editorial",
+        "composed"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "bright_white_loft",
+      "label": "bright white industrial loft",
+      "family": "bright_loft",
+      "env_palette": "white_industrial",
+      "palette_description": "whitewashed brick, black steel windows, pale floor",
+      "surfaces": [
+        "pale wood floor",
+        "brick wall",
+        "steel-framed windows"
+      ],
+      "furniture_affordances": [
+        "low couch",
+        "step ladder",
+        "work table"
+      ],
+      "lighting_options": [
+        "huge window daylight",
+        "backlit window"
+      ],
+      "time_of_day": [
+        "morning",
+        "midday"
+      ],
+      "mood": [
+        "fresh",
+        "energetic"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "marble_vanity_bathroom",
+      "label": "marble bathroom vanity",
+      "family": "bathroom_vanity",
+      "env_palette": "white_marble_brass",
+      "palette_description": "white marble, brushed brass, soft grey",
+      "surfaces": [
+        "marble counter",
+        "large mirror"
+      ],
+      "furniture_affordances": [
+        "vanity counter",
+        "stool"
+      ],
+      "lighting_options": [
+        "soft vanity light",
+        "window side light"
+      ],
+      "time_of_day": [
+        "morning"
+      ],
+      "mood": [
+        "calm",
+        "fresh"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "walk_in_wardrobe",
+      "label": "warm walk-in wardrobe",
+      "family": "walk_in_wardrobe",
+      "env_palette": "warm_oak_cream",
+      "palette_description": "warm oak cabinetry, cream carpet, glass fronts",
+      "surfaces": [
+        "cream carpet",
+        "mirrored doors"
+      ],
+      "furniture_affordances": [
+        "island drawer unit",
+        "ottoman",
+        "full-length mirror"
+      ],
+      "lighting_options": [
+        "warm cabinet lighting",
+        "overhead soft light"
+      ],
+      "time_of_day": [
+        "evening",
+        "morning"
+      ],
+      "mood": [
+        "confident",
+        "playful"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "backstage_dressing_room",
+      "label": "fashion dressing room",
+      "family": "dressing_room",
+      "env_palette": "warm_bulb_cream",
+      "palette_description": "cream walls, warm bulb mirror, garment rails",
+      "surfaces": [
+        "worn timber floor",
+        "bulb-lit mirror"
+      ],
+      "furniture_affordances": [
+        "dressing chair",
+        "garment rail",
+        "makeup counter"
+      ],
+      "lighting_options": [
+        "bulb mirror light",
+        "warm tungsten"
+      ],
+      "time_of_day": [
+        "evening"
+      ],
+      "mood": [
+        "playful",
+        "editorial"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "city_rooftop_dusk",
+      "label": "city rooftop at dusk",
+      "family": "city_rooftop",
+      "env_palette": "dusk_concrete_amber",
+      "palette_description": "concrete deck, city amber lights, deep blue sky",
+      "surfaces": [
+        "concrete deck",
+        "glass balustrade"
+      ],
+      "furniture_affordances": [
+        "bench",
+        "planter edge",
+        "railing"
+      ],
+      "lighting_options": [
+        "golden hour",
+        "blue hour with city practicals"
+      ],
+      "time_of_day": [
+        "dusk"
+      ],
+      "mood": [
+        "confident",
+        "calm"
+      ],
+      "indoor": false,
+      "weight": 1.0
+    },
+    {
+      "id": "balcony_morning",
+      "label": "sunlit apartment balcony",
+      "family": "balcony",
+      "env_palette": "white_rail_greenery",
+      "palette_description": "white railing, potted greenery, pale stone",
+      "surfaces": [
+        "stone tiles",
+        "planters"
+      ],
+      "furniture_affordances": [
+        "bistro chair",
+        "small table",
+        "railing"
+      ],
+      "lighting_options": [
+        "direct morning sun",
+        "soft open shade"
+      ],
+      "time_of_day": [
+        "morning"
+      ],
+      "mood": [
+        "fresh",
+        "warm"
+      ],
+      "indoor": false,
+      "weight": 1.0
+    },
+    {
+      "id": "botanical_courtyard",
+      "label": "botanical stone courtyard",
+      "family": "botanical_courtyard",
+      "env_palette": "green_stone_moss",
+      "palette_description": "weathered stone, dense greenery, moss",
+      "surfaces": [
+        "stone paving",
+        "ivy walls"
+      ],
+      "furniture_affordances": [
+        "stone bench",
+        "low wall",
+        "archway"
+      ],
+      "lighting_options": [
+        "dappled canopy light",
+        "overcast soft light"
+      ],
+      "time_of_day": [
+        "afternoon"
+      ],
+      "mood": [
+        "calm",
+        "romantic"
+      ],
+      "indoor": false,
+      "weight": 1.0
+    },
+    {
+      "id": "historic_stone_street",
+      "label": "historic stone architecture",
+      "family": "historic_architecture",
+      "env_palette": "sandstone_shadow",
+      "palette_description": "warm sandstone, deep arch shadows, iron detail",
+      "surfaces": [
+        "cobbled ground",
+        "carved stone"
+      ],
+      "furniture_affordances": [
+        "stone steps",
+        "column",
+        "arch"
+      ],
+      "lighting_options": [
+        "hard directional sun",
+        "deep shade contrast"
+      ],
+      "time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "mood": [
+        "editorial",
+        "composed"
+      ],
+      "indoor": false,
+      "weight": 1.0
+    },
+    {
+      "id": "garden_terrace",
+      "label": "planted garden terrace",
+      "family": "garden",
+      "env_palette": "green_teak_gravel",
+      "palette_description": "deep planting, teak furniture, pale gravel",
+      "surfaces": [
+        "gravel path",
+        "lawn edge"
+      ],
+      "furniture_affordances": [
+        "teak bench",
+        "outdoor sofa",
+        "pergola post"
+      ],
+      "lighting_options": [
+        "late afternoon sun",
+        "golden hour rim"
+      ],
+      "time_of_day": [
+        "afternoon",
+        "dusk"
+      ],
+      "mood": [
+        "warm",
+        "easy"
+      ],
+      "indoor": false,
+      "weight": 1.0
+    },
+    {
+      "id": "cafe_interior_warm",
+      "label": "warm cafe interior",
+      "family": "cafe_interior",
+      "env_palette": "warm_wood_green_tile",
+      "palette_description": "warm wood, dark green tile, brass rail",
+      "surfaces": [
+        "tiled floor",
+        "timber counter"
+      ],
+      "furniture_affordances": [
+        "cafe chair",
+        "small round table",
+        "window bench"
+      ],
+      "lighting_options": [
+        "window side light",
+        "warm pendant light"
+      ],
+      "time_of_day": [
+        "morning",
+        "afternoon"
+      ],
+      "mood": [
+        "easy",
+        "thoughtful"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "modern_kitchen_stone",
+      "label": "modern stone and steel kitchen",
+      "family": "modern_kitchen",
+      "env_palette": "pale_stone_steel",
+      "palette_description": "pale stone counters, stainless steel, matte cabinetry",
+      "surfaces": [
+        "stone island",
+        "matte cabinet fronts"
+      ],
+      "furniture_affordances": [
+        "kitchen island",
+        "counter stool"
+      ],
+      "lighting_options": [
+        "bright overhead diffuse",
+        "window daylight"
+      ],
+      "time_of_day": [
+        "morning",
+        "midday"
+      ],
+      "mood": [
+        "fresh",
+        "composed"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "hotel_lobby_dark",
+      "label": "dark modern hotel lobby",
+      "family": "hotel_lobby",
+      "env_palette": "dark_stone_bronze",
+      "palette_description": "dark stone, bronze screens, deep carpet",
+      "surfaces": [
+        "stone floor",
+        "bronze screen"
+      ],
+      "furniture_affordances": [
+        "lobby armchair",
+        "low table",
+        "column"
+      ],
+      "lighting_options": [
+        "pooled downlight",
+        "warm practical accents"
+      ],
+      "time_of_day": [
+        "evening",
+        "night"
+      ],
+      "mood": [
+        "mysterious",
+        "confident"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "fashion_studio_seamless",
+      "label": "fashion studio seamless backdrop",
+      "family": "fashion_studio",
+      "env_palette": "seamless_neutral",
+      "palette_description": "seamless paper backdrop in a single chosen tone",
+      "surfaces": [
+        "seamless sweep"
+      ],
+      "furniture_affordances": [
+        "apple box",
+        "posing stool"
+      ],
+      "lighting_options": [
+        "beauty dish key",
+        "softbox + rim",
+        "broad flat lighting"
+      ],
+      "time_of_day": [
+        "neutral"
+      ],
+      "mood": [
+        "editorial",
+        "confident"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    },
+    {
+      "id": "night_city_apartment",
+      "label": "apartment at night with city windows",
+      "family": "nighttime_city_apartment",
+      "env_palette": "night_glass_amber",
+      "palette_description": "black glass windows, city bokeh, warm interior pools",
+      "surfaces": [
+        "dark floor",
+        "floor-to-ceiling glass"
+      ],
+      "furniture_affordances": [
+        "window ledge",
+        "low sofa",
+        "floor cushion"
+      ],
+      "lighting_options": [
+        "warm interior practicals",
+        "city glow through glass"
+      ],
+      "time_of_day": [
+        "night"
+      ],
+      "mood": [
+        "mysterious",
+        "calm"
+      ],
+      "indoor": true,
+      "weight": 1.0
+    }
+  ]
+}

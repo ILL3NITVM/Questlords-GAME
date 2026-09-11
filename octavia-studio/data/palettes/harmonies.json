@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "tonal_neutral",
+      "label": "tonal neutral layering",
+      "colours": [
+        "cream",
+        "ivory",
+        "taupe",
+        "champagne",
+        "white"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "mono_dark",
+      "label": "monochrome dark",
+      "colours": [
+        "black",
+        "charcoal",
+        "espresso"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "earth_warm",
+      "label": "warm earth tones",
+      "colours": [
+        "olive",
+        "rust",
+        "terracotta",
+        "mustard",
+        "espresso"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "soft_pastel",
+      "label": "soft pastels",
+      "colours": [
+        "lilac",
+        "lavender",
+        "dusty_pink",
+        "butter_yellow",
+        "sky_blue"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "jewel",
+      "label": "jewel tones",
+      "colours": [
+        "burgundy",
+        "plum",
+        "forest",
+        "teal",
+        "navy"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "contrast_light_dark",
+      "label": "light over dark contrast",
+      "colours": [
+        "cream",
+        "black",
+        "charcoal",
+        "white"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "fresh_cool",
+      "label": "cool and fresh",
+      "colours": [
+        "sky_blue",
+        "sage",
+        "white",
+        "silver",
+        "turquoise"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "romantic_warm",
+      "label": "warm romantic",
+      "colours": [
+        "rose",
+        "peach",
+        "champagne",
+        "coral",
+        "dusty_pink"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "editorial_bold",
+      "label": "bold editorial accent",
+      "colours": [
+        "coral",
+        "turquoise",
+        "mustard",
+        "black",
+        "white"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "earth_cool",
+      "label": "cool earth tones",
+      "colours": [
+        "sage",
+        "olive",
+        "taupe",
+        "forest",
+        "charcoal"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "warm_neutral_dark",
+      "label": "warm dark neutrals",
+      "colours": [
+        "espresso",
+        "taupe",
+        "rust",
+        "black"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "ice_silver",
+      "label": "icy silver and white",
+      "colours": [
+        "silver",
+        "white",
+        "ivory",
+        "sky_blue",
+        "charcoal"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "sunset_warm",
+      "label": "sunset warmth",
+      "colours": [
+        "terracotta",
+        "coral",
+        "mustard",
+        "peach",
+        "rust"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "deep_purple",
+      "label": "deep purple range",
+      "colours": [
+        "plum",
+        "lavender",
+        "lilac",
+        "charcoal"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "navy_cream",
+      "label": "navy and cream classic",
+      "colours": [
+        "navy",
+        "cream",
+        "ivory",
+        "champagne"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "forest_rose",
+      "label": "forest and rose",
+      "colours": [
+        "forest",
+        "rose",
+        "dusty_pink",
+        "espresso"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "teal_sand",
+      "label": "teal and sand",
+      "colours": [
+        "teal",
+        "champagne",
+        "cream",
+        "turquoise"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "burgundy_blush",
+      "label": "burgundy and blush",
+      "colours": [
+        "burgundy",
+        "dusty_pink",
+        "rose",
+        "champagne"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "mustard_charcoal",
+      "label": "mustard against charcoal",
+      "colours": [
+        "mustard",
+        "charcoal",
+        "cream",
+        "olive"
+      ],
+      "weight": 1.0
+    }
+  ]
+}

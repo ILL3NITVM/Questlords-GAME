@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "soft_window_daylight",
+      "label": "soft diffused window daylight",
+      "kind": "natural",
+      "quality": "soft",
+      "temperature": "neutral",
+      "shadow_behaviour": "gentle wraparound shadows",
+      "weight": 1.0
+    },
+    {
+      "id": "hard_window_shaft",
+      "label": "hard shaft of window sunlight",
+      "kind": "natural",
+      "quality": "hard",
+      "temperature": "warm",
+      "shadow_behaviour": "crisp shadow edges and bright falloff",
+      "weight": 1.0
+    },
+    {
+      "id": "golden_hour",
+      "label": "low golden hour sunlight",
+      "kind": "natural",
+      "quality": "medium",
+      "temperature": "very warm",
+      "shadow_behaviour": "long warm shadows and rim glow",
+      "weight": 1.0
+    },
+    {
+      "id": "blue_hour",
+      "label": "blue hour ambient",
+      "kind": "natural",
+      "quality": "soft",
+      "temperature": "cool",
+      "shadow_behaviour": "low contrast with cool shadows",
+      "weight": 1.0
+    },
+    {
+      "id": "overcast_soft",
+      "label": "flat overcast light",
+      "kind": "natural",
+      "quality": "very soft",
+      "temperature": "cool neutral",
+      "shadow_behaviour": "minimal shadow, even tone",
+      "weight": 1.0
+    },
+    {
+      "id": "dappled_canopy",
+      "label": "dappled light through leaves",
+      "kind": "natural",
+      "quality": "mixed",
+      "temperature": "neutral",
+      "shadow_behaviour": "broken pools of light",
+      "weight": 1.0
+    },
+    {
+      "id": "open_shade",
+      "label": "open shade",
+      "kind": "natural",
+      "quality": "very soft",
+      "temperature": "cool",
+      "shadow_behaviour": "even and flattering with soft falloff",
+      "weight": 1.0
+    },
+    {
+      "id": "warm_lamplight",
+      "label": "warm practical lamplight",
+      "kind": "practical",
+      "quality": "medium",
+      "temperature": "very warm",
+      "shadow_behaviour": "pooled warm light, dark surrounds",
+      "weight": 1.0
+    },
+    {
+      "id": "bulb_mirror",
+      "label": "dressing-room bulb mirror",
+      "kind": "practical",
+      "quality": "soft",
+      "temperature": "warm",
+      "shadow_behaviour": "even frontal light with catchlights",
+      "weight": 1.0
+    },
+    {
+      "id": "city_practicals",
+      "label": "city lights through glass",
+      "kind": "practical",
+      "quality": "mixed",
+      "temperature": "mixed",
+      "shadow_behaviour": "coloured accents and bokeh",
+      "weight": 1.0
+    },
+    {
+      "id": "softbox_key",
+      "label": "single large softbox key",
+      "kind": "studio",
+      "quality": "soft",
+      "temperature": "neutral",
+      "shadow_behaviour": "clean directional modelling",
+      "weight": 1.0
+    },
+    {
+      "id": "beauty_dish",
+      "label": "beauty dish frontal key",
+      "kind": "studio",
+      "quality": "medium",
+      "temperature": "neutral",
+      "shadow_behaviour": "crisp facial modelling with soft falloff",
+      "weight": 1.0
+    },
+    {
+      "id": "rim_and_fill",
+      "label": "rim light with soft fill",
+      "kind": "studio",
+      "quality": "mixed",
+      "temperature": "neutral",
+      "shadow_behaviour": "separated subject with shaped edges",
+      "weight": 1.0
+    },
+    {
+      "id": "broad_flat_studio",
+      "label": "broad flat studio light",
+      "kind": "studio",
+      "quality": "very soft",
+      "temperature": "neutral",
+      "shadow_behaviour": "even editorial illumination",
+      "weight": 1.0
+    },
+    {
+      "id": "low_key_pooled",
+      "label": "low key pooled light",
+      "kind": "studio",
+      "quality": "hard",
+      "temperature": "warm",
+      "shadow_behaviour": "deep shadow with a small bright core",
+      "weight": 1.0
+    }
+  ]
+}

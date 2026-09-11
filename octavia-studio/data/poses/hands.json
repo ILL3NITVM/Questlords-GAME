@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "relaxed_at_sides",
+      "label": "hands relaxed at her sides",
+      "compatible_postures": [
+        "standing",
+        "crouching"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "one_hand_hip",
+      "label": "one hand resting on her hip",
+      "compatible_postures": [
+        "standing",
+        "leaning",
+        "crouching"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "both_hands_hips",
+      "label": "both hands on her hips",
+      "compatible_postures": [
+        "standing"
+      ],
+      "weight": 0.6
+    },
+    {
+      "id": "one_hand_hair",
+      "label": "one hand lifted into her hair",
+      "compatible_postures": [
+        "standing",
+        "seated",
+        "leaning",
+        "reclined",
+        "crouching"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "hand_behind_neck",
+      "label": "one hand at the back of her neck",
+      "compatible_postures": [
+        "standing",
+        "seated"
+      ],
+      "weight": 0.6
+    },
+    {
+      "id": "hands_in_lap",
+      "label": "hands folded in her lap",
+      "compatible_postures": [
+        "seated",
+        "floor",
+        "reclined",
+        "crouching"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "arms_folded",
+      "label": "arms softly folded across the waist",
+      "compatible_postures": [
+        "standing",
+        "leaning",
+        "crouching"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "hands_pockets",
+      "label": "hands in her pockets",
+      "compatible_postures": [
+        "standing",
+        "walking"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "one_hand_support",
+      "label": "one hand braced on furniture",
+      "compatible_postures": [
+        "seated",
+        "leaning",
+        "floor",
+        "crouching",
+        "reclined"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "both_hands_support",
+      "label": "both hands braced behind her",
+      "compatible_postures": [
+        "floor",
+        "seated",
+        "crouching",
+        "reclined"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "adjusting_sleeve",
+      "label": "fingers adjusting a sleeve or cuff",
+      "compatible_postures": [
+        "standing",
+        "seated"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "adjusting_hem",
+      "label": "one hand at the hem of the garment",
+      "compatible_postures": [
+        "standing",
+        "crouching"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "holding_mug",
+      "label": "holding a plain ceramic mug",
+      "compatible_postures": [
+        "seated",
+        "standing",
+        "leaning",
+        "reclined"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "holding_phone_mirror",
+      "label": "holding a phone up toward a mirror",
+      "compatible_postures": [
+        "standing"
+      ],
+      "weight": 0.5
+    },
+    {
+      "id": "touching_collarbone",
+      "label": "fingertips resting near her collarbone",
+      "compatible_postures": [
+        "standing",
+        "seated",
+        "reclined"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "arm_draped",
+      "label": "one arm draped over furniture",
+      "compatible_postures": [
+        "seated",
+        "leaning",
+        "reclined"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "hand_on_doorframe",
+      "label": "one hand flat on a doorframe",
+      "compatible_postures": [
+        "standing",
+        "leaning"
+      ],
+      "weight": 0.6
+    },
+    {
+      "id": "hands_clasped_front",
+      "label": "hands loosely clasped in front",
+      "compatible_postures": [
+        "standing",
+        "crouching"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "one_arm_crossed",
+      "label": "one arm across the body holding the other elbow",
+      "compatible_postures": [
+        "standing",
+        "leaning",
+        "reclined"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "mid_gesture",
+      "label": "caught mid-gesture, hands natural and unposed",
+      "compatible_postures": [
+        "standing",
+        "walking",
+        "seated",
+        "crouching",
+        "reclined"
+      ],
+      "weight": 0.9
+    }
+  ]
+}

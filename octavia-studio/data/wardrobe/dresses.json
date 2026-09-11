@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "family": "dresses",
+  "items": [
+    {
+      "id": "summer_dress",
+      "label": "floaty summer dress",
+      "category": "dress",
+      "subtype": "summer_dress",
+      "material": "chiffon",
+      "cut": "a_line",
+      "length": "midi",
+      "neckline": "v",
+      "sleeve": "short",
+      "formality": [
+        "daywear",
+        "resort"
+      ],
+      "season": [
+        "summer"
+      ],
+      "mood": [
+        "warm",
+        "romantic"
+      ],
+      "compatibility_tags": [
+        "one_piece"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "cocktail_dress",
+      "label": "cocktail dress",
+      "category": "dress",
+      "subtype": "cocktail_dress",
+      "material": "satin",
+      "cut": "sheath",
+      "length": "midi",
+      "neckline": "square",
+      "sleeve": "sleeveless",
+      "formality": [
+        "evening"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "elegant",
+        "confident"
+      ],
+      "compatibility_tags": [
+        "one_piece"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "knit_dress",
+      "label": "ribbed knit dress",
+      "category": "dress",
+      "subtype": "knit_dress",
+      "material": "rib knit",
+      "cut": "column",
+      "length": "midi",
+      "neckline": "crew",
+      "sleeve": "long",
+      "formality": [
+        "smart_casual",
+        "daywear"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "cosy",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "one_piece"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "soft_fitted_dress",
+      "label": "soft fitted jersey dress",
+      "category": "dress",
+      "subtype": "soft_fitted_dress",
+      "material": "cotton jersey",
+      "cut": "sheath",
+      "length": "midi",
+      "neckline": "scoop",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "mood": [
+        "soft",
+        "easy"
+      ],
+      "compatibility_tags": [
+        "one_piece"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "slip_dress",
+      "label": "bias slip dress",
+      "category": "dress",
+      "subtype": "slip_dress",
+      "material": "silk-like fabric",
+      "cut": "bias",
+      "length": "midi",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "formality": [
+        "evening"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ],
+      "compatibility_tags": [
+        "one_piece"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "wrap_dress",
+      "label": "wrap dress",
+      "category": "dress",
+      "subtype": "wrap_dress",
+      "material": "linen",
+      "cut": "wrap",
+      "length": "midi",
+      "neckline": "v",
+      "sleeve": "short",
+      "formality": [
+        "workwear",
+        "daywear"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "composed",
+        "warm"
+      ],
+      "compatibility_tags": [
+        "one_piece"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "velvet_dress",
+      "label": "velvet evening dress",
+      "category": "dress",
+      "subtype": "velvet_dress",
+      "material": "velvet",
+      "cut": "column",
+      "length": "maxi",
+      "neckline": "boat",
+      "sleeve": "long",
+      "formality": [
+        "evening"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "elegant",
+        "mysterious"
+      ],
+      "compatibility_tags": [
+        "one_piece"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "shirt_dress",
+      "label": "linen shirt dress",
+      "category": "dress",
+      "subtype": "shirt_dress",
+      "material": "linen",
+      "cut": "a_line",
+      "length": "midi",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "daywear",
+        "resort"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "easy",
+        "fresh"
+      ],
+      "compatibility_tags": [
+        "one_piece"
+      ],
+      "weight": 1.0
+    }
+  ]
+}

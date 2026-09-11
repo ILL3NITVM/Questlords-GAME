@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "family": "accessories",
+  "items": [
+    {
+      "id": "purple_crystal_pendant",
+      "label": "small faceted purple crystal pendant on a fine gold chain",
+      "category": "accessory",
+      "slot": "neck",
+      "compatibility_tags": [
+        "open_neckline"
+      ],
+      "weight": 1.6
+    },
+    {
+      "id": "fine_gold_chain",
+      "label": "fine gold chain necklace",
+      "category": "accessory",
+      "slot": "neck",
+      "compatibility_tags": [
+        "open_neckline"
+      ],
+      "weight": 1.2
+    },
+    {
+      "id": "gold_hoops",
+      "label": "small gold hoop earrings",
+      "category": "accessory",
+      "slot": "ear",
+      "compatibility_tags": [
+        "any"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "stud_earrings",
+      "label": "tiny stud earrings",
+      "category": "accessory",
+      "slot": "ear",
+      "compatibility_tags": [
+        "any"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "thin_bangle",
+      "label": "thin gold bangle",
+      "category": "accessory",
+      "slot": "wrist",
+      "compatibility_tags": [
+        "any"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "delicate_ring",
+      "label": "delicate stacking ring",
+      "category": "accessory",
+      "slot": "hand",
+      "compatibility_tags": [
+        "any"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "leather_belt",
+      "label": "slim leather-look belt",
+      "category": "accessory",
+      "slot": "waist",
+      "compatibility_tags": [
+        "tuckable",
+        "tailored_bottom"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "shoulder_bag",
+      "label": "small structured shoulder bag",
+      "category": "accessory",
+      "slot": "carry",
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 0.6
+    },
+    {
+      "id": "silk_scarf",
+      "label": "light silk scarf",
+      "category": "accessory",
+      "slot": "neck",
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 0.4
+    },
+    {
+      "id": "sunglasses_head",
+      "label": "sunglasses pushed up on head",
+      "category": "accessory",
+      "slot": "head",
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 0.4
+    },
+    {
+      "id": "none",
+      "label": "no accessories",
+      "category": "accessory",
+      "slot": "none",
+      "compatibility_tags": [
+        "any"
+      ],
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# Core runtime
+PyYAML>=6.0          # configuration
+Pillow>=10.0         # contact sheets, mock renderer, reference indexing
+
+# Development
+pytest>=7.4
+
+# ----------------------------------------------------------------------
+# NOT INSTALLED BY DEFAULT — needed only for a real vision-based QC scorer.
+# These pull large models on first use. Install deliberately, not casually.
+#
+#   insightface>=0.7        # face embeddings -> identity_consistency
+#   onnxruntime>=1.16       # insightface runtime (or onnxruntime-gpu)
+#   mediapipe>=0.10         # face mesh + body keypoints -> head pose, anatomy
+#   numpy>=1.24             # required by the above
+#   opencv-python>=4.8      # image IO for the scorers
+#
+# See qc/scoring.py for what a real scorer must implement.
+# ----------------------------------------------------------------------

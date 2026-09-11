@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "family": "bottoms",
+  "items": [
+    {
+      "id": "pleated_mini_skirt",
+      "label": "pleated mini skirt",
+      "category": "bottom",
+      "subtype": "pleated_mini_skirt",
+      "material": "structured tailoring fabric",
+      "cut": "a_line",
+      "length": "mini",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "fashion"
+      ],
+      "season": [
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "mood": [
+        "playful",
+        "confident"
+      ],
+      "compatibility_tags": [
+        "cropped_top",
+        "skirt_friendly"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "pleated_midi_skirt",
+      "label": "pleated midi skirt",
+      "category": "bottom",
+      "subtype": "pleated_midi_skirt",
+      "material": "fine knit",
+      "cut": "a_line",
+      "length": "midi",
+      "waist": "high",
+      "formality": [
+        "smart_casual",
+        "workwear"
+      ],
+      "season": [
+        "autumn",
+        "spring"
+      ],
+      "mood": [
+        "composed",
+        "elegant"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "skirt_friendly"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "satin_maxi_skirt",
+      "label": "bias-cut satin maxi skirt",
+      "category": "bottom",
+      "subtype": "satin_maxi_skirt",
+      "material": "satin",
+      "cut": "bias",
+      "length": "maxi",
+      "waist": "high",
+      "formality": [
+        "evening",
+        "smart_casual"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "elegant",
+        "calm"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "skirt_friendly"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "knit_midi_skirt",
+      "label": "ribbed knit midi skirt",
+      "category": "bottom",
+      "subtype": "knit_midi_skirt",
+      "material": "rib knit",
+      "cut": "column",
+      "length": "midi",
+      "waist": "high",
+      "formality": [
+        "smart_casual",
+        "daywear"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "cosy",
+        "understated"
+      ],
+      "compatibility_tags": [
+        "tuckable"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "denim_mini",
+      "label": "denim mini skirt",
+      "category": "bottom",
+      "subtype": "denim_mini",
+      "material": "denim",
+      "cut": "a_line",
+      "length": "mini",
+      "waist": "mid",
+      "formality": [
+        "casual"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "playful",
+        "easy"
+      ],
+      "compatibility_tags": [
+        "cropped_top"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "straight_jeans",
+      "label": "straight-leg jeans",
+      "category": "bottom",
+      "subtype": "straight_jeans",
+      "material": "denim",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "daywear"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "easy",
+        "relaxed"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "cropped_top"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "wide_leg_trousers",
+      "label": "wide-leg trousers",
+      "category": "bottom",
+      "subtype": "wide_leg_trousers",
+      "material": "structured tailoring fabric",
+      "cut": "wide",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "workwear",
+        "smart_casual",
+        "evening"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "composed",
+        "confident"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "tailored_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "tailored_trousers",
+      "label": "tailored straight trousers",
+      "category": "bottom",
+      "subtype": "tailored_trousers",
+      "material": "wool blend",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "workwear",
+        "smart_casual"
+      ],
+      "season": [
+        "autumn",
+        "winter",
+        "spring"
+      ],
+      "mood": [
+        "composed",
+        "elegant"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "tailored_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "cargo_trousers",
+      "label": "utility cargo trousers",
+      "category": "bottom",
+      "subtype": "cargo_trousers",
+      "material": "cotton jersey",
+      "cut": "relaxed",
+      "length": "full",
+      "waist": "mid",
+      "formality": [
+        "casual",
+        "athleisure"
+      ],
+      "season": [
+        "spring",
+        "autumn"
+      ],
+      "mood": [
+        "easy",
+        "energetic"
+      ],
+      "compatibility_tags": [
+        "cropped_top"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "linen_trousers",
+      "label": "relaxed linen trousers",
+      "category": "bottom",
+      "subtype": "linen_trousers",
+      "material": "linen",
+      "cut": "wide",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "resort",
+        "daywear"
+      ],
+      "season": [
+        "summer"
+      ],
+      "mood": [
+        "easy",
+        "calm"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "cropped_top"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "leggings",
+      "label": "high-waist leggings",
+      "category": "bottom",
+      "subtype": "leggings",
+      "material": "ribbed stretch fabric",
+      "cut": "fitted",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "athleisure",
+        "loungewear"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "energetic",
+        "relaxed"
+      ],
+      "compatibility_tags": [
+        "leggings_friendly",
+        "cropped_top"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "knit_lounge_trousers",
+      "label": "knit lounge trousers",
+      "category": "bottom",
+      "subtype": "knit_lounge_trousers",
+      "material": "fine knit",
+      "cut": "relaxed",
+      "length": "full",
+      "waist": "mid",
+      "formality": [
+        "loungewear"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "cosy",
+        "relaxed"
+      ],
+      "compatibility_tags": [
+        "cropped_top"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "tailored_shorts",
+      "label": "tailored shorts",
+      "category": "bottom",
+      "subtype": "tailored_shorts",
+      "material": "structured tailoring fabric",
+      "cut": "straight",
+      "length": "short",
+      "waist": "high",
+      "formality": [
+        "smart_casual",
+        "resort"
+      ],
+      "season": [
+        "summer"
+      ],
+      "mood": [
+        "fresh",
+        "confident"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "tailored_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "denim_shorts",
+      "label": "denim shorts",
+      "category": "bottom",
+      "subtype": "denim_shorts",
+      "material": "denim",
+      "cut": "straight",
+      "length": "short",
+      "waist": "mid",
+      "formality": [
+        "casual"
+      ],
+      "season": [
+        "summer"
+      ],
+      "mood": [
+        "easy",
+        "playful"
+      ],
+      "compatibility_tags": [
+        "cropped_top"
+      ],
+      "weight": 1.0
+    }
+  ]
+}

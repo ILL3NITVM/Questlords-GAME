@@ -1,0 +1,124 @@
+# ============================================================
+# OCTAVIA — CANONICAL IDENTITY SPECIFICATION
+# ============================================================
+# This file is the single source of truth for who Octavia is.
+# It is deliberately SCOPED to identity only. It must never
+# contain clothing, pose, camera, environment, lighting or
+# expression terms — those are variable axes owned by the
+# wardrobe / pose / scene / camera / lighting engines.
+#
+# Editing this file changes Octavia. Treat it as versioned.
+# ============================================================
+
+schema_version: 1
+persona_id: octavia
+identity_version: "1.0.0"
+
+provenance:
+  origin: "Owner-supplied avatar render, developed into a consistent fictional persona."
+  fictional: true
+  depicts_real_person: false
+  notes: >
+    Octavia is a fictional adult persona owned by the operator of this studio.
+    She is not a depiction of any identifiable third party. The reference set in
+    assets/octavia/ defines her; those files are read-only inputs to the pipeline.
+
+# ------------------------------------------------------------
+# Hard invariants — enforced, never sampled, never varied.
+# ------------------------------------------------------------
+invariants:
+  apparent_age_band: "adult, mid-to-late twenties"
+  minimum_apparent_age: 25
+  sex_presentation: "adult woman"
+  tattoos: none
+  piercings: "small stud earrings at most"
+
+# ------------------------------------------------------------
+# Facial identity anchors
+# ------------------------------------------------------------
+face:
+  geometry:
+    face_shape: "soft oval with a gently tapered jawline"
+    cheekbones: "defined but not sharp, natural mid-face fullness"
+    chin: "rounded, slightly narrow, no cleft"
+    jaw: "smooth, feminine, no heavy angle"
+    nose: "straight narrow bridge, refined rounded tip, small nostrils"
+    lips: "full, well-defined cupid's bow, natural rose tone, upper and lower balanced"
+    philtrum: "short and clearly defined"
+    interocular_spacing: "average, slightly wide-set"
+  eyes:
+    colour: "green-hazel, warm amber flecking near the pupil, olive-green outer iris"
+    shape: "almond, slight upward outer canthal tilt"
+    lashes: "dark, natural length, no heavy falsies"
+    symmetry: "matched — both eyes identical shape and size"
+  brows:
+    colour: "dark brown, noticeably darker than hair mid-lengths"
+    shape: "full, straight-to-softly-arched, expressive, groomed but natural"
+  skin:
+    tone: "warm light-olive"
+    freckles: "natural scattered freckles across the nose bridge and upper cheeks, light density"
+    texture: "real skin — visible pores, fine texture, natural subsurface scattering"
+    finish: "never plastic, never airbrushed, never waxy"
+
+# ------------------------------------------------------------
+# Hair identity anchors
+# ------------------------------------------------------------
+hair:
+  base_colour: "dark brunette, cool espresso base with warmer mid-brown mid-lengths"
+  length: "long, past the collarbone"
+  texture: "thick, soft natural waves with straighter lengths"
+  signature_highlight:
+    description: "olive / lime-green face-framing sections"
+    placement: "front face-framing pieces on both sides of the centre-to-side part"
+    intensity: "distinct but not neon — muted chartreuse / olive-green"
+    required: true
+  # Styling is VARIABLE and lives in the pose/scene layer, not here.
+  variable_styling:
+    - "worn down"
+    - "half-up"
+    - "messy updo"
+    - "loose bun"
+    - "tucked behind one ear"
+
+# ------------------------------------------------------------
+# Physique identity anchors — see also config/physique.yaml
+# ------------------------------------------------------------
+physique_summary:
+  build: "curvy hourglass, athletic through the waist, anatomically believable"
+  height_impression: "average to slightly above average"
+  notes: "Proportions are locked in config/physique.yaml and must not drift."
+
+# ------------------------------------------------------------
+# Signature props
+# ------------------------------------------------------------
+signature_props:
+  purple_crystal_pendant:
+    description: "small faceted purple crystal pendant on a fine gold chain"
+    usage: contextual        # worn when the outfit has an open neckline
+    frequency_target: 0.35   # appears in ~35% of accepted frames
+
+# ------------------------------------------------------------
+# Negative identity terms — always injected into the negative prompt
+# ------------------------------------------------------------
+identity_negatives:
+  - "different woman"
+  - "face morph"
+  - "inconsistent facial structure"
+  - "blue eyes"
+  - "brown eyes"
+  - "blonde hair"
+  - "red hair"
+  - "short hair"
+  - "pink hair"
+  - "blue hair"
+  - "tattoo"
+  - "tattoos"
+  - "nose ring"
+  - "septum piercing"
+  - "heavy makeup"
+  - "airbrushed plastic skin"
+  - "doll face"
+  - "uncanny valley"
+  - "child"
+  - "teenager"
+  - "youthful minor features"

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "close_portrait",
+      "label": "close portrait, head and upper shoulders",
+      "emphasis": "face",
+      "weight": 1.0
+    },
+    {
+      "id": "head_and_shoulders",
+      "label": "head-and-shoulders framing",
+      "emphasis": "face",
+      "weight": 1.2
+    },
+    {
+      "id": "waist_up",
+      "label": "waist-up framing",
+      "emphasis": "upper_body",
+      "weight": 1.4
+    },
+    {
+      "id": "three_quarter",
+      "label": "three-quarter length, mid-thigh crop",
+      "emphasis": "body",
+      "weight": 1.4
+    },
+    {
+      "id": "full_body",
+      "label": "full body in frame",
+      "emphasis": "body",
+      "weight": 1.3
+    },
+    {
+      "id": "environmental_full_body",
+      "label": "full body small in a wide environment",
+      "emphasis": "environment",
+      "weight": 1.0
+    },
+    {
+      "id": "seated_full",
+      "label": "seated full-length framing",
+      "emphasis": "body",
+      "weight": 1.0
+    },
+    {
+      "id": "mirror_selfie",
+      "label": "mirror selfie framing",
+      "emphasis": "body",
+      "weight": 0.5
+    },
+    {
+      "id": "candid_detail",
+      "label": "candid detail crop, subject partially framed",
+      "emphasis": "detail",
+      "weight": 0.7
+    }
+  ]
+}

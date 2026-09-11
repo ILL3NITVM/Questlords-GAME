@@ -1,0 +1,93 @@
+# ============================================================
+# OCTAVIA — PHYSIQUE LOCK
+# ============================================================
+# Body proportions are identity, not styling. This file is read
+# by pipeline/prompt.py (to build physique clauses) and by
+# qc/rules.py (to score physique_consistency).
+#
+# KEY PRINCIPLE:
+#   Apparent body shape in a photograph is a function of
+#   (true proportions) x (focal length) x (camera height) x
+#   (posture) x (clothing). Only the FIRST is identity.
+#   The QC layer must not punish legitimate perspective effects.
+# ============================================================
+
+schema_version: 1
+physique_version: "1.0.0"
+
+# ------------------------------------------------------------
+# Locked ratios. Expressed as relationships, not measurements,
+# so they survive crop, focal length and posture changes.
+# ------------------------------------------------------------
+ratios:
+  shoulder_to_waist: 1.55        # shoulders clearly wider than waist
+  hip_to_waist: 1.50             # hourglass, not pear, not straight
+  shoulder_to_hip: 1.03          # near-balanced top and bottom
+  waist_position: "high, sits well above the navel-to-hip midpoint"
+  torso_to_leg: 0.86             # slightly leg-dominant, natural
+  tolerance: 0.10                # +/- 10% before QC flags drift
+
+descriptors:
+  frame: "medium frame, narrow high waist, softly rounded hips"
+  shoulders: "smooth, gently sloped, not broad or squared"
+  bust: "full and natural in proportion to the frame, with believable weight and fall"
+  waist: "defined, athletic, slight natural softness — not corseted or cinched"
+  hips: "rounded, balanced with the shoulder line"
+  thighs: "full, soft-athletic, natural contour"
+  arms: "slim with natural muscle tone, no visible definition striations"
+  legs: "long relative to torso, natural knee and ankle structure"
+  abdomen: "flat with soft natural definition, no sharply cut six-pack"
+  posture_default: "relaxed natural carriage, not stiff"
+
+# ------------------------------------------------------------
+# Anatomy realism requirements
+# ------------------------------------------------------------
+anatomy:
+  hands: "five fingers per hand, correct length ratios, natural knuckles and nail beds"
+  feet: "five toes per foot, correct arch and ankle structure"
+  joints: "anatomically correct elbows, knees, wrists, ankles"
+  limb_count: "exactly two arms and two legs"
+  spine: "natural curvature consistent with the pose"
+
+# ------------------------------------------------------------
+# Permitted natural variation — QC must NOT treat these as drift
+# ------------------------------------------------------------
+permitted_variation:
+  - "apparent bust/hip size shift from 24mm vs 105mm focal length"
+  - "waist appearing narrower when arms are raised"
+  - "torso compression when seated or leaning"
+  - "shoulder line changing with rotation"
+  - "silhouette changes from structured vs draped clothing"
+  - "apparent height change from camera height"
+  - "soft tissue redistribution when lying or seated"
+
+# ------------------------------------------------------------
+# Forbidden drift — these ARE identity violations
+# ------------------------------------------------------------
+forbidden_drift:
+  - "body mass changing between frames at the same focal length"
+  - "waist becoming impossibly narrow"
+  - "bust scaling beyond anatomical plausibility"
+  - "shoulder width changing independent of rotation"
+  - "limb length ratios changing"
+  - "apparent age shifting younger or older"
+  - "height impression changing at matched camera height"
+
+physique_negatives:
+  - "anatomically impossible proportions"
+  - "exaggerated hourglass"
+  - "wasp waist"
+  - "bodybuilder musculature"
+  - "emaciated"
+  - "distorted torso"
+  - "elongated limbs"
+  - "shortened limbs"
+  - "extra fingers"
+  - "missing fingers"
+  - "fused fingers"
+  - "malformed hands"
+  - "malformed feet"
+  - "extra limbs"
+  - "merged limbs"
+  - "broken joints"
+  - "warped anatomy"

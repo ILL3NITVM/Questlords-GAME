@@ -1,0 +1,617 @@
+{
+  "schema_version": 1,
+  "family": "tops",
+  "items": [
+    {
+      "id": "cropped_fitted_tee",
+      "label": "cropped fitted tee",
+      "category": "top",
+      "subtype": "cropped_fitted_tee",
+      "material": "cotton jersey",
+      "fit": "fitted",
+      "length": "cropped",
+      "neckline": "crew",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "loungewear",
+        "daywear"
+      ],
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "mood": [
+        "relaxed",
+        "soft",
+        "warm"
+      ],
+      "compatibility_tags": [
+        "high_waist_bottom",
+        "layerable"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "ribbed_baby_tee",
+      "label": "ribbed baby tee",
+      "category": "top",
+      "subtype": "ribbed_baby_tee",
+      "material": "rib knit",
+      "fit": "fitted",
+      "length": "cropped",
+      "neckline": "crew",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "daywear"
+      ],
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "mood": [
+        "playful",
+        "fresh"
+      ],
+      "compatibility_tags": [
+        "high_waist_bottom",
+        "layerable"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "ribbed_long_sleeve",
+      "label": "ribbed long-sleeve top",
+      "category": "top",
+      "subtype": "ribbed_long_sleeve",
+      "material": "rib knit",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "crew",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "autumn",
+        "winter",
+        "spring"
+      ],
+      "mood": [
+        "calm",
+        "understated"
+      ],
+      "compatibility_tags": [
+        "layerable",
+        "tuckable"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "fine_knit_sweater",
+      "label": "fine-knit sweater",
+      "category": "top",
+      "subtype": "fine_knit_sweater",
+      "material": "fine knit",
+      "fit": "semi_fitted",
+      "length": "hip",
+      "neckline": "crew",
+      "sleeve": "long",
+      "formality": [
+        "smart_casual",
+        "daywear"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "cosy",
+        "thoughtful"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "layerable"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "chunky_knit_sweater",
+      "label": "chunky knit sweater",
+      "category": "top",
+      "subtype": "chunky_knit_sweater",
+      "material": "chunky knit",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "boat",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "loungewear"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "cosy",
+        "soft"
+      ],
+      "compatibility_tags": [
+        "slim_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "off_shoulder_knit",
+      "label": "off-shoulder knit top",
+      "category": "top",
+      "subtype": "off_shoulder_knit",
+      "material": "fine knit",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "off_shoulder",
+      "sleeve": "long",
+      "formality": [
+        "evening",
+        "smart_casual"
+      ],
+      "season": [
+        "autumn",
+        "winter",
+        "spring"
+      ],
+      "mood": [
+        "elegant",
+        "confident"
+      ],
+      "compatibility_tags": [
+        "high_waist_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "cropped_cardigan",
+      "label": "cropped cardigan",
+      "category": "top",
+      "subtype": "cropped_cardigan",
+      "material": "fine knit",
+      "fit": "semi_fitted",
+      "length": "cropped",
+      "neckline": "v",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "spring",
+        "autumn"
+      ],
+      "mood": [
+        "soft",
+        "romantic"
+      ],
+      "compatibility_tags": [
+        "layer_over",
+        "skirt_friendly"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "long_cardigan",
+      "label": "longline cardigan",
+      "category": "top",
+      "subtype": "long_cardigan",
+      "material": "wool blend",
+      "fit": "relaxed",
+      "length": "thigh",
+      "neckline": "open",
+      "sleeve": "long",
+      "formality": [
+        "smart_casual",
+        "daywear"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "thoughtful",
+        "calm"
+      ],
+      "compatibility_tags": [
+        "layer_over",
+        "slim_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "satin_camisole",
+      "label": "satin camisole",
+      "category": "top",
+      "subtype": "satin_camisole",
+      "material": "satin",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "formality": [
+        "evening",
+        "smart_casual"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "elegant",
+        "confident"
+      ],
+      "compatibility_tags": [
+        "layer_under",
+        "tailored_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "silk_blouse",
+      "label": "silk-like blouse",
+      "category": "top",
+      "subtype": "silk_blouse",
+      "material": "silk-like fabric",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "smart_casual",
+        "evening",
+        "workwear"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "elegant",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "tuckable",
+        "tailored_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "linen_shirt",
+      "label": "relaxed linen shirt",
+      "category": "top",
+      "subtype": "linen_shirt",
+      "material": "linen",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "daywear",
+        "resort"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "easy",
+        "warm"
+      ],
+      "compatibility_tags": [
+        "layer_over",
+        "tuckable"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "structured_bodysuit",
+      "label": "structured bodysuit",
+      "category": "top",
+      "subtype": "structured_bodysuit",
+      "material": "ribbed stretch fabric",
+      "fit": "fitted",
+      "length": "bodysuit",
+      "neckline": "square",
+      "sleeve": "long",
+      "formality": [
+        "evening",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "sleek"
+      ],
+      "compatibility_tags": [
+        "high_waist_bottom",
+        "tailored_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "halter_top",
+      "label": "halter top",
+      "category": "top",
+      "subtype": "halter_top",
+      "material": "ribbed stretch fabric",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "halter",
+      "sleeve": "sleeveless",
+      "formality": [
+        "evening",
+        "resort"
+      ],
+      "season": [
+        "summer"
+      ],
+      "mood": [
+        "confident",
+        "playful"
+      ],
+      "compatibility_tags": [
+        "high_waist_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "corset_top",
+      "label": "corset-inspired fashion top",
+      "category": "top",
+      "subtype": "corset_top",
+      "material": "structured tailoring fabric",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "sweetheart",
+      "sleeve": "sleeveless",
+      "formality": [
+        "evening"
+      ],
+      "season": [
+        "summer",
+        "autumn"
+      ],
+      "mood": [
+        "confident",
+        "elegant"
+      ],
+      "compatibility_tags": [
+        "tailored_bottom",
+        "skirt_friendly"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "tank_top",
+      "label": "fitted tank top",
+      "category": "top",
+      "subtype": "tank_top",
+      "material": "cotton jersey",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "athleisure"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "fresh",
+        "easy"
+      ],
+      "compatibility_tags": [
+        "layerable",
+        "high_waist_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "sports_top",
+      "label": "ribbed sports top",
+      "category": "top",
+      "subtype": "sports_top",
+      "material": "ribbed stretch fabric",
+      "fit": "fitted",
+      "length": "cropped",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "formality": [
+        "athleisure"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "mood": [
+        "energetic",
+        "fresh"
+      ],
+      "compatibility_tags": [
+        "leggings_friendly",
+        "layer_under"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "oversized_hoodie",
+      "label": "oversized hoodie",
+      "category": "top",
+      "subtype": "oversized_hoodie",
+      "material": "soft fleece",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "hood",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "loungewear",
+        "athleisure"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "relaxed",
+        "playful"
+      ],
+      "compatibility_tags": [
+        "slim_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "velvet_top",
+      "label": "velvet long-sleeve top",
+      "category": "top",
+      "subtype": "velvet_top",
+      "material": "velvet",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "v",
+      "sleeve": "long",
+      "formality": [
+        "evening"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "mood": [
+        "elegant",
+        "mysterious"
+      ],
+      "compatibility_tags": [
+        "tailored_bottom",
+        "skirt_friendly"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "mesh_layer_top",
+      "label": "mesh-layered top",
+      "category": "top",
+      "subtype": "mesh_layer_top",
+      "material": "mesh layering",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "neckline": "crew",
+      "sleeve": "long",
+      "formality": [
+        "evening",
+        "fashion"
+      ],
+      "season": [
+        "autumn",
+        "spring"
+      ],
+      "mood": [
+        "confident",
+        "editorial"
+      ],
+      "compatibility_tags": [
+        "layer_over",
+        "tailored_bottom"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "lace_trim_top",
+      "label": "lace-trim knit top",
+      "category": "top",
+      "subtype": "lace_trim_top",
+      "material": "lace",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "v",
+      "sleeve": "long",
+      "formality": [
+        "evening",
+        "smart_casual"
+      ],
+      "season": [
+        "spring",
+        "autumn"
+      ],
+      "mood": [
+        "romantic",
+        "soft"
+      ],
+      "compatibility_tags": [
+        "skirt_friendly"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "denim_jacket",
+      "label": "denim jacket",
+      "category": "top",
+      "subtype": "denim_jacket",
+      "material": "denim",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "daywear"
+      ],
+      "season": [
+        "spring",
+        "autumn"
+      ],
+      "mood": [
+        "easy",
+        "confident"
+      ],
+      "compatibility_tags": [
+        "layer_over"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "blazer",
+      "label": "tailored blazer",
+      "category": "top",
+      "subtype": "blazer",
+      "material": "structured tailoring fabric",
+      "fit": "semi_fitted",
+      "length": "hip",
+      "neckline": "lapel",
+      "sleeve": "long",
+      "formality": [
+        "workwear",
+        "smart_casual",
+        "evening"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "composed",
+        "confident"
+      ],
+      "compatibility_tags": [
+        "layer_over",
+        "tailored_bottom"
+      ],
+      "weight": 1.0
+    }
+  ]
+}

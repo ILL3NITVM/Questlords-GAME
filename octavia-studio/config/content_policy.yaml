@@ -1,0 +1,57 @@
+# ============================================================
+# CONTENT POLICY — enforced in pipeline/prompt.py
+# ============================================================
+# These constraints are applied to EVERY generated spec. They are
+# not sampled and cannot be overridden by a campaign or a preset.
+schema_version: 1
+
+subject:
+  must_be_adult: true
+  minimum_apparent_age: 25
+  # Injected verbatim into every positive prompt
+  age_clause: "adult woman in her late twenties"
+
+explicit_content:
+  allowed: false
+  # Injected verbatim into every negative prompt
+  forbidden_terms:
+    - "nude"
+    - "nudity"
+    - "topless"
+    - "exposed nipples"
+    - "exposed genitals"
+    - "see-through revealing underwear"
+    - "sexual act"
+    - "explicit"
+    - "pornographic"
+    - "child"
+    - "minor"
+    - "teen"
+    - "loli"
+    - "schoolgirl"
+    - "underage"
+
+wardrobe:
+  # Every sampled outfit must resolve to fully-clothed coverage.
+  require_full_coverage: true
+  # Subtypes that may only appear as a layered base, never alone
+  base_layer_only:
+    - "camisole"
+    - "bralette"
+    - "sports bra"
+
+scene_text:
+  # Section 5: avoid nonsense signage / posters / labels
+  suppress_all_text: true
+  negatives:
+    - "text"
+    - "watermark"
+    - "signature"
+    - "logo"
+    - "caption"
+    - "lettering"
+    - "poster with writing"
+    - "book titles"
+    - "product labels"
+    - "gibberish writing"
+    - "misspelled text"

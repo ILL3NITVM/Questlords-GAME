@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# Run outputs — regenerate from the manifest and master seed instead of
+# committing them. Manifests are small; images are not.
+runs/*/images/
+runs/*/contact_sheets/
+runs/_probe/
+runs/_doctor.json
+
+# Reference images are large binaries and are personal to the operator.
+# The pipeline reads them from disk; reference_index.json (committed)
+# records their names, dimensions and SHA-256 so drift is detectable.
+assets/octavia/reference/*.png
+assets/octavia/reference/*.jpg
+assets/octavia/reference/*.jpeg
+assets/octavia/reference/*.webp
+assets/octavia/face_reference/*.png
+assets/octavia/face_reference/*.jpg
+assets/octavia/face_reference/*.jpeg
+assets/octavia/face_reference/*.webp
+assets/octavia/body_reference/*.png
+assets/octavia/body_reference/*.jpg
+assets/octavia/body_reference/*.jpeg
+assets/octavia/body_reference/*.webp

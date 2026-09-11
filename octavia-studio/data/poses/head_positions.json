@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "convention": {
+    "yaw": "+ = toward her right",
+    "pitch": "+ = chin up",
+    "roll": "+ = crown toward her right shoulder; - = toward her LEFT"
+  },
+  "items": [
+    {
+      "id": "upright_neutral",
+      "label": "head upright and level",
+      "yaw_range": [
+        -4,
+        4
+      ],
+      "pitch_range": [
+        -2,
+        3
+      ],
+      "roll_range": [
+        -2,
+        2
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 2.4
+    },
+    {
+      "id": "straight_on",
+      "label": "squared straight to camera",
+      "yaw_range": [
+        -2,
+        2
+      ],
+      "pitch_range": [
+        -2,
+        2
+      ],
+      "roll_range": [
+        -1,
+        1
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 2.0
+    },
+    {
+      "id": "slight_right_tilt",
+      "label": "slight tilt toward her right shoulder",
+      "yaw_range": [
+        -4,
+        6
+      ],
+      "pitch_range": [
+        -3,
+        3
+      ],
+      "roll_range": [
+        5,
+        11
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "right",
+      "weight": 1.6
+    },
+    {
+      "id": "right_tilt",
+      "label": "clear tilt toward her right shoulder",
+      "yaw_range": [
+        -6,
+        8
+      ],
+      "pitch_range": [
+        -4,
+        4
+      ],
+      "roll_range": [
+        11,
+        17
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "right",
+      "weight": 1.0
+    },
+    {
+      "id": "chin_down",
+      "label": "chin slightly lowered, eyes up to camera",
+      "yaw_range": [
+        -6,
+        6
+      ],
+      "pitch_range": [
+        -12,
+        -5
+      ],
+      "roll_range": [
+        -2,
+        3
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 1.5
+    },
+    {
+      "id": "chin_up",
+      "label": "chin slightly raised",
+      "yaw_range": [
+        -6,
+        6
+      ],
+      "pitch_range": [
+        6,
+        13
+      ],
+      "roll_range": [
+        -2,
+        3
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 1.2
+    },
+    {
+      "id": "three_quarter_right",
+      "label": "face turned three-quarters to her right",
+      "yaw_range": [
+        18,
+        32
+      ],
+      "pitch_range": [
+        -4,
+        4
+      ],
+      "roll_range": [
+        -2,
+        5
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 1.8
+    },
+    {
+      "id": "three_quarter_left",
+      "label": "face turned three-quarters to her left",
+      "yaw_range": [
+        -32,
+        -18
+      ],
+      "pitch_range": [
+        -4,
+        4
+      ],
+      "roll_range": [
+        -3,
+        4
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 1.8
+    },
+    {
+      "id": "over_shoulder_right",
+      "label": "looking back over her right shoulder",
+      "yaw_range": [
+        38,
+        55
+      ],
+      "pitch_range": [
+        -3,
+        6
+      ],
+      "roll_range": [
+        -3,
+        6
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 1.1
+    },
+    {
+      "id": "over_shoulder_left",
+      "label": "looking back over her left shoulder",
+      "yaw_range": [
+        -55,
+        -38
+      ],
+      "pitch_range": [
+        -3,
+        6
+      ],
+      "roll_range": [
+        -4,
+        4
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 1.1
+    },
+    {
+      "id": "side_profile_right",
+      "label": "clean profile, her right side to camera",
+      "yaw_range": [
+        72,
+        88
+      ],
+      "pitch_range": [
+        -3,
+        4
+      ],
+      "roll_range": [
+        -2,
+        3
+      ],
+      "eye_direction": "away",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 0.7
+    },
+    {
+      "id": "side_profile_left",
+      "label": "clean profile, her left side to camera",
+      "yaw_range": [
+        -88,
+        -72
+      ],
+      "pitch_range": [
+        -3,
+        4
+      ],
+      "roll_range": [
+        -3,
+        2
+      ],
+      "eye_direction": "away",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 0.7
+    },
+    {
+      "id": "looking_away_up",
+      "label": "turned away, gaze lifted off camera",
+      "yaw_range": [
+        -28,
+        28
+      ],
+      "pitch_range": [
+        7,
+        16
+      ],
+      "roll_range": [
+        -3,
+        4
+      ],
+      "eye_direction": "away_up",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 0.9
+    },
+    {
+      "id": "looking_away_down",
+      "label": "turned away, gaze lowered",
+      "yaw_range": [
+        -28,
+        28
+      ],
+      "pitch_range": [
+        -14,
+        -6
+      ],
+      "roll_range": [
+        -3,
+        4
+      ],
+      "eye_direction": "away_down",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 0.9
+    },
+    {
+      "id": "candid_gaze_off",
+      "label": "natural candid, eyes off camera",
+      "yaw_range": [
+        -24,
+        24
+      ],
+      "pitch_range": [
+        -6,
+        6
+      ],
+      "roll_range": [
+        -4,
+        5
+      ],
+      "eye_direction": "off_camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 1.3
+    },
+    {
+      "id": "eyes_to_camera_head_away",
+      "label": "head angled away, eyes returned to camera",
+      "yaw_range": [
+        -34,
+        34
+      ],
+      "pitch_range": [
+        -5,
+        5
+      ],
+      "roll_range": [
+        -3,
+        5
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 1.2
+    },
+    {
+      "id": "downcast_soft",
+      "label": "head level, gaze softly downward",
+      "yaw_range": [
+        -10,
+        10
+      ],
+      "pitch_range": [
+        -4,
+        2
+      ],
+      "roll_range": [
+        -2,
+        3
+      ],
+      "eye_direction": "down",
+      "is_left_tilt": false,
+      "tilt_class": "neutral",
+      "weight": 0.9
+    },
+    {
+      "id": "slight_left_tilt",
+      "label": "slight tilt toward her left shoulder",
+      "yaw_range": [
+        -6,
+        4
+      ],
+      "pitch_range": [
+        -3,
+        3
+      ],
+      "roll_range": [
+        -11,
+        -5
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": true,
+      "tilt_class": "left",
+      "weight": 0.3
+    },
+    {
+      "id": "left_tilt",
+      "label": "clear tilt toward her left shoulder",
+      "yaw_range": [
+        -8,
+        6
+      ],
+      "pitch_range": [
+        -4,
+        4
+      ],
+      "roll_range": [
+        -17,
+        -11
+      ],
+      "eye_direction": "camera",
+      "is_left_tilt": true,
+      "tilt_class": "left",
+      "weight": 0.18
+    }
+  ]
+}

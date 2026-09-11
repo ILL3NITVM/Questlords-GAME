@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "family": "footwear",
+  "items": [
+    {
+      "id": "barefoot",
+      "label": "barefoot",
+      "category": "footwear",
+      "subtype": "barefoot",
+      "formality": [
+        "loungewear",
+        "casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "compatibility_tags": [
+        "indoor_only"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "sneakers",
+      "label": "low-profile sneakers",
+      "category": "footwear",
+      "subtype": "sneakers",
+      "formality": [
+        "casual",
+        "athleisure"
+      ],
+      "season": [
+        "all"
+      ],
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "chunky_sneakers",
+      "label": "chunky sneakers",
+      "category": "footwear",
+      "subtype": "chunky_sneakers",
+      "formality": [
+        "athleisure",
+        "casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "loafers",
+      "label": "leather-look loafers",
+      "category": "footwear",
+      "subtype": "loafers",
+      "formality": [
+        "workwear",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "ballet_flats",
+      "label": "ballet flats",
+      "category": "footwear",
+      "subtype": "ballet_flats",
+      "formality": [
+        "smart_casual",
+        "daywear"
+      ],
+      "season": [
+        "spring",
+        "summer"
+      ],
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "ankle_boots",
+      "label": "ankle boots",
+      "category": "footwear",
+      "subtype": "ankle_boots",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "knee_boots",
+      "label": "knee-high boots",
+      "category": "footwear",
+      "subtype": "knee_boots",
+      "formality": [
+        "evening",
+        "smart_casual"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "block_heels",
+      "label": "block-heel shoes",
+      "category": "footwear",
+      "subtype": "block_heels",
+      "formality": [
+        "workwear",
+        "evening"
+      ],
+      "season": [
+        "all"
+      ],
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "strappy_heels",
+      "label": "strappy heels",
+      "category": "footwear",
+      "subtype": "strappy_heels",
+      "formality": [
+        "evening"
+      ],
+      "season": [
+        "summer",
+        "spring"
+      ],
+      "compatibility_tags": [
+        "outdoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "slides",
+      "label": "soft slides",
+      "category": "footwear",
+      "subtype": "slides",
+      "formality": [
+        "loungewear",
+        "resort"
+      ],
+      "season": [
+        "summer"
+      ],
+      "compatibility_tags": [
+        "indoor_ok"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "socks",
+      "label": "ribbed socks",
+      "category": "footwear",
+      "subtype": "socks",
+      "formality": [
+        "loungewear"
+      ],
+      "season": [
+        "autumn",
+        "winter"
+      ],
+      "compatibility_tags": [
+        "indoor_only"
+      ],
+      "weight": 1.0
+    }
+  ]
+}

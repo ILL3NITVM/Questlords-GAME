@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "neutral_soft",
+      "label": "neutral and soft, lips relaxed and closed",
+      "mood": "calm",
+      "weight": 1.6
+    },
+    {
+      "id": "small_smile",
+      "label": "a small closed-mouth smile",
+      "mood": "warm",
+      "weight": 1.5
+    },
+    {
+      "id": "warm_smile",
+      "label": "a warm genuine smile with slight eye crinkle",
+      "mood": "warm",
+      "weight": 1.3
+    },
+    {
+      "id": "confident_gaze",
+      "label": "confident level gaze, composed mouth",
+      "mood": "confident",
+      "weight": 1.3
+    },
+    {
+      "id": "playful_gaze",
+      "label": "playful look with a hint of a smile",
+      "mood": "playful",
+      "weight": 1.1
+    },
+    {
+      "id": "thoughtful",
+      "label": "thoughtful, slightly distant expression",
+      "mood": "thoughtful",
+      "weight": 1.1
+    },
+    {
+      "id": "calm_serene",
+      "label": "calm and serene, fully relaxed features",
+      "mood": "calm",
+      "weight": 1.2
+    },
+    {
+      "id": "slightly_mischievous",
+      "label": "slightly mischievous, one brow marginally raised",
+      "mood": "playful",
+      "weight": 0.9
+    },
+    {
+      "id": "eyes_away_candid",
+      "label": "candid, caught between expressions",
+      "mood": "candid",
+      "weight": 1.1
+    },
+    {
+      "id": "subtle_closed_grin",
+      "label": "a subtle closed-mouth grin",
+      "mood": "warm",
+      "weight": 1.0
+    },
+    {
+      "id": "soft_parted_lips",
+      "label": "lips just barely parted, relaxed",
+      "mood": "calm",
+      "weight": 0.9
+    },
+    {
+      "id": "gentle_lip_bite",
+      "label": "a gentle, barely-there lip bite",
+      "mood": "playful",
+      "weight": 0.35
+    },
+    {
+      "id": "quiet_laugh",
+      "label": "a quiet natural laugh",
+      "mood": "warm",
+      "weight": 0.8
+    },
+    {
+      "id": "looking_down_soft",
+      "label": "softly downcast, calm expression",
+      "mood": "thoughtful",
+      "weight": 0.9
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "cream",
+      "label": "cream",
+      "description": "warm off-white",
+      "family": "neutral_light",
+      "mood": [
+        "calm",
+        "soft",
+        "warm"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "ivory",
+      "label": "ivory",
+      "description": "cool off-white",
+      "family": "neutral_light",
+      "mood": [
+        "elegant",
+        "calm"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "white",
+      "label": "white",
+      "description": "clean white",
+      "family": "neutral_light",
+      "mood": [
+        "fresh",
+        "composed"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "champagne",
+      "label": "champagne",
+      "description": "pale warm gold-beige",
+      "family": "neutral_light",
+      "mood": [
+        "elegant",
+        "romantic"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "taupe",
+      "label": "taupe",
+      "description": "grey-brown neutral",
+      "family": "neutral_mid",
+      "mood": [
+        "understated",
+        "calm"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "charcoal",
+      "label": "charcoal",
+      "description": "deep grey",
+      "family": "neutral_dark",
+      "mood": [
+        "composed",
+        "confident"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "black",
+      "label": "black",
+      "description": "true black",
+      "family": "neutral_dark",
+      "mood": [
+        "confident",
+        "elegant",
+        "mysterious"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "espresso",
+      "label": "espresso",
+      "description": "deep warm brown",
+      "family": "neutral_dark",
+      "mood": [
+        "cosy",
+        "composed"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "silver",
+      "label": "silver",
+      "description": "cool metallic grey",
+      "family": "neutral_mid",
+      "mood": [
+        "editorial",
+        "sleek"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "olive",
+      "label": "olive",
+      "description": "muted green-brown",
+      "family": "earth",
+      "mood": [
+        "understated",
+        "easy"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "sage",
+      "label": "sage",
+      "description": "soft grey-green",
+      "family": "earth",
+      "mood": [
+        "calm",
+        "fresh"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "forest",
+      "label": "forest",
+      "description": "deep saturated green",
+      "family": "earth",
+      "mood": [
+        "mysterious",
+        "composed"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "rust",
+      "label": "rust",
+      "description": "burnt orange-brown",
+      "family": "earth",
+      "mood": [
+        "warm",
+        "cosy"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "terracotta",
+      "label": "terracotta",
+      "description": "clay orange",
+      "family": "earth",
+      "mood": [
+        "warm",
+        "easy"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "mustard",
+      "label": "mustard",
+      "description": "deep warm yellow",
+      "family": "earth",
+      "mood": [
+        "playful",
+        "warm"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "butter_yellow",
+      "label": "butter yellow",
+      "description": "soft pale yellow",
+      "family": "warm_light",
+      "mood": [
+        "playful",
+        "fresh"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "peach",
+      "label": "peach",
+      "description": "soft warm orange-pink",
+      "family": "warm_light",
+      "mood": [
+        "romantic",
+        "soft"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "coral",
+      "label": "coral",
+      "description": "bright pink-orange",
+      "family": "warm_bright",
+      "mood": [
+        "playful",
+        "energetic"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "rose",
+      "label": "rose",
+      "description": "clear mid pink",
+      "family": "warm_mid",
+      "mood": [
+        "romantic",
+        "soft"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "dusty_pink",
+      "label": "dusty pink",
+      "description": "muted desaturated pink",
+      "family": "warm_mid",
+      "mood": [
+        "soft",
+        "romantic"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "burgundy",
+      "label": "burgundy",
+      "description": "deep red-wine",
+      "family": "warm_dark",
+      "mood": [
+        "elegant",
+        "mysterious"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "plum",
+      "label": "plum",
+      "description": "deep red-purple",
+      "family": "cool_dark",
+      "mood": [
+        "mysterious",
+        "elegant"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "lilac",
+      "label": "lilac",
+      "description": "pale soft purple",
+      "family": "cool_light",
+      "mood": [
+        "soft",
+        "romantic"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "lavender",
+      "label": "lavender",
+      "description": "light grey-purple",
+      "family": "cool_light",
+      "mood": [
+        "calm",
+        "soft"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "sky_blue",
+      "label": "sky blue",
+      "description": "pale clear blue",
+      "family": "cool_light",
+      "mood": [
+        "fresh",
+        "calm"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "turquoise",
+      "label": "turquoise",
+      "description": "bright blue-green",
+      "family": "cool_bright",
+      "mood": [
+        "energetic",
+        "fresh"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "teal",
+      "label": "teal",
+      "description": "deep blue-green",
+      "family": "cool_mid",
+      "mood": [
+        "composed",
+        "editorial"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "navy",
+      "label": "navy",
+      "description": "deep blue",
+      "family": "cool_dark",
+      "mood": [
+        "composed",
+        "elegant"
+      ],
+      "weight": 1.0
+    }
+  ]
+}

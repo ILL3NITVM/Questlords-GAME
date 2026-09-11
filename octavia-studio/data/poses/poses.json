@@ -1,0 +1,427 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "stand_relaxed",
+      "label": "standing relaxed, weight even",
+      "family": "standing_relaxed",
+      "posture": "standing",
+      "shoulder_rotation": "square",
+      "spine_orientation": "neutral upright",
+      "hip_orientation": "square",
+      "legs": "both feet planted, slight gap",
+      "requires_furniture": [],
+      "weight": 1.3
+    },
+    {
+      "id": "stand_contrapposto",
+      "label": "standing contrapposto, weight on one hip",
+      "family": "standing_contrapposto",
+      "posture": "standing",
+      "shoulder_rotation": "slightly rotated",
+      "spine_orientation": "gentle S-curve",
+      "hip_orientation": "one hip dropped",
+      "legs": "one leg straight, one soft",
+      "requires_furniture": [],
+      "weight": 1.3
+    },
+    {
+      "id": "stand_turned_away",
+      "label": "standing turned away, torso rotated back",
+      "family": "standing_contrapposto",
+      "posture": "standing",
+      "shoulder_rotation": "rotated away",
+      "spine_orientation": "twisted at the waist",
+      "hip_orientation": "rotated",
+      "legs": "feet crossed slightly",
+      "requires_furniture": [],
+      "weight": 0.9
+    },
+    {
+      "id": "stand_one_hand_hair",
+      "label": "standing, one hand lifted to her hair",
+      "family": "one_hand_in_hair",
+      "posture": "standing",
+      "shoulder_rotation": "one shoulder lifted",
+      "spine_orientation": "upright",
+      "hip_orientation": "neutral",
+      "legs": "weight on one leg",
+      "requires_furniture": [],
+      "weight": 1.0
+    },
+    {
+      "id": "stand_arms_folded",
+      "label": "standing with arms softly folded",
+      "family": "arms_softly_folded",
+      "posture": "standing",
+      "shoulder_rotation": "square",
+      "spine_orientation": "upright relaxed",
+      "hip_orientation": "neutral",
+      "legs": "feet shoulder width",
+      "requires_furniture": [],
+      "weight": 0.9
+    },
+    {
+      "id": "stand_hands_pockets",
+      "label": "standing with hands in pockets",
+      "family": "hands_in_pockets",
+      "posture": "standing",
+      "shoulder_rotation": "relaxed",
+      "spine_orientation": "upright",
+      "hip_orientation": "one hip forward",
+      "legs": "weight shifted",
+      "requires_furniture": [],
+      "weight": 0.9
+    },
+    {
+      "id": "stand_adjusting",
+      "label": "standing, adjusting a sleeve or hem",
+      "family": "adjusting_clothing",
+      "posture": "standing",
+      "shoulder_rotation": "asymmetric",
+      "spine_orientation": "slight forward lean",
+      "hip_orientation": "neutral",
+      "legs": "one foot forward",
+      "requires_furniture": [],
+      "weight": 1.0
+    },
+    {
+      "id": "lean_wall",
+      "label": "leaning shoulder against a wall",
+      "family": "leaning_against_furniture",
+      "posture": "leaning",
+      "shoulder_rotation": "one shoulder to surface",
+      "spine_orientation": "angled",
+      "hip_orientation": "hip against surface",
+      "legs": "ankles loosely crossed",
+      "requires_furniture": [
+        "wall"
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "lean_counter",
+      "label": "leaning back against a counter or island",
+      "family": "leaning_against_furniture",
+      "posture": "leaning",
+      "shoulder_rotation": "square",
+      "spine_orientation": "reclined slightly",
+      "hip_orientation": "hips to surface",
+      "legs": "legs extended forward",
+      "requires_furniture": [
+        "counter",
+        "island",
+        "table"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "lean_railing",
+      "label": "forearms resting on a railing or ledge",
+      "family": "leaning_against_furniture",
+      "posture": "leaning",
+      "shoulder_rotation": "forward rotated",
+      "spine_orientation": "forward lean",
+      "hip_orientation": "neutral",
+      "legs": "one knee soft",
+      "requires_furniture": [
+        "railing",
+        "ledge",
+        "balustrade"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "lean_doorframe",
+      "label": "standing in a doorway, shoulder to the frame",
+      "family": "leaning_against_furniture",
+      "posture": "leaning",
+      "shoulder_rotation": "one shoulder back",
+      "spine_orientation": "angled",
+      "hip_orientation": "hip out",
+      "legs": "crossed at ankle",
+      "requires_furniture": [
+        "doorway",
+        "archway"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "seat_upright",
+      "label": "seated upright, hands in lap",
+      "family": "seated_upright",
+      "posture": "seated",
+      "shoulder_rotation": "square",
+      "spine_orientation": "tall upright",
+      "hip_orientation": "square",
+      "legs": "knees together, feet flat",
+      "requires_furniture": [
+        "chair",
+        "bench",
+        "stool"
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "seat_sideways",
+      "label": "seated sideways, torso turned to camera",
+      "family": "seated_sideways",
+      "posture": "seated",
+      "shoulder_rotation": "rotated toward camera",
+      "spine_orientation": "twisted",
+      "hip_orientation": "angled away",
+      "legs": "legs together to one side",
+      "requires_furniture": [
+        "chair",
+        "sofa",
+        "bench"
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "seat_cross_legged_chair",
+      "label": "seated with legs crossed on a chair",
+      "family": "cross_legged_chair",
+      "posture": "seated",
+      "shoulder_rotation": "slightly rotated",
+      "spine_orientation": "upright",
+      "hip_orientation": "crossed",
+      "legs": "one leg over the other",
+      "requires_furniture": [
+        "chair",
+        "stool"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "seat_edge",
+      "label": "perched on the edge of a seat, leaning forward",
+      "family": "edge_of_seat",
+      "posture": "seated",
+      "shoulder_rotation": "forward",
+      "spine_orientation": "forward lean, elbows to knees",
+      "hip_orientation": "forward tilt",
+      "legs": "feet apart, heels down",
+      "requires_furniture": [
+        "chair",
+        "bench",
+        "bed",
+        "stool"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "sofa_lounge",
+      "label": "lounging back into a sofa",
+      "family": "sofa_lounge",
+      "posture": "reclined",
+      "shoulder_rotation": "open",
+      "spine_orientation": "reclined back",
+      "hip_orientation": "rotated",
+      "legs": "legs drawn up to one side",
+      "requires_furniture": [
+        "sofa",
+        "daybed"
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "sofa_arm_drape",
+      "label": "seated with one arm draped over the sofa back",
+      "family": "sofa_lounge",
+      "posture": "seated",
+      "shoulder_rotation": "one shoulder back",
+      "spine_orientation": "open twist",
+      "hip_orientation": "angled",
+      "legs": "one ankle over knee",
+      "requires_furniture": [
+        "sofa",
+        "armchair"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "floor_seated",
+      "label": "seated on the floor, legs tucked",
+      "family": "floor_seated",
+      "posture": "floor",
+      "shoulder_rotation": "relaxed",
+      "spine_orientation": "slight lean on one hand",
+      "hip_orientation": "angled",
+      "legs": "legs folded to one side",
+      "requires_furniture": [
+        "rug",
+        "floor"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "floor_knees_up",
+      "label": "seated on the floor, one knee drawn up",
+      "family": "floor_seated",
+      "posture": "floor",
+      "shoulder_rotation": "asymmetric",
+      "spine_orientation": "leaning back on hands",
+      "hip_orientation": "angled",
+      "legs": "one knee up, one flat",
+      "requires_furniture": [
+        "rug",
+        "floor"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "bed_seated",
+      "label": "seated on the edge of a bed",
+      "family": "edge_of_seat",
+      "posture": "seated",
+      "shoulder_rotation": "square",
+      "spine_orientation": "upright",
+      "hip_orientation": "neutral",
+      "legs": "feet on floor",
+      "requires_furniture": [
+        "bed"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "window_pose",
+      "label": "standing at a window, hand on the frame",
+      "family": "window_pose",
+      "posture": "standing",
+      "shoulder_rotation": "rotated to window",
+      "spine_orientation": "gentle lean",
+      "hip_orientation": "neutral",
+      "legs": "weight on forward leg",
+      "requires_furniture": [
+        "window"
+      ],
+      "weight": 1.1
+    },
+    {
+      "id": "window_seat",
+      "label": "sitting in a window seat, knees drawn up",
+      "family": "window_pose",
+      "posture": "seated",
+      "shoulder_rotation": "turned to glass",
+      "spine_orientation": "curled",
+      "hip_orientation": "angled",
+      "legs": "knees up, back to frame",
+      "requires_furniture": [
+        "window seat",
+        "window ledge"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "walking_candid",
+      "label": "mid-stride, walking naturally",
+      "family": "walking_candid",
+      "posture": "walking",
+      "shoulder_rotation": "natural counter-rotation",
+      "spine_orientation": "upright in motion",
+      "hip_orientation": "rotating with stride",
+      "legs": "one foot lifted mid-step",
+      "requires_furniture": [],
+      "weight": 1.1
+    },
+    {
+      "id": "walking_turn",
+      "label": "walking and turning back toward camera",
+      "family": "walking_candid",
+      "posture": "walking",
+      "shoulder_rotation": "twisted back",
+      "spine_orientation": "rotated",
+      "hip_orientation": "mid-stride",
+      "legs": "trailing foot planted",
+      "requires_furniture": [],
+      "weight": 0.9
+    },
+    {
+      "id": "mirror_selfie",
+      "label": "mirror selfie, phone raised",
+      "family": "mirror_selfie",
+      "posture": "standing",
+      "shoulder_rotation": "one shoulder lifted with the phone",
+      "spine_orientation": "upright",
+      "hip_orientation": "one hip out",
+      "legs": "weight on one leg",
+      "requires_furniture": [
+        "mirror"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "turning_to_camera",
+      "label": "caught turning toward the camera",
+      "family": "turning_toward_camera",
+      "posture": "standing",
+      "shoulder_rotation": "mid-rotation",
+      "spine_orientation": "twisting",
+      "hip_orientation": "trailing",
+      "legs": "pivoting on one foot",
+      "requires_furniture": [],
+      "weight": 1.1
+    },
+    {
+      "id": "hand_on_furniture",
+      "label": "standing with one hand resting on furniture",
+      "family": "hand_on_furniture",
+      "posture": "standing",
+      "shoulder_rotation": "asymmetric",
+      "spine_orientation": "slight lean toward the hand",
+      "hip_orientation": "neutral",
+      "legs": "weight toward the support",
+      "requires_furniture": [
+        "chair",
+        "table",
+        "console",
+        "counter"
+      ],
+      "weight": 1.0
+    },
+    {
+      "id": "stair_seated",
+      "label": "seated on steps, elbows on knees",
+      "family": "floor_seated",
+      "posture": "seated",
+      "shoulder_rotation": "forward",
+      "spine_orientation": "forward lean",
+      "hip_orientation": "open",
+      "legs": "knees apart, feet on a lower step",
+      "requires_furniture": [
+        "steps",
+        "stairs"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "crouch_low",
+      "label": "low crouch, balanced on the balls of the feet",
+      "family": "floor_seated",
+      "posture": "crouching",
+      "shoulder_rotation": "square",
+      "spine_orientation": "compact forward",
+      "hip_orientation": "closed",
+      "legs": "heels lifted, knees together",
+      "requires_furniture": [],
+      "weight": 0.6
+    },
+    {
+      "id": "reaching_shelf",
+      "label": "reaching up toward a shelf or rail",
+      "family": "natural_candid_movement",
+      "posture": "standing",
+      "shoulder_rotation": "one arm extended up",
+      "spine_orientation": "extended",
+      "hip_orientation": "neutral",
+      "legs": "up on the toes slightly",
+      "requires_furniture": [
+        "shelf",
+        "rail",
+        "cabinet"
+      ],
+      "weight": 0.7
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "generated": "2026-09-11T13:36:15.992969",
+  "sets": {
+    "assets/octavia/reference": {
+      "count": 5,
+      "images": [
+        {
+          "file": "ref_001_mirror_black_offshoulder.png",
+          "relpath": "assets/octavia/reference/ref_001_mirror_black_offshoulder.png",
+          "bytes": 1644187,
+          "sha256": "ef67315b45d0b0fb5ea85b7bd69a2a895c6fd8fa42874f1cd383b7cba6e55624",
+          "width": 1132,
+          "height": 1390,
+          "mode": "RGB",
+          "aspect": 0.814
+        },
+        {
+          "file": "ref_002_pink_tee_loungewear.png",
+          "relpath": "assets/octavia/reference/ref_002_pink_tee_loungewear.png",
+          "bytes": 2086600,
+          "sha256": "5cd4dc6e5c73e08018c5fbfb45b679f7e291fbea15e021a7c1499dbc21dcda8a",
+          "width": 1122,
+          "height": 1402,
+          "mode": "RGB",
+          "aspect": 0.8
+        },
+        {
+          "file": "ref_003_lilac_cardigan_bedroom.png",
+          "relpath": "assets/octavia/reference/ref_003_lilac_cardigan_bedroom.png",
+          "bytes": 2099965,
+          "sha256": "a7c126d986c5a891fc959129dea1180dca402befcfe2372d003b5d8ad3fd64c8",
+          "width": 942,
+          "height": 1670,
+          "mode": "RGB",
+          "aspect": 0.564
+        },
+        {
+          "file": "ref_004_outdoor_selfie_activewear.png",
+          "relpath": "assets/octavia/reference/ref_004_outdoor_selfie_activewear.png",
+          "bytes": 2906570,
+          "sha256": "f607da95cd72b4a665bdfd90025cbb396bde303af79877419461c8686f4a9cea",
+          "width": 1124,
+          "height": 1399,
+          "mode": "RGB",
+          "aspect": 0.803
+        },
+        {
+          "file": "ref_005_white_zip_bodysuit.png",
+          "relpath": "assets/octavia/reference/ref_005_white_zip_bodysuit.png",
+          "bytes": 2047898,
+          "sha256": "7a4487d9d026e05e07447f72fa9393f43fbd62331d169090f5a84dc81c4a9bc0",
+          "width": 1122,
+          "height": 1402,
+          "mode": "RGB",
+          "aspect": 0.8
+        }
+      ]
+    },
+    "assets/octavia/face_reference": {
+      "count": 3,
+      "images": [
+        {
+          "file": "face_001_daylight_frontal.png",
+          "relpath": "assets/octavia/face_reference/face_001_daylight_frontal.png",
+          "bytes": 2906570,
+          "sha256": "f607da95cd72b4a665bdfd90025cbb396bde303af79877419461c8686f4a9cea",
+          "width": 1124,
+          "height": 1399,
+          "mode": "RGB",
+          "aspect": 0.803
+        },
+        {
+          "file": "face_002_indoor_three_quarter.png",
+          "relpath": "assets/octavia/face_reference/face_002_indoor_three_quarter.png",
+          "bytes": 2099965,
+          "sha256": "a7c126d986c5a891fc959129dea1180dca402befcfe2372d003b5d8ad3fd64c8",
+          "width": 942,
+          "height": 1670,
+          "mode": "RGB",
+          "aspect": 0.564
+        },
+        {
+          "file": "face_003_warm_interior.png",
+          "relpath": "assets/octavia/face_reference/face_003_warm_interior.png",
+          "bytes": 2086600,
+          "sha256": "5cd4dc6e5c73e08018c5fbfb45b679f7e291fbea15e021a7c1499dbc21dcda8a",
+          "width": 1122,
+          "height": 1402,
+          "mode": "RGB",
+          "aspect": 0.8
+        }
+      ]
+    },
+    "assets/octavia/body_reference": {
+      "count": 3,
+      "images": [
+        {
+          "file": "body_001_torso_proportions.png",
+          "relpath": "assets/octavia/body_reference/body_001_torso_proportions.png",
+          "bytes": 2086600,
+          "sha256": "5cd4dc6e5c73e08018c5fbfb45b679f7e291fbea15e021a7c1499dbc21dcda8a",
+          "width": 1122,
+          "height": 1402,
+          "mode": "RGB",
+          "aspect": 0.8
+        },
+        {
+          "file": "body_002_seated_full.png",
+          "relpath": "assets/octavia/body_reference/body_002_seated_full.png",
+          "bytes": 2047898,
+          "sha256": "7a4487d9d026e05e07447f72fa9393f43fbd62331d169090f5a84dc81c4a9bc0",
+          "width": 1122,
+          "height": 1402,
+          "mode": "RGB",
+          "aspect": 0.8
+        },
+        {
+          "file": "body_003_standing_mirror.png",
+          "relpath": "assets/octavia/body_reference/body_003_standing_mirror.png",
+          "bytes": 1644187,
+          "sha256": "ef67315b45d0b0fb5ea85b7bd69a2a895c6fd8fa42874f1cd383b7cba6e55624",
+          "width": 1132,
+          "height": 1390,
+          "mode": "RGB",
+          "aspect": 0.814
+        }
+      ]
+    }
+  },
+  "total_images": 11,
+  "identity_version": "1.0.0"
+}

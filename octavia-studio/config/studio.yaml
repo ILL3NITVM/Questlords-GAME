@@ -1,0 +1,127 @@
+# ============================================================
+# OCTAVIA STUDIO — MASTER CONFIGURATION
+# ============================================================
+schema_version: 1
+
+studio:
+  name: "Octavia Studio"
+  default_campaign: wardrobe
+  default_count: 64
+  contact_sheet_batch: 8
+
+renderer:
+  # active backend: mock | comfyui | api
+  backend: mock
+  comfyui:
+    host: "127.0.0.1"
+    port: 8188
+    timeout_seconds: 600
+    workflow_template: "config/workflows/octavia_txt2img.json"
+  api:
+    # endpoint + key come from .env — never commit secrets
+    endpoint_env: "OCTAVIA_API_ENDPOINT"
+    api_key_env: "OCTAVIA_API_KEY"
+    model: ""
+    timeout_seconds: 300
+
+output:
+  width: 896
+  height: 1152
+  format: png
+  save_spec_sidecar: true
+
+# ------------------------------------------------------------
+# Anti-collapse sampling
+# ------------------------------------------------------------
+diversity:
+  # How hard to push away from recently-used categories.
+  # weight = base * (1 / (1 + count))^pressure
+  pressure:
+    low: 0.6
+    normal: 1.2
+    high: 2.2
+  # Sliding window of recent accepted frames used for penalties
+  history_window: 24
+  # No single family may exceed this share of a completed campaign
+  max_family_share:
+    wardrobe_family: 0.14
+    scene_family: 0.12
+    pose_family: 0.12
+    colour_family: 0.10
+    camera_shot: 0.20
+    expression: 0.18
+    head_position: 0.16
+  # Absolute caps, enforced at sample time (not just reported)
+  hard_caps:
+    head_roll_left: 0.08     # <= 8% of accepted photographs
+
+# ------------------------------------------------------------
+# Head-pose balancing (section 12)
+# ------------------------------------------------------------
+head_pose:
+  # roll < -4 degrees is a LEFT tilt (Octavia's left / frame right-lean)
+  left_roll_threshold_deg: -4.0
+  right_roll_threshold_deg: 4.0
+  left_tilt_target_share: 0.08
+  # Once the left-tilt budget for the run is spent, probability is
+  # multiplied by this before being renormalised.
+  exhausted_penalty: 0.02
+  # Even before the budget is spent, left tilt is down-weighted.
+  base_left_weight: 0.25
+
+# ------------------------------------------------------------
+# QC thresholds (section 11)
+# ------------------------------------------------------------
+qc:
+  hard_reject:
+    identity_consistency: 85
+    physique_consistency: 85
+    anatomy: 80
+    photorealism: 80
+  warn_below:
+    face_consistency: 82
+    hands: 78
+    feet: 75
+    pose_naturalness: 75
+    clothing_integrity: 78
+    scene_quality: 70
+    composition: 70
+    lighting: 70
+    novelty: 60
+    head_pose_novelty: 55
+  # Defect penalties applied to the relevant score
+  defect_penalties:
+    extra_fingers: 40
+    missing_fingers: 35
+    merged_limbs: 45
+    warped_feet: 30
+    asymmetric_eyes: 30
+    false_tattoos: 50
+    random_writing: 20
+    duplicated_objects: 18
+    broken_mirror: 25
+    incorrect_reflection: 25
+    impossible_furniture_contact: 22
+    clothing_melting_into_skin: 35
+
+# ------------------------------------------------------------
+# Human review feedback weighting (section 13)
+# ------------------------------------------------------------
+feedback:
+  enabled: true
+  store: "data/feedback.json"
+  # Multipliers applied to a category's sampling weight after review
+  weight_delta:
+    KEEP: 1.10
+    REJECT: 0.80
+    IDENTITY_DRIFT: 0.70
+    BODY_DRIFT: 0.70
+    POSE_DUPLICATE: 0.45
+    WARDROBE_BAD: 0.55
+    SCENE_BAD: 0.55
+  weight_floor: 0.15
+  weight_ceiling: 3.0
+
+logging:
+  level: INFO
+  file: "runs/{run_id}/studio.log"
