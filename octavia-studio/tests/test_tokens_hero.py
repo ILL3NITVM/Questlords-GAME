@@ -215,3 +215,65 @@ def test_hires_denoise_stays_low_enough_to_hold_identity():
 
 def test_plan_summary_is_readable():
     assert "base" in default_plan(CFG, 896, 1152).summary()
+
+
+# ----------------------------------------------------------------------
+# Tokenizer trust — a wrong count is worse than an honest estimate
+# ----------------------------------------------------------------------
+def test_fallback_tokenizer_is_rejected():
+    """`from_pretrained` does not always fail loudly. Offline it can return
+    a fallback that encodes character-by-character, reporting ~166 tokens
+    for a prompt CLIP puts near 40. Trusting that as exact silently broke
+    every tier budget."""
+    from pipeline.tokens import _is_real_clip_tokenizer
+
+    class Degraded:
+        vocab_size = 75          # the char-level fallback
+
+    class RealClip:
+        vocab_size = 49408
+
+    class NoVocab:
+        pass
+
+    assert not _is_real_clip_tokenizer(Degraded())
+    assert not _is_real_clip_tokenizer(NoVocab())
+    assert _is_real_clip_tokenizer(RealClip())
+
+
+def test_wildly_divergent_counts_are_distrusted(monkeypatch):
+    """Even a plausible-looking tokenizer is rejected if its count is
+    nowhere near the heuristic."""
+    import pipeline.tokens as T
+
+    class Liar:
+        vocab_size = 49408
+
+        def __call__(self, text, add_special_tokens=False):
+            return {"input_ids": list(range(len(text) * 3))}
+
+    monkeypatch.setattr(T.exact_tokens, "_tokenizer", Liar(), raising=False)
+    assert T.exact_tokens("a short prompt about a photograph") is None
+
+
+def test_plausible_counts_are_accepted(monkeypatch):
+    import pipeline.tokens as T
+    text = "a short prompt about a photograph"
+    approx = T.estimate_tokens(text)
+
+    class Honest:
+        vocab_size = 49408
+
+        def __call__(self, t, add_special_tokens=False):
+            return {"input_ids": list(range(approx))}
+
+    monkeypatch.setattr(T.exact_tokens, "_tokenizer", Honest(), raising=False)
+    assert T.exact_tokens(text) == approx
+
+
+def test_count_tokens_never_claims_exact_without_a_verified_tokenizer(monkeypatch):
+    import pipeline.tokens as T
+    monkeypatch.setattr(T.exact_tokens, "_tokenizer", None, raising=False)
+    result = T.count_tokens("some prompt text")
+    assert result["exact"] is False
+    assert result["method"] == "heuristic-estimate"

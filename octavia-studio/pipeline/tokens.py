@@ -69,21 +69,59 @@ def estimate_tokens(text: str) -> int:
     return sum(_word_tokens(tok) for tok in _WORD_RE.findall(text))
 
 
+# CLIP's text encoder vocabulary. A tokenizer that does not have it is not
+# CLIP's, whatever it calls itself.
+CLIP_VOCAB_SIZE = 49408
+_MIN_PLAUSIBLE_VOCAB = 40000
+
+
+def _is_real_clip_tokenizer(tok: Any) -> bool:
+    """Guard against a degraded fallback masquerading as the real thing.
+
+    `from_pretrained` does not always fail loudly. In offline mode it can
+    return a fallback that encodes roughly character-by-character — which
+    reported 166 tokens for a prompt CLIP puts at about 40. Trusting that
+    as `exact` silently broke every tier budget in the system, because a
+    wrong count carries more authority than the honest estimate it
+    replaced. Verify the vocabulary before believing it.
+    """
+    size = getattr(tok, "vocab_size", 0) or 0
+    return size >= _MIN_PLAUSIBLE_VOCAB
+
+
 def exact_tokens(text: str) -> Optional[int]:
-    """Real CLIP token count, if transformers is available."""
+    """Real CLIP token count, if a genuine CLIP tokenizer is available.
+
+    Returns None rather than a number it cannot vouch for.
+    """
     try:
         from transformers import CLIPTokenizerFast
     except ImportError:
         return None
-    try:
-        tok = exact_tokens._tokenizer                      # type: ignore[attr-defined]
-    except AttributeError:
+
+    tok = getattr(exact_tokens, "_tokenizer", "unset")
+    if tok == "unset":
         try:
-            tok = CLIPTokenizerFast.from_pretrained("openai/clip-vit-large-patch14")
+            candidate = CLIPTokenizerFast.from_pretrained("openai/clip-vit-large-patch14")
+            tok = candidate if _is_real_clip_tokenizer(candidate) else None
         except Exception:
-            return None
+            tok = None
         exact_tokens._tokenizer = tok                      # type: ignore[attr-defined]
-    return len(tok(text, add_special_tokens=False)["input_ids"])
+    if tok is None:
+        return None
+
+    try:
+        count = len(tok(text, add_special_tokens=False)["input_ids"])
+    except Exception:
+        return None
+
+    # Final sanity check: a real CLIP count sits near the heuristic. A wild
+    # divergence means the tokenizer is not behaving like CLIP, so prefer
+    # the estimate we understand.
+    approx = estimate_tokens(text)
+    if approx and (count > approx * 2.5 or count < approx * 0.3):
+        return None
+    return count
 
 
 def count_tokens(text: str) -> Dict[str, Any]:

@@ -425,8 +425,61 @@ room it was shot in. Weights are clamped to `[0.15, 3.0]`.
 | Backend | Use |
 |---|---|
 | `mock` | pipeline testing, zero cost, fully deterministic |
+| `diffusers` | **pure Python** — loads a checkpoint into this process, no server |
 | `comfyui` | local or remote ComfyUI over its HTTP API |
 | `api` | generic hosted HTTP endpoint |
+
+### Pure-Python backend (no server)
+
+`renderers/diffusers_local.py` runs the whole multi-pass chain in-process:
+base txt2img, then img2img hires fix, then a face-detail pass that crops the
+face region, resamples it at full resolution and composites it back through a
+feathered mask. No ComfyUI, no HTTP, no external process.
+
+```bash
+pip install -r requirements-local.txt
+# CPU-only machines: install torch from the CPU index first to skip ~2 GB of
+# unused CUDA libraries
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+python scripts/fetch_models.py --list          # recommendations for THIS machine
+python scripts/fetch_models.py --model stabilityai/stable-diffusion-xl-base-1.0
+```
+
+Then in `config/studio.yaml`:
+
+```yaml
+renderer:
+  backend: diffusers
+  diffusers:
+    model_id: "stabilityai/stable-diffusion-xl-base-1.0"
+    device: auto            # auto | cuda | mps | cpu
+    local_files_only: true  # never touch the network at render time
+    cpu_offload: false      # set true under ~8 GB VRAM
+```
+
+```bash
+python studio.py hero --candidates 512 --seed 20260911 --backend diffusers
+```
+
+The studio still never downloads weights on its own. `fetch_models.py` reports
+size, checks free disk and asks before touching the network; `preflight()`
+names exactly what is missing rather than silently reaching out.
+
+**Expect these speeds.** A 40-step pass at 896x1152, three passes:
+
+| device | per pass | full chain |
+|---|---|---|
+| RTX 4090 / A100 | ~3 s | under a minute |
+| RTX 3060, 12 GB | ~12 s | ~1 minute |
+| Apple M-series (MPS) | ~30 s | 2-3 minutes |
+| CPU, 4 cores | 15-45 min | **an hour or more** |
+
+CPU is supported but not practical for a hero frame. Drop `hero.passes.base.steps`
+and the output resolution if you must run without a GPU.
+
+Device and dtype are selected automatically — fp16 on CUDA, fp32 on MPS (fp16
+VAE decode is unreliable there) and fp32 on CPU.
 
 Set `renderer.backend` in `config/studio.yaml`, or pass `--backend`.
 
@@ -469,14 +522,19 @@ decision.
 python -m pytest tests/ -q
 ```
 
-146 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
+168 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
 caps, scene/pose furniture coherence, focal/shot agreement, outfit colour
 harmony, identity and policy terms reaching every prompt, identity-mode
 switching, QC floors and defect routing, review feedback targeting, a full
 end-to-end mock run, the training subsystem (perceptual hashing, duplicate
 clustering, quality gating, identity-term stripping, kohya export), token
-budgeting, tier guarantees, hero-objective ranking and render-plan capability
-resolution.
+budgeting, tier guarantees, hero-objective ranking, render-plan capability
+resolution, and the pure-Python backend (crop geometry, device selection,
+dimension snapping, plus the full multi-pass chain executed against a tiny
+locally-built pipeline).
+
+Tests marked `slow` run a real diffusion pipeline. Skip them with
+`pytest -m "not slow"`.
 
 ---
 
@@ -487,12 +545,12 @@ octavia-studio/
   assets/octavia/{reference,face_reference,body_reference}/
   config/       identity.yaml physique.yaml studio.yaml content_policy.yaml
   data/         wardrobe/ scenes/ poses/ palettes/ materials/
-  renderers/    base.py mock.py comfyui.py api.py registry.py
+  renderers/    base.py mock.py diffusers_local.py comfyui.py api.py registry.py
   pipeline/     spec.py seeds.py sampler.py compose.py prompt.py tokens.py
                 hero.py renderplan.py history.py runner.py
   qc/           scoring.py rules.py headpose.py contact_sheet.py review.py
   training/     ingest.py analyze.py caption.py export.py
-  scripts/      detect_hardware.py
+  scripts/      detect_hardware.py fetch_models.py
   runs/<RUN_ID>/  manifest.jsonl state.json review.csv studio.log
                   images/ contact_sheets/
   tests/

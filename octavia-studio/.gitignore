@@ -32,3 +32,8 @@ assets/octavia/body_reference/*.webp
 # copies of your source photographs. Regenerate with `dataset ingest`.
 training_runs/
 assets/octavia/training_source/
+
+# Local model cache — never commit checkpoints.
+*.safetensors
+*.ckpt
+models/

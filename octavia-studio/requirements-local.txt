@@ -1,0 +1,19 @@
+# Pure-Python local rendering backend (renderers/diffusers_local.py).
+# Installing these is a deliberate step — they are large.
+#
+#   pip install -r requirements-local.txt
+#
+# For CPU-only machines, install torch from the CPU index first to avoid
+# pulling ~2 GB of unused CUDA libraries:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+torch>=2.1
+diffusers>=0.27
+transformers>=4.38
+accelerate>=0.27
+safetensors>=0.4
+huggingface_hub>=0.20
+
+# Optional: a real face detector for the face-detail pass. Without it the
+# pass falls back to geometric estimation, which works but is less precise.
+# mediapipe>=0.10

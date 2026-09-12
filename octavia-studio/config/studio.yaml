@@ -31,8 +31,19 @@ identity:
     strength_clip: 0.85
 
 renderer:
-  # active backend: mock | comfyui | api
+  # active backend: mock | diffusers | comfyui | api
   backend: mock
+
+  # Pure-Python local backend — loads a checkpoint into this process and
+  # runs the whole multi-pass chain in-process. No server, no HTTP.
+  diffusers:
+    model_id: ""              # e.g. stabilityai/stable-diffusion-xl-base-1.0
+    model_path: ""            # or an absolute path to a local checkout
+    device: auto              # auto | cuda | mps | cpu
+    local_files_only: true    # never reach the network at render time
+    attention_slicing: true   # lower peak VRAM, slight speed cost
+    vae_slicing: true
+    cpu_offload: false        # set true on <8 GB VRAM
   comfyui:
     host: "127.0.0.1"
     port: 8188

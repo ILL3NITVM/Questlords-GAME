@@ -12,18 +12,23 @@ def get_renderer(name: str, config: Dict[str, Any], output_dir: pathlib.Path) ->
     if name == "mock":
         from renderers.mock import MockRenderer
         return MockRenderer(config, output_dir)
+    if name == "diffusers":
+        from renderers.diffusers_local import DiffusersRenderer
+        return DiffusersRenderer(config, output_dir)
     if name == "comfyui":
         from renderers.comfyui import ComfyUIRenderer
         return ComfyUIRenderer(config, output_dir)
     if name == "api":
         from renderers.api import APIRenderer
         return APIRenderer(config, output_dir)
-    raise ValueError(f"unknown renderer backend: {name!r} (expected mock|comfyui|api)")
+    raise ValueError(
+        f"unknown renderer backend: {name!r} (expected mock|diffusers|comfyui|api)")
 
 
 def available_backends() -> Dict[str, str]:
     return {
         "mock": "Deterministic placeholder images — pipeline testing, zero cost",
+        "diffusers": "Pure-Python local rendering — no server, runs in this process",
         "comfyui": "Local or remote ComfyUI server via its HTTP API",
         "api": "Generic hosted HTTP image-generation endpoint",
     }
