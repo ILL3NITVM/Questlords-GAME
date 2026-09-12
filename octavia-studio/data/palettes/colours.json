@@ -11,7 +11,8 @@
         "soft",
         "warm"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#F2EADB"
     },
     {
       "id": "ivory",
@@ -22,7 +23,8 @@
         "elegant",
         "calm"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#F4F1E8"
     },
     {
       "id": "white",
@@ -33,7 +35,8 @@
         "fresh",
         "composed"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#FAFAF8"
     },
     {
       "id": "champagne",
@@ -44,7 +47,8 @@
         "elegant",
         "romantic"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#E6D4B8"
     },
     {
       "id": "taupe",
@@ -55,7 +59,8 @@
         "understated",
         "calm"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#9C8E80"
     },
     {
       "id": "charcoal",
@@ -66,7 +71,8 @@
         "composed",
         "confident"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#3A3A3E"
     },
     {
       "id": "black",
@@ -78,7 +84,8 @@
         "elegant",
         "mysterious"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#141416"
     },
     {
       "id": "espresso",
@@ -89,7 +96,8 @@
         "cosy",
         "composed"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#3E2B22"
     },
     {
       "id": "silver",
@@ -100,7 +108,8 @@
         "editorial",
         "sleek"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#B8BCC0"
     },
     {
       "id": "olive",
@@ -111,7 +120,8 @@
         "understated",
         "easy"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#6E7350"
     },
     {
       "id": "sage",
@@ -122,7 +132,8 @@
         "calm",
         "fresh"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#A3B295"
     },
     {
       "id": "forest",
@@ -133,7 +144,8 @@
         "mysterious",
         "composed"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#2C4433"
     },
     {
       "id": "rust",
@@ -144,7 +156,8 @@
         "warm",
         "cosy"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#9E4B28"
     },
     {
       "id": "terracotta",
@@ -155,7 +168,8 @@
         "warm",
         "easy"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#C1704C"
     },
     {
       "id": "mustard",
@@ -166,7 +180,8 @@
         "playful",
         "warm"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#C99A22"
     },
     {
       "id": "butter_yellow",
@@ -177,7 +192,8 @@
         "playful",
         "fresh"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#F0DE9B"
     },
     {
       "id": "peach",
@@ -188,7 +204,8 @@
         "romantic",
         "soft"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#F2C3A0"
     },
     {
       "id": "coral",
@@ -199,7 +216,8 @@
         "playful",
         "energetic"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#E8735C"
     },
     {
       "id": "rose",
@@ -210,7 +228,8 @@
         "romantic",
         "soft"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#D98195"
     },
     {
       "id": "dusty_pink",
@@ -221,7 +240,8 @@
         "soft",
         "romantic"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#C99BA4"
     },
     {
       "id": "burgundy",
@@ -232,7 +252,8 @@
         "elegant",
         "mysterious"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#6B2434"
     },
     {
       "id": "plum",
@@ -243,7 +264,8 @@
         "mysterious",
         "elegant"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#5A2E4D"
     },
     {
       "id": "lilac",
@@ -254,7 +276,8 @@
         "soft",
         "romantic"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#C9B6DB"
     },
     {
       "id": "lavender",
@@ -265,7 +288,8 @@
         "calm",
         "soft"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#B7AECD"
     },
     {
       "id": "sky_blue",
@@ -276,7 +300,8 @@
         "fresh",
         "calm"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#A8C8E0"
     },
     {
       "id": "turquoise",
@@ -287,7 +312,8 @@
         "energetic",
         "fresh"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#3FB3AC"
     },
     {
       "id": "teal",
@@ -298,7 +324,8 @@
         "composed",
         "editorial"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#245E63"
     },
     {
       "id": "navy",
@@ -309,7 +336,8 @@
         "composed",
         "elegant"
       ],
-      "weight": 1.0
+      "weight": 1.0,
+      "hex": "#22314F"
     }
   ]
 }

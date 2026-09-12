@@ -277,3 +277,59 @@ def test_count_tokens_never_claims_exact_without_a_verified_tokenizer(monkeypatc
     result = T.count_tokens("some prompt text")
     assert result["exact"] is False
     assert result["method"] == "heuristic-estimate"
+
+
+# ----------------------------------------------------------------------
+# Shot card
+# ----------------------------------------------------------------------
+def test_shot_card_renders_from_a_recipe():
+    import json
+    import tempfile
+    from PIL import Image
+    from qc.shotcard import build_shot_card
+    from pipeline.prompt import build_prompts
+
+    pol = yaml.safe_load((ROOT / "config/content_policy.yaml").read_text())
+    idn = yaml.safe_load((ROOT / "config/identity.yaml").read_text())
+    phy = yaml.safe_load((ROOT / "config/physique.yaml").read_text())
+    cat = Catalogue()
+    smp = Sampler(cat, DiversityHistory(24), CFG, planned_total=1)
+    spec = Composer(cat, smp, CFG, POL).compose("SC", 0, seed_record(3, "SC", 0))
+    prompt, _ = build_prompts(spec, idn, phy, pol, cat, CFG.get("identity", {}))
+    sc = hero_mod.score_spec(spec, CFG.get("hero", {}))
+    recipe = {"spec": spec.to_dict(), "prompt": prompt, "master_seed": 3,
+              "candidates_searched": 64, "hero_score": sc.to_dict()}
+
+    with tempfile.TemporaryDirectory() as td:
+        out = build_shot_card(recipe, pathlib.Path(td) / "card.png",
+                              colours_by_id=cat.colours_by_id)
+        assert out.is_file()
+        with Image.open(out) as im:
+            assert im.size[0] > 1000 and im.size[1] > 600
+            assert im.mode == "RGB"
+
+
+def test_shot_card_survives_a_sparse_recipe():
+    """Callers pass partial recipes (dry runs, reloaded manifests). The card
+    must degrade rather than raise."""
+    import tempfile
+    from qc.shotcard import build_shot_card
+    with tempfile.TemporaryDirectory() as td:
+        out = build_shot_card({"spec": {"width": 896, "height": 1152}},
+                              pathlib.Path(td) / "sparse.png")
+        assert out.is_file()
+
+
+def test_every_palette_colour_has_a_hex_value():
+    """The card renders real swatches, so a colour without hex would render
+    as a silent gap."""
+    cat = Catalogue()
+    missing = [c["id"] for c in cat.colours if not c.get("hex")]
+    assert not missing, f"colours without hex: {missing}"
+
+
+def test_colour_hex_values_are_well_formed():
+    import re
+    cat = Catalogue()
+    for c in cat.colours:
+        assert re.fullmatch(r"#[0-9A-Fa-f]{6}", c["hex"]), f"{c['id']}: {c['hex']}"

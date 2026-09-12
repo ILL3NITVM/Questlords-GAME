@@ -36,6 +36,7 @@ from pipeline.seeds import reroll_axes, seed_record  # noqa: E402
 from pipeline.spec import SeedRecord  # noqa: E402
 from qc import review as review_mod  # noqa: E402
 from qc.contact_sheet import build_contact_sheet  # noqa: E402
+from qc.shotcard import build_shot_card  # noqa: E402
 from qc.scoring import COMPUTED_METRICS, VISION_METRICS  # noqa: E402
 from renderers.base import RendererUnavailable  # noqa: E402
 from renderers.registry import available_backends, get_renderer  # noqa: E402
@@ -1011,9 +1012,23 @@ def cmd_hero(args: argparse.Namespace) -> int:
         f"POSITIVE\n{spec.prompt}\n\nNEGATIVE\n{spec.negative_prompt}\n",
         encoding="utf-8")
 
+    # A visual plan of the frame — a FrameSpec is a hundred lines of JSON,
+    # and JSON does not tell you whether the composition is any good.
+    card_path = None
+    try:
+        from renderers.mock import PALETTE_HINT
+        card_path = build_shot_card(
+            recipe, d / "shot_card.png",
+            colours_by_id=catalogue.colours_by_id,
+            env_swatch=PALETTE_HINT.get(spec.scene.get("env_palette", "")))
+    except Exception as exc:
+        print(_c("y", f"  shot card failed: {type(exc).__name__}: {exc}"))
+
     print(_c("b", "\n  written"))
     print(f"    runs/{run_id}/hero_recipe.json")
     print(f"    runs/{run_id}/hero_prompt.txt")
+    if card_path:
+        print(f"    runs/{run_id}/shot_card.png")
 
     # --- render -------------------------------------------------------
     if renderer is None:

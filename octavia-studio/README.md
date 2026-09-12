@@ -229,8 +229,20 @@ well-known failure modes rather than anything measured on your renderer. Tune
 `config/studio.yaml: hero.weights` against real output.
 
 Output is `runs/<RUN_ID>/hero_recipe.json` (full spec, seeds, prompt,
-budget report, render plan) and `hero_prompt.txt`. Re-run with the same
-`--seed` to reproduce the identical frame.
+budget report, render plan), `hero_prompt.txt`, and `shot_card.png`.
+Re-run with the same `--seed` to reproduce the identical frame.
+
+### The shot card
+
+`qc/shotcard.py` renders the selected frame as a photographer would plan it:
+the framing diagram at the true output aspect ratio with the subject placed by
+shot type, an overhead key-light diagram, camera parameters, the wardrobe and
+environment palettes as real swatches, and the identity anchors that must
+survive the render.
+
+It exists because a `FrameSpec` is a hundred lines of JSON, and JSON does not
+tell you whether the composition is any good. The card does, at a glance,
+before any GPU time is spent. It is the plan, not the photograph.
 
 ### Multi-pass rendering
 
@@ -542,7 +554,7 @@ decision.
 python -m pytest tests/ -q
 ```
 
-179 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
+186 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
 caps, scene/pose furniture coherence, focal/shot agreement, outfit colour
 harmony, identity and policy terms reaching every prompt, identity-mode
 switching, QC floors and defect routing, review feedback targeting, a full
@@ -568,7 +580,8 @@ octavia-studio/
   renderers/    base.py mock.py diffusers_local.py comfyui.py api.py registry.py
   pipeline/     spec.py seeds.py sampler.py compose.py prompt.py tokens.py
                 hero.py renderplan.py history.py runner.py
-  qc/           scoring.py rules.py headpose.py contact_sheet.py review.py
+  qc/           scoring.py rules.py headpose.py contact_sheet.py shotcard.py
+                review.py
   training/     ingest.py analyze.py caption.py export.py
   scripts/      detect_hardware.py fetch_models.py
   runs/<RUN_ID>/  manifest.jsonl state.json review.csv studio.log
