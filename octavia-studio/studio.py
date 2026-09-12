@@ -44,6 +44,7 @@ from training import analyze as tr_analyze  # noqa: E402
 from training import caption as tr_caption  # noqa: E402
 from training import export as tr_export  # noqa: E402
 from training import ingest as tr_ingest  # noqa: E402
+from training import intake as tr_intake  # noqa: E402
 from training.ingest import ImageRecord  # noqa: E402
 
 REF_DIRS = ["assets/octavia/reference", "assets/octavia/face_reference",
@@ -656,6 +657,39 @@ def cmd_dataset(args: argparse.Namespace) -> int:
     tcfg = load_training_config()
     source = pathlib.Path(args.source) if args.source else ROOT / tcfg["dataset"]["source_dir"]
 
+    # ---------------- add ----------------
+    if args.action == "add":
+        if not args.paths:
+            print(_c("r", "  Nothing to add. Pass one or more files or directories:"))
+            print("    python studio.py dataset add <path> [<path> ...]")
+            return 1
+        incoming = [pathlib.Path(p).expanduser() for p in args.paths]
+        missing = [p for p in incoming if not p.exists()]
+        if missing:
+            for m in missing:
+                print(_c("r", f"  not found: {m}"))
+            return 1
+        result = tr_intake.add_batch(incoming, source, batch_name=args.batch,
+                                     dry_run=args.dry_run)
+        print(_c("b", f"BATCH {result['batch_id']}"))
+        print(f"  scanned            {result['scanned']}")
+        print(_c("g", f"  added              {result['added']}"))
+        if result["duplicates_skipped"]:
+            print(f"  duplicates skipped {result['duplicates_skipped']} "
+                  f"(already in the set by content hash)")
+        if result["failed"]:
+            print(_c("r", f"  failed             {result['failed']}"))
+            for f in result["failures"]:
+                print(_c("r", f"    {f['source']}: {f['error']}"))
+        print(f"  total in set       {result['total_in_set']}")
+        print(f"  source dir         {result['source_dir']}")
+        if result["dry_run"]:
+            print(_c("d", "\n  --dry-run: nothing was copied."))
+        else:
+            print(_c("d", "\n  Source files were copied, not moved."))
+            print(f"\n  next: python studio.py dataset ingest")
+        return 0
+
     # ---------------- ingest ----------------
     if args.action == "ingest":
         if not source.is_dir():
@@ -677,6 +711,34 @@ def cmd_dataset(args: argparse.Namespace) -> int:
         print(f"  flagged   {flagged} with quality issues")
         print(f"  written   {path.relative_to(ROOT)}")
         print(f"\n  next: python studio.py dataset analyze")
+        return 0
+
+    # ---------------- status ----------------
+    if args.action == "status":
+        summary = tr_intake.ledger_summary(source)
+        print(_c("b", "TRAINING SET"))
+        print(f"  source dir      {source}")
+        print(f"  batches         {summary['batches']}")
+        print(f"  unique images   {summary['unique_images']}")
+        print(f"  files on disk   {summary['files_on_disk']}")
+        if summary["recent"]:
+            print(_c("b", "\n  recent batches"))
+            for b in summary["recent"]:
+                print(f"    {b['batch_id']:28s} {b['received']}  "
+                      f"+{b['added']} (skipped {b['duplicates_skipped']})")
+        idx = _records_path(tcfg)
+        if idx.is_file():
+            d = json.loads(idx.read_text(encoding="utf-8"))
+            sel = sum(1 for r in d.get("records", []) if r.get("selected"))
+            cap = sum(1 for r in d.get("records", [])
+                      if r.get("selected") and r.get("caption")
+                      and "TODO_" not in (r.get("caption") or ""))
+            print(_c("b", "\n  curation"))
+            print(f"    indexed       {d.get('count', 0)}")
+            print(f"    selected      {sel}")
+            print(f"    captioned     {cap}")
+        else:
+            print(_c("d", "\n  not yet indexed — run: python studio.py dataset ingest"))
         return 0
 
     records = _load_records(tcfg)
@@ -1161,7 +1223,13 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     ds = sub.add_parser("dataset", help="curate an existing photo set for LoRA training")
     ds.add_argument("action",
-                    choices=["ingest", "analyze", "curate", "caption", "export"])
+                    choices=["add", "ingest", "analyze", "curate", "caption",
+                             "export", "status"])
+    ds.add_argument("paths", nargs="*",
+                    help="for `add`: files or directories to bring into the set")
+    ds.add_argument("--batch", default=None, help="name this intake batch")
+    ds.add_argument("--dry-run", action="store_true",
+                    help="for `add`: report what would be copied")
     ds.add_argument("--source", default=None, help="override dataset.source_dir")
     ds.add_argument("--out", default=None, help="export output directory")
     ds.add_argument("--target", default="lora", choices=["lora", "ipadapter"])

@@ -306,3 +306,160 @@ def test_export_with_nothing_selected_errors_cleanly():
             r.selected = False
         result = tr_export.export_lora(records, pathlib.Path(td) / "out", TCFG)
         assert "error" in result
+
+
+# ----------------------------------------------------------------------
+# Incremental batch intake
+# ----------------------------------------------------------------------
+def test_batch_intake_is_idempotent():
+    """Re-sending a batch must not duplicate images. A duplicate silently
+    doubles that image's weight during training."""
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        incoming = pathlib.Path(td) / "in"
+        incoming.mkdir()
+        for i in range(4):
+            _img(incoming / f"p{i}.png", seed=i)
+        dest = pathlib.Path(td) / "set"
+
+        first = tr_intake.add_batch([incoming], dest, "b1")
+        again = tr_intake.add_batch([incoming], dest, "b2")
+
+        assert first["added"] == 4
+        assert again["added"] == 0
+        assert again["duplicates_skipped"] == 4
+        assert again["total_in_set"] == 4
+
+
+def test_overlapping_batches_only_add_the_new_images():
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        a = pathlib.Path(td) / "a"; a.mkdir()
+        b = pathlib.Path(td) / "b"; b.mkdir()
+        for i in range(3):
+            _img(a / f"x{i}.png", seed=i)
+        # b repeats one of a's images byte-for-byte, plus two new ones.
+        import shutil
+        shutil.copy2(a / "x0.png", b / "same.png")
+        for i in range(3, 5):
+            _img(b / f"y{i}.png", seed=i)
+
+        dest = pathlib.Path(td) / "set"
+        tr_intake.add_batch([a], dest, "b1")
+        second = tr_intake.add_batch([b], dest, "b2")
+        assert second["added"] == 2
+        assert second["duplicates_skipped"] == 1
+        assert second["total_in_set"] == 5
+
+
+def test_intake_copies_and_never_moves():
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        incoming = pathlib.Path(td) / "in"; incoming.mkdir()
+        for i in range(3):
+            _img(incoming / f"p{i}.png", seed=i)
+        before = sorted(f.name for f in incoming.iterdir())
+        tr_intake.add_batch([incoming], pathlib.Path(td) / "set", "b1")
+        assert sorted(f.name for f in incoming.iterdir()) == before
+
+
+def test_dry_run_copies_nothing():
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        incoming = pathlib.Path(td) / "in"; incoming.mkdir()
+        _img(incoming / "p.png")
+        dest = pathlib.Path(td) / "set"
+        result = tr_intake.add_batch([incoming], dest, "b1", dry_run=True)
+        assert result["added"] == 1
+        assert not dest.exists() or not list(dest.glob("*.png"))
+
+
+def test_intake_accepts_files_and_directories():
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        root = pathlib.Path(td) / "in"
+        nested = root / "sub"
+        nested.mkdir(parents=True)
+        _img(root / "top.png", seed=1)
+        _img(nested / "deep.png", seed=2)
+        loose = pathlib.Path(td) / "loose.png"
+        _img(loose, seed=3)
+
+        dest = pathlib.Path(td) / "set"
+        result = tr_intake.add_batch([root, loose], dest, "b1")
+        assert result["added"] == 3, "should recurse into directories and take loose files"
+
+
+def test_non_images_are_ignored():
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        incoming = pathlib.Path(td) / "in"; incoming.mkdir()
+        _img(incoming / "good.png")
+        (incoming / "notes.txt").write_text("not an image")
+        (incoming / "archive.zip").write_bytes(b"PK\x03\x04")
+        result = tr_intake.add_batch([incoming], pathlib.Path(td) / "set", "b1")
+        assert result["added"] == 1
+
+
+def test_ledger_records_batch_provenance():
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        incoming = pathlib.Path(td) / "in"; incoming.mkdir()
+        for i in range(2):
+            _img(incoming / f"p{i}.png", seed=i)
+        dest = pathlib.Path(td) / "set"
+        tr_intake.add_batch([incoming], dest, "monday-shoot")
+        for i in range(2, 4):
+            _img(incoming / f"q{i}.png", seed=i)
+        tr_intake.add_batch([incoming], dest, "tuesday-shoot")
+
+        summary = tr_intake.ledger_summary(dest)
+        assert summary["batches"] == 2
+        assert summary["unique_images"] == 4
+        assert summary["files_on_disk"] == 4
+        assert [b["batch_id"] for b in summary["recent"]] == ["monday-shoot", "tuesday-shoot"]
+
+
+def test_stored_filenames_carry_batch_and_hash():
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        incoming = pathlib.Path(td) / "in"; incoming.mkdir()
+        _img(incoming / "original_name.png")
+        dest = pathlib.Path(td) / "set"
+        tr_intake.add_batch([incoming], dest, "shoot-a")
+        stored = [f.name for f in dest.glob("*.png")]
+        assert len(stored) == 1
+        assert stored[0].startswith("shoot-a_")
+
+
+def test_unreadable_file_is_reported_not_fatal():
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        incoming = pathlib.Path(td) / "in"; incoming.mkdir()
+        _img(incoming / "ok.png")
+        bad = incoming / "bad.png"
+        bad.write_bytes(b"not a real png")
+        result = tr_intake.add_batch([incoming], pathlib.Path(td) / "set", "b1")
+        # A corrupt file still hashes fine; it is the curation stage that
+        # rejects it. Intake only fails on genuinely unreadable paths.
+        assert result["added"] == 2
+        assert result["failed"] == 0
+
+
+def test_ingest_picks_up_newly_added_batches():
+    """Intake and curation have to compose: adding a batch then re-ingesting
+    must see the new images."""
+    from training import intake as tr_intake
+    with tempfile.TemporaryDirectory() as td:
+        incoming = pathlib.Path(td) / "in"; incoming.mkdir()
+        dest = pathlib.Path(td) / "set"
+        for i in range(3):
+            _img(incoming / f"p{i}.png", seed=i)
+        tr_intake.add_batch([incoming], dest, "b1")
+        assert len(tr_ingest.scan(dest, TCFG)) == 3
+
+        more = pathlib.Path(td) / "in2"; more.mkdir()
+        for i in range(3, 7):
+            _img(more / f"q{i}.png", seed=i)
+        tr_intake.add_batch([more], dest, "b2")
+        assert len(tr_ingest.scan(dest, TCFG)) == 7

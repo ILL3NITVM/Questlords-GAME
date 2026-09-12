@@ -309,6 +309,8 @@ is the reliable way to hold her identity. Prompt text alone will not keep a face
 consistent across 64 images.
 
 ```bash
+python studio.py dataset add <paths> # bring a batch into the set (idempotent)
+python studio.py dataset status      # batches received, unique images, curation state
 python studio.py dataset ingest      # scan + fingerprint (read-only)
 python studio.py dataset analyze     # bias report — read this before training
 python studio.py dataset curate      # quality gate + duplicate capping
@@ -318,6 +320,24 @@ python studio.py dataset export      # kohya/sd-scripts layout + dataset.toml
 
 Source files are never moved, modified or deleted. Curation decisions are
 metadata; only `export` materialises anything, and it copies.
+
+### Batches arriving over time
+
+`dataset add` is idempotent by content hash, so re-sending a batch, or sending
+one that overlaps an earlier one, adds nothing. That matters more than disk:
+a duplicate image silently doubles its own weight during training, which is
+precisely the over-representation the curation stage exists to prevent.
+
+```bash
+python studio.py dataset add ~/shoots/monday --batch monday-shoot
+python studio.py dataset add ~/shoots/tuesday ~/extra/one-off.jpg
+python studio.py dataset add ~/shoots/monday          # adds 0, skips all
+python studio.py dataset status
+```
+
+Each batch is recorded in `intake_ledger.json` with its date and file list, so
+provenance survives. Stored filenames carry the batch name and a content hash.
+Re-run `dataset ingest` after adding to bring new images into curation.
 
 ### Why `analyze` runs before training
 
@@ -522,7 +542,7 @@ decision.
 python -m pytest tests/ -q
 ```
 
-168 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
+179 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
 caps, scene/pose furniture coherence, focal/shot agreement, outfit colour
 harmony, identity and policy terms reaching every prompt, identity-mode
 switching, QC floors and defect routing, review feedback targeting, a full
