@@ -1,0 +1,30 @@
+{
+  "asset_id": "d-2323a63ae05e5097",
+  "created": "2026-09-10T01:03:44+00:00",
+  "crop": {
+    "crop_box": null,
+    "fit": "contain",
+    "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+    "placement": [
+      515,
+      22,
+      1085,
+      877
+    ],
+    "preset": "x",
+    "requested_fit": "contain",
+    "safe_padding": 0.025,
+    "size": [
+      1600,
+      900
+    ],
+    "subject_basis": "manual subject ROI",
+    "upscaled": false
+  },
+  "kind": "export",
+  "parent_asset_id": "d-49efd8bee9673678",
+  "path": "/home/ubuntu/octavia_studio/data/derivatives/export/2323a63ae05e5097facc36c06aca39727085a2bde341b0c59301bd0f0340f39e.jpg",
+  "report_id": "r-fdc0f92f94334bcf",
+  "shoot_id": "legacy-v37",
+  "uploaded": false
+}

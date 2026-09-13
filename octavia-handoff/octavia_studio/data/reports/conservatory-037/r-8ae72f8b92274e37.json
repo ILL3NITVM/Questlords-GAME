@@ -1,0 +1,235 @@
+{
+  "continuity": {
+    "assets": [
+      {
+        "acknowledged": [],
+        "asset_id": "a-0bbb9228c53a7cd8",
+        "evidence": {
+          "hair": {
+            "basis": "color evidence inside manually annotated hair ROI; not hair detection",
+            "green_fraction": 0.06626825310978908,
+            "median_green_hue": 52.235294342041016
+          },
+          "pixels": {
+            "center_hash": "e1d68928e5e44add",
+            "composition_grid": [
+              0.38345870316005437,
+              0.36143913207373546,
+              0.31448300105124033,
+              0.327471400159212,
+              0.32512198715440305,
+              0.19366988414325104,
+              0.197024730820838,
+              0.2190136466441933,
+              0.23051147893858093,
+              0.1599224982682841,
+              0.10784207475549006,
+              0.2618307049683006,
+              0.18768038540162268,
+              0.17945024088627748,
+              0.155165184647117,
+              0.18917589514961944
+            ],
+            "dhash": "c3d2990e97978b99",
+            "height": 1536,
+            "highlight_clip": 0.0014089992668621701,
+            "mean_luminance": 0.4605572521686554,
+            "mean_rgb": [
+              0.5004903674125671,
+              0.45292505621910095,
+              0.4182790219783783
+            ],
+            "metrics_basis": "512px thumbnail; texture/exposure evidence, not beauty or identity",
+            "mode": "RGB",
+            "phash": "e1c58b2567c7087b",
+            "shadow_clip": 7.445931085043988e-05,
+            "sharpness": 1430.9386615175754,
+            "width": 1024
+          }
+        },
+        "reasons": [
+          "composition-repetition candidate with a-3b066d7c8f6cdcf4; visual check required"
+        ],
+        "status": "REVIEW",
+        "unknown": []
+      },
+      {
+        "acknowledged": [
+          {
+            "issue": "composition-repetition candidate with a-0bbb9228c53a7cd8; visual check required",
+            "review_reason": "assistant review: Visual comparison of the supplied v37 and v37b renders: same setting and clothes intentionally preserved during the pose correction; upright head and uncrossed seated legs make v37b the selected take. Original retained.",
+            "reviewed": "2026-09-10T00:56:04+00:00"
+          }
+        ],
+        "asset_id": "a-3b066d7c8f6cdcf4",
+        "evidence": {
+          "hair": {
+            "basis": "color evidence inside manually annotated hair ROI; not hair detection",
+            "green_fraction": 0.07836127636560303,
+            "median_green_hue": 52.235294342041016
+          },
+          "pixels": {
+            "center_hash": "e0d38839e5b6427d",
+            "composition_grid": [
+              0.3828849938910403,
+              0.34767066143357517,
+              0.30893864735415,
+              0.32746568899820294,
+              0.32666004484290107,
+              0.19524298278963598,
+              0.2199827134240282,
+              0.21396056144781223,
+              0.23043471455592704,
+              0.1829131234242716,
+              0.11057964542739816,
+              0.2625000249555126,
+              0.1856999091527353,
+              0.1682320645891627,
+              0.18872500257153624,
+              0.15733437055143515
+            ],
+            "dhash": "c3d2990c928fa7a7",
+            "height": 1536,
+            "highlight_clip": 0.0008133247800586511,
+            "mean_luminance": 0.4694199562072754,
+            "mean_rgb": [
+              0.5118820071220398,
+              0.4610934853553772,
+              0.4265936017036438
+            ],
+            "metrics_basis": "512px thumbnail; texture/exposure evidence, not beauty or identity",
+            "mode": "RGB",
+            "phash": "e1d38729e7c61269",
+            "shadow_clip": 9.164222873900293e-05,
+            "sharpness": 1378.6579817533493,
+            "width": 1024
+          }
+        },
+        "reasons": [],
+        "status": "PASS",
+        "unknown": []
+      }
+    ],
+    "diversity": {
+      "expression": {
+        "annotated": 2,
+        "counts": {
+          "soft-smile": 2
+        },
+        "total": 2
+      },
+      "framing": {
+        "annotated": 2,
+        "counts": {
+          "full-body": 2
+        },
+        "total": 2
+      },
+      "hair_state": {
+        "annotated": 2,
+        "counts": {
+          "loose-ponytail": 2
+        },
+        "total": 2
+      },
+      "outfit_id": {
+        "annotated": 2,
+        "counts": {
+          "cyan-lilac-pleats": 2
+        },
+        "total": 2
+      },
+      "pose": {
+        "annotated": 2,
+        "counts": {
+          "crossed-legs": 1,
+          "head-tilt": 1,
+          "relaxed": 2,
+          "seated": 2,
+          "uncrossed-legs": 1,
+          "upright-head": 1
+        },
+        "total": 2
+      },
+      "room_id": {
+        "annotated": 2,
+        "counts": {
+          "conservatory": 2
+        },
+        "total": 2
+      }
+    },
+    "expected_vocab": {
+      "expression": [
+        "soft-smile",
+        "neutral",
+        "thoughtful",
+        "playful",
+        "confident",
+        "serious-editorial",
+        "laughing",
+        "looking-away"
+      ],
+      "framing": [
+        "close-portrait",
+        "half-body",
+        "3/4",
+        "full-body"
+      ],
+      "pose": [
+        "standing",
+        "seated",
+        "walking",
+        "leaning",
+        "over-shoulder",
+        "profile",
+        "looking-away",
+        "mirror-selfie",
+        "candid",
+        "relaxed",
+        "editorial"
+      ]
+    },
+    "limitations": [
+      "No biometric verification or inferred body measurements.",
+      "Pose, room, wardrobe and pendant presence depend on explicit annotations.",
+      "Hair color uses a manually reviewed ROI; plants and lighting can confound color.",
+      "PASS means no flagged evidence in available checks, not verified identity.",
+      "Unknown fields are REVIEW, not silently treated as passing."
+    ],
+    "pairs": [
+      {
+        "a": "a-0bbb9228c53a7cd8",
+        "b": "a-3b066d7c8f6cdcf4",
+        "center_distance": 12,
+        "edge_similarity": 0.9982077432168149,
+        "phash_distance": 14,
+        "type": "composition-repetition"
+      }
+    ],
+    "repetition": []
+  },
+  "created": "2026-09-10T00:56:09+00:00",
+  "deleted": [],
+  "kind": "curation",
+  "ranking": [
+    {
+      "asset_id": "a-3b066d7c8f6cdcf4",
+      "diversity_adjusted_score": 99.98,
+      "label": "HERO",
+      "reasons": [],
+      "technical_score": 99.98
+    },
+    {
+      "asset_id": "a-0bbb9228c53a7cd8",
+      "diversity_adjusted_score": 78.97,
+      "label": "REVIEW",
+      "reasons": [
+        "composition-repetition candidate with a-3b066d7c8f6cdcf4; visual check required"
+      ],
+      "technical_score": 87.97
+    }
+  ],
+  "report_id": "r-8ae72f8b92274e37",
+  "shoot_id": "conservatory-037"
+}

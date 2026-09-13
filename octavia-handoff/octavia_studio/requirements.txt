@@ -1,0 +1,6 @@
+# Isolated from the machine's older system Pillow. Python 3.8-compatible pins.
+Pillow==10.4.0
+numpy==1.24.4
+ImageHash==4.3.2
+scipy==1.10.1
+pytest==8.3.5

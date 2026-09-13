@@ -1,0 +1,99 @@
+{
+  "continuity": {
+    "assets": 2,
+    "counts": {
+      "REVIEW": 2
+    },
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-e2f2d78d26f24db8.json",
+    "report_id": "r-e2f2d78d26f24db8",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-e2f2d78d26f24db8.md"
+  },
+  "created": "2026-09-10T00:51:33+00:00",
+  "curation": {
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-b0a1a3e34e96485c.json",
+    "ranking": [
+      {
+        "asset_id": "a-3b066d7c8f6cdcf4",
+        "diversity_adjusted_score": 87.98,
+        "label": "REVIEW",
+        "reasons": [
+          "composition-repetition candidate with a-0bbb9228c53a7cd8; visual check required"
+        ],
+        "technical_score": 87.98
+      },
+      {
+        "asset_id": "a-0bbb9228c53a7cd8",
+        "diversity_adjusted_score": 87.97,
+        "label": "REVIEW",
+        "reasons": [
+          "composition-repetition candidate with a-3b066d7c8f6cdcf4; visual check required"
+        ],
+        "technical_score": 87.97
+      }
+    ],
+    "report_id": "r-b0a1a3e34e96485c",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-b0a1a3e34e96485c.md"
+  },
+  "export_note": "Only HERO/STRONG candidates exported; review unknown/outlier assets first.",
+  "exports": [],
+  "job_id": "j-c05726f6a405",
+  "kind": "shoot-processing",
+  "polished": [
+    {
+      "asset_id": "d-2822849a409359d2",
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-ed6e8cbc550b4ec6.json",
+      "output": "/home/ubuntu/octavia_studio/data/derivatives/polished/2822849a409359d2b80a1385e3fe2ddf2f4e043b5f7c134250f0e2949713eddc.png",
+      "preview": "d-088c57668b384998",
+      "report_id": "r-ed6e8cbc550b4ec6",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-ed6e8cbc550b4ec6.md"
+    },
+    {
+      "asset_id": "d-49efd8bee9673678",
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-a1f278daabd04547.json",
+      "output": "/home/ubuntu/octavia_studio/data/derivatives/polished/49efd8bee967367825096fb6c65b9eccfeb8045580c73e3467717c45b2889b66.png",
+      "preview": "d-a2d73500f09e61f2",
+      "report_id": "r-a1f278daabd04547",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-a1f278daabd04547.md"
+    }
+  ],
+  "preserved": "All original bytes and lineage; no canon promotion",
+  "report_id": "r-5dfee6dd7db449b2",
+  "sheets": {
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-86af63fc1eac44a2.json",
+    "pages": [
+      {
+        "asset_id": "d-f0aaf023593e2283",
+        "members": [
+          {
+            "asset_id": "a-0bbb9228c53a7cd8",
+            "bounds": [
+              8,
+              8,
+              328,
+              448
+            ],
+            "column": 0,
+            "position": 0,
+            "row": 0
+          },
+          {
+            "asset_id": "a-3b066d7c8f6cdcf4",
+            "bounds": [
+              336,
+              8,
+              656,
+              448
+            ],
+            "column": 1,
+            "position": 1,
+            "row": 0
+          }
+        ],
+        "path": "/home/ubuntu/octavia_studio/data/derivatives/sheet/f0aaf023593e2283d4faae536f471b8f77d3eb0c8706168e49c33d0ea2b03597.png"
+      }
+    ],
+    "report_id": "r-86af63fc1eac44a2",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-86af63fc1eac44a2.md"
+  },
+  "shoot_id": "conservatory-037"
+}

@@ -1,0 +1,516 @@
+{
+  "continuity": {
+    "assets": 2,
+    "counts": {
+      "PASS": 1,
+      "REVIEW": 1
+    },
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-eca7b86fa7c34208.json",
+    "report_id": "r-eca7b86fa7c34208",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-eca7b86fa7c34208.md"
+  },
+  "continuity_details": {
+    "assets": [
+      {
+        "acknowledged": [],
+        "asset_id": "a-0bbb9228c53a7cd8",
+        "evidence": {
+          "hair": {
+            "basis": "color evidence inside manually annotated hair ROI; not hair detection",
+            "green_fraction": 0.06699468672110938,
+            "median_green_hue": 52.235294342041016
+          },
+          "pixels": {
+            "center_hash": "e1d68928e5e44add",
+            "composition_grid": [
+              0.38345870316005437,
+              0.36143913207373546,
+              0.31448300105124033,
+              0.327471400159212,
+              0.32512198715440305,
+              0.19366988414325104,
+              0.197024730820838,
+              0.2190136466441933,
+              0.23051147893858093,
+              0.1599224982682841,
+              0.10784207475549006,
+              0.2618307049683006,
+              0.18768038540162268,
+              0.17945024088627748,
+              0.155165184647117,
+              0.18917589514961944
+            ],
+            "dhash": "c3d2990e97978b99",
+            "height": 1536,
+            "highlight_clip": 0.0014089992668621701,
+            "mean_luminance": 0.4605572521686554,
+            "mean_rgb": [
+              0.5004903674125671,
+              0.45292505621910095,
+              0.4182790219783783
+            ],
+            "metrics_basis": "512px thumbnail; texture/exposure evidence, not beauty or identity",
+            "mode": "RGB",
+            "phash": "e1c58b2567c7087b",
+            "shadow_clip": 7.445931085043988e-05,
+            "sharpness": 1430.9386615175754,
+            "width": 1024
+          }
+        },
+        "reasons": [
+          "composition-repetition candidate with a-3b066d7c8f6cdcf4; visual check required"
+        ],
+        "status": "REVIEW",
+        "unknown": []
+      },
+      {
+        "acknowledged": [
+          {
+            "issue": "composition-repetition candidate with a-0bbb9228c53a7cd8; visual check required",
+            "review_reason": "assistant review: Visual comparison of the supplied v37 and v37b renders: same setting and clothes intentionally preserved during the pose correction; upright head and uncrossed seated legs make v37b the selected take. Original retained.",
+            "reviewed": "2026-09-10T00:56:04+00:00"
+          }
+        ],
+        "asset_id": "a-3b066d7c8f6cdcf4",
+        "evidence": {
+          "hair": {
+            "basis": "color evidence inside manually annotated hair ROI; not hair detection",
+            "green_fraction": 0.0788970774274471,
+            "median_green_hue": 52.235294342041016
+          },
+          "pixels": {
+            "center_hash": "e0d38839e5b6427d",
+            "composition_grid": [
+              0.3828849938910403,
+              0.34767066143357517,
+              0.30893864735415,
+              0.32746568899820294,
+              0.32666004484290107,
+              0.19524298278963598,
+              0.2199827134240282,
+              0.21396056144781223,
+              0.23043471455592704,
+              0.1829131234242716,
+              0.11057964542739816,
+              0.2625000249555126,
+              0.1856999091527353,
+              0.1682320645891627,
+              0.18872500257153624,
+              0.15733437055143515
+            ],
+            "dhash": "c3d2990c928fa7a7",
+            "height": 1536,
+            "highlight_clip": 0.0008133247800586511,
+            "mean_luminance": 0.4694199562072754,
+            "mean_rgb": [
+              0.5118820071220398,
+              0.4610934853553772,
+              0.4265936017036438
+            ],
+            "metrics_basis": "512px thumbnail; texture/exposure evidence, not beauty or identity",
+            "mode": "RGB",
+            "phash": "e1d38729e7c61269",
+            "shadow_clip": 9.164222873900293e-05,
+            "sharpness": 1378.6579817533493,
+            "width": 1024
+          }
+        },
+        "reasons": [],
+        "status": "PASS",
+        "unknown": []
+      }
+    ],
+    "created": "2026-09-10T01:07:11+00:00",
+    "diversity": {
+      "expression": {
+        "annotated": 2,
+        "counts": {
+          "soft-smile": 2
+        },
+        "total": 2
+      },
+      "framing": {
+        "annotated": 2,
+        "counts": {
+          "full-body": 2
+        },
+        "total": 2
+      },
+      "hair_state": {
+        "annotated": 2,
+        "counts": {
+          "loose-ponytail": 2
+        },
+        "total": 2
+      },
+      "outfit_id": {
+        "annotated": 2,
+        "counts": {
+          "cyan-lilac-pleats": 2
+        },
+        "total": 2
+      },
+      "pose": {
+        "annotated": 2,
+        "counts": {
+          "crossed-legs": 1,
+          "head-tilt": 1,
+          "relaxed": 2,
+          "seated": 2,
+          "uncrossed-legs": 1,
+          "upright-head": 1
+        },
+        "total": 2
+      },
+      "room_id": {
+        "annotated": 2,
+        "counts": {
+          "conservatory": 2
+        },
+        "total": 2
+      }
+    },
+    "expected_vocab": {
+      "expression": [
+        "soft-smile",
+        "neutral",
+        "thoughtful",
+        "playful",
+        "confident",
+        "serious-editorial",
+        "laughing",
+        "looking-away"
+      ],
+      "framing": [
+        "close-portrait",
+        "half-body",
+        "3/4",
+        "full-body"
+      ],
+      "pose": [
+        "standing",
+        "seated",
+        "walking",
+        "leaning",
+        "over-shoulder",
+        "profile",
+        "looking-away",
+        "mirror-selfie",
+        "candid",
+        "relaxed",
+        "editorial"
+      ]
+    },
+    "kind": "continuity",
+    "limitations": [
+      "No biometric verification or inferred body measurements.",
+      "Pose, room, wardrobe and pendant presence depend on explicit annotations.",
+      "Hair color uses a manually reviewed ROI; plants and lighting can confound color.",
+      "PASS means no flagged evidence in available checks, not verified identity.",
+      "Unknown fields are REVIEW, not silently treated as passing."
+    ],
+    "pairs": [
+      {
+        "a": "a-0bbb9228c53a7cd8",
+        "b": "a-3b066d7c8f6cdcf4",
+        "center_distance": 12,
+        "edge_similarity": 0.9982077432168149,
+        "phash_distance": 14,
+        "type": "composition-repetition"
+      }
+    ],
+    "repetition": [],
+    "report_id": "r-eca7b86fa7c34208",
+    "shoot_id": "conservatory-037"
+  },
+  "created": "2026-09-10T01:07:24+00:00",
+  "curation": {
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-04e12ff0da1d4469.json",
+    "ranking": [
+      {
+        "asset_id": "a-3b066d7c8f6cdcf4",
+        "diversity_adjusted_score": 99.98,
+        "label": "HERO",
+        "reasons": [],
+        "technical_score": 99.98
+      },
+      {
+        "asset_id": "a-0bbb9228c53a7cd8",
+        "diversity_adjusted_score": 78.97,
+        "label": "REVIEW",
+        "reasons": [
+          "composition-repetition candidate with a-3b066d7c8f6cdcf4; visual check required"
+        ],
+        "technical_score": 87.97
+      }
+    ],
+    "report_id": "r-04e12ff0da1d4469",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-04e12ff0da1d4469.md"
+  },
+  "export_note": "Only HERO/STRONG individual images exported socially. Reference sheets retain review candidates for comparison; nothing is published.",
+  "exports": [
+    {
+      "asset_id": "d-2323a63ae05e5097",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          515,
+          22,
+          1085,
+          877
+        ],
+        "preset": "x",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          1600,
+          900
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-1722724feac94f14.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/2323a63ae05e5097facc36c06aca39727085a2bde341b0c59301bd0f0340f39e.jpg",
+      "report_id": "r-1722724feac94f14",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-1722724feac94f14.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-63fe0c0c17701397",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          198,
+          27,
+          882,
+          1053
+        ],
+        "preset": "instagram-square",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          1080,
+          1080
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-78b0668e9dd04cbb.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/63fe0c0c177013975a0b5249a7f67cbec075d9c6f555a0db923dd5f79b2a95ce.jpg",
+      "report_id": "r-78b0668e9dd04cbb",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-78b0668e9dd04cbb.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-9d1f446c38a593f6",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          112,
+          34,
+          967,
+          1316
+        ],
+        "preset": "instagram-portrait",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          1080,
+          1350
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-aa6e29f5373a40a0.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/9d1f446c38a593f6a518aff0c0ab7a4ca7f3c5f77dfd82c2c4e57f89929e5821.jpg",
+      "report_id": "r-aa6e29f5373a40a0",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-aa6e29f5373a40a0.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-bf04aa4228bc54de",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          27,
+          190,
+          1053,
+          1729
+        ],
+        "preset": "story",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          1080,
+          1920
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": true
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-d4c08e414722409c.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/bf04aa4228bc54deb3d58ecf71686410fa3d62eb367b0db44d2a30daca80c897.jpg",
+      "report_id": "r-d4c08e414722409c",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-d4c08e414722409c.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-65a0d5697a7fa187",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          106,
+          60,
+          293,
+          340
+        ],
+        "preset": "profile",
+        "requested_fit": "contain",
+        "safe_padding": 0.15,
+        "size": [
+          400,
+          400
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-4a131eb25de44c6d.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/65a0d5697a7fa187d6712f2098f27b501b178c9bf054f27c28269861f9db25da.jpg",
+      "report_id": "r-4a131eb25de44c6d",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-4a131eb25de44c6d.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-1b38f31acd118e0a",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          623,
+          60,
+          876,
+          440
+        ],
+        "preset": "banner",
+        "requested_fit": "contain",
+        "safe_padding": 0.12,
+        "size": [
+          1500,
+          500
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-fb6a6f17108447ad.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/1b38f31acd118e0a56c56b91745959ebaa268392095754b2c68c098e565095f1.jpg",
+      "report_id": "r-fb6a6f17108447ad",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-fb6a6f17108447ad.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-b48fbab872e1de8e",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          51,
+          357,
+          1997,
+          1690
+        ],
+        "preset": "reference-sheet",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          2048,
+          2048
+        ],
+        "subject_basis": "entire image protected",
+        "upscaled": true
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-340d6926f9da4695.json",
+      "parent_asset_id": "d-f0aaf023593e2283",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/b48fbab872e1de8e11b798df3593ef6cb8dbd45989e061725bfbe8d64a717228.jpg",
+      "report_id": "r-340d6926f9da4695",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-340d6926f9da4695.md",
+      "uploaded": false
+    }
+  ],
+  "job_id": "j-efd1361db508",
+  "kind": "shoot-processing",
+  "polished": [
+    {
+      "asset_id": "d-2822849a409359d2",
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-d490f7d993624061.json",
+      "output": "/home/ubuntu/octavia_studio/data/derivatives/polished/2822849a409359d2b80a1385e3fe2ddf2f4e043b5f7c134250f0e2949713eddc.png",
+      "preview": "d-088c57668b384998",
+      "report_id": "r-d490f7d993624061",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-d490f7d993624061.md"
+    },
+    {
+      "asset_id": "d-49efd8bee9673678",
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-fad80a77249d4a84.json",
+      "output": "/home/ubuntu/octavia_studio/data/derivatives/polished/49efd8bee967367825096fb6c65b9eccfeb8045580c73e3467717c45b2889b66.png",
+      "preview": "d-a2d73500f09e61f2",
+      "report_id": "r-fad80a77249d4a84",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-fad80a77249d4a84.md"
+    }
+  ],
+  "preserved": "All original bytes and lineage; no canon promotion",
+  "report_id": "r-b00c4194b68c45bc",
+  "sheets": {
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-35a32511cef04a57.json",
+    "pages": [
+      {
+        "asset_id": "d-f0aaf023593e2283",
+        "members": [
+          {
+            "asset_id": "a-0bbb9228c53a7cd8",
+            "bounds": [
+              8,
+              8,
+              328,
+              448
+            ],
+            "column": 0,
+            "position": 0,
+            "row": 0
+          },
+          {
+            "asset_id": "a-3b066d7c8f6cdcf4",
+            "bounds": [
+              336,
+              8,
+              656,
+              448
+            ],
+            "column": 1,
+            "position": 1,
+            "row": 0
+          }
+        ],
+        "path": "/home/ubuntu/octavia_studio/data/derivatives/sheet/f0aaf023593e2283d4faae536f471b8f77d3eb0c8706168e49c33d0ea2b03597.png"
+      }
+    ],
+    "report_id": "r-35a32511cef04a57",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-35a32511cef04a57.md"
+  },
+  "shoot_id": "conservatory-037"
+}

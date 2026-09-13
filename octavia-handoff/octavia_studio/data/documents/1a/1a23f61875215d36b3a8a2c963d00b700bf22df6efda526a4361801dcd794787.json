@@ -1,0 +1,6945 @@
+{
+  "schema_version": 1,
+  "reviewer": "assistant visual audit, 2026-09-11",
+  "scope": "All 89 original assets at audit start; previews and contact-sheet duplicates are explicitly marked.",
+  "items": [
+    {
+      "id": "lilac-racer-crop",
+      "name": "Lilac racer-neck ribbed crop",
+      "category": "top",
+      "color": "lilac"
+    },
+    {
+      "id": "lilac-mock-crop",
+      "name": "Lilac sleeveless mock-neck crop",
+      "category": "top",
+      "color": "lilac"
+    },
+    {
+      "id": "lilac-ruched-mock",
+      "name": "Lilac long-sleeve ruched mock-neck crop",
+      "category": "top",
+      "color": "lilac"
+    },
+    {
+      "id": "lilac-button-shirt",
+      "name": "Lilac collared button shirt",
+      "category": "top",
+      "color": "lilac"
+    },
+    {
+      "id": "lilac-henley",
+      "name": "Lilac fitted button-front knit",
+      "category": "top",
+      "color": "lilac"
+    },
+    {
+      "id": "mauve-henley",
+      "name": "Mauve scoop-neck henley",
+      "category": "top",
+      "color": "mauve"
+    },
+    {
+      "id": "plum-scoop-long",
+      "name": "Plum scoop-neck long-sleeve knit",
+      "category": "top",
+      "color": "plum"
+    },
+    {
+      "id": "plum-sport-top",
+      "name": "Plum scoop-neck athletic crop",
+      "category": "top",
+      "color": "plum"
+    },
+    {
+      "id": "lilac-sport-top",
+      "name": "Lilac scoop-neck athletic crop",
+      "category": "top",
+      "color": "lilac"
+    },
+    {
+      "id": "cyan-sport-top",
+      "name": "Cyan scoop-neck athletic crop",
+      "category": "top",
+      "color": "cyan"
+    },
+    {
+      "id": "stone-sport-top",
+      "name": "Stone scoop-neck athletic crop",
+      "category": "top",
+      "color": "stone"
+    },
+    {
+      "id": "black-crop-tank",
+      "name": "Black fitted crop tank",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "black-button-crop",
+      "name": "Black button-front crop tank",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "black-scoop-long",
+      "name": "Black scoop-neck long-sleeve fitted top",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "black-square-long",
+      "name": "Black square-neck long-sleeve fitted top",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "black-open-back",
+      "name": "Black scoop-neck open-back long-sleeve top",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "black-one-shoulder-top",
+      "name": "Black one-shoulder fitted top",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "plum-one-shoulder-top",
+      "name": "Plum one-shoulder ribbed top",
+      "category": "top",
+      "color": "plum"
+    },
+    {
+      "id": "black-halter-knit",
+      "name": "Black ribbed halter top",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "black-mock-long",
+      "name": "Black long-sleeve ribbed mock-neck top",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "black-tee",
+      "name": "Black fitted short-sleeve tee",
+      "category": "top",
+      "color": "black"
+    },
+    {
+      "id": "white-tee-crop",
+      "name": "White fitted cropped tee",
+      "category": "top",
+      "color": "white"
+    },
+    {
+      "id": "white-tank",
+      "name": "White scoop-neck tank",
+      "category": "top",
+      "color": "white"
+    },
+    {
+      "id": "cream-square-long",
+      "name": "Cream square-neck long-sleeve crop",
+      "category": "top",
+      "color": "cream"
+    },
+    {
+      "id": "cream-rib-crop",
+      "name": "Cream ribbed crop tank",
+      "category": "top",
+      "color": "cream"
+    },
+    {
+      "id": "lilac-rib-tank",
+      "name": "Lilac ribbed longline tank",
+      "category": "top",
+      "color": "lilac"
+    },
+    {
+      "id": "sky-rib-tank",
+      "name": "Sky-blue ribbed longline tank",
+      "category": "top",
+      "color": "sky blue"
+    },
+    {
+      "id": "yellow-rib-tank",
+      "name": "Lemon-yellow ribbed tank",
+      "category": "top",
+      "color": "lemon"
+    },
+    {
+      "id": "mauve-crop-tank",
+      "name": "Mauve fitted crop tank",
+      "category": "top",
+      "color": "mauve"
+    },
+    {
+      "id": "chocolate-tank",
+      "name": "Chocolate scoop-neck tank",
+      "category": "top",
+      "color": "chocolate"
+    },
+    {
+      "id": "forest-contrast-top",
+      "name": "Forest-green long-sleeve top with pale ribbed waistband",
+      "category": "top",
+      "color": "forest green"
+    },
+    {
+      "id": "cyan-knot-wrap",
+      "name": "Cyan front-knot wrap-strap crop top",
+      "category": "top",
+      "color": "cyan"
+    },
+    {
+      "id": "cyan-wrap-blouse",
+      "name": "Cyan sleeveless collared wrap blouse",
+      "category": "top",
+      "color": "cyan"
+    },
+    {
+      "id": "cyan-drape-blouse",
+      "name": "Muted cyan draped-neck blouse",
+      "category": "top",
+      "color": "cyan"
+    },
+    {
+      "id": "plum-satin-cami",
+      "name": "Plum satin-look camisole",
+      "category": "top",
+      "color": "plum"
+    },
+    {
+      "id": "cream-v-sweater",
+      "name": "Cream V-neck knit sweater",
+      "category": "top",
+      "color": "cream"
+    },
+    {
+      "id": "plum-wide-sweater",
+      "name": "Plum wide-neck relaxed sweater",
+      "category": "top",
+      "color": "plum"
+    },
+    {
+      "id": "black-a-line-skirt",
+      "name": "Black tailored A-line skirt",
+      "category": "bottom",
+      "color": "black"
+    },
+    {
+      "id": "black-cyan-pleats",
+      "name": "Black skirt with cyan inset pleats",
+      "category": "bottom",
+      "color": "black/cyan"
+    },
+    {
+      "id": "cyan-long-pleats",
+      "name": "Cyan knee-length pleated skirt",
+      "category": "bottom",
+      "color": "cyan"
+    },
+    {
+      "id": "plum-wrap-mini",
+      "name": "Plum tailored wrap-front skirt",
+      "category": "bottom",
+      "color": "plum"
+    },
+    {
+      "id": "charcoal-slit-mini",
+      "name": "Charcoal tailored side-slit skirt",
+      "category": "bottom",
+      "color": "charcoal"
+    },
+    {
+      "id": "mauve-knit-skirt",
+      "name": "Mauve knit midi skirt",
+      "category": "bottom",
+      "color": "mauve"
+    },
+    {
+      "id": "black-cargo-jeans",
+      "name": "Black fitted cargo-pocket jeans",
+      "category": "bottom",
+      "color": "black"
+    },
+    {
+      "id": "black-wide-jeans",
+      "name": "Washed black wide-leg jeans",
+      "category": "bottom",
+      "color": "washed black"
+    },
+    {
+      "id": "dark-skinny-jeans",
+      "name": "Dark indigo fitted jeans",
+      "category": "bottom",
+      "color": "dark indigo"
+    },
+    {
+      "id": "light-straight-jeans",
+      "name": "Light blue straight-leg jeans",
+      "category": "bottom",
+      "color": "light blue"
+    },
+    {
+      "id": "blue-straight-jeans",
+      "name": "Mid-blue straight-leg jeans",
+      "category": "bottom",
+      "color": "blue"
+    },
+    {
+      "id": "blue-ripped-jeans",
+      "name": "Light blue distressed jeans",
+      "category": "bottom",
+      "color": "light blue"
+    },
+    {
+      "id": "black-tailored-trousers",
+      "name": "Black pleated tailored trousers",
+      "category": "bottom",
+      "color": "black"
+    },
+    {
+      "id": "cream-tailored-trousers",
+      "name": "Cream pleated tailored trousers",
+      "category": "bottom",
+      "color": "cream"
+    },
+    {
+      "id": "white-loose-trousers",
+      "name": "White loose summer trousers",
+      "category": "bottom",
+      "color": "white"
+    },
+    {
+      "id": "plum-tailored-trousers",
+      "name": "Plum tailored wide-leg trousers",
+      "category": "bottom",
+      "color": "plum"
+    },
+    {
+      "id": "black-running-shorts",
+      "name": "Black drawstring running shorts",
+      "category": "bottom",
+      "color": "black"
+    },
+    {
+      "id": "black-piped-shorts",
+      "name": "Black athletic shorts with pale piping",
+      "category": "bottom",
+      "color": "black"
+    },
+    {
+      "id": "gray-piped-shorts",
+      "name": "Gray athletic shorts with white piping",
+      "category": "bottom",
+      "color": "gray"
+    },
+    {
+      "id": "gray-joggers",
+      "name": "Gray drawstring joggers",
+      "category": "bottom",
+      "color": "gray"
+    },
+    {
+      "id": "mauve-joggers",
+      "name": "Mauve drawstring lounge trousers",
+      "category": "bottom",
+      "color": "mauve"
+    },
+    {
+      "id": "plum-lounge-trousers",
+      "name": "Plum ribbed lounge trousers",
+      "category": "bottom",
+      "color": "plum"
+    },
+    {
+      "id": "lilac-knit-trousers",
+      "name": "Lilac ribbed lounge trousers",
+      "category": "bottom",
+      "color": "lilac"
+    },
+    {
+      "id": "black-knit-trousers",
+      "name": "Black ribbed lounge trousers",
+      "category": "bottom",
+      "color": "black"
+    },
+    {
+      "id": "black-leggings",
+      "name": "Black full-length leggings",
+      "category": "bottom",
+      "color": "black"
+    },
+    {
+      "id": "plum-leggings",
+      "name": "Plum full-length athletic leggings",
+      "category": "bottom",
+      "color": "plum"
+    },
+    {
+      "id": "cream-drawstring-shorts",
+      "name": "Cream drawstring summer shorts",
+      "category": "bottom",
+      "color": "cream"
+    },
+    {
+      "id": "cream-tailored-shorts",
+      "name": "Cream tailored shorts",
+      "category": "bottom",
+      "color": "cream"
+    },
+    {
+      "id": "dark-plaid-trousers",
+      "name": "Dark plaid lounge trousers",
+      "category": "bottom",
+      "color": "dark plaid"
+    },
+    {
+      "id": "black-halter-mini",
+      "name": "Black halter mini dress",
+      "category": "dress",
+      "color": "black"
+    },
+    {
+      "id": "black-square-mini",
+      "name": "Black square-neck long-sleeve mini dress",
+      "category": "dress",
+      "color": "black"
+    },
+    {
+      "id": "black-one-shoulder-mini",
+      "name": "Black asymmetric ruched mini dress",
+      "category": "dress",
+      "color": "black"
+    },
+    {
+      "id": "black-asym-midi",
+      "name": "Black one-shoulder draped midi dress",
+      "category": "dress",
+      "color": "black"
+    },
+    {
+      "id": "black-asym-long-midi",
+      "name": "Black asymmetric long-sleeve slit midi dress",
+      "category": "dress",
+      "color": "black"
+    },
+    {
+      "id": "black-velvet-halter",
+      "name": "Black velvet-look high-neck midi dress",
+      "category": "dress",
+      "color": "black"
+    },
+    {
+      "id": "plum-knit-mock-dress",
+      "name": "Plum ribbed mock-neck midi dress",
+      "category": "dress",
+      "color": "plum"
+    },
+    {
+      "id": "plum-v-knit-dress",
+      "name": "Plum V-neck ribbed midi dress",
+      "category": "dress",
+      "color": "plum"
+    },
+    {
+      "id": "mauve-wrap-knit-dress",
+      "name": "Mauve wrap-front knit midi dress",
+      "category": "dress",
+      "color": "mauve"
+    },
+    {
+      "id": "plum-velvet-slip",
+      "name": "Plum velvet-look draped midi dress",
+      "category": "dress",
+      "color": "plum"
+    },
+    {
+      "id": "plum-velvet-long",
+      "name": "Plum velvet-look long-sleeve midi dress",
+      "category": "dress",
+      "color": "plum"
+    },
+    {
+      "id": "plum-satin-high-dress",
+      "name": "Plum satin-look high-neck midi dress",
+      "category": "dress",
+      "color": "plum"
+    },
+    {
+      "id": "plum-satin-slip",
+      "name": "Plum satin-look slip dress",
+      "category": "dress",
+      "color": "plum"
+    },
+    {
+      "id": "cyan-daydress",
+      "name": "Cyan sleeveless flared day dress",
+      "category": "dress",
+      "color": "cyan"
+    },
+    {
+      "id": "cyan-tailored-midi",
+      "name": "Cyan square-neck tailored midi dress",
+      "category": "dress",
+      "color": "cyan"
+    },
+    {
+      "id": "lemon-midi",
+      "name": "Lemon square-neck slit midi dress",
+      "category": "dress",
+      "color": "lemon"
+    },
+    {
+      "id": "cream-button-mini",
+      "name": "Cream button-front summer mini dress",
+      "category": "dress",
+      "color": "cream"
+    },
+    {
+      "id": "blue-floral-midi",
+      "name": "Blue-and-white floral midi dress",
+      "category": "dress",
+      "color": "blue/white"
+    },
+    {
+      "id": "purple-chunky-cardigan",
+      "name": "Purple chunky open cardigan",
+      "category": "outerwear",
+      "color": "purple",
+      "inspiration": false
+    },
+    {
+      "id": "cream-button-cardigan",
+      "name": "Cream short button cardigan",
+      "category": "outerwear",
+      "color": "cream",
+      "inspiration": false
+    },
+    {
+      "id": "cream-chartreuse-cardigan",
+      "name": "Cream cardigan with chartreuse edging",
+      "category": "outerwear",
+      "color": "cream/chartreuse",
+      "inspiration": false
+    },
+    {
+      "id": "mauve-long-cardigan",
+      "name": "Mauve longline cardigan",
+      "category": "outerwear",
+      "color": "mauve",
+      "inspiration": false
+    },
+    {
+      "id": "black-cardigan",
+      "name": "Charcoal open knit cardigan",
+      "category": "outerwear",
+      "color": "charcoal",
+      "inspiration": false
+    },
+    {
+      "id": "plum-satin-robe",
+      "name": "Plum satin-look belted robe",
+      "category": "outerwear",
+      "color": "plum",
+      "inspiration": false
+    },
+    {
+      "id": "mauve-knit-robe",
+      "name": "Mauve belted knit robe",
+      "category": "outerwear",
+      "color": "mauve",
+      "inspiration": false
+    },
+    {
+      "id": "black-blazer",
+      "name": "Black tailored blazer",
+      "category": "outerwear",
+      "color": "black",
+      "inspiration": false
+    },
+    {
+      "id": "lilac-blazer",
+      "name": "Lilac tailored blazer",
+      "category": "outerwear",
+      "color": "lilac",
+      "inspiration": false
+    },
+    {
+      "id": "plum-blazer",
+      "name": "Plum tailored blazer",
+      "category": "outerwear",
+      "color": "plum",
+      "inspiration": false
+    },
+    {
+      "id": "olive-cropped-jacket",
+      "name": "Olive cropped collared jacket",
+      "category": "outerwear",
+      "color": "olive",
+      "inspiration": false
+    },
+    {
+      "id": "olive-overshirt",
+      "name": "Olive relaxed overshirt",
+      "category": "outerwear",
+      "color": "olive",
+      "inspiration": false
+    },
+    {
+      "id": "plum-leather-jacket",
+      "name": "Plum leather-look cropped jacket",
+      "category": "outerwear",
+      "color": "plum",
+      "inspiration": false
+    },
+    {
+      "id": "black-long-coat",
+      "name": "Black long tailored coat",
+      "category": "outerwear",
+      "color": "black",
+      "inspiration": false
+    },
+    {
+      "id": "plum-long-coat",
+      "name": "Plum satin-look long coat",
+      "category": "outerwear",
+      "color": "plum",
+      "inspiration": false
+    },
+    {
+      "id": "printed-short-robe",
+      "name": "Sage abstract-print short open layer",
+      "category": "outerwear",
+      "color": "sage/charcoal",
+      "inspiration": false
+    },
+    {
+      "id": "printed-long-robe",
+      "name": "Cream botanical-print long open layer",
+      "category": "outerwear",
+      "color": "cream/black",
+      "inspiration": false
+    },
+    {
+      "id": "gray-zip-hoodie",
+      "name": "Gray zip-front hoodie",
+      "category": "outerwear",
+      "color": "gray",
+      "inspiration": false
+    },
+    {
+      "id": "gray-sweatshirt",
+      "name": "Gray waist-tied sweatshirt",
+      "category": "outerwear",
+      "color": "gray",
+      "inspiration": false
+    },
+    {
+      "id": "mauve-sweatshirt",
+      "name": "Mauve waist-tied sweatshirt",
+      "category": "outerwear",
+      "color": "mauve",
+      "inspiration": false
+    },
+    {
+      "id": "blue-cardigan-inspiration",
+      "name": "Sky-blue open cardigan from donor sheet",
+      "category": "outerwear",
+      "color": "sky blue",
+      "inspiration": true
+    },
+    {
+      "id": "white-open-shirt-inspiration",
+      "name": "White open shirt from donor sheet",
+      "category": "outerwear",
+      "color": "white",
+      "inspiration": true
+    },
+    {
+      "id": "white-sneakers",
+      "name": "White low-top sneakers",
+      "category": "footwear",
+      "color": "white"
+    },
+    {
+      "id": "black-sneakers",
+      "name": "Black athletic sneakers with light sole",
+      "category": "footwear",
+      "color": "black"
+    },
+    {
+      "id": "black-lace-boots",
+      "name": "Black lace-up ankle boots",
+      "category": "footwear",
+      "color": "black"
+    },
+    {
+      "id": "black-knee-boots",
+      "name": "Black knee-high block-heel boots",
+      "category": "footwear",
+      "color": "black"
+    },
+    {
+      "id": "black-mary-janes",
+      "name": "Black platform Mary Jane shoes",
+      "category": "footwear",
+      "color": "black"
+    },
+    {
+      "id": "black-platform-pumps",
+      "name": "Black platform ankle-strap pumps",
+      "category": "footwear",
+      "color": "black"
+    },
+    {
+      "id": "black-strappy-heels",
+      "name": "Black ankle-strap sandals",
+      "category": "footwear",
+      "color": "black"
+    },
+    {
+      "id": "white-strappy-heels",
+      "name": "White ankle-strap sandals",
+      "category": "footwear",
+      "color": "white"
+    },
+    {
+      "id": "black-bit-loafers",
+      "name": "Black loafers with metal bit detail",
+      "category": "footwear",
+      "color": "black"
+    },
+    {
+      "id": "black-pointed-pumps",
+      "name": "Black pointed-toe pumps",
+      "category": "footwear",
+      "color": "black"
+    },
+    {
+      "id": "nude-strappy-heels",
+      "name": "Nude ankle-strap sandals",
+      "category": "footwear",
+      "color": "nude"
+    },
+    {
+      "id": "black-tights",
+      "name": "Black fine-gauge tights",
+      "category": "hosiery",
+      "color": "black"
+    },
+    {
+      "id": "cream-socks",
+      "name": "Cream ribbed ankle socks",
+      "category": "hosiery",
+      "color": "cream"
+    },
+    {
+      "id": "lilac-socks",
+      "name": "Lilac ribbed ankle socks",
+      "category": "hosiery",
+      "color": "lilac"
+    },
+    {
+      "id": "gray-knee-socks",
+      "name": "Gray knee-high ribbed socks",
+      "category": "hosiery",
+      "color": "gray"
+    },
+    {
+      "id": "black-belt",
+      "name": "Black rectangular-buckle belt",
+      "category": "accessory",
+      "color": "black"
+    },
+    {
+      "id": "brown-belt",
+      "name": "Brown buckle belt",
+      "category": "accessory",
+      "color": "brown"
+    },
+    {
+      "id": "red-shoulder-bag",
+      "name": "Red structured shoulder bag",
+      "category": "accessory",
+      "color": "red"
+    },
+    {
+      "id": "black-shoulder-bag",
+      "name": "Black small shoulder bag",
+      "category": "accessory",
+      "color": "black"
+    },
+    {
+      "id": "black-handbag",
+      "name": "Black structured top-handle bag",
+      "category": "accessory",
+      "color": "black"
+    },
+    {
+      "id": "black-tote",
+      "name": "Black roomy tote",
+      "category": "accessory",
+      "color": "black"
+    },
+    {
+      "id": "brown-tote",
+      "name": "Brown slouchy shoulder tote",
+      "category": "accessory",
+      "color": "brown"
+    },
+    {
+      "id": "stone-handbag",
+      "name": "Stone structured top-handle bag",
+      "category": "accessory",
+      "color": "stone"
+    },
+    {
+      "id": "cream-shoulder-bag",
+      "name": "Cream small shoulder bag",
+      "category": "accessory",
+      "color": "cream"
+    },
+    {
+      "id": "woven-bag",
+      "name": "Natural woven basket handbag",
+      "category": "accessory",
+      "color": "natural"
+    },
+    {
+      "id": "black-evening-clutch",
+      "name": "Black evening clutch",
+      "category": "accessory",
+      "color": "black"
+    },
+    {
+      "id": "black-sparkle-clutch",
+      "name": "Black embellished evening clutch",
+      "category": "accessory",
+      "color": "black/silver"
+    },
+    {
+      "id": "sunglasses",
+      "name": "Dark sunglasses",
+      "category": "accessory",
+      "color": "black"
+    },
+    {
+      "id": "black-halter-jumpsuit",
+      "name": "Black belted halter jumpsuit",
+      "category": "one-piece",
+      "color": "black"
+    },
+    {
+      "id": "plum-one-piece",
+      "name": "Plum square-neck one-piece swim garment",
+      "category": "one-piece",
+      "color": "plum"
+    },
+    {
+      "id": "cyan-tie-bottom-inspiration",
+      "name": "Cyan side-tie swim bottom, donor design",
+      "category": "bottom",
+      "color": "cyan",
+      "inspiration": true
+    },
+    {
+      "id": "cyan-wrap-swim-inspiration",
+      "name": "Cyan knot-front wrap-strap swim top, donor design",
+      "category": "top",
+      "color": "cyan",
+      "inspiration": true
+    },
+    {
+      "id": "plum-lace-bra",
+      "name": "Plum embroidered lace bra",
+      "category": "top",
+      "color": "plum",
+      "notes": "Underwear archive only; excluded from the four fashion shoots."
+    },
+    {
+      "id": "black-lace-bra",
+      "name": "Black embroidered lace bra",
+      "category": "top",
+      "color": "black",
+      "notes": "Underwear archive only; excluded from the four fashion shoots."
+    },
+    {
+      "id": "plum-lace-bottom",
+      "name": "Plum lace brief",
+      "category": "bottom",
+      "color": "plum",
+      "notes": "Underwear archive only; excluded from the four fashion shoots."
+    },
+    {
+      "id": "black-lace-bottom",
+      "name": "Black lace brief",
+      "category": "bottom",
+      "color": "black",
+      "notes": "Underwear archive only; excluded from the four fashion shoots."
+    },
+    {
+      "id": "plum-patterned-cami",
+      "name": "Plum floral-pattern camisole",
+      "category": "top",
+      "color": "plum",
+      "notes": "Partial neckline only; garment length and hidden design unknown."
+    }
+  ],
+  "sources": [
+    {
+      "asset": "octavia-clothing-sheet-01-polished-daywear.png",
+      "grid": [
+        4,
+        3
+      ],
+      "observations": [
+        {
+          "item": "black-one-shoulder-top",
+          "cell": 1
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-shoulder-bag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "black-halter-mini",
+          "cell": 2
+        },
+        {
+          "item": "black-sparkle-clutch",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "printed-short-robe",
+          "cell": 3
+        },
+        {
+          "item": "chocolate-tank",
+          "cell": 3
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 3
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 4
+        },
+        {
+          "item": "black-leggings",
+          "cell": 4
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "black-square-long",
+          "cell": 5
+        },
+        {
+          "item": "black-tailored-trousers",
+          "cell": 5
+        },
+        {
+          "item": "black-belt",
+          "cell": 5
+        },
+        {
+          "item": "black-tote",
+          "cell": 5
+        },
+        {
+          "item": "black-loafers",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 6
+        },
+        {
+          "item": "black-square-top",
+          "cell": 6
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "cream-button-cardigan",
+          "cell": 7
+        },
+        {
+          "item": "black-square-top",
+          "cell": 7
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 7
+        },
+        {
+          "item": "black-shoulder-bag",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "black-square-mini",
+          "cell": 8
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 8
+        },
+        {
+          "item": "black-evening-clutch",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "black-halter-knit",
+          "cell": 9
+        },
+        {
+          "item": "cream-tailored-trousers",
+          "cell": 9
+        },
+        {
+          "item": "black-belt",
+          "cell": 9
+        },
+        {
+          "item": "black-handbag",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 10
+        },
+        {
+          "item": "black-square-top",
+          "cell": 10
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 10
+        },
+        {
+          "item": "black-lace-boots",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "plum-one-shoulder-top",
+          "cell": 11
+        },
+        {
+          "item": "black-tailored-trousers",
+          "cell": 11
+        },
+        {
+          "item": "black-evening-clutch",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "black-blazer",
+          "cell": 12
+        },
+        {
+          "item": "black-square-top",
+          "cell": 12
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 12
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 12
+        },
+        {
+          "item": "sunglasses",
+          "cell": 12
+        },
+        {
+          "item": "black-handbag",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        }
+      ]
+    },
+    {
+      "asset": "octavia-clothing-sheet-02-resort-cafe.png",
+      "grid": [
+        4,
+        3
+      ],
+      "observations": [
+        {
+          "item": "lemon-midi",
+          "cell": 1
+        },
+        {
+          "item": "cream-shoulder-bag",
+          "cell": 1
+        },
+        {
+          "item": "white-strappy-heels",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "sky-rib-tank",
+          "cell": 2
+        },
+        {
+          "item": "white-loose-trousers",
+          "cell": 2
+        },
+        {
+          "item": "brown-belt",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "cream-button-mini",
+          "cell": 3
+        },
+        {
+          "item": "woven-bag",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "lilac-rib-tank",
+          "cell": 4
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 4
+        },
+        {
+          "item": "brown-belt",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "black-one-shoulder-mini",
+          "cell": 5
+        },
+        {
+          "item": "black-sparkle-clutch",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "white-tee-crop",
+          "cell": 6
+        },
+        {
+          "item": "cream-tailored-shorts",
+          "cell": 6
+        },
+        {
+          "item": "black-belt",
+          "cell": 6
+        },
+        {
+          "item": "woven-bag",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 7
+        },
+        {
+          "item": "cream-rib-crop",
+          "cell": 7
+        },
+        {
+          "item": "mauve-knit-skirt",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "cream-chartreuse-cardigan",
+          "cell": 8
+        },
+        {
+          "item": "white-tank",
+          "cell": 8
+        },
+        {
+          "item": "white-loose-trousers",
+          "cell": 8
+        },
+        {
+          "item": "brown-belt",
+          "cell": 8
+        },
+        {
+          "item": "cream-shoulder-bag",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "mauve-crop-tank",
+          "cell": 9
+        },
+        {
+          "item": "mauve-knit-skirt",
+          "cell": 9
+        },
+        {
+          "item": "white-strappy-heels",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "black-tee",
+          "cell": 10
+        },
+        {
+          "item": "cream-tailored-trousers",
+          "cell": 10
+        },
+        {
+          "item": "black-belt",
+          "cell": 10
+        },
+        {
+          "item": "black-shoulder-bag",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "blue-floral-midi",
+          "cell": 11
+        },
+        {
+          "item": "woven-bag",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "cream-chartreuse-cardigan",
+          "cell": 12
+        },
+        {
+          "item": "yellow-rib-tank",
+          "cell": 12
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 12
+        },
+        {
+          "item": "sunglasses",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        }
+      ]
+    },
+    {
+      "asset": "octavia-clothing-sheet-03-penthouse-evening.png",
+      "grid": [
+        4,
+        3
+      ],
+      "observations": [
+        {
+          "item": "black-asym-long-midi",
+          "cell": 1
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 1
+        },
+        {
+          "item": "black-evening-clutch",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "plum-v-knit-dress",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-square-top",
+          "cell": 3
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 4
+        },
+        {
+          "item": "black-square-top",
+          "cell": 4
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 4
+        },
+        {
+          "item": "cream-socks",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "mauve-knit-robe",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "black-halter-jumpsuit",
+          "cell": 6
+        },
+        {
+          "item": "black-belt",
+          "cell": 6
+        },
+        {
+          "item": "black-evening-clutch",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-satin-robe",
+          "cell": 7
+        },
+        {
+          "item": "plum-satin-slip",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 8
+        },
+        {
+          "item": "lilac-rib-tank",
+          "cell": 8
+        },
+        {
+          "item": "lilac-knit-trousers",
+          "cell": 8
+        },
+        {
+          "item": "cream-socks",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "black-mock-long",
+          "cell": 9
+        },
+        {
+          "item": "charcoal-slit-mini",
+          "cell": 9
+        },
+        {
+          "item": "black-tights",
+          "cell": 9
+        },
+        {
+          "item": "black-knee-boots",
+          "cell": 9
+        },
+        {
+          "item": "black-shoulder-bag",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "cream-button-cardigan",
+          "cell": 10
+        },
+        {
+          "item": "black-square-top",
+          "cell": 10
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 10
+        },
+        {
+          "item": "cream-socks",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "mauve-wrap-knit-dress",
+          "cell": 11
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 11
+        },
+        {
+          "item": "black-evening-clutch",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 12
+        },
+        {
+          "item": "black-square-top",
+          "cell": 12
+        },
+        {
+          "item": "black-knit-trousers",
+          "cell": 12
+        },
+        {
+          "item": "cream-socks",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        }
+      ]
+    },
+    {
+      "asset": "octavia-clothing-sheet-04-off-duty-athleisure.png",
+      "grid": [
+        4,
+        3
+      ],
+      "observations": [
+        {
+          "item": "printed-long-robe",
+          "cell": 1
+        },
+        {
+          "item": "chocolate-tank",
+          "cell": 1
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "black-square-top",
+          "cell": 2
+        },
+        {
+          "item": "black-leggings",
+          "cell": 2
+        },
+        {
+          "item": "gray-sweatshirt",
+          "cell": 2
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 2
+        },
+        {
+          "item": "black-shoulder-bag",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "olive-overshirt",
+          "cell": 3
+        },
+        {
+          "item": "white-tank",
+          "cell": 3
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 3
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 3
+        },
+        {
+          "item": "brown-tote",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 4
+        },
+        {
+          "item": "black-square-top",
+          "cell": 4
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 4
+        },
+        {
+          "item": "cream-socks",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-scoop-long",
+          "cell": 5
+        },
+        {
+          "item": "black-tailored-trousers",
+          "cell": 5
+        },
+        {
+          "item": "black-belt",
+          "cell": 5
+        },
+        {
+          "item": "black-loafers",
+          "cell": 5
+        },
+        {
+          "item": "black-tote",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "black-square-top",
+          "cell": 6
+        },
+        {
+          "item": "cream-tailored-trousers",
+          "cell": 6
+        },
+        {
+          "item": "black-handbag",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "printed-long-robe",
+          "cell": 7
+        },
+        {
+          "item": "chocolate-tank",
+          "cell": 7
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 7
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 7
+        },
+        {
+          "item": "brown-tote",
+          "cell": 7
+        },
+        {
+          "item": "gray-zip-hoodie",
+          "cell": 8
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 8
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 8
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "mauve-long-cardigan",
+          "cell": 9
+        },
+        {
+          "item": "white-tank",
+          "cell": 9
+        },
+        {
+          "item": "light-straight-jeans",
+          "cell": 9
+        },
+        {
+          "item": "black-tote",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 10
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 10
+        },
+        {
+          "item": "black-lace-boots",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 11
+        },
+        {
+          "item": "chocolate-tank",
+          "cell": 11
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 12
+        },
+        {
+          "item": "black-leggings",
+          "cell": 12
+        },
+        {
+          "item": "mauve-sweatshirt",
+          "cell": 12
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        }
+      ]
+    },
+    {
+      "asset": "octavia-master-reference-sheet.png",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "black-scoop-long",
+          "cell": 1
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-pointed-pumps",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 2
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 2
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 4
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 4
+        },
+        {
+          "item": "black-leggings",
+          "cell": 4
+        },
+        {
+          "item": "cream-socks",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-wide-sweater",
+          "cell": 5
+        },
+        {
+          "item": "black-leggings",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 6
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 6
+        },
+        {
+          "item": "black-leggings",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-sport-top",
+          "cell": 7
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 8
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "lilac-henley",
+          "cell": 9
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 9
+        },
+        {
+          "item": "black-belt",
+          "cell": 9
+        },
+        {
+          "item": "black-handbag",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 10
+        },
+        {
+          "item": "mauve-crop-tank",
+          "cell": 10
+        },
+        {
+          "item": "mauve-joggers",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "black-leggings",
+          "cell": 11
+        },
+        {
+          "item": "lilac-socks",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "plum-satin-slip",
+          "cell": 12
+        },
+        {
+          "item": "plum-satin-robe",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "black-open-back",
+          "cell": 14
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "plum-wide-sweater",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 16
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ]
+    },
+    {
+      "asset": "octavia-identity-source-v9.jpg",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "black-scoop-long",
+          "cell": 1
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-pointed-pumps",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 2
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 2
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 4
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 4
+        },
+        {
+          "item": "black-leggings",
+          "cell": 4
+        },
+        {
+          "item": "cream-socks",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-wide-sweater",
+          "cell": 5
+        },
+        {
+          "item": "black-leggings",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 6
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 6
+        },
+        {
+          "item": "black-leggings",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-sport-top",
+          "cell": 7
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 8
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "lilac-henley",
+          "cell": 9
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 9
+        },
+        {
+          "item": "black-belt",
+          "cell": 9
+        },
+        {
+          "item": "black-handbag",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 10
+        },
+        {
+          "item": "mauve-crop-tank",
+          "cell": 10
+        },
+        {
+          "item": "mauve-joggers",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "black-leggings",
+          "cell": 11
+        },
+        {
+          "item": "lilac-socks",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "plum-satin-slip",
+          "cell": 12
+        },
+        {
+          "item": "plum-satin-robe",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "black-open-back",
+          "cell": 14
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "plum-wide-sweater",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 16
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ],
+      "status": "duplicate-layout"
+    },
+    {
+      "asset": "octavia-preview-master-ref-chat.jpg",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "black-scoop-long",
+          "cell": 1
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-pointed-pumps",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 2
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 2
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 4
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 4
+        },
+        {
+          "item": "black-leggings",
+          "cell": 4
+        },
+        {
+          "item": "cream-socks",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-wide-sweater",
+          "cell": 5
+        },
+        {
+          "item": "black-leggings",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 6
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 6
+        },
+        {
+          "item": "black-leggings",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-sport-top",
+          "cell": 7
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 8
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "lilac-henley",
+          "cell": 9
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 9
+        },
+        {
+          "item": "black-belt",
+          "cell": 9
+        },
+        {
+          "item": "black-handbag",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 10
+        },
+        {
+          "item": "mauve-crop-tank",
+          "cell": 10
+        },
+        {
+          "item": "mauve-joggers",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "black-leggings",
+          "cell": 11
+        },
+        {
+          "item": "lilac-socks",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "plum-satin-slip",
+          "cell": 12
+        },
+        {
+          "item": "plum-satin-robe",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "black-open-back",
+          "cell": 14
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "plum-wide-sweater",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 16
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ],
+      "status": "duplicate-layout"
+    },
+    {
+      "asset": "a-ef505fc45709c6f1",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "black-scoop-long",
+          "cell": 1
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-pointed-pumps",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 2
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 2
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 4
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 4
+        },
+        {
+          "item": "black-leggings",
+          "cell": 4
+        },
+        {
+          "item": "cream-socks",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-wide-sweater",
+          "cell": 5
+        },
+        {
+          "item": "black-leggings",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 6
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 6
+        },
+        {
+          "item": "black-leggings",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-sport-top",
+          "cell": 7
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 8
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "lilac-henley",
+          "cell": 9
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 9
+        },
+        {
+          "item": "black-belt",
+          "cell": 9
+        },
+        {
+          "item": "black-handbag",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 10
+        },
+        {
+          "item": "mauve-crop-tank",
+          "cell": 10
+        },
+        {
+          "item": "mauve-joggers",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "black-leggings",
+          "cell": 11
+        },
+        {
+          "item": "lilac-socks",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "plum-satin-slip",
+          "cell": 12
+        },
+        {
+          "item": "plum-satin-robe",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "black-open-back",
+          "cell": 14
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "plum-wide-sweater",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 16
+        },
+        {
+          "item": "gray-joggers",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ],
+      "status": "duplicate-layout"
+    },
+    {
+      "asset": "octavia-remix-source-grid-v17.jpg",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 2
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "black-square-top",
+          "cell": 4
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-velvet-slip",
+          "cell": 5
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "black-asym-midi",
+          "cell": 6
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-blazer",
+          "cell": 7
+        },
+        {
+          "item": "black-square-top",
+          "cell": 7
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "lilac-button-shirt",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "lilac-sport-top",
+          "cell": 9
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 10
+        },
+        {
+          "item": "plum-leggings",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 11
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "mauve-henley",
+          "cell": 12
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 13
+        },
+        {
+          "item": "black-square-top",
+          "cell": 13
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "cream-v-sweater",
+          "cell": 14
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "lilac-henley",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "plum-scoop-long",
+          "cell": 16
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ]
+    },
+    {
+      "asset": "octavia-studio-proof-16-v13.png",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 2
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "black-square-top",
+          "cell": 4
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-velvet-slip",
+          "cell": 5
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "black-asym-midi",
+          "cell": 6
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-blazer",
+          "cell": 7
+        },
+        {
+          "item": "black-square-top",
+          "cell": 7
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "lilac-button-shirt",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "lilac-sport-top",
+          "cell": 9
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 10
+        },
+        {
+          "item": "plum-leggings",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 11
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "mauve-henley",
+          "cell": 12
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 13
+        },
+        {
+          "item": "black-square-top",
+          "cell": 13
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "cream-v-sweater",
+          "cell": 14
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "lilac-henley",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "plum-scoop-long",
+          "cell": 16
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ],
+      "status": "duplicate-layout"
+    },
+    {
+      "asset": "a-f902c47d905e3713",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-button-shirt",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 3
+        },
+        {
+          "item": "lilac-racer-crop",
+          "cell": 3
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 3
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "cream-v-sweater",
+          "cell": 4
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 5
+        },
+        {
+          "item": "black-square-top",
+          "cell": 5
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "plum-velvet-slip",
+          "cell": 6
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-blazer",
+          "cell": 7
+        },
+        {
+          "item": "black-square-top",
+          "cell": 7
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "black-asym-midi",
+          "cell": 8
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 9
+        },
+        {
+          "item": "plum-leggings",
+          "cell": 9
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 10
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 12
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "lilac-sport-top",
+          "cell": 13
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "plum-scoop-long",
+          "cell": 15
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 15
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 16
+        },
+        {
+          "item": "black-square-top",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ]
+    },
+    {
+      "asset": "a-541e337d602b5d7b",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-button-shirt",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 3
+        },
+        {
+          "item": "lilac-racer-crop",
+          "cell": 3
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 3
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "cream-v-sweater",
+          "cell": 4
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 5
+        },
+        {
+          "item": "black-square-top",
+          "cell": 5
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "plum-velvet-slip",
+          "cell": 6
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-blazer",
+          "cell": 7
+        },
+        {
+          "item": "black-square-top",
+          "cell": 7
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "black-asym-midi",
+          "cell": 8
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 9
+        },
+        {
+          "item": "plum-leggings",
+          "cell": 9
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 10
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 12
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "lilac-sport-top",
+          "cell": 13
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "plum-scoop-long",
+          "cell": 15
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 15
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 16
+        },
+        {
+          "item": "black-square-top",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ]
+    },
+    {
+      "asset": "octavia-head-angle-hue-remix-v18.png",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-button-shirt",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 3
+        },
+        {
+          "item": "lilac-racer-crop",
+          "cell": 3
+        },
+        {
+          "item": "dark-skinny-jeans",
+          "cell": 3
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "cream-v-sweater",
+          "cell": 4
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 5
+        },
+        {
+          "item": "black-square-top",
+          "cell": 5
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "plum-velvet-slip",
+          "cell": 6
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-blazer",
+          "cell": 7
+        },
+        {
+          "item": "black-square-top",
+          "cell": 7
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "black-asym-midi",
+          "cell": 8
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 9
+        },
+        {
+          "item": "plum-leggings",
+          "cell": 9
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 10
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 12
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "lilac-sport-top",
+          "cell": 13
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "plum-scoop-long",
+          "cell": 15
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 15
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 16
+        },
+        {
+          "item": "black-square-top",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ]
+    },
+    {
+      "asset": "octavia-uniform-pose-remix-v17.png",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "black-square-top",
+          "cell": 2
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-asym-midi",
+          "cell": 3
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "plum-blazer",
+          "cell": 4
+        },
+        {
+          "item": "black-square-top",
+          "cell": 4
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "cream-v-sweater",
+          "cell": 5
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "lilac-sport-top",
+          "cell": 6
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "plum-velvet-slip",
+          "cell": 7
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "lilac-button-shirt",
+          "cell": 8
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "mauve-henley",
+          "cell": 9
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 10
+        },
+        {
+          "item": "plum-leggings",
+          "cell": 10
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 11
+        },
+        {
+          "item": "lilac-racer-crop",
+          "cell": 11
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 11
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 12
+        },
+        {
+          "item": "black-square-top",
+          "cell": 12
+        },
+        {
+          "item": "blue-straight-jeans",
+          "cell": 12
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 12
+        },
+        {
+          "item": "lilac-button-shirt",
+          "cell": 13
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "black-scoop-long",
+          "cell": 14
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "plum-scoop-long",
+          "cell": 15
+        },
+        {
+          "item": "plum-lounge-trousers",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "lilac-henley",
+          "cell": 16
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ]
+    },
+    {
+      "asset": "octavia-glamour-progression-01-soft-lounge.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ]
+    },
+    {
+      "asset": "octavia-glamour-progression-02-city-lounge.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 1
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ]
+    },
+    {
+      "asset": "octavia-glamour-progression-03-plum-knit-dress.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "plum-knit-mock-dress",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ]
+    },
+    {
+      "asset": "octavia-glamour-progression-04-black-plum-mini.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "plum-leather-jacket",
+          "cell": 1
+        },
+        {
+          "item": "black-one-shoulder-mini",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ]
+    },
+    {
+      "asset": "octavia-glamour-progression-05-plum-satin-evening.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "black-long-coat",
+          "cell": 1
+        },
+        {
+          "item": "plum-satin-high-dress",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-platform-pumps",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ]
+    },
+    {
+      "asset": "octavia-glamour-progression-06-peak-black-velvet.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "plum-long-coat",
+          "cell": 1
+        },
+        {
+          "item": "black-velvet-halter",
+          "cell": 1
+        },
+        {
+          "item": "black-platform-pumps",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ]
+    },
+    {
+      "asset": "octavia-glamour-progression-master-2x3.png",
+      "grid": [
+        3,
+        2
+      ],
+      "observations": [
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 2
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 2
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 2
+        },
+        {
+          "item": "black-belt",
+          "cell": 2
+        },
+        {
+          "item": "black-loafers",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "plum-knit-mock-dress",
+          "cell": 3
+        },
+        {
+          "item": "black-loafers",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "plum-leather-jacket",
+          "cell": 4
+        },
+        {
+          "item": "black-one-shoulder-mini",
+          "cell": 4
+        },
+        {
+          "item": "black-tights",
+          "cell": 4
+        },
+        {
+          "item": "black-loafers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "black-long-coat",
+          "cell": 5
+        },
+        {
+          "item": "plum-satin-high-dress",
+          "cell": 5
+        },
+        {
+          "item": "black-tights",
+          "cell": 5
+        },
+        {
+          "item": "black-platform-pumps",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "plum-long-coat",
+          "cell": 6
+        },
+        {
+          "item": "black-velvet-halter",
+          "cell": 6
+        },
+        {
+          "item": "black-platform-pumps",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        }
+      ],
+      "status": "duplicate-layout"
+    },
+    {
+      "asset": "octavia-preview-glamour-2x3-chat.jpg",
+      "grid": [
+        3,
+        2
+      ],
+      "observations": [
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 2
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 2
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 2
+        },
+        {
+          "item": "black-belt",
+          "cell": 2
+        },
+        {
+          "item": "black-loafers",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "plum-knit-mock-dress",
+          "cell": 3
+        },
+        {
+          "item": "black-loafers",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "plum-leather-jacket",
+          "cell": 4
+        },
+        {
+          "item": "black-one-shoulder-mini",
+          "cell": 4
+        },
+        {
+          "item": "black-tights",
+          "cell": 4
+        },
+        {
+          "item": "black-loafers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "black-long-coat",
+          "cell": 5
+        },
+        {
+          "item": "plum-satin-high-dress",
+          "cell": 5
+        },
+        {
+          "item": "black-tights",
+          "cell": 5
+        },
+        {
+          "item": "black-platform-pumps",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "plum-long-coat",
+          "cell": 6
+        },
+        {
+          "item": "black-velvet-halter",
+          "cell": 6
+        },
+        {
+          "item": "black-platform-pumps",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        }
+      ],
+      "status": "duplicate-layout"
+    },
+    {
+      "asset": "a-5fc5f0dffa04c943",
+      "grid": [
+        3,
+        2
+      ],
+      "observations": [
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 2
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 2
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 2
+        },
+        {
+          "item": "black-belt",
+          "cell": 2
+        },
+        {
+          "item": "black-loafers",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "plum-knit-mock-dress",
+          "cell": 3
+        },
+        {
+          "item": "black-loafers",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "plum-leather-jacket",
+          "cell": 4
+        },
+        {
+          "item": "black-one-shoulder-mini",
+          "cell": 4
+        },
+        {
+          "item": "black-tights",
+          "cell": 4
+        },
+        {
+          "item": "black-loafers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "black-long-coat",
+          "cell": 5
+        },
+        {
+          "item": "plum-satin-high-dress",
+          "cell": 5
+        },
+        {
+          "item": "black-tights",
+          "cell": 5
+        },
+        {
+          "item": "black-platform-pumps",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "plum-long-coat",
+          "cell": 6
+        },
+        {
+          "item": "black-velvet-halter",
+          "cell": 6
+        },
+        {
+          "item": "black-platform-pumps",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        }
+      ],
+      "status": "duplicate-layout"
+    },
+    {
+      "asset": "octavia-master-source-v24-1.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-knot-wrap",
+          "cell": 1
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 1,
+          "box": [
+            0.36,
+            0.16,
+            0.62,
+            0.63
+          ]
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1,
+          "box": [
+            0.36,
+            0.37,
+            0.61,
+            0.92
+          ]
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-master-source-v24-2.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "forest-contrast-top",
+          "cell": 1
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-master-source-v24-3.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "black-square-top",
+          "cell": 1,
+          "box": [
+            0.26,
+            0.29,
+            0.77,
+            0.63
+          ]
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1,
+          "box": [
+            0.23,
+            0.59,
+            0.78,
+            0.92
+          ]
+        },
+        {
+          "item": "black-tights",
+          "cell": 1,
+          "box": [
+            0.27,
+            0.91,
+            0.78,
+            0.99
+          ]
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-master-source-v24-4.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cream-square-long",
+          "cell": 1,
+          "box": [
+            0.34,
+            0.14,
+            0.59,
+            0.42
+          ]
+        },
+        {
+          "item": "black-pleated-skirt",
+          "cell": 1,
+          "box": [
+            0.34,
+            0.39,
+            0.61,
+            0.61
+          ]
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1,
+          "box": [
+            0.41,
+            0.82,
+            0.62,
+            0.99
+          ]
+        },
+        {
+          "item": "red-shoulder-bag",
+          "cell": 1,
+          "box": [
+            0.54,
+            0.31,
+            0.63,
+            0.47
+          ]
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-master-source-v24-5.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-racer-crop",
+          "cell": 1,
+          "box": [
+            0.2,
+            0.35,
+            0.63,
+            0.88
+          ]
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1,
+          "box": [
+            0.63,
+            0.55,
+            0.97,
+            0.98
+          ]
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1,
+          "box": [
+            0.38,
+            0.4,
+            0.56,
+            0.58
+          ]
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-genesis-seed-fullbody.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-photographic-realism-v2.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-realistic-hd-portrait-20260908-01.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-lilac-conservatory-v14.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-conservatory-seated-v15.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "black-bit-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-conservatory-source-face-v14.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-plum-velvet-evening-v3.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "plum-velvet-long",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-satin-loungewear-v5.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "plum-satin-slip",
+          "cell": 1
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-standing-loungewear-v6.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "plum-satin-cami",
+          "cell": 1
+        },
+        {
+          "item": "black-running-shorts",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-lilac-crop-v7.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "black-running-shorts",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-fitness-reference-v9.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-sport-top",
+          "cell": 1
+        },
+        {
+          "item": "black-running-shorts",
+          "cell": 1
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-overhead-stretch-v16.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-sport-top",
+          "cell": 1
+        },
+        {
+          "item": "black-running-shorts",
+          "cell": 1
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-stretch-source-v16.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-sport-top",
+          "cell": 1
+        },
+        {
+          "item": "black-running-shorts",
+          "cell": 1
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-beach-onepiece-shorts-v10.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "plum-one-piece",
+          "cell": 1
+        },
+        {
+          "item": "cream-drawstring-shorts",
+          "cell": 1
+        },
+        {
+          "item": "sunglasses",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-beach-reality-v12.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-sport-top",
+          "cell": 1
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 1
+        },
+        {
+          "item": "sunglasses",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-sporty-swimwear-v11.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-sport-top",
+          "cell": 1
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 1
+        },
+        {
+          "item": "sunglasses",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-black-top-daylight-v21.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "black-square-top",
+          "cell": 1
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-black-top-room-source-v21.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "black-square-top",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-cream-pleated-outfit-source-v22.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cream-square-long",
+          "cell": 1
+        },
+        {
+          "item": "black-pleated-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "red-shoulder-bag",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-cream-pleated-turn-v22.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cream-square-long",
+          "cell": 1
+        },
+        {
+          "item": "black-pleated-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "red-shoulder-bag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-cyan-outfit-source-v23.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-knot-wrap",
+          "cell": 1,
+          "box": [
+            0.4,
+            0.22,
+            0.54,
+            0.38
+          ]
+        },
+        {
+          "item": "cyan-pleated-skirt",
+          "cell": 1,
+          "box": [
+            0.39,
+            0.37,
+            0.58,
+            0.56
+          ]
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1,
+          "box": [
+            0.43,
+            0.83,
+            0.63,
+            0.99
+          ]
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-cyan-daydress-lilac-v23b.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-daydress",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-covered-cyan-coordinates-v25.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-wrap-blouse",
+          "cell": 1
+        },
+        {
+          "item": "cyan-long-pleats",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-cyan-tailored-editorial-v28.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-tailored-midi",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-cyan-tailored-separates-v30.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-drape-blouse",
+          "cell": 1
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1
+        },
+        {
+          "item": "lilac-blazer",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-fused-reference-outfit-v31.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-square-top",
+          "cell": 1
+        },
+        {
+          "item": "forest-contrast-top",
+          "cell": 1,
+          "confidence": "possible-match",
+          "notes": "Only the pale ribbed waistband motif is visible; not evidence that the complete green top is worn."
+        },
+        {
+          "item": "black-cyan-pleats",
+          "cell": 1
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-lace-boots",
+          "cell": 1
+        },
+        {
+          "item": "red-shoulder-bag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-lilac-cyan-standing-v33b.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-racer-crop",
+          "cell": 1
+        },
+        {
+          "item": "cyan-long-pleats",
+          "cell": 1
+        },
+        {
+          "item": "black-blazer",
+          "cell": 1
+        },
+        {
+          "item": "black-mary-janes",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-signature-synthesis-v34.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-square-top",
+          "cell": 1
+        },
+        {
+          "item": "cyan-pleated-skirt",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "black-handbag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-after-shopping-trousers-v35b.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-square-top",
+          "cell": 1
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "black-shoulder-bag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-reclaimed-fashion-synthesis-v36.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-square-top",
+          "cell": 1
+        },
+        {
+          "item": "cyan-long-pleats",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-mary-janes",
+          "cell": 1
+        },
+        {
+          "item": "black-shoulder-bag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-reclaimed-fashion-synthesis-v36b.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-square-top",
+          "cell": 1
+        },
+        {
+          "item": "cyan-long-pleats",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-mary-janes",
+          "cell": 1
+        },
+        {
+          "item": "black-shoulder-bag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-ten-reference-conservatory-v37.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-square-top",
+          "cell": 1
+        },
+        {
+          "item": "black-pleated-skirt",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-ten-reference-conservatory-v37b.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-square-top",
+          "cell": 1
+        },
+        {
+          "item": "black-pleated-skirt",
+          "cell": 1
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-walking-full-remix-v32.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "olive-cropped-jacket",
+          "cell": 1
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 1
+        },
+        {
+          "item": "plum-wrap-mini",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-knee-boots",
+          "cell": 1
+        },
+        {
+          "item": "stone-handbag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-walking-profile-v32b.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "olive-cropped-jacket",
+          "cell": 1
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 1
+        },
+        {
+          "item": "plum-wrap-mini",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "black-knee-boots",
+          "cell": 1
+        },
+        {
+          "item": "stone-handbag",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-zuza-comparison-source-v26-octavia.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-square-top",
+          "cell": 1
+        },
+        {
+          "item": "cyan-pleated-skirt",
+          "cell": 1
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-zuza-comparison-source-v26-zuza.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "zuza-cyan-inspiration",
+          "cell": 1,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 1,
+          "confidence": "inspiration"
+        }
+      ],
+      "status": "inspiration-only"
+    },
+    {
+      "asset": "octavia-room-outfit-source-detail-v19.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "forest-contrast-top",
+          "cell": 1
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-room-outfit-source-front-v19.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "forest-contrast-top",
+          "cell": 1
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-room-outfit-source-side-v19.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "forest-contrast-top",
+          "cell": 1
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-room-outfit-v19.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "forest-contrast-top",
+          "cell": 1
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-room-retexture-upright-v20.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "forest-contrast-top",
+          "cell": 1
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-lilac-cardigan-source-v23.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-cardigan",
+          "cell": 1,
+          "box": [
+            0.31,
+            0.18,
+            0.82,
+            0.44
+          ]
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 1
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-e222bfc3fc0b4822",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-e4712a3c65121aa7",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "black-crop-tank",
+          "cell": 1
+        },
+        {
+          "item": "black-running-shorts",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-268c5f9e080a29b2",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "stone-sport-top",
+          "cell": 1
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-3a90a4d5c3004fda",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cyan-sport-top",
+          "cell": 1
+        },
+        {
+          "item": "black-piped-shorts",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-d1e7b704ea11055a",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "plum-patterned-cami",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-cf03adfa6ef11027",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-575a6062293ce91a",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "black-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-ab5083adb884567a",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "forest-contrast-top",
+          "cell": 1
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 1
+        },
+        {
+          "item": "black-tights",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-b892c8bb47441519",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "a-159cb258a1c790e0",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 1
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 1
+        },
+        {
+          "item": "black-belt",
+          "cell": 1
+        },
+        {
+          "item": "black-bit-loafers",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        }
+      ],
+      "status": "reviewed-visible"
+    },
+    {
+      "asset": "octavia-conservatory-source-sheet-v14.jpg",
+      "grid": [
+        4,
+        2
+      ],
+      "observations": [
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 2
+        },
+        {
+          "item": "black-wide-jeans",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "black-square-top",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "black-square-top",
+          "cell": 4
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-velvet-slip",
+          "cell": 5
+        },
+        {
+          "item": "black-strappy-heels",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 6
+        },
+        {
+          "item": "plum-leggings",
+          "cell": 6
+        },
+        {
+          "item": "black-sneakers",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 7
+        },
+        {
+          "item": "black-square-top",
+          "cell": 7
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "lilac-button-shirt",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        }
+      ]
+    },
+    {
+      "asset": "a-87d51a6ee9075ede",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "lilac-mock-crop",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "forest-contrast-top",
+          "cell": 2
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 2
+        },
+        {
+          "item": "black-tights",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 3
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 3
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 3
+        },
+        {
+          "item": "black-belt",
+          "cell": 3
+        },
+        {
+          "item": "black-loafers",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 4
+        },
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 4
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 4
+        },
+        {
+          "item": "black-loafers",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "cream-square-long",
+          "cell": 5
+        },
+        {
+          "item": "black-pleated-skirt",
+          "cell": 5
+        },
+        {
+          "item": "black-tights",
+          "cell": 5
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 5
+        },
+        {
+          "item": "red-shoulder-bag",
+          "cell": 5
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 7
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 7
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 7
+        },
+        {
+          "item": "black-belt",
+          "cell": 7
+        },
+        {
+          "item": "black-loafers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 8
+        },
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 8
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 8
+        },
+        {
+          "item": "black-loafers",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "forest-contrast-top",
+          "cell": 9
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 9
+        },
+        {
+          "item": "black-tights",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "lilac-cardigan",
+          "cell": 10
+        },
+        {
+          "item": "black-crop-tank",
+          "cell": 10
+        },
+        {
+          "item": "black-cargo-jeans",
+          "cell": 10
+        },
+        {
+          "item": "black-belt",
+          "cell": 10
+        },
+        {
+          "item": "black-loafers",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 11
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 11
+        },
+        {
+          "item": "cream-square-long",
+          "cell": 12
+        },
+        {
+          "item": "black-pleated-skirt",
+          "cell": 12
+        },
+        {
+          "item": "black-tights",
+          "cell": 12
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 12
+        },
+        {
+          "item": "red-shoulder-bag",
+          "cell": 12
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 13
+        },
+        {
+          "item": "lilac-ruched-mock",
+          "cell": 13
+        },
+        {
+          "item": "charcoal-trousers",
+          "cell": 13
+        },
+        {
+          "item": "black-loafers",
+          "cell": 13
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 13
+        },
+        {
+          "item": "black-square-top",
+          "cell": 14
+        },
+        {
+          "item": "plum-tailored-trousers",
+          "cell": 14
+        },
+        {
+          "item": "white-sneakers",
+          "cell": 14
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 14
+        },
+        {
+          "item": "forest-contrast-top",
+          "cell": 15
+        },
+        {
+          "item": "black-a-line-skirt",
+          "cell": 15
+        },
+        {
+          "item": "black-tights",
+          "cell": 15
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 15
+        },
+        {
+          "item": "black-ankle-boots",
+          "cell": 15
+        },
+        {
+          "item": "purple-chunky-cardigan",
+          "cell": 16
+        },
+        {
+          "item": "black-square-top",
+          "cell": 16
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 16
+        }
+      ]
+    },
+    {
+      "asset": "a-bba934904d5b2f34",
+      "grid": [
+        4,
+        4
+      ],
+      "observations": [
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 1,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 2,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 2,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "white-open-shirt-inspiration",
+          "cell": 2,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 3,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 3,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 4,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 4,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 4,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 5,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 5,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "blue-cardigan-inspiration",
+          "cell": 5,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 6,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 7,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 7,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "white-open-shirt-inspiration",
+          "cell": 7,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 8,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 8,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "blue-cardigan-inspiration",
+          "cell": 8,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 9,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 9,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 10,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 10,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "white-open-shirt-inspiration",
+          "cell": 10,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "nude-strappy-heels",
+          "cell": 10,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "blue-cardigan-inspiration",
+          "cell": 11,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 12,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 12,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 13,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 13,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 14,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 14,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "blue-cardigan-inspiration",
+          "cell": 14,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 15,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-tie-bottom-inspiration",
+          "cell": 15,
+          "confidence": "inspiration"
+        },
+        {
+          "item": "cyan-wrap-swim-inspiration",
+          "cell": 16,
+          "confidence": "inspiration"
+        }
+      ],
+      "status": "inspiration-only",
+      "notes": "Donor/remix sheet: clothing inspiration only, never identity evidence."
+    },
+    {
+      "asset": "a-2f6f0e7eb8aa6f8c",
+      "grid": [
+        5,
+        2
+      ],
+      "observations": [
+        {
+          "item": "plum-lace-bra",
+          "cell": 1
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 1
+        },
+        {
+          "item": "gray-knee-socks",
+          "cell": 1
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 1
+        },
+        {
+          "item": "black-button-crop",
+          "cell": 2
+        },
+        {
+          "item": "gray-piped-shorts",
+          "cell": 2
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 2
+        },
+        {
+          "item": "plum-lace-bra",
+          "cell": 3
+        },
+        {
+          "item": "plum-lace-bottom",
+          "cell": 3
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 3
+        },
+        {
+          "item": "black-lace-bra",
+          "cell": 4
+        },
+        {
+          "item": "black-cardigan",
+          "cell": 4
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 4
+        },
+        {
+          "item": "plum-lace-bra",
+          "cell": 5
+        },
+        {
+          "item": "black-leggings",
+          "cell": 5
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 5
+        },
+        {
+          "item": "plum-lace-bra",
+          "cell": 6
+        },
+        {
+          "item": "plum-scoop-long",
+          "cell": 6
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 6
+        },
+        {
+          "item": "black-lace-bra",
+          "cell": 7
+        },
+        {
+          "item": "dark-plaid-trousers",
+          "cell": 7
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 7
+        },
+        {
+          "item": "lilac-henley",
+          "cell": 8
+        },
+        {
+          "item": "plum-lace-bra",
+          "cell": 8
+        },
+        {
+          "item": "blue-ripped-jeans",
+          "cell": 8
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 8
+        },
+        {
+          "item": "black-lace-bra",
+          "cell": 9
+        },
+        {
+          "item": "black-lace-bottom",
+          "cell": 9
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 9
+        },
+        {
+          "item": "plum-lace-bra",
+          "cell": 10
+        },
+        {
+          "item": "cream-cardigan",
+          "cell": 10
+        },
+        {
+          "item": "lilac-socks",
+          "cell": 10
+        },
+        {
+          "item": "amethyst-pendant",
+          "cell": 10
+        }
+      ],
+      "notes": "Neutral garment inventory of an earlier underwear reference sheet; not a brief for new imagery."
+    },
+    {
+      "asset": "octavia-all-core-generation-images-4x3.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [],
+      "status": "duplicate-layout",
+      "notes": "Overview/preview of individually catalogued original sources; no new garment designs added from repeated thumbnails."
+    },
+    {
+      "asset": "octavia-all-generation-images-contact-sheet.png",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [],
+      "status": "duplicate-layout",
+      "notes": "Overview/preview of individually catalogued original sources; no new garment designs added from repeated thumbnails."
+    },
+    {
+      "asset": "octavia-preview-all-core-chat.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [],
+      "status": "duplicate-layout",
+      "notes": "Overview/preview of individually catalogued original sources; no new garment designs added from repeated thumbnails."
+    },
+    {
+      "asset": "octavia-preview-genesis-chat.jpg",
+      "grid": [
+        1,
+        1
+      ],
+      "observations": [],
+      "status": "duplicate-layout",
+      "notes": "Overview/preview of individually catalogued original sources; no new garment designs added from repeated thumbnails."
+    }
+  ]
+}

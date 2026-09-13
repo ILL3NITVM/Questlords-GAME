@@ -1,0 +1,60 @@
+{
+  "included_photos": [
+    {
+      "asset_id": "a-c23c860ec74a2b02",
+      "canon_status": "unreviewed",
+      "height": 960,
+      "original_filename": "octavia-cyan-outfit-source-v23.jpg",
+      "path": "octavia_studio/data/originals/c2/c23c860ec74a2b02270fa0ed101afe978c400e3a2b8a85337f13c7a038c6bcfe.jpg",
+      "sha256": "c23c860ec74a2b02270fa0ed101afe978c400e3a2b8a85337f13c7a038c6bcfe",
+      "width": 1280
+    },
+    {
+      "asset_id": "a-06304fd46f0a0b92",
+      "canon_status": "reference",
+      "height": 960,
+      "original_filename": "octavia-master-source-v24-1.jpg",
+      "path": "octavia_studio/data/originals/06/06304fd46f0a0b92d2e6ba31d7cb0be52744ed573bed688ddc7cfb177df8d773.jpg",
+      "sha256": "06304fd46f0a0b92d2e6ba31d7cb0be52744ed573bed688ddc7cfb177df8d773",
+      "width": 1280
+    },
+    {
+      "asset_id": "a-4aa958e7e4279df5",
+      "canon_status": "reference",
+      "height": 1280,
+      "original_filename": "octavia-master-source-v24-2.jpg",
+      "path": "octavia_studio/data/originals/4a/4aa958e7e4279df56d1ea2abc887358198fb3d66b53b289ec4fdc0007dbe46eb.jpg",
+      "sha256": "4aa958e7e4279df56d1ea2abc887358198fb3d66b53b289ec4fdc0007dbe46eb",
+      "width": 984
+    },
+    {
+      "asset_id": "a-632be75ba22ce38a",
+      "canon_status": "reference",
+      "height": 1280,
+      "original_filename": "octavia-master-source-v24-3.jpg",
+      "path": "octavia_studio/data/originals/63/632be75ba22ce38a613a7e3b4827602cb8dec7c7280b4122990f69bcbaf480f2.jpg",
+      "sha256": "632be75ba22ce38a613a7e3b4827602cb8dec7c7280b4122990f69bcbaf480f2",
+      "width": 853
+    },
+    {
+      "asset_id": "a-7cf41694da9b4f14",
+      "canon_status": "reference",
+      "height": 960,
+      "original_filename": "octavia-master-source-v24-4.jpg",
+      "path": "octavia_studio/data/originals/7c/7cf41694da9b4f14e23abdd55f88fee2121f1c8b220e1b65bcd48377d078fa61.jpg",
+      "sha256": "7cf41694da9b4f14e23abdd55f88fee2121f1c8b220e1b65bcd48377d078fa61",
+      "width": 1280
+    },
+    {
+      "asset_id": "a-2a28a323025d1af3",
+      "canon_status": "reference",
+      "height": 1254,
+      "original_filename": "octavia-master-source-v24-5.jpg",
+      "path": "octavia_studio/data/originals/2a/2a28a323025d1af37cac30cc46a5b5d3adfd113c48ba6f510e2da9ae756bc39f.jpg",
+      "sha256": "2a28a323025d1af37cac30cc46a5b5d3adfd113c48ba6f510e2da9ae756bc39f",
+      "width": 1254
+    }
+  ],
+  "omitted_media": "All other photos, generations, sheets, exports and wardrobe preview crops.",
+  "original_workspace_modified": false
+}

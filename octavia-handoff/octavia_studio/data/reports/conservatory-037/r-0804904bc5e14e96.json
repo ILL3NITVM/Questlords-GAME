@@ -1,0 +1,41 @@
+{
+  "created": "2026-09-10T01:03:44+00:00",
+  "grid": "4x2",
+  "kind": "sheet",
+  "labels": false,
+  "mode": "all",
+  "pages": [
+    {
+      "asset_id": "d-f0aaf023593e2283",
+      "members": [
+        {
+          "asset_id": "a-0bbb9228c53a7cd8",
+          "bounds": [
+            8,
+            8,
+            328,
+            448
+          ],
+          "column": 0,
+          "position": 0,
+          "row": 0
+        },
+        {
+          "asset_id": "a-3b066d7c8f6cdcf4",
+          "bounds": [
+            336,
+            8,
+            656,
+            448
+          ],
+          "column": 1,
+          "position": 1,
+          "row": 0
+        }
+      ],
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/sheet/f0aaf023593e2283d4faae536f471b8f77d3eb0c8706168e49c33d0ea2b03597.png"
+    }
+  ],
+  "report_id": "r-0804904bc5e14e96",
+  "shoot_id": "conservatory-037"
+}

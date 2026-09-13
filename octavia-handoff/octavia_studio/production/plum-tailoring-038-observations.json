@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "reviewer": "assistant visual review, 2026-09-13",
+  "items": [
+    {"id":"lilac-crew-knit-blouse","name":"Lilac crew-neck fine-rib knit blouse","category":"top","color":"lilac","material":"Fine ribbed knit appearance; exact fibre unknown","notes":"New styling variant first observed in plum-tailoring-038; not silently added to established ownership or canon."}
+  ],
+  "sources": [
+    {"asset":"a-5d75bc683f0c6c4a","notes":"Output visually checked for visible clothing, framing and accessories; likeness review remains subjective, not biometric verification.","observations":[
+      {"item":"plum-blazer","box":[0.25,0.155,0.68,0.485],"confidence":"possible-match","notes":"Plum tailored blazer interpretation; matching design family, not a verified exact copy of the reference garment."},
+      {"item":"plum-tailored-trousers","box":[0.19,0.44,0.64,0.925],"confidence":"possible-match","notes":"Full-length plum tailoring, slightly flared legs; catalog family match, not guaranteed physical garment identity."},
+      {"item":"lilac-crew-knit-blouse","box":[0.35,0.18,0.57,0.34]},
+      {"item":"black-ankle-boots","box":[0.15,0.87,0.54,0.99],"confidence":"possible-match","notes":"Black pointed ankle boots visible below trouser hems; related footwear family, hidden shaft not reconstructed."},
+      {"item":"amethyst-pendant","box":[0.425,0.185,0.479,0.222]}
+    ]}
+  ]
+}

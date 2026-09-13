@@ -1,0 +1,1496 @@
+{
+  "active_database_integrity": "PASS",
+  "canon_promotions": 0,
+  "created": "2026-09-13T05:28:14+00:00",
+  "files": [
+    {
+      "bytes": 1804,
+      "path": "CLAUDE.md",
+      "sha256": "c74f26668eaeef05ebaa9e2abcc02dcc5f6941e31c1c776a6c1cbb1ed3f28bc7"
+    },
+    {
+      "bytes": 5198,
+      "path": "octavia-after-shopping-trousers-v35b-prompt.md",
+      "sha256": "b1d8e1a232c34992f52ad571a5e3e7f81462f8a3cd32ee13df1a481b6f36c0cd"
+    },
+    {
+      "bytes": 5110,
+      "path": "octavia-after-shopping-v35-prompt.md",
+      "sha256": "a4098f6188b8a724ec2c5961e7a73d25576e3b095d5e1d4473cb23852c11db48"
+    },
+    {
+      "bytes": 10851,
+      "path": "octavia-after-shopping-v35-research.md",
+      "sha256": "34aa310d41e7a7708dd13e1df68e0f4565da7095dc8f02f811955e584e110274"
+    },
+    {
+      "bytes": 1956,
+      "path": "octavia-beach-onepiece-shorts-v10-prompt.md",
+      "sha256": "0b2e80e5033f4785978edc0454475217210693c59607684abc07b60e72eede08"
+    },
+    {
+      "bytes": 2553,
+      "path": "octavia-beach-reality-v12-prompt.md",
+      "sha256": "de34b45a335fe55e336d32f089a504bc2ff31dbff41e170087acd2a44579cfb3"
+    },
+    {
+      "bytes": 4277,
+      "path": "octavia-black-top-daylight-v21-prompt.md",
+      "sha256": "b05ec3a8aaea1005bb680a39fde26578433a30057ce9d69f59cb38a40dc75b12"
+    },
+    {
+      "bytes": 2560,
+      "path": "octavia-conservatory-seated-v15-prompt.md",
+      "sha256": "4fa91c7e2610bba8645d7605e28b4d39c119f356bb8737a9d1198ae5245d27dd"
+    },
+    {
+      "bytes": 5814,
+      "path": "octavia-covered-cyan-coordinates-v25-prompt.md",
+      "sha256": "2a2e3c66224a0301c8d363a18bef4c7255e608bc0c38efcd295feb3eed8252cf"
+    },
+    {
+      "bytes": 4720,
+      "path": "octavia-cream-pleated-turn-v22-prompt.md",
+      "sha256": "6ebc1a44e20bd3648fd14c54bda93b7e6d8115e6a003ccea369c67d97f599809"
+    },
+    {
+      "bytes": 3900,
+      "path": "octavia-cyan-daydress-lilac-v23b-prompt.md",
+      "sha256": "6b2eb3c642b989607aebae4bb7e578129b34fc94fef7f7348b61e28987fbfbed"
+    },
+    {
+      "bytes": 4301,
+      "path": "octavia-cyan-glamour-restyle-v29-prompt.md",
+      "sha256": "f53b927634714b8573df6a334c3d4f79405c36cb8bb7dbf9bc89661b59f26da4"
+    },
+    {
+      "bytes": 3875,
+      "path": "octavia-cyan-lilac-cardigan-v23-prompt.md",
+      "sha256": "1d9267b0928f37d8d7c864c413cae39e789274eba0786a3e118184142f06f87e"
+    },
+    {
+      "bytes": 4937,
+      "path": "octavia-cyan-tailored-editorial-v28-prompt.md",
+      "sha256": "7bd88bd5a17934bbbaff1bd0032afe0bb96154c9662abce841e762f011e7b6a9"
+    },
+    {
+      "bytes": 3535,
+      "path": "octavia-cyan-tailored-separates-v30-prompt.md",
+      "sha256": "ad1c792cf49921178756306aa52aa7d53d6488b697520036197a2ad421e60680"
+    },
+    {
+      "bytes": 8883,
+      "path": "octavia-cyan-wrap-set-lilac-v24-prompt.md",
+      "sha256": "f6c2dafe08f1d68125d4af85a45643d976feac26981d2bdce506e636bc7d1611"
+    },
+    {
+      "bytes": 2783,
+      "path": "octavia-fitness-reference-v9-prompt.md",
+      "sha256": "59678a9eff04375ffbdc71381796326677ed14bd7dd127e8ca13204b226c65c9"
+    },
+    {
+      "bytes": 5272,
+      "path": "octavia-fused-reference-outfit-v31-prompt.md",
+      "sha256": "edc0f90f84d8944376dff9901268ddd8d32e9554a9109d0f23d2f8571940d518"
+    },
+    {
+      "bytes": 7174,
+      "path": "octavia-head-angle-hue-remix-v18-prompt.md",
+      "sha256": "05e2c6ff47bfe94f07a42cc3d006c702b54015a0e74cfd1cbf4405af9c60a98d"
+    },
+    {
+      "bytes": 2689,
+      "path": "octavia-lilac-athleisure-v8-prompt.md",
+      "sha256": "3cbe511c59fa5be9eef18a06dc0a4e55f8f8b00b73bd3a29de22513dcaad3ab6"
+    },
+    {
+      "bytes": 3400,
+      "path": "octavia-lilac-conservatory-v14-prompt.md",
+      "sha256": "def569171b938c21e64b9b2cd6d3ec9a76c07d3d84983d3c74185dbc4f29340e"
+    },
+    {
+      "bytes": 2193,
+      "path": "octavia-lilac-crop-v7-prompt.md",
+      "sha256": "818a19625cb8976cdf3bbe909028eecce9d6a629e51d1905f0d955a3e7176046"
+    },
+    {
+      "bytes": 5392,
+      "path": "octavia-lilac-cyan-seated-editorial-v33-prompt.md",
+      "sha256": "c4d58b205f796f250489f3ff5eee7f03338211201e4f38a1c89a8ec9d091289e"
+    },
+    {
+      "bytes": 4734,
+      "path": "octavia-lilac-cyan-standing-v33b-prompt.md",
+      "sha256": "2ee5a1468762c2341db47d9b5322840720636363541b7da153a8fb94dad98c17"
+    },
+    {
+      "bytes": 4028,
+      "path": "octavia-master-prompt-v24.md",
+      "sha256": "0d6333b958389093eb45c5b0db591d43ebc867171850925a67757e263f6d1735"
+    },
+    {
+      "bytes": 2385,
+      "path": "octavia-overhead-stretch-v16-prompt.md",
+      "sha256": "23a98d33cfdf742e495caefd146ae5dea0fb6402eba8fd71b6bf9ccfd27ef4fd"
+    },
+    {
+      "bytes": 2025,
+      "path": "octavia-photographic-realism-v2-prompt.md",
+      "sha256": "8707b104744e9d69e165ff7f75c7ab6e753bb97f66a89d2d94eff69f621eb2df"
+    },
+    {
+      "bytes": 2747,
+      "path": "octavia-plum-beachwear-v10-prompt.md",
+      "sha256": "ab006c6b6028f7d8267925a18c12ebbc731b4c344a6b090fa64b64e74248fbe1"
+    },
+    {
+      "bytes": 2415,
+      "path": "octavia-plum-lingerie-fashion-v4-prompt.md",
+      "sha256": "a7bff6c79b58742da53cd6825aaa519e7f2b1f2fd0e0685a4afb57efa3b25157"
+    },
+    {
+      "bytes": 3282,
+      "path": "octavia-plum-satin-evening-v3-prompt.md",
+      "sha256": "e84ccce93f30211817e0233b6508ee4be6bcc5f9d3ff437059a1d1c65482a4bd"
+    },
+    {
+      "bytes": 2410,
+      "path": "octavia-plum-velvet-evening-v3-prompt.md",
+      "sha256": "7455f96739be6d68039a5ea25654235ef0d5230ce9bb1c10e2bff229682b7fe7"
+    },
+    {
+      "bytes": 4338,
+      "path": "octavia-realistic-hd-portrait-20260908-01-prompt.md",
+      "sha256": "9476feda30aa922cd8a696271975b66873f8581acac77595940db5d8a3c89e20"
+    },
+    {
+      "bytes": 6044,
+      "path": "octavia-reclaimed-fashion-synthesis-v36-prompt.md",
+      "sha256": "733e1b10d39fe961532c8d228de58698f0ee352a99185976ded73f5f8c008f49"
+    },
+    {
+      "bytes": 2230,
+      "path": "octavia-reclaimed-fashion-synthesis-v36b-prompt.md",
+      "sha256": "2cbe1b68020aa07b14eda7731cfa141c04acf2aab807f04f8d369148c46c844a"
+    },
+    {
+      "bytes": 4366,
+      "path": "octavia-room-outfit-v19-prompt.md",
+      "sha256": "e128a6b4ed3d52673eaa801910893c3af57595b927167bb8525580d0fe6ecfa2"
+    },
+    {
+      "bytes": 5215,
+      "path": "octavia-room-retexture-upright-v20-prompt.md",
+      "sha256": "7d14ab964af60e3163f9f881ee8287f8681cf074d6e18d11f8c414fb99022cad"
+    },
+    {
+      "bytes": 2425,
+      "path": "octavia-satin-loungewear-v5-prompt.md",
+      "sha256": "97937ae3d3ca6e6405f1f3a2b627ec911b7ac83eaa349393ebac8e5a915aba0c"
+    },
+    {
+      "bytes": 6517,
+      "path": "octavia-signature-synthesis-v34-prompt.md",
+      "sha256": "2308fa0a04c13ddd2c4a74474c22a5637e1895326ea5d0a114d474737debfac0"
+    },
+    {
+      "bytes": 2336,
+      "path": "octavia-sporty-swimwear-v11-prompt.md",
+      "sha256": "d1c6d03e083736f990e1eb6c6f09bf530cfe37ac49936c4d31a435eaf1102655"
+    },
+    {
+      "bytes": 2717,
+      "path": "octavia-standing-loungewear-v6-prompt.md",
+      "sha256": "c7a941fdbb5c3dd85f3625c25c6729cc94ae15b185b6c03e9fda42fb122e1515"
+    },
+    {
+      "bytes": 2734,
+      "path": "octavia-studio-gallery-brief.md",
+      "sha256": "17f9a30427437cd321f3aa9580e97ea7d4b4ac5b0c289f52819d1dcb4cb6d0a4"
+    },
+    {
+      "bytes": 4837,
+      "path": "octavia-studio-proof-16-v13-prompt.md",
+      "sha256": "776612a6102da145e1f78a8ea2de35a5747d7957a0f9e50fb0036ce5e98bc198"
+    },
+    {
+      "bytes": 7261,
+      "path": "octavia-ten-reference-conservatory-v37-prompt.md",
+      "sha256": "a1bf78f7df38b26e783a80c4e43e12e9536c55542b6aa8b1c022ff2f58f215dc"
+    },
+    {
+      "bytes": 1812,
+      "path": "octavia-ten-reference-conservatory-v37b-prompt.md",
+      "sha256": "58c5d93e4bb27fb13eced79ae9588d384ea2bc4a2bcf84ff61d92e29ac8f367e"
+    },
+    {
+      "bytes": 5222,
+      "path": "octavia-uniform-pose-remix-v17-prompt.md",
+      "sha256": "ab17d364a74c9c01b5162b94205c6dd0b116c51cc6a7e43ebd182a31602eb2d3"
+    },
+    {
+      "bytes": 5185,
+      "path": "octavia-walking-full-remix-v32-prompt.md",
+      "sha256": "63136b64dfe36412618747edd5b42ab12a6425347da5ad41e9f5563a76640653"
+    },
+    {
+      "bytes": 3246,
+      "path": "octavia-walking-profile-v32b-prompt.md",
+      "sha256": "ccf796cc1275d6dc781b198e3f63bbe5e1b692a53fead90218ec7b1b72333856"
+    },
+    {
+      "bytes": 3875,
+      "path": "octavia-zuza-casual-inspiration-v27-prompt.md",
+      "sha256": "2df73495867cc8b866c60c053d81a0b688d8ab99259ba5dec0a6f17390583e23"
+    },
+    {
+      "bytes": 5928,
+      "path": "octavia-zuza-cyan-comparison-v26-prompt.md",
+      "sha256": "c02533ac531d8f50e55d4966d00f2cd7077abcd5db3a730737d362e9e021be4c"
+    },
+    {
+      "bytes": 471,
+      "path": "octavia.py",
+      "sha256": "354f2ba2cbc07fe819ea830211a1b17e8b07d36c51f2649aeaa2218fe8466567"
+    },
+    {
+      "bytes": 47,
+      "path": "octavia_studio/.gitignore",
+      "sha256": "a0a36714fc38fd7ac8d325dc38985585d30b96d715aecaecabaea30f35695ada"
+    },
+    {
+      "bytes": 18828,
+      "path": "octavia_studio/README.md",
+      "sha256": "d061553db6d4051ef9d7434b1df31c8203e816f542881474872e22b177acd794"
+    },
+    {
+      "bytes": 103,
+      "path": "octavia_studio/__init__.py",
+      "sha256": "38a36c6406f1dc466996d1ead3cfdbb14177234c51c7588fb7d059cafc02415b"
+    },
+    {
+      "bytes": 29675,
+      "path": "octavia_studio/cli.py",
+      "sha256": "d63bd2c5e63aa41a007a828c4b994d1d68346d4dc4fd3921d78d744dab4872ad"
+    },
+    {
+      "bytes": 1147,
+      "path": "octavia_studio/data/documents/02/02573f4a56b4d21d0481f6b474f762924c8ddf827c1b3f2e2bd598ddfa0c0347.json",
+      "sha256": "02573f4a56b4d21d0481f6b474f762924c8ddf827c1b3f2e2bd598ddfa0c0347"
+    },
+    {
+      "bytes": 1406,
+      "path": "octavia_studio/data/documents/05/05c066051a2b02a9359853adb6d33271c24be39a6893db5ebf0bfad799478552.json",
+      "sha256": "05c066051a2b02a9359853adb6d33271c24be39a6893db5ebf0bfad799478552"
+    },
+    {
+      "bytes": 7174,
+      "path": "octavia_studio/data/documents/05/05e2c6ff47bfe94f07a42cc3d006c702b54015a0e74cfd1cbf4405af9c60a98d.md",
+      "sha256": "05e2c6ff47bfe94f07a42cc3d006c702b54015a0e74cfd1cbf4405af9c60a98d"
+    },
+    {
+      "bytes": 1956,
+      "path": "octavia_studio/data/documents/0b/0b2e80e5033f4785978edc0454475217210693c59607684abc07b60e72eede08.md",
+      "sha256": "0b2e80e5033f4785978edc0454475217210693c59607684abc07b60e72eede08"
+    },
+    {
+      "bytes": 4028,
+      "path": "octavia_studio/data/documents/0d/0d6333b958389093eb45c5b0db591d43ebc867171850925a67757e263f6d1735.md",
+      "sha256": "0d6333b958389093eb45c5b0db591d43ebc867171850925a67757e263f6d1735"
+    },
+    {
+      "bytes": 2734,
+      "path": "octavia_studio/data/documents/17/17f9a30427437cd321f3aa9580e97ea7d4b4ac5b0c289f52819d1dcb4cb6d0a4.md",
+      "sha256": "17f9a30427437cd321f3aa9580e97ea7d4b4ac5b0c289f52819d1dcb4cb6d0a4"
+    },
+    {
+      "bytes": 141111,
+      "path": "octavia_studio/data/documents/1a/1a23f61875215d36b3a8a2c963d00b700bf22df6efda526a4361801dcd794787.json",
+      "sha256": "1a23f61875215d36b3a8a2c963d00b700bf22df6efda526a4361801dcd794787"
+    },
+    {
+      "bytes": 3875,
+      "path": "octavia_studio/data/documents/1d/1d9267b0928f37d8d7c864c413cae39e789274eba0786a3e118184142f06f87e.md",
+      "sha256": "1d9267b0928f37d8d7c864c413cae39e789274eba0786a3e118184142f06f87e"
+    },
+    {
+      "bytes": 6517,
+      "path": "octavia_studio/data/documents/23/2308fa0a04c13ddd2c4a74474c22a5637e1895326ea5d0a114d474737debfac0.md",
+      "sha256": "2308fa0a04c13ddd2c4a74474c22a5637e1895326ea5d0a114d474737debfac0"
+    },
+    {
+      "bytes": 2385,
+      "path": "octavia_studio/data/documents/23/23a98d33cfdf742e495caefd146ae5dea0fb6402eba8fd71b6bf9ccfd27ef4fd.md",
+      "sha256": "23a98d33cfdf742e495caefd146ae5dea0fb6402eba8fd71b6bf9ccfd27ef4fd"
+    },
+    {
+      "bytes": 5814,
+      "path": "octavia_studio/data/documents/2a/2a2e3c66224a0301c8d363a18bef4c7255e608bc0c38efcd295feb3eed8252cf.md",
+      "sha256": "2a2e3c66224a0301c8d363a18bef4c7255e608bc0c38efcd295feb3eed8252cf"
+    },
+    {
+      "bytes": 2230,
+      "path": "octavia_studio/data/documents/2c/2cbe1b68020aa07b14eda7731cfa141c04acf2aab807f04f8d369148c46c844a.md",
+      "sha256": "2cbe1b68020aa07b14eda7731cfa141c04acf2aab807f04f8d369148c46c844a"
+    },
+    {
+      "bytes": 3875,
+      "path": "octavia_studio/data/documents/2d/2df73495867cc8b866c60c053d81a0b688d8ab99259ba5dec0a6f17390583e23.md",
+      "sha256": "2df73495867cc8b866c60c053d81a0b688d8ab99259ba5dec0a6f17390583e23"
+    },
+    {
+      "bytes": 4734,
+      "path": "octavia_studio/data/documents/2e/2ee5a1468762c2341db47d9b5322840720636363541b7da153a8fb94dad98c17.md",
+      "sha256": "2ee5a1468762c2341db47d9b5322840720636363541b7da153a8fb94dad98c17"
+    },
+    {
+      "bytes": 10851,
+      "path": "octavia_studio/data/documents/34/34aa310d41e7a7708dd13e1df68e0f4565da7095dc8f02f811955e584e110274.md",
+      "sha256": "34aa310d41e7a7708dd13e1df68e0f4565da7095dc8f02f811955e584e110274"
+    },
+    {
+      "bytes": 2689,
+      "path": "octavia_studio/data/documents/3c/3cbe511c59fa5be9eef18a06dc0a4e55f8f8b00b73bd3a29de22513dcaad3ab6.md",
+      "sha256": "3cbe511c59fa5be9eef18a06dc0a4e55f8f8b00b73bd3a29de22513dcaad3ab6"
+    },
+    {
+      "bytes": 2560,
+      "path": "octavia_studio/data/documents/4f/4fa91c7e2610bba8645d7605e28b4d39c119f356bb8737a9d1198ae5245d27dd.md",
+      "sha256": "4fa91c7e2610bba8645d7605e28b4d39c119f356bb8737a9d1198ae5245d27dd"
+    },
+    {
+      "bytes": 4245,
+      "path": "octavia_studio/data/documents/54/5403bafa168814aa8755ac20d23178caeea01a4cca5d14d732a36963f1963d72.md",
+      "sha256": "5403bafa168814aa8755ac20d23178caeea01a4cca5d14d732a36963f1963d72"
+    },
+    {
+      "bytes": 1812,
+      "path": "octavia_studio/data/documents/58/58c5d93e4bb27fb13eced79ae9588d384ea2bc4a2bcf84ff61d92e29ac8f367e.md",
+      "sha256": "58c5d93e4bb27fb13eced79ae9588d384ea2bc4a2bcf84ff61d92e29ac8f367e"
+    },
+    {
+      "bytes": 2783,
+      "path": "octavia_studio/data/documents/59/59678a9eff04375ffbdc71381796326677ed14bd7dd127e8ca13204b226c65c9.md",
+      "sha256": "59678a9eff04375ffbdc71381796326677ed14bd7dd127e8ca13204b226c65c9"
+    },
+    {
+      "bytes": 5185,
+      "path": "octavia_studio/data/documents/63/63136b64dfe36412618747edd5b42ab12a6425347da5ad41e9f5563a76640653.md",
+      "sha256": "63136b64dfe36412618747edd5b42ab12a6425347da5ad41e9f5563a76640653"
+    },
+    {
+      "bytes": 3900,
+      "path": "octavia_studio/data/documents/6b/6b2eb3c642b989607aebae4bb7e578129b34fc94fef7f7348b61e28987fbfbed.md",
+      "sha256": "6b2eb3c642b989607aebae4bb7e578129b34fc94fef7f7348b61e28987fbfbed"
+    },
+    {
+      "bytes": 4720,
+      "path": "octavia_studio/data/documents/6e/6ebc1a44e20bd3648fd14c54bda93b7e6d8115e6a003ccea369c67d97f599809.md",
+      "sha256": "6ebc1a44e20bd3648fd14c54bda93b7e6d8115e6a003ccea369c67d97f599809"
+    },
+    {
+      "bytes": 6044,
+      "path": "octavia_studio/data/documents/73/733e1b10d39fe961532c8d228de58698f0ee352a99185976ded73f5f8c008f49.md",
+      "sha256": "733e1b10d39fe961532c8d228de58698f0ee352a99185976ded73f5f8c008f49"
+    },
+    {
+      "bytes": 2410,
+      "path": "octavia_studio/data/documents/74/7455f96739be6d68039a5ea25654235ef0d5230ce9bb1c10e2bff229682b7fe7.md",
+      "sha256": "7455f96739be6d68039a5ea25654235ef0d5230ce9bb1c10e2bff229682b7fe7"
+    },
+    {
+      "bytes": 4837,
+      "path": "octavia_studio/data/documents/77/776612a6102da145e1f78a8ea2de35a5747d7957a0f9e50fb0036ce5e98bc198.md",
+      "sha256": "776612a6102da145e1f78a8ea2de35a5747d7957a0f9e50fb0036ce5e98bc198"
+    },
+    {
+      "bytes": 4937,
+      "path": "octavia_studio/data/documents/7b/7bd88bd5a17934bbbaff1bd0032afe0bb96154c9662abce841e762f011e7b6a9.md",
+      "sha256": "7bd88bd5a17934bbbaff1bd0032afe0bb96154c9662abce841e762f011e7b6a9"
+    },
+    {
+      "bytes": 5215,
+      "path": "octavia_studio/data/documents/7d/7d14ab964af60e3163f9f881ee8287f8681cf074d6e18d11f8c414fb99022cad.md",
+      "sha256": "7d14ab964af60e3163f9f881ee8287f8681cf074d6e18d11f8c414fb99022cad"
+    },
+    {
+      "bytes": 2193,
+      "path": "octavia_studio/data/documents/81/818a19625cb8976cdf3bbe909028eecce9d6a629e51d1905f0d955a3e7176046.md",
+      "sha256": "818a19625cb8976cdf3bbe909028eecce9d6a629e51d1905f0d955a3e7176046"
+    },
+    {
+      "bytes": 2025,
+      "path": "octavia_studio/data/documents/87/8707b104744e9d69e165ff7f75c7ab6e753bb97f66a89d2d94eff69f621eb2df.md",
+      "sha256": "8707b104744e9d69e165ff7f75c7ab6e753bb97f66a89d2d94eff69f621eb2df"
+    },
+    {
+      "bytes": 4338,
+      "path": "octavia_studio/data/documents/94/9476feda30aa922cd8a696271975b66873f8581acac77595940db5d8a3c89e20.md",
+      "sha256": "9476feda30aa922cd8a696271975b66873f8581acac77595940db5d8a3c89e20"
+    },
+    {
+      "bytes": 2425,
+      "path": "octavia_studio/data/documents/97/97937ae3d3ca6e6405f1f3a2b627ec911b7ac83eaa349393ebac8e5a915aba0c.md",
+      "sha256": "97937ae3d3ca6e6405f1f3a2b627ec911b7ac83eaa349393ebac8e5a915aba0c"
+    },
+    {
+      "bytes": 7261,
+      "path": "octavia_studio/data/documents/a1/a1bf78f7df38b26e783a80c4e43e12e9536c55542b6aa8b1c022ff2f58f215dc.md",
+      "sha256": "a1bf78f7df38b26e783a80c4e43e12e9536c55542b6aa8b1c022ff2f58f215dc"
+    },
+    {
+      "bytes": 5110,
+      "path": "octavia_studio/data/documents/a4/a4098f6188b8a724ec2c5961e7a73d25576e3b095d5e1d4473cb23852c11db48.md",
+      "sha256": "a4098f6188b8a724ec2c5961e7a73d25576e3b095d5e1d4473cb23852c11db48"
+    },
+    {
+      "bytes": 2415,
+      "path": "octavia_studio/data/documents/a7/a7bff6c79b58742da53cd6825aaa519e7f2b1f2fd0e0685a4afb57efa3b25157.md",
+      "sha256": "a7bff6c79b58742da53cd6825aaa519e7f2b1f2fd0e0685a4afb57efa3b25157"
+    },
+    {
+      "bytes": 2747,
+      "path": "octavia_studio/data/documents/ab/ab006c6b6028f7d8267925a18c12ebbc731b4c344a6b090fa64b64e74248fbe1.md",
+      "sha256": "ab006c6b6028f7d8267925a18c12ebbc731b4c344a6b090fa64b64e74248fbe1"
+    },
+    {
+      "bytes": 5222,
+      "path": "octavia_studio/data/documents/ab/ab17d364a74c9c01b5162b94205c6dd0b116c51cc6a7e43ebd182a31602eb2d3.md",
+      "sha256": "ab17d364a74c9c01b5162b94205c6dd0b116c51cc6a7e43ebd182a31602eb2d3"
+    },
+    {
+      "bytes": 3535,
+      "path": "octavia_studio/data/documents/ad/ad1c792cf49921178756306aa52aa7d53d6488b697520036197a2ad421e60680.md",
+      "sha256": "ad1c792cf49921178756306aa52aa7d53d6488b697520036197a2ad421e60680"
+    },
+    {
+      "bytes": 4277,
+      "path": "octavia_studio/data/documents/b0/b05ec3a8aaea1005bb680a39fde26578433a30057ce9d69f59cb38a40dc75b12.md",
+      "sha256": "b05ec3a8aaea1005bb680a39fde26578433a30057ce9d69f59cb38a40dc75b12"
+    },
+    {
+      "bytes": 5198,
+      "path": "octavia_studio/data/documents/b1/b1d8e1a232c34992f52ad571a5e3e7f81462f8a3cd32ee13df1a481b6f36c0cd.md",
+      "sha256": "b1d8e1a232c34992f52ad571a5e3e7f81462f8a3cd32ee13df1a481b6f36c0cd"
+    },
+    {
+      "bytes": 3272,
+      "path": "octavia_studio/data/documents/bf/bf83e8e02c883aceaa491cf8c3cc7e81c7b291fbba9b8667f6761ea43b3249be.md",
+      "sha256": "bf83e8e02c883aceaa491cf8c3cc7e81c7b291fbba9b8667f6761ea43b3249be"
+    },
+    {
+      "bytes": 5928,
+      "path": "octavia_studio/data/documents/c0/c02533ac531d8f50e55d4966d00f2cd7077abcd5db3a730737d362e9e021be4c.md",
+      "sha256": "c02533ac531d8f50e55d4966d00f2cd7077abcd5db3a730737d362e9e021be4c"
+    },
+    {
+      "bytes": 5392,
+      "path": "octavia_studio/data/documents/c4/c4d58b205f796f250489f3ff5eee7f03338211201e4f38a1c89a8ec9d091289e.md",
+      "sha256": "c4d58b205f796f250489f3ff5eee7f03338211201e4f38a1c89a8ec9d091289e"
+    },
+    {
+      "bytes": 2717,
+      "path": "octavia_studio/data/documents/c7/c7a941fdbb5c3dd85f3625c25c6729cc94ae15b185b6c03e9fda42fb122e1515.md",
+      "sha256": "c7a941fdbb5c3dd85f3625c25c6729cc94ae15b185b6c03e9fda42fb122e1515"
+    },
+    {
+      "bytes": 3246,
+      "path": "octavia_studio/data/documents/cc/ccf796cc1275d6dc781b198e3f63bbe5e1b692a53fead90218ec7b1b72333856.md",
+      "sha256": "ccf796cc1275d6dc781b198e3f63bbe5e1b692a53fead90218ec7b1b72333856"
+    },
+    {
+      "bytes": 2336,
+      "path": "octavia_studio/data/documents/d1/d1c6d03e083736f990e1eb6c6f09bf530cfe37ac49936c4d31a435eaf1102655.md",
+      "sha256": "d1c6d03e083736f990e1eb6c6f09bf530cfe37ac49936c4d31a435eaf1102655"
+    },
+    {
+      "bytes": 2553,
+      "path": "octavia_studio/data/documents/de/de34b45a335fe55e336d32f089a504bc2ff31dbff41e170087acd2a44579cfb3.md",
+      "sha256": "de34b45a335fe55e336d32f089a504bc2ff31dbff41e170087acd2a44579cfb3"
+    },
+    {
+      "bytes": 3400,
+      "path": "octavia_studio/data/documents/de/def569171b938c21e64b9b2cd6d3ec9a76c07d3d84983d3c74185dbc4f29340e.md",
+      "sha256": "def569171b938c21e64b9b2cd6d3ec9a76c07d3d84983d3c74185dbc4f29340e"
+    },
+    {
+      "bytes": 4366,
+      "path": "octavia_studio/data/documents/e1/e128a6b4ed3d52673eaa801910893c3af57595b927167bb8525580d0fe6ecfa2.md",
+      "sha256": "e128a6b4ed3d52673eaa801910893c3af57595b927167bb8525580d0fe6ecfa2"
+    },
+    {
+      "bytes": 3282,
+      "path": "octavia_studio/data/documents/e8/e84ccce93f30211817e0233b6508ee4be6bcc5f9d3ff437059a1d1c65482a4bd.md",
+      "sha256": "e84ccce93f30211817e0233b6508ee4be6bcc5f9d3ff437059a1d1c65482a4bd"
+    },
+    {
+      "bytes": 5272,
+      "path": "octavia_studio/data/documents/ed/edc0f90f84d8944376dff9901268ddd8d32e9554a9109d0f23d2f8571940d518.md",
+      "sha256": "edc0f90f84d8944376dff9901268ddd8d32e9554a9109d0f23d2f8571940d518"
+    },
+    {
+      "bytes": 4301,
+      "path": "octavia_studio/data/documents/f5/f53b927634714b8573df6a334c3d4f79405c36cb8bb7dbf9bc89661b59f26da4.md",
+      "sha256": "f53b927634714b8573df6a334c3d4f79405c36cb8bb7dbf9bc89661b59f26da4"
+    },
+    {
+      "bytes": 8883,
+      "path": "octavia_studio/data/documents/f6/f6c2dafe08f1d68125d4af85a45643d976feac26981d2bdce506e636bc7d1611.md",
+      "sha256": "f6c2dafe08f1d68125d4af85a45643d976feac26981d2bdce506e636bc7d1611"
+    },
+    {
+      "bytes": 267126,
+      "path": "octavia_studio/data/originals/06/06304fd46f0a0b92d2e6ba31d7cb0be52744ed573bed688ddc7cfb177df8d773.jpg",
+      "sha256": "06304fd46f0a0b92d2e6ba31d7cb0be52744ed573bed688ddc7cfb177df8d773"
+    },
+    {
+      "bytes": 276547,
+      "path": "octavia_studio/data/originals/2a/2a28a323025d1af37cac30cc46a5b5d3adfd113c48ba6f510e2da9ae756bc39f.jpg",
+      "sha256": "2a28a323025d1af37cac30cc46a5b5d3adfd113c48ba6f510e2da9ae756bc39f"
+    },
+    {
+      "bytes": 202280,
+      "path": "octavia_studio/data/originals/4a/4aa958e7e4279df56d1ea2abc887358198fb3d66b53b289ec4fdc0007dbe46eb.jpg",
+      "sha256": "4aa958e7e4279df56d1ea2abc887358198fb3d66b53b289ec4fdc0007dbe46eb"
+    },
+    {
+      "bytes": 178421,
+      "path": "octavia_studio/data/originals/63/632be75ba22ce38a613a7e3b4827602cb8dec7c7280b4122990f69bcbaf480f2.jpg",
+      "sha256": "632be75ba22ce38a613a7e3b4827602cb8dec7c7280b4122990f69bcbaf480f2"
+    },
+    {
+      "bytes": 147014,
+      "path": "octavia_studio/data/originals/7c/7cf41694da9b4f14e23abdd55f88fee2121f1c8b220e1b65bcd48377d078fa61.jpg",
+      "sha256": "7cf41694da9b4f14e23abdd55f88fee2121f1c8b220e1b65bcd48377d078fa61"
+    },
+    {
+      "bytes": 252372,
+      "path": "octavia_studio/data/originals/c2/c23c860ec74a2b02270fa0ed101afe978c400e3a2b8a85337f13c7a038c6bcfe.jpg",
+      "sha256": "c23c860ec74a2b02270fa0ed101afe978c400e3a2b8a85337f13c7a038c6bcfe"
+    },
+    {
+      "bytes": 6861,
+      "path": "octavia_studio/data/reports/conservatory-037/r-04e12ff0da1d4469.json",
+      "sha256": "be779e9eae1a1e92df19f99e450dcadf92ff4adde1bae443d99e93b90b403275"
+    },
+    {
+      "bytes": 180,
+      "path": "octavia_studio/data/reports/conservatory-037/r-04e12ff0da1d4469.md",
+      "sha256": "7f16c9234cbac44befad12ba94bbe31d8900ac684edd661b7b53db3e56a62e2e"
+    },
+    {
+      "bytes": 883,
+      "path": "octavia_studio/data/reports/conservatory-037/r-0804904bc5e14e96.json",
+      "sha256": "64da37dd711445fa038b26aeb8c05dc8c9a02908a6875b3346f950868146f414"
+    },
+    {
+      "bytes": 226,
+      "path": "octavia_studio/data/reports/conservatory-037/r-0804904bc5e14e96.md",
+      "sha256": "45db6bef647fd6db635378c0c2d2f986ed55f23622665db06413efc18acac1ae"
+    },
+    {
+      "bytes": 5953,
+      "path": "octavia_studio/data/reports/conservatory-037/r-14223b8a80364da7.json",
+      "sha256": "fa22690238ea78734c65f2139c7a56713fde9fb433d66055aa9dbea6ea8998bd"
+    },
+    {
+      "bytes": 299,
+      "path": "octavia_studio/data/reports/conservatory-037/r-14223b8a80364da7.md",
+      "sha256": "bcc622807c1198a509f15a451d2aeb5797091abbba91a51f05482d46c79bc76e"
+    },
+    {
+      "bytes": 883,
+      "path": "octavia_studio/data/reports/conservatory-037/r-35a32511cef04a57.json",
+      "sha256": "8c52cce026deb38662a8c93ad12e85696c92580372a4d85ecd13ffd273439a8e"
+    },
+    {
+      "bytes": 226,
+      "path": "octavia_studio/data/reports/conservatory-037/r-35a32511cef04a57.md",
+      "sha256": "45db6bef647fd6db635378c0c2d2f986ed55f23622665db06413efc18acac1ae"
+    },
+    {
+      "bytes": 883,
+      "path": "octavia_studio/data/reports/conservatory-037/r-46bb91bf62c04641.json",
+      "sha256": "500320b3b927e3d03ab8166eef36b0e26663995e7c452e6ac80061c417a677ec"
+    },
+    {
+      "bytes": 226,
+      "path": "octavia_studio/data/reports/conservatory-037/r-46bb91bf62c04641.md",
+      "sha256": "45db6bef647fd6db635378c0c2d2f986ed55f23622665db06413efc18acac1ae"
+    },
+    {
+      "bytes": 16516,
+      "path": "octavia_studio/data/reports/conservatory-037/r-48afd50c1acf430e.json",
+      "sha256": "3af43168027b679cccd03c2858b7bb6a57d5ea437b62f07bcc6d73534894b177"
+    },
+    {
+      "bytes": 1588,
+      "path": "octavia_studio/data/reports/conservatory-037/r-48afd50c1acf430e.md",
+      "sha256": "17c903feac14e80e2d58c6a6554f7dd6aa30fd2dff98747a9413e18e3546f431"
+    },
+    {
+      "bytes": 3473,
+      "path": "octavia_studio/data/reports/conservatory-037/r-5dfee6dd7db449b2.json",
+      "sha256": "4d1fd9179d721e3c0f3cbcbb28d57c3c6eff5e6dc77bbc936ed59b9d326269fd"
+    },
+    {
+      "bytes": 455,
+      "path": "octavia_studio/data/reports/conservatory-037/r-5dfee6dd7db449b2.md",
+      "sha256": "506b19016f67f6cb031349fe831e6700a85c8ed8726fe9927489e709200088b4"
+    },
+    {
+      "bytes": 883,
+      "path": "octavia_studio/data/reports/conservatory-037/r-86af63fc1eac44a2.json",
+      "sha256": "49391a7cb2a48bc7f71ed86ee558c6e3bc2ec81903c154e26694978ea0e85a74"
+    },
+    {
+      "bytes": 226,
+      "path": "octavia_studio/data/reports/conservatory-037/r-86af63fc1eac44a2.md",
+      "sha256": "45db6bef647fd6db635378c0c2d2f986ed55f23622665db06413efc18acac1ae"
+    },
+    {
+      "bytes": 6862,
+      "path": "octavia_studio/data/reports/conservatory-037/r-8ae72f8b92274e37.json",
+      "sha256": "bde025216f369fa0f192fb6c8352de0f1b0ddecf363ca5e31e07059734383912"
+    },
+    {
+      "bytes": 180,
+      "path": "octavia_studio/data/reports/conservatory-037/r-8ae72f8b92274e37.md",
+      "sha256": "7f16c9234cbac44befad12ba94bbe31d8900ac684edd661b7b53db3e56a62e2e"
+    },
+    {
+      "bytes": 10113,
+      "path": "octavia_studio/data/reports/conservatory-037/r-a8e8ace974fe4262.json",
+      "sha256": "d68c700016a7c423b2a448449f5c23ffe9476ee4da893f315da70e772cd167d7"
+    },
+    {
+      "bytes": 464,
+      "path": "octavia_studio/data/reports/conservatory-037/r-a8e8ace974fe4262.md",
+      "sha256": "dd056d61b18c1e24568f0ba9e6fb03ecbf8cb0938e47d6bc6f0dce8c4744440f"
+    },
+    {
+      "bytes": 16579,
+      "path": "octavia_studio/data/reports/conservatory-037/r-b00c4194b68c45bc.json",
+      "sha256": "92ab8b02bda320c39aed79771a9094ccc4d2f676ed820a64c9f08b277d6b3814"
+    },
+    {
+      "bytes": 1588,
+      "path": "octavia_studio/data/reports/conservatory-037/r-b00c4194b68c45bc.md",
+      "sha256": "a5bd29923d3098664706abedf4601c35b3528d90e503652d84a68c337333745c"
+    },
+    {
+      "bytes": 6549,
+      "path": "octavia_studio/data/reports/conservatory-037/r-b0a1a3e34e96485c.json",
+      "sha256": "8076b695c76b64c7dcdfb1c8442d8e865ef18e4532983b3a4553a4536c062d27"
+    },
+    {
+      "bytes": 182,
+      "path": "octavia_studio/data/reports/conservatory-037/r-b0a1a3e34e96485c.md",
+      "sha256": "508e521db48e8a7708ba1bbeb42cb366c320026600bab34cd6e2b260fc85c31f"
+    },
+    {
+      "bytes": 6861,
+      "path": "octavia_studio/data/reports/conservatory-037/r-c42e9d4887bf4495.json",
+      "sha256": "f65315720134be73ead405af9615a8408bcea2109ec7ae6965b6efa9fc903bdb"
+    },
+    {
+      "bytes": 180,
+      "path": "octavia_studio/data/reports/conservatory-037/r-c42e9d4887bf4495.md",
+      "sha256": "7f16c9234cbac44befad12ba94bbe31d8900ac684edd661b7b53db3e56a62e2e"
+    },
+    {
+      "bytes": 5952,
+      "path": "octavia_studio/data/reports/conservatory-037/r-d014398f654f4f41.json",
+      "sha256": "14d641a7e28397028cf42d8f38941c4af76be8c1d3382c45a4ea833dd0219aa6"
+    },
+    {
+      "bytes": 299,
+      "path": "octavia_studio/data/reports/conservatory-037/r-d014398f654f4f41.md",
+      "sha256": "bcc622807c1198a509f15a451d2aeb5797091abbba91a51f05482d46c79bc76e"
+    },
+    {
+      "bytes": 5553,
+      "path": "octavia_studio/data/reports/conservatory-037/r-e2f2d78d26f24db8.json",
+      "sha256": "4855dc8e0422e71c0127216f91e303201f595303f27075b5226690793c47b54a"
+    },
+    {
+      "bytes": 352,
+      "path": "octavia_studio/data/reports/conservatory-037/r-e2f2d78d26f24db8.md",
+      "sha256": "a362504ba64266257843c2611417e3deb75db5aaa28cb0c68b3a2635f8a11b50"
+    },
+    {
+      "bytes": 5952,
+      "path": "octavia_studio/data/reports/conservatory-037/r-eca7b86fa7c34208.json",
+      "sha256": "4f9806523ef4aff00d129f712647eff95d180e8926eab78405846de912aa2b85"
+    },
+    {
+      "bytes": 299,
+      "path": "octavia_studio/data/reports/conservatory-037/r-eca7b86fa7c34208.md",
+      "sha256": "bcc622807c1198a509f15a451d2aeb5797091abbba91a51f05482d46c79bc76e"
+    },
+    {
+      "bytes": 5553,
+      "path": "octavia_studio/data/reports/conservatory-037/r-f5637d382b474777.json",
+      "sha256": "a755fe357971d36dfa93ca4183b8e4cee0c31c2bce066eddb093ea8cbfdff990"
+    },
+    {
+      "bytes": 352,
+      "path": "octavia_studio/data/reports/conservatory-037/r-f5637d382b474777.md",
+      "sha256": "a362504ba64266257843c2611417e3deb75db5aaa28cb0c68b3a2635f8a11b50"
+    },
+    {
+      "bytes": 601,
+      "path": "octavia_studio/data/reports/legacy-archive/r-4e3afbacf67c4570.json",
+      "sha256": "c11b22a15e448bdf9ca3a49e4265c56da7c9fe43b8152800709059ab50a795aa"
+    },
+    {
+      "bytes": 179,
+      "path": "octavia_studio/data/reports/legacy-archive/r-4e3afbacf67c4570.md",
+      "sha256": "955b53b9d0c78238a6d0744d6fe965c5eb0e1e5d18b04643c521f3b716c0a8a3"
+    },
+    {
+      "bytes": 601,
+      "path": "octavia_studio/data/reports/legacy-archive/r-a6d2e7fab70a4ad1.json",
+      "sha256": "3da39d85f34f77bf9babafec649ed789df48db9e9289f512c46eddbe4c0bbe18"
+    },
+    {
+      "bytes": 179,
+      "path": "octavia_studio/data/reports/legacy-archive/r-a6d2e7fab70a4ad1.md",
+      "sha256": "21ffb1924e716f6e26cdc2980498ce878fef565eee606ddad4fb90bb317b35c6"
+    },
+    {
+      "bytes": 1825,
+      "path": "octavia_studio/data/reports/legacy-references/r-ef93112e0b2b484f.json",
+      "sha256": "0a45dd88dffa0532c50fd546219cccc7a578ecee7ff8f5e96b270536b4a8ea29"
+    },
+    {
+      "bytes": 226,
+      "path": "octavia_studio/data/reports/legacy-references/r-ef93112e0b2b484f.md",
+      "sha256": "8f1d641fd86cd7ece7aa6749d6a527e4afe068100d03cfe38e2295cb688ed7b8"
+    },
+    {
+      "bytes": 746,
+      "path": "octavia_studio/data/reports/legacy-v37/r-1722724feac94f14.json",
+      "sha256": "e4b453e2a15184790a82cab8b7ca8f0dd420835fc89673f4f806d7c933a55eea"
+    },
+    {
+      "bytes": 191,
+      "path": "octavia_studio/data/reports/legacy-v37/r-1722724feac94f14.md",
+      "sha256": "985741cf5924b4cf12d41505e33218e8897ccf3d169fdc74f0ec732c183b2059"
+    },
+    {
+      "bytes": 765,
+      "path": "octavia_studio/data/reports/legacy-v37/r-340d6926f9da4695.json",
+      "sha256": "2dde3ba97f636e6212f5438bd75b43964f3a246e39e8938a4aefcbc84ac84244"
+    },
+    {
+      "bytes": 205,
+      "path": "octavia_studio/data/reports/legacy-v37/r-340d6926f9da4695.md",
+      "sha256": "7ea5f46810548c833bca4482579cda2089075e8cc853f1b67455a54ac2ec6b7e"
+    },
+    {
+      "bytes": 749,
+      "path": "octavia_studio/data/reports/legacy-v37/r-4a131eb25de44c6d.json",
+      "sha256": "2cb2d00541dac466cb11d03777055a8852167d347768523cac85dc4d6a4bdf92"
+    },
+    {
+      "bytes": 197,
+      "path": "octavia_studio/data/reports/legacy-v37/r-4a131eb25de44c6d.md",
+      "sha256": "8185fad6bb9c7677e81ecc6c26db43cd531ab2952398ddeee6bc4ebaefeb31d9"
+    },
+    {
+      "bytes": 3128,
+      "path": "octavia_studio/data/reports/legacy-v37/r-4db3f66288e94ff9.json",
+      "sha256": "4f6b8cc23e012a9cb0cb561e2ca90616209b3b201e1c57e248dad918e10dd73d"
+    },
+    {
+      "bytes": 295,
+      "path": "octavia_studio/data/reports/legacy-v37/r-4db3f66288e94ff9.md",
+      "sha256": "e17c5f1bce18da254a941871f0238018ed6d1c0f2115c6991f0ac46ed34f7a46"
+    },
+    {
+      "bytes": 764,
+      "path": "octavia_studio/data/reports/legacy-v37/r-4f564216fdab4a8f.json",
+      "sha256": "09269c27bd5e92e1f8a5e9b8ff16ae051aa4692825cdb6e59b05472a784354c5"
+    },
+    {
+      "bytes": 208,
+      "path": "octavia_studio/data/reports/legacy-v37/r-4f564216fdab4a8f.md",
+      "sha256": "4a3481ffdc497ded3bd2163dc1d9abab19dcd0a6734d8a4f0c6bbc0541f851d0"
+    },
+    {
+      "bytes": 761,
+      "path": "octavia_studio/data/reports/legacy-v37/r-4fa9405380814ae2.json",
+      "sha256": "1e6524ba9d0793951f8f16efd3daff8062e10775d329f15153c3053c80b5ec7d"
+    },
+    {
+      "bytes": 205,
+      "path": "octavia_studio/data/reports/legacy-v37/r-4fa9405380814ae2.md",
+      "sha256": "44933392f59a1f9627d0f824b7d7f94b29d8a5863bc995a097e84cb9a57bf6fc"
+    },
+    {
+      "bytes": 749,
+      "path": "octavia_studio/data/reports/legacy-v37/r-6574304467bf43a4.json",
+      "sha256": "030ef9cd4eca2eed9301a7748c394b002255def06939365beb506e8c339c6d16"
+    },
+    {
+      "bytes": 196,
+      "path": "octavia_studio/data/reports/legacy-v37/r-6574304467bf43a4.md",
+      "sha256": "30a007c5cc114111f617a6f10d477633501ac0825a7465116f2fad8525469498"
+    },
+    {
+      "bytes": 762,
+      "path": "octavia_studio/data/reports/legacy-v37/r-6dd1916a51954c98.json",
+      "sha256": "1d95c75c6de3c34c2ab0e05cdf982e40d60994c9d1fb41bffd2b04ed3b8b54e7"
+    },
+    {
+      "bytes": 206,
+      "path": "octavia_studio/data/reports/legacy-v37/r-6dd1916a51954c98.md",
+      "sha256": "82bca3b8aaa4117dc00bc885ad01dabd88e6afe3bc29c864d51c7dec30f255df"
+    },
+    {
+      "bytes": 751,
+      "path": "octavia_studio/data/reports/legacy-v37/r-72458a131fc94100.json",
+      "sha256": "c1a822250be7528e2a9038f55b55f60acf3548741f01b63d6447a41c81175a88"
+    },
+    {
+      "bytes": 195,
+      "path": "octavia_studio/data/reports/legacy-v37/r-72458a131fc94100.md",
+      "sha256": "aea33e35ab56e2d513a9bd4456be8e9574dc382e6fbc6615984868bf20785969"
+    },
+    {
+      "bytes": 762,
+      "path": "octavia_studio/data/reports/legacy-v37/r-78b0668e9dd04cbb.json",
+      "sha256": "c16db68f64343dcfc5abcab7cc7e0ac0f0de28ac3b46e37f061901dbe289fb23"
+    },
+    {
+      "bytes": 206,
+      "path": "octavia_studio/data/reports/legacy-v37/r-78b0668e9dd04cbb.md",
+      "sha256": "82bca3b8aaa4117dc00bc885ad01dabd88e6afe3bc29c864d51c7dec30f255df"
+    },
+    {
+      "bytes": 749,
+      "path": "octavia_studio/data/reports/legacy-v37/r-7acd0f8c6d494efa.json",
+      "sha256": "1a26033d3e724254d81d13fa776800a49339f2363b53ba37115443c7f49de402"
+    },
+    {
+      "bytes": 197,
+      "path": "octavia_studio/data/reports/legacy-v37/r-7acd0f8c6d494efa.md",
+      "sha256": "8185fad6bb9c7677e81ecc6c26db43cd531ab2952398ddeee6bc4ebaefeb31d9"
+    },
+    {
+      "bytes": 764,
+      "path": "octavia_studio/data/reports/legacy-v37/r-8cd53adde4914930.json",
+      "sha256": "424ec678fffcd3a014714b79760de28051ffd585f0a5e2e511c6945e4c2472c3"
+    },
+    {
+      "bytes": 208,
+      "path": "octavia_studio/data/reports/legacy-v37/r-8cd53adde4914930.md",
+      "sha256": "4a3481ffdc497ded3bd2163dc1d9abab19dcd0a6734d8a4f0c6bbc0541f851d0"
+    },
+    {
+      "bytes": 3130,
+      "path": "octavia_studio/data/reports/legacy-v37/r-94c87f43e92e4c17.json",
+      "sha256": "0f65731c6bd81b350352a6a0d5528c5af9029a03efe0873574db0856ad17f234"
+    },
+    {
+      "bytes": 295,
+      "path": "octavia_studio/data/reports/legacy-v37/r-94c87f43e92e4c17.md",
+      "sha256": "069874c0ab2dea4a8c89b92d22c252a56521af514280f7c83a015f5ee1222039"
+    },
+    {
+      "bytes": 3130,
+      "path": "octavia_studio/data/reports/legacy-v37/r-a1f278daabd04547.json",
+      "sha256": "c7d64a08edafc2ec1ef1738ff47fd26ff5df968c9b86a3f580a1ddd6fdceb780"
+    },
+    {
+      "bytes": 295,
+      "path": "octavia_studio/data/reports/legacy-v37/r-a1f278daabd04547.md",
+      "sha256": "069874c0ab2dea4a8c89b92d22c252a56521af514280f7c83a015f5ee1222039"
+    },
+    {
+      "bytes": 762,
+      "path": "octavia_studio/data/reports/legacy-v37/r-a57d0bb3497042aa.json",
+      "sha256": "60308c469412a30a9b162637948c5adc9383f134f5f5f60414a3cf4ff3c5578a"
+    },
+    {
+      "bytes": 206,
+      "path": "octavia_studio/data/reports/legacy-v37/r-a57d0bb3497042aa.md",
+      "sha256": "82bca3b8aaa4117dc00bc885ad01dabd88e6afe3bc29c864d51c7dec30f255df"
+    },
+    {
+      "bytes": 764,
+      "path": "octavia_studio/data/reports/legacy-v37/r-aa6e29f5373a40a0.json",
+      "sha256": "97ba6cc455ee7cf536409f35fba7e0f229cdc9bb20da32db26980a0cd534ee70"
+    },
+    {
+      "bytes": 208,
+      "path": "octavia_studio/data/reports/legacy-v37/r-aa6e29f5373a40a0.md",
+      "sha256": "4a3481ffdc497ded3bd2163dc1d9abab19dcd0a6734d8a4f0c6bbc0541f851d0"
+    },
+    {
+      "bytes": 751,
+      "path": "octavia_studio/data/reports/legacy-v37/r-b060ca50e8384e40.json",
+      "sha256": "68238d8dc07a0f3e93f5616759b64f94f684505c244a35116200d9e7f8f0c67a"
+    },
+    {
+      "bytes": 195,
+      "path": "octavia_studio/data/reports/legacy-v37/r-b060ca50e8384e40.md",
+      "sha256": "aea33e35ab56e2d513a9bd4456be8e9574dc382e6fbc6615984868bf20785969"
+    },
+    {
+      "bytes": 3130,
+      "path": "octavia_studio/data/reports/legacy-v37/r-cd8463a4fbdb461b.json",
+      "sha256": "51a6b5301bd83f2c311407265cc15b16555571ae6820ad6bad36af2ca1321417"
+    },
+    {
+      "bytes": 295,
+      "path": "octavia_studio/data/reports/legacy-v37/r-cd8463a4fbdb461b.md",
+      "sha256": "069874c0ab2dea4a8c89b92d22c252a56521af514280f7c83a015f5ee1222039"
+    },
+    {
+      "bytes": 3128,
+      "path": "octavia_studio/data/reports/legacy-v37/r-d3a1497822314744.json",
+      "sha256": "f4cbe565a52b9a255d2b5872058f2a42119cf69efe8ac866b5f21283a9d58633"
+    },
+    {
+      "bytes": 295,
+      "path": "octavia_studio/data/reports/legacy-v37/r-d3a1497822314744.md",
+      "sha256": "e17c5f1bce18da254a941871f0238018ed6d1c0f2115c6991f0ac46ed34f7a46"
+    },
+    {
+      "bytes": 3128,
+      "path": "octavia_studio/data/reports/legacy-v37/r-d490f7d993624061.json",
+      "sha256": "b22fdd5ea6bf161832b6c27acbbbdec7b7af6dc910b27fd6aca1ee5d0a82db51"
+    },
+    {
+      "bytes": 295,
+      "path": "octavia_studio/data/reports/legacy-v37/r-d490f7d993624061.md",
+      "sha256": "e17c5f1bce18da254a941871f0238018ed6d1c0f2115c6991f0ac46ed34f7a46"
+    },
+    {
+      "bytes": 751,
+      "path": "octavia_studio/data/reports/legacy-v37/r-d4c08e414722409c.json",
+      "sha256": "583a3f8b1fc5cf286bb8a9bcd1d99e4ed05f7dc7bac87fe91139ddaaa289c0e2"
+    },
+    {
+      "bytes": 195,
+      "path": "octavia_studio/data/reports/legacy-v37/r-d4c08e414722409c.md",
+      "sha256": "aea33e35ab56e2d513a9bd4456be8e9574dc382e6fbc6615984868bf20785969"
+    },
+    {
+      "bytes": 746,
+      "path": "octavia_studio/data/reports/legacy-v37/r-e12118ceb2ea49ec.json",
+      "sha256": "4e7c52f21e5c9afcbe7b28590a2f27ad76c9adcc37e3699afb3b21dcc0143c0c"
+    },
+    {
+      "bytes": 191,
+      "path": "octavia_studio/data/reports/legacy-v37/r-e12118ceb2ea49ec.md",
+      "sha256": "985741cf5924b4cf12d41505e33218e8897ccf3d169fdc74f0ec732c183b2059"
+    },
+    {
+      "bytes": 3128,
+      "path": "octavia_studio/data/reports/legacy-v37/r-ed6e8cbc550b4ec6.json",
+      "sha256": "70c2105f1e36ec8f10a60d977798f6cb7e560be6cc2ad47f3564d50cc1ef8257"
+    },
+    {
+      "bytes": 295,
+      "path": "octavia_studio/data/reports/legacy-v37/r-ed6e8cbc550b4ec6.md",
+      "sha256": "e17c5f1bce18da254a941871f0238018ed6d1c0f2115c6991f0ac46ed34f7a46"
+    },
+    {
+      "bytes": 749,
+      "path": "octavia_studio/data/reports/legacy-v37/r-f1ceedfe62554b31.json",
+      "sha256": "54d0e6c5534cfd17f9c73670d6b7b7aaf35951a11766e4b0f20c22522a3071b6"
+    },
+    {
+      "bytes": 196,
+      "path": "octavia_studio/data/reports/legacy-v37/r-f1ceedfe62554b31.md",
+      "sha256": "30a007c5cc114111f617a6f10d477633501ac0825a7465116f2fad8525469498"
+    },
+    {
+      "bytes": 3130,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fad80a77249d4a84.json",
+      "sha256": "8f01b536f180823fad6c6b6c002e8b3c602e774f8372bf1d0dd530ee1f531c90"
+    },
+    {
+      "bytes": 295,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fad80a77249d4a84.md",
+      "sha256": "069874c0ab2dea4a8c89b92d22c252a56521af514280f7c83a015f5ee1222039"
+    },
+    {
+      "bytes": 749,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fb6a6f17108447ad.json",
+      "sha256": "c6f83080904046db2444155e3b2da32170875b376e0349b24cff042ffc5d5025"
+    },
+    {
+      "bytes": 196,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fb6a6f17108447ad.md",
+      "sha256": "30a007c5cc114111f617a6f10d477633501ac0825a7465116f2fad8525469498"
+    },
+    {
+      "bytes": 749,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fd81b4acb43248d3.json",
+      "sha256": "eca106e606544c2959de721a91de9c63d765e1b53c50365ccb7aed841306c847"
+    },
+    {
+      "bytes": 197,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fd81b4acb43248d3.md",
+      "sha256": "8185fad6bb9c7677e81ecc6c26db43cd531ab2952398ddeee6bc4ebaefeb31d9"
+    },
+    {
+      "bytes": 746,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fdc0f92f94334bcf.json",
+      "sha256": "f433c32c14a738f908d83cb3b5df30360e7b1597b825c9dba3ff78e387944e22"
+    },
+    {
+      "bytes": 191,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fdc0f92f94334bcf.md",
+      "sha256": "985741cf5924b4cf12d41505e33218e8897ccf3d169fdc74f0ec732c183b2059"
+    },
+    {
+      "bytes": 761,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fec91e3f2d8f49a1.json",
+      "sha256": "de39acfc9185c2eb02771a01cc200fe42aa610ee60b2eb0f388ded9219f7ac2f"
+    },
+    {
+      "bytes": 205,
+      "path": "octavia_studio/data/reports/legacy-v37/r-fec91e3f2d8f49a1.md",
+      "sha256": "44933392f59a1f9627d0f824b7d7f94b29d8a5863bc995a097e84cb9a57bf6fc"
+    },
+    {
+      "bytes": 3586,
+      "path": "octavia_studio/data/reports/plum-tailoring-038/r-267dbaac9d1441b5.json",
+      "sha256": "e781b857eddc58fbd79a563829b978a328cbc32086bff117caac1d53e9dabad5"
+    },
+    {
+      "bytes": 190,
+      "path": "octavia_studio/data/reports/plum-tailoring-038/r-267dbaac9d1441b5.md",
+      "sha256": "fb540663baac4a3330bc0a0aca61ca8e00d14134008ad58f28aad1810f49be24"
+    },
+    {
+      "bytes": 198,
+      "path": "octavia_studio/data/reports/plum-tailoring-038/r-6280da6078884a29.json",
+      "sha256": "9909b1c5e95895e737d5acc25c74ad03a1ebf49115c169d072a3ba391a44f2b2"
+    },
+    {
+      "bytes": 77,
+      "path": "octavia_studio/data/reports/plum-tailoring-038/r-6280da6078884a29.md",
+      "sha256": "534e8181dbd12b824d263370dd14ec8fb9b260d79f05d9f8d439589c76b3ed9a"
+    },
+    {
+      "bytes": 872,
+      "path": "octavia_studio/data/reports/plum-tailoring-038/r-cac9dbf0f5d54ee1.json",
+      "sha256": "b3c524bfe96513fc51d08dba8f41c6d67eef6a1901b61e8bf4996971dae3fc16"
+    },
+    {
+      "bytes": 381,
+      "path": "octavia_studio/data/reports/plum-tailoring-038/r-cac9dbf0f5d54ee1.md",
+      "sha256": "16ac69c0f92498c671b259578fb1c125bca2fbb8f8a202a032f8663f5baaf524"
+    },
+    {
+      "bytes": 290816,
+      "path": "octavia_studio/data/studio.sqlite3",
+      "sha256": "858730df37a7843f914f957623b0e5e7a1c3d4a806b8648842427f6e93d2c31f"
+    },
+    {
+      "bytes": 4730,
+      "path": "octavia_studio/handoff/COMPACT_HANDOFF.md",
+      "sha256": "86a9c767697e367389b1981d54e1ce9d6e0e83b073ac4f7be196cbda0cb118ab"
+    },
+    {
+      "bytes": 12415,
+      "path": "octavia_studio/handoff/ENGINEERING.md",
+      "sha256": "f8dbfb6df9e71e816f031dab7dd482f838a0cc2bb1d75d6b0c8ad91699df645e"
+    },
+    {
+      "bytes": 13877,
+      "path": "octavia_studio/handoff/PROJECT_CONTEXT.md",
+      "sha256": "98933356e0da16afc0773dabc87a0f46efe4fa4c78429e0d6772d3226cc75841"
+    },
+    {
+      "bytes": 4824,
+      "path": "octavia_studio/handoff/START_HERE.md",
+      "sha256": "d4ded1a19c7e8335c348766b86bef2b5728745f88f6333a58e87075c017db6de"
+    },
+    {
+      "bytes": 541609,
+      "path": "octavia_studio/handoff/assets.jsonl",
+      "sha256": "34d5b7e55edbcdbd0a45ebf72ce8197cbc5fca685a96ebcc7e6fbde4e83ad6c1"
+    },
+    {
+      "bytes": 8930,
+      "path": "octavia_studio/handoff/build_compact.py",
+      "sha256": "15a62bf15554d48e48e7b255c874c47e9407a99410d5f18c15b5c07b0370448e"
+    },
+    {
+      "bytes": 1695744,
+      "path": "octavia_studio/handoff/history-metadata-only.sqlite3",
+      "sha256": "e58fe0ec239aea38da02cada1a85c347bb2dd9d3a58fa1a67ea97e23ab505461"
+    },
+    {
+      "bytes": 1683810,
+      "path": "octavia_studio/handoff/snapshot.json",
+      "sha256": "91c795b01f8d2c63deecd244aeed80b9c70f2bdda6428dc55e7ce4b7f1a93464"
+    },
+    {
+      "bytes": 940278,
+      "path": "octavia_studio/handoff/wardrobe-metadata-only.json",
+      "sha256": "f56ef7500529bd638695c8b7c6f91ccd0ae8dd110f8eb092d7ad87ed341824ba"
+    },
+    {
+      "bytes": 11554,
+      "path": "octavia_studio/imaging.py",
+      "sha256": "dd7427ad55d958daba6ec15494c707ab1da1f7463905d4b236aa470cd970c5d0"
+    },
+    {
+      "bytes": 7882,
+      "path": "octavia_studio/jobs.py",
+      "sha256": "5eb70f5af07809b8c9adaff26d9127846b41ec13fd4ebbc224677a0caf093718"
+    },
+    {
+      "bytes": 8721,
+      "path": "octavia_studio/migration.py",
+      "sha256": "52144414d5947ab24c9e8430dbeffcc17d68a77e53a6104941f488d528ba3dd0"
+    },
+    {
+      "bytes": 5583,
+      "path": "octavia_studio/outputs.py",
+      "sha256": "74aa6394a49359287d92285a520a8696532431aa38af95456747fe057b1ad4e8"
+    },
+    {
+      "bytes": 4245,
+      "path": "octavia_studio/production/plum-evening-038-prompt.md",
+      "sha256": "5403bafa168814aa8755ac20d23178caeea01a4cca5d14d732a36963f1963d72"
+    },
+    {
+      "bytes": 1406,
+      "path": "octavia_studio/production/plum-tailoring-038-observations.json",
+      "sha256": "05c066051a2b02a9359853adb6d33271c24be39a6893db5ebf0bfad799478552"
+    },
+    {
+      "bytes": 3272,
+      "path": "octavia_studio/production/plum-tailoring-038-prompt.md",
+      "sha256": "bf83e8e02c883aceaa491cf8c3cc7e81c7b291fbba9b8667f6761ea43b3249be"
+    },
+    {
+      "bytes": 1147,
+      "path": "octavia_studio/production/plum-tailoring-038-state.json",
+      "sha256": "02573f4a56b4d21d0481f6b474f762924c8ddf827c1b3f2e2bd598ddfa0c0347"
+    },
+    {
+      "bytes": 141111,
+      "path": "octavia_studio/production/wardrobe-audit-20260911.json",
+      "sha256": "1a23f61875215d36b3a8a2c963d00b700bf22df6efda526a4361801dcd794787"
+    },
+    {
+      "bytes": 153,
+      "path": "octavia_studio/requirements.txt",
+      "sha256": "cc20c96a01df3f22d468e2abbc73e1f255c2a5d67eaf936c6c20832b3f8be7e2"
+    },
+    {
+      "bytes": 13209,
+      "path": "octavia_studio/review.py",
+      "sha256": "6d8015350771393c34d0ac6ef535aeee56102d67f881628189e318417a1e9279"
+    },
+    {
+      "bytes": 8942,
+      "path": "octavia_studio/seed.json",
+      "sha256": "6f4e354c90192811b9f06a81bd1280816ad99d95cbf7df567ece7c1be82d4986"
+    },
+    {
+      "bytes": 20773,
+      "path": "octavia_studio/storage.py",
+      "sha256": "664ddb530ebc27463ac261095f2c2bdea802de89b004fe241ba50906a856c0fe"
+    },
+    {
+      "bytes": 9681,
+      "path": "octavia_studio/test-results.xml",
+      "sha256": "88bdc445089c579df52c5a605044f56cd5f32d39ebbd88ef7af5847344f3e548"
+    },
+    {
+      "bytes": 22072,
+      "path": "octavia_studio/tests/test_studio.py",
+      "sha256": "8762a59acccc5b2f239d750a3d583884f7f96dd7a1b8fd172009fbabb03454a5"
+    },
+    {
+      "bytes": 4240,
+      "path": "octavia_studio/tests/test_wardrobe.py",
+      "sha256": "5546b097c6e4a81025742b1c088ede5f86bc61c4cc5d054708f9013b23bfe2e1"
+    },
+    {
+      "bytes": 10328,
+      "path": "octavia_studio/wardrobe.py",
+      "sha256": "f4b5e0d069edba8771e1fe9845e0dafb9b242146b3e636b73de73258a7ee51c1"
+    },
+    {
+      "bytes": 31562,
+      "path": "octavia_studio/wardrobe_inventory.py",
+      "sha256": "160cd0ecbaa7331a4281bdecc64e04d09fd164a04e21634ca3634c39ca4c17d7"
+    }
+  ],
+  "mode": "reference-only",
+  "omitted_asset_ids": [
+    "a-8437c8039e3f06dd",
+    "a-fcf679a4cd4de6f9",
+    "a-af37ee99a4583fad",
+    "a-e6e8b7b79caecdca",
+    "a-b5c9e8e0de963cf4",
+    "a-62d2ea2996428cc2",
+    "a-79e1ff91f13f346d",
+    "a-269f0bbea4a3aa30",
+    "a-84554bb4be4529db",
+    "a-df4604002a3d4903",
+    "a-a8957b3e236a5e5a",
+    "a-d739fc6c4f860fa2",
+    "a-171367c0552b5dc1",
+    "a-1cee9d7c4621994e",
+    "a-5c0ceda9e31f9735",
+    "a-30cedd2104acc4b7",
+    "a-281769fc32486fe2",
+    "a-e59c0c8df637f95d",
+    "a-24b2314b07cf53c7",
+    "a-a456f31f72df4691",
+    "a-07ac383cf257d4af",
+    "a-3f95fdbcfe3d5f10",
+    "a-e4ddf18875c19e81",
+    "a-ddfb963f7cbf65c2",
+    "a-34c204acbc02f8c3",
+    "a-5a571d290a9d834b",
+    "a-c58c4f8c32f96f87",
+    "a-674feefc736d2b3e",
+    "a-7f6c5eda6ae3df30",
+    "a-c0d9c92a762cff5f",
+    "a-4c70a4273a8b3806",
+    "a-dd64fa5706223d80",
+    "a-761edc7d51ce0ed0",
+    "a-73b56c3e5a80ed30",
+    "a-d3d356ef4b690d30",
+    "a-fe53a28088c92b05",
+    "a-3f220b36bc4abdcd",
+    "a-fa8b2ce6b2b1d6a1",
+    "a-4199c90f45625a9f",
+    "a-a94693a722c25ef2",
+    "a-bc30b1b83b85b06d",
+    "a-d4ab78be1363a46a",
+    "a-825483502719721c",
+    "a-30df1bc56d62a7ad",
+    "a-593233beaf86fed2",
+    "a-d85404b00b2c2fde",
+    "a-15add2ebc9a9f2c6",
+    "a-0924db2fad337032",
+    "a-cf3ef5ae4010386c",
+    "a-60aa47827a4ab798",
+    "a-3fc78c0515a8c848",
+    "a-e1b9508ed6c10109",
+    "a-76fd98f54ba62a66",
+    "a-485327944ff704ca",
+    "a-c144052552ced9a6",
+    "a-a449119a9d58e767",
+    "a-1e17419ae0e8b363",
+    "a-52b51687cadf747c",
+    "a-a1720a00aae1154e",
+    "a-0bbb9228c53a7cd8",
+    "a-3b066d7c8f6cdcf4",
+    "a-467f9d1f4cd10e60",
+    "a-231c9fdba1fd2956",
+    "a-0e6a49896cea4c43",
+    "a-cdeaf6df83b3f998",
+    "a-e738b6fd4ac6d398",
+    "a-87d51a6ee9075ede",
+    "a-f902c47d905e3713",
+    "a-e4712a3c65121aa7",
+    "a-268c5f9e080a29b2",
+    "a-d1e7b704ea11055a",
+    "a-2f6f0e7eb8aa6f8c",
+    "a-575a6062293ce91a",
+    "a-e222bfc3fc0b4822",
+    "a-3a90a4d5c3004fda",
+    "a-ab5083adb884567a",
+    "a-159cb258a1c790e0",
+    "a-bba934904d5b2f34",
+    "a-541e337d602b5d7b",
+    "a-b892c8bb47441519",
+    "a-ef505fc45709c6f1",
+    "a-5fc5f0dffa04c943",
+    "a-cf03adfa6ef11027",
+    "d-2822849a409359d2",
+    "d-088c57668b384998",
+    "d-49efd8bee9673678",
+    "d-a2d73500f09e61f2",
+    "d-f0aaf023593e2283",
+    "d-2323a63ae05e5097",
+    "d-63fe0c0c17701397",
+    "d-9d1f446c38a593f6",
+    "d-bf04aa4228bc54de",
+    "d-65a0d5697a7fa187",
+    "d-1b38f31acd118e0a",
+    "d-83fee9a0e9cd5d33",
+    "d-40f895a511be9009",
+    "d-b48fbab872e1de8e",
+    "d-93cedd00b6cf807f",
+    "d-37138968236bf65f",
+    "d-8dc5b299496b6f6b",
+    "d-74df8a63eed6bf0e",
+    "d-57c8bc757915704d",
+    "d-e66d7a6a8b452bb0",
+    "d-65c5f728c7cedc4a",
+    "d-beb18bedc73124ff",
+    "d-90b8ae69dcfc6934",
+    "d-03715df8c670ad44",
+    "d-0b48e459967ec2fa",
+    "d-5eb323d5d65d6311",
+    "d-1e869e1b7fa9fab5",
+    "d-943ec1a8ae735a22",
+    "d-03aa573bc97f9bf9",
+    "d-89e188b763fe2b24",
+    "d-263c250c8b2e48cb",
+    "d-97c1854cbb13863e",
+    "d-c0c8651a718952ec",
+    "d-8112e01196a832b9",
+    "d-118df693ebe034b5",
+    "d-05aafa78b4279602",
+    "d-c9edafba844b0409",
+    "d-3b8ac98ae277f60e",
+    "d-a79edcf9030fe6ce",
+    "d-ed589dd15e4ccaaf",
+    "d-cb284d267e1e606f",
+    "d-46fcfbf431c6bc9a",
+    "d-93925ba7b47bcc81",
+    "d-ac0c359b57ca497a",
+    "d-9545a054faf5c98b",
+    "d-f583db35e211ea78",
+    "d-07a45e6b040ce2f8",
+    "d-d2cc079b5a5a5142",
+    "d-c1a42d52604b3d1f",
+    "d-2136ceb154d44c28",
+    "d-f343ee1a613a757f",
+    "d-3042c9dff4ccb671",
+    "d-03f4cb445417cbbb",
+    "d-d278e614f3f7df4f",
+    "d-aca49769f63d8321",
+    "d-39624f9cfe1e895f",
+    "d-791c32f69724585a",
+    "d-c8c44165311a133d",
+    "d-d66ebf749a75a3df",
+    "d-90a1e69187471a6e",
+    "d-90f1c0e6ce4eeac6",
+    "d-110d156791bc321c",
+    "d-9bf2f1812a8a2403",
+    "d-f985cd802467b62f",
+    "d-a47cf11c4a108377",
+    "d-996b4125d06436c1",
+    "d-c226eab897bd7dc1",
+    "d-d484ecafdf3c1034",
+    "d-0d0ffcbffb762f85",
+    "d-b087a122283d6221",
+    "d-dccb96a9acda32ca",
+    "d-4597d134b4eebd9a",
+    "d-8ded4f3ce0f53124",
+    "d-6c90151f62b6a6e3",
+    "d-32d530f4dca3327e",
+    "d-c6eb4e5b5b60a449",
+    "d-3993819fd29efb8a",
+    "d-1f77aeee4e852ed2",
+    "d-cb9095c8f960484a",
+    "d-be59a4c84aafd9fc",
+    "d-c1238f8d2f85e429",
+    "d-769599edf8e6bbb9",
+    "d-2ca9b0d736f0bbcf",
+    "d-50076fc0436a676d",
+    "d-0d1a54523951402a",
+    "d-3dfa82382f840931",
+    "d-7150ad2b1fe6d714",
+    "d-c10711685d7f8387",
+    "d-5e2c297c89b92de6",
+    "d-99fe1b6e59845387",
+    "d-f75ee0f0345a2557",
+    "d-0b276cc6f52bd639",
+    "d-55f057c10ee3031c",
+    "d-53449e4ae4c41d22",
+    "d-a384472ed0e77ee4",
+    "d-d0a45183d3e9db8c",
+    "d-9240d5ac66131fa2",
+    "d-a802e20769be8981",
+    "d-7537851cb2bf09aa",
+    "d-b8b0232cd0a85611",
+    "d-561737e3497114ed",
+    "d-15008689a62d26eb",
+    "a-5d75bc683f0c6c4a",
+    "d-658515b57d8cefba",
+    "d-b9e9975a892c6dce",
+    "d-ab60391e4f4ae9d2",
+    "d-181520dcb290d30f",
+    "d-a06cea0af88c0a74",
+    "d-684451119eaa6b66",
+    "d-51bbb894502f6d96",
+    "d-d4250754cabd624f",
+    "d-d4dc61b25604f655",
+    "d-c3277a5b0c1fa7c7",
+    "d-184f5f381a9d58eb",
+    "d-4e41666d41340ad7",
+    "d-012179851267c105",
+    "d-063a5ed9ae54c353",
+    "d-f8ca61a2a0885a77",
+    "d-c552eccf2081580d",
+    "d-33fa5a9242bafc61",
+    "d-91809d78b1c95ebf",
+    "d-c05112fc72ff8a11",
+    "d-767992883e19cb10",
+    "d-3184cd7a1958cbde",
+    "d-eb0cd22e9cf8c7ba",
+    "d-8ac0ab26f570d34b",
+    "d-3e11dcfab6366e2a",
+    "d-cd5fc3f7709122cc",
+    "d-aa3b51f9181ca1c4",
+    "d-6150cabc48ab4392",
+    "d-ffb7c2fe3dc09f72",
+    "d-3261ec6eb34435b8",
+    "d-e9be1b01c1a9044d",
+    "d-8f2dd13398dc5382",
+    "d-ca2414095f642d71",
+    "d-e817d28aaa85d957",
+    "d-617ab690cc2936ca",
+    "d-2387b3a9e8771c35",
+    "d-12e088ca587f4af0",
+    "d-56f3ce5b63c1071d",
+    "d-bda3e215e0fd6dd3",
+    "d-b615aaf0f1741789",
+    "d-c4872e87a808c576",
+    "d-4802776b77cad972",
+    "d-23775d57886b2834",
+    "d-240f00d6664d0468",
+    "d-cf1b0e9dee91c85e",
+    "d-e1f46c5d04755af0",
+    "d-5060b6e1bf8d8105",
+    "d-784ff0fb40af6365",
+    "d-52ffa727d884a515",
+    "d-e696fc9332b2194e",
+    "d-22b35f47b294acd0",
+    "d-19e6850fbc0e6ecf",
+    "d-cb9a18efe629cb2f",
+    "d-b1858230d0b124d3",
+    "d-9a5ede7b868f9058",
+    "d-86a14c9f96c2701e",
+    "d-bc83868e6829a783",
+    "d-cd478fb890110e65",
+    "d-54899d58d633b692",
+    "d-919629ef452ace7e",
+    "d-2ac52e2698568699",
+    "d-01de2d6f36e624be",
+    "d-16b8caa785317d9e",
+    "d-90ee614c9b114e88",
+    "d-03c18fd5810fe6a0",
+    "d-378077859f2ff62d",
+    "d-1e1f02c05c84c03a",
+    "d-16e3aea66db4f847",
+    "d-4839615f7e2ffb81",
+    "d-920a81bcd4758229",
+    "d-3d99eef803e91b61",
+    "d-d04f4c5652d59ae0",
+    "d-0ccafd2d5357def4",
+    "d-b842a5d97e511869"
+  ],
+  "original_deletions": 0,
+  "photo_count": 6
+}

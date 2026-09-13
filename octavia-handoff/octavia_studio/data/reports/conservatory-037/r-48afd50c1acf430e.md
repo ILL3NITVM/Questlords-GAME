@@ -1,0 +1,21 @@
+# Octavia Studio: shoot-processing
+
+Job j-6c82c6adc315 completed: 2 polished. Originals/canon unchanged.
+
+Continuity: {"PASS": 1, "REVIEW": 1}
+Candidates: HERO a-3b066d7c8f6cdcf4, REVIEW a-0bbb9228c53a7cd8
+Exports: 7
+Composition/duplicate candidates: 1. Repetition signals: 0.
+- a-0bbb9228c53a7cd8: composition-repetition candidate with a-3b066d7c8f6cdcf4; visual check required
+
+Export locations:
+- x: /home/ubuntu/octavia_studio/data/derivatives/export/2323a63ae05e5097facc36c06aca39727085a2bde341b0c59301bd0f0340f39e.jpg
+- instagram-square: /home/ubuntu/octavia_studio/data/derivatives/export/63fe0c0c177013975a0b5249a7f67cbec075d9c6f555a0db923dd5f79b2a95ce.jpg
+- instagram-portrait: /home/ubuntu/octavia_studio/data/derivatives/export/9d1f446c38a593f6a518aff0c0ab7a4ca7f3c5f77dfd82c2c4e57f89929e5821.jpg
+- story: /home/ubuntu/octavia_studio/data/derivatives/export/bf04aa4228bc54deb3d58ecf71686410fa3d62eb367b0db44d2a30daca80c897.jpg
+- profile: /home/ubuntu/octavia_studio/data/derivatives/export/65a0d5697a7fa187d6712f2098f27b501b178c9bf054f27c28269861f9db25da.jpg
+- banner: /home/ubuntu/octavia_studio/data/derivatives/export/1b38f31acd118e0a56c56b91745959ebaa268392095754b2c68c098e565095f1.jpg
+- reference-sheet: /home/ubuntu/octavia_studio/data/derivatives/export/83fee9a0e9cd5d33bb57c3cff7c26c6054d615a5525b8350132fa3fdd358897c.jpg
+
+/home/ubuntu/octavia_studio/data/derivatives/polished/2822849a409359d2b80a1385e3fe2ddf2f4e043b5f7c134250f0e2949713eddc.png
+/home/ubuntu/octavia_studio/data/derivatives/polished/49efd8bee967367825096fb6c65b9eccfeb8045580c73e3467717c45b2889b66.png

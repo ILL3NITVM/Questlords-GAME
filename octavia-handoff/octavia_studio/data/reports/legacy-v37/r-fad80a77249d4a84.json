@@ -1,0 +1,104 @@
+{
+  "after": {
+    "composition_grid": [
+      0.3837095092489828,
+      0.3486028519197162,
+      0.3082485184378297,
+      0.32577527204405815,
+      0.32720759202149274,
+      0.19531443645233892,
+      0.22004968312147208,
+      0.21379197404358832,
+      0.23115071635834605,
+      0.18408614109982285,
+      0.11040714743706596,
+      0.26164566928967936,
+      0.1857623688381207,
+      0.16821609899690557,
+      0.18829915185697857,
+      0.15661270341500488
+    ],
+    "highlight_clip": 0.0008820564516129032,
+    "mean_luminance": 0.46942079067230225,
+    "mean_rgb": [
+      0.5118777751922607,
+      0.46109411120414734,
+      0.42659369111061096
+    ],
+    "metrics_basis": "512px thumbnail; texture/exposure evidence, not beauty or identity",
+    "shadow_clip": 0.0001030975073313783,
+    "sharpness": 1420.4296936746687
+  },
+  "before": {
+    "composition_grid": [
+      0.3828849938910403,
+      0.34767066143357517,
+      0.30893864735415,
+      0.32746568899820294,
+      0.32666004484290107,
+      0.19524298278963598,
+      0.2199827134240282,
+      0.21396056144781223,
+      0.23043471455592704,
+      0.1829131234242716,
+      0.11057964542739816,
+      0.2625000249555126,
+      0.1856999091527353,
+      0.1682320645891627,
+      0.18872500257153624,
+      0.15733437055143515
+    ],
+    "highlight_clip": 0.0008133247800586511,
+    "mean_luminance": 0.4694199562072754,
+    "mean_rgb": [
+      0.5118820071220398,
+      0.4610934853553772,
+      0.4265936017036438
+    ],
+    "metrics_basis": "512px thumbnail; texture/exposure evidence, not beauty or identity",
+    "shadow_clip": 9.164222873900293e-05,
+    "sharpness": 1378.6579817533493
+  },
+  "changed": {
+    "sharpen": 0.2
+  },
+  "created": "2026-09-10T01:07:14+00:00",
+  "kind": "polish",
+  "limitations": [
+    "Tone remapping cannot recover clipped JPEG/PNG detail.",
+    "Processing is 8-bit photographic polish, not RAW development."
+  ],
+  "metadata_policy": "Original metadata archived. Derivative: safe authorship/capture EXIF, normalized orientation/dimensions, sRGB ICC. GPS/thumbnail dropped.",
+  "operations": {
+    "contrast": 0.0,
+    "denoise": 0.0,
+    "exposure": 0.0,
+    "format": "png",
+    "highlights": 0.0,
+    "max_side": 0,
+    "quality": 95,
+    "shadows": 0.0,
+    "sharpen": 0.2,
+    "wb": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "output": "/home/ubuntu/octavia_studio/data/derivatives/polished/49efd8bee967367825096fb6c65b9eccfeb8045580c73e3467717c45b2889b66.png",
+  "output_asset_id": "d-49efd8bee9673678",
+  "output_sha256": "58c12d0ccc6f31880d72df6cc753cf4b7fe3dce7468165e00cca9912cd7aeb34",
+  "preserved": [
+    "original bytes",
+    "face/body geometry",
+    "field of view",
+    "aspect ratio",
+    "parent lineage"
+  ],
+  "preview": "/home/ubuntu/octavia_studio/data/derivatives/before_after/a2d73500f09e61f25b867201d30f0eb035d612b5e0cc607192926f1caf3c524e.png",
+  "preview_asset_id": "d-a2d73500f09e61f2",
+  "report_id": "r-fad80a77249d4a84",
+  "shoot_id": "legacy-v37",
+  "source_asset_id": "a-3b066d7c8f6cdcf4",
+  "source_sha256": "3b066d7c8f6cdcf412d448e597c4baa6999b4de0a1a3c842569f703bf4783c4d"
+}

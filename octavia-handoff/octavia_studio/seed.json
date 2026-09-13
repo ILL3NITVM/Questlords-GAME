@@ -1,0 +1,58 @@
+{
+  "identity": {
+    "character": "Octavia",
+    "adult_fictional_character": true,
+    "facial_appearance": "Established supplied references take priority; preserve natural asymmetry, expressive brows and softly defined features.",
+    "hair_identity": "Brunette with lime/chartreuse/olive face-framing sections; arrangement is state, not identity.",
+    "eyes": "Green/hazel",
+    "skin": "Subtle freckles, visible natural skin texture, pores and fine hair.",
+    "signature_accessory": "One amethyst crystal pendant on a delicate chain; visibility/occlusion is shoot state.",
+    "silhouette": "Established realistic adult silhouette. No numerical measurements inferred from photographs.",
+    "state_fields": ["hair_state", "outfit_id", "room_id", "texture_pack_id", "pose", "expression", "lighting", "accessories", "temporary_styling"],
+    "rules": ["No anatomy or facial geometry changes", "No beauty scoring", "No automatic canon promotion", "Unknown is not absent", "No biometric verification"],
+    "source_documents": ["octavia-master-prompt-v24.md", "octavia-studio-gallery-brief.md"]
+  },
+  "established_references": [
+    "octavia-master-reference-sheet.png", "octavia-identity-source-v9.jpg",
+    "octavia-master-source-v24-1.jpg", "octavia-master-source-v24-2.jpg",
+    "octavia-master-source-v24-3.jpg", "octavia-master-source-v24-4.jpg", "octavia-master-source-v24-5.jpg"
+  ],
+  "wardrobe": [
+    {"wardrobe_item_id":"cyan-square-top","name":"Cyan square-neck fitted top","category":"top","material":"opaque stretch knit, visual description only","primary_color":"cyan","fit":"fitted","source_reference":"octavia-zuza-comparison-source-v26-octavia.jpg","ownership":"established"},
+    {"wardrobe_item_id":"black-square-top","name":"Black square-neck tank","category":"top","material":"ribbed knit","primary_color":"black","fit":"fitted","source_reference":"octavia-master-source-v24-3.jpg","ownership":"established"},
+    {"wardrobe_item_id":"lilac-cardigan","name":"Soft lilac cardigan","category":"outerwear","material":"knit; exact fibre unknown","primary_color":"lilac","fit":"relaxed","source_reference":"octavia-lilac-cardigan-source-v23.jpg","ownership":"established"},
+    {"wardrobe_item_id":"cream-cardigan","name":"Cream chunky cardigan","category":"outerwear","material":"chunky knit; exact fibre unknown","primary_color":"cream","fit":"oversized","source_reference":"octavia-master-source-v24-1.jpg","ownership":"established"},
+    {"wardrobe_item_id":"black-pleated-skirt","name":"Black pleated skirt","category":"bottom","material":"opaque woven fabric","primary_color":"black","fit":"high-waisted pleated","source_reference":"octavia-master-source-v24-4.jpg","ownership":"established"},
+    {"wardrobe_item_id":"cyan-pleated-skirt","name":"Cyan pleated skirt","category":"bottom","material":"opaque woven fabric","primary_color":"cyan","fit":"pleated","source_reference":"octavia-cyan-outfit-source-v23.jpg","ownership":"established"},
+    {"wardrobe_item_id":"charcoal-trousers","name":"Charcoal tailored trousers","category":"bottom","material":"woven; fibre unspecified","primary_color":"charcoal","fit":"straight-leg","source_reference":"octavia-after-shopping-trousers-v35b.png","ownership":"candidate"},
+    {"wardrobe_item_id":"black-ankle-boots","name":"Black ankle boots","category":"footwear","material":"leather appearance","primary_color":"black","fit":"low block heel","source_reference":"octavia-master-source-v24-4.jpg","ownership":"established"},
+    {"wardrobe_item_id":"black-loafers","name":"Black substantial-sole loafers","category":"footwear","material":"polished leather appearance","primary_color":"black","fit":"chunky sole","source_reference":"octavia-cyan-outfit-source-v23.jpg","ownership":"established"},
+    {"wardrobe_item_id":"amethyst-pendant","name":"Signature purple crystal pendant","category":"accessory","material":"amethyst appearance; silver-coloured chain","primary_color":"purple","source_reference":"octavia-master-source-v24-5.jpg","ownership":"established"},
+    {"wardrobe_item_id":"zuza-cyan-inspiration","name":"Donor cyan design inspiration","category":"top","material":"unknown","primary_color":"cyan","source_reference":"octavia-zuza-comparison-source-v26-zuza.jpg","ownership":"inspiration","notes":"Design donor, not evidence of Octavia's identity or an owned garment."}
+  ],
+  "outfits": [
+    {"outfit_id":"cyan-lilac-pleats","name":"Cyan / lilac / black pleats","items":["cyan-square-top","lilac-cardigan","black-pleated-skirt","black-ankle-boots","amethyst-pendant"]},
+    {"outfit_id":"cyan-coordinates","name":"Cyan coordinates","items":["cyan-square-top","cyan-pleated-skirt","black-loafers","amethyst-pendant"]},
+    {"outfit_id":"black-window","name":"Black fitted window portrait","items":["black-square-top","black-pleated-skirt","amethyst-pendant"]}
+  ],
+  "rooms": [
+    {"room_id":"conservatory","name":"Apartment conservatory","architecture":"Glazed room, dark mullions, pale stone floor and city view","furniture":"Stone table, upholstered bench, walnut cabinet","notes":"Room family derived from supplied references; exact layouts vary."},
+    {"room_id":"apartment-lounge","name":"Apartment living room","architecture":"Large city-facing windows, pale stone and warm dark wood","furniture":"Soft sofa, stone coffee table, plants"},
+    {"room_id":"dressing-room","name":"Bedroom and dressing room","architecture":"Sloped ceiling, fitted sage storage, pale walls","furniture":"Bed, dresser, wardrobe and mirror"}
+  ],
+  "texture_packs": [
+    {"texture_pack_id":"conservatory-day","room_id":"conservatory","name":"Soft daylight","treatment":{"wall_palette":["pale stone","walnut"],"lighting":"diffuse window light","daytime":"day","bedding":null,"decor":"ceramic cup and unprinted book","plants":"leafy plants and white blossoms","window_view":"city","ambience":"relaxed","soft_furnishings":"charcoal with lilac throw"}},
+    {"texture_pack_id":"conservatory-lilac-evening","room_id":"conservatory","name":"Cool lilac evening","treatment":{"wall_palette":["pale stone","walnut"],"lighting":"cool window light with warm practical fill","daytime":"evening","bedding":null,"decor":"purple accents","plants":"same planted room","window_view":"city at dusk","ambience":"quiet","status":"proposed treatment, not a new architecture"}},
+    {"texture_pack_id":"lounge-amber","room_id":"apartment-lounge","name":"Warm amber evening","treatment":{"wall_palette":["pale stone","dark wood"],"lighting":"warm shaded lamps","daytime":"evening","decor":"books and plants","bedding":null,"plants":"leafy planters","window_view":"night skyline","ambience":"warm"}},
+    {"texture_pack_id":"lounge-day","room_id":"apartment-lounge","name":"Clear daylight","treatment":{"lighting":"side window daylight","daytime":"day","wall_palette":["gray stone","dark wood"],"window_view":"day skyline","ambience":"bright"}}
+  ],
+  "annotations": {
+    "octavia-master-source-v24-3.jpg":{"pose":["standing","relaxed"],"framing":"3/4","expression":"soft-smile","hair_state":"messy-high-bun","pendant_present":true,"outfit_id":"black-window","state":{"hair_roi":[0.27,0.07,0.7,0.43],"subject_roi":[0.0,0.015,0.89,1.0]}},
+    "octavia-master-source-v24-5.jpg":{"pose":["seated","head-tilt"],"framing":"half-body","expression":"soft-smile","hair_state":"messy-high-bun","pendant_present":true,"state":{"hair_roi":[0.2,0.025,0.74,0.43]}},
+    "octavia-ten-reference-conservatory-v37.png":{"pose":["seated","relaxed","crossed-legs","head-tilt"],"framing":"full-body","expression":"soft-smile","hair_state":"loose-ponytail","pendant_present":true,"room_id":"conservatory","texture_pack_id":"conservatory-day","outfit_id":"cyan-lilac-pleats","notes":"First pass; crossed legs and hand-supported head repeated a prior template.","state":{"hair_roi":[0.21,0.02,0.63,0.3],"subject_roi":[0.09,0.01,0.9,0.99]}},
+    "octavia-ten-reference-conservatory-v37b.png":{"pose":["seated","relaxed","uncrossed-legs","upright-head"],"framing":"full-body","expression":"soft-smile","hair_state":"loose-ponytail","pendant_present":true,"room_id":"conservatory","texture_pack_id":"conservatory-day","outfit_id":"cyan-lilac-pleats","notes":"Selected corrected output in this conversation; not automatically canon.","state":{"hair_roi":[0.21,0.02,0.63,0.3],"subject_roi":[0.09,0.005,0.88,0.99],"face_roi":[0.35,0.055,0.59,0.19]}},
+    "octavia-walking-profile-v32b.png":{"pose":["walking","profile"],"framing":"full-body","expression":"neutral","hair_state":"low-ponytail","pendant_present":true},
+    "octavia-reclaimed-fashion-synthesis-v36.png":{"pose":["standing","crossed-legs","head-tilt"],"framing":"full-body","expression":"soft-smile","hair_state":"half-up","pendant_present":true},
+    "octavia-reclaimed-fashion-synthesis-v36b.png":{"pose":["standing","uncrossed-legs","upright-head"],"framing":"full-body","expression":"soft-smile","hair_state":"half-up","pendant_present":true}
+  }
+}

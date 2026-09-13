@@ -1,0 +1,15 @@
+{
+  "created": "2026-09-10T00:48:33+00:00",
+  "date_basis": "Import time is precise; legacy creation time is source filesystem mtime, not a claimed render date.",
+  "errors": [],
+  "exact_duplicate_paths_reused": 115,
+  "existing_artifacts": "Portraits, reference sheets, previews, prompts, research, raw generations and recovery copies",
+  "kind": "migration",
+  "new_assets": 89,
+  "originals_modified": 0,
+  "report_id": "r-a6d2e7fab70a4ad1",
+  "scanned_images": 204,
+  "scope": "Octavia-prefixed workspace files and this conversation only",
+  "shoot_id": "legacy-archive",
+  "unique_assets": 89
+}

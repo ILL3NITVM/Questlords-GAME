@@ -1,0 +1,27 @@
+{
+  "asset_id": "a-5d75bc683f0c6c4a",
+  "canon_status": "unreviewed",
+  "created": "2026-09-13T04:19:55+00:00",
+  "kind": "quality-sample",
+  "output": "/home/ubuntu/octavia_studio/production/octavia-plum-tailoring-038.png",
+  "python_retouching": false,
+  "references": [
+    "a-2a28a323025d1af3",
+    "a-632be75ba22ce38a",
+    "a-0924db2fad337032"
+  ],
+  "report_id": "r-cac9dbf0f5d54ee1",
+  "resolution": [
+    1024,
+    1536
+  ],
+  "review_note": "Natural face texture, pendant, visible clothing and complete framing checked. Slight head tilt differs from requested upright pose. User likeness and aesthetic review pending.",
+  "shoot_id": "plum-tailoring-038",
+  "tests": {
+    "failed": 0,
+    "passed": 82
+  },
+  "wardrobe_catalog": "/home/ubuntu/octavia_studio/data/wardrobe/db4ef25d6dd8acb0/index.html",
+  "wardrobe_items": 155,
+  "wardrobe_observations": 1265
+}

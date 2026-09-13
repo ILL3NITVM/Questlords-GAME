@@ -1,0 +1,89 @@
+{
+  "created": "2026-09-10T00:58:32+00:00",
+  "grid": "4x2",
+  "kind": "sheet",
+  "labels": false,
+  "mode": "identity-only",
+  "pages": [
+    {
+      "asset_id": "d-40f895a511be9009",
+      "members": [
+        {
+          "asset_id": "a-dd64fa5706223d80",
+          "bounds": [
+            8,
+            8,
+            328,
+            448
+          ],
+          "column": 0,
+          "position": 0,
+          "row": 0
+        },
+        {
+          "asset_id": "a-06304fd46f0a0b92",
+          "bounds": [
+            336,
+            8,
+            656,
+            448
+          ],
+          "column": 1,
+          "position": 1,
+          "row": 0
+        },
+        {
+          "asset_id": "a-4aa958e7e4279df5",
+          "bounds": [
+            664,
+            8,
+            984,
+            448
+          ],
+          "column": 2,
+          "position": 2,
+          "row": 0
+        },
+        {
+          "asset_id": "a-2a28a323025d1af3",
+          "bounds": [
+            992,
+            8,
+            1312,
+            448
+          ],
+          "column": 3,
+          "position": 3,
+          "row": 0
+        },
+        {
+          "asset_id": "a-632be75ba22ce38a",
+          "bounds": [
+            8,
+            456,
+            328,
+            896
+          ],
+          "column": 0,
+          "position": 4,
+          "row": 1
+        },
+        {
+          "asset_id": "a-7cf41694da9b4f14",
+          "bounds": [
+            336,
+            456,
+            656,
+            896
+          ],
+          "column": 1,
+          "position": 5,
+          "row": 1
+        }
+      ],
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/sheet/40f895a511be9009c72a48e1b87e2a030672c4bc30243a4a4123aebc6ac2e481.png"
+    }
+  ],
+  "report_id": "r-ef93112e0b2b484f",
+  "shoot_id": "legacy-references"
+}

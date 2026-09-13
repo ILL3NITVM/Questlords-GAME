@@ -1,0 +1,145 @@
+{
+  "assets": [
+    {
+      "acknowledged": [],
+      "asset_id": "a-5d75bc683f0c6c4a",
+      "evidence": {
+        "hair": {
+          "basis": "color evidence inside manually annotated hair ROI; not hair detection",
+          "green_fraction": 0.026628392727951644,
+          "median_green_hue": 46.588233947753906
+        },
+        "pixels": {
+          "center_hash": "b0e18c8c6353bbf4",
+          "composition_grid": [
+            0.3297262763192153,
+            0.35079379251355636,
+            0.24753478587279665,
+            0.23807835373086486,
+            0.3179447689606342,
+            0.1877580737276106,
+            0.24387430360560394,
+            0.29793085028571936,
+            0.2118107370858681,
+            0.2325582217281614,
+            0.19724829369629016,
+            0.3117008372116242,
+            0.1824404671311126,
+            0.1820092325852839,
+            0.15511201533568889,
+            0.2005169544411544
+          ],
+          "dhash": "4796978d0d3c2f6f",
+          "height": 1536,
+          "highlight_clip": 0.002754994501466276,
+          "mean_luminance": 0.4765080511569977,
+          "mean_rgb": [
+            0.5263134241104126,
+            0.4650149941444397,
+            0.44341111183166504
+          ],
+          "metrics_basis": "512px thumbnail; texture/exposure evidence, not beauty or identity",
+          "mode": "RGB",
+          "phash": "a4e18fd763729528",
+          "shadow_clip": 4.5821114369501466e-05,
+          "sharpness": 711.2783278338611,
+          "width": 1024
+        }
+      },
+      "reasons": [],
+      "status": "PASS",
+      "unknown": []
+    }
+  ],
+  "created": "2026-09-13T04:18:32+00:00",
+  "diversity": {
+    "expression": {
+      "annotated": 1,
+      "counts": {
+        "soft-smile": 1
+      },
+      "total": 1
+    },
+    "framing": {
+      "annotated": 1,
+      "counts": {
+        "full-body": 1
+      },
+      "total": 1
+    },
+    "hair_state": {
+      "annotated": 1,
+      "counts": {
+        "messy-high-updo-with-green-face-framing-strands": 1
+      },
+      "total": 1
+    },
+    "outfit_id": {
+      "annotated": 1,
+      "counts": {
+        "plum-tailoring-038": 1
+      },
+      "total": 1
+    },
+    "pose": {
+      "annotated": 1,
+      "counts": {
+        "cuff-adjustment": 1,
+        "slight-head-tilt": 1,
+        "standing": 1,
+        "uncrossed-legs": 1
+      },
+      "total": 1
+    },
+    "room_id": {
+      "annotated": 1,
+      "counts": {
+        "apartment-lounge": 1
+      },
+      "total": 1
+    }
+  },
+  "expected_vocab": {
+    "expression": [
+      "soft-smile",
+      "neutral",
+      "thoughtful",
+      "playful",
+      "confident",
+      "serious-editorial",
+      "laughing",
+      "looking-away"
+    ],
+    "framing": [
+      "close-portrait",
+      "half-body",
+      "3/4",
+      "full-body"
+    ],
+    "pose": [
+      "standing",
+      "seated",
+      "walking",
+      "leaning",
+      "over-shoulder",
+      "profile",
+      "looking-away",
+      "mirror-selfie",
+      "candid",
+      "relaxed",
+      "editorial"
+    ]
+  },
+  "kind": "continuity",
+  "limitations": [
+    "No biometric verification or inferred body measurements.",
+    "Pose, room, wardrobe and pendant presence depend on explicit annotations.",
+    "Hair color uses a manually reviewed ROI; plants and lighting can confound color.",
+    "PASS means no flagged evidence in available checks, not verified identity.",
+    "Unknown fields are REVIEW, not silently treated as passing."
+  ],
+  "pairs": [],
+  "repetition": [],
+  "report_id": "r-267dbaac9d1441b5",
+  "shoot_id": "plum-tailoring-038"
+}

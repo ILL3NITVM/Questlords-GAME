@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# `data/` was excluded in the original workspace, where it was a live working
+# store rebuilt by `octavia.py init`. In this repository the handoff is an
+# ARCHIVE: data/ holds the six reference photographs, the asset database and
+# the 53 preserved source documents. Excluding it would discard the very
+# thing this package exists to carry, so the rule is deliberately removed.

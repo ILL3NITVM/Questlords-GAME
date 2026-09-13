@@ -1,0 +1,20 @@
+{
+  "pose": ["standing", "cuff-adjustment", "uncrossed-legs", "slight-head-tilt"],
+  "framing": "full-body",
+  "expression": "soft-smile",
+  "hair_state": "messy-high-updo-with-green-face-framing-strands",
+  "pendant_present": true,
+  "room_id": "apartment-lounge",
+  "texture_pack_id": "lounge-day",
+  "notes": "One generated quality-check sample. Complete head and shoes visible; plum suit and opaque lilac knit. The output retains a slight head tilt despite the requested upright head. Awaiting user aesthetic and likeness review; no beauty score or canon promotion.",
+  "state": {
+    "hair_roi": [0.365,0.055,0.566,0.189],
+    "subject_roi": [0.145,0.002,0.691,0.99],
+    "face_roi": [0.40,0.064,0.54,0.179],
+    "generation_tool": "built-in image_gen",
+    "prompt_document": "production/plum-tailoring-038-prompt.md",
+    "quality_review": "Assistant visual inspection, not a biometric or anatomical measurement assessment",
+    "pose_deviation": "Mild head tilt remains; recorded rather than declaring perfect prompt compliance.",
+    "generation_reference_assets": ["a-2a28a323025d1af3", "a-632be75ba22ce38a", "a-0924db2fad337032"]
+  }
+}

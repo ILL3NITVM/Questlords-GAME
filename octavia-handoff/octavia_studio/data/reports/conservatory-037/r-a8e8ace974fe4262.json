@@ -1,0 +1,302 @@
+{
+  "continuity": {
+    "assets": 2,
+    "counts": {
+      "PASS": 1,
+      "REVIEW": 1
+    },
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-14223b8a80364da7.json",
+    "report_id": "r-14223b8a80364da7",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-14223b8a80364da7.md"
+  },
+  "created": "2026-09-10T00:56:14+00:00",
+  "curation": {
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-8ae72f8b92274e37.json",
+    "ranking": [
+      {
+        "asset_id": "a-3b066d7c8f6cdcf4",
+        "diversity_adjusted_score": 99.98,
+        "label": "HERO",
+        "reasons": [],
+        "technical_score": 99.98
+      },
+      {
+        "asset_id": "a-0bbb9228c53a7cd8",
+        "diversity_adjusted_score": 78.97,
+        "label": "REVIEW",
+        "reasons": [
+          "composition-repetition candidate with a-3b066d7c8f6cdcf4; visual check required"
+        ],
+        "technical_score": 87.97
+      }
+    ],
+    "report_id": "r-8ae72f8b92274e37",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-8ae72f8b92274e37.md"
+  },
+  "export_note": "Only HERO/STRONG candidates exported; review unknown/outlier assets first.",
+  "exports": [
+    {
+      "asset_id": "d-2323a63ae05e5097",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          515,
+          22,
+          1085,
+          877
+        ],
+        "preset": "x",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          1600,
+          900
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-e12118ceb2ea49ec.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/2323a63ae05e5097facc36c06aca39727085a2bde341b0c59301bd0f0340f39e.jpg",
+      "report_id": "r-e12118ceb2ea49ec",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-e12118ceb2ea49ec.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-63fe0c0c17701397",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          198,
+          27,
+          882,
+          1053
+        ],
+        "preset": "instagram-square",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          1080,
+          1080
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-a57d0bb3497042aa.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/63fe0c0c177013975a0b5249a7f67cbec075d9c6f555a0db923dd5f79b2a95ce.jpg",
+      "report_id": "r-a57d0bb3497042aa",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-a57d0bb3497042aa.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-9d1f446c38a593f6",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          112,
+          34,
+          967,
+          1316
+        ],
+        "preset": "instagram-portrait",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          1080,
+          1350
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-4f564216fdab4a8f.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/9d1f446c38a593f6a518aff0c0ab7a4ca7f3c5f77dfd82c2c4e57f89929e5821.jpg",
+      "report_id": "r-4f564216fdab4a8f",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-4f564216fdab4a8f.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-bf04aa4228bc54de",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          27,
+          190,
+          1053,
+          1729
+        ],
+        "preset": "story",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          1080,
+          1920
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": true
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-b060ca50e8384e40.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/bf04aa4228bc54deb3d58ecf71686410fa3d62eb367b0db44d2a30daca80c897.jpg",
+      "report_id": "r-b060ca50e8384e40",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-b060ca50e8384e40.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-65a0d5697a7fa187",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          106,
+          60,
+          293,
+          340
+        ],
+        "preset": "profile",
+        "requested_fit": "contain",
+        "safe_padding": 0.15,
+        "size": [
+          400,
+          400
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-fd81b4acb43248d3.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/65a0d5697a7fa187d6712f2098f27b501b178c9bf054f27c28269861f9db25da.jpg",
+      "report_id": "r-fd81b4acb43248d3",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-fd81b4acb43248d3.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-1b38f31acd118e0a",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          623,
+          60,
+          876,
+          440
+        ],
+        "preset": "banner",
+        "requested_fit": "contain",
+        "safe_padding": 0.12,
+        "size": [
+          1500,
+          500
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": false
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-f1ceedfe62554b31.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/1b38f31acd118e0a56c56b91745959ebaa268392095754b2c68c098e565095f1.jpg",
+      "report_id": "r-f1ceedfe62554b31",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-f1ceedfe62554b31.md",
+      "uploaded": false
+    },
+    {
+      "asset_id": "d-83fee9a0e9cd5d33",
+      "crop": {
+        "crop_box": null,
+        "fit": "contain",
+        "metadata": "EXIF/GPS removed; normalized sRGB ICC retained",
+        "placement": [
+          375,
+          51,
+          1672,
+          1997
+        ],
+        "preset": "reference-sheet",
+        "requested_fit": "contain",
+        "safe_padding": 0.025,
+        "size": [
+          2048,
+          2048
+        ],
+        "subject_basis": "manual subject ROI",
+        "upscaled": true
+      },
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-4fa9405380814ae2.json",
+      "parent_asset_id": "d-49efd8bee9673678",
+      "path": "/home/ubuntu/octavia_studio/data/derivatives/export/83fee9a0e9cd5d33bb57c3cff7c26c6054d615a5525b8350132fa3fdd358897c.jpg",
+      "report_id": "r-4fa9405380814ae2",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-4fa9405380814ae2.md",
+      "uploaded": false
+    }
+  ],
+  "job_id": "j-c80848e2ae40",
+  "kind": "shoot-processing",
+  "polished": [
+    {
+      "asset_id": "d-2822849a409359d2",
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-d3a1497822314744.json",
+      "output": "/home/ubuntu/octavia_studio/data/derivatives/polished/2822849a409359d2b80a1385e3fe2ddf2f4e043b5f7c134250f0e2949713eddc.png",
+      "preview": "d-088c57668b384998",
+      "report_id": "r-d3a1497822314744",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-d3a1497822314744.md"
+    },
+    {
+      "asset_id": "d-49efd8bee9673678",
+      "json": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-94c87f43e92e4c17.json",
+      "output": "/home/ubuntu/octavia_studio/data/derivatives/polished/49efd8bee967367825096fb6c65b9eccfeb8045580c73e3467717c45b2889b66.png",
+      "preview": "d-a2d73500f09e61f2",
+      "report_id": "r-94c87f43e92e4c17",
+      "summary": "/home/ubuntu/octavia_studio/data/reports/legacy-v37/r-94c87f43e92e4c17.md"
+    }
+  ],
+  "preserved": "All original bytes and lineage; no canon promotion",
+  "report_id": "r-a8e8ace974fe4262",
+  "sheets": {
+    "json": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-46bb91bf62c04641.json",
+    "pages": [
+      {
+        "asset_id": "d-f0aaf023593e2283",
+        "members": [
+          {
+            "asset_id": "a-0bbb9228c53a7cd8",
+            "bounds": [
+              8,
+              8,
+              328,
+              448
+            ],
+            "column": 0,
+            "position": 0,
+            "row": 0
+          },
+          {
+            "asset_id": "a-3b066d7c8f6cdcf4",
+            "bounds": [
+              336,
+              8,
+              656,
+              448
+            ],
+            "column": 1,
+            "position": 1,
+            "row": 0
+          }
+        ],
+        "path": "/home/ubuntu/octavia_studio/data/derivatives/sheet/f0aaf023593e2283d4faae536f471b8f77d3eb0c8706168e49c33d0ea2b03597.png"
+      }
+    ],
+    "report_id": "r-46bb91bf62c04641",
+    "summary": "/home/ubuntu/octavia_studio/data/reports/conservatory-037/r-46bb91bf62c04641.md"
+  },
+  "shoot_id": "conservatory-037"
+}
