@@ -21,7 +21,7 @@
     },
     {
       "id": "confident_gaze",
-      "label": "confident level gaze, composed mouth",
+      "label": "confident and composed",
       "mood": "confident",
       "weight": 1.3
     },
@@ -81,7 +81,7 @@
     },
     {
       "id": "looking_down_soft",
-      "label": "softly downcast, calm expression",
+      "label": "calm and quietly absorbed",
       "mood": "thoughtful",
       "weight": 0.9
     }

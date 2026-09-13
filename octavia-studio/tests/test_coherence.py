@@ -102,3 +102,34 @@ def test_seated_poses_do_not_use_standing_full_body_framing():
     for s in _specs():
         if s.pose["posture"] in ("seated", "floor", "reclined"):
             assert s.camera["shot"]["id"] != "full_body"
+
+
+def test_expression_never_states_where_she_is_looking():
+    """Expression describes the FACE; the head axis owns gaze, and the two
+    sample independently. An expression that also states a gaze direction
+    produced "eyes looking directly into the lens, softly downcast" in a
+    real frame."""
+    import re
+    gaze = re.compile(r"\b(downcast|looking|gaze|eyes|glance|stare)\b", re.I)
+    for s in _specs(60):
+        assert not gaze.search(s.expression["label"]), \
+            f"expression {s.expression['id']!r} encodes gaze: {s.expression['label']!r}"
+
+
+def test_prompt_never_contradicts_itself_about_gaze():
+    import yaml as _yaml
+    from pipeline.prompt import build_prompts
+    idn = _yaml.safe_load((ROOT / "config/identity.yaml").read_text())
+    phy = _yaml.safe_load((ROOT / "config/physique.yaml").read_text())
+    cat = Catalogue()
+    hist = DiversityHistory(window=24)
+    smp = Sampler(cat, hist, CFG, planned_total=40, diversity="high")
+    comp = Composer(cat, smp, CFG, POL)
+    for i in range(40):
+        spec = comp.compose("GZ", i, seed_record(i, "GZ", i))
+        prompt, _ = build_prompts(spec, idn, phy, POL, cat,
+                                  CFG.get("identity", {}), {"tier": "full"})
+        low = prompt.lower()
+        if "into the lens" in low:
+            assert "downcast" not in low, prompt[:200]
+            assert "away from the camera" not in low, prompt[:200]

@@ -13,6 +13,7 @@ random noun soup):
 from __future__ import annotations
 
 import random
+import re
 from typing import Any, Dict, List, Optional
 
 from pipeline.history import DiversityHistory
@@ -22,6 +23,11 @@ from pipeline.spec import FrameSpec, HeadPose, SeedRecord, WardrobeSelection
 
 # Garments that may never be the outermost layer on the torso.
 BASE_LAYER_ONLY = {"camisole", "bralette", "sports bra", "satin_camisole"}
+
+# Words that describe where she is LOOKING. The head axis owns gaze; an
+# expression carrying these can contradict the gaze clause in the same prompt.
+_GAZE_IN_EXPRESSION = re.compile(
+    r"\b(downcast|looking|gaze|eyes|glance|stare)\b", re.IGNORECASE)
 
 
 def _jitter(rng: random.Random, rng_range: List[float]) -> float:
@@ -65,8 +71,16 @@ class Composer:
             tilt_class=hp["tilt_class"],
             eye_direction=hp["eye_direction"],
         )
+        # Expression describes the FACE only. Gaze direction is owned by the
+        # head axis, which samples independently, so an expression that also
+        # states where she is looking can contradict it -- "eyes looking
+        # directly into the lens, softly downcast" appeared in a real frame.
+        def expression_ok(e: Dict[str, Any]) -> bool:
+            return not _GAZE_IN_EXPRESSION.search(e.get("label", ""))
+
         spec.expression = self.sampler.pick(
-            rng_for(seeds.expression_seed), "expression", self.cat.expressions)
+            rng_for(seeds.expression_seed), "expression", self.cat.expressions,
+            predicate=expression_ok)
 
         # --- camera, constrained by pose and head -------------------------
         spec.camera = self._pick_camera(seeds, pose, spec.head)
