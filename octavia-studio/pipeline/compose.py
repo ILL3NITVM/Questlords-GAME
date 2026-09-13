@@ -184,6 +184,22 @@ class Composer:
         palette = [self.cat.colours_by_id[c] for c in harmony["colours"]
                    if c in self.cat.colours_by_id]
 
+        observed = getattr(self.cat, "observed", False)
+
+        def garment_colour(item: Dict[str, Any]) -> Optional[str]:
+            """A real garment's colour is a property of the item, not a free
+            variable. Only invented garments get a colour assigned."""
+            cid = item.get("colour_id")
+            return cid if cid else None
+
+        def harmony_fit(item: Dict[str, Any]) -> bool:
+            """With observed garments the harmony SELECTS rather than paints:
+            prefer items whose own colour already sits in the palette."""
+            cid = garment_colour(item)
+            if not cid:
+                return True
+            return cid in set(harmony["colours"])
+
         def pick_colour(exclude: Optional[set] = None) -> str:
             pool = [c for c in palette if not exclude or c["id"] not in exclude] or palette
             weights = [self.sampler.weight_for("colour", c["id"], float(c.get("weight", 1.0)))
@@ -195,23 +211,40 @@ class Composer:
         one_piece = rng.random() < 0.28
         if one_piece:
             def dress_ok(d: Dict[str, Any]) -> bool:
+                if d.get("base_layer_only"):
+                    return False
+                # Swimwear only where a swim context makes sense.
+                if d.get("swimwear") and scene.get("indoor", True):
+                    return False
                 return bool(set(d.get("mood", [])) & scene_moods) or not scene_moods
             dress = self.sampler.pick(rng, "wardrobe_dress", self.cat.dresses,
                                       predicate=dress_ok)
             sel.mode = "one_piece"
             sel.dress = dress
-            sel.colours["dress"] = pick_colour()
+            sel.colours["dress"] = garment_colour(dress) or pick_colour()
             sel.families = [dress["subtype"]]
         else:
             def top_ok(t: Dict[str, Any]) -> bool:
+                # Both the invented set's subtype list and the observed
+                # catalogue's explicit flag. The source catalogue records
+                # everything seen in a photograph, lingerie included, so the
+                # coverage rule has to be enforced at selection.
+                if t.get("base_layer_only"):
+                    return False
                 if t["subtype"] in BASE_LAYER_ONLY:
                     return False
                 return True
-            top = self.sampler.pick(rng, "wardrobe_top", self.cat.tops, predicate=top_ok,
+            def top_in_harmony(t: Dict[str, Any]) -> bool:
+                return top_ok(t) and harmony_fit(t)
+
+            top = self.sampler.pick(rng, "wardrobe_top", self.cat.tops,
+                                    predicate=top_in_harmony if observed else top_ok,
                                     implies={"wardrobe_subtype": "subtype"})
             top_compat = set(top.get("compatibility_tags", []))
 
             def bottom_ok(b: Dict[str, Any]) -> bool:
+                if b.get("base_layer_only"):
+                    return False
                 tags = set(b.get("compatibility_tags", []))
                 if "cropped_top" in tags and top.get("length") not in ("cropped", "waist"):
                     return False
@@ -230,19 +263,22 @@ class Composer:
                                        predicate=bottom_ok,
                                        implies={"wardrobe_subtype": "subtype"})
             sel.top, sel.bottom = top, bottom
-            sel.colours["top"] = pick_colour()
-            sel.colours["bottom"] = pick_colour(exclude={sel.colours["top"]})
+            sel.colours["top"] = garment_colour(top) or pick_colour()
+            sel.colours["bottom"] = (garment_colour(bottom)
+                                     or pick_colour(exclude={sel.colours["top"]}))
             sel.families = [top["subtype"], bottom["subtype"]]
 
             # optional outer layer
             if rng.random() < 0.30:
-                outers = [t for t in self.cat.tops
-                          if "layer_over" in t.get("compatibility_tags", [])
-                          and t["id"] != top["id"]]
+                outers = list(getattr(self.cat, "outerwear", [])) or [
+                    t for t in self.cat.tops
+                    if "layer_over" in t.get("compatibility_tags", [])
+                    and t["id"] != top["id"]]
+                outers = [o for o in outers if o["id"] != top["id"]]
                 if outers:
                     outer = self.sampler.pick(rng, "wardrobe_outer", outers)
                     sel.outer_layer = outer
-                    sel.colours["outer"] = pick_colour()
+                    sel.colours["outer"] = garment_colour(outer) or pick_colour()
                     sel.families.append(outer["subtype"])
 
         # footwear — barefoot only makes sense indoors
@@ -276,9 +312,10 @@ class Composer:
         used_slots = set()
         for _ in range(n_acc):
             a = self.sampler.pick(rng, "accessory", self.cat.accessories, predicate=acc_ok)
-            if a["id"] == "none" or a["slot"] in used_slots:
+            slot = a.get("slot", "other")
+            if a["id"] == "none" or slot in used_slots:
                 continue
-            used_slots.add(a["slot"])
+            used_slots.add(slot)
             chosen.append(a)
         sel.accessories = chosen
         return sel

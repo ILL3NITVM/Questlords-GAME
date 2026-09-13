@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional
 from pipeline.compose import Composer
 from pipeline.history import DiversityHistory
 from pipeline.prompt import build_prompts
-from pipeline.sampler import Catalogue, Sampler
+from pipeline.sampler import Sampler, catalogue_for
 from pipeline.seeds import resolve_master_seed, seed_record
 from pipeline.spec import FrameSpec, SeedRecord
 from qc import headpose as hp_mod
@@ -73,7 +73,7 @@ class Run:
         log.info("run %s start: count=%d campaign=%s diversity=%s backend=%s seed=%d",
                  self.run_id, count, campaign, diversity, backend, master_seed)
 
-        catalogue = Catalogue()
+        catalogue = catalogue_for(self.config)
         history = DiversityHistory(
             window=int(self.config.get("diversity", {}).get("history_window", 24)))
         sampler = Sampler(catalogue, history, self.config, feedback=feedback,

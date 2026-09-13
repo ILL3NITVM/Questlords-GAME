@@ -27,6 +27,8 @@ sys.path.insert(0, str(ROOT))
 
 import yaml  # noqa: E402
 
+from bridge import shoot_export as br_export  # noqa: E402
+from bridge import wardrobe_import as br_wardrobe  # noqa: E402
 from pipeline import hero as hero_mod  # noqa: E402
 from pipeline.prompt import build_prompts_verbose  # noqa: E402
 from pipeline.renderplan import default_plan  # noqa: E402
@@ -160,9 +162,9 @@ def cmd_doctor(args: argparse.Namespace) -> int:
 
     # -- data ----------------------------------------------------------
     print(_c("b", "\nData"))
-    from pipeline.sampler import Catalogue
+    from pipeline.sampler import catalogue_for
     try:
-        cat = Catalogue()
+        cat = catalogue_for(cfg)
         data_ok = True
         print(f"  OK    tops {len(cat.tops)}  bottoms {len(cat.bottoms)}  "
               f"dresses {len(cat.dresses)}  footwear {len(cat.footwear)}  "
@@ -543,7 +545,7 @@ def cmd_reroll(args: argparse.Namespace) -> int:
     # Rebuild the diversity history from the frames we are KEEPING, so the
     # rerolled frames are pushed away from what already survived.
     from pipeline.history import DiversityHistory
-    from pipeline.sampler import Catalogue, Sampler
+    from pipeline.sampler import Sampler, catalogue_for
     from pipeline.compose import Composer
     from pipeline.prompt import build_prompts
     from qc.scoring import get_scorer, overall
@@ -558,7 +560,7 @@ def cmd_reroll(args: argparse.Namespace) -> int:
     for r in keepers:
         history.record(r.get("category_keys", {}), accepted=True)
 
-    catalogue = Catalogue()
+    catalogue = catalogue_for(cfg)
     sampler = Sampler(catalogue, history, cfg, feedback=load_feedback(cfg),
                       planned_total=len(manifest), diversity=args.diversity)
     composer = Composer(catalogue, sampler, cfg, cfgs["policy"])
@@ -893,7 +895,7 @@ def cmd_dataset(args: argparse.Namespace) -> int:
 def cmd_hero(args: argparse.Namespace) -> int:
     from pipeline.compose import Composer
     from pipeline.history import DiversityHistory
-    from pipeline.sampler import Catalogue, Sampler
+    from pipeline.sampler import Sampler, catalogue_for
     from pipeline.seeds import resolve_master_seed
     from qc import headpose as hp_mod
     from qc.rules import apply_defect_penalties, judge
@@ -911,7 +913,7 @@ def cmd_hero(args: argparse.Namespace) -> int:
     print(_c("b", f"OCTAVIA STUDIO — HERO FRAME  ({run_id})"))
     print(f"  searching {candidates} candidate specs  seed={master_seed}  campaign={campaign}\n")
 
-    catalogue = Catalogue()
+    catalogue = catalogue_for(cfg)
     history = DiversityHistory(window=int(cfg["diversity"]["history_window"]))
     sampler = Sampler(catalogue, history, cfg, feedback=load_feedback(cfg),
                       planned_total=candidates, diversity="high")
@@ -1077,6 +1079,116 @@ def cmd_hero(args: argparse.Namespace) -> int:
     return 0
 
 
+
+# ======================================================================
+# bridge — interoperate with the existing octavia_studio catalogue
+# ======================================================================
+DEFAULT_HANDOFF = "../octavia-handoff"
+
+
+def cmd_bridge(args: argparse.Namespace) -> int:
+    handoff = pathlib.Path(args.handoff or DEFAULT_HANDOFF)
+    if not handoff.is_absolute():
+        handoff = (ROOT / handoff).resolve()
+
+    # ---------------- import-wardrobe ----------------
+    if args.action == "import-wardrobe":
+        catalogue = handoff / "octavia_studio/handoff/wardrobe-metadata-only.json"
+        if not catalogue.is_file():
+            print(_c("r", f"  wardrobe catalogue not found: {catalogue}"))
+            print("  Pass --handoff <path to the extracted handoff>.")
+            return 1
+
+        from pipeline.sampler import Catalogue
+        colours = {c["id"]: c for c in Catalogue(prefer_observed=False).colours}
+        items = br_wardrobe.load_source(catalogue)
+        buckets = br_wardrobe.convert(items, colours, ownership=args.ownership)
+        out_dir = ROOT / "data/wardrobe/observed"
+        written = br_wardrobe.write(buckets, out_dir)
+
+        print(_c("b", "OBSERVED WARDROBE IMPORTED"))
+        print(f"  source        {catalogue.name}  ({len(items)} records)")
+        print(f"  ownership     {', '.join(args.ownership)}")
+        for family, n in sorted(written.items()):
+            print(f"    {family:14s} {n:3d}")
+        total = sum(written.values())
+        print(_c("g", f"  total         {total} garments -> data/wardrobe/observed/"))
+
+        # New colours their catalogue uses that this studio lacked.
+        new = [c for c in br_wardrobe.new_colour_records()
+               if c["id"] not in colours]
+        if new:
+            cpath = ROOT / "data/palettes/colours.json"
+            doc = json.loads(cpath.read_text(encoding="utf-8"))
+            doc["items"].extend(new)
+            cpath.write_text(json.dumps(doc, indent=2), encoding="utf-8")
+            print(f"  colours added {', '.join(c['id'] for c in new)}")
+
+        inferred = sum(1 for recs in buckets.values() for r in recs if r["inferred"])
+        print(_c("y", f"\n  {inferred}/{total} records have inferred attributes."))
+        print(_c("d", "  The source states fibre is unknown for almost every garment,"))
+        print(_c("d", "  so material is guessed from the name and recorded as inferred."))
+        print(_c("d", "  Each record keeps its catalogue id, ownership and source asset."))
+        print(f"\n  enable with: wardrobe.prefer_observed: true in config/studio.yaml")
+        return 0
+
+    # ---------------- export ----------------
+    if args.action == "export":
+        run_id = resolve_run(args.run_id)
+        manifest = load_manifest(run_dir(run_id))
+        recipe_path = run_dir(run_id) / "hero_recipe.json"
+        records = [r for r in manifest if r.get("render_ok") and r.get("image_path")]
+        if not records and recipe_path.is_file():
+            rec = json.loads(recipe_path.read_text(encoding="utf-8"))
+            if rec.get("image_path"):
+                records = [rec]
+        if not records:
+            print(_c("y", f"  No rendered images in run {run_id}."))
+            print(_c("d", "  Nothing to hand over — the catalogue imports pixels, "
+                          "not plans."))
+            return 1
+
+        shoot_id = args.shoot or f"studio-{run_id.lower()}"
+        out = run_dir(run_id) / "handoff"
+        result = br_export.build_bundle(records, out, shoot_id, run_id,
+                                        studio_root=str(handoff))
+        print(_c("b", "HANDOFF BUNDLE"))
+        print(f"  run           {run_id}")
+        print(f"  shoot         {result['shoot_id']}")
+        print(f"  frames        {result['frames']}")
+        print(f"  bundle        runs/{run_id}/handoff/")
+        print(_c("b", "\n  next"))
+        print(f"    bash runs/{run_id}/handoff/import.sh      # safe, unattended")
+        print(_c("d", "    then verify each image and uncomment annotate.sh"))
+        print(_c("y", "\n  annotate.sh is commented out on purpose: this studio knows"))
+        print(_c("y", "  what was REQUESTED, the catalogue records what is OBSERVED."))
+        return 0
+
+    # ---------------- status ----------------
+    if args.action == "status":
+        print(_c("b", "BRIDGE"))
+        print(f"  handoff path  {handoff}")
+        print(f"  present       {handoff.is_dir()}")
+        observed = ROOT / "data/wardrobe/observed"
+        if observed.is_dir():
+            files = sorted(observed.glob("*.json"))
+            total = 0
+            for f in files:
+                n = len(json.loads(f.read_text(encoding="utf-8"))["items"])
+                total += n
+                print(f"    {f.stem:14s} {n:3d}")
+            print(_c("g", f"  observed wardrobe {total} garments"))
+        else:
+            print(_c("d", "  observed wardrobe not imported "
+                          "(python studio.py bridge import-wardrobe)"))
+        cfg = load_configs()["studio"]
+        print(f"  prefer_observed {cfg.get('wardrobe', {}).get('prefer_observed', False)}")
+        return 0
+
+    print(_c("r", f"  unknown action {args.action!r}"))
+    return 1
+
+
 # ======================================================================
 # status
 # ======================================================================
@@ -1091,9 +1203,9 @@ def cmd_status(args: argparse.Namespace) -> int:
         counts[rel] = len([f for f in d.iterdir() if f.suffix.lower() in IMAGE_EXT]) \
             if d.is_dir() else 0
 
-    from pipeline.sampler import Catalogue
+    from pipeline.sampler import catalogue_for
     try:
-        cat = Catalogue()
+        cat = catalogue_for(cfg)
         wardrobe_n = len(cat.tops) + len(cat.bottoms) + len(cat.dresses) + \
             len(cat.footwear) + len(cat.accessories)
         data_ok = True
@@ -1220,6 +1332,18 @@ def main(argv: Optional[List[str]] = None) -> int:
     rr.add_argument("--diversity", default="high", choices=["low", "normal", "high"])
     rr.add_argument("--backend", default=None, choices=["mock", "comfyui", "api"])
     rr.set_defaults(func=cmd_reroll)
+
+    br = sub.add_parser("bridge",
+                        help="interoperate with the existing octavia_studio catalogue")
+    br.add_argument("action", choices=["import-wardrobe", "export", "status"])
+    br.add_argument("run_id", nargs="?", default="latest")
+    br.add_argument("--handoff", default=None,
+                    help="path to the extracted octavia_studio handoff")
+    br.add_argument("--shoot", default=None, help="shoot id to create")
+    br.add_argument("--ownership", nargs="*",
+                    default=list(br_wardrobe.DEFAULT_OWNERSHIP),
+                    help="which ownership statuses to import")
+    br.set_defaults(func=cmd_bridge)
 
     hr = sub.add_parser("hero", help="search for and render the single best frame")
     hr.add_argument("--candidates", type=int, default=None)

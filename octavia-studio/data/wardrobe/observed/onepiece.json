@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "family": "onepiece",
+  "source": "octavia_studio",
+  "items": [
+    {
+      "id": "black-halter-jumpsuit",
+      "label": "black belted halter jumpsuit",
+      "category": "one-piece",
+      "subtype": "black-halter-jumpsuit",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-halter-jumpsuit",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "neckline": "halter",
+      "sleeve": "sleeveless",
+      "cut": "straight",
+      "length": "full",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-one-piece",
+      "label": "plum square-neck one-piece swim garment",
+      "category": "one-piece",
+      "subtype": "plum-one-piece",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-one-piece",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-e6e8b7b79caecdca",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "neckline": "square",
+      "cut": "straight",
+      "length": "full",
+      "sleeve": "sleeveless",
+      "swimwear": true,
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    }
+  ]
+}

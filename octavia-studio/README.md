@@ -314,6 +314,76 @@ identity *and* complete scene, wardrobe and camera direction.
 
 ---
 
+## Bridge to the existing octavia_studio catalogue
+
+This studio plans a shoot and builds the prompt. A renderer produces the image.
+The existing `octavia_studio` project — preserved in `../octavia-handoff/` —
+imports, catalogues, continuity-checks and tracks wardrobe. The two halves meet
+through `bridge/`.
+
+```bash
+python studio.py bridge status
+python studio.py bridge import-wardrobe      # their 155 garments -> this sampler
+python studio.py bridge export <RUN_ID>      # this run -> their catalogue
+```
+
+### Importing the observed wardrobe
+
+This studio shipped an *invented* wardrobe of 66 plausible garments written to
+exercise the sampler. The existing catalogue holds 155 garments actually
+observed in Octavia's photographs, with provenance back to the asset each was
+seen in. Sampling from real clothes is strictly better.
+
+Two things the importer refuses to blur:
+
+- **Material is inferred, never asserted.** The source states fibre is unknown
+  for 143 of its 155 records, so material is guessed from the garment name and
+  every record carries an `inferred` list plus
+  `material_confidence: inferred_from_name`.
+- **Ownership is preserved, not flattened.** `established` garments outweigh
+  `candidate` ones, and `inspiration` records — looks from other people's
+  photographs — are excluded, because they are not Octavia's clothes.
+
+The source catalogues everything seen in a photograph, lingerie included, so
+those records are tagged `base_layer_only` and the composer refuses them as an
+outermost layer. Swimwear is tagged and restricted to outdoor scenes.
+
+One semantic shift matters: an invented garment's colour is a free variable, but
+a **real** garment's colour is a property of the item. With the observed
+wardrobe the colour harmony therefore *selects* garments whose own colours agree
+rather than painting colours onto them.
+
+### Exporting a run
+
+`bridge export` writes `runs/<RUN_ID>/handoff/`:
+
+| File | Purpose |
+|---|---|
+| `import.sh` | creates the shoot and imports the pixels — safe to run unattended |
+| `annotate.sh` | annotation commands, **deliberately commented out** |
+| `intent.json` | the requested state for every frame, labelled as intent |
+
+`annotate.sh` is inert on purpose. This studio knows what a shoot **requested**;
+the catalogue records what a photograph **shows**. A renderer does not reliably
+obey a prompt, so copying spec fields into `asset annotate` would turn intent
+into recorded observation and corrupt the continuity history that depends on it.
+`--pendant` is emitted as `unknown` even when the shoot asked for it: per the
+project's canon, unknown is not absence and a request is not evidence.
+
+### Canon alignment
+
+The established project's identity document is authoritative where the two
+disagree. One conflict was found and resolved in its favour: this studio was
+asserting `"shoulder-to-waist ratio about 1.55"` in every prompt, while the
+canon says to preserve her shape *"without estimating numerical measurements
+or changing anatomy to make clothes fit. Adapt the clothes to her instead."*
+
+The ratios remain in `config/physique.yaml` because a keypoint-based QC scorer
+needs them — measuring an output is not the same as dictating a measurement to
+the model — but they no longer reach prompts.
+
+---
+
 ## Training on your existing photo set
 
 If you already have a body of Octavia photographs, that set — not prompt text —
@@ -554,7 +624,7 @@ decision.
 python -m pytest tests/ -q
 ```
 
-186 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
+211 tests covering seed reproducibility, left-tilt budget across 30 seeds, share
 caps, scene/pose furniture coherence, focal/shot agreement, outfit colour
 harmony, identity and policy terms reaching every prompt, identity-mode
 switching, QC floors and defect routing, review feedback targeting, a full
@@ -582,6 +652,7 @@ octavia-studio/
                 hero.py renderplan.py history.py runner.py
   qc/           scoring.py rules.py headpose.py contact_sheet.py shotcard.py
                 review.py
+  bridge/       wardrobe_import.py shoot_export.py
   training/     ingest.py analyze.py caption.py export.py
   scripts/      detect_hardware.py fetch_models.py
   runs/<RUN_ID>/  manifest.jsonl state.json review.csv studio.log

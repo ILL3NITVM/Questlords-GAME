@@ -338,6 +338,39 @@
       ],
       "weight": 1.0,
       "hex": "#22314F"
+    },
+    {
+      "id": "cyan",
+      "label": "cyan",
+      "description": "cyan (from the observed wardrobe catalogue)",
+      "family": "cool_bright",
+      "mood": [
+        "confident"
+      ],
+      "weight": 1.0,
+      "hex": "#3FBFD0"
+    },
+    {
+      "id": "mauve",
+      "label": "mauve",
+      "description": "mauve (from the observed wardrobe catalogue)",
+      "family": "warm_mid",
+      "mood": [
+        "confident"
+      ],
+      "weight": 1.0,
+      "hex": "#B08CA0"
+    },
+    {
+      "id": "lemon",
+      "label": "lemon",
+      "description": "lemon (from the observed wardrobe catalogue)",
+      "family": "warm_light",
+      "mood": [
+        "confident"
+      ],
+      "weight": 1.0,
+      "hex": "#EFE07A"
     }
   ]
 }

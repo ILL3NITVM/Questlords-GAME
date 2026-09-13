@@ -1,0 +1,14 @@
+2026-09-13 06:19:14,509 INFO    octavia.runner run OBS start: count=24 campaign=wardrobe diversity=high backend=mock seed=5
+2026-09-13 06:19:14,513 INFO    octavia.runner renderer preflight: {"backend": "mock", "available": true, "pillow": true, "note": "Placeholder renderer. Produces no photographic output."}
+2026-09-13 06:19:18,910 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_dress' satisfied the predicate; falling back to the full pool of 20 (this indicates a data gap)
+2026-09-13 06:19:19,009 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_top' satisfied the predicate; falling back to the full pool of 43 (this indicates a data gap)
+2026-09-13 06:19:19,154 WARNING octavia.runner frame 6 rejected: identity_consistency 84.3 < 85 (hard floor)
+2026-09-13 06:19:19,254 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_dress' satisfied the predicate; falling back to the full pool of 20 (this indicates a data gap)
+2026-09-13 06:19:19,354 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_top' satisfied the predicate; falling back to the full pool of 43 (this indicates a data gap)
+2026-09-13 06:19:19,456 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_top' satisfied the predicate; falling back to the full pool of 43 (this indicates a data gap)
+2026-09-13 06:19:19,657 WARNING octavia.runner frame 16 rejected: identity_consistency 84.3 < 85 (hard floor)
+2026-09-13 06:19:19,708 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_top' satisfied the predicate; falling back to the full pool of 43 (this indicates a data gap)
+2026-09-13 06:19:19,810 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_dress' satisfied the predicate; falling back to the full pool of 20 (this indicates a data gap)
+2026-09-13 06:19:19,859 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_top' satisfied the predicate; falling back to the full pool of 43 (this indicates a data gap)
+2026-09-13 06:19:19,908 WARNING octavia.sampler sampler: no candidates on axis 'wardrobe_dress' satisfied the predicate; falling back to the full pool of 20 (this indicates a data gap)
+2026-09-13 06:19:20,009 INFO    octavia.runner run OBS complete: 22 accepted, 2 rejected, 0 failed in 5.5s

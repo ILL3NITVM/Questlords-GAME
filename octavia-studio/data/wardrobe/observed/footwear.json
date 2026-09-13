@@ -1,0 +1,490 @@
+{
+  "schema_version": 1,
+  "family": "footwear",
+  "source": "octavia_studio",
+  "items": [
+    {
+      "id": "black-ankle-boots",
+      "label": "black ankle boots",
+      "category": "footwear",
+      "subtype": "black-ankle-boots",
+      "material": "cotton jersey",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-ankle-boots",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-master-source-v24-4.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-strappy-heels",
+      "label": "black ankle-strap sandals",
+      "category": "footwear",
+      "subtype": "black-strappy-heels",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-strappy-heels",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-sneakers",
+      "label": "black athletic sneakers with light sole",
+      "category": "footwear",
+      "subtype": "black-sneakers",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-sneakers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-f902c47d905e3713",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-knee-boots",
+      "label": "black knee-high block-heel boots",
+      "category": "footwear",
+      "subtype": "black-knee-boots",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-knee-boots",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "knee",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "length",
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-lace-boots",
+      "label": "black lace-up ankle boots",
+      "category": "footwear",
+      "subtype": "black-lace-boots",
+      "material": "lace",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-lace-boots",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-bit-loafers",
+      "label": "black loafers with metal bit detail",
+      "category": "footwear",
+      "subtype": "black-bit-loafers",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-bit-loafers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-d739fc6c4f860fa2",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-mary-janes",
+      "label": "black platform mary jane shoes",
+      "category": "footwear",
+      "subtype": "black-mary-janes",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-mary-janes",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-fe53a28088c92b05",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-platform-pumps",
+      "label": "black platform ankle-strap pumps",
+      "category": "footwear",
+      "subtype": "black-platform-pumps",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-platform-pumps",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-674feefc736d2b3e",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-pointed-pumps",
+      "label": "black pointed-toe pumps",
+      "category": "footwear",
+      "subtype": "black-pointed-pumps",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-pointed-pumps",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-loafers",
+      "label": "black substantial-sole loafers",
+      "category": "footwear",
+      "subtype": "black-loafers",
+      "material": "cotton jersey",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-loafers",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-cyan-outfit-source-v23.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "nude-strappy-heels",
+      "label": "nude ankle-strap sandals",
+      "category": "footwear",
+      "subtype": "nude-strappy-heels",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "nude-strappy-heels",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-bba934904d5b2f34",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "nude",
+      "colour_source": "nude",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "white-strappy-heels",
+      "label": "white ankle-strap sandals",
+      "category": "footwear",
+      "subtype": "white-strappy-heels",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "white-strappy-heels",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "white",
+      "colour_source": "white",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "white-sneakers",
+      "label": "white low-top sneakers",
+      "category": "footwear",
+      "subtype": "white-sneakers",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "white-sneakers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "white",
+      "colour_source": "white",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    }
+  ]
+}

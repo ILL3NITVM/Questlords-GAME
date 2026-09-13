@@ -41,12 +41,38 @@ def _load(relpath: str) -> Dict[str, Any]:
 class Catalogue:
     """All sampleable data, loaded once."""
 
-    def __init__(self) -> None:
-        self.tops = _load("wardrobe/tops.json")["items"]
-        self.bottoms = _load("wardrobe/bottoms.json")["items"]
-        self.dresses = _load("wardrobe/dresses.json")["items"]
-        self.footwear = _load("wardrobe/footwear.json")["items"]
-        self.accessories = _load("wardrobe/accessories.json")["items"]
+    def __init__(self, prefer_observed: bool = False) -> None:
+        self.observed = False
+        self.outerwear: List[Dict[str, Any]] = []
+        obs = DATA / "wardrobe/observed"
+        if prefer_observed and obs.is_dir() and any(obs.glob("*.json")):
+            # Garments actually observed in Octavia's photographs, imported
+            # from the octavia_studio catalogue. Strictly better than the
+            # invented set: these are clothes she demonstrably has.
+            def _obs(name: str) -> List[Dict[str, Any]]:
+                path = obs / f"{name}.json"
+                if not path.is_file():
+                    return []
+                return json.loads(path.read_text(encoding="utf-8"))["items"]
+
+            self.tops = _obs("tops")
+            self.bottoms = _obs("bottoms")
+            self.dresses = _obs("dresses") + _obs("onepiece")
+            self.footwear = _obs("footwear")
+            self.accessories = _obs("accessories") or _load(
+                "wardrobe/accessories.json")["items"]
+            self.outerwear = _obs("outerwear")
+            self.observed = True
+            if not (self.tops and self.bottoms):
+                log.warning("observed wardrobe incomplete; falling back to the "
+                            "invented set")
+                self.observed = False
+        if not self.observed:
+            self.tops = _load("wardrobe/tops.json")["items"]
+            self.bottoms = _load("wardrobe/bottoms.json")["items"]
+            self.dresses = _load("wardrobe/dresses.json")["items"]
+            self.footwear = _load("wardrobe/footwear.json")["items"]
+            self.accessories = _load("wardrobe/accessories.json")["items"]
         self.materials = {m["label"]: m for m in _load("materials/materials.json")["items"]}
         self.colours = _load("palettes/colours.json")["items"]
         self.colours_by_id = {c["id"]: c for c in self.colours}
@@ -68,6 +94,17 @@ class Catalogue:
 # ----------------------------------------------------------------------
 # Weighted choice
 # ----------------------------------------------------------------------
+def catalogue_for(config: Dict[str, Any]) -> "Catalogue":
+    """Build a Catalogue honouring `wardrobe.prefer_observed`.
+
+    Every call site goes through here so the wardrobe source cannot differ
+    between the runner, the CLI and the hero search — a split that would
+    silently produce runs sampled from different clothes.
+    """
+    return Catalogue(prefer_observed=bool(
+        (config or {}).get("wardrobe", {}).get("prefer_observed", False)))
+
+
 def weighted_choice(rng: random.Random, items: Sequence[Dict[str, Any]],
                     weights: Sequence[float]) -> Dict[str, Any]:
     total = sum(weights)

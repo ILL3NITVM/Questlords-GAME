@@ -1,0 +1,966 @@
+{
+  "schema_version": 1,
+  "run_id": "OBS",
+  "shoot_id": "rt-test",
+  "frames": [
+    {
+      "frame_id": "OBS_000",
+      "index": 0,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_000.png",
+      "seeds": {
+        "identity_seed": 3951350084,
+        "wardrobe_seed": 2116566614,
+        "colour_seed": 912285150,
+        "material_seed": 1701434112,
+        "scene_seed": 2705138887,
+        "pose_seed": 2031777442,
+        "camera_seed": 758222368,
+        "lighting_seed": 53111443,
+        "expression_seed": 4201505785
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a cream ribbed crop tank in rib knit that hugs the contours of the body, low crouch, balanced on the balls of the feet, eyes looking directly into the lens, head level and not tilted, a subtle closed-mouth grin expression, in a planted garden terrace, close portrait, head and upper shoulders, 85mm portrait lens at f/4, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "low crouch, balanced on the balls of the feet",
+        "framing": "close portrait, head and upper shoulders",
+        "expression": "a subtle closed-mouth grin",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "planted garden terrace",
+        "garments_requested": [
+          "cream-rib-crop",
+          "black-a-line-skirt",
+          "black-loafers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -1.6,
+        "head_yaw_requested_deg": -2.8,
+        "lighting": "blue hour ambient"
+      },
+      "studio_qc": {
+        "overall_score": 93.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_001",
+      "index": 1,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_001.png",
+      "seeds": {
+        "identity_seed": 1478914492,
+        "wardrobe_seed": 1155172052,
+        "colour_seed": 1687746786,
+        "material_seed": 1813571229,
+        "scene_seed": 1340691175,
+        "pose_seed": 1039633823,
+        "camera_seed": 257456565,
+        "lighting_seed": 304081464,
+        "expression_seed": 4121115986
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, anatomically correct hands with exactly five fingers, wearing a black long-sleeve ribbed mock-neck top in rib knit that hugs the contours of the body, mid-stride, walking naturally, eyes looking directly into the lens, head tilted gently toward her right shoulder, thoughtful, slightly distant expression, in a warm cafe interior, full body in frame, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "mid-stride, walking naturally",
+        "framing": "full body in frame",
+        "expression": "thoughtful, slightly distant expression",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "warm cafe interior",
+        "garments_requested": [
+          "black-mock-long",
+          "mauve-joggers",
+          "mauve-knit-robe",
+          "black-lace-boots"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 6.9,
+        "head_yaw_requested_deg": 1.4,
+        "lighting": "dappled light through leaves"
+      },
+      "studio_qc": {
+        "overall_score": 91.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_002",
+      "index": 2,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_002.png",
+      "seeds": {
+        "identity_seed": 3061529112,
+        "wardrobe_seed": 1117815685,
+        "colour_seed": 3493796406,
+        "material_seed": 2119924873,
+        "scene_seed": 1517274030,
+        "pose_seed": 1037752527,
+        "camera_seed": 2029217496,
+        "lighting_seed": 4182715714,
+        "expression_seed": 4059609249
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a black asymmetric long-sleeve slit midi dress in cotton jersey that drapes softly close to the body, seated upright, hands in lap, eyes looking directly into the lens, head tilted gently toward her right shoulder, candid, caught between expressions, in a deep burgundy and black lounge, head-and-shoulders framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "seated upright, hands in lap",
+        "framing": "head-and-shoulders framing",
+        "expression": "candid, caught between expressions",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "deep burgundy and black lounge",
+        "garments_requested": [
+          "black-asym-long-midi",
+          "black-loafers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 5.0,
+        "head_yaw_requested_deg": 52.9,
+        "lighting": "beauty dish frontal key"
+      },
+      "studio_qc": {
+        "overall_score": 93.6,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_003",
+      "index": 3,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_003.png",
+      "seeds": {
+        "identity_seed": 2827324316,
+        "wardrobe_seed": 3610237330,
+        "colour_seed": 1308903670,
+        "material_seed": 538205149,
+        "scene_seed": 2729074257,
+        "pose_seed": 3322966904,
+        "camera_seed": 1782922527,
+        "lighting_seed": 525161413,
+        "expression_seed": 856653903
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a lilac collared button shirt in cotton jersey that drapes softly close to the body, with black full-length leggings in ribbed stretch fabric that fits like a second skin, seated with legs crossed on a chair, eyes looking directly into the lens, head level and not tilted, a quiet natural laugh expression, in a sage and natural timber loft, waist-up framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "seated with legs crossed on a chair",
+        "framing": "waist-up framing",
+        "expression": "a quiet natural laugh",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "sage and natural timber loft",
+        "garments_requested": [
+          "lilac-button-shirt",
+          "black-leggings",
+          "lilac-cardigan",
+          "black-sneakers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -0.6,
+        "head_yaw_requested_deg": 2.5,
+        "lighting": "flat overcast light"
+      },
+      "studio_qc": {
+        "overall_score": 92.2,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_004",
+      "index": 4,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_004.png",
+      "seeds": {
+        "identity_seed": 1963869544,
+        "wardrobe_seed": 3028942207,
+        "colour_seed": 2767106838,
+        "material_seed": 1058691635,
+        "scene_seed": 383517357,
+        "pose_seed": 1224505313,
+        "camera_seed": 1920696780,
+        "lighting_seed": 2496350996,
+        "expression_seed": 3936427862
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, anatomically correct hands with exactly five fingers, wearing a chocolate scoop-neck tank in cotton jersey that drapes softly close to the body, standing with hands in pockets, eyes focused off-camera, head level and not tilted, playful look with a hint of a smile expression, in a city rooftop at dusk, three-quarter length, mid-thigh crop, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing with hands in pockets",
+        "framing": "three-quarter length, mid-thigh crop",
+        "expression": "playful look with a hint of a smile",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "city rooftop at dusk",
+        "garments_requested": [
+          "chocolate-tank",
+          "black-knit-trousers",
+          "white-strappy-heels"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -0.4,
+        "head_yaw_requested_deg": -10.6,
+        "lighting": "city lights through glass"
+      },
+      "studio_qc": {
+        "overall_score": 91.9,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_005",
+      "index": 5,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_005.png",
+      "seeds": {
+        "identity_seed": 3239933548,
+        "wardrobe_seed": 366189439,
+        "colour_seed": 3801120736,
+        "material_seed": 1494694555,
+        "scene_seed": 2305180662,
+        "pose_seed": 1669223247,
+        "camera_seed": 2249738115,
+        "lighting_seed": 1338456730,
+        "expression_seed": 3057577363
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, anatomically correct hands with exactly five fingers, wearing a black belted halter jumpsuit in cotton jersey that drapes softly close to the body, standing with one hand resting on furniture, eyes looking directly into the lens, head level and not tilted, a small closed-mouth smile expression, in a forest green and gold hotel suite, mirror selfie framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing with one hand resting on furniture",
+        "framing": "mirror selfie framing",
+        "expression": "a small closed-mouth smile",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "forest green and gold hotel suite",
+        "garments_requested": [
+          "black-halter-jumpsuit",
+          "black-lace-boots"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 0.4,
+        "head_yaw_requested_deg": -25.7,
+        "lighting": "hard shaft of window sunlight"
+      },
+      "studio_qc": {
+        "overall_score": 91.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_006",
+      "index": 6,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_006.png",
+      "seeds": {
+        "identity_seed": 1238924219,
+        "wardrobe_seed": 49090939,
+        "colour_seed": 2867864148,
+        "material_seed": 2169334978,
+        "scene_seed": 3862681320,
+        "pose_seed": 2873339420,
+        "camera_seed": 4138963903,
+        "lighting_seed": 1185803798,
+        "expression_seed": 3143160492
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a plum scoop-neck athletic crop in ribbed stretch fabric that fits like a second skin, standing turned away, torso rotated back, eyes looking directly into the lens, head level and not tilted, slightly mischievous, one brow marginally raised expression, in a sunlit apartment balcony, full body small in a wide environment, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing turned away, torso rotated back",
+        "framing": "full body small in a wide environment",
+        "expression": "slightly mischievous, one brow marginally raised",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "sunlit apartment balcony",
+        "garments_requested": [
+          "plum-sport-top",
+          "lilac-knit-trousers",
+          "black-loafers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 1.7,
+        "head_yaw_requested_deg": -26.6,
+        "lighting": "rim light with soft fill"
+      },
+      "studio_qc": {
+        "overall_score": 89.3,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_007",
+      "index": 7,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_007.png",
+      "seeds": {
+        "identity_seed": 254306403,
+        "wardrobe_seed": 1995513000,
+        "colour_seed": 514790130,
+        "material_seed": 3639491420,
+        "scene_seed": 1564264940,
+        "pose_seed": 1950352012,
+        "camera_seed": 1427453381,
+        "lighting_seed": 2828269971,
+        "expression_seed": 2671592980
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a taupe stone scoop-neck athletic crop in ribbed stretch fabric that fits like a second skin, leaning shoulder against a wall, eyes looking directly into the lens, head level and not tilted, confident level gaze, composed mouth expression, in a monochrome charcoal gallery space, head-and-shoulders framing, 50mm natural lens at f/5.6, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "leaning shoulder against a wall",
+        "framing": "head-and-shoulders framing",
+        "expression": "confident level gaze, composed mouth",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "monochrome charcoal gallery space",
+        "garments_requested": [
+          "stone-sport-top",
+          "charcoal-slit-mini",
+          "lilac-cardigan",
+          "white-sneakers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -2.9,
+        "head_yaw_requested_deg": -48.2,
+        "lighting": "single large softbox key"
+      },
+      "studio_qc": {
+        "overall_score": 90.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_008",
+      "index": 8,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_008.png",
+      "seeds": {
+        "identity_seed": 3225875889,
+        "wardrobe_seed": 2124664373,
+        "colour_seed": 1688207818,
+        "material_seed": 4013016371,
+        "scene_seed": 497811176,
+        "pose_seed": 1329892100,
+        "camera_seed": 3418683954,
+        "lighting_seed": 2480234963,
+        "expression_seed": 3546704499
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a plum floral-pattern camisole in cotton jersey that drapes softly close to the body, standing, adjusting a sleeve or hem, eyes looking directly into the lens, head tilted gently toward her right shoulder, neutral and soft, lips relaxed and closed expression, in a warm walk-in wardrobe, full body small in a wide environment, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing, adjusting a sleeve or hem",
+        "framing": "full body small in a wide environment",
+        "expression": "neutral and soft, lips relaxed and closed",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "warm walk-in wardrobe",
+        "garments_requested": [
+          "plum-patterned-cami",
+          "cyan-pleated-skirt",
+          "black-strappy-heels"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 15.7,
+        "head_yaw_requested_deg": 3.1,
+        "lighting": "rim light with soft fill"
+      },
+      "studio_qc": {
+        "overall_score": 90.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_009",
+      "index": 9,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_009.png",
+      "seeds": {
+        "identity_seed": 243286904,
+        "wardrobe_seed": 2208454106,
+        "colour_seed": 3191247047,
+        "material_seed": 187682347,
+        "scene_seed": 2860644291,
+        "pose_seed": 901548742,
+        "camera_seed": 234108681,
+        "lighting_seed": 1806758123,
+        "expression_seed": 2628610845
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, anatomically correct hands with exactly five fingers, wearing a blue-and-white floral midi dress in cotton jersey that drapes softly close to the body, standing relaxed, weight even, eyes looking away from the camera, head level and not tilted, a warm genuine smile with slight eye crinkle expression, in a sunlit apartment balcony, seated full-length framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing relaxed, weight even",
+        "framing": "seated full-length framing",
+        "expression": "a warm genuine smile with slight eye crinkle",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "sunlit apartment balcony",
+        "garments_requested": [
+          "blue-floral-midi",
+          "black-mary-janes"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 0.3,
+        "head_yaw_requested_deg": -83.6,
+        "lighting": "low golden hour sunlight"
+      },
+      "studio_qc": {
+        "overall_score": 93.8,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_010",
+      "index": 10,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_010.png",
+      "seeds": {
+        "identity_seed": 2799586372,
+        "wardrobe_seed": 829029379,
+        "colour_seed": 1755337105,
+        "material_seed": 3099524961,
+        "scene_seed": 2871138371,
+        "pose_seed": 771637295,
+        "camera_seed": 3794841351,
+        "lighting_seed": 1826065321,
+        "expression_seed": 3629067916
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a cyan sleeveless flared day dress in cotton jersey that drapes softly close to the body, perched on the edge of a seat, leaning forward, eyes looking directly into the lens, head level and not tilted, slightly mischievous, one brow marginally raised expression, in a white stone apartment with cobalt accents, candid detail crop, subject partially framed, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "perched on the edge of a seat, leaning forward",
+        "framing": "candid detail crop, subject partially framed",
+        "expression": "slightly mischievous, one brow marginally raised",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "white stone apartment with cobalt accents",
+        "garments_requested": [
+          "cyan-daydress",
+          "black-ankle-boots"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -0.9,
+        "head_yaw_requested_deg": 0.4,
+        "lighting": "soft diffused window daylight"
+      },
+      "studio_qc": {
+        "overall_score": 92.1,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_011",
+      "index": 11,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_011.png",
+      "seeds": {
+        "identity_seed": 1546265412,
+        "wardrobe_seed": 2103058094,
+        "colour_seed": 780518353,
+        "material_seed": 3506376086,
+        "scene_seed": 1122838888,
+        "pose_seed": 487811099,
+        "camera_seed": 3656439693,
+        "lighting_seed": 107709830,
+        "expression_seed": 3987422847
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, anatomically correct hands with exactly five fingers, wearing a white scoop-neck tank in cotton jersey that drapes softly close to the body, standing contrapposto, weight on one hip, eyes softly downcast, head level and not tilted, calm and serene, fully relaxed features expression, in a fashion dressing room, seated full-length framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing contrapposto, weight on one hip",
+        "framing": "seated full-length framing",
+        "expression": "calm and serene, fully relaxed features",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "fashion dressing room",
+        "garments_requested": [
+          "white-tank",
+          "gray-piped-shorts",
+          "black-bit-loafers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -1.5,
+        "head_yaw_requested_deg": 1.1,
+        "lighting": "dressing-room bulb mirror"
+      },
+      "studio_qc": {
+        "overall_score": 89.9,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_012",
+      "index": 12,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_012.png",
+      "seeds": {
+        "identity_seed": 4225742564,
+        "wardrobe_seed": 2190328048,
+        "colour_seed": 2738289898,
+        "material_seed": 1105556003,
+        "scene_seed": 3161247548,
+        "pose_seed": 557525012,
+        "camera_seed": 317721882,
+        "lighting_seed": 1152533465,
+        "expression_seed": 3648288792
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a sky blue sky-blue ribbed longline tank in rib knit that hugs the contours of the body, walking and turning back toward camera, eyes looking directly into the lens, head level and not tilted, lips just barely parted, relaxed expression, in a fashion studio seamless backdrop, full body small in a wide environment, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "walking and turning back toward camera",
+        "framing": "full body small in a wide environment",
+        "expression": "lips just barely parted, relaxed",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "fashion studio seamless backdrop",
+        "garments_requested": [
+          "sky-rib-tank",
+          "gray-joggers",
+          "black-ankle-boots"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -1.7,
+        "head_yaw_requested_deg": 22.5,
+        "lighting": "broad flat studio light"
+      },
+      "studio_qc": {
+        "overall_score": 91.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_013",
+      "index": 13,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_013.png",
+      "seeds": {
+        "identity_seed": 3484996408,
+        "wardrobe_seed": 2013000054,
+        "colour_seed": 1060051829,
+        "material_seed": 299754670,
+        "scene_seed": 1166528040,
+        "pose_seed": 1246806864,
+        "camera_seed": 1135359134,
+        "lighting_seed": 1121851059,
+        "expression_seed": 114333216
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, anatomically correct hands with exactly five fingers, wearing a cream v-neck knit sweater in fine knit that follows the figure softly, standing with arms softly folded, eyes looking directly into the lens, head level and not tilted, neutral and soft, lips relaxed and closed expression, in a terracotta and linen sunroom, full body in frame, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing with arms softly folded",
+        "framing": "full body in frame",
+        "expression": "neutral and soft, lips relaxed and closed",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "terracotta and linen sunroom",
+        "garments_requested": [
+          "cream-v-sweater",
+          "black-wide-jeans",
+          "black-long-coat",
+          "black-sneakers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -1.9,
+        "head_yaw_requested_deg": -3.5,
+        "lighting": "hard shaft of window sunlight"
+      },
+      "studio_qc": {
+        "overall_score": 90.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_014",
+      "index": 14,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_014.png",
+      "seeds": {
+        "identity_seed": 1636665909,
+        "wardrobe_seed": 3203251551,
+        "colour_seed": 1266799543,
+        "material_seed": 2994295867,
+        "scene_seed": 3711741629,
+        "pose_seed": 1986372683,
+        "camera_seed": 1213528757,
+        "lighting_seed": 3820340814,
+        "expression_seed": 151182465
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a cream square-neck long-sleeve crop in cotton jersey that drapes softly close to the body, standing, one hand lifted to her hair, eyes looking away from the camera, head level and not tilted, slightly mischievous, one brow marginally raised expression, in a cream and lavender soft bedroom, candid detail crop, subject partially framed, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing, one hand lifted to her hair",
+        "framing": "candid detail crop, subject partially framed",
+        "expression": "slightly mischievous, one brow marginally raised",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "cream and lavender soft bedroom",
+        "garments_requested": [
+          "cream-square-long",
+          "light-straight-jeans",
+          "black-long-coat",
+          "white-strappy-heels"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 1.3,
+        "head_yaw_requested_deg": 76.5,
+        "lighting": "low key pooled light"
+      },
+      "studio_qc": {
+        "overall_score": 91.3,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_015",
+      "index": 15,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_015.png",
+      "seeds": {
+        "identity_seed": 3078796664,
+        "wardrobe_seed": 4112756021,
+        "colour_seed": 3548679798,
+        "material_seed": 693855048,
+        "scene_seed": 1653753321,
+        "pose_seed": 4261383884,
+        "camera_seed": 646667438,
+        "lighting_seed": 4221208255,
+        "expression_seed": 3252650761
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, anatomically correct hands with exactly five fingers, wearing a cyan square-neck tailored midi dress in structured tailoring fabric that holds an architectural silhouette, seated with one arm draped over the sofa back, gaze lifted away from the camera, head level and not tilted, lips just barely parted, relaxed expression, in a dark modern hotel lobby, mirror selfie framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "seated with one arm draped over the sofa back",
+        "framing": "mirror selfie framing",
+        "expression": "lips just barely parted, relaxed",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "dark modern hotel lobby",
+        "garments_requested": [
+          "cyan-tailored-midi",
+          "white-strappy-heels"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 0.5,
+        "head_yaw_requested_deg": 2.6,
+        "lighting": "warm practical lamplight"
+      },
+      "studio_qc": {
+        "overall_score": 91.1,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_016",
+      "index": 16,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_016.png",
+      "seeds": {
+        "identity_seed": 1716805160,
+        "wardrobe_seed": 264644930,
+        "colour_seed": 1173939669,
+        "material_seed": 105018833,
+        "scene_seed": 1406199318,
+        "pose_seed": 2156516281,
+        "camera_seed": 2281351567,
+        "lighting_seed": 3719521948,
+        "expression_seed": 4173898086
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a cream ribbed crop tank in rib knit that hugs the contours of the body, reaching up toward a shelf or rail, eyes looking directly into the lens, head level and not tilted, a small closed-mouth smile expression, in a modern stone and steel kitchen, close portrait, head and upper shoulders, 105mm compressed portrait lens at f/2.8, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "reaching up toward a shelf or rail",
+        "framing": "close portrait, head and upper shoulders",
+        "expression": "a small closed-mouth smile",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "modern stone and steel kitchen",
+        "garments_requested": [
+          "cream-rib-crop",
+          "plum-tailored-trousers",
+          "olive-cropped-jacket",
+          "white-strappy-heels"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 0.5,
+        "head_yaw_requested_deg": 0.1,
+        "lighting": "soft diffused window daylight"
+      },
+      "studio_qc": {
+        "overall_score": 87.6,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_017",
+      "index": 17,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_017.png",
+      "seeds": {
+        "identity_seed": 3301120880,
+        "wardrobe_seed": 2087558195,
+        "colour_seed": 601352869,
+        "material_seed": 338921446,
+        "scene_seed": 2611220813,
+        "pose_seed": 2566358260,
+        "camera_seed": 2703585808,
+        "lighting_seed": 524227206,
+        "expression_seed": 256391134
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, anatomically correct hands with exactly five fingers, wearing a plum velvet-look long-sleeve midi dress in velvet with a heavy fluid drape, caught turning toward the camera, eyes looking directly into the lens, head level and not tilted, softly downcast, calm expression, in a historic stone architecture, three-quarter length, mid-thigh crop, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "caught turning toward the camera",
+        "framing": "three-quarter length, mid-thigh crop",
+        "expression": "softly downcast, calm expression",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "historic stone architecture",
+        "garments_requested": [
+          "plum-velvet-long",
+          "black-ankle-boots"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -1.3,
+        "head_yaw_requested_deg": -50.8,
+        "lighting": "open shade"
+      },
+      "studio_qc": {
+        "overall_score": 90.4,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_018",
+      "index": 18,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_018.png",
+      "seeds": {
+        "identity_seed": 3772441316,
+        "wardrobe_seed": 1038316606,
+        "colour_seed": 2767777906,
+        "material_seed": 342963382,
+        "scene_seed": 3508425492,
+        "pose_seed": 3808950218,
+        "camera_seed": 2362350609,
+        "lighting_seed": 3529003728,
+        "expression_seed": 2486592285
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a cyan square-neck fitted top in cotton jersey that drapes softly close to the body, leaning back against a counter or island, eyes looking directly into the lens, head level and not tilted, a warm genuine smile with slight eye crinkle expression, in a modern stone and steel kitchen, waist-up framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "leaning back against a counter or island",
+        "framing": "waist-up framing",
+        "expression": "a warm genuine smile with slight eye crinkle",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "modern stone and steel kitchen",
+        "garments_requested": [
+          "cyan-square-top",
+          "cyan-long-pleats",
+          "nude-strappy-heels"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 1.9,
+        "head_yaw_requested_deg": 1.8,
+        "lighting": "soft diffused window daylight"
+      },
+      "studio_qc": {
+        "overall_score": 89.3,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_019",
+      "index": 19,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_019.png",
+      "seeds": {
+        "identity_seed": 54095116,
+        "wardrobe_seed": 1490179625,
+        "colour_seed": 215493128,
+        "material_seed": 3916439326,
+        "scene_seed": 2084589873,
+        "pose_seed": 1544164766,
+        "camera_seed": 626986877,
+        "lighting_seed": 4055053301,
+        "expression_seed": 1319092714
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a black square-neck tank in cotton jersey that drapes softly close to the body, standing, one hand lifted to her hair, eyes looking directly into the lens, head level and not tilted, a small closed-mouth smile expression, in a marble bathroom vanity, close portrait, head and upper shoulders, 105mm compressed portrait lens at f/8, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing, one hand lifted to her hair",
+        "framing": "close portrait, head and upper shoulders",
+        "expression": "a small closed-mouth smile",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "marble bathroom vanity",
+        "garments_requested": [
+          "black-square-top",
+          "black-tailored-trousers",
+          "black-bit-loafers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -0.4,
+        "head_yaw_requested_deg": 25.9,
+        "lighting": "broad flat studio light"
+      },
+      "studio_qc": {
+        "overall_score": 90.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_020",
+      "index": 20,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_020.png",
+      "seeds": {
+        "identity_seed": 1795883136,
+        "wardrobe_seed": 306589800,
+        "colour_seed": 2162401213,
+        "material_seed": 3064666468,
+        "scene_seed": 1263208350,
+        "pose_seed": 148261020,
+        "camera_seed": 353500543,
+        "lighting_seed": 2721057429,
+        "expression_seed": 2805078743
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a plum velvet-look draped midi dress in velvet with a heavy fluid drape, perched on the edge of a seat, leaning forward, gaze lowered away from the camera, head level and not tilted, candid, caught between expressions, in a deep burgundy and black lounge, candid detail crop, subject partially framed, 35mm editorial lens at f/2.8, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "perched on the edge of a seat, leaning forward",
+        "framing": "candid detail crop, subject partially framed",
+        "expression": "candid, caught between expressions",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "deep burgundy and black lounge",
+        "garments_requested": [
+          "plum-velvet-slip",
+          "black-strappy-heels"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -1.3,
+        "head_yaw_requested_deg": -2.2,
+        "lighting": "hard shaft of window sunlight"
+      },
+      "studio_qc": {
+        "overall_score": 88.5,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_021",
+      "index": 21,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_021.png",
+      "seeds": {
+        "identity_seed": 1009728073,
+        "wardrobe_seed": 642081204,
+        "colour_seed": 2756908738,
+        "material_seed": 1198552772,
+        "scene_seed": 2352331446,
+        "pose_seed": 2920881618,
+        "camera_seed": 2002946954,
+        "lighting_seed": 1502574938,
+        "expression_seed": 2199851823
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a black fitted short-sleeve tee in cotton jersey that drapes softly close to the body, standing, adjusting a sleeve or hem, eyes looking directly into the lens, head tilted gently toward her right shoulder, a quiet natural laugh expression, in a botanical stone courtyard, close portrait, head and upper shoulders, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "standing, adjusting a sleeve or hem",
+        "framing": "close portrait, head and upper shoulders",
+        "expression": "a quiet natural laugh",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "botanical stone courtyard",
+        "garments_requested": [
+          "black-tee",
+          "light-straight-jeans",
+          "black-lace-boots"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 4.6,
+        "head_yaw_requested_deg": 19.3,
+        "lighting": "low golden hour sunlight"
+      },
+      "studio_qc": {
+        "overall_score": 88.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_022",
+      "index": 22,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_022.png",
+      "seeds": {
+        "identity_seed": 2665071399,
+        "wardrobe_seed": 1742220752,
+        "colour_seed": 1026034870,
+        "material_seed": 1924546166,
+        "scene_seed": 3209255677,
+        "pose_seed": 1828916352,
+        "camera_seed": 337269098,
+        "lighting_seed": 3493898294,
+        "expression_seed": 4007783139
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a plum v-neck ribbed midi dress in rib knit that hugs the contours of the body, seated on the floor, legs tucked, eyes looking directly into the lens, head level and not tilted, playful look with a hint of a smile expression, in a cool concrete and chrome minimal studio, head-and-shoulders framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "seated on the floor, legs tucked",
+        "framing": "head-and-shoulders framing",
+        "expression": "playful look with a hint of a smile",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "cool concrete and chrome minimal studio",
+        "garments_requested": [
+          "plum-v-knit-dress",
+          "black-bit-loafers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": -0.0,
+        "head_yaw_requested_deg": 0.2,
+        "lighting": "beauty dish frontal key"
+      },
+      "studio_qc": {
+        "overall_score": 89.1,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    },
+    {
+      "frame_id": "OBS_023",
+      "index": 23,
+      "image_path": "/home/user/Questlords-GAME/octavia-studio/runs/OBS/images/OBS_023.png",
+      "seeds": {
+        "identity_seed": 1375932107,
+        "wardrobe_seed": 3563993537,
+        "colour_seed": 3947821348,
+        "material_seed": 3556348426,
+        "scene_seed": 3536419621,
+        "pose_seed": 2391362096,
+        "camera_seed": 1640692978,
+        "lighting_seed": 3217521743,
+        "expression_seed": 829490078
+      },
+      "prompt": "photorealistic editorial photograph of a single adult woman in her late twenties, (green-hazel eyes:1.15), (natural freckles:1.15), long dark brunette hair, (lime-green face-framing highlights:1.20), a medium frame with a narrow high waist and softly rounded hips, wearing a lilac sleeveless mock-neck crop in cotton jersey that drapes softly close to the body, seated sideways, torso turned to camera, eyes looking away from the camera, head level and not tilted, confident level gaze, composed mouth expression, in a navy and warm oak study lounge, waist-up framing, photorealistic photograph",
+      "negative_prompt": "different woman, face morph, inconsistent facial structure, blue eyes, brown eyes, blonde hair, red hair, short hair, pink hair, blue hair, tattoo, tattoos, nose ring, septum piercing, heavy makeup, airbrushed plastic skin, doll face, uncanny valley, child, teenager, youthful minor features, nude, nudity, topless, exposed nipples, exposed genitals, see-through revealing underwear, sexual act, explicit, pornographic, minor, teen, loli, schoolgirl, underage, two people, multiple women, crowd, background people, anatomically impossible proportions, exaggerated hourglass, wasp waist, bodybuilder musculature, emaciated, distorted torso, elongated limbs, shortened limbs, extra fingers, missing fingers, fused fingers, malformed hands, malformed feet, extra limbs, merged limbs, broken joints, warped anatomy, text, watermark, signature, logo, caption, lettering, poster with writing, book titles, product labels, gibberish writing, misspelled text, illustration, painting, 3d render, cgi, anime, cartoon, plastic skin, waxy skin, over-smoothed skin, blurry, low quality, jpeg artifacts, oversaturated, deformed, disfigured, mutated, bad anatomy, duplicate, cloned face, asymmetric eyes, bad hands, clothing melting into skin, impossible pose",
+      "intent": {
+        "pose": "seated sideways, torso turned to camera",
+        "framing": "waist-up framing",
+        "expression": "confident level gaze, composed mouth",
+        "hair_state": "as generated; not specified by the shoot",
+        "room_hint": "navy and warm oak study lounge",
+        "garments_requested": [
+          "lilac-mock-crop",
+          "blue-ripped-jeans",
+          "black-sneakers"
+        ],
+        "pendant_requested": false,
+        "head_roll_requested_deg": 0.3,
+        "head_yaw_requested_deg": -73.9,
+        "lighting": "city lights through glass"
+      },
+      "studio_qc": {
+        "overall_score": 89.7,
+        "scorer": "heuristic-stub",
+        "placeholder_metrics": true,
+        "note": "Scores from this studio's heuristic scorer. Ten of its fourteen metrics are placeholders, not measurements."
+      }
+    }
+  ],
+  "WARNING": "These are REQUESTED values, not observations. A renderer does not reliably obey a prompt. Verify against the actual image before recording any of this as observed state."
+}

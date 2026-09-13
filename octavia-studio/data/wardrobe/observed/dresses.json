@@ -1,0 +1,819 @@
+{
+  "schema_version": 1,
+  "family": "dresses",
+  "source": "octavia_studio",
+  "items": [
+    {
+      "id": "black-asym-long-midi",
+      "label": "black asymmetric long-sleeve slit midi dress",
+      "category": "dress",
+      "subtype": "black-asym-long-midi",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-asym-long-midi",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "midi",
+      "sleeve": "long",
+      "cut": "sheath",
+      "neckline": "v",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-one-shoulder-mini",
+      "label": "black asymmetric ruched mini dress",
+      "category": "dress",
+      "subtype": "black-one-shoulder-mini",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-one-shoulder-mini",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "mini",
+      "cut": "sheath",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-halter-mini",
+      "label": "black halter mini dress",
+      "category": "dress",
+      "subtype": "black-halter-mini",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-halter-mini",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "mini",
+      "neckline": "halter",
+      "sleeve": "sleeveless",
+      "cut": "sheath",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-asym-midi",
+      "label": "black one-shoulder draped midi dress",
+      "category": "dress",
+      "subtype": "black-asym-midi",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-asym-midi",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "midi",
+      "cut": "sheath",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-square-mini",
+      "label": "black square-neck long-sleeve mini dress",
+      "category": "dress",
+      "subtype": "black-square-mini",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-square-mini",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "mini",
+      "neckline": "square",
+      "sleeve": "long",
+      "cut": "sheath",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-velvet-halter",
+      "label": "black velvet-look high-neck midi dress",
+      "category": "dress",
+      "subtype": "black-velvet-halter",
+      "material": "velvet",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-velvet-halter",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-7f6c5eda6ae3df30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "midi",
+      "neckline": "high",
+      "cut": "sheath",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "blue-floral-midi",
+      "label": "blue-and-white floral midi dress",
+      "category": "dress",
+      "subtype": "blue-floral-midi",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "blue-floral-midi",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "blue_white",
+      "colour_source": "blue/white",
+      "length": "midi",
+      "cut": "sheath",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-button-mini",
+      "label": "cream button-front summer mini dress",
+      "category": "dress",
+      "subtype": "cream-button-mini",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-button-mini",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "length": "mini",
+      "cut": "sheath",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-daydress",
+      "label": "cyan sleeveless flared day dress",
+      "category": "dress",
+      "subtype": "cyan-daydress",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-daydress",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-e59c0c8df637f95d",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "sleeve": "sleeveless",
+      "cut": "a_line",
+      "length": "midi",
+      "neckline": "v",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-tailored-midi",
+      "label": "cyan square-neck tailored midi dress",
+      "category": "dress",
+      "subtype": "cyan-tailored-midi",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-tailored-midi",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-24b2314b07cf53c7",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "length": "midi",
+      "neckline": "square",
+      "fit": "semi_fitted",
+      "cut": "sheath",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lemon-midi",
+      "label": "lemon square-neck slit midi dress",
+      "category": "dress",
+      "subtype": "lemon-midi",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lemon-midi",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lemon",
+      "colour_source": "lemon",
+      "length": "midi",
+      "neckline": "square",
+      "cut": "sheath",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "mauve-wrap-knit-dress",
+      "label": "mauve wrap-front knit midi dress",
+      "category": "dress",
+      "subtype": "mauve-wrap-knit-dress",
+      "material": "fine knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "mauve-wrap-knit-dress",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "mauve",
+      "colour_source": "mauve",
+      "length": "midi",
+      "neckline": "v",
+      "cut": "wrap",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-v-knit-dress",
+      "label": "plum v-neck ribbed midi dress",
+      "category": "dress",
+      "subtype": "plum-v-knit-dress",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-v-knit-dress",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "midi",
+      "neckline": "v",
+      "cut": "sheath",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-knit-mock-dress",
+      "label": "plum ribbed mock-neck midi dress",
+      "category": "dress",
+      "subtype": "plum-knit-mock-dress",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-knit-mock-dress",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-5a571d290a9d834b",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "midi",
+      "neckline": "high",
+      "cut": "sheath",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-satin-high-dress",
+      "label": "plum satin-look high-neck midi dress",
+      "category": "dress",
+      "subtype": "plum-satin-high-dress",
+      "material": "satin",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-satin-high-dress",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-674feefc736d2b3e",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "midi",
+      "neckline": "high",
+      "cut": "sheath",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-satin-slip",
+      "label": "plum satin-look slip dress",
+      "category": "dress",
+      "subtype": "plum-satin-slip",
+      "material": "satin",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-satin-slip",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "cut": "sheath",
+      "length": "midi",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-velvet-slip",
+      "label": "plum velvet-look draped midi dress",
+      "category": "dress",
+      "subtype": "plum-velvet-slip",
+      "material": "velvet",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-velvet-slip",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "midi",
+      "cut": "sheath",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-velvet-long",
+      "label": "plum velvet-look long-sleeve midi dress",
+      "category": "dress",
+      "subtype": "plum-velvet-long",
+      "material": "velvet",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-velvet-long",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a94693a722c25ef2",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "midi",
+      "sleeve": "long",
+      "cut": "sheath",
+      "neckline": "v",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    }
+  ]
+}

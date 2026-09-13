@@ -1,0 +1,997 @@
+{
+  "schema_version": 1,
+  "family": "outerwear",
+  "source": "octavia_studio",
+  "items": [
+    {
+      "id": "black-long-coat",
+      "label": "black long tailored coat",
+      "category": "outerwear",
+      "subtype": "black-long-coat",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-long-coat",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-674feefc736d2b3e",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "long",
+      "fit": "semi_fitted",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-blazer",
+      "label": "black tailored blazer",
+      "category": "outerwear",
+      "subtype": "black-blazer",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-blazer",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "fit": "semi_fitted",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-cardigan",
+      "label": "charcoal open knit cardigan",
+      "category": "outerwear",
+      "subtype": "black-cardigan",
+      "material": "chunky knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-cardigan",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "charcoal",
+      "colour_source": "charcoal",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "printed-long-robe",
+      "label": "cream botanical-print long open layer",
+      "category": "outerwear",
+      "subtype": "printed-long-robe",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "printed-long-robe",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream_black",
+      "colour_source": "cream/black",
+      "length": "long",
+      "fit": "relaxed",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-chartreuse-cardigan",
+      "label": "cream cardigan with chartreuse edging",
+      "category": "outerwear",
+      "subtype": "cream-chartreuse-cardigan",
+      "material": "chunky knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-chartreuse-cardigan",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream_chartreuse",
+      "colour_source": "cream/chartreuse",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-cardigan",
+      "label": "cream chunky cardigan",
+      "category": "outerwear",
+      "subtype": "cream-cardigan",
+      "material": "chunky knit",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-cardigan",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-master-source-v24-1.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-button-cardigan",
+      "label": "cream short button cardigan",
+      "category": "outerwear",
+      "subtype": "cream-button-cardigan",
+      "material": "chunky knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-button-cardigan",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "length": "mini",
+      "fit": "relaxed",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "gray-sweatshirt",
+      "label": "gray waist-tied sweatshirt",
+      "category": "outerwear",
+      "subtype": "gray-sweatshirt",
+      "material": "soft fleece",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "gray-sweatshirt",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "silver",
+      "colour_source": "gray",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "gray-zip-hoodie",
+      "label": "gray zip-front hoodie",
+      "category": "outerwear",
+      "subtype": "gray-zip-hoodie",
+      "material": "soft fleece",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "gray-zip-hoodie",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "silver",
+      "colour_source": "gray",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-blazer",
+      "label": "lilac tailored blazer",
+      "category": "outerwear",
+      "subtype": "lilac-blazer",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-blazer",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a456f31f72df4691",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "fit": "semi_fitted",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "mauve-knit-robe",
+      "label": "mauve belted knit robe",
+      "category": "outerwear",
+      "subtype": "mauve-knit-robe",
+      "material": "fine knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "mauve-knit-robe",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "mauve",
+      "colour_source": "mauve",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "mauve-long-cardigan",
+      "label": "mauve longline cardigan",
+      "category": "outerwear",
+      "subtype": "mauve-long-cardigan",
+      "material": "chunky knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "mauve-long-cardigan",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "mauve",
+      "colour_source": "mauve",
+      "length": "long",
+      "fit": "relaxed",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "mauve-sweatshirt",
+      "label": "mauve waist-tied sweatshirt",
+      "category": "outerwear",
+      "subtype": "mauve-sweatshirt",
+      "material": "soft fleece",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "mauve-sweatshirt",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "mauve",
+      "colour_source": "mauve",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "olive-cropped-jacket",
+      "label": "olive cropped collared jacket",
+      "category": "outerwear",
+      "subtype": "olive-cropped-jacket",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "olive-cropped-jacket",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-231c9fdba1fd2956",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "olive",
+      "colour_source": "olive",
+      "length": "cropped",
+      "neckline": "collar",
+      "fit": "relaxed",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "olive-overshirt",
+      "label": "olive relaxed overshirt",
+      "category": "outerwear",
+      "subtype": "olive-overshirt",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "olive-overshirt",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "olive",
+      "colour_source": "olive",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-leather-jacket",
+      "label": "plum leather-look cropped jacket",
+      "category": "outerwear",
+      "subtype": "plum-leather-jacket",
+      "material": "leather-look fashion material",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-leather-jacket",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-c58c4f8c32f96f87",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "cropped",
+      "fit": "relaxed",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-satin-robe",
+      "label": "plum satin-look belted robe",
+      "category": "outerwear",
+      "subtype": "plum-satin-robe",
+      "material": "satin",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-satin-robe",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-long-coat",
+      "label": "plum satin-look long coat",
+      "category": "outerwear",
+      "subtype": "plum-long-coat",
+      "material": "satin",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-long-coat",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-7f6c5eda6ae3df30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "long",
+      "fit": "relaxed",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-blazer",
+      "label": "plum tailored blazer",
+      "category": "outerwear",
+      "subtype": "plum-blazer",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-blazer",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "fit": "semi_fitted",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "purple-chunky-cardigan",
+      "label": "purple chunky open cardigan",
+      "category": "outerwear",
+      "subtype": "purple-chunky-cardigan",
+      "material": "chunky knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "purple-chunky-cardigan",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "purple",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "printed-short-robe",
+      "label": "sage abstract-print short open layer",
+      "category": "outerwear",
+      "subtype": "printed-short-robe",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "printed-short-robe",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "sage_charcoal",
+      "colour_source": "sage/charcoal",
+      "length": "mini",
+      "fit": "relaxed",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-cardigan",
+      "label": "soft lilac cardigan",
+      "category": "outerwear",
+      "subtype": "lilac-cardigan",
+      "material": "chunky knit",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-cardigan",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-lilac-cardigan-source-v23.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "fit": "relaxed",
+      "length": "hip",
+      "neckline": "collar",
+      "sleeve": "long",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    }
+  ]
+}

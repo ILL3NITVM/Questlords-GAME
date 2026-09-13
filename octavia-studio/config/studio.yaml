@@ -57,6 +57,20 @@ renderer:
     timeout_seconds: 300
 
 # ------------------------------------------------------------
+# Wardrobe source
+# ------------------------------------------------------------
+wardrobe:
+  # true  : sample from data/wardrobe/observed/ — garments actually seen in
+  #         Octavia's photographs, imported from the octavia_studio
+  #         catalogue with their real colours and provenance.
+  # false : sample from the invented set written to exercise the sampler.
+  #
+  # An invented garment's colour is a free variable. A REAL garment's colour
+  # is a property of the item, so with observed garments the colour harmony
+  # selects which garments agree rather than assigning colours to them.
+  prefer_observed: true
+
+# ------------------------------------------------------------
 # Prompt assembly
 # ------------------------------------------------------------
 prompt:

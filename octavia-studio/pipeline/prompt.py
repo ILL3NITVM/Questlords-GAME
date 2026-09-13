@@ -320,9 +320,21 @@ def _wardrobe_segments(spec: FrameSpec, cat) -> List[Segment]:
     mats = cat.materials
     segs: List[Segment] = []
 
-    def colour(slot: str) -> str:
-        c = cb.get(w.colours.get(slot, ""))
-        return c["label"] if c else ""
+    def colour(slot: str, garment: Optional[Dict[str, Any]] = None) -> str:
+        """Empty when the garment's own label already names the colour.
+
+        Observed garments are catalogued as "cream ribbed crop tank" — the
+        colour is part of the name. Prefixing it again yields "cream cream
+        ribbed crop tank", which wastes tokens and reads as an error.
+        """
+        cid = w.colours.get(slot, "")
+        c = cb.get(cid)
+        label = c["label"] if c else ""
+        if not label:
+            return ""
+        if garment and label.lower() in (garment.get("label", "") or "").lower():
+            return ""
+        return label
 
     def material_phrase(label: str) -> str:
         m = mats.get(label)
@@ -334,29 +346,39 @@ def _wardrobe_segments(spec: FrameSpec, cat) -> List[Segment]:
     if w.mode == "one_piece" and w.dress:
         d = w.dress
         segs.append(Segment(
-            f"wearing {_article(colour('dress'))} {colour('dress')} {d['label']} "
+            f"wearing {_article(colour('dress', d) or d['label'])} "
+            f"{(colour('dress', d) + ' ').lstrip()}{d['label']} "
             f"in {material_phrase(d['material'])}", P_WARDROBE, 1.0, "wardrobe:dress",
-            compact_text=f"wearing {_article(colour('dress'))} {colour('dress')} {d['label']}",
+            compact_text=f"wearing {_article(colour('dress', d) or d['label'])} "
+                         f"{(colour('dress', d) + ' ').lstrip()}{d['label']}",
             rank=0))
-        segs.append(Segment(f"{d['length']} length with {_article(d['neckline'])} "
-                            f"{d['neckline']} neckline", P_WARDROBE, 1.0, "wardrobe:cut",
-                            rank=2))
+        neckline = d.get("neckline")
+        if neckline:
+            segs.append(Segment(
+                f"{d.get('length', 'midi')} length with {_article(neckline)} "
+                f"{neckline} neckline", P_WARDROBE, 1.0, "wardrobe:cut", rank=2))
     else:
         if w.top:
             t = w.top
             segs.append(Segment(
-                f"wearing {_article(colour('top'))} {colour('top')} {t['label']} "
+                f"wearing {_article(colour('top', t) or t['label'])} "
+                f"{(colour('top', t) + ' ').lstrip()}{t['label']} "
                 f"in {material_phrase(t['material'])}", P_WARDROBE, 1.0, "wardrobe:top",
-                compact_text=f"wearing {_article(colour('top'))} {colour('top')} {t['label']}",
+                compact_text=f"wearing {_article(colour('top', t) or t['label'])} "
+                             f"{(colour('top', t) + ' ').lstrip()}{t['label']}",
                 rank=0))
         if w.bottom:
             b = w.bottom
             segs.append(Segment(
-                f"with {colour('bottom')} {b['label']} in {material_phrase(b['material'])}",
+                f"with {(colour('bottom', b) + ' ').lstrip()}{b['label']} "
+                f"in {material_phrase(b['material'])}",
                 P_WARDROBE, 1.0, "wardrobe:bottom",
-                compact_text=f"with {colour('bottom')} {b['label']}", rank=1))
+                compact_text=f"with {(colour('bottom', b) + ' ').lstrip()}{b['label']}",
+                rank=1))
     if w.outer_layer:
-        segs.append(Segment(f"layered under an open {colour('outer')} {w.outer_layer['label']}",
+        segs.append(Segment(f"layered under an open "
+                            f"{(colour('outer', w.outer_layer) + ' ').lstrip()}"
+                            f"{w.outer_layer['label']}",
                             P_WARDROBE, 1.0, "wardrobe:outer", rank=2))
     if w.footwear:
         segs.append(Segment("barefoot" if w.footwear["id"] == "barefoot"
@@ -409,8 +431,12 @@ def _pose_segments(spec: FrameSpec) -> List[Segment]:
         "down": "eyes softly downcast",
     }.get(h.eye_direction, "eyes looking into the lens")
     segs.append(Segment(eye, P_POSE, 1.0, "head:eyes", rank=0))
-    segs.append(Segment(f"{spec.expression['label']} expression", P_POSE, 1.0,
-                        "expression", rank=0))
+    # Some expression labels already end in the word ("slightly distant
+    # expression"), so appending it unconditionally yields a stutter.
+    expr = spec.expression["label"]
+    if "expression" not in expr.lower():
+        expr = f"{expr} expression"
+    segs.append(Segment(expr, P_POSE, 1.0, "expression", rank=0))
     return segs
 
 

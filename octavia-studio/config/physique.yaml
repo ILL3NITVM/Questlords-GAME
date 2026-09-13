@@ -40,6 +40,8 @@ descriptors:
   legs: "long legs relative to the torso with natural knee and ankle structure"
   abdomen: "a flat abdomen with soft natural definition"
   posture_default: "relaxed natural carriage"
+  # Canon principle: the clothes yield to her, never the reverse.
+  garment_fit: "clothing that follows her natural figure without reshaping it"
 
 # Prompt assembly, same tiering rationale as identity.yaml.
 prompt:
@@ -48,6 +50,7 @@ prompt:
   important:
     - descriptors.waist
     - descriptors.shoulders
+    - descriptors.garment_fit
   detail:
     - descriptors.hips
     - descriptors.arms
@@ -62,8 +65,20 @@ prompt:
     descriptors.legs: "long legs"
     descriptors.bust: "natural proportionate bust"
 
-  # Ratio clause is generated from `ratios` rather than stored as prose.
-  include_ratios: true
+  # CANON CONFLICT, resolved in favour of the established project.
+  #
+  # This studio originally emitted "shoulder-to-waist ratio about 1.55" into
+  # every prompt. The established Octavia canon is explicit:
+  #
+  #     "Preserve the supplied body shape without estimating numerical
+  #      measurements or changing anatomy to make clothes fit.
+  #      Adapt the clothes to her instead."
+  #
+  # Asserting a numeric ratio is exactly that estimation. The ratios stay in
+  # this file because they are useful to a keypoint-based QC scorer comparing
+  # a render against the references — measuring an output is not the same as
+  # dictating a measurement to the model. They are no longer put in prompts.
+  include_ratios: false
 
 # ------------------------------------------------------------
 # Anatomy realism requirements
@@ -117,3 +132,6 @@ physique_negatives:
   - "merged limbs"
   - "broken joints"
   - "warped anatomy"
+  # Canon: adapt the clothes to her, not her to the clothes.
+  - "body reshaped to fit the clothing"
+  - "waist cinched beyond her natural shape"

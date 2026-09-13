@@ -119,15 +119,32 @@ def test_physique_lock_reaches_prompts_that_show_the_body():
     for spec, pos, _ in _prompts(count=60, tier="full"):
         if spec.camera["shot"]["emphasis"] in ("body", "environment"):
             low = pos.lower()
-            assert "shoulder-to-waist ratio" in low
+            assert "narrow high waist" in low or "medium frame" in low
             assert "five fingers" in low
             seen += 1
     assert seen > 0, "no body-emphasis frames sampled"
 
 
-def test_full_tier_always_carries_the_complete_physique_lock():
+def test_full_tier_always_carries_the_physique_lock():
     for _, pos, _ in _prompts(count=20, tier="full"):
-        assert "shoulder-to-waist ratio" in pos.lower()
+        assert "five fingers" in pos.lower()
+
+
+def test_prompts_never_assert_numeric_body_measurements():
+    """Established canon: preserve her shape without estimating numerical
+    measurements. The ratios stay in config for a keypoint QC scorer, which
+    measures an output rather than dictating a measurement to the model."""
+    for _, pos, _ in _prompts(count=30, tier="full"):
+        low = pos.lower()
+        assert "ratio" not in low, pos[:180]
+        assert "shoulder-to-waist" not in low
+
+
+def test_clothes_adapt_to_her_not_the_reverse():
+    """Canon: adapt the clothes to her instead of reshaping her to fit."""
+    for _, pos, neg in _prompts(count=10, tier="full"):
+        assert "without reshaping" in pos.lower()
+        assert "body reshaped to fit" in neg.lower()
 
 
 def test_every_prompt_asserts_adult_age():
@@ -242,7 +259,9 @@ def test_all_modes_keep_the_physique_lock_and_age_clause():
     """Neither is carried by a face LoRA, so both must survive every mode."""
     for mode in ("descriptive", "hybrid", "lora_token"):
         pos, neg = _one_prompt(mode, tier="full")
-        assert "shoulder-to-waist ratio" in pos.lower(), mode
+        # A face adapter carries no body proportions, so the physique lock
+        # must survive every identity mode -- as descriptors, not numbers.
+        assert "five fingers" in pos.lower(), mode
         assert POL["subject"]["age_clause"].lower() in pos.lower(), mode
         for term in ("child", "minor", "nude"):
             assert term in neg.lower(), f"{mode} lost policy negative {term!r}"

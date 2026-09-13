@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "family": "hosiery",
+  "source": "octavia_studio",
+  "items": [
+    {
+      "id": "black-tights",
+      "label": "black fine-gauge tights",
+      "category": "hosiery",
+      "subtype": "black-tights",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-tights",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-socks",
+      "label": "cream ribbed ankle socks",
+      "category": "hosiery",
+      "subtype": "cream-socks",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-socks",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "gray-knee-socks",
+      "label": "gray knee-high ribbed socks",
+      "category": "hosiery",
+      "subtype": "gray-knee-socks",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "gray-knee-socks",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "silver",
+      "colour_source": "gray",
+      "length": "knee",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "length",
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-socks",
+      "label": "lilac ribbed ankle socks",
+      "category": "hosiery",
+      "subtype": "lilac-socks",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-socks",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material"
+      ],
+      "material_confidence": "inferred_from_name"
+    }
+  ]
+}

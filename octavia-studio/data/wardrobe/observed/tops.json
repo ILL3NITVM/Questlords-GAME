@@ -1,0 +1,1968 @@
+{
+  "schema_version": 1,
+  "family": "tops",
+  "source": "octavia_studio",
+  "items": [
+    {
+      "id": "black-button-crop",
+      "label": "black button-front crop tank",
+      "category": "top",
+      "subtype": "black-button-crop",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-button-crop",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "cropped",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-lace-bra",
+      "label": "black embroidered lace bra",
+      "category": "top",
+      "subtype": "black-lace-bra",
+      "material": "lace",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-lace-bra",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "neckline": "crew",
+      "sleeve": "short",
+      "base_layer_only": true,
+      "policy_note": "observed in a photograph but not permissible as an outermost layer under the content policy",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-crop-tank",
+      "label": "black fitted crop tank",
+      "category": "top",
+      "subtype": "black-crop-tank",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-crop-tank",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "cropped",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "cut": "fitted",
+      "fit": "fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-tee",
+      "label": "black fitted short-sleeve tee",
+      "category": "top",
+      "subtype": "black-tee",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-tee",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "mini",
+      "neckline": "crew",
+      "sleeve": "short",
+      "cut": "fitted",
+      "fit": "fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-mock-long",
+      "label": "black long-sleeve ribbed mock-neck top",
+      "category": "top",
+      "subtype": "black-mock-long",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-mock-long",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "long",
+      "neckline": "high",
+      "sleeve": "long",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-one-shoulder-top",
+      "label": "black one-shoulder fitted top",
+      "category": "top",
+      "subtype": "black-one-shoulder-top",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-one-shoulder-top",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "fitted",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "crew",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-halter-knit",
+      "label": "black ribbed halter top",
+      "category": "top",
+      "subtype": "black-halter-knit",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-halter-knit",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "neckline": "halter",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-scoop-long",
+      "label": "black scoop-neck long-sleeve fitted top",
+      "category": "top",
+      "subtype": "black-scoop-long",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-scoop-long",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "long",
+      "neckline": "scoop",
+      "sleeve": "long",
+      "cut": "fitted",
+      "fit": "fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-open-back",
+      "label": "black scoop-neck open-back long-sleeve top",
+      "category": "top",
+      "subtype": "black-open-back",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-open-back",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "long",
+      "neckline": "scoop",
+      "sleeve": "long",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-square-long",
+      "label": "black square-neck long-sleeve fitted top",
+      "category": "top",
+      "subtype": "black-square-long",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-square-long",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "long",
+      "neckline": "square",
+      "sleeve": "long",
+      "cut": "fitted",
+      "fit": "fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-square-top",
+      "label": "black square-neck tank",
+      "category": "top",
+      "subtype": "black-square-top",
+      "material": "cotton jersey",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-square-top",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-master-source-v24-3.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "neckline": "square",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "chocolate-tank",
+      "label": "chocolate scoop-neck tank",
+      "category": "top",
+      "subtype": "chocolate-tank",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "chocolate-tank",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "chocolate",
+      "colour_source": "chocolate",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-v-sweater",
+      "label": "cream v-neck knit sweater",
+      "category": "top",
+      "subtype": "cream-v-sweater",
+      "material": "fine knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-v-sweater",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "neckline": "v",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-rib-crop",
+      "label": "cream ribbed crop tank",
+      "category": "top",
+      "subtype": "cream-rib-crop",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-rib-crop",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "length": "cropped",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-square-long",
+      "label": "cream square-neck long-sleeve crop",
+      "category": "top",
+      "subtype": "cream-square-long",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-square-long",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-7cf41694da9b4f14",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "length": "cropped",
+      "neckline": "square",
+      "sleeve": "long",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-knot-wrap",
+      "label": "cyan front-knot wrap-strap crop top",
+      "category": "top",
+      "subtype": "cyan-knot-wrap",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-knot-wrap",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-06304fd46f0a0b92",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "length": "cropped",
+      "neckline": "v",
+      "cut": "wrap",
+      "fit": "semi_fitted",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-sport-top",
+      "label": "cyan scoop-neck athletic crop",
+      "category": "top",
+      "subtype": "cyan-sport-top",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-sport-top",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3a90a4d5c3004fda",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "length": "cropped",
+      "neckline": "scoop",
+      "fit": "semi_fitted",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-wrap-blouse",
+      "label": "cyan sleeveless collared wrap blouse",
+      "category": "top",
+      "subtype": "cyan-wrap-blouse",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-wrap-blouse",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-5c0ceda9e31f9735",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "neckline": "v",
+      "sleeve": "sleeveless",
+      "cut": "wrap",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-square-top",
+      "label": "cyan square-neck fitted top",
+      "category": "top",
+      "subtype": "cyan-square-top",
+      "material": "cotton jersey",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-square-top",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-zuza-comparison-source-v26-octavia.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "neckline": "square",
+      "cut": "fitted",
+      "fit": "fitted",
+      "length": "waist",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "forest-contrast-top",
+      "label": "forest-green long-sleeve top with pale ribbed waistband",
+      "category": "top",
+      "subtype": "forest-contrast-top",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "forest-contrast-top",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-4aa958e7e4279df5",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "forest_green",
+      "colour_source": "forest green",
+      "length": "long",
+      "sleeve": "long",
+      "fit": "semi_fitted",
+      "neckline": "crew",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "yellow-rib-tank",
+      "label": "lemon-yellow ribbed tank",
+      "category": "top",
+      "subtype": "yellow-rib-tank",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "yellow-rib-tank",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lemon",
+      "colour_source": "lemon",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-button-shirt",
+      "label": "lilac collared button shirt",
+      "category": "top",
+      "subtype": "lilac-button-shirt",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-button-shirt",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "neckline": "collar",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-crew-knit-blouse",
+      "label": "lilac crew-neck fine-rib knit blouse",
+      "category": "top",
+      "subtype": "lilac-crew-knit-blouse",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-crew-knit-blouse",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-5d75bc683f0c6c4a",
+        "first_seen": "2026-09-13T04:17:38+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "neckline": "collar",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-henley",
+      "label": "lilac fitted button-front knit",
+      "category": "top",
+      "subtype": "lilac-henley",
+      "material": "fine knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-henley",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "cut": "fitted",
+      "fit": "fitted",
+      "length": "waist",
+      "neckline": "crew",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-ruched-mock",
+      "label": "lilac long-sleeve ruched mock-neck crop",
+      "category": "top",
+      "subtype": "lilac-ruched-mock",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-ruched-mock",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-ddfb963f7cbf65c2",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "length": "cropped",
+      "neckline": "high",
+      "sleeve": "long",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-racer-crop",
+      "label": "lilac racer-neck ribbed crop",
+      "category": "top",
+      "subtype": "lilac-racer-crop",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-racer-crop",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-f902c47d905e3713",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "length": "cropped",
+      "fit": "semi_fitted",
+      "neckline": "crew",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-rib-tank",
+      "label": "lilac ribbed longline tank",
+      "category": "top",
+      "subtype": "lilac-rib-tank",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-rib-tank",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "length": "long",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-sport-top",
+      "label": "lilac scoop-neck athletic crop",
+      "category": "top",
+      "subtype": "lilac-sport-top",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-sport-top",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "length": "cropped",
+      "neckline": "scoop",
+      "fit": "semi_fitted",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-mock-crop",
+      "label": "lilac sleeveless mock-neck crop",
+      "category": "top",
+      "subtype": "lilac-mock-crop",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-mock-crop",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "length": "cropped",
+      "neckline": "high",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "mauve-crop-tank",
+      "label": "mauve fitted crop tank",
+      "category": "top",
+      "subtype": "mauve-crop-tank",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "mauve-crop-tank",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "mauve",
+      "colour_source": "mauve",
+      "length": "cropped",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "cut": "fitted",
+      "fit": "fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "mauve-henley",
+      "label": "mauve scoop-neck henley",
+      "category": "top",
+      "subtype": "mauve-henley",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "mauve-henley",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "mauve",
+      "colour_source": "mauve",
+      "neckline": "scoop",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-drape-blouse",
+      "label": "muted cyan draped-neck blouse",
+      "category": "top",
+      "subtype": "cyan-drape-blouse",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-drape-blouse",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a456f31f72df4691",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "neckline": "collar",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-lace-bra",
+      "label": "plum embroidered lace bra",
+      "category": "top",
+      "subtype": "plum-lace-bra",
+      "material": "lace",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-lace-bra",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "neckline": "crew",
+      "sleeve": "short",
+      "base_layer_only": true,
+      "policy_note": "observed in a photograph but not permissible as an outermost layer under the content policy",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-patterned-cami",
+      "label": "plum floral-pattern camisole",
+      "category": "top",
+      "subtype": "plum-patterned-cami",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-patterned-cami",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-d1e7b704ea11055a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-one-shoulder-top",
+      "label": "plum one-shoulder ribbed top",
+      "category": "top",
+      "subtype": "plum-one-shoulder-top",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-one-shoulder-top",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "neckline": "crew",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-satin-cami",
+      "label": "plum satin-look camisole",
+      "category": "top",
+      "subtype": "plum-satin-cami",
+      "material": "satin",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-satin-cami",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-1e17419ae0e8b363",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-sport-top",
+      "label": "plum scoop-neck athletic crop",
+      "category": "top",
+      "subtype": "plum-sport-top",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-sport-top",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "cropped",
+      "neckline": "scoop",
+      "fit": "semi_fitted",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-scoop-long",
+      "label": "plum scoop-neck long-sleeve knit",
+      "category": "top",
+      "subtype": "plum-scoop-long",
+      "material": "fine knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-scoop-long",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "long",
+      "neckline": "scoop",
+      "sleeve": "long",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-wide-sweater",
+      "label": "plum wide-neck relaxed sweater",
+      "category": "top",
+      "subtype": "plum-wide-sweater",
+      "material": "fine knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-wide-sweater",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "fit": "relaxed",
+      "length": "waist",
+      "neckline": "crew",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "sky-rib-tank",
+      "label": "sky-blue ribbed longline tank",
+      "category": "top",
+      "subtype": "sky-rib-tank",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "sky-rib-tank",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "sky_blue",
+      "colour_source": "sky blue",
+      "length": "long",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "stone-sport-top",
+      "label": "stone scoop-neck athletic crop",
+      "category": "top",
+      "subtype": "stone-sport-top",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "stone-sport-top",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-268c5f9e080a29b2",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "taupe",
+      "colour_source": "stone",
+      "length": "cropped",
+      "neckline": "scoop",
+      "fit": "semi_fitted",
+      "sleeve": "short",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "white-tee-crop",
+      "label": "white fitted cropped tee",
+      "category": "top",
+      "subtype": "white-tee-crop",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "white-tee-crop",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "white",
+      "colour_source": "white",
+      "length": "cropped",
+      "neckline": "crew",
+      "sleeve": "short",
+      "cut": "fitted",
+      "fit": "fitted",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "white-tank",
+      "label": "white scoop-neck tank",
+      "category": "top",
+      "subtype": "white-tank",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "white-tank",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "white",
+      "colour_source": "white",
+      "neckline": "scoop",
+      "sleeve": "sleeveless",
+      "fit": "semi_fitted",
+      "length": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "sleeve"
+      ],
+      "material_confidence": "inferred_from_name"
+    }
+  ]
+}

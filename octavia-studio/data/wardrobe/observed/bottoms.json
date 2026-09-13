@@ -1,0 +1,1497 @@
+{
+  "schema_version": 1,
+  "family": "bottoms",
+  "source": "octavia_studio",
+  "items": [
+    {
+      "id": "black-piped-shorts",
+      "label": "black athletic shorts with pale piping",
+      "category": "bottom",
+      "subtype": "black-piped-shorts",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-piped-shorts",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-running-shorts",
+      "label": "black drawstring running shorts",
+      "category": "bottom",
+      "subtype": "black-running-shorts",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-running-shorts",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-1e17419ae0e8b363",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-cargo-jeans",
+      "label": "black fitted cargo-pocket jeans",
+      "category": "bottom",
+      "subtype": "black-cargo-jeans",
+      "material": "denim",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-cargo-jeans",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-34c204acbc02f8c3",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "fitted",
+      "fit": "fitted",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-leggings",
+      "label": "black full-length leggings",
+      "category": "bottom",
+      "subtype": "black-leggings",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-leggings",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "length": "maxi",
+      "cut": "fitted",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-lace-bottom",
+      "label": "black lace brief",
+      "category": "bottom",
+      "subtype": "black-lace-bottom",
+      "material": "lace",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-lace-bottom",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "base_layer_only": true,
+      "policy_note": "observed in a photograph but not permissible as an outermost layer under the content policy",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-pleated-skirt",
+      "label": "black pleated skirt",
+      "category": "bottom",
+      "subtype": "black-pleated-skirt",
+      "material": "cotton jersey",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-pleated-skirt",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-master-source-v24-4.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "a_line",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-tailored-trousers",
+      "label": "black pleated tailored trousers",
+      "category": "bottom",
+      "subtype": "black-tailored-trousers",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-tailored-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "a_line",
+      "fit": "semi_fitted",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-knit-trousers",
+      "label": "black ribbed lounge trousers",
+      "category": "bottom",
+      "subtype": "black-knit-trousers",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-knit-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-cyan-pleats",
+      "label": "black skirt with cyan inset pleats",
+      "category": "bottom",
+      "subtype": "black-cyan-pleats",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-cyan-pleats",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f95fdbcfe3d5f10",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black_cyan",
+      "colour_source": "black/cyan",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-a-line-skirt",
+      "label": "black tailored a-line skirt",
+      "category": "bottom",
+      "subtype": "black-a-line-skirt",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-a-line-skirt",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-4aa958e7e4279df5",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "cut": "a_line",
+      "fit": "semi_fitted",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "charcoal-slit-mini",
+      "label": "charcoal tailored side-slit skirt",
+      "category": "bottom",
+      "subtype": "charcoal-slit-mini",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "charcoal-slit-mini",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "charcoal",
+      "colour_source": "charcoal",
+      "fit": "semi_fitted",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "charcoal-trousers",
+      "label": "charcoal tailored trousers",
+      "category": "bottom",
+      "subtype": "charcoal-trousers",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "charcoal-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "octavia-after-shopping-trousers-v35b.png",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "charcoal",
+      "colour_source": "charcoal",
+      "fit": "semi_fitted",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-drawstring-shorts",
+      "label": "cream drawstring summer shorts",
+      "category": "bottom",
+      "subtype": "cream-drawstring-shorts",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-drawstring-shorts",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-e6e8b7b79caecdca",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-tailored-trousers",
+      "label": "cream pleated tailored trousers",
+      "category": "bottom",
+      "subtype": "cream-tailored-trousers",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-tailored-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "cut": "a_line",
+      "fit": "semi_fitted",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-tailored-shorts",
+      "label": "cream tailored shorts",
+      "category": "bottom",
+      "subtype": "cream-tailored-shorts",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-tailored-shorts",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "fit": "semi_fitted",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-long-pleats",
+      "label": "cyan knee-length pleated skirt",
+      "category": "bottom",
+      "subtype": "cyan-long-pleats",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-long-pleats",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-5c0ceda9e31f9735",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "length": "knee",
+      "cut": "a_line",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cyan-pleated-skirt",
+      "label": "cyan pleated skirt",
+      "category": "bottom",
+      "subtype": "cyan-pleated-skirt",
+      "material": "cotton jersey",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cyan-pleated-skirt",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-cyan-outfit-source-v23.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "cyan",
+      "colour_source": "cyan",
+      "cut": "a_line",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "dark-skinny-jeans",
+      "label": "dark indigo fitted jeans",
+      "category": "bottom",
+      "subtype": "dark-skinny-jeans",
+      "material": "denim",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "dark-skinny-jeans",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "dark_indigo",
+      "colour_source": "dark indigo",
+      "cut": "fitted",
+      "fit": "fitted",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "dark-plaid-trousers",
+      "label": "dark plaid lounge trousers",
+      "category": "bottom",
+      "subtype": "dark-plaid-trousers",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "dark-plaid-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "dark_plaid",
+      "colour_source": "dark plaid",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "gray-piped-shorts",
+      "label": "gray athletic shorts with white piping",
+      "category": "bottom",
+      "subtype": "gray-piped-shorts",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "gray-piped-shorts",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "silver",
+      "colour_source": "gray",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "gray-joggers",
+      "label": "gray drawstring joggers",
+      "category": "bottom",
+      "subtype": "gray-joggers",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "gray-joggers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "silver",
+      "colour_source": "gray",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "blue-ripped-jeans",
+      "label": "light blue distressed jeans",
+      "category": "bottom",
+      "subtype": "blue-ripped-jeans",
+      "material": "denim",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "blue-ripped-jeans",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "sky_blue",
+      "colour_source": "light blue",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "light-straight-jeans",
+      "label": "light blue straight-leg jeans",
+      "category": "bottom",
+      "subtype": "light-straight-jeans",
+      "material": "denim",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "light-straight-jeans",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "sky_blue",
+      "colour_source": "light blue",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "lilac-knit-trousers",
+      "label": "lilac ribbed lounge trousers",
+      "category": "bottom",
+      "subtype": "lilac-knit-trousers",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "lilac-knit-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-df4604002a3d4903",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "lilac",
+      "colour_source": "lilac",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "mauve-joggers",
+      "label": "mauve drawstring lounge trousers",
+      "category": "bottom",
+      "subtype": "mauve-joggers",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "mauve-joggers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "mauve",
+      "colour_source": "mauve",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "mauve-knit-skirt",
+      "label": "mauve knit midi skirt",
+      "category": "bottom",
+      "subtype": "mauve-knit-skirt",
+      "material": "fine knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "mauve-knit-skirt",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "mauve",
+      "colour_source": "mauve",
+      "length": "midi",
+      "cut": "straight",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "blue-straight-jeans",
+      "label": "mid-blue straight-leg jeans",
+      "category": "bottom",
+      "subtype": "blue-straight-jeans",
+      "material": "denim",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "blue-straight-jeans",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "navy",
+      "colour_source": "blue",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-leggings",
+      "label": "plum full-length athletic leggings",
+      "category": "bottom",
+      "subtype": "plum-leggings",
+      "material": "ribbed stretch fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-leggings",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "length": "maxi",
+      "cut": "fitted",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-lace-bottom",
+      "label": "plum lace brief",
+      "category": "bottom",
+      "subtype": "plum-lace-bottom",
+      "material": "lace",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-lace-bottom",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-2f6f0e7eb8aa6f8c",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "base_layer_only": true,
+      "policy_note": "observed in a photograph but not permissible as an outermost layer under the content policy",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-lounge-trousers",
+      "label": "plum ribbed lounge trousers",
+      "category": "bottom",
+      "subtype": "plum-lounge-trousers",
+      "material": "rib knit",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-lounge-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-0924db2fad337032",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-tailored-trousers",
+      "label": "plum tailored wide-leg trousers",
+      "category": "bottom",
+      "subtype": "plum-tailored-trousers",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-tailored-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-3f220b36bc4abdcd",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "cut": "wide",
+      "fit": "semi_fitted",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "plum-wrap-mini",
+      "label": "plum tailored wrap-front skirt",
+      "category": "bottom",
+      "subtype": "plum-wrap-mini",
+      "material": "structured tailoring fabric",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "plum-wrap-mini",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-231c9fdba1fd2956",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "plum",
+      "neckline": "v",
+      "cut": "wrap",
+      "fit": "semi_fitted",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "neckline",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-wide-jeans",
+      "label": "washed black wide-leg jeans",
+      "category": "bottom",
+      "subtype": "black-wide-jeans",
+      "material": "denim",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-wide-jeans",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "washed_black",
+      "colour_source": "washed black",
+      "cut": "wide",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "white-loose-trousers",
+      "label": "white loose summer trousers",
+      "category": "bottom",
+      "subtype": "white-loose-trousers",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "white-loose-trousers",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "white",
+      "colour_source": "white",
+      "fit": "relaxed",
+      "cut": "straight",
+      "length": "full",
+      "waist": "high",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "cut",
+        "fit",
+        "length",
+        "material",
+        "waist"
+      ],
+      "material_confidence": "inferred_from_name"
+    }
+  ]
+}

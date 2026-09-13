@@ -43,6 +43,17 @@ config/            identity, physique, studio, content_policy, training (YAML)
 The studio only ever calls `renderer.generate_image(spec)`. Swapping backends
 requires no change above `renderers/`.
 
+## Two projects, one persona
+
+`../octavia-handoff/` holds the **established** Octavia project: 49 versioned
+prompts, a 155-garment wardrobe observed from real photographs, a SQLite asset
+store and 82 tests. It is post-generation — import, catalogue, continuity,
+wardrobe — and is explicit that it is "not an image generator".
+
+This studio is pre-generation: what to shoot, how to prompt it, and how to
+drive a renderer. `bridge/` joins them. Where the two disagree about Octavia,
+**the established project is canon.**
+
 ## Invariants — do not break these
 
 1. **Reference images are read-only.** Nothing in `assets/octavia/` may be
@@ -71,7 +82,16 @@ requires no change above `renderers/`.
 6. **Never download model weights automatically.** `scripts/fetch_models.py`
    reports size, checks disk and asks first.
 
-7. **Content policy is not optional.** Subject is always an adult; explicit
+7. **Intent is not observation.** `bridge/shoot_export.py` emits annotation
+   commands commented out, and `--pendant unknown` even when the shoot asked
+   for the pendant. This studio knows what was requested; the catalogue
+   records what a photograph shows. Never auto-record one as the other.
+
+8. **Never assert numeric body measurements in a prompt.** Canon: preserve her
+   shape without estimating measurements; adapt the clothes to her. The ratios
+   in `config/physique.yaml` exist for a keypoint QC scorer only.
+
+9. **Content policy is not optional.** Subject is always an adult; explicit
    content is blocked in the negative prompt at every tier. See
    `config/content_policy.yaml`.
 

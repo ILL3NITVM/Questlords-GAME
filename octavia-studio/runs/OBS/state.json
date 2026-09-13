@@ -1,0 +1,825 @@
+{
+  "run_id": "OBS",
+  "master_seed": 5,
+  "count": 24,
+  "campaign": "wardrobe",
+  "diversity": "high",
+  "backend": "mock",
+  "accepted": 22,
+  "rejected": 2,
+  "failed": 0,
+  "elapsed_seconds": 5.5,
+  "scorer": "heuristic-stub",
+  "scorer_placeholder_metrics": [
+    "identity_consistency",
+    "face_consistency",
+    "physique_consistency",
+    "anatomy",
+    "hands",
+    "feet",
+    "pose_naturalness",
+    "clothing_integrity",
+    "photorealism",
+    "lighting"
+  ],
+  "identity_mode": "descriptive",
+  "lora": {
+    "enabled": false,
+    "name": "",
+    "strength_model": 0.85,
+    "strength_clip": 0.85
+  },
+  "renderer_preflight": {
+    "backend": "mock",
+    "available": true,
+    "pillow": true,
+    "note": "Placeholder renderer. Produces no photographic output."
+  },
+  "diversity_report": {
+    "accepted": 22,
+    "left_tilt_count": 0,
+    "left_tilt_share": 0.0,
+    "axes": {
+      "camera_focal": {
+        "distinct": 5,
+        "total": 22,
+        "top": [
+          {
+            "value": "35mm",
+            "count": 6,
+            "share": 0.2727
+          },
+          {
+            "value": "85mm",
+            "count": 5,
+            "share": 0.2273
+          },
+          {
+            "value": "24mm",
+            "count": 4,
+            "share": 0.1818
+          },
+          {
+            "value": "50mm",
+            "count": 4,
+            "share": 0.1818
+          },
+          {
+            "value": "105mm",
+            "count": 3,
+            "share": 0.1364
+          }
+        ]
+      },
+      "camera_height": {
+        "distinct": 7,
+        "total": 22,
+        "top": [
+          {
+            "value": "chest_level",
+            "count": 4,
+            "share": 0.1818
+          },
+          {
+            "value": "eye_level",
+            "count": 4,
+            "share": 0.1818
+          },
+          {
+            "value": "waist_level",
+            "count": 4,
+            "share": 0.1818
+          },
+          {
+            "value": "slightly_low",
+            "count": 3,
+            "share": 0.1364
+          },
+          {
+            "value": "slightly_high",
+            "count": 3,
+            "share": 0.1364
+          },
+          {
+            "value": "above_seated",
+            "count": 3,
+            "share": 0.1364
+          },
+          {
+            "value": "low_floor",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "camera_shot": {
+        "distinct": 9,
+        "total": 22,
+        "top": [
+          {
+            "value": "close_portrait",
+            "count": 3,
+            "share": 0.1364
+          },
+          {
+            "value": "head_and_shoulders",
+            "count": 3,
+            "share": 0.1364
+          },
+          {
+            "value": "waist_up",
+            "count": 3,
+            "share": 0.1364
+          },
+          {
+            "value": "candid_detail",
+            "count": 3,
+            "share": 0.1364
+          },
+          {
+            "value": "full_body",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "three_quarter",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "mirror_selfie",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "environmental_full_body",
+            "count": 2,
+            "share": 0.0909
+          }
+        ]
+      },
+      "colour_family": {
+        "distinct": 19,
+        "total": 22,
+        "top": [
+          {
+            "value": "earth_warm",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "deep_purple",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "sunset_warm",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "tonal_neutral",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "mono_dark",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "ice_silver",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "soft_pastel",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "forest_rose",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "env_palette": {
+        "distinct": 21,
+        "total": 22,
+        "top": [
+          {
+            "value": "burgundy_black",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "green_teak_gravel",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "warm_wood_green_tile",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "sage_natural_timber",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "dusk_concrete_amber",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "forest_green_gold",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "monochrome_charcoal",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "warm_oak_cream",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "expression": {
+        "distinct": 13,
+        "total": 22,
+        "top": [
+          {
+            "value": "eyes_away_candid",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "quiet_laugh",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "playful_gaze",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "small_smile",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "confident_gaze",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "neutral_soft",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "warm_smile",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "slightly_mischievous",
+            "count": 2,
+            "share": 0.0909
+          }
+        ]
+      },
+      "hands": {
+        "distinct": 19,
+        "total": 22,
+        "top": [
+          {
+            "value": "one_hand_support",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "one_hand_hip",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "hands_in_lap",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "mid_gesture",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "arm_draped",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "one_hand_hair",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "arms_folded",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "adjusting_sleeve",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "head_position": {
+        "distinct": 17,
+        "total": 22,
+        "top": [
+          {
+            "value": "over_shoulder_left",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "side_profile_left",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "straight_on",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "three_quarter_right",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "upright_neutral",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "chin_down",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "slight_right_tilt",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "over_shoulder_right",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "lighting": {
+        "distinct": 15,
+        "total": 22,
+        "top": [
+          {
+            "value": "hard_window_shaft",
+            "count": 3,
+            "share": 0.1364
+          },
+          {
+            "value": "beauty_dish",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "city_practicals",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "golden_hour",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "soft_window_daylight",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "broad_flat_studio",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "blue_hour",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "dappled_canopy",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "pose_family": {
+        "distinct": 16,
+        "total": 22,
+        "top": [
+          {
+            "value": "floor_seated",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "walking_candid",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "leaning_against_furniture",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "adjusting_clothing",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "edge_of_seat",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "one_hand_in_hair",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "seated_upright",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "cross_legged_chair",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "pose_id": {
+        "distinct": 19,
+        "total": 22,
+        "top": [
+          {
+            "value": "stand_adjusting",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "seat_edge",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "stand_one_hand_hair",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "crouch_low",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "walking_candid",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "seat_upright",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "seat_cross_legged_chair",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "stand_hands_pockets",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "scene_family": {
+        "distinct": 21,
+        "total": 22,
+        "top": [
+          {
+            "value": "dark_luxury_apartment",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "garden",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "cafe_interior",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "bright_loft",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "city_rooftop",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "hotel_suite",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "gallery",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "walk_in_wardrobe",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "scene_id": {
+        "distinct": 21,
+        "total": 22,
+        "top": [
+          {
+            "value": "burgundy_black_lounge",
+            "count": 2,
+            "share": 0.0909
+          },
+          {
+            "value": "garden_terrace",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "cafe_interior_warm",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "sage_timber_loft",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "city_rooftop_dusk",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "forest_gold_hotel",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "mono_charcoal_gallery",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "walk_in_wardrobe",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "tilt_class": {
+        "distinct": 2,
+        "total": 22,
+        "top": [
+          {
+            "value": "neutral",
+            "count": 18,
+            "share": 0.8182
+          },
+          {
+            "value": "right",
+            "count": 4,
+            "share": 0.1818
+          }
+        ]
+      },
+      "wardrobe_bottom": {
+        "distinct": 13,
+        "total": 14,
+        "top": [
+          {
+            "value": "light-straight-jeans",
+            "count": 2,
+            "share": 0.1429
+          },
+          {
+            "value": "black-a-line-skirt",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "mauve-joggers",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "black-leggings",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "black-knit-trousers",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "charcoal-slit-mini",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "cyan-pleated-skirt",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "gray-piped-shorts",
+            "count": 1,
+            "share": 0.0714
+          }
+        ]
+      },
+      "wardrobe_dress": {
+        "distinct": 8,
+        "total": 8,
+        "top": [
+          {
+            "value": "black-asym-long-midi",
+            "count": 1,
+            "share": 0.125
+          },
+          {
+            "value": "black-halter-jumpsuit",
+            "count": 1,
+            "share": 0.125
+          },
+          {
+            "value": "blue-floral-midi",
+            "count": 1,
+            "share": 0.125
+          },
+          {
+            "value": "cyan-daydress",
+            "count": 1,
+            "share": 0.125
+          },
+          {
+            "value": "cyan-tailored-midi",
+            "count": 1,
+            "share": 0.125
+          },
+          {
+            "value": "plum-velvet-long",
+            "count": 1,
+            "share": 0.125
+          },
+          {
+            "value": "plum-velvet-slip",
+            "count": 1,
+            "share": 0.125
+          },
+          {
+            "value": "plum-v-knit-dress",
+            "count": 1,
+            "share": 0.125
+          }
+        ]
+      },
+      "wardrobe_family": {
+        "distinct": 22,
+        "total": 22,
+        "top": [
+          {
+            "value": "cream-rib-crop+black-a-line-skirt",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "black-mock-long+mauve-joggers+mauve-knit-robe",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "black-asym-long-midi",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "lilac-button-shirt+black-leggings+lilac-cardigan",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "chocolate-tank+black-knit-trousers",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "black-halter-jumpsuit",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "stone-sport-top+charcoal-slit-mini+lilac-cardigan",
+            "count": 1,
+            "share": 0.0455
+          },
+          {
+            "value": "plum-patterned-cami+cyan-pleated-skirt",
+            "count": 1,
+            "share": 0.0455
+          }
+        ]
+      },
+      "wardrobe_top": {
+        "distinct": 14,
+        "total": 14,
+        "top": [
+          {
+            "value": "cream-rib-crop",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "black-mock-long",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "lilac-button-shirt",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "chocolate-tank",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "stone-sport-top",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "plum-patterned-cami",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "white-tank",
+            "count": 1,
+            "share": 0.0714
+          },
+          {
+            "value": "sky-rib-tank",
+            "count": 1,
+            "share": 0.0714
+          }
+        ]
+      }
+    }
+  },
+  "left_tilt_share": 0.0,
+  "left_tilt_target": 0.08
+}

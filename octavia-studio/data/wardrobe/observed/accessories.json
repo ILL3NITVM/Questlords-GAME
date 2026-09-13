@@ -1,0 +1,559 @@
+{
+  "schema_version": 1,
+  "family": "accessories",
+  "source": "octavia_studio",
+  "items": [
+    {
+      "id": "black-sparkle-clutch",
+      "label": "black embellished evening clutch",
+      "category": "accessory",
+      "subtype": "black-sparkle-clutch",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-sparkle-clutch",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black_silver",
+      "colour_source": "black/silver",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-evening-clutch",
+      "label": "black evening clutch",
+      "category": "accessory",
+      "subtype": "black-evening-clutch",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-evening-clutch",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-belt",
+      "label": "black rectangular-buckle belt",
+      "category": "accessory",
+      "subtype": "black-belt",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-belt",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "slot": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-tote",
+      "label": "black roomy tote",
+      "category": "accessory",
+      "subtype": "black-tote",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-tote",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-shoulder-bag",
+      "label": "black small shoulder bag",
+      "category": "accessory",
+      "subtype": "black-shoulder-bag",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-shoulder-bag",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "black-handbag",
+      "label": "black structured top-handle bag",
+      "category": "accessory",
+      "subtype": "black-handbag",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "black-handbag",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "fit": "semi_fitted",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "brown-belt",
+      "label": "brown buckle belt",
+      "category": "accessory",
+      "subtype": "brown-belt",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "brown-belt",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "espresso",
+      "colour_source": "brown",
+      "slot": "waist",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "brown-tote",
+      "label": "brown slouchy shoulder tote",
+      "category": "accessory",
+      "subtype": "brown-tote",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "brown-tote",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-a8957b3e236a5e5a",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "espresso",
+      "colour_source": "brown",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "cream-shoulder-bag",
+      "label": "cream small shoulder bag",
+      "category": "accessory",
+      "subtype": "cream-shoulder-bag",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "cream-shoulder-bag",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "cream",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "sunglasses",
+      "label": "dark sunglasses",
+      "category": "accessory",
+      "subtype": "sunglasses",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "sunglasses",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-269f0bbea4a3aa30",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "black",
+      "colour_source": "black",
+      "slot": "head",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "woven-bag",
+      "label": "natural woven basket handbag",
+      "category": "accessory",
+      "subtype": "woven-bag",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "woven-bag",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-84554bb4be4529db",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "cream",
+      "colour_source": "natural",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "red-shoulder-bag",
+      "label": "red structured shoulder bag",
+      "category": "accessory",
+      "subtype": "red-shoulder-bag",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "red-shoulder-bag",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-7cf41694da9b4f14",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "burgundy",
+      "colour_source": "red",
+      "fit": "semi_fitted",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "amethyst-pendant",
+      "label": "signature purple crystal pendant",
+      "category": "accessory",
+      "subtype": "amethyst-pendant",
+      "material": "cotton jersey",
+      "weight": 1.6,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "amethyst-pendant",
+        "ownership": "established",
+        "canon_status": "established-reference",
+        "source_reference": "octavia-master-source-v24-5.jpg",
+        "first_seen": "2026-09-08"
+      },
+      "observed": true,
+      "colour_id": "plum",
+      "colour_source": "purple",
+      "slot": "neck",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    },
+    {
+      "id": "stone-handbag",
+      "label": "stone structured top-handle bag",
+      "category": "accessory",
+      "subtype": "stone-handbag",
+      "material": "cotton jersey",
+      "weight": 1.0,
+      "source": {
+        "catalogue": "octavia_studio",
+        "wardrobe_item_id": "stone-handbag",
+        "ownership": "candidate",
+        "canon_status": "candidate",
+        "source_reference": "a-231c9fdba1fd2956",
+        "first_seen": "2026-09-11T00:27:02+00:00"
+      },
+      "observed": true,
+      "colour_id": "taupe",
+      "colour_source": "stone",
+      "fit": "semi_fitted",
+      "slot": "carry",
+      "formality": [
+        "casual",
+        "smart_casual"
+      ],
+      "season": [
+        "all"
+      ],
+      "mood": [
+        "confident",
+        "composed"
+      ],
+      "compatibility_tags": [
+        "layerable"
+      ],
+      "inferred": [
+        "fit",
+        "material",
+        "slot"
+      ],
+      "material_confidence": "inferred_from_name"
+    }
+  ]
+}
