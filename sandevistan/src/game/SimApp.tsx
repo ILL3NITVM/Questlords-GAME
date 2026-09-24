@@ -8,7 +8,9 @@ import { decide, type MarketTick } from "@/game/strategy";
 
 async function pullMarket(): Promise<MarketTick> {
   try {
-    return await getMarket();
+    const m = await getMarket();
+    if (!m) throw new Error("server tape empty");
+    return m;
   } catch {
     const res = await fetch("https://api.exchange.coinbase.com/products/BTC-USD/ticker");
     const t = (await res.json()) as { price?: string };

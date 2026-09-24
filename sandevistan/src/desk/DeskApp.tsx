@@ -10,49 +10,49 @@ import { pnlAt } from "./rules";
 const book = new FlyBook();
 
 async function pullMarket(): Promise<MarketTick> {
-  try {
-    return await getMarket();
-  } catch {
-    const [ticker, stats, candles] = await Promise.all([
-      fetch("https://api.exchange.coinbase.com/products/BTC-USD/ticker").then((r) => r.json()),
-      fetch("https://api.exchange.coinbase.com/products/BTC-USD/stats").then((r) => r.json()),
-      fetch("https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60").then((r) => r.json()),
-    ]);
-    const price = Number((ticker as { price?: string }).price);
-    const open = Number((stats as { open?: string }).open);
-    const rows = [...(candles as number[][])].sort((a, b) => (a[0] ?? 0) - (b[0] ?? 0));
-    const closes = rows.map((r) => Number(r[4])).filter((n) => Number.isFinite(n)).slice(-30);
-    const last = rows[rows.length - 1];
-    return {
-      price,
-      change24: open ? (price - open) / open : 0,
-      high: Number(last?.[2] ?? price),
-      low: Number(last?.[1] ?? price),
-      closes,
-      source: "coinbase-direct",
-      signal: decide(closes, "ts"),
-    };
-  }
+  const viaServer = await getMarket().catch(() => null);
+  if (viaServer) return viaServer;
+  const [ticker, stats, candles] = await Promise.all([
+    fetch("https://api.exchange.coinbase.com/products/BTC-USD/ticker").then((r) => r.json()),
+    fetch("https://api.exchange.coinbase.com/products/BTC-USD/stats").then((r) => r.json()),
+    fetch("https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60").then((r) => r.json()),
+  ]);
+  const price = Number((ticker as { price?: string }).price);
+  const open = Number((stats as { open?: string }).open);
+  const rows = [...(candles as number[][])].sort((a, b) => (a[0] ?? 0) - (b[0] ?? 0));
+  const closes = rows.map((r) => Number(r[4])).filter((n) => Number.isFinite(n)).slice(-30);
+  const last = rows[rows.length - 1];
+  return {
+    price,
+    change24: open ? (price - open) / open : 0,
+    high: Number(last?.[2] ?? price),
+    low: Number(last?.[1] ?? price),
+    closes,
+    source: "coinbase-direct",
+    signal: decide(closes, "ts"),
+  };
 }
 
 /** Backtest candles. Server first, then Coinbase direct. Never invented. */
 async function pullCandles(): Promise<number[]> {
-  try {
-    return await getCandles();
-  } catch {
-    const res = await fetch("https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60");
-    if (!res.ok) throw new Error(`Coinbase candles ${res.status}`);
-    const rows = (await res.json()) as number[][];
-    if (!Array.isArray(rows)) throw new Error("Coinbase candles: bad payload");
-    return [...rows]
-      .sort((a, b) => (a[0] ?? 0) - (b[0] ?? 0))
-      .map((r) => Number(r[4]))
-      .filter((n) => Number.isFinite(n) && n > 0);
-  }
+  const viaServer = await getCandles().catch(() => null);
+  if (viaServer) return viaServer;
+  const res = await fetch("https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60");
+  if (!res.ok) throw new Error(`Coinbase candles ${res.status}`);
+  const rows = (await res.json()) as number[][];
+  if (!Array.isArray(rows)) throw new Error("Coinbase candles: bad payload");
+  return [...rows]
+    .sort((a, b) => (a[0] ?? 0) - (b[0] ?? 0))
+    .map((r) => Number(r[4]))
+    .filter((n) => Number.isFinite(n) && n > 0);
 }
 
 function usd(n: number, digits = 2) {
   return n.toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits });
+}
+
+function signedUsd(n: number) {
+  return `${n >= 0 ? "+" : "-"}$${usd(Math.abs(n))}`;
 }
 
 function pct(n: number) {
@@ -207,7 +207,7 @@ export function DeskApp() {
                 <Stat label="CASH" value={`$${usd(snap.cash, 0)}`} />
                 <Stat
                   label="OPEN PNL"
-                  value={`${snap.pnlOpen >= 0 ? "+" : ""}$${usd(snap.pnlOpen)}`}
+                  value={signedUsd(snap.pnlOpen)}
                   tone={snap.pnlOpen >= 0 ? "up" : "down"}
                 />
                 <Stat label="FRASS" value={String(snap.poop)} />
@@ -239,7 +239,7 @@ export function DeskApp() {
                     {usd(row.entry, 0)} → {usd(row.exit, 0)}
                   </span>
                   <span className={`tabular-nums ${row.pnl >= 0 ? "text-accent" : "text-danger"}`}>
-                    {row.pnl >= 0 ? "+" : ""}${usd(row.pnl)}
+                    {signedUsd(row.pnl)}
                   </span>
                 </li>
               ))}
@@ -319,7 +319,7 @@ function TicketRow({ ticket: t, price }: { ticket: Ticket; price: number }) {
           <span className="ml-2 text-xs tabular-nums text-fg">{t.qty.toFixed(5)} BTC</span>
         </p>
         <p className={`text-sm tabular-nums ${pnl >= 0 ? "text-accent" : "text-danger"}`}>
-          {pnl >= 0 ? "+" : ""}${usd(pnl)}
+          {signedUsd(pnl)}
         </p>
       </div>
       <dl className="mt-2 grid grid-cols-3 gap-2 font-mono text-xs">
@@ -336,7 +336,7 @@ function BacktestCard({ snap }: { snap: BookSnap }) {
   const bt = snap.backtest;
   const r = bt.result;
   return (
-    <div className="rounded-xl border border-border bg-surface p-4 shadow-panel">
+    <section aria-label="Backtest" className="rounded-xl border border-border bg-surface p-4 shadow-panel">
       <div className="flex items-baseline justify-between">
         <p className="font-mono text-xs tracking-widest text-muted">BACKTEST</p>
         <p className="font-mono text-xs text-subtle">width x{snap.bias.toFixed(2)}</p>
@@ -349,7 +349,7 @@ function BacktestCard({ snap }: { snap: BookSnap }) {
         <dl className="mt-3 grid grid-cols-2 gap-3 font-mono text-xs">
           <Stat label="TRADES" value={`${r.trades} · ${r.candles}m`} />
           <Stat label="WIN RATE" value={r.trades ? `${Math.round(r.winRate * 100)}%` : "—"} />
-          <Stat label="NET PNL" value={`${r.net >= 0 ? "+" : ""}$${usd(r.net)}`} tone={r.net >= 0 ? "up" : "down"} />
+          <Stat label="NET PNL" value={signedUsd(r.net)} tone={r.net >= 0 ? "up" : "down"} />
           <Stat label="MAX DD" value={`${(r.maxDrawdown * 100).toFixed(2)}%`} />
         </dl>
       ) : null}
@@ -362,7 +362,7 @@ function BacktestCard({ snap }: { snap: BookSnap }) {
         <History className="size-4" />
         Let the fly backtest
       </Button>
-    </div>
+    </section>
   );
 }
 

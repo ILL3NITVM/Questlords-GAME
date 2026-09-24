@@ -56,7 +56,7 @@ Exit uses **last price only**, not candle high/low (the 1m candle includes price
 
 ## Next task (done — see `src/desk/rules.ts`, `backtest.ts`, `book.ts`)
 
-Shared entry/TP/SL rules now live in `src/desk/rules.ts` so the live book and the backtest replay cannot drift. Full `npm run build` + browser smoke still need the complete workspace (this zip lacks `scripts/`, `src/components/`, `src/lib/auth/`).
+Shared entry/TP/SL rules now live in `src/desk/rules.ts` so the live book and the backtest replay cannot drift. The folder is now a standalone app (see README.md): auth, PGLite and preview-host plumbing were dropped, `src/components/ui/button.tsx` and `src/router.tsx` were added, and `scripts/browser-smoke.mjs` replaces the old smoke. There is no `preview:restart`; use `npm start` for the built server on 8081.
 
 The last product ask, in the user's words: **"Multiple parallel trades, make the fly backtest if it wants, and non volatile when fly app tab closed."**
 
