@@ -18,6 +18,14 @@ npm start            # http://127.0.0.1:8081  (node .output/server/index.mjs)
 
 Deploy to Vercel with `NITRO_PRESET=vercel npm run build`. Python (`python/fly_desk.py`) is optional; the TypeScript path is used when `python3` is missing.
 
+## Single HTML file
+
+```sh
+npm run build:single   # writes sandevistan.html
+```
+
+One self-contained file (React, the fly, CSS all inlined). Open it in any browser; it fetches Coinbase `BTC-USD` directly. No server, so no Python engine and no Kraken fallback.
+
 ## Check
 
 ```sh
