@@ -54,7 +54,9 @@ Exit uses **last price only**, not candle high/low (the 1m candle includes price
 
 `src/game/game.ts`, `world.ts`, `roach.ts`, `sim.ts`, `SimApp.tsx`, `Hud.tsx`, `TitleOverlay.tsx`, `TouchControls.tsx`, `input.ts`, `particles.ts`, `audio.ts` are the old kitchen sim (three.js r186, tripod gait, sucrose, stomps). Leave the files. Do not import them from the route. Do not bring back a joystick.
 
-## Next task (not done yet)
+## Next task (done — see `src/desk/rules.ts`, `backtest.ts`, `book.ts`)
+
+Shared entry/TP/SL rules now live in `src/desk/rules.ts` so the live book and the backtest replay cannot drift. Full `npm run build` + browser smoke still need the complete workspace (this zip lacks `scripts/`, `src/components/`, `src/lib/auth/`).
 
 The last product ask, in the user's words: **"Multiple parallel trades, make the fly backtest if it wants, and non volatile when fly app tab closed."**
 

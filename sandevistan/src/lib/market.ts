@@ -7,3 +7,9 @@ export const getMarket = createServerFn({ method: "GET" }).handler(async () => {
 });
 
 export type { MarketTick };
+
+/** Up to 300 one-minute BTC-USD closes, oldest → newest. For the backtest only. */
+export const getCandles = createServerFn({ method: "GET" }).handler(async () => {
+  const { fetchCandles } = await import("./market.server");
+  return fetchCandles();
+});

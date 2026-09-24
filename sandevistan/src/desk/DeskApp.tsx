@@ -1,10 +1,11 @@
 import { useEffect, useRef, useSyncExternalStore } from "react";
-import { Activity, Pause, Play } from "lucide-react";
+import { Activity, History, Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NeuralPanel } from "@/game/NeuralPanel";
-import { getMarket } from "@/lib/market";
+import { getCandles, getMarket } from "@/lib/market";
 import { decide, type MarketTick } from "@/game/strategy";
-import { FlyBook, type BookSnap, type Side, type Ticket } from "./book";
+import { FlyBook, MAX_OPEN, type BookSnap, type Side, type Ticket } from "./book";
+import { pnlAt } from "./rules";
 
 const book = new FlyBook();
 
@@ -34,6 +35,22 @@ async function pullMarket(): Promise<MarketTick> {
   }
 }
 
+/** Backtest candles. Server first, then Coinbase direct. Never invented. */
+async function pullCandles(): Promise<number[]> {
+  try {
+    return await getCandles();
+  } catch {
+    const res = await fetch("https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60");
+    if (!res.ok) throw new Error(`Coinbase candles ${res.status}`);
+    const rows = (await res.json()) as number[][];
+    if (!Array.isArray(rows)) throw new Error("Coinbase candles: bad payload");
+    return [...rows]
+      .sort((a, b) => (a[0] ?? 0) - (b[0] ?? 0))
+      .map((r) => Number(r[4]))
+      .filter((n) => Number.isFinite(n) && n > 0);
+  }
+}
+
 function usd(n: number, digits = 2) {
   return n.toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits });
 }
@@ -47,31 +64,64 @@ export function DeskApp() {
 
   useEffect(() => {
     book.load();
-    let stop = false;
-    const tick = () => {
-      void pullMarket()
-        .then((m) => {
-          if (!stop) book.apply(m);
-        })
-        .catch(() => {
-          if (!stop) book.markStale();
-        });
-    };
-    tick();
-    const id = window.setInterval(tick, 4000);
+    let running = false;
+    let gen = 0;
+    let id = 0;
     let raf = 0;
     let last = performance.now();
+
+    const poll = (g: number) => {
+      void pullMarket()
+        .then((m) => {
+          if (g !== gen) return;
+          book.apply(m);
+          // After the poll resolves, never in front of it.
+          if (book.shouldAutoAsk()) void book.askBacktest(pullCandles);
+        })
+        .catch(() => {
+          if (g === gen) book.markStale();
+        });
+    };
     const loop = (now: number) => {
       const dt = Math.min(0.05, (now - last) / 1000);
       last = now;
       book.senseStep(dt);
       raf = requestAnimationFrame(loop);
     };
-    raf = requestAnimationFrame(loop);
-    return () => {
-      stop = true;
+    const start = () => {
+      if (running) return;
+      running = true;
+      const g = ++gen;
+      poll(g);
+      id = window.setInterval(() => poll(g), 4000);
+      last = performance.now();
+      raf = requestAnimationFrame(loop);
+    };
+    // Hidden tab: no poll, no rAF, no TP/SL. Save and sleep.
+    const stop = () => {
+      if (!running) return;
+      running = false;
+      gen++;
       window.clearInterval(id);
       cancelAnimationFrame(raf);
+      book.sleep();
+    };
+    const resume = () => {
+      if (running || document.visibilityState === "hidden") return;
+      book.wake();
+      start();
+    };
+    const onVisibility = () => (document.visibilityState === "hidden" ? stop() : resume());
+
+    if (document.visibilityState !== "hidden") start();
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("pagehide", stop);
+    window.addEventListener("pageshow", resume);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("pagehide", stop);
+      window.removeEventListener("pageshow", resume);
+      stop();
     };
   }, []);
 
@@ -90,6 +140,7 @@ export function DeskApp() {
           </div>
           <Button
             variant="secondary"
+            className="min-h-11"
             onClick={() => book.setArmed(!snap.armed)}
             aria-pressed={snap.armed}
           >
@@ -110,7 +161,13 @@ export function DeskApp() {
               <div className="flex items-baseline justify-between gap-3">
                 <p className="font-mono text-xs tracking-widest text-muted">BTC-USD</p>
                 <p className="font-mono text-xs text-subtle">
-                  {snap.status === "live" ? snap.source : snap.status === "stale" ? "tape delayed" : "warming"}
+                  {snap.status === "live"
+                    ? snap.source
+                    : snap.status === "stale"
+                      ? "tape delayed"
+                      : snap.status === "asleep"
+                        ? "asleep"
+                        : "warming"}
                   {snap.engine === "python" ? " · py" : ""}
                 </p>
               </div>
@@ -156,12 +213,18 @@ export function DeskApp() {
                 <Stat label="FRASS" value={String(snap.poop)} />
               </dl>
             </div>
-            <TicketCard snap={snap} />
+            <TicketList snap={snap} />
+            <BacktestCard snap={snap} />
           </div>
         </section>
 
         <section className="rounded-xl border border-border bg-surface p-4 shadow-panel">
-          <p className="font-mono text-xs tracking-widest text-muted">TAPE</p>
+          <div className="flex items-baseline justify-between gap-3">
+            <p className="font-mono text-xs tracking-widest text-muted">TAPE</p>
+            <p className="font-mono text-xs text-subtle">
+              {snap.open.length} of {MAX_OPEN} open
+            </p>
+          </div>
           {snap.history.length === 0 ? (
             <p className="mt-3 text-sm text-muted">No closes yet. The fly is still smelling the book.</p>
           ) : (
@@ -220,36 +283,85 @@ function Sense({ label, value, signed }: { label: string; value: number; signed?
   );
 }
 
-function TicketCard({ snap }: { snap: BookSnap }) {
-  const t = snap.open;
-  if (!t || !snap.price) {
-    return (
-      <div className="rounded-xl border border-border bg-surface p-4 shadow-panel">
-        <p className="font-mono text-xs tracking-widest text-muted">TICKET</p>
-        <p className="mt-3 text-sm leading-relaxed text-muted">
-          Flat. When smell and vote agree, the fly opens one side with a take profit and a stop. Nothing else.
-        </p>
-      </div>
-    );
-  }
+function TicketList({ snap }: { snap: BookSnap }) {
+  const n = snap.open.length;
   return (
     <div className="rounded-xl border border-border bg-surface p-4 shadow-panel">
       <div className="flex items-baseline justify-between">
-        <p className="font-mono text-xs tracking-widest text-muted">TICKET</p>
-        <p className={`font-mono text-sm ${t.side === "long" ? "text-accent" : "text-danger"}`}>
-          {t.side === "long" ? "LONG" : "SHORT"}
+        <p className="font-mono text-xs tracking-widest text-muted">TICKETS</p>
+        <p className="font-mono text-xs text-subtle">
+          {n} / {MAX_OPEN} live
         </p>
       </div>
-      <p className="mt-2 font-mono text-lg tabular-nums text-fg">{t.qty.toFixed(5)} BTC</p>
-      <dl className="mt-3 grid grid-cols-3 gap-2 font-mono text-xs">
+      {n === 0 ? (
+        <p className="mt-3 text-sm leading-relaxed text-muted">
+          Flat. When smell and vote agree, the fly opens a side with its own take profit and stop. Up to{" "}
+          {MAX_OPEN} at once.
+        </p>
+      ) : (
+        <ul className="mt-2 divide-y divide-border">
+          {[...snap.open].reverse().map((t) => (
+            <TicketRow key={t.id} ticket={t} price={snap.price} />
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+function TicketRow({ ticket: t, price }: { ticket: Ticket; price: number }) {
+  const pnl = price ? pnlAt(t, price) : 0;
+  return (
+    <li className="py-3">
+      <div className="flex items-baseline justify-between gap-3 font-mono">
+        <p className={`text-sm ${t.side === "long" ? "text-accent" : "text-danger"}`}>
+          {t.side === "long" ? "LONG" : "SHORT"}
+          <span className="ml-2 text-xs tabular-nums text-fg">{t.qty.toFixed(5)} BTC</span>
+        </p>
+        <p className={`text-sm tabular-nums ${pnl >= 0 ? "text-accent" : "text-danger"}`}>
+          {pnl >= 0 ? "+" : ""}${usd(pnl)}
+        </p>
+      </div>
+      <dl className="mt-2 grid grid-cols-3 gap-2 font-mono text-xs">
         <Level label="SL" price={t.sl} entry={t.entry} side={t.side} kind="sl" />
         <Level label="ENTRY" price={t.entry} entry={t.entry} side={t.side} kind="entry" />
         <Level label="TP" price={t.tp} entry={t.entry} side={t.side} kind="tp" />
       </dl>
-      <Rail ticket={t} price={snap.price} />
-      <p className={`mt-3 font-mono text-sm tabular-nums ${snap.pnlOpen >= 0 ? "text-accent" : "text-danger"}`}>
-        {snap.pnlOpen >= 0 ? "+" : ""}${usd(snap.pnlOpen)} unrealized
+      {price ? <Rail ticket={t} price={price} /> : null}
+    </li>
+  );
+}
+
+function BacktestCard({ snap }: { snap: BookSnap }) {
+  const bt = snap.backtest;
+  const r = bt.result;
+  return (
+    <div className="rounded-xl border border-border bg-surface p-4 shadow-panel">
+      <div className="flex items-baseline justify-between">
+        <p className="font-mono text-xs tracking-widest text-muted">BACKTEST</p>
+        <p className="font-mono text-xs text-subtle">width x{snap.bias.toFixed(2)}</p>
+      </div>
+      <p className="mt-3 text-sm leading-relaxed text-muted">
+        {bt.running ? "Replaying the tape on a separate $10,000 paper book…" : bt.line || "The fly has not been asked yet."}
       </p>
+      {bt.error ? <p className="mt-2 font-mono text-xs text-danger">{bt.error}</p> : null}
+      {r ? (
+        <dl className="mt-3 grid grid-cols-2 gap-3 font-mono text-xs">
+          <Stat label="TRADES" value={`${r.trades} · ${r.candles}m`} />
+          <Stat label="WIN RATE" value={r.trades ? `${Math.round(r.winRate * 100)}%` : "—"} />
+          <Stat label="NET PNL" value={`${r.net >= 0 ? "+" : ""}$${usd(r.net)}`} tone={r.net >= 0 ? "up" : "down"} />
+          <Stat label="MAX DD" value={`${(r.maxDrawdown * 100).toFixed(2)}%`} />
+        </dl>
+      ) : null}
+      <Button
+        variant="secondary"
+        className="mt-4 min-h-11 w-full"
+        disabled={bt.running}
+        onClick={() => void book.askBacktest(pullCandles)}
+      >
+        <History className="size-4" />
+        Let the fly backtest
+      </Button>
     </div>
   );
 }

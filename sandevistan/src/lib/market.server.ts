@@ -90,3 +90,13 @@ export async function fetchMarket(): Promise<MarketTick> {
   const signal = py ?? decide(book.closes, "ts");
   return { ...book, signal };
 }
+
+/** One Coinbase call at granularity 60: as many candles as it returns (≤300). */
+export async function fetchCandles(): Promise<number[]> {
+  const raw = (await getJson("https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60")) as number[][];
+  if (!Array.isArray(raw)) throw new Error("coinbase candles: bad payload");
+  return [...raw]
+    .sort((a, b) => (a[0] ?? 0) - (b[0] ?? 0))
+    .map((r) => Number(r[4]))
+    .filter((n) => Number.isFinite(n) && n > 0);
+}
