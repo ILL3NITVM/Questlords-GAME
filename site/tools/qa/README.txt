@@ -1,4 +1,5 @@
-QA scripts for the public site (Playwright, Chromium). Serve site/ first:
+QA scripts for the public site (Playwright, Chromium). Run them from a scratch directory (some write screenshots).
+Serve site/ first:
   cd site && python3 -m http.server 8192
 Then run with PLAYWRIGHT=/path/to/playwright/index.mjs if playwright is not resolvable:
   node tools/qa/crawl.mjs 8192        every route at 390x844 and 1280x800: 404s, errors, tiny text, contrast

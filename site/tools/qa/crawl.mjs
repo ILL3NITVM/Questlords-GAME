@@ -1,5 +1,5 @@
 const { chromium } = await import(process.env.PLAYWRIGHT || 'playwright');
-const base = 'http://127.0.0.1:' + (process.argv[2] || 8190);
+const base = 'http://127.0.0.1:' + (process.argv[2] || 8192);
 const routes = ['/404.html', '/offline.html', '/', '/desk/bitcoin/', '/learn/', '/how-it-works/', '/quadcom/', '/data/', '/glossary/'];
 const b = await chromium.launch({ channel: 'chromium', args: ['--use-angle=swiftshader'] });
 for (const [w, h] of [[390, 844], [1280, 800]]) for (const r of routes) {

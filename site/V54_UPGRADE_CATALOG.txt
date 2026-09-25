@@ -232,7 +232,7 @@ D · NAVIGATION & WAYFINDING
                  Content-page order; the desk stays one tap away in the nav.
 [D02] SHIPPED V54 Footer navigation row
 [D03] SHIPPED V54 Back-to-top button on long pages
-                 Appears only when a page is taller than ~2 screens.
+                 Appears after scrolling ~1.5 screens; hidden otherwise.
 [D04] SHIPPED V54 Deep links to every Learn card
                  #what-is-glimmer etc.; copy on tap.
 [D05] SHIPPED V54 Deep links to every glossary term

@@ -131,7 +131,7 @@ AREAS["C · LAYOUT & RESPONSIVE"] = [
 AREAS["D · NAVIGATION & WAYFINDING"] = [
 ("S54","Previous / next page links on every content page","Content-page order; the desk stays one tap away in the nav."),
 ("S54","Footer navigation row",""),
-("S54","Back-to-top button on long pages","Appears only when a page is taller than ~2 screens."),
+("S54","Back-to-top button on long pages","Appears after scrolling ~1.5 screens; hidden otherwise."),
 ("S54","Deep links to every Learn card","#what-is-glimmer etc.; copy on tap."),
 ("S54","Deep links to every glossary term",""),
 ("S54","A–Z jump index on the glossary",""),
