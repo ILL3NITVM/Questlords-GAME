@@ -48,7 +48,7 @@ if(sheet&&moreBtn){
   const panel=sheet.querySelector('.qc-sheet-panel');let lastFocus=null,hideTimer=0;
   const focusables=()=>[...panel.querySelectorAll('a[href],button:not([disabled])')].filter(el=>el.tabIndex!==-1);
   const open=()=>{clearTimeout(hideTimer);lastFocus=document.activeElement;sheet.hidden=false;document.documentElement.classList.add('qc-sheet-open');moreBtn.setAttribute('aria-expanded','true');requestAnimationFrame(()=>{sheet.classList.add('open');(panel.querySelector('a.qc-row[aria-current="page"]')||panel.querySelector('a.qc-row')||panel).focus()})};
-  const close=()=>{sheet.classList.remove('open');moreBtn.setAttribute('aria-expanded','false');document.documentElement.classList.remove('qc-sheet-open');panel.style.transform='';
+  const close=()=>{clearTimeout(hideTimer);sheet.classList.remove('open');moreBtn.setAttribute('aria-expanded','false');document.documentElement.classList.remove('qc-sheet-open');panel.style.transform='';
     const done=()=>{sheet.hidden=true;lastFocus?.focus?.()};matchMedia('(prefers-reduced-motion: reduce)').matches?done():(hideTimer=setTimeout(done,200))};
   moreBtn.setAttribute('href','#qc-more');moreBtn.setAttribute('aria-expanded','false');
   moreBtn.addEventListener('click',e=>{e.preventDefault();sheet.hidden?open():close()});
