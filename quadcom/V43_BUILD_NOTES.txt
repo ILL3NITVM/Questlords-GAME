@@ -1,0 +1,27 @@
+QUADCOM ❖ V43 — TENFOLD MASTER
+
+OUTCOME
+The desk is no longer a desktop grid squeezed into a phone. It is a three-view,
+safe-area-aware mobile cockpit with a legible default decision surface and explicit
+routes to fleet and complete-instrument views.
+
+PRIMARY OPERATION
+- VIEW CORE is the default.
+- Tap VIEW CORE to open FLEET; tap again for ALL; tap again to return to CORE.
+- The selected view persists across launches.
+- Four fast taps on the QuadCOM logo still opens engineering diagnostics.
+
+PHYSICAL QA
+- Portrait: 390 × 844.
+- Landscape: 844 × 390.
+- Append ?qc_sim=iphone13 when testing outside an installed iPhone PWA.
+- Run __quadcomVisualAudit() in the browser console for a structured geometry report.
+- QA_iPhone13_portrait_CORE.png and QA_iPhone13_landscape_CORE.png are the captured
+  physical-screen reference frames shipped with this build.
+
+CONTINUITY
+- V42 local state and OPFS checkpoints remain migration/recovery sources.
+- V43 writes to isolated local, IndexedDB, OPFS, UI-preference, and shell-cache names.
+- The fixed launch origin remains http://127.0.0.1:8181/.
+
+See V43_UPGRADE_CATALOG.txt for the shipped and deferred upgrade inventory.

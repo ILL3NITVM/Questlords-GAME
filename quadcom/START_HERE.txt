@@ -1,0 +1,22 @@
+QUADCOM ❖ V43 TENFOLD — START HERE
+
+1) Open a-Shell.
+2) cd into this folder.
+3) Run exactly:
+
+   python3 quadcom.py
+
+Permanent Home Screen origin:
+   http://127.0.0.1:8181/
+
+No random ports. No ?v= URL needed for the installed Home Screen app.
+
+DESK VIEWS
+- CORE: chart + champion + trade + microstructure + risk (default).
+- FLEET: chart + champion + trade + ranked balances + PICO wall.
+- ALL: every instrument surface. Tap VIEW in the command bar to cycle.
+
+PHYSICAL-SCREEN QA
+Append ?qc_sim=iphone13 to simulate iPhone 13 safe areas in a 390x844 or
+844x390 browser viewport. In the browser console, run:
+   __quadcomVisualAudit()

@@ -1,0 +1,56 @@
+QUADCOM ❖ V43 — TENFOLD UPGRADE CATALOG
+
+SHIPPED / SELECTED
+[S01] CORE view: legible decision surface, default in both orientations.
+[S02] FLEET view: chart, champion, trade, ranked balances, and 2,000-PICO wall.
+[S03] ALL view: complete instrument atlas, intentionally maximum-density.
+[S04] Persistent VIEW control; one tap cycles CORE → FLEET → ALL.
+[S05] True iPhone 13 QA harness via ?qc_sim=iphone13.
+[S06] Portrait safe-area model: 47px top / 34px bottom in the QA harness.
+[S07] Landscape safe-area model: 47px sides / 21px bottom in the QA harness.
+[S08] Production layout continues to use WebKit env(safe-area-inset-*).
+[S09] Larger command bar and visible primary controls.
+[S10] Strong focus-visible treatment for keyboard/switch-control access.
+[S11] Semantic region labels for every cockpit instrument.
+[S12] Live quote announced politely instead of interrupting assistive technology.
+[S13] Dominant chart footprint in CORE and FLEET.
+[S14] Chart HUD rebuilt as three bounded, equal-purpose cards.
+[S15] ATR tag moved below HUD to prevent collision.
+[S16] Marker and probability-cone labels receive separate left/right lanes.
+[S17] Horizon rail receives a dedicated bottom lane.
+[S18] Larger panel headers and telemetry values in operational views.
+[S19] Direct color tokens replace blur-prone panel contrast filters.
+[S20] Two-pixel gutters create readable grouping without wasting the display.
+[S21] Reduced ambient-canvas intensity to protect chart contrast and battery.
+[S22] V42 localStorage state migrates into the V43 namespace.
+[S23] V42 OPFS checkpoint remains a recovery fallback.
+[S24] V43 Service Worker cache isolates the new release from stale V42 shells.
+[S25] Built-in __quadcomVisualAudit() reports viewport escape and overflow.
+[S26] QA outcome is exposed as data-qc-qa=pass|fail on the root element.
+[S27] Hidden engineering console now reports V43, active view, and QA state.
+[S28] All desk choices survive relaunch through localStorage.
+[S29] Orientation changes settle, reapply the physical harness, then re-audit.
+[S30] All controls explicitly use type=button to prevent accidental submission.
+
+CATALOGUED / DEFERRED
+[D01] Horizontal panel carousel — rejected; swipe ambiguity is unsafe beside charts.
+[D02] Pinch-to-zoom cockpit — rejected; conflicts with fixed full-screen operation.
+[D03] Constant animated glow — rejected; harms OLED contrast and frame stability.
+[D04] Auto-rotating views — rejected; operator context must not move by itself.
+[D05] Third-party UI framework — rejected; adds weight without solving density.
+[D06] Remote font dependency — rejected; weakens offline and launch reliability.
+[D07] Audio alarms — deferred until alarm semantics and mute behavior are specified.
+[D08] Haptic alerts — deferred; requires event severity and permission design.
+[D09] Server-synced view preferences — deferred; browser-owned state remains policy.
+[D10] User-reorderable panels — deferred; needs a durable layout schema and reset path.
+[D11] Individual panel maximization — strong next candidate for a future release.
+[D12] Replay scrubber — strong next candidate after historical-data controls are defined.
+
+VALIDATION TARGETS
+- 390 × 844 portrait, iPhone 13 safe-area simulation.
+- 844 × 390 landscape, iPhone 13 safe-area simulation.
+- CORE, FLEET, and ALL in both orientations.
+- No visible panel outside the viewport.
+- No document-level horizontal or vertical scrolling.
+- No stale V42 shell after the new Service Worker activates.
+
