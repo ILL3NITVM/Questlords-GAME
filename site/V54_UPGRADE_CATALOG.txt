@@ -1,9 +1,9 @@
-QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG
+QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG (UPDATED BUILD 56)
 
 600 improvements across the public site and the Bitcoin Desk, each with an honest status.
 SHIPPED = built and verified in that build. NEXT = recommended. DEFERRED = blocked (reason given).
 REJECTED = conflicts with the site's principles (reason given). Nothing is marked shipped unless it was verified.
-SUMMARY  SHIPPED V54 69 · SHIPPED V53 42 · NEXT 325 · DEFERRED 59 · REJECTED 105 · TOTAL 600
+SUMMARY  SHIPPED V56 18 · SHIPPED V54 69 · SHIPPED V53 42 · NEXT 308 · DEFERRED 58 · REJECTED 105 · TOTAL 600
 
 A · ACCESSIBILITY
 ─────────────────
@@ -127,7 +127,7 @@ B · TYPOGRAPHY & READABILITY
                  '$10,…' should reveal the full value.
 [B24] NEXT        Truncated panel titles get a full-title tooltip
                  e.g. 'MICROSTRUCTURE · A…'.
-[B25] NEXT        Glossary term highlight of matched text
+[B25] SHIPPED V56 Glossary term highlight of matched text
                  <mark> around the query.
 [B26] NEXT        Readable monospace fallback stack test on Windows
                  Consolas vs Menlo metrics differ.
@@ -249,7 +249,7 @@ D · NAVIGATION & WAYFINDING
 [D13] NEXT        Breadcrumb line under the kicker
 [D14] NEXT        'You are here' in the footer nav
 [D15] NEXT        Learn: in-page table of contents
-[D16] NEXT        Glossary terms auto-linked from Learn and Data copy
+[D16] SHIPPED V56 Glossary terms auto-linked from Learn and Data copy
                  First mention links to the definition.
 [D17] NEXT        Related-terms links under each glossary entry
 [D18] NEXT        Desk: '?' opens a keyboard-shortcut sheet
@@ -267,7 +267,7 @@ D · NAVIGATION & WAYFINDING
 [D26] NEXT        Nav: highlight parent for nested future routes
 [D27] NEXT        Anchor copy confirmation announced to screen readers
 [D28] NEXT        Pager shows page purpose, not just its name
-[D29] NEXT        Footer build link to the upgrade catalog
+[D29] SHIPPED V56 Footer build link to the upgrade catalog
 [D30] NEXT        Consistent trailing-slash URLs and redirects
 [D31] DEFERRED    sitemap.xml
                  Needs the production domain for absolute URLs.
@@ -323,7 +323,7 @@ E · CONTENT — LEARN
 [E26] NEXT        FAQ: why many processors instead of one model
 [E27] NEXT        FAQ: why no live values on public pages
 [E28] NEXT        FAQ: what the Crown is not
-[E29] NEXT        Explain CFD100 and 100:1 labels seen in the desk brand line
+[E29] SHIPPED V56 Explain CFD100 and 100:1 labels seen in the desk brand line
 [E30] NEXT        Explain INT RMSE and PIV in the trade panel header
 [E31] DEFERRED    Video walkthroughs
                  No recording pipeline yet.
@@ -358,14 +358,14 @@ F · CONTENT — GLOSSARY
                  Explicitly not native Metal.
 [F08] SHIPPED V54 P0–P3
 [F09] SHIPPED V54 EFFECTIVE INDEPENDENT PICOS
-[F10] NEXT        RISK CONE
-[F11] NEXT        TRADE ODDS
+[F10] SHIPPED V56 RISK CONE
+[F11] SHIPPED V56 TRADE ODDS
 [F12] NEXT        SHARPE (HOLDOUT)
-[F13] NEXT        BOOTSTRAP
-[F14] NEXT        CALIBRATION (GLIMMER)
+[F13] SHIPPED V56 BOOTSTRAP
+[F14] SHIPPED V56 CALIBRATION (GLIMMER)
                  Backend must match the JS reference.
-[F15] NEXT        BACKEND
-[F16] NEXT        TIER (VISION)
+[F15] SHIPPED V56 BACKEND
+[F16] SHIPPED V56 TIER (VISION)
 [F17] NEXT        REGALIA
 [F18] NEXT        AURUM
 [F19] NEXT        HALT
@@ -378,7 +378,7 @@ F · CONTENT — GLOSSARY
 [F26] NEXT        PIVOT HORIZON
 [F27] NEXT        INTEGRITY
                  Engine-defined; say so.
-[F28] NEXT        CFD100
+[F28] SHIPPED V56 CFD100
 [F29] NEXT        Pronunciation / expansion for every acronym
 [F30] NEXT        'See also' links between terms
 [F31] NEXT        Class tag (observed/derived/inferred/model) on every term
@@ -409,7 +409,7 @@ G · CONTENT — HOW IT WORKS & DATA PROVENANCE
 [G07] NEXT        Data: feed fallback order explained (WS → REST → last known)
 [G08] NEXT        Data: what 'RT FALLBACK' in the desk header means
 [G09] NEXT        Data: history-gap handling (UNRESOLVED / PARTIAL / COMPLETE)
-[G10] NEXT        Data: storage — what stays on the device and what never leaves
+[G10] SHIPPED V56 Data: storage — what stays on the device and what never leaves
 [G11] NEXT        Data: how long local state is kept
 [G12] NEXT        Data: clearing local desk state safely
 [G13] NEXT        Provenance colours identical across Data, How-it-works and desk
@@ -427,7 +427,7 @@ G · CONTENT — HOW IT WORKS & DATA PROVENANCE
 [G24] NEXT        Worked provenance example: Crown change
 [G25] NEXT        Worked provenance example: GLIMMER trade odds
 [G26] NEXT        Caveats section: known limitations per class
-[G27] NEXT        Link the upgrade catalog from the Data page
+[G27] SHIPPED V56 Link the upgrade catalog from the Data page
 [G28] DEFERRED    Live feed-age widget on public pages
                  Deferred: needs a public data service; must not be simulated.
 [G29] DEFERRED    Public status page
@@ -608,8 +608,8 @@ J · DESK UX
                  Pre-existing since V43.
 [J31] DEFERRED    Replay scrubber
                  V43 D12 candidate; needs history controls.
-[J32] DEFERRED    Multi-asset desk
-                 Only BTC exists.
+[J32] SHIPPED V56 Multi-asset desk
+                 Bitcoin, Dogecoin, XRP and Litecoin desks generated from one engine; state isolated per desk.
 [J33] DEFERRED    Order routing
                  Out of scope: the desk is interpretive.
 [J34] DEFERRED    Alerts
@@ -694,8 +694,8 @@ L · PERFORMANCE
 [L04] SHIPPED V54 Image dimensions prevent layout shift on site pages
                  Desk images are next.
 [L05] NEXT        Compress textures (mandala 110KB → WebP ~35KB)
-[L06] NEXT        Resize logo PNG for its display sizes (632KB source)
-                 Largest asset on every page.
+[L06] SHIPPED V56 Resize logo PNG for its display sizes (632KB source)
+                 Site pages use 96px (5KB) and 640px copies; the desk keeps the source.
 [L07] NEXT        Preconnect hints for exchange endpoints on the desk route
 [L08] NEXT        Desk inline CSS split: critical vs deferred
 [L09] NEXT        Remove dead style layers from the desk
@@ -815,15 +815,16 @@ N · SEO, SHARING & METADATA
                  Needs a contact address.
 [N17] NEXT        RSS/Atom for build notes
 [N18] NEXT        Changelog page
-[N19] NEXT        Upgrade catalog published as a page
-[N20] NEXT        noindex on offline/404 pages
+[N19] SHIPPED V56 Upgrade catalog published as a page
+                 /catalog/ renders both catalogs with search and a status filter.
+[N20] SHIPPED V56 noindex on offline/404 pages
 [N21] NEXT        Descriptive link text audit (no 'click here')
 [N22] NEXT        Heading outline audit per page
 [N23] NEXT        Meta theme-color matches header per route
 [N24] NEXT        Apple web-app title per route
 [N25] NEXT        Twitter/OG image alt text
 [N26] NEXT        Consistent brand casing in titles (QuadCOM vs QUADCOM)
-[N27] NEXT        Remove duplicate titles (Home and QuadCOM pages share one)
+[N27] SHIPPED V56 Remove duplicate titles (Home and QuadCOM pages share one)
 [N28] NEXT        Semantic time elements for build dates
 [N29] DEFERRED    sitemap.xml
                  Needs the production domain.

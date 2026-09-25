@@ -136,3 +136,41 @@ a.qc-row:hover,a.qc-row:focus-visible{background:rgba(231,191,89,.06)}
 @keyframes qc-toast-in{from{opacity:0;transform:translateY(8px)}}
 .qc-top{gap:6px}.qc-top .qc-ic{width:16px;height:16px}
 @media print{.qc-tabbar,.qc-sheet,.qc-toasts,.qc-progress{display:none!important}}
+/* ── V56 desks ─────────────────────────────────────────────────────── */
+.qc-deskcard h2{display:flex;align-items:center;gap:10px}
+.qc-coin{width:40px;height:40px;border-radius:50%;flex:0 0 auto;mix-blend-mode:normal}
+.qc-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.qc-chip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px 0 8px;border:1px solid rgba(231,191,89,.4);border-radius:999px;background:#070805;color:var(--fg);font-size:12px;letter-spacing:.08em}
+.qc-chip img{width:22px;height:22px;border-radius:50%}
+.qc-chip:hover,.qc-chip:focus-visible{border-color:var(--hot);color:var(--hot)}
+/* Inline glossary terms: a text-coloured button with a dotted underline; the padding and negative
+   margin give a taller touch target without moving the line. */
+.qc-gterm{font:inherit;color:inherit;background:none;border:0;padding:6px 0;margin:-6px 0;cursor:pointer;text-decoration:underline dotted rgba(231,191,89,.75);text-underline-offset:3px;text-decoration-thickness:1.5px}
+.qc-gterm:hover,.qc-gterm:focus-visible{color:var(--hot)}
+.qc-term-def{margin:4px 0 16px;line-height:1.55}
+mark{background:rgba(231,191,89,.28);color:inherit;border-radius:2px;padding:0 1px}
+#qc-storage p{margin-top:10px;color:var(--muted,#b9b29a);font-size:13px}
+/* ── V56 catalog ───────────────────────────────────────────────────── */
+.qc-footer .qc-build{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(231,191,89,.5)}
+.qc-footer .qc-build:hover,.qc-footer .qc-build:focus-visible{color:var(--hot)}
+.qc-catbar{display:grid;gap:10px;margin:0 0 14px}
+.qc-catbar .qc-seg{flex-wrap:wrap}
+.qc-cat-count{margin:0;color:var(--muted);font-size:12px;letter-spacing:.08em}
+.qc-cat-jump{justify-content:flex-start;margin:0 0 14px}
+.qc-cat-area h3{margin:0 0 8px;font-size:13px;letter-spacing:.12em;color:var(--hot)}
+.qc-cat{list-style:none;margin:0;padding:0}
+.qc-cat li{display:grid;grid-template-columns:3.6em 7.6em 1fr;gap:4px 10px;padding:8px 0;border-top:1px solid rgba(231,191,89,.12);font-size:13.5px;line-height:1.45}
+.qc-cat li:first-child{border-top:0}
+.qc-cat-id{color:var(--muted);font-variant-numeric:tabular-nums}
+.qc-cat-st{font-size:10.5px;font-weight:800;letter-spacing:.08em;align-self:start;padding-top:2px}
+.qc-cat-st.st-shipped{color:var(--hot)}.qc-cat-st.st-next{color:var(--fg)}.qc-cat-st.st-deferred,.qc-cat-st.st-rejected{color:var(--muted)}
+.qc-cat-t small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+@media (max-width:520px){.qc-cat li{grid-template-columns:3.2em 1fr}.qc-cat-t{grid-column:1/-1}}
+.qc-totd-name{margin:0 0 6px;color:var(--hot);font-size:15px;letter-spacing:.1em}
+.qc-saved{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.qc-saved a{display:flex;align-items:center;min-height:44px;color:var(--fg);text-decoration:none;border-bottom:1px solid rgba(231,191,89,.14);letter-spacing:.08em;font-size:13px}
+.qc-saved a:hover,.qc-saved a:focus-visible{color:var(--hot)}
+.qc-catbar .qc-seg{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:100%}
+.qc-catbar .qc-seg button{padding:0 2px;font-size:10.5px;letter-spacing:.04em;min-width:0}
+/* The hidden attribute always wins over component display rules (filters, lazy cards, sheets). */
+[hidden]{display:none!important}

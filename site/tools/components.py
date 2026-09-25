@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds V55_COMPONENT_CATALOG.txt: app components for the QuadCOM site and desk.
-Status: S55 shipped in build 55 (built and verified) · N next · D deferred (blocker given) · R rejected (reason given).
+Status: S56 / S55 shipped in that build (built and verified) · N next · D deferred (blocker given) · R rejected (reason given).
 Fails unless there are 10 families of exactly 20 components (200 total)."""
 import os
 F = {}
@@ -13,7 +13,7 @@ F["NV · NAVIGATION"] = [
 ("S55","Complete footer route list","Home and QuadCOM added, so the fallback is exhaustive."),
 ("N","Icon-only compact tab bar variant","For landscape phones where labels crowd; labels stay as accessible names."),
 ("N","Tab badge (dot) for new content","Only for real, local events (a new build); never invented counts."),
-("N","Tab re-tap scrolls to top","Tapping the active tab returns the page to its top."),
+("S56","Tab re-tap scrolls to top","Tapping the active tab returns the page to its top."),
 ("N","Tab bar hides on scroll down, returns on scroll up","Needs care so HALT-style controls never hide; site only."),
 ("N","Breadcrumb chip row under the title",""),
 ("N","Section jump chips (sticky) on long pages","Glossary letters as a horizontal chip rail."),
@@ -34,7 +34,7 @@ F["SH · SHEETS & OVERLAYS"] = [
 ("S55","Scroll lock while a sheet is open",""),
 ("S55","Reduced motion: sheets appear without sliding",""),
 ("N","Detents (half / full height)",""),
-("N","Glossary term preview sheet from any page","Tap a highlighted term to read its definition in place."),
+("S56","Glossary term preview sheet from any page","Tap a highlighted term to read its definition in place."),
 ("N","Learn card quick-look sheet",""),
 ("N","Share sheet (Web Share API) with copy fallback",""),
 ("N","Confirm sheet for destructive desk actions (SEED, clear state)",""),
@@ -130,7 +130,7 @@ F["MK · MARKET & DESK WIDGETS"] = [
 ("N","VISION thumbnail card (links into the view)",""),
 ("N","PicoProcessor detail sheet",""),
 ("D","Alerts builder","Needs V43 D07/D08 semantics."),
-("D","Multi-asset switcher","Only BTC exists."),
+("S56","Multi-asset switcher","Portrait desk bar (BTC · DOGE · XRP · LTC · DESKS) plus the /desk/ hub."),
 ("D","Portfolio across devices","Local-first policy (V43 D09)."),
 ("R","Buy/Sell buttons wired to an exchange","Rejected: out of scope; the desk is interpretive."),
 ("R","Leverage slider","Rejected: not a brokerage."),
@@ -141,7 +141,7 @@ F["SY · SYSTEM & PLATFORM"] = [
 ("S55","Service-worker update listener","Announces a new controller; the page is never swapped without consent."),
 ("S55","Icon sprite precached for offline",""),
 ("N","Install prompt card (only after two visits, dismissible forever)",""),
-("N","Storage usage card on the Data page",""),
+("S56","Storage usage card on the Data page",""),
 ("N","Clear-local-data control with confirm sheet",""),
 ("N","Theme-color sync with sheet open (darker status bar)",""),
 ("N","Standalone-mode detection adjusts header (no duplicate chrome)",""),
@@ -150,7 +150,7 @@ F["SY · SYSTEM & PLATFORM"] = [
 ("N","App badge (navigator.setAppBadge) for a new build",""),
 ("N","Screen wake lock while the desk is open (opt-in)",""),
 ("N","Idle detection pauses GLIMMER work","Complements visibility handling."),
-("N","Offline route list component",""),
+("S56","Offline route list component","The offline page lists the routes this device has saved."),
 ("D","Background sync of desk checkpoints","Limited support; needs a server."),
 ("D","Web NFC / Bluetooth integrations","No use case."),
 ("D","Home-screen widgets","Not available to web apps."),
@@ -163,8 +163,8 @@ F["LR · LEARNING & ONBOARDING"] = [
 ("N","Desk coach marks (one per panel, opt-in)",""),
 ("N","Learn path cards (Operator · Curious · Technical)",""),
 ("N","Progress checklist for the Learn cards (local)",""),
-("N","Term-of-the-day card on Home (from the glossary)","Static rotation, no live data."),
-("N","Inline glossary highlights in Learn/Data copy",""),
+("S56","Term-of-the-day card on Home (from the glossary)","Static rotation, no live data."),
+("S56","Inline glossary highlights in Learn/Data copy",""),
 ("N","Worked-example stepper (tick → trade)",""),
 ("N","Quiz card (local, no accounts)",""),
 ("N","'What changed' card after an update",""),
@@ -224,7 +224,7 @@ F["LY · LAYOUT PRIMITIVES"] = [
 ("R","Horizontal page scroll on phones","Rejected: V43 validation target."),
 ("R","Layout depending on JavaScript to be readable","Rejected: every page reads without JS."),
 ]
-LABEL = {"S55": "SHIPPED V55", "N": "NEXT", "D": "DEFERRED", "R": "REJECTED"}
+LABEL = {"S56": "SHIPPED V56", "S55": "SHIPPED V55", "N": "NEXT", "D": "DEFERRED", "R": "REJECTED"}
 assert len(F) == 10
 counts, lines, n = {k: 0 for k in LABEL}, [], 0
 for fam, items in F.items():
@@ -236,7 +236,7 @@ for fam, items in F.items():
         lines.append(f"[{code}{i:02d}] {LABEL[s]:<11} {t}" + (f"\n{'':17}{note}" if note else ""))
 assert n == 200
 summary = "SUMMARY  " + " · ".join(f"{LABEL[k]} {v}" for k, v in counts.items()) + f" · TOTAL {n}"
-head = ("QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG\n\n"
+head = ("QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG (UPDATED BUILD 56)\n\n"
         "200 app components in 10 families, each with an honest status. Shipped components are built into every\n"
         "site page and verified; the desk keeps its own cockpit chrome (see NV17). Public pages never show live values.\n")
 open(os.path.join(os.path.dirname(__file__), "..", "V55_COMPONENT_CATALOG.txt"), "w").write(head + summary + "\n" + "\n".join(lines) + "\n")

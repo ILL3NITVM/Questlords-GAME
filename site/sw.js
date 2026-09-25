@@ -1,6 +1,6 @@
-const CACHE='quadcom-genesis-public-v55';
-const CORE=['/','/404.html','/offline.html','/qc-site.css?v=55','/qc-site.js?v=55','/assets/icons.svg','/manifest.json','/assets/quadcom-official-logo.png','/assets/bitcoin.png','/assets/favicon-32.png','/assets/apple-touch-icon.png',
-'/learn/','/how-it-works/','/quadcom/','/data/','/glossary/','/desk/bitcoin/','/desk/bitcoin/glimmer.js','/desk/bitcoin/glimmer-vision.js',
+const CACHE='quadcom-genesis-public-v56';
+const CORE=['/','/404.html','/offline.html','/qc-site.css?v=56','/qc-site.js?v=56','/assets/icons.svg','/manifest.json','/assets/quadcom-official-logo.png','/assets/quadcom-logo-96.png','/assets/quadcom-logo-640.png','/assets/bitcoin.png','/assets/favicon-32.png','/assets/apple-touch-icon.png',
+'/learn/','/how-it-works/','/quadcom/','/data/','/glossary/','/catalog/','/desk/','/desk/bitcoin/','/desk/dogecoin/','/desk/xrp/','/desk/litecoin/','/assets/dogecoin.png','/assets/xrp.png','/assets/litecoin.png','/desk/bitcoin/glimmer.js','/desk/bitcoin/glimmer-vision.js',
 '/assets/textures/aurum-brushed.png','/assets/textures/obsidian-grain.png','/assets/textures/carbon-weave.png','/assets/textures/glass-sheen.png','/assets/textures/quad-lattice.png',
 ...['mandala','corner-tl','corner-tr','corner-bl','corner-br','filigree-band','starburst','kaleido-tile'].map(n=>`/assets/textures/regalia/${n}.png`)];
 // One missing file must not abort the whole install, and only good same-origin responses are cached.

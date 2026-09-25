@@ -36,8 +36,8 @@
   ],
   "shortcuts": [
     {
-      "name": "Bitcoin Desk",
-      "url": "/desk/bitcoin/",
+      "name": "Desks",
+      "url": "/desk/",
       "icons": [
         {
           "src": "/assets/icon-192.png",
@@ -45,6 +45,10 @@
           "type": "image/png"
         }
       ]
+    },
+    {
+      "name": "Bitcoin Desk",
+      "url": "/desk/bitcoin/"
     },
     {
       "name": "Glossary",

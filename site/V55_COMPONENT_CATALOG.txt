@@ -1,8 +1,8 @@
-QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG
+QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG (UPDATED BUILD 56)
 
 200 app components in 10 families, each with an honest status. Shipped components are built into every
 site page and verified; the desk keeps its own cockpit chrome (see NV17). Public pages never show live values.
-SUMMARY  SHIPPED V55 28 · NEXT 118 · DEFERRED 24 · REJECTED 30 · TOTAL 200
+SUMMARY  SHIPPED V56 7 · SHIPPED V55 28 · NEXT 112 · DEFERRED 23 · REJECTED 30 · TOTAL 200
 
 NV · NAVIGATION
 ───────────────
@@ -22,7 +22,7 @@ NV · NAVIGATION
                  For landscape phones where labels crowd; labels stay as accessible names.
 [NV08] NEXT        Tab badge (dot) for new content
                  Only for real, local events (a new build); never invented counts.
-[NV09] NEXT        Tab re-tap scrolls to top
+[NV09] SHIPPED V56 Tab re-tap scrolls to top
                  Tapping the active tab returns the page to its top.
 [NV10] NEXT        Tab bar hides on scroll down, returns on scroll up
                  Needs care so HALT-style controls never hide; site only.
@@ -58,7 +58,7 @@ SH · SHEETS & OVERLAYS
 [SH05] SHIPPED V55 Scroll lock while a sheet is open
 [SH06] SHIPPED V55 Reduced motion: sheets appear without sliding
 [SH07] NEXT        Detents (half / full height)
-[SH08] NEXT        Glossary term preview sheet from any page
+[SH08] SHIPPED V56 Glossary term preview sheet from any page
                  Tap a highlighted term to read its definition in place.
 [SH09] NEXT        Learn card quick-look sheet
 [SH10] NEXT        Share sheet (Web Share API) with copy fallback
@@ -199,8 +199,8 @@ MK · MARKET & DESK WIDGETS
 [MK14] NEXT        PicoProcessor detail sheet
 [MK15] DEFERRED    Alerts builder
                  Needs V43 D07/D08 semantics.
-[MK16] DEFERRED    Multi-asset switcher
-                 Only BTC exists.
+[MK16] SHIPPED V56 Multi-asset switcher
+                 Portrait desk bar (BTC · DOGE · XRP · LTC · DESKS) plus the /desk/ hub.
 [MK17] DEFERRED    Portfolio across devices
                  Local-first policy (V43 D09).
 [MK18] REJECTED    Buy/Sell buttons wired to an exchange
@@ -218,7 +218,7 @@ SY · SYSTEM & PLATFORM
                  Announces a new controller; the page is never swapped without consent.
 [SY03] SHIPPED V55 Icon sprite precached for offline
 [SY04] NEXT        Install prompt card (only after two visits, dismissible forever)
-[SY05] NEXT        Storage usage card on the Data page
+[SY05] SHIPPED V56 Storage usage card on the Data page
 [SY06] NEXT        Clear-local-data control with confirm sheet
 [SY07] NEXT        Theme-color sync with sheet open (darker status bar)
 [SY08] NEXT        Standalone-mode detection adjusts header (no duplicate chrome)
@@ -228,7 +228,8 @@ SY · SYSTEM & PLATFORM
 [SY12] NEXT        Screen wake lock while the desk is open (opt-in)
 [SY13] NEXT        Idle detection pauses GLIMMER work
                  Complements visibility handling.
-[SY14] NEXT        Offline route list component
+[SY14] SHIPPED V56 Offline route list component
+                 The offline page lists the routes this device has saved.
 [SY15] DEFERRED    Background sync of desk checkpoints
                  Limited support; needs a server.
 [SY16] DEFERRED    Web NFC / Bluetooth integrations
@@ -248,9 +249,9 @@ LR · LEARNING & ONBOARDING
 [LR02] NEXT        Desk coach marks (one per panel, opt-in)
 [LR03] NEXT        Learn path cards (Operator · Curious · Technical)
 [LR04] NEXT        Progress checklist for the Learn cards (local)
-[LR05] NEXT        Term-of-the-day card on Home (from the glossary)
+[LR05] SHIPPED V56 Term-of-the-day card on Home (from the glossary)
                  Static rotation, no live data.
-[LR06] NEXT        Inline glossary highlights in Learn/Data copy
+[LR06] SHIPPED V56 Inline glossary highlights in Learn/Data copy
 [LR07] NEXT        Worked-example stepper (tick → trade)
 [LR08] NEXT        Quiz card (local, no accounts)
 [LR09] NEXT        'What changed' card after an update

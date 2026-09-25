@@ -22,7 +22,8 @@
 'use strict';
 
 const VERSION = '45.0';
-const STORE = 'quadcom-v44-glimmer';
+// Results depend on the desk's asset, so each desk keeps its own cache (Bitcoin keeps the original key).
+const STORE = 'quadcom-v44-glimmer' + ((a => a && a !== 'btc' ? '-' + a : '')(document.documentElement.dataset.qcAsset));
 const WASM_B64 = 'AGFzbQEAAAABEQJgA39/fwF9YAZ/f39/f38AAwMCAAEFAwEAAQcaAwZtZW1vcnkCAANkb3QAAAdkb3RNYW55AAEKkgECWgIBewF/IAAgAkECdGohBAJAA0AgACAETw0BIAMgAP0ABAAgAf0ABAD95gH95AEhAyAAQRBqIQAgAUEQaiEBDAALCyAD/R8AIAP9HwGSIAP9HwKSIAP9HwOSCzUBAX8CQANAIAYgA08NASAFIAAgASAEEAA4AgAgBUEEaiEFIAEgAmohASAGQQFqIQYMAAsLCw=='; // tools/glimmer-wasm.mjs
 
 const CLASSES = ['P1', 'P2', 'P3'];               // P0 (interactive) belongs to the desk; GLIMMER only yields to it
