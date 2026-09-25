@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parent
 HOST="0.0.0.0"
 PORT=8181
 URL=f"http://127.0.0.1:{PORT}/"
-BUILD="V45"
+BUILD="V46"
 HEALTH="/__quadcom__/health"
 SHUTDOWN="/__quadcom__/shutdown"
 
@@ -18,7 +18,7 @@ class QuadCOMHTTP(ThreadingHTTPServer):
     daemon_threads=True
 
 class Handler(SimpleHTTPRequestHandler):
-    server_version="QuadCOMLocal/45"
+    server_version="QuadCOMLocal/46"
     def end_headers(self):
         self.send_header("Cross-Origin-Opener-Policy","same-origin")
         self.send_header("Cross-Origin-Embedder-Policy","require-corp")

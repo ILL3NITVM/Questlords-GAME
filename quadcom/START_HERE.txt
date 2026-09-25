@@ -1,4 +1,4 @@
-QUADCOM ❖ V45 GLIMMER VISION — START HERE
+QUADCOM ❖ V46 REGALIA — START HERE
 
 1) Open a-Shell.
 2) cd into this folder.
@@ -28,3 +28,4 @@ Tap the "GLM" chip in the command bar for compute telemetry and output.
 In the console: __quadcomGlimmer()
 See V44_GLIMMER_NOTES.txt.
 See V45_VISION_NOTES.txt for GLIMMER VISION and the AURUM texture pack.
+REGALIA skin (default; cycle skins from the GLIMMER sheet): V46_REGALIA_NOTES.txt

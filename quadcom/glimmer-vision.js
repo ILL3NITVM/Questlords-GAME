@@ -19,7 +19,8 @@
 'use strict';
 
 const root = document.documentElement;
-const TEXTURE_KEY = 'quadcom-v45-texture';
+const TEXTURE_KEY = 'quadcom-v46-skin';
+const SKINS = ['regalia', 'aurum', 'off'];
 const TEX = { B: './textures/aurum-brushed.png', O: './textures/obsidian-grain.png', C: './textures/carbon-weave.png', G: './textures/glass-sheen.png', L: './textures/quad-lattice.png' };
 const TAU = [12 * 60, 60 * 60, 4 * 60 * 60];
 const O = { H: 192, TAU: 195, Q: 198, ODDS: 213, LV: 217, SWM: 221, CORR: 225, SPEC: 229, SW: 325 };
@@ -32,10 +33,10 @@ function applyTexture(name) {
   root.dataset.qcTexture = name;
   try { localStorage.setItem(TEXTURE_KEY, name); } catch (_) {}
 }
-let texName = 'aurum';
-try { texName = localStorage.getItem(TEXTURE_KEY) || 'aurum'; } catch (_) {}
-applyTexture(texName === 'off' ? 'off' : 'aurum');
-window.__quadcomTexture = toggle => { if (toggle) applyTexture(root.dataset.qcTexture === 'aurum' ? 'off' : 'aurum'); return root.dataset.qcTexture; };
+let texName = 'regalia';
+try { texName = localStorage.getItem(TEXTURE_KEY) || 'regalia'; } catch (_) {}
+applyTexture(SKINS.includes(texName) ? texName : 'regalia');
+window.__quadcomTexture = toggle => { if (toggle) applyTexture(SKINS[(SKINS.indexOf(root.dataset.qcTexture) + 1) % SKINS.length]); return root.dataset.qcTexture; };
 
 /* ───────────────────────── shaders ───────────────────────── */
 const WGSL = `
@@ -586,7 +587,7 @@ function frame() {
     V.dirty = false; V.renders++;
     V.lastMs = performance.now() - t0;
     window.GLIMMER?.account?.(V.backend === 'CANVAS2D' ? 'main' : 'gpu', V.lastMs, 'P1');
-    const meta = $('visionMeta'); if (meta) meta.textContent = `${V.backend} · ${V.tier} · ${root.dataset.qcTexture === 'aurum' ? 'AURUM' : 'NO TEX'}`;
+    const meta = $('visionMeta'); if (meta) meta.textContent = `${V.backend} · ${V.tier} · ${(root.dataset.qcTexture || 'off') === 'off' ? 'NO TEX' : root.dataset.qcTexture.toUpperCase()}`;
     if (reveal < 1) V.raf = requestAnimationFrame(frame);    // brief reveal only, then still
   } catch (e) {
     V.error = String(e.message || e); note(`render error: ${V.error.slice(0, 60)}`);

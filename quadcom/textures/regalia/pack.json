@@ -1,0 +1,65 @@
+{
+  "name": "REGALIA",
+  "version": "46.0",
+  "generator": "tools/texture-pack.mjs",
+  "note": "Skin only: ornament, no text. Gold #d9ad45/#f6d978, magenta #c43a96, teal #34beb4.",
+  "textures": [
+    {
+      "file": "regalia/mandala.png",
+      "width": 512,
+      "height": 512,
+      "role": "panel watermark (centered, contain)",
+      "alpha": true
+    },
+    {
+      "file": "regalia/corner-tl.png",
+      "width": 64,
+      "height": 64,
+      "role": "panel corner tl",
+      "alpha": true
+    },
+    {
+      "file": "regalia/corner-tr.png",
+      "width": 64,
+      "height": 64,
+      "role": "panel corner tr",
+      "alpha": true
+    },
+    {
+      "file": "regalia/corner-bl.png",
+      "width": 64,
+      "height": 64,
+      "role": "panel corner bl",
+      "alpha": true
+    },
+    {
+      "file": "regalia/corner-br.png",
+      "width": 64,
+      "height": 64,
+      "role": "panel corner br",
+      "alpha": true
+    },
+    {
+      "file": "regalia/filigree-band.png",
+      "width": 256,
+      "height": 32,
+      "role": "command bar and panel header band",
+      "tile": "repeat-x",
+      "alpha": true
+    },
+    {
+      "file": "regalia/starburst.png",
+      "width": 256,
+      "height": 256,
+      "role": "instrument cell motif (centered)",
+      "alpha": true
+    },
+    {
+      "file": "regalia/kaleido-tile.png",
+      "width": 256,
+      "height": 256,
+      "role": "desk substrate behind panels",
+      "tile": "repeat"
+    }
+  ]
+}

@@ -105,3 +105,111 @@ writeFileSync(join(OUT, "pack.json"), JSON.stringify({
   textures: pack,
 }, null, 2) + "\n");
 console.log(pack.map(p => `${p.file} ${p.width}x${p.height}`).join("\n"));
+
+/* ════════════════ REGALIA skin pack ════════════════
+ * Ornate layer: mandala watermarks,
+ * art-deco corners, filigree bands, starburst cells and a kaleidoscope
+ * substrate in gold with magenta and teal glints. Line art is supersampled
+ * 3x3 for clean anti-aliasing. Alpha is baked low so the skin never competes
+ * with data ink.
+ */
+const SV = join(OUT, "regalia");
+mkdirSync(SV, { recursive: true });
+const G_ = [217, 173, 69], GH = [246, 217, 120], MAG = [196, 58, 150], TEAL = [52, 190, 180];
+const lineAA = (d, w) => Math.max(0, 1 - Math.abs(d) / w);          // d and w in normalized units
+function over(dst, rgb, a) { const k = a * (1 - dst[3]); dst[0] += rgb[0] * k; dst[1] += rgb[1] * k; dst[2] += rgb[2] * k; dst[3] += k; }
+// Supersampled RGBA maker. fn(x, y) → list of [rgb, alpha] layers, front first.
+function makeSS(dir, name, w, h, fn, meta, ss = 3) {
+  const buf = Buffer.alloc(w * h * 4);
+  for (let py = 0; py < h; py++) for (let px = 0; px < w; px++) {
+    let r = 0, g = 0, b = 0, a = 0;
+    for (let sy = 0; sy < ss; sy++) for (let sx = 0; sx < ss; sx++) {
+      const acc = [0, 0, 0, 0];
+      for (const [rgb, al] of fn((px + (sx + 0.5) / ss) / w, (py + (sy + 0.5) / ss) / h)) { if (al > 0) over(acc, rgb, Math.min(1, al)); if (acc[3] > 0.995) break; }
+      r += acc[0]; g += acc[1]; b += acc[2]; a += acc[3];
+    }
+    const n = ss * ss, o = (py * w + px) * 4, A = a / n;
+    buf[o] = A ? Math.round(r / n / A) : 0; buf[o + 1] = A ? Math.round(g / n / A) : 0; buf[o + 2] = A ? Math.round(b / n / A) : 0; buf[o + 3] = Math.round(A * 255);
+  }
+  writeFileSync(join(dir, `${name}.png`), png(w, h, buf));
+  return { file: `regalia/${name}.png`, width: w, height: h, ...meta };
+}
+const svPack = [];
+
+// Mandala watermark: 16-fold kaleidoscope (gold rings, magenta/teal petals, gold diamond heart).
+svPack.push(makeSS(SV, "mandala", 512, 512, (u, v) => {
+  const x = u * 2 - 1, y = v * 2 - 1, r = Math.hypot(x, y), th = Math.atan2(y, x);
+  if (r > 1) return [];
+  const fold = 16, f = th / (Math.PI * 2 / fold), a = Math.abs((((f % 1) + 1) % 1) - 0.5) * 2, par = ((Math.floor(f) % 2) + 2) % 2;
+  const L = [], fade = Math.pow(1 - r, 0.35);
+  const dia = Math.abs(x) + Math.abs(y);
+  if (dia < 0.13) { const s = 1 - dia / 0.13; L.push([GH.map((c, i) => c * (0.6 + 0.4 * s) + G_[i] * 0) , 0.62]); }
+  L.push([GH, lineAA(dia - 0.15, 0.008) * 0.8]);
+  L.push([G_, lineAA(Math.max(Math.abs(x), Math.abs(y)) - 0.11, 0.006) * 0.55]);
+  for (const [rr, al] of [[0.2, 0.6], [0.34, 0.45], [0.56, 0.5], [0.8, 0.42], [0.96, 0.5]]) L.push([G_, lineAA(r - rr, 0.0065) * al]);
+  const pr = (r - 0.2) / 0.3;                                          // inner petals 0.2..0.5
+  if (pr > 0 && pr < 1) { const edge = 0.95 * Math.sin(Math.PI * pr); const d = a - edge; if (d < 0) L.push([par ? MAG : TEAL, 0.34 * (0.4 + 0.6 * (1 - a / Math.max(edge, 1e-3)))]); L.push([G_, lineAA(d, 0.02) * 0.6]); }
+  const sp = (r - 0.56) / 0.24;                                         // outer spear petals 0.56..0.8
+  if (sp > 0 && sp < 1) { const edge = 0.6 * (1 - sp) * Math.sin(Math.PI * Math.min(1, sp * 2.2)); const aa = Math.abs(a - (par ? 0 : 1)); const d = aa - edge; if (d < 0) L.push([par ? TEAL : MAG, 0.22]); L.push([GH, lineAA(d, 0.018) * 0.55]); }
+  if (r > 0.34 && r < 0.96) L.push([G_, lineAA(a * (Math.PI * 2 / fold) * r / 2, 0.0045) * 0.35]);   // spokes
+  const dotR = Math.hypot(r - 0.62, (1 - a) * Math.PI * 2 / fold * 0.62 / 2); L.push([GH, (dotR < 0.014 ? 0.75 : 0)]);
+  const scal = 0.86 + 0.035 * Math.cos(th * fold * 2); L.push([G_, lineAA(r - scal, 0.006) * 0.5]);          // lace scallop
+  if (r > 0.56 && r < 0.8) L.push([G_, lineAA(Math.sin(th * 48) * 0.01 + (r - 0.68) * 0.25, 0.0025) * 0.35]);
+  return L.map(([c, al]) => [c, al * fade * 0.55]);
+}, { role: "panel watermark (centered, contain)", alpha: true }));
+
+// Art-deco corner (top-left orientation; CSS gets the other three as separate files).
+const cornerFn = (u, v) => {
+  const L = [], x = u, y = v;
+  const lines = [[0.06, 0.95], [0.16, 0.7], [0.26, 0.45]];                // offset, length
+  for (const [o, len] of lines) {
+    if (x < len) L.push([GH, lineAA(y - o, 0.034) * (1.05 - o) * (1 - x / len * 0.5)]);
+    if (y < len) L.push([GH, lineAA(x - o, 0.034) * (1.05 - o) * (1 - y / len * 0.5)]);
+  }
+  const step = Math.max(Math.abs(x - 0.36), Math.abs(y - 0.36)); L.push([GH, lineAA(step - 0.07, 0.026) * 0.95]);
+  const d = Math.abs(x - 0.36) + Math.abs(y - 0.36); if (d < 0.06) L.push([MAG, 0.95]);
+  return L;
+};
+const flips = { tl: (u, v) => [u, v], tr: (u, v) => [1 - u, v], bl: (u, v) => [u, 1 - v], br: (u, v) => [1 - u, 1 - v] };
+for (const k of Object.keys(flips)) svPack.push(makeSS(SV, `corner-${k}`, 64, 64, (u, v) => cornerFn(...flips[k](u, v)), { role: `panel corner ${k}`, alpha: true }));
+
+// Filigree band: diamond chain with double rails and magenta jewels, tiles horizontally (period 64).
+svPack.push(makeSS(SV, "filigree-band", 256, 32, (u, v) => {
+  const x = (u * 256) % 64 / 64, y = v, L = [];
+  const dia = Math.abs(x - 0.5) * 0.5 + Math.abs(y - 0.5);
+  L.push([MAG, dia < 0.09 ? 0.8 : 0]);
+  L.push([GH, lineAA(dia - 0.16, 0.025) * 0.85]);
+  L.push([G_, lineAA(dia - 0.3, 0.02) * 0.5]);
+  for (const ry of [0.2, 0.8]) if (Math.abs(x - 0.5) > 0.2) L.push([G_, lineAA(y - ry, 0.03) * 0.6]);
+  const sc = Math.hypot((x < 0.5 ? x : 1 - x) - 0.1, y - 0.5); L.push([G_, lineAA(sc - 0.07, 0.02) * 0.55]);
+  return L.map(([c, a]) => [c, a * 0.6]);
+}, { role: "command bar and panel header band", tile: "repeat-x", alpha: true }));
+
+// Starburst: 24 rays, ring and diamond, for instrument cells.
+svPack.push(makeSS(SV, "starburst", 256, 256, (u, v) => {
+  const x = u * 2 - 1, y = v * 2 - 1, r = Math.hypot(x, y), th = Math.atan2(y, x), L = [];
+  if (r > 1) return [];
+  const ray = Math.abs(Math.sin(th * 12)), fall = Math.pow(1 - r, 1.6);
+  L.push([GH, (ray < 0.06 + 0.04 * (1 - r) ? 0.5 : 0) * fall]);
+  L.push([MAG, (Math.abs(Math.sin(th * 12 + Math.PI / 2)) < 0.03 ? 0.25 : 0) * fall]);
+  L.push([G_, lineAA(r - 0.38, 0.01) * 0.45]);
+  L.push([GH, lineAA(Math.abs(x) + Math.abs(y) - 0.2, 0.012) * 0.7]);
+  L.push([TEAL, lineAA(Math.abs(x) + Math.abs(y) - 0.11, 0.01) * 0.45]);
+  return L.map(([c, a]) => [c, a * 0.5]);
+}, { role: "instrument cell motif (centered)", alpha: true }));
+
+// Kaleidoscope substrate: opaque, tileable diamond field (period 64 → tiles in 256).
+svPack.push(makeSS(SV, "kaleido-tile", 256, 256, (u, v) => {
+  const X = u * 4, Y = v * 4, fx = X % 1, fy = Y % 1, cx = Math.floor(X), cy = Math.floor(Y);
+  const d = Math.abs(fx - 0.5) + Math.abs(fy - 0.5), L = [];
+  L.push([G_, lineAA(d - 0.5, 0.012) * 0.28]);
+  L.push([G_, lineAA(d - 0.3, 0.008) * 0.16]);
+  const star = Math.min(Math.abs(fx - 0.5), Math.abs(fy - 0.5)) + d * 0.35; L.push([GH, (star < 0.035 && d < 0.2 ? 0.35 : 0)]);
+  const gl = hash(((cx % 4) + 4) % 4, ((cy % 4) + 4) % 4, 77); if (d < 0.06) L.push([gl > 0.5 ? MAG : TEAL, 0.35]);
+  const n = vnoise(u * 32, v * 32, 32, 32, 9);
+  L.push([[4 + n * 6, 5 + n * 6, 5 + n * 5], 1]);
+  return L;
+}, { role: "desk substrate behind panels", tile: "repeat" }, 2));
+
+writeFileSync(join(SV, "pack.json"), JSON.stringify({ name: "REGALIA", version: "46.0", generator: "tools/texture-pack.mjs", note: "Skin only: ornament, no text. Gold #d9ad45/#f6d978, magenta #c43a96, teal #34beb4.", textures: svPack }, null, 2) + "\n");
+console.log(svPack.map(p => `${p.file} ${p.width}x${p.height}`).join("\n"));
