@@ -1,0 +1,73 @@
+QUADCOM ❖ V44 — GLIMMER HARDWARE COMPUTE LAYER
+
+    AVAILABLE HEADROOM → GLIMMER → USEFUL COMPUTE
+
+GLIMMER (glimmer.js) is the resource governor between the desk and the device.
+It turns spare, safe headroom into desk output and gives it back as soon as the
+page starts paying for it. It never tries to push the device to 100%.
+
+WHERE TO SEE IT
+- Command bar chip "GLM <backend> <n>%": the share of GLIMMER's own permitted
+  envelope in use. The dot shows health (green / amber / red). Tap it for the
+  telemetry sheet.
+- Console: __quadcomGlimmer() returns the full telemetry snapshot.
+- The engineering console (4 taps on the logo) now shows the GLIMMER backend.
+
+BACKENDS AND FIXED DEGRADATION ORDER
+- Monte Carlo:  WebGPU → WebGL2 (OffscreenCanvas worker) → worker JS → main-thread JS
+- Param sweep:  WebGPU → worker JS → main-thread JS
+- Fleet corr:   worker Wasm SIMD (JS fallback in the same worker) → main-thread JS
+WebGPU is the browser route to the GPU (Metal-class on Apple hardware). It is
+never reported as native Metal access. Tiny jobs skip the GPU because upload,
+dispatch and readback would cost more than they save.
+At startup each accelerated backend runs a small fixed problem against the JS
+reference kernel. A backend that disagrees is excluded (telemetry: VERIFIED).
+
+WORKLOAD CLASSES
+P0 INTERACTIVE  UI, input and price presentation. Owned by the desk; GLIMMER only yields to it.
+P1 LIVE         Trade odds: chance that the best singular trade reaches TP or SL first,
+                from a block bootstrap of recent returns.
+P2 OPPORTUNISTIC Risk cone (12m / 1h / 4h quantiles, max drawdown), accumulating up to
+                2M paths per history snapshot, then stopping. Momentum/reversion
+                parameter sweep with a 70/30 train/holdout split (holdout Sharpe,
+                share of the grid positive out-of-sample, overfit gap).
+P3 IDLE         Fleet correlation → effective number of independent PICOs. Runs only
+                when GREEN and after 1.5 s without input; cancelled by any touch.
+The desk's GPU tournament is gated as P2 and billed to GLIMMER's GPU budget.
+
+ADAPTIVE BUDGET
+Inputs: frame time (p50/p95/missed, cadence snapped to 60/120 Hz), event-loop delay,
+long tasks (where exposed), GPU completion time, allocation/GPU faults, visibility,
+battery (where exposed), Compute Pressure API (where exposed), save-data.
+GREEN adds 3% envelope per 0.5 s. AMBER multiplies it by 0.88. RED sets it to zero
+and cancels P3. It worsens after 1–2 bad ticks and recovers only after 3–4 s of
+good ones (hysteresis). The envelope sets a per-backend duty-cycle budget.
+
+PRESSURE (INFERRED)
+HEADROOM / NORMAL / PRESSURE / THROTTLED-LIKE comes from how long the same kernel on
+the same backend takes per unit of work compared with its best rate, plus sustained
+AMBER/RED health. No temperature, wattage, VRAM or GPU/CPU utilisation is read or shown.
+
+WORKERS
+Uses at most (logical cores − reserve), where reserve = max(2, 34% of logical cores).
+The desk's lesson pool gets up to 2 workers; GLIMMER gets 1–4 and grows only while
+GREEN with work waiting. Three crashes within 60 s disable workers and hand the work
+to main-thread JS.
+
+LIFECYCLE
+Hidden, pagehide or freeze: suspend and save. Resume: check the time gap (over 2 min
+marks results STALE and resets the envelope), get the GPU device back if it was lost,
+ping workers, continue. A lost GPU device is re-acquired up to 3 times while the CPU
+backends carry the load. A slow kernel (over 2.5 s) or failed submission counts as a
+strike; 3 strikes put the GPU on a 60 s cooldown.
+
+CORE FIXES CARRIED IN V44
+- The desk's GPU tournament shader used `mut`, a reserved WGSL word, so it had never
+  compiled and always ran on the CPU. Renamed; the GPU path now compiles.
+- The ambient canvas worker threw every frame when no 2D context was available.
+  It now draws nothing in that case.
+- The WebGPU device is shared between the desk and GLIMMER, and the desk re-arms its
+  GPU core when GLIMMER recovers a lost device.
+- The hardware badge no longer claims a specific chip ("A15").
+
+Rebuild the embedded Wasm SIMD kernel with: node tools/glimmer-wasm.mjs [--test]

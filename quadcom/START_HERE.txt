@@ -1,4 +1,4 @@
-QUADCOM ❖ V43 TENFOLD — START HERE
+QUADCOM ❖ V44 GLIMMER — START HERE
 
 1) Open a-Shell.
 2) cd into this folder.
@@ -20,3 +20,8 @@ PHYSICAL-SCREEN QA
 Append ?qc_sim=iphone13 to simulate iPhone 13 safe areas in a 390x844 or
 844x390 browser viewport. In the browser console, run:
    __quadcomVisualAudit()
+
+GLIMMER COMPUTE GOVERNOR (V44)
+Tap the "GLM" chip in the command bar for compute telemetry and output.
+In the console: __quadcomGlimmer()
+See V44_GLIMMER_NOTES.txt.
