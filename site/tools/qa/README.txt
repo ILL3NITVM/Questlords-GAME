@@ -6,3 +6,4 @@ Then run with PLAYWRIGHT=/path/to/playwright/index.mjs if playwright is not reso
   node tools/qa/glossary.mjs          filter, count, "/", Esc, ?q=, deep links, A–Z
   node tools/qa/desk-views.mjs        desk audit: 4 views x iPhone portrait/landscape
   node tools/qa/offline.mjs           stops the server (port 8192) and checks offline routing
+  node tools/qa/components.mjs        tab bar, MORE sheet (focus trap, Esc, drag), skin control, progress, toasts

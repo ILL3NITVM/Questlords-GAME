@@ -1,0 +1,332 @@
+QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG
+
+200 app components in 10 families, each with an honest status. Shipped components are built into every
+site page and verified; the desk keeps its own cockpit chrome (see NV17). Public pages never show live values.
+SUMMARY  SHIPPED V55 28 · NEXT 118 · DEFERRED 24 · REJECTED 30 · TOTAL 200
+
+NV · NAVIGATION
+───────────────
+[NV01] SHIPPED V55 Bottom tab bar (phones)
+                 HOME · LEARN · DESK · GLOSSARY · MORE; icon + label, gold active state, 52px targets, safe-area aware.
+[NV02] SHIPPED V55 Raised centre action (DESK orb)
+                 Brushed-gold quad-diamond orb lifted out of the bar; the primary destination.
+[NV03] SHIPPED V55 Header compaction on phones
+                 The 4-column header nav hands over to the tab bar; the header shrinks from 127px to 39px.
+[NV04] SHIPPED V55 MORE overflow sheet
+                 Holds How it works, QuadCOM, Data and the Desk with one-line descriptions.
+[NV05] SHIPPED V55 No-JS fallback for MORE
+                 Without JavaScript the MORE tab jumps to the footer, which lists every route.
+[NV06] SHIPPED V55 Complete footer route list
+                 Home and QuadCOM added, so the fallback is exhaustive.
+[NV07] NEXT        Icon-only compact tab bar variant
+                 For landscape phones where labels crowd; labels stay as accessible names.
+[NV08] NEXT        Tab badge (dot) for new content
+                 Only for real, local events (a new build); never invented counts.
+[NV09] NEXT        Tab re-tap scrolls to top
+                 Tapping the active tab returns the page to its top.
+[NV10] NEXT        Tab bar hides on scroll down, returns on scroll up
+                 Needs care so HALT-style controls never hide; site only.
+[NV11] NEXT        Breadcrumb chip row under the title
+[NV12] NEXT        Section jump chips (sticky) on long pages
+                 Glossary letters as a horizontal chip rail.
+[NV13] NEXT        Desk: bottom view switcher (CORE · FLEET · ALL · VISION)
+                 Replaces the cycling VIEW button on phones; needs a desk layout pass.
+[NV14] NEXT        Desk: swipe between views
+                 Only with an explicit edge gesture; V43 D01 rejects ambiguous swipes beside charts.
+[NV15] NEXT        Command palette (⌘K) on desktop
+                 Routes, glossary terms and desk views.
+[NV16] NEXT        Keyboard shortcut overlay ('?')
+[NV17] DEFERRED    Tab bar inside the desk
+                 Deferred: the desk is a full-screen cockpit with its own command bar and SITE button.
+[NV18] DEFERRED    Deep-link router for desk panels
+                 Needs stable panel ids across builds.
+[NV19] REJECTED    Hamburger drawer hiding every route
+                 Rejected: the tab bar keeps primary routes visible.
+[NV20] REJECTED    More than five tabs
+                 Rejected: labels become unreadable at 390px.
+
+SH · SHEETS & OVERLAYS
+──────────────────────
+[SH01] SHIPPED V55 Bottom sheet (modal)
+                 role=dialog, aria-modal, labelled title, rounded top, grab handle.
+[SH02] SHIPPED V55 Focus trap in sheets
+                 Tab and Shift+Tab stay inside; the unchecked radio is skipped correctly.
+[SH03] SHIPPED V55 Esc, backdrop tap and close button dismiss
+                 Focus returns to the control that opened the sheet.
+[SH04] SHIPPED V55 Drag-to-dismiss
+                 Drag the handle or header down past 80px to close.
+[SH05] SHIPPED V55 Scroll lock while a sheet is open
+[SH06] SHIPPED V55 Reduced motion: sheets appear without sliding
+[SH07] NEXT        Detents (half / full height)
+[SH08] NEXT        Glossary term preview sheet from any page
+                 Tap a highlighted term to read its definition in place.
+[SH09] NEXT        Learn card quick-look sheet
+[SH10] NEXT        Share sheet (Web Share API) with copy fallback
+[SH11] NEXT        Confirm sheet for destructive desk actions (SEED, clear state)
+[SH12] NEXT        Desk panel info sheet (what this panel is, its data class)
+                 Observed / derived / inferred / model tag.
+[SH13] NEXT        Popover for truncated desk values
+[SH14] NEXT        Tooltip component (hover + long-press)
+[SH15] NEXT        Full-screen dialog for the upgrade catalog
+                 Searchable.
+[SH16] DEFERRED    Nested sheets
+                 Deferred until a flow needs them; stacking hurts orientation.
+[SH17] DEFERRED    Picture-in-picture desk mini-view
+                 Browser support and battery cost unclear.
+[SH18] REJECTED    Modal on page load
+                 Rejected: interrupts before the reader acts.
+[SH19] REJECTED    Sheets that cannot be dismissed
+[SH20] REJECTED    Newsletter or install prompts in sheets
+                 Rejected: no dark patterns.
+
+FB · FEEDBACK & STATUS
+──────────────────────
+[FB01] SHIPPED V55 Toast system
+                 Polite live region, icon + text + optional action, auto-dismiss, max three.
+[FB02] SHIPPED V55 Duplicate-toast guard
+                 Flapping network events cannot stack identical messages.
+[FB03] SHIPPED V55 Link-copied toast
+                 Replaces the inline COPIED text on anchor links.
+[FB04] SHIPPED V55 Offline / back-online toasts
+                 'Offline · saved pages still open; nothing shown is live'.
+[FB05] SHIPPED V55 New-build toast with RELOAD action
+                 Shown when an updated service worker takes over; never force-reloads.
+[FB06] SHIPPED V55 Skin change toast
+[FB07] SHIPPED V55 Reading-progress strip
+                 2px gold strip on the header edge; only on pages longer than 1.5 screens.
+[FB08] NEXT        Persistent offline chip in the header
+[FB09] NEXT        Skeleton loaders for the desk's first paint
+[FB10] NEXT        Inline form validation for the glossary search (e.g. too-short queries)
+[FB11] NEXT        Empty-state illustrations (glossary no-match, offline)
+                 Brand line art from the icon set.
+[FB12] NEXT        Progress ring for GLIMMER calibration in the desk
+[FB13] NEXT        Desk: feed-state pill (LIVE · FALLBACK · OFFLINE) with age
+                 Observed state only.
+[FB14] NEXT        Undo toast after SEED
+                 Five-second window.
+[FB15] NEXT        Error banner component with a Data-page link
+[FB16] NEXT        Haptics on supported devices
+                 Pairs with V43 D08 once severity semantics exist.
+[FB17] DEFERRED    Push notifications
+                 Needs a server and a consent design.
+[FB18] DEFERRED    Sound cues
+                 V43 D07: mute behaviour first.
+[FB19] REJECTED    Fake 'live users' or activity toasts
+                 Rejected: fabricated social proof.
+[FB20] REJECTED    Toasts that steal focus
+                 Rejected: the live region announces without moving focus.
+
+IN · INPUTS & CONTROLS
+──────────────────────
+[IN01] SHIPPED V55 Segmented control (radiogroup)
+                 REGALIA / OFF skin; arrow keys move and select; roving tabindex.
+[IN02] SHIPPED V55 Icon button (44px)
+                 Used for sheet close.
+[IN03] NEXT        Search field with clear button and result count
+                 Upgrade of the V54 glossary search into a reusable component.
+[IN04] NEXT        Toggle switch component
+[IN05] NEXT        Chip filter group (glossary by class: QuadCOM / conventional)
+                 Needs a class on every term first.
+[IN06] NEXT        Stepper (desk horizon selection)
+[IN07] NEXT        Slider with live value (VISION tier override)
+[IN08] NEXT        Long-press menu on desk controls
+[IN09] NEXT        Pull-to-refresh on content pages
+                 Only reloads static content; never implies live data.
+[IN10] NEXT        Copy button component (levels, links)
+[IN11] NEXT        Disclosure (accordion) for Learn FAQs
+[IN12] NEXT        Tabs component inside panels (desk ALL view sub-tabs)
+[IN13] NEXT        Date/time display component with relative age
+[IN14] NEXT        Keyboard-shortcut hint component (kbd)
+[IN15] NEXT        Radio card list (choose a Learn path)
+[IN16] DEFERRED    Voice input for search
+                 Browser support and privacy review first.
+[IN17] DEFERRED    Custom select replacing native select
+                 Native is more accessible until a need appears.
+[IN18] REJECTED    Swipe-to-trade gestures
+                 Rejected: interpretive output is not an order ticket.
+[IN19] REJECTED    Hold-to-confirm on HALT
+                 Rejected: HALT must be instant.
+[IN20] REJECTED    Custom scrollbars that hide overflow cues
+
+DD · DATA DISPLAY
+─────────────────
+[DD01] NEXT        Stat tile (label, value, provenance tag)
+                 Shared by site and desk.
+[DD02] NEXT        Provenance tag chip (OBSERVED · DERIVED · INFERRED · MODEL)
+                 Already styled on the Data page; make it a component.
+[DD03] NEXT        Sparkline component (desk champion NAV)
+[DD04] NEXT        Mini gauge (odds ring) reused from VISION
+[DD05] NEXT        Horizon rail component
+[DD06] NEXT        Leaderboard row component with rank delta
+[DD07] NEXT        Definition card (glossary term) component
+[DD08] NEXT        Timeline component (build notes)
+[DD09] NEXT        Diff badge (value up/down) with colour + arrow + text
+[DD10] NEXT        Heat cell component (holdout map) with tooltip
+[DD11] NEXT        Two-column key/value list (Data page)
+[DD12] NEXT        Responsive table with sticky first column
+[DD13] NEXT        Number formatter (US$ vs $, decimals per field)
+[DD14] NEXT        Relative-time formatter ('3 min ago')
+[DD15] NEXT        Empty value glyph ('—') component
+[DD16] DEFERRED    Live price ticker on public pages
+                 Deferred: needs a public data service; must never be simulated.
+[DD17] DEFERRED    Embeddable desk widgets for other sites
+                 Needs a read-only public API.
+[DD18] REJECTED    Price-strip widget with a fabricated value
+                 Rejected: the 'Sell Wheat 2,20 £' pattern cannot show a real value on public pages.
+[DD19] REJECTED    P&L counters on the home page
+                 Rejected: no fabricated live values.
+[DD20] REJECTED    3D charts
+                 Rejected: distort quantities.
+
+MK · MARKET & DESK WIDGETS
+──────────────────────────
+[MK01] NEXT        Trade ticket card (SIDE · ENTRY · SL · TP) as a reusable component
+                 Read-only interpretation, labelled as model output.
+[MK02] NEXT        Order-book depth ladder component
+[MK03] NEXT        Risk meter (correlated risk / cap)
+[MK04] NEXT        Crown card (top PicoProcessor)
+[MK05] NEXT        Fleet balance bar (bull / bear) with numbers
+[MK06] NEXT        Regime badge
+[MK07] NEXT        Toxicity / VPIN pill
+[MK08] NEXT        Scenario matrix cell
+[MK09] NEXT        Horizon progress (short / medium / long)
+[MK10] NEXT        Feed-age indicator next to the price
+                 Observed; shows seconds since last tick.
+[MK11] NEXT        Session summary card (local, end of session)
+[MK12] NEXT        GLIMMER status chip (backend · envelope · pressure)
+                 Exists in the desk; extract as a component.
+[MK13] NEXT        VISION thumbnail card (links into the view)
+[MK14] NEXT        PicoProcessor detail sheet
+[MK15] DEFERRED    Alerts builder
+                 Needs V43 D07/D08 semantics.
+[MK16] DEFERRED    Multi-asset switcher
+                 Only BTC exists.
+[MK17] DEFERRED    Portfolio across devices
+                 Local-first policy (V43 D09).
+[MK18] REJECTED    Buy/Sell buttons wired to an exchange
+                 Rejected: out of scope; the desk is interpretive.
+[MK19] REJECTED    Leverage slider
+                 Rejected: not a brokerage.
+[MK20] REJECTED    Social trading feed
+                 Rejected: unverifiable and off-mission.
+
+SY · SYSTEM & PLATFORM
+──────────────────────
+[SY01] SHIPPED V55 Icon set (SVG sprite, 16 symbols)
+                 One file, currentColor, 24px grid; includes the QuadCOM quad-diamond desk mark.
+[SY02] SHIPPED V55 Service-worker update listener
+                 Announces a new controller; the page is never swapped without consent.
+[SY03] SHIPPED V55 Icon sprite precached for offline
+[SY04] NEXT        Install prompt card (only after two visits, dismissible forever)
+[SY05] NEXT        Storage usage card on the Data page
+[SY06] NEXT        Clear-local-data control with confirm sheet
+[SY07] NEXT        Theme-color sync with sheet open (darker status bar)
+[SY08] NEXT        Standalone-mode detection adjusts header (no duplicate chrome)
+[SY09] NEXT        Orientation hint for the desk on portrait tablets
+[SY10] NEXT        Share target (receive links into glossary search)
+[SY11] NEXT        App badge (navigator.setAppBadge) for a new build
+[SY12] NEXT        Screen wake lock while the desk is open (opt-in)
+[SY13] NEXT        Idle detection pauses GLIMMER work
+                 Complements visibility handling.
+[SY14] NEXT        Offline route list component
+[SY15] DEFERRED    Background sync of desk checkpoints
+                 Limited support; needs a server.
+[SY16] DEFERRED    Web NFC / Bluetooth integrations
+                 No use case.
+[SY17] DEFERRED    Home-screen widgets
+                 Not available to web apps.
+[SY18] REJECTED    Fingerprinting for analytics
+                 Rejected: privacy.
+[SY19] REJECTED    Forced update reloads
+                 Rejected: announce and let the reader choose.
+[SY20] REJECTED    Silent background compute when hidden
+                 Rejected: GLIMMER suspends.
+
+LR · LEARNING & ONBOARDING
+──────────────────────────
+[LR01] NEXT        First-visit tour of the tab bar (three steps, skippable)
+[LR02] NEXT        Desk coach marks (one per panel, opt-in)
+[LR03] NEXT        Learn path cards (Operator · Curious · Technical)
+[LR04] NEXT        Progress checklist for the Learn cards (local)
+[LR05] NEXT        Term-of-the-day card on Home (from the glossary)
+                 Static rotation, no live data.
+[LR06] NEXT        Inline glossary highlights in Learn/Data copy
+[LR07] NEXT        Worked-example stepper (tick → trade)
+[LR08] NEXT        Quiz card (local, no accounts)
+[LR09] NEXT        'What changed' card after an update
+[LR10] NEXT        Printable operator primer component
+[LR11] NEXT        Video/diagram card with transcript
+[LR12] NEXT        Provenance explainer micro-card on desk panels
+[LR13] DEFERRED    Guided desk tutorial mode
+                 Needs stable desk selectors.
+[LR14] DEFERRED    Certification
+                 No accounts.
+[LR15] DEFERRED    Localised onboarding
+                 No locale planned.
+[LR16] REJECTED    Gamified streaks
+                 Rejected: not an operator tool.
+[LR17] REJECTED    Mandatory onboarding
+                 Rejected: always skippable.
+[LR18] REJECTED    Onboarding that fakes a trading session
+                 Rejected: no fabricated values.
+[LR19] REJECTED    Pop-up hints on every visit
+[LR20] REJECTED    Onboarding that hides HALT
+
+BR · BRAND & MEDIA
+──────────────────
+[BR01] SHIPPED V55 Brushed-gold action orb
+                 Uses the AURUM brushed texture; falls back to a gradient with the skin off.
+[BR02] SHIPPED V55 Filigree top edge on the tab bar (REGALIA)
+                 Ornament only; removed with the skin off.
+[BR03] NEXT        Animated mark on the orb for a new build (single pulse, reduced-motion aware)
+[BR04] NEXT        SVG logo component (replaces the 632KB PNG)
+[BR05] NEXT        Section divider component (filigree band)
+[BR06] NEXT        Card corner ornament component (site + desk)
+[BR07] NEXT        Provenance icons (observed, derived, inferred, model)
+[BR08] NEXT        Empty-state line art set
+[BR09] NEXT        OG image template (needs a domain)
+[BR10] NEXT        Splash screens for all current iPhone sizes
+[BR11] NEXT        Maskable icon review on Android launchers
+[BR12] NEXT        Monochrome icon for iOS tinted home screens
+[BR13] NEXT        Brand motion tokens (durations, easings)
+[BR14] NEXT        Skin preview thumbnails in the skin control
+[BR15] DEFERRED    Illustrated hero for Home
+                 Needs an illustrator.
+[BR16] DEFERRED    Sound identity
+                 V43 D07.
+[BR17] DEFERRED    Seasonal skins
+                 After the token system.
+[BR18] REJECTED    Constant glow on the orb
+                 Rejected: V43 D03.
+[BR19] REJECTED    Brand name of the reference skin
+                 Rejected by owner instruction.
+[BR20] REJECTED    Stock photography
+
+LY · LAYOUT PRIMITIVES
+──────────────────────
+[LY01] SHIPPED V55 Safe-area-aware fixed bottom region
+                 Tab bar, TOP button and toasts clear the home indicator.
+[LY02] SHIPPED V55 Stacking order for fixed layers
+                 Tab bar 40, sheet 60, toasts 70; the TOP button sits above the tab bar.
+[LY03] NEXT        Stack / cluster / grid primitives as CSS utilities
+[LY04] NEXT        Container-query card primitive
+[LY05] NEXT        Sticky sub-header primitive
+[LY06] NEXT        Split view (list + detail) for tablets
+[LY07] NEXT        Masonry-free two-column content grid
+[LY08] NEXT        Aspect-ratio media frame
+[LY09] NEXT        Spacing tokens (4/8/12/16/24/32)
+[LY10] NEXT        Radius tokens (sheet 14, control 9, card 0)
+[LY11] NEXT        Elevation tokens for fixed layers
+[LY12] NEXT        Z-index token map documented
+[LY13] NEXT        Print layout primitives
+[LY14] NEXT        Landscape phone layout for content pages
+[LY15] NEXT        Foldable hinge-aware layout
+[LY16] DEFERRED    Desk layout schema for user-arranged panels
+                 V43 D10.
+[LY17] DEFERRED    Multi-window desk
+                 Needs the layout schema.
+[LY18] REJECTED    Fixed-height pages that clip content
+[LY19] REJECTED    Horizontal page scroll on phones
+                 Rejected: V43 validation target.
+[LY20] REJECTED    Layout depending on JavaScript to be readable
+                 Rejected: every page reads without JS.
