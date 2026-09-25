@@ -59,7 +59,7 @@ SH · SHEETS & OVERLAYS
 [SH06] SHIPPED V55 Reduced motion: sheets appear without sliding
 [SH07] NEXT        Detents (half / full height)
 [SH08] SHIPPED V56 Glossary term preview sheet from any page
-                 Tap a highlighted term to read its definition in place.
+                 Tap an underlined term in Learn, How it works, QuadCOM or Data to read its definition in place.
 [SH09] NEXT        Learn card quick-look sheet
 [SH10] NEXT        Share sheet (Web Share API) with copy fallback
 [SH11] NEXT        Confirm sheet for destructive desk actions (SEED, clear state)

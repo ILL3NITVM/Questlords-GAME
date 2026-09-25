@@ -58,10 +58,11 @@ Build 56 (four desks):
   Every substitution is counted and the build fails on any mismatch or any surviving Bitcoin identifier.
   - Feeds: Coinbase DOGE-USD / XRP-USD / LTC-USD and Kraken XDGUSD / XRPUSD / LTCUSD.
   - Bitcoin-sized dollar constants (seed, ATR and spread floors, chart range, sanity limits, return denominators) are scaled by price.
+  - Candle-history filters are scaled too, and order-book and position prices use the asset's decimals.
   - Each desk keeps its own localStorage keys, IndexedDB database and OPFS files (suffix -doge / -xrp / -ltc); no desk reads another's state.
   - A fresh desk's placeholder daily open is replaced by the first live tick (all desks).
 - Portrait desk bar: BTC · DOGE · XRP · LTC · DESKS along the bottom of every desk, filling the space under the cockpit. Hidden in landscape.
-- /desk/ hub with a card per desk; DESKS replaces BITCOIN DESK in the nav, footer, tab orb and MORE sheet.
+- /desk/ hub with a card per desk; DESKS replaces BITCOIN DESK in the nav, footer and MORE sheet, and the DESK tab orb opens the hub.
 - Glossary: 48 terms (adds BACKEND, BOOTSTRAP, CALIBRATION, CFD100, DESK BAR, RISK CONE, TIER, TRADE ODDS); search matches are highlighted.
 - Glossary terms in Learn, How it works, QuadCOM and Data copy open a definition sheet in place.
 - Data: desk market sources, per-desk storage on this device, and a link to the catalog. Home: term of the day. Offline page: saved routes.

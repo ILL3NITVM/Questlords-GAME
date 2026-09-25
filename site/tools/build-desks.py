@@ -46,6 +46,10 @@ def build(a):
         # websocket feed integrity: ticks outside this band are rejected as corrupt. Unscaled, every
         # sub-1000 price (all three new assets) would be rejected and the desk would never go live.
         ("price<1000||price>10000000", f"price<{num(1000 * k)}||price>{num(10000000 * k)}", 1),
+        # candle history filters (Coinbase candles, Kraken OHLC, recovered-candle append): unscaled,
+        # every candle of a sub-1000 asset is dropped and the desk never loads market history.
+        ("c.close>1000", f"c.close>{num(1000 * k)}", 2),
+        ("c.close<1000", f"c.close<{num(1000 * k)}", 1),
         ("price:84000,open24:84000", f"price:{num(seed)},open24:{num(seed)}", 1),
         ("lastPrice:84000", f"lastPrice:{num(seed)}", 1),
         ("finite(st.price,84000)", f"finite(st.price,{num(seed)})", 1),
@@ -74,6 +78,9 @@ def build(a):
         # format
         ("const axisPrice=v=>Math.abs(v)>=10000?`$${(v/1000).toFixed(1)}K`:`$${v.toFixed(0)}`;",
          f"const axisPrice=v=>Math.abs(v)>=10000?`$${{(v/1000).toFixed(1)}}K`:`$${{v.toFixed({axis_pd})}}`;", 1),
+        # prices shown with whole-dollar precision (order-book rows, top position) get the asset's decimals
+        ("<span>${fmt(p,0)}</span>", f"<span>${{fmt(p,{pd})}}</span>", 1),
+        ("fmt(topOpen.entry,0)", f"fmt(topOpen.entry,{pd})", 1),
         # storage
         ('KEY="quadcom-2000-tenfold-v43"', f'KEY="quadcom-2000-tenfold-v43-{aid}"', 1),
         ('"quadcom-durable-v43"', f'"quadcom-durable-v43-{aid}"', 1),
@@ -85,6 +92,8 @@ def build(a):
         ('"quadcom-evolution-learning-v9.json"', f'"quadcom-evolution-learning-v9-{aid}.json"', 1),
         ('"quadcom-v13-background-marker.json"', f'"quadcom-v13-background-marker-{aid}.json"', 1),
         ('"quadcom-v43-checkpoint.json"', f'"quadcom-v43-checkpoint-{aid}.json"', 2),  # written and read
+        # the v42 checkpoint is a Bitcoin-desk legacy file; new desks must never fall back to it
+        (',"quadcom-v42-checkpoint.json"]', "]", 1),
         # identity
         ('data-qc-asset="btc"', f'data-qc-asset="{aid}"', 1),
         ('src="/assets/bitcoin.png"', f'src="/assets/{icon}"', 2),
@@ -116,7 +125,7 @@ def build(a):
     # Nothing Bitcoin-specific may survive, except the desk bar's link back to the Bitcoin desk.
     probe = s.replace('href="/desk/bitcoin/" data-asset="btc"', "").replace("qcCoin-btc", "").replace("url(/assets/bitcoin.png)", "")
     probe = probe.replace("/desk/bitcoin/glimmer", "")  # shared GLIMMER modules live with the Bitcoin desk
-    left = sorted(set(re.findall(r"BTC-USD|XBTUSD|bitcoin\.png|Bitcoin|BTC TAPE|price:84000", probe)))
+    left = sorted(set(re.findall(r"BTC-USD|XBTUSD|bitcoin\.png|Bitcoin|BTC TAPE|price:84000|close[<>]1000\b|p>1000\b|price<1000|v42-checkpoint", probe)))
     if left:
         raise SystemExit(f"[{slug}] Bitcoin identifiers survived: {left}")
     out = os.path.join(ROOT, "desk", slug)

@@ -34,7 +34,7 @@ F["SH · SHEETS & OVERLAYS"] = [
 ("S55","Scroll lock while a sheet is open",""),
 ("S55","Reduced motion: sheets appear without sliding",""),
 ("N","Detents (half / full height)",""),
-("S56","Glossary term preview sheet from any page","Tap a highlighted term to read its definition in place."),
+("S56","Glossary term preview sheet from any page","Tap an underlined term in Learn, How it works, QuadCOM or Data to read its definition in place."),
 ("N","Learn card quick-look sheet",""),
 ("N","Share sheet (Web Share API) with copy fallback",""),
 ("N","Confirm sheet for destructive desk actions (SEED, clear state)",""),

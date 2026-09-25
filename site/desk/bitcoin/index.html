@@ -2183,7 +2183,7 @@ function qcAppendRecoveredCandles(candles,priorTs=0){
 async function qcPrimeRealHistory(){
   let to=now(),from=to-2*3600*1000,candles=await fetchGapCandles(from,to);
   if(!candles.length){st.realtime=st.realtime||{};st.realtime.pendingGap=true;return 0}
-  st.hist=[];let n=qcAppendRecoveredCandles(candles,0);if(n&&st.hist[0])st.open24=st.open24||st.hist[0].p;return n
+  st.hist=[];let n=qcAppendRecoveredCandles(candles,0);if(n&&st.hist[0]){if(st.open24Seed||!st.open24)st.open24=st.hist[0].p;st.open24Seed=false}return n
 }
 async function qcColdReconstruct(){
   let last=qcLastHist(),to=now();
@@ -2205,7 +2205,7 @@ async function qcRebuildVisibleHistory(){
   }
   st.hist=[];const n=qcAppendRecoveredCandles(candles,0);
   st.realtime.historyIntegrity=n>2?'COMPLETE':'PARTIAL';st.realtime.pendingGap=n<2;
-  if(n&&st.hist[0])st.open24=st.open24||st.hist[0].p;return n;
+  if(n&&st.hist[0]){if(st.open24Seed||!st.open24)st.open24=st.hist[0].p;st.open24Seed=false}return n;
 }
 function qcTweenNumber(el,target,digits=2){
   if(!el||!Number.isFinite(target)){if(el)el.textContent=fmt(target,digits);return}
