@@ -137,7 +137,7 @@ F["MK · MARKET & DESK WIDGETS"] = [
 ("R","Social trading feed","Rejected: unverifiable and off-mission."),
 ]
 F["SY · SYSTEM & PLATFORM"] = [
-("S55","Icon set (SVG sprite, 16 symbols)","One file, currentColor, 24px grid; includes the QuadCOM quad-diamond desk mark."),
+("S55","Icon set (SVG sprite, 15 symbols)","One file, currentColor, 24px grid; includes the QuadCOM quad-diamond desk mark."),
 ("S55","Service-worker update listener","Announces a new controller; the page is never swapped without consent."),
 ("S55","Icon sprite precached for offline",""),
 ("N","Install prompt card (only after two visits, dismissible forever)",""),

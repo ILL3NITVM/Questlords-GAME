@@ -44,5 +44,5 @@ Build 55 (app components; catalog: V55_COMPONENT_CATALOG.txt, python3 tools/comp
 - Phone tab bar: HOME · LEARN · DESK (raised brushed-gold orb) · GLOSSARY · MORE, safe-area aware, on every page. The header nav hands over to it at 760px and below.
 - MORE bottom sheet with a focus trap, Esc/backdrop/drag to dismiss and a scroll lock; it holds the remaining routes and a REGALIA/OFF skin segmented control.
 - Toast system: link copied, offline/online, new build ready (RELOAD), skin changes.
-- Reading-progress strip; icon sprite /assets/icons.svg (16 symbols); back-to-top with an icon, above the tab bar.
+- Reading-progress strip; icon sprite /assets/icons.svg (15 symbols); back-to-top with an icon, above the tab bar.
 - Without JavaScript, MORE jumps to the footer, which now lists every route.

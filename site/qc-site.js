@@ -29,7 +29,8 @@ function toast(msg,{icon:ic='check',action=null,timeout=3200}={}){
   for(const old of toastRoot.children)if(old.querySelector('span')?.textContent===msg&&!old.classList.contains('out'))return;
   const t=document.createElement('div');t.className='qc-toast';t.innerHTML=icon(ic)+'<span></span>';t.querySelector('span').textContent=msg;
   if(action){const b=document.createElement('button');b.type='button';b.textContent=action.label;b.addEventListener('click',()=>{action.run();t.remove()});t.appendChild(b)}
-  toastRoot.appendChild(t);while(toastRoot.children.length>3)toastRoot.firstChild.remove();
+  if(action)t.dataset.keep='1';toastRoot.appendChild(t);
+  const plain=()=>[...toastRoot.children].filter(x=>!x.dataset.keep);while(toastRoot.children.length>3&&plain().length)plain()[0].remove();
   if(timeout)setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),220)},timeout);
 }
 window.qcToast=toast;
@@ -44,11 +45,11 @@ addEventListener('online',()=>toast('Back online',{icon:'check'}));
 /* ── MORE sheet: modal bottom sheet with focus trap, Esc, backdrop and drag-to-dismiss. ── */
 const sheet=document.getElementById('qc-more'),moreBtn=document.querySelector('.qc-tab-more');
 if(sheet&&moreBtn){
-  const panel=sheet.querySelector('.qc-sheet-panel');let lastFocus=null;
+  const panel=sheet.querySelector('.qc-sheet-panel');let lastFocus=null,hideTimer=0;
   const focusables=()=>[...panel.querySelectorAll('a[href],button:not([disabled])')].filter(el=>el.tabIndex!==-1);
-  const open=()=>{lastFocus=document.activeElement;sheet.hidden=false;document.documentElement.classList.add('qc-sheet-open');moreBtn.setAttribute('aria-expanded','true');requestAnimationFrame(()=>{sheet.classList.add('open');(panel.querySelector('a.qc-row[aria-current="page"]')||panel.querySelector('a.qc-row')||panel).focus()})};
+  const open=()=>{clearTimeout(hideTimer);lastFocus=document.activeElement;sheet.hidden=false;document.documentElement.classList.add('qc-sheet-open');moreBtn.setAttribute('aria-expanded','true');requestAnimationFrame(()=>{sheet.classList.add('open');(panel.querySelector('a.qc-row[aria-current="page"]')||panel.querySelector('a.qc-row')||panel).focus()})};
   const close=()=>{sheet.classList.remove('open');moreBtn.setAttribute('aria-expanded','false');document.documentElement.classList.remove('qc-sheet-open');panel.style.transform='';
-    const done=()=>{sheet.hidden=true;lastFocus?.focus?.()};matchMedia('(prefers-reduced-motion: reduce)').matches?done():setTimeout(done,200)};
+    const done=()=>{sheet.hidden=true;lastFocus?.focus?.()};matchMedia('(prefers-reduced-motion: reduce)').matches?done():(hideTimer=setTimeout(done,200))};
   moreBtn.setAttribute('href','#qc-more');moreBtn.setAttribute('aria-expanded','false');
   moreBtn.addEventListener('click',e=>{e.preventDefault();sheet.hidden?open():close()});
   sheet.addEventListener('click',e=>{if(e.target.closest('[data-close]'))close()});

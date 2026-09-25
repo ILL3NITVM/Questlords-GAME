@@ -212,7 +212,7 @@ MK · MARKET & DESK WIDGETS
 
 SY · SYSTEM & PLATFORM
 ──────────────────────
-[SY01] SHIPPED V55 Icon set (SVG sprite, 16 symbols)
+[SY01] SHIPPED V55 Icon set (SVG sprite, 15 symbols)
                  One file, currentColor, 24px grid; includes the QuadCOM quad-diamond desk mark.
 [SY02] SHIPPED V55 Service-worker update listener
                  Announces a new controller; the page is never swapped without consent.
