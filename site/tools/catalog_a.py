@@ -5,7 +5,7 @@ AREAS = {}
 AREAS["A · ACCESSIBILITY"] = [
 ("S53","Keyboard focus rings on every link, button and input","2px gold outline, offset so it never merges with borders."),
 ("S53","Skip-to-content link on all content pages","First tab stop; targets <main id=main>."),
-("S53","Buttons at least 44px tall, nav targets at least 38px","Meets touch-target guidance on phones."),
+("S53","Buttons at least 44px tall, nav targets at least 38px","V54 keeps it: A–Z, footer links and phone nav 38px; TOP 44px."),
 ("S53","Reduced-motion users get no transitions or animations",""),
 ("S53","Muted grey raised from ~3:1 to ~6:1 contrast","--dimtxt #5c5e54 → #8f8f83."),
 ("S54","Decorative flow arrows hidden from screen readers","How-it-works no longer reads 'down arrow' seven times."),
@@ -129,7 +129,7 @@ AREAS["C · LAYOUT & RESPONSIVE"] = [
 ("R","Page-level horizontal scrolling on phones","Rejected: V43 validation target."),
 ]
 AREAS["D · NAVIGATION & WAYFINDING"] = [
-("S54","Previous / next page links on every content page","Follows the primary nav order."),
+("S54","Previous / next page links on every content page","Content-page order; the desk stays one tap away in the nav."),
 ("S54","Footer navigation row",""),
 ("S54","Back-to-top button on long pages","Appears only when a page is taller than ~2 screens."),
 ("S54","Deep links to every Learn card","#what-is-glimmer etc.; copy on tap."),

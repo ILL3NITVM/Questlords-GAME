@@ -12,7 +12,7 @@ A · ACCESSIBILITY
 [A02] SHIPPED V53 Skip-to-content link on all content pages
                  First tab stop; targets <main id=main>.
 [A03] SHIPPED V53 Buttons at least 44px tall, nav targets at least 38px
-                 Meets touch-target guidance on phones.
+                 V54 keeps it: A–Z, footer links and phone nav 38px; TOP 44px.
 [A04] SHIPPED V53 Reduced-motion users get no transitions or animations
 [A05] SHIPPED V53 Muted grey raised from ~3:1 to ~6:1 contrast
                  --dimtxt #5c5e54 → #8f8f83.
@@ -229,7 +229,7 @@ C · LAYOUT & RESPONSIVE
 D · NAVIGATION & WAYFINDING
 ───────────────────────────
 [D01] SHIPPED V54 Previous / next page links on every content page
-                 Follows the primary nav order.
+                 Content-page order; the desk stays one tap away in the nav.
 [D02] SHIPPED V54 Footer navigation row
 [D03] SHIPPED V54 Back-to-top button on long pages
                  Appears only when a page is taller than ~2 screens.
@@ -689,8 +689,10 @@ L · PERFORMANCE
 [L01] SHIPPED V53 Service worker caches only good same-origin responses
 [L02] SHIPPED V54 Stale-while-revalidate for assets
                  Deploys reach returning visitors on the next load.
-[L03] SHIPPED V54 decoding=async on images
-[L04] SHIPPED V54 Image dimensions prevent layout shift
+[L03] SHIPPED V54 decoding=async on site-page images
+                 Desk images are next.
+[L04] SHIPPED V54 Image dimensions prevent layout shift on site pages
+                 Desk images are next.
 [L05] NEXT        Compress textures (mandala 110KB → WebP ~35KB)
 [L06] NEXT        Resize logo PNG for its display sizes (632KB source)
                  Largest asset on every page.
@@ -846,9 +848,11 @@ O · QUALITY, SECURITY & RELEASE
 [O02] SHIPPED V53 Route crawl (7 routes × phone/desktop): no 404s, no errors
 [O03] SHIPPED V53 Desk visual audit across 4 views × 2 orientations
 [O04] SHIPPED V54 Crawl extended to 404 and offline pages
+                 tools/qa/crawl.mjs
 [O05] SHIPPED V54 Offline behaviour verified with the server stopped
-                 Visited routes, desk with query, unvisited → offline page.
+                 tools/qa/offline.mjs: visited routes, desk with query, unvisited → offline page.
 [O06] SHIPPED V54 Glossary behaviour tests (filter, count, /, Esc, ?q=, deep link)
+                 tools/qa/glossary.mjs
 [O07] SHIPPED V54 This 600-item catalog with honest statuses
 [O08] SHIPPED V54 Catalog generator validates 15 areas × 40 items
 [O09] NEXT        Content-Security-Policy for content pages

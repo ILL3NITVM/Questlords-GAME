@@ -1,5 +1,5 @@
 const CACHE='quadcom-genesis-public-v54';
-const CORE=['/','/404.html','/offline.html','/qc-site.css','/qc-site.js','/manifest.json','/assets/quadcom-official-logo.png','/assets/bitcoin.png','/assets/favicon-32.png','/assets/apple-touch-icon.png',
+const CORE=['/','/404.html','/offline.html','/qc-site.css?v=54','/qc-site.js?v=54','/manifest.json','/assets/quadcom-official-logo.png','/assets/bitcoin.png','/assets/favicon-32.png','/assets/apple-touch-icon.png',
 '/learn/','/how-it-works/','/quadcom/','/data/','/glossary/','/desk/bitcoin/','/desk/bitcoin/glimmer.js','/desk/bitcoin/glimmer-vision.js',
 '/assets/textures/aurum-brushed.png','/assets/textures/obsidian-grain.png','/assets/textures/carbon-weave.png','/assets/textures/glass-sheen.png','/assets/textures/quad-lattice.png',
 ...['mandala','corner-tl','corner-tr','corner-bl','corner-br','filigree-band','starburst','kaleido-tile'].map(n=>`/assets/textures/regalia/${n}.png`)];
