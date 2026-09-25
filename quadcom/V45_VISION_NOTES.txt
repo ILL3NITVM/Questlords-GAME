@@ -1,0 +1,57 @@
+QUADCOM ❖ V45 — GLIMMER VISION + AURUM TEXTURE PACK
+
+The high-end graphics path. GLIMMER's insight, rendered through a real texture pack
+and governed by the same budget that keeps the desk responsive.
+
+VISION VIEW
+Tap VIEW to cycle CORE → FLEET → ALL → VISION. VISION shows the BTC tape plus one
+GPU-rendered instrument surface drawn in a single fragment pass:
+- RISK CONE: bootstrap Monte Carlo density as a gold fan in √time space, so
+  volatility spreads linearly. P5/P25/P50/P75/P95 lines, 12m/1h/4h ticks, dashed
+  live TP (mint) and SL (red) levels out to the trade's pivot horizon, 4h max-drawdown caption.
+- TRADE ODDS: brushed-metal ring. TP first (mint), SL first (red), still open (gold).
+  E[R], R:R and ±standard error alongside.
+- HOLDOUT SHARPE: out-of-sample Sharpe for every momentum (top) and reversion (bottom)
+  setting, lookback across and threshold up. The best-in-train cell is outlined, so
+  overfitting shows as a gold box on red.
+- FLEET INDEPENDENCE: spectrum of each PICO's mean |ρ| to the fleet, the mean marker,
+  and the effective-independent bar.
+
+BACKENDS (fixed order)
+WebGPU (shared GLIMMER device, WGSL) → WebGL2 (GLSL ES 3.0 mirror) → Canvas 2D.
+If WebGPU canvas presentation loses the device within 10 s, VISION stays on WebGL2 for
+the session instead of crash-looping, and GLIMMER's compute device recovers on its own.
+WebGL2 context loss falls back to 2D and retries WebGL2 up to twice.
+Text is a separate crisp 2D overlay, redrawn only when data or size changes.
+
+QUALITY TIERS (from GLIMMER health / envelope / inferred pressure)
+ULTRA  up to 3× device pixels, reveal sweep on new data
+HIGH   up to 2×, reveal sweep
+MED    1×, no reveal
+LOW    0.75×, no reveal
+A lower tier applies at once; a higher one only after holding for 3 s. Rendering runs
+only while VISION is on screen and only on change. No constant animation or glow
+(V43 D03). Render time is reported to GLIMMER and shown in its sheet (VISION row).
+
+AURUM TEXTURE PACK (textures/, regenerate: node tools/texture-pack.mjs)
+aurum-brushed.png   512×128  brushed gold: headers, SEED button, fan, ring, spectrum
+obsidian-grain.png  256×256  mineral black with rare gold dust: panel substrate
+carbon-weave.png     64×64   2×2 twill: buttons, chip, Vision region backing
+glass-sheen.png     256×256  alpha glaze: instrument cells, Vision regions
+quad-lattice.png     64×64   QuadCOM diamond lattice: Vision background
+All tile seamlessly and are deterministic (same bytes every run). The chart field and
+data ink stay untextured. Toggle AURUM/OFF from the GLIMMER sheet (VISION row); the
+choice persists.
+
+GLIMMER CHANGES
+Results now carry full distributions (cone density per horizon, odds density and TP/SL
+log levels, the whole holdout grid, the correlation spectrum). New GLIMMER.governor()
+gives cheap tier inputs.
+
+VERIFIED (headless Chromium, SwiftShader)
+- WGSL rendered offscreen and GLSL rendered on canvas give the same image;
+  Canvas 2D gives the same instruments.
+- Desk layout audit passes for CORE/FLEET/ALL/VISION in portrait 390×844 and
+  landscape 844×390. VISION is hidden in ALL.
+- No page errors. Price feeds are blocked in the sandbox, so live-desk VISION shows its
+  warming state; the harness feeds GLIMMER synthetic history to fill all instruments.

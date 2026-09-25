@@ -21,7 +21,7 @@
 (() => {
 'use strict';
 
-const VERSION = '44.0';
+const VERSION = '45.0';
 const STORE = 'quadcom-v44-glimmer';
 const WASM_B64 = 'AGFzbQEAAAABEQJgA39/fwF9YAZ/f39/f38AAwMCAAEFAwEAAQcaAwZtZW1vcnkCAANkb3QAAAdkb3RNYW55AAEKkgECWgIBewF/IAAgAkECdGohBAJAA0AgACAETw0BIAMgAP0ABAAgAf0ABAD95gH95AEhAyAAQRBqIQAgAUEQaiEBDAALCyAD/R8AIAP9HwGSIAP9HwKSIAP9HwOSCzUBAX8CQANAIAYgA08NASAFIAAgASAEEAA4AgAgBUEEaiEFIAEgAmohASAGQQFqIQYMAAsLCw=='; // tools/glimmer-wasm.mjs
 
@@ -903,6 +903,10 @@ function mcParams(s, horizons, side, tp, sl, seed) {
     h0: 5 * sig * Math.sqrt(cs[0]), h1: 5 * sig * Math.sqrt(cs[1] ?? cs[0]), h2: 5 * sig * Math.sqrt(cs[2] ?? cs[0]), stepK: k,
   };
 }
+function density(hist, off, nb) {
+  let m = 0; for (let i = 0; i < nb; i++) m = Math.max(m, hist[off + i]);
+  return Array.from({ length: nb }, (_, i) => m ? Math.round(hist[off + i] / m * 1e4) / 1e4 : 0);
+}
 function histQuantiles(hist, off, nb, H, qs) {
   let n = 0; for (let i = 0; i < nb; i++) n += hist[off + i];
   if (!n) return qs.map(() => NaN);
@@ -944,7 +948,7 @@ const producers = {
         const o = 4 * NB, n = hist[o] + hist[o + 1] + hist[o + 2];
         if (!n) return;
         const pTP = hist[o + 1] / n, pSL = hist[o + 2] / n, rr = tp / sl;
-        publish('odds', { sig, mode: b.mode, pTP, pSL, pOpen: hist[o] / n, n, se: Math.sqrt(pTP * (1 - pTP) / n), expR: pTP * rr - pSL, horizon, rr, engines: [...this.engines], ms: this.ms });
+        publish('odds', { sig, mode: b.mode, pTP, pSL, pOpen: hist[o] / n, n, se: Math.sqrt(pTP * (1 - pTP) / n), expR: pTP * rr - pSL, horizon, rr, tpLog: Math.log(b.tp / b.entry), slLog: Math.log(b.sl / b.entry), dens: density(hist, 0, NB), H: p.h0, engines: [...this.engines], ms: this.ms });
       },
     }));
   },
@@ -972,7 +976,7 @@ const producers = {
         const cones = CONE_HORIZONS.map((h, i) => ({ horizon: h, q: histQuantiles(acc.hist, i * NB, NB, H[i], qs) }));
         // Drawdown bins span [0, h2] rather than [-H, H].
         const md = [0.5, 0.95].map(q => { let n = 0; for (let i = 0; i < NB; i++) n += acc.hist[3 * NB + i]; let a = 0; for (let i = 0; i < NB; i++) { a += acc.hist[3 * NB + i]; if (a >= q * n) return Math.expm1((i + 0.5) / NB * p.h2); } return NaN; });
-        publish('cone', { cones, mdd50: md[0], mdd95: md[1], paths: Math.round(acc.paths), target: CONE_TARGET, stepK: p.stepK, engines: [...this.engines], ms: this.ms });
+        publish('cone', { cones, dens: [0, 1, 2].map(i => density(acc.hist, i * NB, NB)), H, mdd50: md[0], mdd95: md[1], paths: Math.round(acc.paths), target: CONE_TARGET, stepK: p.stepK, engines: [...this.engines], ms: this.ms });
       },
     }));
   },
@@ -1003,6 +1007,7 @@ const producers = {
           epoch: s.epoch, combos, mode, L: Ls[(rem / Ths.length) | 0], lookbackMin: Ls[(rem / Ths.length) | 0] * BASE_DT / 60, th: Ths[rem % Ths.length],
           train: out[best * 4], hold: out[best * 4 + 1], trades: out[best * 4 + 3], positiveHold: posHold / combos,
           overfitGap: (trainSum - holdSum) / top.length, span: s.spanMin, engines: [...this.engines], ms: this.ms,
+          best, Ls, Ths: Array.from(Ths, x => Math.round(x * 100) / 100), grid: Array.from({ length: combos }, (_, c) => Math.round(out[c * 4 + 1] * 1000) / 1000),
         });
       },
     }));
@@ -1041,7 +1046,9 @@ const producers = {
         let top = 0; for (let i = 1; i < Nv; i++) if (acc.rowAbs[i] > acc.rowAbs[top]) top = i;
         // Participation ratio of the correlation matrix: (tr C)^2 / tr(C^2).
         const effective = (Nv * Nv) / (Nv + 2 * acc.sumSq);
-        publish('corr', { stamp: f.fleetStamp, n: Nv, effective, meanAbs: acc.pairs ? acc.sumAbs / acc.pairs : 0, crowdedId: valid[top] + 1, crowdedMean: acc.rowAbs[top] / (Nv - 1), engines: [...this.engines], ms: this.ms });
+        const spectrum = new Array(32).fill(0);
+        for (let i = 0; i < Nv; i++) spectrum[Math.min(31, Math.floor(acc.rowAbs[i] / (Nv - 1) * 32))]++;
+        publish('corr', { stamp: f.fleetStamp, n: Nv, effective, spectrum, meanAbs: acc.pairs ? acc.sumAbs / acc.pairs : 0, crowdedId: valid[top] + 1, crowdedMean: acc.rowAbs[top] / (Nv - 1), engines: [...this.engines], ms: this.ms });
       },
     }));
   },
@@ -1191,7 +1198,7 @@ html[data-qc-build] .top{grid-auto-flow:column!important;grid-template-columns:m
  font:8px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;color:#f0ede4;padding:6px 7px;display:none}
 #glimmerSheet.open{display:block}
 #glimmerSheet header{display:flex;justify-content:space-between;align-items:center;color:#f3d477;letter-spacing:.06em;margin-bottom:4px}
-#glimmerSheet header button{font:inherit;color:#f3d477;background:#070905;border:.5px solid rgba(217,173,69,.6);border-radius:3px;padding:3px 7px}
+#glimmerSheet dd button,#glimmerSheet header button{font:inherit;color:#f3d477;background:#070905;border:.5px solid rgba(217,173,69,.6);border-radius:3px;padding:3px 7px}
 #glimmerSheet dl{display:grid;grid-template-columns:auto 1fr;gap:1px 8px;margin:0}
 #glimmerSheet dt{color:#9b9687}#glimmerSheet dd{margin:0;overflow-wrap:anywhere}
 #glimmerSheet h4{margin:6px 0 2px;font-size:7px;color:#d9ad45;letter-spacing:.08em;font-weight:600}
@@ -1213,7 +1220,10 @@ html[data-qc-build] .top{grid-auto-flow:column!important;grid-template-columns:m
     sheet = document.createElement('section');
     sheet.id = 'glimmerSheet'; sheet.setAttribute('role', 'dialog'); sheet.setAttribute('aria-label', 'GLIMMER compute telemetry');
     document.body.appendChild(sheet);
-    sheet.addEventListener('click', e => { if (e.target.closest('[data-close]')) toggleSheet(false); });
+    sheet.addEventListener('click', e => {
+      if (e.target.closest('[data-close]')) toggleSheet(false);
+      if (e.target.closest('[data-tex]')) { window.__quadcomTexture?.(true); renderTelemetry(true); }
+    });
   }
 }
 function toggleSheet(force) {
@@ -1263,6 +1273,7 @@ function renderTelemetry(force) {
 <dt>GLIMMER</dt><dd><b>${Math.round(s.use * 100)}%</b> of envelope used · envelope ${Math.round(s.envelope * 100)}% · <span class="${cls[s.health]}">${s.health}</span>${s.reasons.length ? ` <span class="dim">(${esc(s.reasons.join(', '))})</span>` : ''}</dd>
 <dt>PRESSURE</dt><dd><span class="${cls[s.pressure]}">${s.pressure}</span> <span class="dim">INFERRED${s.efficiency ? ` · kernel efficiency ×${s.efficiency.toFixed(2)} of best` : ''}</span>${s.osPressure ? ` · browser-reported CPU ${esc(s.osPressure)}` : ''}</dd>
 <dt>MEMORY</dt><dd>${memTxt}</dd>
+${(() => { const v = window.__quadcomVision?.(); return v ? `<dt>VISION</dt><dd>${v.backend} · ${v.tier}${v.lastMs != null ? ` · encode ${ms(v.lastMs)}` : ''}${v.gpuMs != null ? ` · gpu done ${ms(v.gpuMs)}` : ''} · ${v.renders} renders · texture <button type="button" data-tex>${v.texture === 'aurum' ? 'AURUM' : 'OFF'}</button>${v.error ? ` <span class="bad">${esc(v.error.slice(0, 40))}</span>` : ''}</dd>` : ''; })()}
 <dt>VERIFIED</dt><dd>${!G.cal.done ? '<span class="dim">calibrating…</span>' : [G.cal.gpu ? `WebGPU mc ${G.cal.gpu.mc ? '✓' : '✗'} sweep ${G.cal.gpu.sweep ? '✓' : '✗'}` : null, G.cal.gl2 != null ? `WebGL2 mc ${G.cal.gl2 ? '✓' : '✗'}` : null, G.cal.worker != null ? `worker ${G.cal.worker ? '✓' : '✗'}` : null].filter(Boolean).join(' · ') || 'JS reference only'} <span class="dim">vs JS reference</span></dd>
 ${s.battery ? `<dt>BATTERY</dt><dd>${Math.round(s.battery.level * 100)}% · ${s.battery.charging ? 'charging' : 'discharging'}</dd>` : ''}
 </dl>
@@ -1315,6 +1326,8 @@ window.GLIMMER = {
   label: () => `GLM ${primaryBackend()}`,
   telemetry: snapshot,
   calibration: () => G.cal,
+  /** Cheap governor state for renderers deciding their quality tier. */
+  governor: () => ({ health: G.health.state, envelope: G.health.envelope, pressure: G.health.pressure, use: G.budget.use, hz: G.health.hz, hidden: document.hidden || G.suspended, gpu: gpuStatus() }),
   results: () => G.results,
   open: () => toggleSheet(true),
 };

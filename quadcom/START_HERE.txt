@@ -1,4 +1,4 @@
-QUADCOM ❖ V44 GLIMMER — START HERE
+QUADCOM ❖ V45 GLIMMER VISION — START HERE
 
 1) Open a-Shell.
 2) cd into this folder.
@@ -14,7 +14,9 @@ No random ports. No ?v= URL needed for the installed Home Screen app.
 DESK VIEWS
 - CORE: chart + champion + trade + microstructure + risk (default).
 - FLEET: chart + champion + trade + ranked balances + PICO wall.
-- ALL: every instrument surface. Tap VIEW in the command bar to cycle.
+- ALL: every instrument surface.
+- VISION: GPU-rendered risk cone, trade odds, holdout map, fleet independence.
+  Tap VIEW in the command bar to cycle.
 
 PHYSICAL-SCREEN QA
 Append ?qc_sim=iphone13 to simulate iPhone 13 safe areas in a 390x844 or
@@ -25,3 +27,4 @@ GLIMMER COMPUTE GOVERNOR (V44)
 Tap the "GLM" chip in the command bar for compute telemetry and output.
 In the console: __quadcomGlimmer()
 See V44_GLIMMER_NOTES.txt.
+See V45_VISION_NOTES.txt for GLIMMER VISION and the AURUM texture pack.

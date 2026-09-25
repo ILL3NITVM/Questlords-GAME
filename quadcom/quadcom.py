@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parent
 HOST="0.0.0.0"
 PORT=8181
 URL=f"http://127.0.0.1:{PORT}/"
-BUILD="V44"
+BUILD="V45"
 HEALTH="/__quadcom__/health"
 SHUTDOWN="/__quadcom__/shutdown"
 
@@ -18,13 +18,13 @@ class QuadCOMHTTP(ThreadingHTTPServer):
     daemon_threads=True
 
 class Handler(SimpleHTTPRequestHandler):
-    server_version="QuadCOMLocal/44"
+    server_version="QuadCOMLocal/45"
     def end_headers(self):
         self.send_header("Cross-Origin-Opener-Policy","same-origin")
         self.send_header("Cross-Origin-Embedder-Policy","require-corp")
         self.send_header("Cross-Origin-Resource-Policy","same-origin")
         p=urlparse(self.path).path
-        self.send_header("Cache-Control","no-store" if p in ("/","/index.html","/glimmer.js","/sw.js","/manifest.json") or p.startswith("/__quadcom__/") else "no-cache")
+        self.send_header("Cache-Control","no-store" if p in ("/","/index.html","/glimmer.js","/glimmer-vision.js","/sw.js","/manifest.json") or p.startswith("/__quadcom__/") else "no-cache")
         super().end_headers()
     def _json(self,obj,code=200):
         body=json.dumps(obj,separators=(",",":")).encode()
@@ -78,7 +78,7 @@ def main():
             print("Stop that one once (Ctrl-C), then rerun: python3 quadcom.py")
             raise SystemExit(2)
         raise
-    print("QuadCOM ❖ V44 GLIMMER")
+    print("QuadCOM ❖ V45 GLIMMER VISION")
     print("FIXED HOME-APP ORIGIN:",URL)
     print("Port hopping: DISABLED · 8181 is permanent")
     print("Tap the existing ❖ Home Screen app. Ctrl-C stops the local bridge.")
