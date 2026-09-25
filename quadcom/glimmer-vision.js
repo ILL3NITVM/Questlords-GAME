@@ -558,13 +558,17 @@ function updateTier() {
   if (now - V.tierSince > 3000) { V.tier = want; V.pendingTier = null; V.dirty = true; }
 }
 async function switchBackend(order) {
+  const gen = V.switchGen = (V.switchGen || 0) + 1;
+  V.gpu = null; V.gl = null; V.ctx2d = null; V.backend = 'NONE';
   for (const b of order) {
+    if (gen !== V.switchGen) return;                 // a newer switch superseded this one
     try {
-      if (b === 'webgpu' && navigator.gpu && !V.webgpuBanned && await initWebGPU()) { V.backend = 'WEBGPU'; break; }
+      if (b === 'webgpu' && navigator.gpu && !V.webgpuBanned && await initWebGPU()) { if (gen !== V.switchGen || !V.gpu?.canvas.isConnected) return; V.backend = 'WEBGPU'; break; }
       if (b === 'webgl2' && initWebGL2()) { V.backend = 'WEBGL2'; break; }
       if (b === '2d' && init2D()) { V.backend = 'CANVAS2D'; break; }
     } catch (e) { note(`${b} init failed: ${String(e.message || e).slice(0, 60)}`); }
   }
+  if (gen !== V.switchGen) return;
   V.dataDirty = true; V.dirty = true; schedule();
 }
 function schedule() { if (!V.raf && active()) V.raf = requestAnimationFrame(frame); }
@@ -578,7 +582,7 @@ function frame() {
     else if (V.backend === 'WEBGL2' && V.gl) reveal = drawWebGL2();
     else if (V.backend === 'CANVAS2D' && V.ctx2d) reveal = draw2D();
     else return;
-    if (V.dirty) drawText();
+    if (V.dirty) { try { drawText(); } catch (e) { note(`overlay error: ${String(e.message || e).slice(0, 50)}`); } }
     V.dirty = false; V.renders++;
     V.lastMs = performance.now() - t0;
     window.GLIMMER?.account?.(V.backend === 'CANVAS2D' ? 'main' : 'gpu', V.lastMs, 'P1');
@@ -586,16 +590,20 @@ function frame() {
     if (reveal < 1) V.raf = requestAnimationFrame(frame);    // brief reveal only, then still
   } catch (e) {
     V.error = String(e.message || e); note(`render error: ${V.error.slice(0, 60)}`);
-    const next = V.backend === 'WEBGPU' ? ['webgl2', '2d'] : ['2d'];
-    V.gpu = null; V.gl = null; switchBackend(next);
+    if ((V.renderFaults = (V.renderFaults || 0) + 1) > 4) { note('vision paused after repeated render faults'); V.backend = 'NONE'; return; }
+    switchBackend(V.backend === 'WEBGPU' ? ['webgl2', '2d'] : ['2d']);
   }
 }
 function refreshData(reveal) {
   const R = packData();
   const sig = ['cone', 'odds', 'sweep', 'corr'].map(k => R[k]?.at ?? '').join('|');
   if (sig === V.sig && !reveal) return;
+  // Cone accumulation publishes often; only a new insight (epoch, trade, sweep, fleet) earns a reveal.
+  const insight = [R.cone?.cones?.[2]?.q?.map(v => v.toFixed(4)).join(), R.odds?.sig, R.sweep?.epoch, R.corr?.stamp].join('|');
+  const now = performance.now();
   V.sig = sig; V.dataDirty = true; V.dirty = true;
-  if (TIERS[V.tier].reveal) V.revealStart = performance.now();
+  if (reveal !== 'quiet' && TIERS[V.tier].reveal && insight !== V.insight && now - V.revealStart > 12_000) V.revealStart = now;
+  V.insight = insight;
   schedule();
 }
 async function boot() {
@@ -609,7 +617,7 @@ async function boot() {
   window.GLIMMER?.onGpuDevice?.(() => { if (V.backend !== 'WEBGPU' && !V.webgpuBanned) switchBackend(['webgpu', 'webgl2', '2d']); });
   const body = $('visionGPU').parentElement;
   if (typeof ResizeObserver === 'function') new ResizeObserver(() => { V.dirty = true; schedule(); }).observe(body);
-  new MutationObserver(() => { if (active()) { refreshData(true); V.dirty = true; schedule(); } }).observe(root, { attributes: true, attributeFilter: ['data-qc-view', 'data-qc-texture'] });
+  new MutationObserver(() => { if (active()) { refreshData('quiet'); V.dirty = true; schedule(); } }).observe(root, { attributes: true, attributeFilter: ['data-qc-view', 'data-qc-texture'] });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { V.dirty = true; schedule(); } });
   setInterval(() => { if (!active()) return; const before = V.tier; updateTier(); if (V.tier !== before) { note(`tier ${before}→${V.tier}`); schedule(); } }, 1000);
 }
