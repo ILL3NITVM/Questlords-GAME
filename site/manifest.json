@@ -33,5 +33,26 @@
       "type": "image/png",
       "purpose": "maskable"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Bitcoin Desk",
+      "url": "/desk/bitcoin/",
+      "icons": [
+        {
+          "src": "/assets/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Glossary",
+      "url": "/glossary/"
+    },
+    {
+      "name": "Learn QuadCOM",
+      "url": "/learn/"
+    }
   ]
 }

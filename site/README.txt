@@ -1,4 +1,4 @@
-QUADCOM GENESIS PUBLIC SITE · BUILD 53
+QUADCOM GENESIS PUBLIC SITE · BUILD 54
 
 Routes:
 /
@@ -17,7 +17,7 @@ Source preservation:
 - GLIMMER is installed: desk/bitcoin/glimmer.js (compute governor) and desk/bitcoin/glimmer-vision.js (VISION view). They are the same modules as quadcom/ in the repo.
 - REGALIA skin installed: every texture lives once, in assets/textures/ (the desk points there with data-qc-texture-base). The skin is ornament only; the texture button in the GLIMMER sheet cycles REGALIA → AURUM → OFF (site pages: REGALIA or OFF).
 - Direct routes require a static host configured to serve each folder's index.html (standard directory-index behavior).
-- Service worker build: quadcom-genesis-public-v53. Navigation is network-first. Only good same-origin responses are cached, and one missing file cannot abort install. The desk registers the same root worker (/sw.js, scope /).
+- Service worker build: quadcom-genesis-public-v54. Assets are stale-while-revalidate; unvisited routes offline get /offline.html. Navigation is network-first. Only good same-origin responses are cached, and one missing file cannot abort install. The desk registers the same root worker (/sw.js, scope /).
 
 Build 53 fixes:
 - Skin textures, favicons, splash images and the desk's service worker were referenced but missing (404); all now resolve.
@@ -30,3 +30,12 @@ Build 53 fixes:
 
 Run locally from the project root with a static HTTP server, not file://.
 Example: python3 -m http.server 8080
+
+Build 54:
+- V54_UPGRADE_CATALOG.txt lists 600 improvements with honest statuses: 111 shipped (V53+V54), 325 next, 59 deferred, 105 rejected, each deferral and rejection with its reason.
+  Regenerate with: python3 tools/catalog.py (it fails unless there are 15 areas of exactly 40 items).
+- New: 404.html, offline.html, robots.txt, app shortcuts, prev/next page links, footer nav, back-to-top, print stylesheet.
+- Learn: cards 13-15 (GLIMMER, VISION, "inferred") and a deep link on every card.
+- Glossary: 8 new terms, A-Z order and index, a live result count, "/" to search, Esc to clear, ?q= in the URL, deep links.
+- Data: a fifth provenance class for GLIMMER compute output.
+- Desk: cell labels no longer clipped, a hidden h1, a noscript notice, reduced motion, and the visual audit ignores decorative overlays.

@@ -31,8 +31,43 @@ a:focus-visible,button:focus-visible,input:focus-visible,.qc-btn:focus-visible{o
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 html:not([data-qc-texture="off"]) .qc-shell{background:radial-gradient(circle at 50% -10%,rgba(200,155,54,.08),transparent 30%),linear-gradient(rgba(3,4,3,.72),rgba(3,4,3,.72)),url(/assets/textures/regalia/kaleido-tile.png) 0 0/128px 128px}
 html:not([data-qc-texture="off"]) .qc-head{background:url(/assets/textures/regalia/filigree-band.png) 0 100%/64px 8px repeat-x,rgba(3,4,3,.96)}
-html:not([data-qc-texture="off"]) .qc-panel{background:url(/assets/textures/regalia/corner-tl.png) top left/20px 20px no-repeat,url(/assets/textures/regalia/corner-tr.png) top right/20px 20px no-repeat,url(/assets/textures/regalia/corner-bl.png) bottom left/20px 20px no-repeat,url(/assets/textures/regalia/corner-br.png) bottom right/20px 20px no-repeat,url(/assets/textures/regalia/mandala.png) right -60px bottom -60px/220px 220px no-repeat,linear-gradient(145deg,rgba(9,11,9,.94),rgba(3,4,3,.96)),url(/assets/textures/obsidian-grain.png) 0 0/128px 128px}
+html:not([data-qc-texture="off"]) .qc-panel{background:url(/assets/textures/regalia/corner-tl.png) top left/20px 20px no-repeat,url(/assets/textures/regalia/corner-tr.png) top right/20px 20px no-repeat,url(/assets/textures/regalia/corner-bl.png) bottom left/20px 20px no-repeat,url(/assets/textures/regalia/corner-br.png) bottom right/20px 20px no-repeat,url(/assets/textures/regalia/mandala.png) right -64px bottom -64px/150px 150px no-repeat,linear-gradient(145deg,rgba(9,11,9,.94),rgba(3,4,3,.96)),url(/assets/textures/obsidian-grain.png) 0 0/128px 128px}
 html:not([data-qc-texture="off"]) .qc-panel:before,html:not([data-qc-texture="off"]) .qc-panel:after{display:none}
 html:not([data-qc-texture="off"]) .qc-panel h2{padding-bottom:8px;background:url(/assets/textures/regalia/filigree-band.png) 0 100%/64px 8px repeat-x}
 html:not([data-qc-texture="off"]) .qc-btn{background:linear-gradient(rgba(6,7,6,.45),rgba(3,4,3,.65)),url(/assets/textures/carbon-weave.png) 0 0/16px 16px}
 html:not([data-qc-texture="off"]) .qc-btn.primary{background:linear-gradient(180deg,rgba(255,236,170,.22),rgba(60,40,6,.2)),url(/assets/textures/aurum-brushed.png) 0 0/128px 32px;color:#161006}
+/* V54 — wayfinding, deep links, reading comfort, print. */
+html{scroll-padding-top:96px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+::selection{background:rgba(231,191,89,.35);color:#fff}
+.qc-title,.qc-panel h2,.qc-term h3{text-wrap:balance}
+.qc-sub,.qc-panel p,.qc-term p{text-wrap:pretty;max-width:68ch}
+.qc-anchor{margin-left:8px;color:var(--dim);font-weight:400;opacity:0;transition:opacity .15s}
+.qc-panel:hover .qc-anchor,.qc-term:hover .qc-anchor,.qc-anchor:focus-visible{opacity:1}
+@media (hover:none){.qc-anchor{opacity:.55}}
+.qc-anchor[data-copied]:after{content:" COPIED";font-size:10px;color:var(--green)}
+.qc-panel:target,.qc-term:target{border-color:var(--hot)!important;box-shadow:0 0 0 1px var(--hot) inset}
+.qc-status{font-size:12px;color:var(--muted);margin:10px 0 6px;min-height:1.2em}
+.qc-az{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 12px}
+.qc-az a{min-width:34px;min-height:34px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(200,155,54,.34);font-size:12px;color:var(--hot);background:#060705}
+.qc-pager{display:flex;justify-content:space-between;gap:10px;margin:18px 0 6px}
+.qc-pager a{border:1px solid rgba(231,191,89,.42);padding:11px 14px;min-height:44px;font-size:12px;color:var(--hot);background:#070805;letter-spacing:.06em}
+.qc-footnav{display:flex;flex-wrap:wrap;gap:14px;width:100%;margin-bottom:6px}
+.qc-footnav a{color:var(--muted);font-size:11px;padding:6px 0}
+.qc-footer{flex-wrap:wrap}
+.qc-top{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:30;border:1px solid rgba(231,191,89,.5);background:rgba(6,7,5,.94);color:var(--hot);padding:10px 12px;font-size:11px;letter-spacing:.06em}
+/* Narrow phones: the wrapped nav becomes a tidy 4-column grid instead of three ragged rows. */
+@media (max-width:560px){
+ .qc-head{grid-template-columns:1fr auto}
+ .qc-nav{grid-column:1 / -1;order:3;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+ .qc-nav a{justify-content:center;min-height:36px;padding:6px 4px;font-size:10.5px;text-align:center;white-space:normal;line-height:1.15}
+}
+@media print{
+ html,body,.qc-shell{background:#fff!important;color:#000!important}
+ .qc-head,.qc-nav,.qc-footnav,.qc-pager,.qc-top,.qc-skip,.qc-search,.qc-az,.qc-btn,.qc-anchor{display:none!important}
+ .qc-panel,.qc-term{background:none!important;border:1px solid #999!important;break-inside:avoid;color:#000!important}
+ .qc-panel h2,.qc-panel h3,.qc-term h3,.qc-kicker{color:#000!important}.qc-panel p,.qc-term p,.qc-sub,.qc-metric span{color:#222!important}
+ .qc-glyph{mix-blend-mode:normal;filter:invert(1)}
+}
+@media (max-width:560px){html{scroll-padding-top:150px}}
+.qc-footer{padding-bottom:max(64px,calc(env(safe-area-inset-bottom) + 56px))}

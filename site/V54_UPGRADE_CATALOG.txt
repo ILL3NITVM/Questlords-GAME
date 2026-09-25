@@ -1,0 +1,892 @@
+QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG
+
+600 improvements across the public site and the Bitcoin Desk, each with an honest status.
+SHIPPED = built and verified in that build. NEXT = recommended. DEFERRED = blocked (reason given).
+REJECTED = conflicts with the site's principles (reason given). Nothing is marked shipped unless it was verified.
+SUMMARY  SHIPPED V54 69 · SHIPPED V53 42 · NEXT 325 · DEFERRED 59 · REJECTED 105 · TOTAL 600
+
+A · ACCESSIBILITY
+─────────────────
+[A01] SHIPPED V53 Keyboard focus rings on every link, button and input
+                 2px gold outline, offset so it never merges with borders.
+[A02] SHIPPED V53 Skip-to-content link on all content pages
+                 First tab stop; targets <main id=main>.
+[A03] SHIPPED V53 Buttons at least 44px tall, nav targets at least 38px
+                 Meets touch-target guidance on phones.
+[A04] SHIPPED V53 Reduced-motion users get no transitions or animations
+[A05] SHIPPED V53 Muted grey raised from ~3:1 to ~6:1 contrast
+                 --dimtxt #5c5e54 → #8f8f83.
+[A06] SHIPPED V54 Decorative flow arrows hidden from screen readers
+                 How-it-works no longer reads 'down arrow' seven times.
+[A07] SHIPPED V54 Glossary search announces result counts politely
+                 role=status: '3 of 40 terms match'.
+[A08] SHIPPED V54 Glossary 'no match' state is spoken and shown
+                 Previously the list silently went empty.
+[A09] SHIPPED V54 Heading anchors carry descriptive aria-labels
+                 'Link to 13 · WHAT IS GLIMMER?' instead of '#'.
+[A10] SHIPPED V54 Desk gets a real (visually hidden) h1
+                 Screen-reader users land on 'QuadCOM Bitcoin Desk'.
+[A11] SHIPPED V54 Desk honours prefers-reduced-motion
+                 Animations and transitions collapse to zero.
+[A12] SHIPPED V54 Desk explains itself when JavaScript is off
+                 noscript notice instead of a black screen.
+[A13] SHIPPED V54 Deep-link targets are highlighted, not just scrolled to
+                 :target border so the eye finds the term.
+[A14] SHIPPED V54 Anchor links visible on touch devices
+                 Hover-only reveal replaced by a 55% resting state on hover:none.
+[A15] NEXT        Glossary as a <dl> definition list
+                 Better semantics for term/definition pairs; needs CSS remap.
+[A16] NEXT        Landmark labels for each content grid
+                 aria-label on .qc-grid sections for rotor navigation.
+[A17] NEXT        Visible focus order audit across the desk command bar
+                 Ensure VIEW→PERF→SEED→HALT tab order matches visual order.
+[A18] NEXT        HALT gets aria-pressed and a spoken state
+                 Safety control should announce ARMED/HALTED.
+[A19] NEXT        Desk panel titles become real headings (h2)
+                 Rotor navigation between panels.
+[A20] NEXT        Live price announcements rate-limited to 1 per 10s
+                 aria-live on every tick floods VoiceOver.
+[A21] NEXT        Chart gets a text alternative summarising range and last price
+                 Canvas is invisible to assistive tech.
+[A22] NEXT        VISION canvases get an on-demand data table
+                 Same numbers as the render, readable by screen readers.
+[A23] NEXT        Colour is never the only carrier of TP/SL meaning in VISION
+                 Add TP/SL text labels on the ring legend at all tiers.
+[A24] NEXT        Forced-colors (Windows high contrast) pass
+                 Borders and focus must survive system colours.
+[A25] NEXT        Glossary search clear button labelled for AT
+                 Native search clear is not announced everywhere.
+[A26] NEXT        Language of parts: mark 'Ever Next Phase' tagline as en
+                 Trivial, but completes lang semantics.
+[A27] NEXT        Zoom to 200% without horizontal scroll on content pages
+                 Verify with browser zoom, fix any fixed widths.
+[A28] NEXT        Text-spacing override test (WCAG 1.4.12)
+                 Line/letter spacing overrides must not clip panels.
+[A29] NEXT        Motion toggle inside the desk, independent of OS setting
+[A30] NEXT        Screen-reader walkthrough script in README
+                 So future builds can be re-checked the same way.
+[A31] DEFERRED    Desk pinch-zoom
+                 Deferred: V43 decision D02 rejects it for the fixed full-screen cockpit; iOS ignores user-scalable=no anyway.
+[A32] DEFERRED    Full WCAG 2.2 AA audit of the desk
+                 Needs a real VoiceOver/TalkBack session on devices.
+[A33] DEFERRED    Captions/transcripts for future video
+                 No video content exists yet.
+[A34] DEFERRED    Haptic cues for HALT/SEED
+                 Deferred per V43 D08: needs severity semantics first.
+[A35] DEFERRED    Audio alarms
+                 Deferred per V43 D07: needs mute behaviour designed first.
+[A36] REJECTED    Auto-reading every tape tick aloud
+                 Rejected: overwhelms assistive tech; summarise instead.
+[A37] REJECTED    Hiding the desk from assistive tech entirely
+                 Rejected: operators using AT must still reach HALT.
+[A38] REJECTED    Colour-only bull/bear balance
+                 Rejected: text values must stay beside the bar.
+[A39] REJECTED    Overlay accessibility widgets
+                 Rejected: third-party overlays add weight and rarely fix real issues.
+[A40] REJECTED    Disabling focus outlines for aesthetics
+                 Rejected: keyboard users need them.
+
+B · TYPOGRAPHY & READABILITY
+────────────────────────────
+[B01] SHIPPED V53 Site type scale raised from 5–9px to 9–17px
+[B02] SHIPPED V53 Search input at 16px
+                 iOS no longer auto-zooms on focus.
+[B03] SHIPPED V53 Paragraph line-height 1.6
+[B04] SHIPPED V54 Balanced wrapping for titles and headings
+                 text-wrap: balance.
+[B05] SHIPPED V54 Pretty wrapping for paragraphs
+                 Fewer orphans (text-wrap: pretty).
+[B06] SHIPPED V54 Paragraph measure capped at 68ch
+                 Comfortable reading line length.
+[B07] SHIPPED V54 Gold text selection colour
+                 Selection stays legible on dark panels.
+[B08] SHIPPED V54 Desk cell labels no longer clipped at the top
+                 line-height 1.08 → 1.35; CASH/SIDE/ENTRY now render whole.
+[B09] SHIPPED V54 Print stylesheet: black on white, no chrome
+                 Learn and glossary print as readable documents.
+[B10] NEXT        Tabular numerals everywhere numbers align
+                 font-variant-numeric: tabular-nums on metrics.
+[B11] NEXT        Uniform letter-spacing tokens (tight/normal/wide)
+                 Replace ad-hoc .06/.08/.12/.14/.16em values.
+[B12] NEXT        Type tokens as CSS variables (--t-xs … --t-xl)
+                 One place to tune the scale.
+[B13] NEXT        Minimum 7px for desk micro-labels on phones
+                 Some ALL-view labels render at 3.5px.
+[B14] NEXT        Desk ALL view: hide lowest-priority micro text instead of shrinking it
+                 Density by omission, not by illegibility.
+[B15] NEXT        Consistent casing policy (caps for labels, sentence case for prose)
+[B16] NEXT        Hyphenation for long glossary words on narrow screens
+                 hyphens:auto with lang=en.
+[B17] NEXT        Use en/em dashes consistently in copy
+[B18] NEXT        Avoid all-caps paragraphs (only labels are caps)
+[B19] NEXT        Headline sizes step by a fixed ratio (1.25)
+[B20] NEXT        Differentiate h2 and h3 in glossary by size, not only colour
+[B21] NEXT        Clamp() fluid sizes for kicker and sub on tablets
+[B22] NEXT        Line-height tokens for dense vs prose contexts
+[B23] NEXT        Ellipsis tooltips (title=) on truncated desk values
+                 '$10,…' should reveal the full value.
+[B24] NEXT        Truncated panel titles get a full-title tooltip
+                 e.g. 'MICROSTRUCTURE · A…'.
+[B25] NEXT        Glossary term highlight of matched text
+                 <mark> around the query.
+[B26] NEXT        Readable monospace fallback stack test on Windows
+                 Consolas vs Menlo metrics differ.
+[B27] NEXT        Tight-leading audit on every 'small' in the desk
+                 Same clipping class as the fixed cell labels.
+[B28] NEXT        Numeric formatting: thin space thousands on wide screens
+                 Optional; keep commas on phones.
+[B29] NEXT        Currency symbol consistency (US$ vs $)
+                 Desk mixes both.
+[B30] NEXT        Percent formatting: fixed decimals per field
+[B31] DEFERRED    Custom brand typeface
+                 Deferred: V43 D06 rejects remote fonts; would need a self-hosted licence.
+[B32] DEFERRED    Variable-font optical sizing
+                 Depends on a custom typeface.
+[B33] DEFERRED    Localised number formats
+                 Deferred until the site ships another locale.
+[B34] DEFERRED    Right-to-left support
+                 No RTL locale planned.
+[B35] REJECTED    Text rendered into images
+                 Rejected: unsearchable, inaccessible, blurry on zoom.
+[B36] REJECTED    Sub-9px body text on public pages
+                 Rejected: the V52 defect this catalog started from.
+[B37] REJECTED    Light-grey-on-black 'luxury' low contrast
+                 Rejected: fails WCAG contrast.
+[B38] REJECTED    Justified text on narrow screens
+                 Rejected: rivers of space in monospace.
+[B39] REJECTED    Remote font CDN
+                 Rejected: V43 D06, offline reliability.
+[B40] REJECTED    Auto-shrinking text to fit panels below legibility
+                 Rejected: clip or wrap instead.
+
+C · LAYOUT & RESPONSIVE
+───────────────────────
+[C01] SHIPPED V53 Desk on screens ≥900px scales the phone-tuned cockpit
+                 No more 2.5–3px text on desktops.
+[C02] SHIPPED V53 Desk runtime build stamp matches its CSS (52)
+                 195 dormant layout/skin rules now apply; views switch again.
+[C03] SHIPPED V53 iPhone landscape header fits all 10 controls
+                 HALT no longer wraps onto a clipped row.
+[C04] SHIPPED V53 iPhone portrait SITE button moved beside the price
+                 Previously on a hidden third row.
+[C05] SHIPPED V53 Desktop header lays out every visible control
+[C06] SHIPPED V53 Site nav wraps instead of hiding in an invisible scroll strip
+[C07] SHIPPED V54 Narrow phones: nav becomes a tidy 4-column grid
+                 Replaces three ragged wrapped rows.
+[C08] SHIPPED V54 Sticky header no longer covers deep-link targets
+                 scroll-padding 96px, 150px on phones.
+[C09] SHIPPED V54 Footer reserves room for the floating TOP button
+[C10] SHIPPED V54 Explicit image dimensions on logo and glyph
+                 Prevents layout shift while images load.
+[C11] NEXT        Tablet (768–1024) content grid at 2 columns
+                 Currently jumps from 1 to 3.
+[C12] NEXT        Desk: dedicated tablet portrait layout
+                 1024×1366 reuses phone portrait proportions.
+[C13] NEXT        Container queries for panels instead of viewport queries
+[C14] NEXT        Desk ALL view 'consensus' panel overflow
+                 Pre-existing since V43; content exceeds its cell.
+[C15] NEXT        Safe-area insets on the site header for landscape iPhones
+[C16] NEXT        Max content width token shared by header and main
+[C17] NEXT        Home: LIVE FIELD panel height matches ENTRY SURFACE on desktop
+[C18] NEXT        How-it-works flow as a horizontal rail on wide screens
+[C19] NEXT        Data page: two-column provenance legend on desktop
+[C20] NEXT        Glossary: two-column term grid on wide screens
+[C21] NEXT        Learn: card numbering visible in a left gutter on desktop
+[C22] NEXT        Consistent 4/8px spacing scale tokens
+[C23] NEXT        Remove !important chains in desk CSS where specificity suffices
+                 Nine historical style layers fight each other.
+[C24] NEXT        Consolidate desk style layers V14–V51 into one sheet
+                 Same rendered result, far less override debt.
+[C25] NEXT        Foldable/dual-screen posture check
+[C26] NEXT        Desk: remember last view per orientation
+[C27] NEXT        Desk: landscape CORE gives the chart more width on 16:9 desktops
+[C28] NEXT        Desk: FLEET view wall panel minimum width
+[C29] NEXT        Desk desktop scaling: verify in Safari and Firefox
+                 Chromium verified; others untested.
+[C30] NEXT        Fallback for browsers without CSS zoom
+                 Firefox < 126: transform-based scaling.
+[C31] DEFERRED    Desk multi-window layouts
+                 Needs a layout schema (V43 D10).
+[C32] DEFERRED    User-reorderable panels
+                 Deferred per V43 D10: durable layout schema and reset path first.
+[C33] DEFERRED    Individual panel maximisation
+                 V43 D11 candidate; needs gesture design.
+[C34] DEFERRED    Apple Watch / widget surfaces
+                 Out of scope for the web build.
+[C35] REJECTED    Horizontal panel carousel
+                 Rejected per V43 D01: swipe ambiguity beside charts.
+[C36] REJECTED    Auto-rotating views
+                 Rejected per V43 D04: context must not move by itself.
+[C37] REJECTED    Infinite scroll on content pages
+                 Rejected: pages are short and finite.
+[C38] REJECTED    Fixed 1440px desktop canvas
+                 Rejected: must reflow.
+[C39] REJECTED    Hiding HALT on small screens to save space
+                 Rejected: safety control is always reachable.
+[C40] REJECTED    Page-level horizontal scrolling on phones
+                 Rejected: V43 validation target.
+
+D · NAVIGATION & WAYFINDING
+───────────────────────────
+[D01] SHIPPED V54 Previous / next page links on every content page
+                 Follows the primary nav order.
+[D02] SHIPPED V54 Footer navigation row
+[D03] SHIPPED V54 Back-to-top button on long pages
+                 Appears only when a page is taller than ~2 screens.
+[D04] SHIPPED V54 Deep links to every Learn card
+                 #what-is-glimmer etc.; copy on tap.
+[D05] SHIPPED V54 Deep links to every glossary term
+[D06] SHIPPED V54 A–Z jump index on the glossary
+[D07] SHIPPED V54 '/' focuses glossary search from anywhere on the page
+                 Hint shown in the placeholder.
+[D08] SHIPPED V54 Esc clears the glossary filter
+[D09] SHIPPED V54 Glossary query kept in the URL (?q=)
+                 Shareable, survives reload.
+[D10] SHIPPED V54 Following a deep link to a filtered-out term clears the filter
+[D11] SHIPPED V54 Branded 404 page with routes onward
+                 Static hosts serve /404.html.
+[D12] SHIPPED V53 Desk SITE button returns to the public site on every layout
+[D13] NEXT        Breadcrumb line under the kicker
+[D14] NEXT        'You are here' in the footer nav
+[D15] NEXT        Learn: in-page table of contents
+[D16] NEXT        Glossary terms auto-linked from Learn and Data copy
+                 First mention links to the definition.
+[D17] NEXT        Related-terms links under each glossary entry
+[D18] NEXT        Desk: '?' opens a keyboard-shortcut sheet
+[D19] NEXT        Desk keyboard shortcuts: V (view), H (halt)
+                 HALT shortcut must need confirmation.
+[D20] NEXT        Search across all pages, not just the glossary
+                 Static index built at release.
+[D21] NEXT        Recently viewed terms (local only)
+[D22] NEXT        Desk view name in the document title
+                 'Bitcoin Desk · VISION · QuadCOM'.
+[D23] NEXT        Return-to-desk banner on content pages when a desk session is saved
+                 Local state only, clearly labelled.
+[D24] NEXT        Desk: remember the last glossary term an operator opened
+[D25] NEXT        Home: route cards for each audience (operator, curious, technical)
+[D26] NEXT        Nav: highlight parent for nested future routes
+[D27] NEXT        Anchor copy confirmation announced to screen readers
+[D28] NEXT        Pager shows page purpose, not just its name
+[D29] NEXT        Footer build link to the upgrade catalog
+[D30] NEXT        Consistent trailing-slash URLs and redirects
+[D31] DEFERRED    sitemap.xml
+                 Needs the production domain for absolute URLs.
+[D32] DEFERRED    Canonical URLs
+                 Needs the production domain.
+[D33] DEFERRED    Versioned docs per build
+                 Needs a hosting decision.
+[D34] DEFERRED    Multi-desk routes (/desk/eth/…)
+                 Only the Bitcoin desk exists.
+[D35] DEFERRED    Account area
+                 No accounts exist; none planned.
+[D36] REJECTED    Mega-menu
+                 Rejected: seven routes do not need one.
+[D37] REJECTED    Hamburger hiding all routes on phones
+                 Rejected: the 4-column grid keeps them visible.
+[D38] REJECTED    Hijacked scrolling / scroll-jacking
+[D39] REJECTED    Modal newsletter prompts
+[D40] REJECTED    Opening internal links in new tabs
+
+E · CONTENT — LEARN
+───────────────────
+[E01] SHIPPED V54 13 · What is GLIMMER?
+[E02] SHIPPED V54 14 · What is VISION?
+[E03] SHIPPED V54 15 · What does 'inferred' mean?
+                 Grounds the PRESSURE label.
+[E04] NEXT        16 · How to read the risk cone
+                 P5/P50/P95 and why √time spreads it.
+[E05] NEXT        17 · How to read the trade-odds ring
+[E06] NEXT        18 · What is holdout validation?
+[E07] NEXT        19 · What is overfitting, with the sweep as the example
+[E08] NEXT        20 · What 'effective independent PICOs' tells you
+[E09] NEXT        21 · What the desk does when offline
+[E10] NEXT        22 · What HALT and SEED do
+                 Operational semantics, engine-accurate.
+[E11] NEXT        23 · What PERF modes change
+[E12] NEXT        24 · Reading the three desk views
+[E13] NEXT        25 · What the skins are (REGALIA / AURUM / OFF)
+                 Ornament only; no data meaning.
+[E14] NEXT        Worked example: one tick from tape to Best Singular Trade
+[E15] NEXT        Common misreadings box on each card
+                 e.g. DIST is not SELL.
+[E16] NEXT        'Observed / derived / inferred / model' tag on every Learn card
+[E17] NEXT        Operator checklist before trusting the Best Singular Trade
+[E18] NEXT        Glossary cross-links in every card
+[E19] NEXT        Short diagram per card (SVG, themed)
+[E20] NEXT        Printable one-page operator primer
+[E21] NEXT        Learn progress (local) — cards read
+[E22] NEXT        Reading-level pass on all copy
+[E23] NEXT        Consistent 'Desk' capitalisation
+[E24] NEXT        Card order: concepts before modes before outputs
+[E25] NEXT        Link each card to the desk panel it explains
+                 Deep link with ?view= where relevant.
+[E26] NEXT        FAQ: why many processors instead of one model
+[E27] NEXT        FAQ: why no live values on public pages
+[E28] NEXT        FAQ: what the Crown is not
+[E29] NEXT        Explain CFD100 and 100:1 labels seen in the desk brand line
+[E30] NEXT        Explain INT RMSE and PIV in the trade panel header
+[E31] DEFERRED    Video walkthroughs
+                 No recording pipeline yet.
+[E32] DEFERRED    Interactive tutorial overlay on the desk
+                 Needs stable selectors across builds.
+[E33] DEFERRED    Quizzes / certification
+                 No accounts.
+[E34] DEFERRED    Translated Learn pages
+                 No locale planned.
+[E35] DEFERRED    Historical case studies
+                 Needs archived real data with provenance.
+[E36] REJECTED    Performance claims or return figures
+                 Rejected: nothing on public pages may be fabricated.
+[E37] REJECTED    'Guaranteed' or predictive marketing language
+[E38] REJECTED    Testimonials
+                 Rejected: unverifiable.
+[E39] REJECTED    Screenshots presented as live
+                 Rejected: QA frames must be labelled as such.
+[E40] REJECTED    Gamified streaks
+                 Rejected: not an operator tool.
+
+F · CONTENT — GLOSSARY
+──────────────────────
+[F01] SHIPPED V54 Sorted A–Z
+                 V52 listed ACC before ABSORB.
+[F02] SHIPPED V54 GLIMMER
+[F03] SHIPPED V54 VISION
+[F04] SHIPPED V54 ENVELOPE
+[F05] SHIPPED V54 PRESSURE (INFERRED)
+[F06] SHIPPED V54 HOLDOUT
+[F07] SHIPPED V54 WEBGPU
+                 Explicitly not native Metal.
+[F08] SHIPPED V54 P0–P3
+[F09] SHIPPED V54 EFFECTIVE INDEPENDENT PICOS
+[F10] NEXT        RISK CONE
+[F11] NEXT        TRADE ODDS
+[F12] NEXT        SHARPE (HOLDOUT)
+[F13] NEXT        BOOTSTRAP
+[F14] NEXT        CALIBRATION (GLIMMER)
+                 Backend must match the JS reference.
+[F15] NEXT        BACKEND
+[F16] NEXT        TIER (VISION)
+[F17] NEXT        REGALIA
+[F18] NEXT        AURUM
+[F19] NEXT        HALT
+[F20] NEXT        SEED
+[F21] NEXT        PERF
+[F22] NEXT        VPIN
+[F23] NEXT        TOXICITY
+[F24] NEXT        BOOK SLOPE
+[F25] NEXT        QUEUE IMBALANCE
+[F26] NEXT        PIVOT HORIZON
+[F27] NEXT        INTEGRITY
+                 Engine-defined; say so.
+[F28] NEXT        CFD100
+[F29] NEXT        Pronunciation / expansion for every acronym
+[F30] NEXT        'See also' links between terms
+[F31] NEXT        Class tag (observed/derived/inferred/model) on every term
+[F32] DEFERRED    Glossary API (JSON)
+                 Needs a hosting decision; trivial to emit at build time later.
+[F33] DEFERRED    Term history (which build introduced it)
+                 Needs release tooling.
+[F34] REJECTED    Definitions that restate the term
+                 Rejected: every entry must add information.
+[F35] REJECTED    Trading advice inside definitions
+[F36] REJECTED    Inventing exact formulas the engine does not expose
+                 Rejected: 'engine-defined' is the honest answer.
+[F37] REJECTED    Hiding engine-defined caveats to look authoritative
+[F38] REJECTED    Auto-generated definitions without review
+[F39] REJECTED    Pop-up definitions that cover the desk
+[F40] REJECTED    Crowd-edited glossary
+                 Rejected: terminology must match the engine.
+
+G · CONTENT — HOW IT WORKS & DATA PROVENANCE
+────────────────────────────────────────────
+[G01] SHIPPED V54 Data: 05 · GLIMMER compute output class
+                 Model output; calibrated against the JS reference.
+[G02] SHIPPED V54 Offline page states that nothing offline is live
+[G03] NEXT        How-it-works: add GLIMMER as a side-rail beside the processor field
+[G04] NEXT        How-it-works: mark where VISION reads from
+[G05] NEXT        Flow nodes linked to their glossary terms
+[G06] NEXT        Data: per-field provenance table for every desk panel
+[G07] NEXT        Data: feed fallback order explained (WS → REST → last known)
+[G08] NEXT        Data: what 'RT FALLBACK' in the desk header means
+[G09] NEXT        Data: history-gap handling (UNRESOLVED / PARTIAL / COMPLETE)
+[G10] NEXT        Data: storage — what stays on the device and what never leaves
+[G11] NEXT        Data: how long local state is kept
+[G12] NEXT        Data: clearing local desk state safely
+[G13] NEXT        Provenance colours identical across Data, How-it-works and desk
+[G14] NEXT        Provenance tag component reused on every page
+[G15] NEXT        Show the observation boundary in the desk itself
+[G16] NEXT        Explain simulated vs real positions explicitly
+                 Paper/lesson positions vs fleet books.
+[G17] NEXT        Explain 'CALIBRATING' / 'WARMING' states
+[G18] NEXT        Explain STALE results after resume
+[G19] NEXT        Document exchange sources the desk connects to
+[G20] NEXT        Document what happens when sources disagree
+[G21] NEXT        Data page: 'last reviewed' build stamp
+[G22] NEXT        Provenance diagram as accessible SVG
+[G23] NEXT        Worked provenance example: ATR from raw ticks
+[G24] NEXT        Worked provenance example: Crown change
+[G25] NEXT        Worked provenance example: GLIMMER trade odds
+[G26] NEXT        Caveats section: known limitations per class
+[G27] NEXT        Link the upgrade catalog from the Data page
+[G28] DEFERRED    Live feed-age widget on public pages
+                 Deferred: needs a public data service; must not be simulated.
+[G29] DEFERRED    Public status page
+                 Needs hosting/monitoring.
+[G30] DEFERRED    Third-party data attribution page
+                 Needs final data-source contracts.
+[G31] DEFERRED    Audit log export
+                 Needs an engine API.
+[G32] REJECTED    Showing example live values on public pages
+                 Rejected: the site's founding rule.
+[G33] REJECTED    Latency or uptime claims without measurement
+[G34] REJECTED    Blurring observed and model output for simplicity
+[G35] REJECTED    Marketing-style accuracy percentages
+[G36] REJECTED    Hiding fallback state from operators
+[G37] REJECTED    Calling inferred values 'readings'
+[G38] REJECTED    Claiming native Metal / hardware access
+                 Rejected: WebGPU only.
+[G39] REJECTED    Temperature or wattage displays
+                 Rejected: not exposed to web pages.
+[G40] REJECTED    Silent data backfill presented as live
+
+H · VISUAL IDENTITY & SKIN
+──────────────────────────
+[H01] SHIPPED V53 REGALIA skin installed site-wide
+                 Corners, mandala watermark, filigree, carbon and brushed-gold buttons.
+[H02] SHIPPED V53 Single texture location (/assets/textures) for site and desk
+[H03] SHIPPED V53 Logo no longer sits in a black box
+                 mix-blend-mode: lighten.
+[H04] SHIPPED V54 Mandala watermark scaled down and pushed off text
+                 150px, anchored past the corner.
+[H05] SHIPPED V54 Anchor '#' marks styled in dim gold
+[H06] SHIPPED V54 Target highlight in hot gold
+[H07] NEXT        Transparent logo PNG instead of blend-mode
+                 Removes a compositing layer.
+[H08] NEXT        SVG logo for crisp rendering at every size
+[H09] NEXT        Skin toggle on public pages (currently desk-only)
+[H10] NEXT        AURUM variant for public pages
+[H11] NEXT        Paint mandala layers beneath the dark gradient
+                 Guarantees skin never touches text contrast.
+[H12] NEXT        WebP/AVIF texture variants
+                 Smaller downloads; PNG fallback.
+[H13] NEXT        Texture preload on the desk route only
+[H14] NEXT        Consistent corner size tokens (site 20px, desk 18px)
+[H15] NEXT        Brand colour tokens shared between site and desk CSS
+[H16] NEXT        Focus ring colour as a token
+[H17] NEXT        Panel elevation tokens
+[H18] NEXT        Dark-mode-only declared (color-scheme: dark) on desk too
+[H19] NEXT        Theme-color per route
+[H20] NEXT        Favicon SVG with dark/light variants
+[H21] NEXT        Open Graph image (1200×630) in brand style
+                 Needs absolute URL → see SEO.
+[H22] NEXT        Print logo variant
+[H23] NEXT        Home: entry glyph gets the mandala as a halo
+[H24] NEXT        Icon set for provenance classes
+[H25] NEXT        Unified button component across site and desk
+[H26] NEXT        Desk badge 'V51' vs build 54
+                 Visible desk wording: awaiting owner approval.
+[H27] DEFERRED    Custom illustration set
+                 Needs an illustrator/brief.
+[H28] DEFERRED    Motion identity (logo reveal)
+                 Must respect V43 D03 and reduced motion.
+[H29] DEFERRED    Light theme
+                 Brand is dark-native; needs full token pass first.
+[H30] DEFERRED    Seasonal skins
+                 Low value until the token system exists.
+[H31] REJECTED    Constant animated glow
+                 Rejected per V43 D03: OLED contrast and frame stability.
+[H32] REJECTED    Textures inside the chart field
+                 Rejected: data ink stays on black.
+[H33] REJECTED    Neon gradients behind numbers
+[H34] REJECTED    Skeuomorphic bevels on every control
+[H35] REJECTED    Autoplaying background video
+[H36] REJECTED    Parallax on content pages
+[H37] REJECTED    Stock imagery
+[H38] REJECTED    Brand name of the reference skin anywhere
+                 Rejected by owner instruction.
+[H39] REJECTED    Watermarks over data values
+[H40] REJECTED    Heavy drop shadows that blur panel edges
+
+I · SITE ↔ DESK INTEGRATION
+───────────────────────────
+[I01] SHIPPED V53 GLIMMER modules installed in the desk
+                 V52 referenced them but shipped without them.
+[I02] SHIPPED V53 VISION view renders instead of an empty panel
+[I03] SHIPPED V53 Desk uses the site's single service worker
+                 Its ./sw.js registration pointed at a missing file.
+[I04] SHIPPED V53 Desk icons, splash images and manifest resolve
+                 All 404 in V52.
+[I05] SHIPPED V53 Desk tab title 'Bitcoin Desk · QuadCOM'
+                 Was a lone '❖'.
+[I06] SHIPPED V53 Desk texture base configurable (data-qc-texture-base)
+                 glimmer-vision.js works in any folder.
+[I07] SHIPPED V53 Absolute GLIMMER script paths
+                 No dependency on a trailing-slash redirect.
+[I08] SHIPPED V53 Removed name purged from desk OPFS file names
+                 Write-only files; no data lost.
+[I09] SHIPPED V54 Glossary defines GLIMMER, VISION, ENVELOPE, PRESSURE, P0–P3, HOLDOUT and WEBGPU
+                 Telemetry rows such as WORKERS and FRAME are next (see F).
+[I10] SHIPPED V54 Learn explains GLIMMER, VISION and 'inferred'
+[I11] NEXT        Desk panel titles link to their glossary term (long-press)
+[I12] NEXT        '?' on any desk panel opens the matching Learn card
+[I13] NEXT        Public pages show 'last desk session on this device: n min ago'
+                 Local timestamp only; no values.
+[I14] NEXT        Shared skin preference between site and desk
+                 Site honours OFF; add AURUM.
+[I15] NEXT        Desk ?view= links from Learn cards
+[I16] NEXT        Desk remembers it was opened from a Learn card and offers a way back
+[I17] NEXT        One shared CSS token file for site and desk
+[I18] NEXT        One source for glimmer*.js (build copies from quadcom/)
+                 Today they are byte-identical copies.
+[I19] NEXT        Release script that stamps the same build number everywhere
+[I20] NEXT        Desk visual-audit results published to a QA page at release
+[I21] NEXT        Site pages lint that fails on any removed/forbidden word
+[I22] NEXT        Desk exposes a read-only JSON of its public-safe state for the site
+                 Needs an explicit whitelist.
+[I23] NEXT        Desk handles /desk/bitcoin (no slash) gracefully
+                 Host redirect or a tiny index shim.
+[I24] NEXT        Desk error states link to the Data page explanation
+[I25] NEXT        Single manifest shared by site and desk (done) — add desk shortcut icon
+[I26] NEXT        Site footer shows desk build alongside site build
+[I27] NEXT        Consistent HALT semantics documented on both sides
+[I28] NEXT        Glossary search from inside the desk
+[I29] NEXT        Desk diagnostics console link to the catalog
+[I30] NEXT        Deep-link to VISION from GLIMMER glossary term
+[I31] DEFERRED    Server-side desk state sync
+                 Browser-owned state is policy (V43 D09).
+[I32] DEFERRED    Cross-device desk handoff
+                 Needs accounts/sync; conflicts with local-first policy.
+[I33] DEFERRED    Embedding the desk in content pages
+                 Needs a lightweight read-only renderer.
+[I34] DEFERRED    Desk notifications to the site
+                 Needs a push service.
+[I35] REJECTED    Public pages reading the desk's full local state
+                 Rejected: 2000-PICO state is megabytes; privacy by default.
+[I36] REJECTED    Showing desk values on public pages as live
+                 Rejected: provenance rule.
+[I37] REJECTED    Two service workers fighting over scope
+                 Rejected: the V52 defect fixed in V53.
+[I38] REJECTED    iframe-embedding the desk on the home page
+                 Rejected: doubles runtime cost.
+[I39] REJECTED    Tracking pixels to link site and desk sessions
+[I40] REJECTED    Forcing the desk to open on site entry
+
+J · DESK UX
+───────────
+[J01] SHIPPED V53 All four views switch correctly again
+                 The '43'/'52' stamp mismatch disabled them.
+[J02] SHIPPED V53 No header controls clipped on iPhone portrait or landscape
+[J03] SHIPPED V53 No header controls clipped on desktop
+[J04] SHIPPED V54 Cell labels no longer clipped
+[J05] SHIPPED V54 Reduced-motion support
+[J06] SHIPPED V54 noscript explanation
+[J07] NEXT        HALT confirmation state visible at a glance (colour + text)
+[J08] NEXT        VIEW button shows the next view, not only the current one
+[J09] NEXT        Long-press VIEW to pick a view directly
+[J10] NEXT        PERF mode explained in a tooltip
+[J11] NEXT        SEED confirmation to avoid accidental reseeding
+[J12] NEXT        Empty-chart state explains 'waiting for feed' instead of blank black
+[J13] NEXT        Price freshness indicator next to the price (age in s)
+                 Observed field; honest.
+[J14] NEXT        ALL view: tap a panel to focus it
+[J15] NEXT        FLEET view: search a PICO by number
+[J16] NEXT        Leaderboard: sticky header row
+[J17] NEXT        Trade panel: copy levels to clipboard
+[J18] NEXT        Horizon rail labels readable at 390px
+[J19] NEXT        Stress matrix axes labelled
+[J20] NEXT        Scenario cube axes labelled
+[J21] NEXT        Microstructure bars get min/max markers
+[J22] NEXT        Consistent '—' for unknown values
+[J23] NEXT        'ENGINE ERR' badge links to diagnostics
+[J24] NEXT        Orientation change keeps scroll/selection
+[J25] NEXT        Resume banner after long background: 'data from n min ago'
+[J26] NEXT        Operator notes (local) per session
+[J27] NEXT        Undo last SEED within 5 seconds
+[J28] NEXT        Keyboard control for every command
+[J29] NEXT        Diagnostics console readable (currently 5px)
+[J30] NEXT        'consensus' panel overflow in landscape ALL
+                 Pre-existing since V43.
+[J31] DEFERRED    Replay scrubber
+                 V43 D12 candidate; needs history controls.
+[J32] DEFERRED    Multi-asset desk
+                 Only BTC exists.
+[J33] DEFERRED    Order routing
+                 Out of scope: the desk is interpretive.
+[J34] DEFERRED    Alerts
+                 Needs D07/D08 semantics first.
+[J35] REJECTED    One-tap real trading from the Best Singular Trade
+                 Rejected: interpretive output is not an order ticket.
+[J36] REJECTED    Hiding risk panels to simplify
+                 Rejected: loss control is core.
+[J37] REJECTED    Confetti or celebratory animation on wins
+[J38] REJECTED    Sound on every tick
+[J39] REJECTED    Auto-SEED on load
+[J40] REJECTED    Pinch-zoom cockpit
+                 Rejected per V43 D02.
+
+K · GLIMMER & VISION
+────────────────────
+[K01] SHIPPED V53 GLIMMER live in the public desk
+[K02] SHIPPED V53 VISION renders (WebGPU → WebGL2 → Canvas 2D)
+[K03] SHIPPED V53 GLIMMER header rule yields to device-tuned iPhone layouts
+[K04] NEXT        VISION data-table fallback for screen readers
+[K05] NEXT        VISION export as PNG (local download)
+[K06] NEXT        Risk cone: show the observed price path overlaid
+[K07] NEXT        Trade odds: show how odds change with horizon
+[K08] NEXT        Holdout map: axis tick labels
+[K09] NEXT        Fleet independence: highlight the most crowded PICO
+[K10] NEXT        GLIMMER sheet: explain each row inline
+[K11] NEXT        GLIMMER: persist calibration results per device
+[K12] NEXT        GLIMMER: expose results to the Data page on this device only
+[K13] NEXT        WebGPU canvas presentation: retry after browser update
+                 Currently banned per session after an early loss.
+[K14] NEXT        VISION tier override (operator can force MED)
+[K15] NEXT        GLIMMER budget graph (last 60 s)
+                 Shows envelope and use; browser-observable only.
+[K16] NEXT        Sweep: confidence band on holdout Sharpe
+[K17] NEXT        Cone: coverage progress indicator
+[K18] NEXT        Odds: stale marker when trade changes
+[K19] NEXT        Correlation: cluster view of crowded PICOs
+[K20] NEXT        Worker pool size shown with reason (reserve policy)
+[K21] NEXT        Unit tests for kernels in CI (node)
+                 JS reference kernels are pure functions.
+[K22] NEXT        Golden-image tests for VISION shaders
+                 Offscreen WGSL + GLSL render compared per build.
+[K23] NEXT        GLIMMER telemetry export (JSON download)
+[K24] NEXT        Budget respects Low Power Mode heuristics
+[K25] NEXT        VISION colour-blind palette option
+[K26] NEXT        Cone horizons configurable (15m/1h/4h/24h)
+[K27] NEXT        GLIMMER docs page on the public site
+[K28] NEXT        Compute Pressure API support where available
+                 Already read; surface it in VISION tier choice.
+[K29] DEFERRED    WebNN acceleration
+                 Not broadly available; must be feature-detected first.
+[K30] DEFERRED    WebGPU on the ambient/wall renderers
+                 Wall/ambient are WebGL2; migrate only with measured wins.
+[K31] DEFERRED    SharedArrayBuffer data path for workers
+                 Needs COOP/COEP on the production host.
+[K32] DEFERRED    Real-device iPhone benchmark table
+                 Needs devices.
+[K33] REJECTED    Fake GPU utilisation %
+                 Rejected: not exposed by browsers.
+[K34] REJECTED    Temperature readouts
+                 Rejected: never fabricated.
+[K35] REJECTED    Running compute while hidden
+                 Rejected: suspends on visibility change.
+[K36] REJECTED    Burning cycles to raise utilisation numbers
+                 Rejected: work must produce value.
+[K37] REJECTED    Claiming native Metal access
+                 Rejected: WebGPU only.
+[K38] REJECTED    Constant shimmer animation
+                 Rejected: brief reveal only.
+[K39] REJECTED    Disabling calibration for speed
+                 Rejected: correctness first.
+[K40] REJECTED    Unbounded worker count
+                 Rejected: reserve for browser and OS.
+
+L · PERFORMANCE
+───────────────
+[L01] SHIPPED V53 Service worker caches only good same-origin responses
+[L02] SHIPPED V54 Stale-while-revalidate for assets
+                 Deploys reach returning visitors on the next load.
+[L03] SHIPPED V54 decoding=async on images
+[L04] SHIPPED V54 Image dimensions prevent layout shift
+[L05] NEXT        Compress textures (mandala 110KB → WebP ~35KB)
+[L06] NEXT        Resize logo PNG for its display sizes (632KB source)
+                 Largest asset on every page.
+[L07] NEXT        Preconnect hints for exchange endpoints on the desk route
+[L08] NEXT        Desk inline CSS split: critical vs deferred
+[L09] NEXT        Remove dead style layers from the desk
+                 Hundreds of overridden rules.
+[L10] NEXT        Lazy-load VISION module until the view is opened
+[L11] NEXT        Content-visibility: auto for glossary terms
+[L12] NEXT        Font-display irrelevant (system fonts) — document it
+[L13] NEXT        HTTP caching headers guide for the host
+[L14] NEXT        Brotli pre-compression at release
+[L15] NEXT        Budget: home page < 200KB transferred
+[L16] NEXT        Budget: desk first render < 1.5s on iPhone 13
+[L17] NEXT        Measure INP on the desk command bar
+[L18] NEXT        Throttle desk DOM writes when hidden (already) — document
+[L19] NEXT        Avoid layout thrash in desk render loop
+                 Batch reads/writes.
+[L20] NEXT        OffscreenCanvas for the price chart
+[L21] NEXT        Idle-time prefetch of Learn from Home
+[L22] NEXT        Module preload for glimmer.js
+[L23] NEXT        Trim unused glossary JS on other pages
+[L24] NEXT        Size-limit check in release script
+[L25] NEXT        Lighthouse CI on each build
+[L26] NEXT        Avoid backdrop-filter on low-end devices
+[L27] NEXT        Reduce box-shadow layers on desk panels
+[L28] NEXT        Texture sprites to cut requests
+[L29] DEFERRED    HTTP/3 and CDN
+                 Hosting decision.
+[L30] DEFERRED    Edge caching of the desk shell
+                 Hosting decision.
+[L31] DEFERRED    Real-user monitoring
+                 Needs a privacy-respecting service.
+[L32] REJECTED    Third-party analytics scripts
+                 Rejected: weight and privacy.
+[L33] REJECTED    Inlining every texture as base64
+                 Rejected: defeats caching.
+[L34] REJECTED    Minifying away all comments in source
+                 Rejected: repo stays readable; minify at release only.
+[L35] REJECTED    Preloading every route on first visit
+                 Rejected: wasteful on mobile data.
+[L36] REJECTED    Removing the service worker to 'avoid staleness'
+                 Rejected: fixed properly instead.
+[L37] REJECTED    Framework rewrite
+                 Rejected per V43 D05.
+[L38] REJECTED    Web font for icons
+[L39] REJECTED    Polling APIs faster than they update
+[L40] REJECTED    Autoplay media
+
+M · OFFLINE, PWA & RELIABILITY
+──────────────────────────────
+[M01] SHIPPED V53 One missing file no longer aborts service-worker install
+[M02] SHIPPED V53 Offline navigation ignores query strings
+                 ?view= desk links open offline.
+[M03] SHIPPED V53 Redirected responses are never cached
+[M04] SHIPPED V53 Manifest splits 'any' and 'maskable' icons
+                 V52 declared one icon as both.
+[M05] SHIPPED V54 Honest offline page for unvisited routes
+                 Instead of silently showing Home.
+[M06] SHIPPED V54 404 and offline pages precached
+[M07] SHIPPED V54 App shortcuts: Desk, Glossary, Learn
+[M08] SHIPPED V54 Cache name bumped to v54
+[M09] NEXT        'Update available — reload' toast when a new worker waits
+[M10] NEXT        Offline indicator in the site header
+[M11] NEXT        Background sync for queued desk checkpoints
+[M12] NEXT        Storage quota warning in the desk
+[M13] NEXT        Persistent storage request explained to the user
+[M14] NEXT        Manifest screenshots for richer install UI
+[M15] NEXT        Manifest id/scope audit after hosting move
+[M16] NEXT        Clear-site-data button on the Data page
+[M17] NEXT        Offline page lists cached routes
+[M18] NEXT        Versioned asset URLs at release
+[M19] NEXT        Service worker unit tests (fetch routing)
+[M20] NEXT        Navigation preload
+[M21] NEXT        Periodic cache cleanup of stale entries
+[M22] NEXT        Handle desk launch from the home-screen with stale shell
+[M23] NEXT        Error boundary around GLIMMER init
+                 Already graceful; add a visible note.
+[M24] NEXT        Recovery link when OPFS is unavailable
+[M25] NEXT        Test in iOS standalone mode after each build
+[M26] NEXT        Test Android install + maskable icon crop
+[M27] NEXT        Test offline after 7 days (iOS eviction)
+[M28] NEXT        Export/import desk state file
+[M29] DEFERRED    Push notifications
+                 Needs a server and consent design.
+[M30] DEFERRED    Periodic background sync
+                 Limited browser support.
+[M31] DEFERRED    Web Share Target
+                 No sharing use case yet.
+[M32] DEFERRED    File handling (open .qc files)
+                 No file format defined.
+[M33] REJECTED    Pretending to be live while offline
+                 Rejected: provenance.
+[M34] REJECTED    Caching error pages
+[M35] REJECTED    Two workers with overlapping scope
+[M36] REJECTED    Infinite retry loops on failed fetches
+[M37] REJECTED    Silent data loss on eviction
+[M38] REJECTED    Forcing install prompts
+[M39] REJECTED    Background compute when the app is hidden
+[M40] REJECTED    Clearing user state on update
+
+N · SEO, SHARING & METADATA
+───────────────────────────
+[N01] SHIPPED V53 Meta description on every page
+[N02] SHIPPED V53 Favicons and apple-touch-icon on every page
+[N03] SHIPPED V54 Open Graph title/description/type/site_name
+[N04] SHIPPED V54 Twitter summary card
+[N05] SHIPPED V54 robots.txt
+[N06] SHIPPED V54 Build 54 stamped in every footer
+[N07] NEXT        Unique, specific descriptions per Learn card when deep-linked
+[N08] NEXT        Title pattern: page · QuadCOM (consistent casing)
+[N09] NEXT        Structured data: WebSite + DefinedTermSet for the glossary
+[N10] NEXT        hreflang when locales exist
+[N11] NEXT        Alt text review for every image
+[N12] NEXT        Human-readable URLs for Learn cards
+[N13] NEXT        Share button on glossary terms (Web Share API)
+[N14] NEXT        Short link format for terms (/g/atr)
+[N15] NEXT        Humans.txt / credits
+[N16] NEXT        security.txt
+                 Needs a contact address.
+[N17] NEXT        RSS/Atom for build notes
+[N18] NEXT        Changelog page
+[N19] NEXT        Upgrade catalog published as a page
+[N20] NEXT        noindex on offline/404 pages
+[N21] NEXT        Descriptive link text audit (no 'click here')
+[N22] NEXT        Heading outline audit per page
+[N23] NEXT        Meta theme-color matches header per route
+[N24] NEXT        Apple web-app title per route
+[N25] NEXT        Twitter/OG image alt text
+[N26] NEXT        Consistent brand casing in titles (QuadCOM vs QUADCOM)
+[N27] NEXT        Remove duplicate titles (Home and QuadCOM pages share one)
+[N28] NEXT        Semantic time elements for build dates
+[N29] DEFERRED    sitemap.xml
+                 Needs the production domain.
+[N30] DEFERRED    Canonical link tags
+                 Needs the production domain.
+[N31] DEFERRED    og:image / og:url
+                 Must be absolute URLs; needs the domain.
+[N32] DEFERRED    Search Console / verification tags
+                 Needs the domain and owner accounts.
+[N33] REJECTED    Keyword stuffing
+[N34] REJECTED    Hidden text for crawlers
+[N35] REJECTED    Auto-generated doorway pages per term
+[N36] REJECTED    Tracking parameters on internal links
+[N37] REJECTED    Fake review/rating markup
+[N38] REJECTED    Clickbait titles
+[N39] REJECTED    Cloaking
+[N40] REJECTED    Buying links
+
+O · QUALITY, SECURITY & RELEASE
+───────────────────────────────
+[O01] SHIPPED V53 Review-agent gate before every export
+[O02] SHIPPED V53 Route crawl (7 routes × phone/desktop): no 404s, no errors
+[O03] SHIPPED V53 Desk visual audit across 4 views × 2 orientations
+[O04] SHIPPED V54 Crawl extended to 404 and offline pages
+[O05] SHIPPED V54 Offline behaviour verified with the server stopped
+                 Visited routes, desk with query, unvisited → offline page.
+[O06] SHIPPED V54 Glossary behaviour tests (filter, count, /, Esc, ?q=, deep link)
+[O07] SHIPPED V54 This 600-item catalog with honest statuses
+[O08] SHIPPED V54 Catalog generator validates 15 areas × 40 items
+[O09] NEXT        Content-Security-Policy for content pages
+                 Pages use only same-origin scripts; inline skin script needs a hash.
+[O10] NEXT        CSP for the desk
+                 Needs inventory of exchange endpoints and blob workers.
+[O11] NEXT        Subresource hashes for external resources
+                 None today; keep it that way.
+[O12] NEXT        Referrer-Policy: strict-origin-when-cross-origin
+[O13] NEXT        Permissions-Policy (camera, mic, geolocation off)
+[O14] NEXT        X-Content-Type-Options nosniff guidance for host
+[O15] NEXT        HTML validation in the release script
+[O16] NEXT        Link checker in the release script
+[O17] NEXT        Forbidden-word check in the release script
+[O18] NEXT        Automated screenshot diff per route
+[O19] NEXT        Desk visual audit in CI (headless)
+[O20] NEXT        GLIMMER kernel parity tests in CI
+[O21] NEXT        VISION golden images in CI
+[O22] NEXT        Release notes generated from the catalog
+[O23] NEXT        Semantic build numbers shared site/desk
+[O24] NEXT        Single source of truth for version strings
+[O25] NEXT        Dependency-free policy documented
+[O26] NEXT        Accessibility smoke test in CI (axe-core, local only)
+[O27] SHIPPED V54 Desk visual audit ignores decorative aria-hidden overlays
+                 The brand/dataRiver collision reported since V43 was a false positive.
+[O28] NEXT        Desk crash recovery test (kill tab mid-save)
+[O29] NEXT        Test matrix: Safari iOS, Chrome Android, Safari/Chrome/Firefox desktop
+[O30] NEXT        Threat model for local storage contents
+[O31] DEFERRED    Bug bounty
+                 Needs an owner process.
+[O32] DEFERRED    Pen test
+                 Needs production hosting.
+[O33] DEFERRED    SOC-style controls
+                 No backend.
+[O34] REJECTED    Shipping without a review gate
+[O35] REJECTED    Disabling tests to go green
+[O36] REJECTED    Secrets in the repository
+[O37] REJECTED    eval() or remote code in pages
+[O38] REJECTED    Third-party scripts without review
+[O39] REJECTED    Force-pushing shared history without owner instruction
+[O40] REJECTED    Marking unverified work as shipped
