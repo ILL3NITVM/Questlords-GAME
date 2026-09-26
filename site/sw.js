@@ -3,8 +3,9 @@ const CORE=['/','/offline/','/qc-site.css?v=58','/qc-site.js?v=58','/assets/icon
 '/learn/','/how-it-works/','/quadcom/','/data/','/glossary/','/catalog/','/ever-next/','/ever-next/core.js?v=58','/ever-next/feed.js?v=58','/ever-next/axes.json?v=58','/desk/','/desk/bitcoin/','/desk/dogecoin/','/desk/xrp/','/desk/litecoin/','/assets/dogecoin.png','/assets/xrp.png','/assets/litecoin.png','/desk/bitcoin/glimmer.js','/desk/bitcoin/glimmer-vision.js',
 '/assets/textures/aurum-brushed.png','/assets/textures/obsidian-grain.png','/assets/textures/carbon-weave.png','/assets/textures/glass-sheen.png','/assets/textures/quad-lattice.png',
 ...['mandala','corner-tl','corner-tr','corner-bl','corner-br','filigree-band','starburst','kaleido-tile'].map(n=>`/assets/textures/regalia/${n}.png`)];
-// One missing file must not abort the whole install, and only good same-origin responses are cached.
-const warm=()=>caches.open(CACHE).then(c=>Promise.allSettled(CORE.map(u=>c.add(u))));
+// One missing file must not abort the whole install, and only good, same-origin, non-redirected responses are cached
+// (install included: a host that redirects /x.html to /x must not leave a redirect standing in for a page).
+const warm=()=>caches.open(CACHE).then(c=>Promise.allSettled(CORE.map(u=>fetch(u,{cache:'reload'}).then(r=>{if(r.ok&&r.type==='basic'&&!r.redirected)return c.put(u,r)}))));
 const keep=(req,res)=>{if(res&&res.ok&&res.type==='basic'&&!res.redirected){const x=res.clone();caches.open(CACHE).then(c=>c.put(req,x)).catch(()=>{})}return res};
 self.addEventListener('install',e=>e.waitUntil(warm().then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

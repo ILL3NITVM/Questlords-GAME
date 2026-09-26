@@ -36,7 +36,7 @@ for a in ASPECTS:
     assert len(a[3]) == 6, (a[0], "six moves")
     for m in a[3]:
         nature, cond, text = move_parts(m)
-        assert nature in "afthw" and text.count("{s}") == 1, (a[0], m)
+        assert nature in "afthwd" and text.count("{s}") == 1, (a[0], m)
         assert cond <= KINDS | TRAITS | set(sid), (a[0], m, "unknown condition word")
         # The surface is always the object: "{s}" never starts a clause, so no verb has to agree with it.
         assert not re.search(r"(^|[.:;] )\{s\}", text), (a[0], m)
@@ -115,8 +115,8 @@ if os.path.exists(rt_path):
     t = rt.get("tinyText", {})
     if t.get("390x844", {}).get("count"):
         m, d = t["390x844"], t.get("1280x800", {})
-        ev("deskport", "type", [1], 2, f"{m['count']} visible text elements render below 7px at 390×844 (smallest {m['minPx']}px)"
-           + (f"; {d['count']} at 1280×800" if d.get("count") else "") + ", measured under GENESIS.", "runtime audit, tools/qa/measure-runtime.mjs")
+        ev("deskport", "type", [1], 2, f"{m['count']} visible text elements render below 7px on a 390×844 phone in portrait (smallest {m['minPx']}px), measured under GENESIS."
+           + (f" The desktop view at 1280×800 has {d['count']} (smallest {d['minPx']}px)." if d.get("count") else ""), "runtime audit, tools/qa/measure-runtime.mjs")
 
 # QA coverage: what each script actually asserts. The build fails if a listed script does not exist.
 ASSERTS = {  # behaviour asserted
@@ -128,7 +128,10 @@ ASSERTS = {  # behaviour asserted
     "ever-next.mjs": ["evernext", "evergen"],
     "offline.mjs": ["offline", "sw"],
 }
-LAYOUT = {"desk-views.mjs": ["cmdbar", "chart", "axis", "fleetbal", "bullbear", "toppico", "fundcells", "micro", "loss", "leader", "wall", "book", "horizons", "vision"]}
+# Layout audits (__quadcomVisualAudit: overflow, collisions, header fit) without value assertions.
+# desk-views.mjs runs it on the Bitcoin desk in all four views; desks.mjs runs it on all four desks in the core view.
+LAYOUT = {"desk-views.mjs": ["cmdbar", "chart", "axis", "fleetbal", "bullbear", "toppico", "fundcells", "micro", "loss", "leader", "wall", "book", "horizons", "vision"],
+          "desks.mjs": ["cmdbar", "fleetbal", "bullbear", "toppico", "fundcells", "micro", "loss"]}
 qa_dir = os.path.join(ROOT, "tools", "qa")
 for f in list(ASSERTS) + list(LAYOUT):
     assert os.path.exists(os.path.join(qa_dir, f)), f"coverage map names a missing QA script: {f}"
@@ -138,7 +141,8 @@ for s in SURFACES:
     if s[0] in asserted or not applies(s, ASPECTS[aid.index("tests")]):
         continue
     if s[0] in layout_only:
-        text = "Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values."
+        by = sorted(f for f, ss in LAYOUT.items() if s[0] in ss)
+        text = f"{' and '.join(by)} audit{'' if len(by) > 1 else 's'} its layout (overflow, collisions, header fit) but no script asserts its values."
     elif s[3] == "ui" and s[0] != "glimmersheet":
         text = "Only the crawl's page-wide checks reach it (errors, text size, contrast); no script asserts its behaviour."
     elif s[0] == "coingen":
@@ -206,7 +210,7 @@ main = f'''<main class="qc-main" id="main"><div class="qc-kicker">SELF-FEEDBACK 
 <div class="qc-metric"><span>ITEMS PER PASS</span><b>{per_pass:,}</b></div>
 <div class="qc-metric"><span>MEASURED FINDINGS</span><b>{len(evidence)} from this build</b></div>
 <div class="qc-metric"><span>PASSES</span><b>ENDLESS: after the last item the axes are walked again</b></div>
-<p>Items are generated candidates, not claims. An aspect pairs only with the kinds of surface it can improve, each move deepens through five stages suited to its nature (audit, fix, writing, test or human judgement), and each cycle raises the bar. Items marked MEASURED carry a finding from this build&#x27;s own files, a browser audit or a release review; measurements refresh when the site is rebuilt. Your DONE, LATER and SKIP marks stay in this browser.</p></section>
+<p>Items are generated candidates, not claims. An aspect pairs only with the kinds of surface it can improve, each move deepens through five stages suited to its nature (audit, fix, writing, documentation, test or human judgement), and each cycle raises the bar. Items marked MEASURED carry a finding from this build&#x27;s own files, a browser audit or a release review; measurements refresh when the site is rebuilt. Your DONE, LATER and SKIP marks stay in this browser.</p></section>
 <section class="qc-panel qc-span12" id="feed"><h2>THE FEED<a class="qc-anchor" href="#feed" aria-label="Link to THE FEED">#</a></h2>
 <div class="qc-en-controls" data-en-controls hidden>
 <div class="qc-seg qc-en-modes" role="radiogroup" aria-label="Mode">{"".join(f'<button type="button" role="radio" aria-checked="{"true" if m == "feed" else "false"}" data-mode="{m}">{m.upper()}</button>' for m in ("feed", "today", "sweep", "polish", "compose"))}</div>
@@ -240,7 +244,7 @@ lines = ["QUADCOM ❖ EVER NEXT — THE EVERLASTING IMPROVEMENT FEED", "",
 for e in evidence:
     lines.append(f"[{'HIGH' if e['sev'] == 2 else 'NOTE'}] {e['s']}.{e['a']} (moves {', '.join(str(m + 1) for m in e['m'])}): {e['text']} ({e['src']})")
 lines += ["", "ASPECTS, MOVES AND BARS", "───────────────────────"]
-NATURE = {"a": "audit", "f": "fix", "w": "writing", "t": "test", "h": "human"}
+NATURE = {"a": "audit", "f": "fix", "w": "writing", "d": "documentation", "t": "test", "h": "human"}
 for a in ASPECTS:
     applies_to = [s[0] for s in SURFACES if applies(s, a)]
     lines.append(f"{a[1]}  ({len(applies_to)} surfaces)")

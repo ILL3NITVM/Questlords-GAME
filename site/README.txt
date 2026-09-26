@@ -22,7 +22,7 @@ Source preservation:
 - GLIMMER is installed: desk/bitcoin/glimmer.js (compute governor) and desk/bitcoin/glimmer-vision.js (VISION view). They are the same modules as quadcom/ in the repo.
 - REGALIA skin installed: every texture lives once, in assets/textures/ (the desk points there with data-qc-texture-base). The skin is ornament only; the texture button in the GLIMMER sheet cycles REGALIA → AURUM → OFF (site pages: REGALIA or OFF).
 - Direct routes require a static host configured to serve each folder's index.html (standard directory-index behavior).
-- Service worker build: quadcom-genesis-public-v58. Assets are stale-while-revalidate; unvisited routes offline get /offline.html. Navigation is network-first. Only good same-origin responses are cached, and one missing file cannot abort install. The desk registers the same root worker (/sw.js, scope /).
+- Service worker build: quadcom-genesis-public-v58. Assets are stale-while-revalidate; unvisited routes offline get /offline/. Navigation is network-first. Only good same-origin responses are cached, and one missing file cannot abort install. The desk registers the same root worker (/sw.js, scope /).
 
 Build 53 fixes:
 - Skin textures, favicons, splash images and the desk's service worker were referenced but missing (404); all now resolve.

@@ -1,7 +1,7 @@
 QUADCOM ❖ EVER NEXT — THE EVERLASTING IMPROVEMENT FEED
 
 81 surfaces · 32 aspects · 192 moves · 5 depths · escalating bars per aspect
-957 valid surface × aspect pairings · 82,890 items per pass · after the last item the axes are walked again
+957 valid surface × aspect pairings · 82,140 items per pass · after the last item the axes are walked again
 
 Every item is: <move on a surface> + <the depth sentence for that move's nature>, judged against the aspect's bar for its cycle.
 Browse, filter, mix and mark them at /ever-next/. This file lists the axes and this build's measured findings.
@@ -9,7 +9,7 @@ Browse, filter, mix and mark them at /ever-next/. This file lists the axes and t
 MEASURED FINDINGS (self-feedback from this build)
 ─────────────────────────────────────────────────
 [HIGH] cmdbar.motion (moves 2): Infinite animations running, measured in a browser: qcBeacon, qcLogoBreath under AURUM, OFF, REGALIA at 390x844; qcBeacon, qcLogoBreath, qcRiver under AURUM, OFF, REGALIA at 1280x800. None run under GENESIS. (runtime audit, tools/qa/measure-runtime.mjs)
-[HIGH] deskport.type (moves 2): 62 visible text elements render below 7px at 390×844 (smallest 3.86px); 52 at 1280×800, measured under GENESIS. (runtime audit, tools/qa/measure-runtime.mjs)
+[HIGH] deskport.type (moves 2): 62 visible text elements render below 7px on a 390×844 phone in portrait (smallest 3.86px), measured under GENESIS. The desktop view at 1280×800 has 52 (smallest 3.81px). (runtime audit, tools/qa/measure-runtime.mjs)
 [HIGH] deskport.weight (moves 1, 2): A desk costs 480 KB of HTML and scripts before textures (the page itself is 356 KB). (file sizes)
 [HIGH] logo.weight (moves 2, 3): 705 KB across 3 file(s), over its 300 KB budget; the largest is quadcom-official-logo.png at 618 KB. (file sizes)
 [NOTE] orb.tests (moves 2): Only the crawl's page-wide checks reach it (errors, text size, contrast); no script asserts its behaviour. (tools/qa coverage map)
@@ -25,23 +25,23 @@ MEASURED FINDINGS (self-feedback from this build)
 [NOTE] catfilter.tests (moves 2): Only the crawl's page-wide checks reach it (errors, text size, contrast); no script asserts its behaviour. (tools/qa coverage map)
 [NOTE] storagecard.copy (moves 5): It counts localStorage keys only; IndexedDB and OPFS usage per desk is not included. (review, build 56)
 [NOTE] storagecard.tests (moves 2): Only the crawl's page-wide checks reach it (errors, text size, contrast); no script asserts its behaviour. (tools/qa coverage map)
-[NOTE] cmdbar.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
+[NOTE] cmdbar.tests (moves 2): desk-views.mjs and desks.mjs audit its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
 [NOTE] chart.empty (moves 2): Before history arrives the chart field is blank rather than saying it is waiting for observed data. (desk screenshots, build 57)
-[NOTE] axis.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
+[NOTE] axis.tests (moves 2): desk-views.mjs audits its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
 [NOTE] fleetbal.empty (moves 5): A fresh desk shows starting balances as if they were results; there is no 'no trades yet' state. (desk screenshots, build 57)
-[NOTE] fleetbal.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
-[NOTE] bullbear.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
-[NOTE] toppico.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
+[NOTE] fleetbal.tests (moves 2): desk-views.mjs and desks.mjs audit its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
+[NOTE] bullbear.tests (moves 2): desk-views.mjs and desks.mjs audit its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
+[NOTE] toppico.tests (moves 2): desk-views.mjs and desks.mjs audit its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
 [NOTE] fundcells.precision (moves 5): Zero money values mix formats: $0 beside $0.0. (desk screenshots, build 57)
-[NOTE] fundcells.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
-[NOTE] micro.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
+[NOTE] fundcells.tests (moves 2): desk-views.mjs and desks.mjs audit its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
+[NOTE] micro.tests (moves 2): desk-views.mjs and desks.mjs audit its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
 [NOTE] loss.precision (moves 3): GEOMETRIC GROWTH shows 0.000%/tick for small real moves: fixed decimals round them away. (desk screenshots, build 57)
-[NOTE] loss.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
-[NOTE] leader.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
-[NOTE] wall.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
-[NOTE] book.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
-[NOTE] horizons.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
-[NOTE] vision.tests (moves 2): Only desk-views.mjs reaches it: it audits layout (overflow and collisions in four views, both orientations) but no script asserts its values. (tools/qa coverage map)
+[NOTE] loss.tests (moves 2): desk-views.mjs and desks.mjs audit its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
+[NOTE] leader.tests (moves 2): desk-views.mjs audits its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
+[NOTE] wall.tests (moves 2): desk-views.mjs audits its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
+[NOTE] book.tests (moves 2): desk-views.mjs audits its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
+[NOTE] horizons.tests (moves 2): desk-views.mjs audits its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
+[NOTE] vision.tests (moves 2): desk-views.mjs audits its layout (overflow, collisions, header fit) but no script asserts its values. (tools/qa coverage map)
 [NOTE] glimmersheet.tests (moves 2): No script in tools/qa opens or asserts on it. (tools/qa coverage map)
 [NOTE] deskport.consistency (moves 6): The desk source carries 2134 !important declarations across 33 style blocks. (desk source)
 [NOTE] coins.weight (moves 2, 3): 232 KB across 4 file(s), over its 120 KB budget; the largest is bitcoin.png at 70 KB. (file sizes)
@@ -94,7 +94,7 @@ ALIGNMENT & GRID  (52 surfaces)
   3. [fix] Centre the icons in <surface> optically, not just by bounding box.
   4. [fix] Make the edges of adjacent blocks in <surface> share one line.
   5. [audit] Check <surface> for half-pixel blur at DPR 2 and 3.
-  6. [fix] Lock the column structure of <surface> against changing content.
+  6. [fix · only datapanel, layout, page] Lock the column structure of <surface> against changing content.
   bar, cycle 1: on the 12-column grid
   bar, cycle 2: sub-pixel exact at DPR 3
   bar, cycle 3: stable under live data changes
@@ -122,7 +122,7 @@ FOCUS & KEYBOARD  (26 surfaces)
   1. [audit] Tab through <surface> and record the order and any trap.
   2. [fix] Give every control in <surface> a visible focus ring.
   3. [fix] Make every function of <surface> reachable by keyboard alone.
-  4. [fix] Return focus to the trigger each time a view or sheet in <surface> closes.
+  4. [fix · only cmdbar, glimmersheet, more, page, termsheet] Return focus to the trigger each time a view or sheet in <surface> closes.
   5. [fix] Add arrow-key movement to every group of options in <surface>.
   6. [human] Operate <surface> with switch access and record every dead end.
   bar, cycle 1: visible focus everywhere
@@ -303,7 +303,7 @@ DETERMINISM  (15 surfaces)
   2. [fix · only tool] Remove timestamps and randomness from what <surface> writes.
   3. [fix · only tool] Pin every input of <surface>.
   4. [fix · only tool] Make <surface> fail loudly on unexpected input.
-  5. [writing · only doc, image, texture] Record the exact command that produces <surface>.
+  5. [documentation · only doc, image, texture] Record the exact command that produces <surface>.
   6. [audit · only tool] Run <surface> on another machine and diff the output.
   bar, cycle 1: byte-identical rebuilds
   bar, cycle 2: fails on drift
@@ -312,19 +312,19 @@ TEST COVERAGE  (64 surfaces)
   1. [audit] List each job of <surface> and the QA script that checks it.
   2. [test] Add a QA check for the riskiest untested part of <surface>.
   3. [test] Make the failure messages of the QA checks for <surface> name the cause.
-  4. [test] Run the QA checks for <surface> at 390px and 1280px.
+  4. [test · only datapanel, layout, page, ui] Run the QA checks for <surface> at 390px and 1280px.
   5. [test] Add a regression check for the last bug found in <surface>.
   6. [test] Time the QA checks for <surface> and keep them fast.
   bar, cycle 1: riskiest part checked
   bar, cycle 2: every past bug has a check
   bar, cycle 3: suite under five minutes
 DOCUMENTATION  (25 surfaces)
-  1. [audit] Check the README explains <surface> in one paragraph.
-  2. [writing] Document the reason for <surface>, not just the mechanics.
-  3. [writing] Give <surface> a worked example in the README.
-  4. [writing] List the invariants of <surface>.
-  5. [writing] Record the known limits of <surface> honestly.
-  6. [audit] Check the documentation of <surface> still matches the code.
+  1. [documentation] Check the README explains <surface> in one paragraph.
+  2. [documentation] Document the reason for <surface>, not just the mechanics.
+  3. [documentation] Give <surface> a worked example in the README.
+  4. [documentation] List the invariants of <surface>.
+  5. [documentation] Record the known limits of <surface> honestly.
+  6. [documentation] Check the documentation of <surface> still matches the code.
   bar, cycle 1: one clear paragraph
   bar, cycle 2: invariants listed
   bar, cycle 3: docs match code
@@ -384,6 +384,7 @@ DEPTHS BY MOVE NATURE
 audit: OBSERVE (Run it once and record every finding; change nothing yet.) → REFINE (Fix each recorded finding.) → SYSTEMATISE (Turn the fixes into shared rules, tokens or templates.) → PROVE (Automate the audit as a QA check that fails on a regression.) → SUSTAIN (Run the automated audit in every build so none ships without it.)
 fix: OBSERVE (First list every place this applies; change nothing yet.) → REFINE (Make the change in each place.) → SYSTEMATISE (Move the change into a shared token, rule or component.) → PROVE (Add a QA check that fails if it regresses.) → SUSTAIN (Run its regression check in every build so none ships without it.)
 writing: OBSERVE (First list every place this applies; change nothing yet.) → REFINE (Rewrite each one.) → SYSTEMATISE (Add the rule to a shared style guide that every page and tool follows.) → PROVE (Add a QA check that fails when the rule is broken.) → SUSTAIN (Run that check in every build so none ships without it.)
+documentation: OBSERVE (First note what is missing or out of date; change nothing yet.) → REFINE (Write or correct it.) → SYSTEMATISE (Use the same README section layout for every tool and asset.) → PROVE (Add a QA check that fails when the documentation and the code disagree.) → SUSTAIN (Run that check in every build so none ships without it.)
 test: OBSERVE (First list the cases worth covering.) → REFINE (Write the check for the most important case.) → SYSTEMATISE (Share its helpers so other checks can reuse them.) → PROVE (Plant the regression once to confirm the check fails.) → SUSTAIN (Run it in every build so none ships without it.)
 human: OBSERVE (Do it once and write down what you saw.) → REFINE (Fix what it revealed.) → SYSTEMATISE (Write the procedure down so anyone can repeat it.) → PROVE (Have a second person repeat it and compare notes.) → SUSTAIN (Put it on the release checklist.)
 

@@ -10,6 +10,7 @@ ASPECTS   qualities to refine. An aspect applies to a surface when the surface's
           traits or id match one of the listed words. Each move is tagged by its nature, which chooses the depth text:
             a: an audit (look and record)    f: a fix (change something)       w: writing (change words)
             t: a test (write a QA check)     h: human judgement (a person must look)
+            d: documentation (explain something in the README)
 DEPTHS    five stages per move nature: the same move always has a better next version.
 """
 
@@ -135,7 +136,7 @@ ASPECTS = [
         "f:Centre the icons in {s} optically, not just by bounding box.",
         "f:Make the edges of adjacent blocks in {s} share one line.",
         "a:Check {s} for half-pixel blur at DPR 2 and 3.",
-        "f:Lock the column structure of {s} against changing content."],
+        "f[page|layout|datapanel]:Lock the column structure of {s} against changing content."],
         ["on the 12-column grid", "sub-pixel exact at DPR 3", "stable under live data changes"]),
     ("hierarchy", "HIERARCHY", dict(kinds="page datapanel layout", include="more termsheet deskcards glimmersheet panel storagecard"), [
         "h:Name the single most important thing in {s} and check that it reads first.",
@@ -157,7 +158,7 @@ ASPECTS = [
         "a:Tab through {s} and record the order and any trap.",
         "f:Give every control in {s} a visible focus ring.",
         "f:Make every function of {s} reachable by keyboard alone.",
-        "f:Return focus to the trigger each time a view or sheet in {s} closes.",
+        "f[page|more|termsheet|glimmersheet|cmdbar]:Return focus to the trigger each time a view or sheet in {s} closes.",
         "f:Add arrow-key movement to every group of options in {s}.",
         "h:Operate {s} with switch access and record every dead end."],
         ["visible focus everywhere", "no traps, logical order", "arrow-key groups follow ARIA patterns"]),
@@ -302,24 +303,24 @@ ASPECTS = [
         "f[tool]:Remove timestamps and randomness from what {s} writes.",
         "f[tool]:Pin every input of {s}.",
         "f[tool]:Make {s} fail loudly on unexpected input.",
-        "w[texture|doc|image]:Record the exact command that produces {s}.",
+        "d[texture|doc|image]:Record the exact command that produces {s}.",
         "a[tool]:Run {s} on another machine and diff the output."],
         ["byte-identical rebuilds", "fails on drift", "same on any machine"]),
     ("tests", "TEST COVERAGE", dict(kinds="page ui datapanel layout runtime tool"), [
         "a:List each job of {s} and the QA script that checks it.",
         "t:Add a QA check for the riskiest untested part of {s}.",
         "t:Make the failure messages of the QA checks for {s} name the cause.",
-        "t:Run the QA checks for {s} at 390px and 1280px.",
+        "t[page|ui|datapanel|layout]:Run the QA checks for {s} at 390px and 1280px.",
         "t:Add a regression check for the last bug found in {s}.",
         "t:Time the QA checks for {s} and keep them fast."],
         ["riskiest part checked", "every past bug has a check", "suite under five minutes"]),
     ("docs", "DOCUMENTATION", dict(kinds="tool runtime texture image"), [
-        "a:Check the README explains {s} in one paragraph.",
-        "w:Document the reason for {s}, not just the mechanics.",
-        "w:Give {s} a worked example in the README.",
-        "w:List the invariants of {s}.",
-        "w:Record the known limits of {s} honestly.",
-        "a:Check the documentation of {s} still matches the code."],
+        "d:Check the README explains {s} in one paragraph.",
+        "d:Document the reason for {s}, not just the mechanics.",
+        "d:Give {s} a worked example in the README.",
+        "d:List the invariants of {s}.",
+        "d:Record the known limits of {s} honestly.",
+        "d:Check the documentation of {s} still matches the code."],
         ["one clear paragraph", "invariants listed", "docs match code"]),
     ("security", "SECURITY & PRIVACY", dict(kinds="runtime page", exclude="pricefmt"), [
         "a:List everything stored, sent and received by {s}.",
@@ -374,6 +375,9 @@ DEPTH_TEXT = {
           "Run its regression check in every build so none ships without it."],
     "w": ["First list every place this applies; change nothing yet.", "Rewrite each one.",
           "Add the rule to a shared style guide that every page and tool follows.", "Add a QA check that fails when the rule is broken.",
+          "Run that check in every build so none ships without it."],
+    "d": ["First note what is missing or out of date; change nothing yet.", "Write or correct it.",
+          "Use the same README section layout for every tool and asset.", "Add a QA check that fails when the documentation and the code disagree.",
           "Run that check in every build so none ships without it."],
     "t": ["First list the cases worth covering.", "Write the check for the most important case.",
           "Share its helpers so other checks can reuse them.", "Plant the regression once to confirm the check fails.",
