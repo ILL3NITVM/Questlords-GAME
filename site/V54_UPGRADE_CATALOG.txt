@@ -1,9 +1,9 @@
-QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG (UPDATED BUILD 56)
+QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG (UPDATED BUILD 57)
 
 600 improvements across the public site and the Bitcoin Desk, each with an honest status.
 SHIPPED = built and verified in that build. NEXT = recommended. DEFERRED = blocked (reason given).
 REJECTED = conflicts with the site's principles (reason given). Nothing is marked shipped unless it was verified.
-SUMMARY  SHIPPED V56 18 · SHIPPED V54 69 · SHIPPED V53 42 · NEXT 308 · DEFERRED 58 · REJECTED 105 · TOTAL 600
+SUMMARY  SHIPPED V57 2 · SHIPPED V56 18 · SHIPPED V54 69 · SHIPPED V53 42 · NEXT 306 · DEFERRED 58 · REJECTED 105 · TOTAL 600
 
 A · ACCESSIBILITY
 ─────────────────
@@ -304,8 +304,8 @@ E · CONTENT — LEARN
                  Operational semantics, engine-accurate.
 [E11] NEXT        23 · What PERF modes change
 [E12] NEXT        24 · Reading the three desk views
-[E13] NEXT        25 · What the skins are (REGALIA / AURUM / OFF)
-                 Ornament only; no data meaning.
+[E13] SHIPPED V57 25 · What the skins are (REGALIA / AURUM / OFF)
+                 Shipped as Learn card 17, THE SKINS: GENESIS, REGALIA, AURUM and OFF, ornament only.
 [E14] NEXT        Worked example: one tick from tape to Best Singular Trade
 [E15] NEXT        Common misreadings box on each card
                  e.g. DIST is not SELL.
@@ -463,7 +463,8 @@ H · VISUAL IDENTITY & SKIN
 [H07] NEXT        Transparent logo PNG instead of blend-mode
                  Removes a compositing layer.
 [H08] NEXT        SVG logo for crisp rendering at every size
-[H09] NEXT        Skin toggle on public pages (currently desk-only)
+[H09] SHIPPED V57 Skin toggle on public pages (currently desk-only)
+                 GENESIS · REGALIA · OFF under MORE on every page, shared with the desks.
 [H10] NEXT        AURUM variant for public pages
 [H11] NEXT        Paint mandala layers beneath the dark gradient
                  Guarantees skin never touches text contrast.

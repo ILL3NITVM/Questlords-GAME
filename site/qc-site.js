@@ -81,12 +81,13 @@ if(more&&moreBtn){
   const ctl=bottomSheet(more,{trigger:moreBtn,firstFocus:()=>panel.querySelector('a.qc-row[aria-current="page"]')||panel.querySelector('a.qc-row')});
   moreBtn.setAttribute('href','#qc-more');moreBtn.setAttribute('aria-expanded','false');
   moreBtn.addEventListener('click',e=>{e.preventDefault();ctl.isOpen?ctl.close():ctl.open()});
-  /* Skin segmented control: shares the desk's preference key. */
-  const KEY='quadcom-v46-skin',seg=[...panel.querySelectorAll('[data-skin]')];
-  const cur=()=>{try{return localStorage.getItem(KEY)==='off'?'off':'regalia'}catch(_){return 'regalia'}};
+  /* Skin segmented control: shares the desk's preference key. GENESIS is the master skin; the desk's
+     AURUM has no site counterpart and shows as REGALIA here, without being overwritten. */
+  const KEY='quadcom-v57-skin',seg=[...panel.querySelectorAll('[data-skin]')],NAMES={genesis:'GENESIS skin on',regalia:'REGALIA skin on',off:'Skin off'};
+  const cur=()=>{try{const k=localStorage.getItem(KEY);return k==='off'?'off':k==='regalia'||k==='aurum'?'regalia':'genesis'}catch(_){return 'genesis'}};
   const paint=()=>{const c=cur();for(const b of seg){const on=b.dataset.skin===c;b.setAttribute('aria-checked',String(on));b.tabIndex=on?0:-1}};
-  for(const b of seg)b.addEventListener('click',()=>{const v=b.dataset.skin;try{let prev=localStorage.getItem(KEY);localStorage.setItem(KEY,v==='off'?'off':(prev&&prev!=='off'?prev:'regalia'))}catch(_){}
-    document.documentElement.dataset.qcTexture=v==='off'?'off':'regalia';paint();toast(v==='off'?'Skin off':'REGALIA skin on',{icon:'skin'})});
+  for(const b of seg)b.addEventListener('click',()=>{const v=b.dataset.skin;try{const prev=localStorage.getItem(KEY);localStorage.setItem(KEY,v==='regalia'&&prev==='aurum'?'aurum':v)}catch(_){}
+    document.documentElement.dataset.qcTexture=v;paint();toast(NAMES[v],{icon:'skin'})});
   panel.querySelector('.qc-seg')?.addEventListener('keydown',e=>{if(!/Arrow(Left|Right)/.test(e.key))return;e.preventDefault();const i=seg.findIndex(b=>b.getAttribute('aria-checked')==='true');const n=seg[(i+(e.key==='ArrowRight'?1:seg.length-1))%seg.length];n.click();n.focus()});
   paint();
 }
@@ -182,7 +183,7 @@ const storeCard=document.getElementById('qc-storage');
 if(storeCard){
   const size=k=>{try{return (localStorage.getItem(k)||'').length*2}catch(_){return 0}};
   const keys=(()=>{try{return Object.keys(localStorage).filter(k=>k.startsWith('quadcom'))}catch(_){return []}})();
-  const desks=[['BTC',k=>!/-(doge|xrp|ltc)(\.json)?$/.test(k)&&k!=='quadcom-v46-skin'],['DOGE',k=>k.endsWith('-doge')],['XRP',k=>k.endsWith('-xrp')],['LTC',k=>k.endsWith('-ltc')]];
+  const desks=[['BTC',k=>!/-(doge|xrp|ltc)(\.json)?$/.test(k)&&!/^quadcom-v(46|57)-skin$/.test(k)],['DOGE',k=>k.endsWith('-doge')],['XRP',k=>k.endsWith('-xrp')],['LTC',k=>k.endsWith('-ltc')]];
   const kb=b=>b<1024?`${b} B`:b<1048576?`${(b/1024).toFixed(1)} KB`:`${(b/1048576).toFixed(1)} MB`;
   const rows=desks.map(([n,f])=>{const ks=keys.filter(f);return `<div class="qc-metric"><span>${n} DESK · LOCAL KEYS</span><b>${ks.length?`${ks.length} · ${kb(ks.reduce((a,k)=>a+size(k),0))}`:'NONE YET'}</b></div>`}).join('');
   const out=storeCard.querySelector('[data-rows]');out.innerHTML=rows;

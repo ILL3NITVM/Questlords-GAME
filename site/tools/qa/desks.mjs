@@ -16,7 +16,7 @@ for (const [slug, sym] of [['bitcoin', 'BTC'], ['dogecoin', 'DOGE'], ['xrp', 'XR
 // Storage isolation: run each desk in turn in ONE browser profile, force its lifecycle save, and record exactly
 // which keys it wrote. Each desk must write only its own names, and never modify another desk's state.
 const c = await b.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' }); const p = await c.newPage();
-const snap = () => p.evaluate(() => Object.fromEntries(Object.keys(localStorage).filter(k => k.startsWith('quadcom') && k !== 'quadcom-v46-skin').map(k => [k, localStorage.getItem(k).length + ':' + [...localStorage.getItem(k)].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7)])));
+const snap = () => p.evaluate(() => Object.fromEntries(Object.keys(localStorage).filter(k => k.startsWith('quadcom') && !/^quadcom-v(46|57)-skin$/.test(k)).map(k => [k, localStorage.getItem(k).length + ':' + [...localStorage.getItem(k)].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7)])));
 let before = {};
 for (const [slug, id] of [['bitcoin', 'btc'], ['dogecoin', 'doge'], ['xrp', 'xrp'], ['litecoin', 'ltc']]) {
   await p.goto(`${SITE}/desk/${slug}/`); await p.waitForTimeout(5000);

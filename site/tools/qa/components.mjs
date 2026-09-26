@@ -14,7 +14,7 @@ await p.screenshot({ path: 'c-sheet.png' });
 const seen = new Set(); for (let i = 0; i < 14; i++) { await p.keyboard.press(i % 3 === 2 ? 'Shift+Tab' : 'Tab'); seen.add(await q(() => document.activeElement.closest('.qc-sheet-panel') ? 'in' : 'OUT')); } console.log('14 tabs:', [...seen]);
 console.log('focus trapped', await q(() => !!document.activeElement.closest('.qc-sheet-panel')));
 await p.click('[data-skin="off"]'); await p.waitForTimeout(250);
-console.log('skin', await q(() => [document.documentElement.dataset.qcTexture, localStorage.getItem('quadcom-v46-skin'), document.querySelector('.qc-toast span')?.textContent]));
+console.log('skin', await q(() => [document.documentElement.dataset.qcTexture, localStorage.getItem('quadcom-v57-skin'), document.querySelector('.qc-toast span')?.textContent]));
 await p.click('[data-skin="regalia"]');
 await p.keyboard.press('Escape'); await p.waitForTimeout(300);
 console.log('esc closes, focus back', await q(() => [document.getElementById('qc-more').hidden, document.activeElement.classList.contains('qc-tab-more')]));

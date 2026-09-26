@@ -19,8 +19,8 @@
 'use strict';
 
 const root = document.documentElement;
-const TEXTURE_KEY = 'quadcom-v46-skin';
-const SKINS = ['regalia', 'aurum', 'off'];
+const TEXTURE_KEY = 'quadcom-v57-skin';
+const SKINS = ['genesis', 'regalia', 'aurum', 'off'];  // GENESIS is the master skin
 // Pages that keep textures elsewhere declare it: <html data-qc-texture-base="/assets/textures/">.
 const TEX_BASE = root.dataset.qcTextureBase || './textures/';
 const TEX = { B: `${TEX_BASE}aurum-brushed.png`, O: `${TEX_BASE}obsidian-grain.png`, C: `${TEX_BASE}carbon-weave.png`, G: `${TEX_BASE}glass-sheen.png`, L: `${TEX_BASE}quad-lattice.png` };
@@ -35,9 +35,9 @@ function applyTexture(name) {
   root.dataset.qcTexture = name;
   try { localStorage.setItem(TEXTURE_KEY, name); } catch (_) {}
 }
-let texName = 'regalia';
-try { texName = localStorage.getItem(TEXTURE_KEY) || 'regalia'; } catch (_) {}
-applyTexture(SKINS.includes(texName) ? texName : 'regalia');
+let texName = 'genesis';
+try { texName = localStorage.getItem(TEXTURE_KEY) || 'genesis'; } catch (_) {}
+applyTexture(SKINS.includes(texName) ? texName : 'genesis');
 window.__quadcomTexture = toggle => { if (toggle) applyTexture(SKINS[(SKINS.indexOf(root.dataset.qcTexture) + 1) % SKINS.length]); return root.dataset.qcTexture; };
 
 /* ───────────────────────── shaders ───────────────────────── */

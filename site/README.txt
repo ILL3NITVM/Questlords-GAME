@@ -1,4 +1,4 @@
-QUADCOM GENESIS PUBLIC SITE · BUILD 56
+QUADCOM GENESIS PUBLIC SITE · BUILD 57
 
 Routes:
 /
@@ -22,7 +22,7 @@ Source preservation:
 - GLIMMER is installed: desk/bitcoin/glimmer.js (compute governor) and desk/bitcoin/glimmer-vision.js (VISION view). They are the same modules as quadcom/ in the repo.
 - REGALIA skin installed: every texture lives once, in assets/textures/ (the desk points there with data-qc-texture-base). The skin is ornament only; the texture button in the GLIMMER sheet cycles REGALIA → AURUM → OFF (site pages: REGALIA or OFF).
 - Direct routes require a static host configured to serve each folder's index.html (standard directory-index behavior).
-- Service worker build: quadcom-genesis-public-v56. Assets are stale-while-revalidate; unvisited routes offline get /offline.html. Navigation is network-first. Only good same-origin responses are cached, and one missing file cannot abort install. The desk registers the same root worker (/sw.js, scope /).
+- Service worker build: quadcom-genesis-public-v57. Assets are stale-while-revalidate; unvisited routes offline get /offline.html. Navigation is network-first. Only good same-origin responses are cached, and one missing file cannot abort install. The desk registers the same root worker (/sw.js, scope /).
 
 Build 53 fixes:
 - Skin textures, favicons, splash images and the desk's service worker were referenced but missing (404); all now resolve.
@@ -68,3 +68,21 @@ Build 56 (four desks):
 - Data: desk market sources, per-desk storage on this device, and a link to the catalog. Home: term of the day. Offline page: saved routes.
 - /catalog/ renders both catalogs (800 items) with search and a status filter: python3 tools/build-catalog-page.py.
 - Site pages use resized logos (96px, 640px) instead of the 632KB source; 404 and offline are noindex; Home has its own title.
+
+Build 57 (GENESIS master skin, mastered coin marks):
+- Coin marks: python3 tools/coin-master.py re-cuts every coin onto the same geometry (256px, disc centred exactly on the
+  canvas centre, radius 127, transparent outside) using a least-squares circle fit of each disc's rim. The Bitcoin
+  source had an opaque black matte and an off-centre, slightly out-of-round disc; all four now audit to 0.000px.
+  The artwork inside each disc (glyph placement, the Bitcoin mark's official tilt) is untouched. --check audits only.
+- GENESIS, the master skin and the new default: python3 tools/build-genesis-skin.py writes deterministic SVG line art
+  to assets/textures/genesis/, every motif derived from QuadCOM:
+  - Seal: the official mark inside a four-fold guilloche rosette, ringed by 2000 ticks (one per PicoProcessor,
+    a longer tick every 100, a diamond at each quadrant). Used as a quiet page watermark and as a specimen.
+  - Intaglio panel field, quarter-diamond corner joins (four panels complete the mark across a gutter), guilloche
+    header band, quad rule, reeded coin bezels, and a bare pip for the desk's small cells.
+  - Static: no glow and no animation. Ornament only: text, values and the black chart field are unchanged.
+- Skin preference key is now quadcom-v57-skin (the old key was written automatically on every desk visit, so it
+  could not tell a choice from a default). Site: GENESIS · REGALIA · OFF under MORE. Desk texture control cycles
+  GENESIS → REGALIA → AURUM → OFF.
+- Site logos (96px, 640px) now have a real alpha channel, so the mark no longer sits in a black square.
+- QuadCOM page: GENESIS specimen. Learn: card 17, THE SKINS.

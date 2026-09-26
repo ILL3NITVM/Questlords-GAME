@@ -1,8 +1,8 @@
-QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG (UPDATED BUILD 56)
+QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG (UPDATED BUILD 57)
 
 200 app components in 10 families, each with an honest status. Shipped components are built into every
 site page and verified; the desk keeps its own cockpit chrome (see NV17). Public pages never show live values.
-SUMMARY  SHIPPED V56 7 · SHIPPED V55 28 · NEXT 112 · DEFERRED 23 · REJECTED 30 · TOTAL 200
+SUMMARY  SHIPPED V57 1 · SHIPPED V56 7 · SHIPPED V55 28 · NEXT 111 · DEFERRED 23 · REJECTED 30 · TOTAL 200
 
 NV · NAVIGATION
 ───────────────
@@ -282,7 +282,8 @@ BR · BRAND & MEDIA
 [BR03] NEXT        Animated mark on the orb for a new build (single pulse, reduced-motion aware)
 [BR04] NEXT        SVG logo component (replaces the 632KB PNG)
 [BR05] NEXT        Section divider component (filigree band)
-[BR06] NEXT        Card corner ornament component (site + desk)
+[BR06] SHIPPED V57 Card corner ornament component (site + desk)
+                 GENESIS quarter-diamond joins on site panels and desk panels; a bare pip on small desk cells.
 [BR07] NEXT        Provenance icons (observed, derived, inferred, model)
 [BR08] NEXT        Empty-state line art set
 [BR09] NEXT        OG image template (needs a domain)
