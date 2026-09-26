@@ -2,7 +2,7 @@
   "id": "/",
   "name": "QuadCOM",
   "short_name": "QuadCOM",
-  "description": "QuadCOM public site and Bitcoin Desk.",
+  "description": "QuadCOM: the public site and four live market desks.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

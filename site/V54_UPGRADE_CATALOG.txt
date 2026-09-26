@@ -1,9 +1,9 @@
-QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG (UPDATED BUILD 57)
+QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG (UPDATED BUILD 58)
 
 600 improvements across the public site and the Bitcoin Desk, each with an honest status.
 SHIPPED = built and verified in that build. NEXT = recommended. DEFERRED = blocked (reason given).
 REJECTED = conflicts with the site's principles (reason given). Nothing is marked shipped unless it was verified.
-SUMMARY  SHIPPED V57 1 · SHIPPED V56 18 · SHIPPED V55 1 · SHIPPED V54 69 · SHIPPED V53 42 · NEXT 306 · DEFERRED 58 · REJECTED 105 · TOTAL 600
+SUMMARY  SHIPPED V58 12 · SHIPPED V57 1 · SHIPPED V56 18 · SHIPPED V55 1 · SHIPPED V54 69 · SHIPPED V53 42 · NEXT 300 · DEFERRED 52 · REJECTED 105 · TOTAL 600
 
 A · ACCESSIBILITY
 ─────────────────
@@ -269,10 +269,10 @@ D · NAVIGATION & WAYFINDING
 [D28] NEXT        Pager shows page purpose, not just its name
 [D29] SHIPPED V56 Footer build link to the upgrade catalog
 [D30] NEXT        Consistent trailing-slash URLs and redirects
-[D31] DEFERRED    sitemap.xml
-                 Needs the production domain for absolute URLs.
-[D32] DEFERRED    Canonical URLs
-                 Needs the production domain.
+[D31] SHIPPED V58 sitemap.xml
+                 Generated for https://quadcom.live by tools/build-domain.py.
+[D32] SHIPPED V58 Canonical URLs
+                 Every indexable page, stamped by tools/build-domain.py.
 [D33] DEFERRED    Versioned docs per build
                  Needs a hosting decision.
 [D34] DEFERRED    Multi-desk routes (/desk/eth/…)
@@ -664,8 +664,8 @@ K · GLIMMER & VISION
                  Not broadly available; must be feature-detected first.
 [K30] DEFERRED    WebGPU on the ambient/wall renderers
                  Wall/ambient are WebGL2; migrate only with measured wins.
-[K31] DEFERRED    SharedArrayBuffer data path for workers
-                 Needs COOP/COEP on the production host.
+[K31] SHIPPED V58 SharedArrayBuffer data path for workers
+                 _headers sends COOP/COEP on /desk/*; desks become cross-origin isolated and GLIMMER reports SharedArrayBuffer (verified with tools/qa/serve.py).
 [K32] DEFERRED    Real-device iPhone benchmark table
                  Needs devices.
 [K33] REJECTED    Fake GPU utilisation %
@@ -704,7 +704,8 @@ L · PERFORMANCE
 [L10] NEXT        Lazy-load VISION module until the view is opened
 [L11] NEXT        Content-visibility: auto for glossary terms
 [L12] NEXT        Font-display irrelevant (system fonts) — document it
-[L13] NEXT        HTTP caching headers guide for the host
+[L13] SHIPPED V58 HTTP caching headers guide for the host
+                 _headers: no-cache on sw.js and the manifest; README explains hosts.
 [L14] NEXT        Brotli pre-compression at release
 [L15] NEXT        Budget: home page < 200KB transferred
 [L16] NEXT        Budget: desk first render < 1.5s on iPhone 13
@@ -762,7 +763,8 @@ M · OFFLINE, PWA & RELIABILITY
 [M12] NEXT        Storage quota warning in the desk
 [M13] NEXT        Persistent storage request explained to the user
 [M14] NEXT        Manifest screenshots for richer install UI
-[M15] NEXT        Manifest id/scope audit after hosting move
+[M15] SHIPPED V58 Manifest id/scope audit after hosting move
+                 id, start_url and scope are / at the domain root.
 [M16] NEXT        Clear-site-data button on the Data page
 [M17] NEXT        Offline page lists cached routes
 [M18] NEXT        Versioned asset URLs at release
@@ -823,16 +825,17 @@ N · SEO, SHARING & METADATA
 [N22] NEXT        Heading outline audit per page
 [N23] NEXT        Meta theme-color matches header per route
 [N24] NEXT        Apple web-app title per route
-[N25] NEXT        Twitter/OG image alt text
+[N25] SHIPPED V58 Twitter/OG image alt text
+                 og:image:alt and twitter:image:alt on every page.
 [N26] NEXT        Consistent brand casing in titles (QuadCOM vs QUADCOM)
 [N27] SHIPPED V56 Remove duplicate titles (Home and QuadCOM pages share one)
 [N28] NEXT        Semantic time elements for build dates
-[N29] DEFERRED    sitemap.xml
-                 Needs the production domain.
-[N30] DEFERRED    Canonical link tags
-                 Needs the production domain.
-[N31] DEFERRED    og:image / og:url
-                 Must be absolute URLs; needs the domain.
+[N29] SHIPPED V58 sitemap.xml
+                 12 public routes at https://quadcom.live.
+[N30] SHIPPED V58 Canonical link tags
+                 On every indexable page; none on 404 or offline.
+[N31] SHIPPED V58 og:image / og:url
+                 Absolute URLs with a 1200x630 card (tools/build-og-card.mjs).
 [N32] DEFERRED    Search Console / verification tags
                  Needs the domain and owner accounts.
 [N33] REJECTED    Keyword stuffing
@@ -863,9 +866,12 @@ O · QUALITY, SECURITY & RELEASE
                  Needs inventory of exchange endpoints and blob workers.
 [O11] NEXT        Subresource hashes for external resources
                  None today; keep it that way.
-[O12] NEXT        Referrer-Policy: strict-origin-when-cross-origin
-[O13] NEXT        Permissions-Policy (camera, mic, geolocation off)
-[O14] NEXT        X-Content-Type-Options nosniff guidance for host
+[O12] SHIPPED V58 Referrer-Policy: strict-origin-when-cross-origin
+                 In _headers for every route.
+[O13] SHIPPED V58 Permissions-Policy (camera, mic, geolocation off)
+                 In _headers; payment and USB off too.
+[O14] SHIPPED V58 X-Content-Type-Options nosniff guidance for host
+                 In _headers, with X-Frame-Options and HSTS.
 [O15] NEXT        HTML validation in the release script
 [O16] NEXT        Link checker in the release script
 [O17] NEXT        Forbidden-word check in the release script

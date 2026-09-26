@@ -6,13 +6,13 @@ sys.path.insert(0, os.path.dirname(__file__))
 from catalog_a import AREAS as A
 from catalog_b import AREAS as B
 AREAS = {**A, **B}
-LABEL = {"S57": "SHIPPED V57", "S56": "SHIPPED V56", "S55": "SHIPPED V55", "S54": "SHIPPED V54", "S53": "SHIPPED V53", "N": "NEXT", "D": "DEFERRED", "R": "REJECTED"}
+LABEL = {"S58": "SHIPPED V58", "S57": "SHIPPED V57", "S56": "SHIPPED V56", "S55": "SHIPPED V55", "S54": "SHIPPED V54", "S53": "SHIPPED V53", "N": "NEXT", "D": "DEFERRED", "R": "REJECTED"}
 assert len(AREAS) == 15, len(AREAS)
 for k, v in AREAS.items():
     assert len(v) == 40, (k, len(v))
     assert all(s in LABEL for s, _, _ in v), k
 out, counts, n = [], {s: 0 for s in LABEL}, 0
-out.append("QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG (UPDATED BUILD 57)\n")
+out.append("QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 54 UPGRADE CATALOG (UPDATED BUILD 58)\n")
 out.append("600 improvements across the public site and the Bitcoin Desk, each with an honest status.")
 out.append("SHIPPED = built and verified in that build. NEXT = recommended. DEFERRED = blocked (reason given).")
 out.append("REJECTED = conflicts with the site's principles (reason given). Nothing is marked shipped unless it was verified.\n")

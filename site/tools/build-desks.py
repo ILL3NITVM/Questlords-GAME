@@ -107,6 +107,8 @@ def build(a):
         (f'data-asset="{aid}">', f'data-asset="{aid}" aria-current="page">', 1),
     ]
     s = open(SRC, encoding="utf-8").read()
+    # Domain metadata (canonical, Open Graph) is per page; tools/build-domain.py stamps it after generation.
+    s = re.sub(r"<!--qc-meta-->.*?<!--/qc-meta-->", "", s, flags=re.S)
     for old, new, count in subs:
         n = s.count(old)
         if n != count:

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Builds V55_COMPONENT_CATALOG.txt: app components for the QuadCOM site and desk.
-Status: S57 / S56 / S55 shipped in that build (built and verified) · N next · D deferred (blocker given) · R rejected (reason given).
+Status: S58 / S57 / S56 / S55 shipped in that build (built and verified) · N next · D deferred (blocker given) · R rejected (reason given).
 Fails unless there are 10 families of exactly 20 components (200 total)."""
 import os
 F = {}
@@ -189,7 +189,7 @@ F["BR · BRAND & MEDIA"] = [
 ("S57","Card corner ornament component (site + desk)","GENESIS quarter-diamond joins on site panels and desk panels; a bare pip on small desk cells."),
 ("N","Provenance icons (observed, derived, inferred, model)",""),
 ("N","Empty-state line art set",""),
-("N","OG image template (needs a domain)",""),
+("S58","OG image template (needs a domain)","assets/og-card.png, rendered from the GENESIS seal and the mark by tools/build-og-card.mjs."),
 ("N","Splash screens for all current iPhone sizes",""),
 ("N","Maskable icon review on Android launchers",""),
 ("N","Monochrome icon for iOS tinted home screens",""),
@@ -224,7 +224,7 @@ F["LY · LAYOUT PRIMITIVES"] = [
 ("R","Horizontal page scroll on phones","Rejected: V43 validation target."),
 ("R","Layout depending on JavaScript to be readable","Rejected: every page reads without JS."),
 ]
-LABEL = {"S57": "SHIPPED V57", "S56": "SHIPPED V56", "S55": "SHIPPED V55", "N": "NEXT", "D": "DEFERRED", "R": "REJECTED"}
+LABEL = {"S58": "SHIPPED V58", "S57": "SHIPPED V57", "S56": "SHIPPED V56", "S55": "SHIPPED V55", "N": "NEXT", "D": "DEFERRED", "R": "REJECTED"}
 assert len(F) == 10
 counts, lines, n = {k: 0 for k in LABEL}, [], 0
 for fam, items in F.items():
@@ -236,7 +236,7 @@ for fam, items in F.items():
         lines.append(f"[{code}{i:02d}] {LABEL[s]:<11} {t}" + (f"\n{'':17}{note}" if note else ""))
 assert n == 200
 summary = "SUMMARY  " + " · ".join(f"{LABEL[k]} {v}" for k, v in counts.items()) + f" · TOTAL {n}"
-head = ("QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG (UPDATED BUILD 57)\n\n"
+head = ("QUADCOM ❖ GENESIS PUBLIC SITE — BUILD 55 APP COMPONENT CATALOG (UPDATED BUILD 58)\n\n"
         "200 app components in 10 families, each with an honest status. Shipped components are built into every\n"
         "site page and verified; the desk keeps its own cockpit chrome (see NV17). Public pages never show live values.\n")
 open(os.path.join(os.path.dirname(__file__), "..", "V55_COMPONENT_CATALOG.txt"), "w").write(head + summary + "\n" + "\n".join(lines) + "\n")

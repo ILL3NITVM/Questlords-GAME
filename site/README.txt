@@ -1,4 +1,4 @@
-QUADCOM GENESIS PUBLIC SITE · BUILD 57
+QUADCOM GENESIS PUBLIC SITE · BUILD 58
 
 Routes:
 /
@@ -22,7 +22,7 @@ Source preservation:
 - GLIMMER is installed: desk/bitcoin/glimmer.js (compute governor) and desk/bitcoin/glimmer-vision.js (VISION view). They are the same modules as quadcom/ in the repo.
 - REGALIA skin installed: every texture lives once, in assets/textures/ (the desk points there with data-qc-texture-base). The skin is ornament only; the texture button in the GLIMMER sheet cycles REGALIA → AURUM → OFF (site pages: REGALIA or OFF).
 - Direct routes require a static host configured to serve each folder's index.html (standard directory-index behavior).
-- Service worker build: quadcom-genesis-public-v57. Assets are stale-while-revalidate; unvisited routes offline get /offline.html. Navigation is network-first. Only good same-origin responses are cached, and one missing file cannot abort install. The desk registers the same root worker (/sw.js, scope /).
+- Service worker build: quadcom-genesis-public-v58. Assets are stale-while-revalidate; unvisited routes offline get /offline.html. Navigation is network-first. Only good same-origin responses are cached, and one missing file cannot abort install. The desk registers the same root worker (/sw.js, scope /).
 
 Build 53 fixes:
 - Skin textures, favicons, splash images and the desk's service worker were referenced but missing (404); all now resolve.
@@ -89,3 +89,20 @@ Build 57 (GENESIS master skin, mastered coin marks):
   GENESIS → REGALIA → AURUM → OFF.
 - Site logos (96px, 640px) now have a real alpha channel, so the mark no longer sits in a black square.
 - QuadCOM page: GENESIS specimen. Learn: card 17, THE SKINS.
+
+Build 58 (production domain: https://quadcom.live):
+- Build order after any change: python3 tools/build-desks.py, python3 tools/build-catalog-page.py, then
+  python3 tools/build-domain.py (it stamps every page, so it runs last). All three are idempotent.
+- tools/build-domain.py: canonical URL, Open Graph and Twitter card tags on every page (from each page's own title and
+  description; 404 and offline stay noindex with no canonical), sitemap.xml (12 public routes), robots.txt with the
+  sitemap, _headers and CNAME.
+- assets/og-card.png: the 1200x630 link-preview card, rendered by tools/build-og-card.mjs (Playwright) from the GENESIS
+  seal and the official mark. No live values.
+- _headers (read by Cloudflare Pages and Netlify; GitHub Pages ignores it and the site still works there):
+  nosniff, Referrer-Policy, Permissions-Policy, X-Frame-Options and HSTS on every route; no-cache on sw.js and the
+  manifest; COOP/COEP on /desk/* so the desks are cross-origin isolated and the engine's SharedArrayBuffer worker
+  arena switches on (GLIMMER reports sab:true). Market data comes by CORS fetch and WebSocket, which isolation allows.
+  Without these headers the engine falls back to copying, exactly as before.
+- tools/qa/serve.py serves site/ with _headers applied, to test isolation locally: cd site && python3 tools/qa/serve.py 8193
+- CNAME contains quadcom.live for GitHub Pages; other hosts ignore it.
+- DNS for the host is set at the registrar and is not part of this repository.
