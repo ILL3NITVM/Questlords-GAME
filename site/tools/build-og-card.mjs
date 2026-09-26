@@ -1,4 +1,4 @@
-// Renders assets/og-card.png (1200x630), the link-preview card for quadcom.live, from the site's own
+// Renders assets/og-card.jpg (1200x630, JPEG: the engraved seal compresses 4x better than PNG), the link-preview card for quadcom.live, from the site's own
 // assets: the GENESIS seal, the official mark and the monospace system type. No live values.
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node site/tools/build-og-card.mjs
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -39,7 +39,7 @@ await p.goto(pathToFileURL(path.join(dir, 'card.html')).href, { waitUntil: 'load
 const broken = await p.evaluate(() => [...document.images].filter(i => !i.naturalWidth).length);
 if (broken) throw new Error(`${broken} image(s) failed to load`);
 await p.waitForTimeout(300);
-await p.screenshot({ path: path.join(site, 'assets', 'og-card.png'), type: 'png' });
+await p.screenshot({ path: path.join(site, 'assets', 'og-card.jpg'), type: 'jpeg', quality: 86 });
 await b.close();
 rmSync(dir, { recursive: true, force: true });
-console.log('assets/og-card.png 1200x630');
+console.log('assets/og-card.jpg 1200x630');

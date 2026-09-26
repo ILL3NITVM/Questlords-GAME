@@ -67,7 +67,7 @@ main = ('<main class="qc-main" id="main"><div class="qc-kicker">BUILD LEDGER</di
                "DEFERRED and REJECTED items give their reason.", catalog.AREAS, catalog.LABEL)
         + book("components", "200 APP COMPONENTS", "Reusable app components for the site and the desks, in ten families of twenty.",
                components.F, components.LABEL)
-        + '</div><nav class="qc-pager" aria-label="Pages"><a rel="prev" href="/data/">← DATA</a><a rel="next" href="/glossary/">GLOSSARY →</a></nav></main>')
+        + '</div><nav class="qc-pager" aria-label="Pages"><a rel="prev" href="/data/">← DATA</a><a rel="next" href="/ever-next/">EVER NEXT →</a></nav></main>')
 
 out = os.path.join(ROOT, "catalog")
 os.makedirs(out, exist_ok=True)

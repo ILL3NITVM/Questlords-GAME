@@ -189,7 +189,7 @@ F["BR · BRAND & MEDIA"] = [
 ("S57","Card corner ornament component (site + desk)","GENESIS quarter-diamond joins on site panels and desk panels; a bare pip on small desk cells."),
 ("N","Provenance icons (observed, derived, inferred, model)",""),
 ("N","Empty-state line art set",""),
-("S58","OG image template (needs a domain)","assets/og-card.png, rendered from the GENESIS seal and the mark by tools/build-og-card.mjs."),
+("S58","OG image template (needs a domain)","assets/og-card.jpg, rendered from the GENESIS seal and the mark by tools/build-og-card.mjs."),
 ("N","Splash screens for all current iPhone sizes",""),
 ("N","Maskable icon review on Android launchers",""),
 ("N","Monochrome icon for iOS tinted home screens",""),

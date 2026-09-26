@@ -5,7 +5,7 @@
 
 Writes, idempotently:
   every page   Canonical URL, Open Graph and Twitter card tags between <!--qc-meta--> markers, built from the
-               page's own <title> and meta description, with the shared preview card assets/og-card.png
+               page's own <title> and meta description, with the shared preview card assets/og-card.jpg
                (tools/build-og-card.mjs). Old og:/twitter: tags outside the markers are removed. 404 and offline
                pages are noindex and get no canonical or og:url.
   sitemap.xml  Every public route, as canonical URLs.
@@ -50,7 +50,7 @@ def meta_block(title, desc, url, indexable):
              f'<meta property="og:title" content="{attr(title)}">', f'<meta property="og:description" content="{attr(desc)}">']
     if indexable:
         tags.append(f'<meta property="og:url" content="{url}">')
-    tags += [f'<meta property="og:image" content="{DOMAIN}/assets/og-card.png">', '<meta property="og:image:width" content="1200">',
+    tags += [f'<meta property="og:image" content="{DOMAIN}/assets/og-card.jpg">', '<meta property="og:image:width" content="1200">',
              '<meta property="og:image:height" content="630">', f'<meta property="og:image:alt" content="{attr(CARD_ALT)}">',
              '<meta name="twitter:card" content="summary_large_image">', f'<meta name="twitter:image:alt" content="{attr(CARD_ALT)}">']
     return "<!--qc-meta-->" + "".join(tags) + "<!--/qc-meta-->"

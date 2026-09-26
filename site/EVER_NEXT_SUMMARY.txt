@@ -1,0 +1,389 @@
+QUADCOM ❖ EVER NEXT — THE EVERLASTING IMPROVEMENT FEED
+
+80 surfaces · 32 aspects · 192 moves · 5 depths · escalating bars per aspect
+1297 valid surface × aspect pairings · 116,730 items per pass · passes never end
+
+Every item is: <move on a surface> + <depth>, judged against the aspect's bar for its cycle.
+Browse, filter, mix and mark them at /ever-next/. This file lists the axes and this build's measured signals.
+
+MEASURED SIGNALS (self-feedback from this build)
+────────────────────────────────────────────────
+[HIGH] cmdbar.motion: Infinite animations still run under REGALIA and AURUM: qcBeacon, qcLogoBreath, qcLogoPulse, qcRiver. GENESIS holds them still. (desk CSS)
+[HIGH] deskport.type: The iPhone portrait rules set 13 font sizes below 7px (3.8, 4, 4.5, 4.7, 4.8, 5, 5.1, 5.5, 5.6, 6, 6.2, 6.3, 6.5px). (desk CSS, iPhone 13 rules)
+[HIGH] deskport.weight: A desk costs 480 KB of HTML and scripts before textures (the page itself is 356 KB). (file sizes)
+[HIGH] logo.weight: 705 KB across 3 file(s), over the 300 KB budget; largest is quadcom-official-logo.png at 618 KB. (file sizes)
+[NOTE] orb.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] termsheet.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] pager.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] footer.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] chips.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] deskcards.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] panel.consistency: qc-site.css has 25 !important declarations and 3 separate .qc-glyph rules that override one another. (site CSS)
+[NOTE] metricrow.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] provtag.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] catfilter.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] storagecard.prov: Counts localStorage keys only; IndexedDB and OPFS usage per desk is not included. (review, build 56)
+[NOTE] storagecard.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] cmdbar.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] chart.empty: Before history arrives the chart field is blank rather than saying it is waiting for observed data. (desk screenshots, build 57)
+[NOTE] axis.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] fleetbal.empty: A fresh desk shows starting balances as if they were results; there is no 'no trades yet' state. (desk screenshots, build 57)
+[NOTE] fleetbal.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] bullbear.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] toppico.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] fundcells.precision: Zero money values mix formats ($0 beside $0.0). (desk screenshots, build 57)
+[NOTE] fundcells.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] micro.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] loss.precision: GEOMETRIC GROWTH shows 0.000%/tick for small real moves: fixed decimals round them away. (desk screenshots, build 57)
+[NOTE] loss.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] leader.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] wall.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] book.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] horizons.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] vision.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] glimmersheet.tests: No QA script exercises it yet. (tools/qa coverage map)
+[NOTE] deskport.consistency: The desk source carries 2134 !important declarations across 33 style blocks. (desk source)
+[NOTE] coins.weight: 232 KB across 4 file(s), over the 120 KB budget; largest is bitcoin.png at 70 KB. (file sizes)
+[NOTE] seal.weight: 170 KB across 1 file(s), over the 120 KB budget; largest is seal.svg at 170 KB. (file sizes)
+[NOTE] regalia.weight: 144 KB across 3 file(s), over the 100 KB budget; largest is mandala.png at 107 KB. (file sizes)
+[NOTE] aurum.weight: 65 KB across 2 file(s), over the 60 KB budget; largest is aurum-brushed.png at 33 KB. (file sizes)
+[NOTE] pricefmt.precision: The worker control view stores price in whole cents, too coarse for DOGE (nothing reads it yet). (review, build 56)
+
+ASPECTS, MOVES AND BARS
+───────────────────────
+TYPE SCALE  (applies to: text)
+  1. List every font size used on <surface> and map each to the type scale.
+  2. Raise any text on <surface> that renders below the legibility floor.
+  3. Give <surface> one line-height per size step instead of per element.
+  4. Replace letter-spacing hacks on <surface> with the size step that fits.
+  5. Keep numerals on <surface> tabular so digits never shift.
+  6. Check <surface> at 200% browser zoom for clipped or overlapping text.
+  bar, cycle 1: body text ≥ 14px, labels ≥ 11px at 390px
+  bar, cycle 2: desk labels ≥ 7px rendered on iPhone 13
+  bar, cycle 3: every size is a scale token
+CONTRAST  (applies to: text, visual)
+  1. Measure every text and background pair on <surface>.
+  2. Raise any pair on <surface> below the bar with a solid token colour, not opacity.
+  3. Check <surface> over each skin: GENESIS, REGALIA, AURUM and OFF.
+  4. Check focus rings and borders on <surface> against their backgrounds.
+  5. Replace dimmed-by-opacity text on <surface> with a named muted token.
+  6. Check <surface> in forced-colors (high contrast) mode.
+  bar, cycle 1: 4.5:1 body, 3:1 large text and UI edges
+  bar, cycle 2: 7:1 body text (AAA)
+  bar, cycle 3: passes in forced-colors mode
+SPACING RHYTHM  (applies to: visual, text)
+  1. Record every margin and padding on <surface> and map each to the 4px grid.
+  2. Snap off-grid spacing on <surface> to the nearest step.
+  3. Make vertical rhythm on <surface> consistent between siblings.
+  4. Give <surface> equal optical padding on all sides of its frame.
+  5. Remove double spacing where borders and margins stack on <surface>.
+  6. Tokenise the spacing on <surface> so a single change updates it everywhere.
+  bar, cycle 1: 4px grid
+  bar, cycle 2: named spacing tokens only
+  bar, cycle 3: rhythm identical at 390px and 1280px
+ALIGNMENT & GRID  (applies to: visual)
+  1. Overlay the grid on <surface> and note every element off it.
+  2. Align the baselines of labels and values on <surface>.
+  3. Centre icons on <surface> optically, not just by bounding box.
+  4. Make edges of adjacent blocks on <surface> share one line.
+  5. Check <surface> for half-pixel blur at DPR 2 and 3.
+  6. Lock the column structure of <surface> so content cannot shift it.
+  bar, cycle 1: on the 12-column grid
+  bar, cycle 2: sub-pixel exact at DPR 3
+  bar, cycle 3: stable under live data changes
+HIERARCHY  (applies to: text)
+  1. Name the single most important thing on <surface> and check it reads first.
+  2. Reduce competing emphasis on <surface>: one hero per view.
+  3. Order <surface> so reading order matches visual order.
+  4. Give headings on <surface> a consistent level structure.
+  5. Demote decorative labels on <surface> below data labels.
+  6. Test <surface> with a five-second glance: what is remembered?
+  bar, cycle 1: one clear primary per view
+  bar, cycle 2: heading levels never skip
+  bar, cycle 3: glance test passes for a new visitor
+TOUCH TARGETS  (applies to: touch)
+  1. Measure every control on <surface> and list any under the bar.
+  2. Grow undersized targets on <surface> with padding, not visual size.
+  3. Separate adjacent targets on <surface> so a thumb cannot hit two.
+  4. Keep <surface> controls clear of the home indicator and screen edges.
+  5. Give <surface> a pressed state that shows within one frame.
+  6. Check <surface> one-handed on a 390px screen.
+  bar, cycle 1: 44×44px targets
+  bar, cycle 2: 8px between targets
+  bar, cycle 3: reachable one-handed
+FOCUS & KEYBOARD  (applies to: touch)
+  1. Tab through <surface> and record the order and every trap.
+  2. Give every control on <surface> a visible focus ring.
+  3. Make <surface> fully usable with keyboard alone.
+  4. Return focus to the trigger when <surface> closes or changes view.
+  5. Add arrow-key movement where <surface> is a group.
+  6. Check <surface> with a switch-access tab order.
+  bar, cycle 1: visible focus everywhere
+  bar, cycle 2: no traps, logical order
+  bar, cycle 3: arrow-key groups follow ARIA patterns
+SCREEN-READER NAMING  (applies to: touch, text, data)
+  1. Read <surface> with VoiceOver and note every unnamed or misnamed element.
+  2. Give each control on <surface> an accessible name that matches its label.
+  3. Hide decoration on <surface> from assistive technology.
+  4. Announce changes on <surface> politely, and no more than needed.
+  5. Give values on <surface> their units in the accessible name.
+  6. Add landmarks and headings so <surface> can be navigated by rotor.
+  bar, cycle 1: every control named
+  bar, cycle 2: live regions rate-limited
+  bar, cycle 3: full rotor navigation
+MOTION DISCIPLINE  (applies to: motion)
+  1. List every animation and transition on <surface> with its duration.
+  2. Remove any constant or looping motion from <surface>.
+  3. Honour reduced motion on <surface> with an instant equivalent.
+  4. Keep <surface> motion under 250ms and tied to a user action.
+  5. Animate <surface> with transform and opacity only.
+  6. Check <surface> for layout shift during motion.
+  bar, cycle 1: no infinite animation
+  bar, cycle 2: reduced motion honoured
+  bar, cycle 3: zero layout shift
+WEIGHT & SPEED  (applies to: route, asset, visual)
+  1. Measure the bytes <surface> costs on first load.
+  2. Cut the largest single cost of <surface>.
+  3. Serve <surface> in a smaller format where one exists.
+  4. Load <surface> only when it is needed.
+  5. Check <surface> on a slow 3G profile.
+  6. Set a byte budget for <surface> and record it.
+  bar, cycle 1: within the recorded budget
+  bar, cycle 2: budget cut by a quarter
+  bar, cycle 3: first render under 1s on 4G
+OFFLINE  (applies to: route, system)
+  1. Open <surface> offline after one visit and record what fails.
+  2. Precache what <surface> needs to render offline.
+  3. Make <surface> say clearly what is unavailable offline.
+  4. Check <surface> after a service-worker update while offline.
+  5. Keep <surface> usable when the network flaps.
+  6. Test <surface> offline in a fresh profile.
+  bar, cycle 1: renders offline after one visit
+  bar, cycle 2: states what is unavailable
+  bar, cycle 3: survives an update while offline
+EMPTY STATE  (applies to: data)
+  1. Show <surface> with no data yet and record what appears.
+  2. Replace blank or zero-filled output on <surface> with an honest empty state.
+  3. Tell the user on <surface> what will fill it and when.
+  4. Keep <surface> the same size empty as full, so nothing jumps.
+  5. Distinguish 'none yet' from 'zero' on <surface>.
+  6. Test <surface> on a brand-new desk with no history.
+  bar, cycle 1: no zeros stand in for missing data
+  bar, cycle 2: same size empty and full
+  bar, cycle 3: explains what fills it
+ERROR & FAILURE  (applies to: data, system)
+  1. Break each input of <surface> and record what happens.
+  2. Make <surface> fail visibly, never silently.
+  3. Keep <surface> usable when one source fails.
+  4. Log failures of <surface> where the operator can find them.
+  5. Recover <surface> automatically when the fault clears.
+  6. Test <surface> against malformed and out-of-range values.
+  bar, cycle 1: never fails silently
+  bar, cycle 2: degrades per source
+  bar, cycle 3: recovers without a reload
+STALENESS  (applies to: data)
+  1. Record how <surface> looks when its data stops updating.
+  2. Show the age of the data on <surface>.
+  3. Dim or mark <surface> once its data passes the stale threshold.
+  4. Stop <surface> extrapolating from stale data.
+  5. Scale the stale threshold of <surface> to its update rate.
+  6. Test <surface> with a feed paused for one, five and sixty minutes.
+  bar, cycle 1: age always visible
+  bar, cycle 2: stale is marked within one interval
+  bar, cycle 3: no extrapolation past stale
+NUMERIC PRECISION  (applies to: data)
+  1. List every number on <surface> with its decimals and units.
+  2. Give prices on <surface> decimals that suit the asset's magnitude.
+  3. Use significant figures, not fixed decimals, for tiny values on <surface>.
+  4. Never let <surface> round a real value to zero.
+  5. Keep money, percentages and ratios on <surface> in distinct formats.
+  6. Test <surface> at US$0.0006, US$0.20, US$100 and US$84,000.
+  bar, cycle 1: correct for every listed asset
+  bar, cycle 2: no non-zero value shows as zero
+  bar, cycle 3: one formatter for every number
+PROVENANCE  (applies to: data)
+  1. Classify every value on <surface>: observed, derived, inferred or model.
+  2. Label model and inferred values on <surface> as such.
+  3. Show the source of observed values on <surface>.
+  4. Keep inferred values on <surface> visually distinct from observed ones.
+  5. Remove any value on <surface> that has no real source.
+  6. Link <surface> to the Data page's definitions.
+  bar, cycle 1: every value classified
+  bar, cycle 2: sources named
+  bar, cycle 3: nothing without a source
+COPY CLARITY  (applies to: text)
+  1. Read <surface> aloud and mark every sentence that stumbles.
+  2. Cut <surface> copy to the shortest version that keeps the meaning.
+  3. Replace jargon on <surface> with a glossary link or plain words.
+  4. Make labels on <surface> say what a control does, not what it is.
+  5. Check claims on <surface> are literally true.
+  6. Keep capitalisation and terms on <surface> consistent with the glossary.
+  bar, cycle 1: every claim literally true
+  bar, cycle 2: every term in the glossary
+  bar, cycle 3: readable by a new visitor
+GENESIS FIDELITY  (applies to: visual, asset)
+  1. Compare <surface> under GENESIS with the skin's principles.
+  2. Remove any glow, gradient noise or motion GENESIS does not allow from <surface>.
+  3. Make ornament on <surface> derive from QuadCOM geometry.
+  4. Keep ornament on <surface> away from data ink.
+  5. Check <surface> under GENESIS at DPR 1, 2 and 3.
+  6. Check <surface> degrades cleanly to OFF.
+  bar, cycle 1: engraved, static, derived
+  bar, cycle 2: crisp at every DPR
+  bar, cycle 3: OFF is complete and clean
+DARK-ROOM LEGIBILITY  (applies to: text, visual)
+  1. View <surface> at minimum screen brightness and note what disappears.
+  2. Raise the faintest essential ink on <surface>.
+  3. Remove large bright areas from <surface> that dazzle in the dark.
+  4. Check <surface> with night shift / true tone on.
+  5. Keep status colours on <surface> distinguishable when dim.
+  6. Check <surface> on an OLED screen for black crush.
+  bar, cycle 1: legible at minimum brightness
+  bar, cycle 2: no dazzle areas
+  bar, cycle 3: status still distinct when dim
+SMALL SCREENS  (applies to: visual, route)
+  1. Render <surface> at 320px wide and record every break.
+  2. Stop anything on <surface> forcing horizontal scroll.
+  3. Reflow <surface> instead of shrinking it.
+  4. Check <surface> with the largest accessibility text size.
+  5. Keep primary actions of <surface> visible without scrolling.
+  6. Check <surface> in split-screen and slide-over widths.
+  bar, cycle 1: no breaks at 320px
+  bar, cycle 2: reflows at largest text
+  bar, cycle 3: works in split view
+LANDSCAPE & LARGE  (applies to: visual, route)
+  1. Render <surface> in landscape and at 1920px and record wasted space.
+  2. Cap line length on <surface> for comfortable reading.
+  3. Use the extra width on <surface> for context, not stretch.
+  4. Check <surface> on an iPad in both orientations.
+  5. Keep <surface> centred and balanced on ultrawide screens.
+  6. Check <surface> with the browser at 50% and 200% zoom.
+  bar, cycle 1: no wasted or stretched space
+  bar, cycle 2: comfortable line length
+  bar, cycle 3: balanced on ultrawide
+PRINT & EXPORT  (applies to: route, text)
+  1. Print <surface> and note what is lost or wasted.
+  2. Remove navigation and ornament from <surface> in print.
+  3. Keep <surface> text black-on-white in print.
+  4. Show link targets on <surface> in print.
+  5. Avoid page breaks inside blocks on <surface>.
+  6. Export <surface> to PDF and check it reads well.
+  bar, cycle 1: clean print
+  bar, cycle 2: links shown
+  bar, cycle 3: no split blocks
+COLOUR-BLIND SAFETY  (applies to: data, visual)
+  1. View <surface> through protanopia, deuteranopia and tritanopia filters.
+  2. Pair every colour meaning on <surface> with a shape, sign or word.
+  3. Check up/down on <surface> are distinguishable without red and green.
+  4. Keep chart series on <surface> separable in greyscale.
+  5. Check <surface> status dots have a text equivalent.
+  6. Test <surface> with a colour-blind reviewer.
+  bar, cycle 1: meaning never colour-only
+  bar, cycle 2: separable in greyscale
+  bar, cycle 3: reviewed by a colour-blind user
+LOCALE READINESS  (applies to: data, text)
+  1. List every hard-coded format on <surface>: currency, decimals, dates.
+  2. Format numbers on <surface> through one locale-aware function.
+  3. Keep <surface> layout intact with longer translated labels.
+  4. Use unambiguous dates and times on <surface>.
+  5. Mark the language of every text part on <surface>.
+  6. Check <surface> with a comma decimal separator.
+  bar, cycle 1: one formatter
+  bar, cycle 2: tolerates 40% longer labels
+  bar, cycle 3: language marked
+DETERMINISM  (applies to: system, asset)
+  1. Rebuild <surface> twice and diff the outputs.
+  2. Remove timestamps and randomness from <surface> output.
+  3. Pin every input <surface> depends on.
+  4. Make <surface> fail loudly on unexpected input.
+  5. Record the exact command that produces <surface>.
+  6. Check <surface> rebuilds the same on another machine.
+  bar, cycle 1: byte-identical rebuilds
+  bar, cycle 2: fails on drift
+  bar, cycle 3: same on any machine
+TEST COVERAGE  (applies to: system, route, touch, data)
+  1. List what <surface> does and which QA script checks each part.
+  2. Add a QA check for the riskiest untested part of <surface>.
+  3. Make the QA checks for <surface> fail with a clear message.
+  4. Run the QA for <surface> at 390px and 1280px.
+  5. Add a regression test for the last bug found in <surface>.
+  6. Time the QA for <surface> and keep it fast.
+  bar, cycle 1: riskiest part checked
+  bar, cycle 2: every past bug has a test
+  bar, cycle 3: suite under five minutes
+DOCUMENTATION  (applies to: system, asset)
+  1. Check the README explains <surface> in one paragraph.
+  2. Document why <surface> exists, not just what it does.
+  3. Give <surface> a worked example.
+  4. List the invariants <surface> must keep.
+  5. Record known limits of <surface> honestly.
+  6. Check the docs for <surface> still match the code.
+  bar, cycle 1: one clear paragraph
+  bar, cycle 2: invariants listed
+  bar, cycle 3: docs match code
+SECURITY & PRIVACY  (applies to: system, route)
+  1. List what <surface> stores, sends and receives.
+  2. Remove any data <surface> does not need.
+  3. Check <surface> under the site's response headers.
+  4. Keep <surface> free of third-party requests it does not need.
+  5. Validate every external value <surface> accepts.
+  6. Review <surface> against a content-security policy.
+  bar, cycle 1: minimal data
+  bar, cycle 2: valid under strict headers
+  bar, cycle 3: passes a CSP
+CACHING & DELIVERY  (applies to: system, asset, route)
+  1. Record how <surface> is cached by the browser and the service worker.
+  2. Version <surface> so a new build replaces it.
+  3. Make <surface> revalidate without blocking render.
+  4. Check <surface> after two deploys in a row.
+  5. Precompress <surface> where the host allows.
+  6. Keep <surface> cacheable for as long as it is immutable.
+  bar, cycle 1: new builds always reach users
+  bar, cycle 2: never blocks render
+  bar, cycle 3: immutable assets cached long
+CONSISTENCY  (applies to: visual, text, touch)
+  1. Compare <surface> with its nearest sibling and list differences.
+  2. Replace one-off values on <surface> with shared tokens.
+  3. Make <surface> behave like every other control of its kind.
+  4. Match <surface> corner radii, borders and weights to the system.
+  5. Remove duplicate CSS rules that style <surface>.
+  6. Count !important rules affecting <surface> and cut them.
+  bar, cycle 1: no one-off values
+  bar, cycle 2: no duplicate rules
+  bar, cycle 3: no !important wars
+RESILIENCE  (applies to: system, data)
+  1. Kill <surface> mid-operation and record the state it leaves.
+  2. Make <surface> restart cleanly after a crash.
+  3. Bound every queue and buffer in <surface>.
+  4. Keep <surface> within memory on an old phone.
+  5. Survive a storage-quota error in <surface>.
+  6. Run <surface> for 24 hours and check for drift or leaks.
+  bar, cycle 1: clean restart
+  bar, cycle 2: bounded resources
+  bar, cycle 3: 24-hour soak clean
+CRAFT DETAIL  (applies to: visual, asset)
+  1. Inspect <surface> at 400% zoom and list every imperfection.
+  2. Fix the smallest visible flaw on <surface>.
+  3. Check <surface> antialiasing on light and dark backgrounds.
+  4. Align <surface> to whole pixels at every DPR.
+  5. Balance the optical weight of <surface> with its neighbours.
+  6. Compare <surface> with the best reference you know and close one gap.
+  bar, cycle 1: no visible flaw at 100%
+  bar, cycle 2: no flaw at 400%
+  bar, cycle 3: stands beside the best reference
+
+DEPTHS
+──────
+1. OBSERVE: Record every instance first; change nothing yet.
+2. REFINE: Fix each recorded instance.
+3. SYSTEMATISE: Turn the fix into a shared token, rule or component used everywhere it applies.
+4. PROVE: Add an automated QA check that fails if it regresses.
+5. SUSTAIN: Wire the check into the generators so no build can ship without it.
+
+SURFACES
+────────
+SITE PAGES: the Home page; the Desks hub; the Learn page; the How it works page; the QuadCOM page; the Data page; the Glossary page; the Catalog page; the EVER NEXT page; the 404 page; the offline page
+SITE COMPONENTS: the site header and primary nav; the phone tab bar; the raised DESK orb; the MORE sheet; the toast system; the search fields; the segmented skin control; the glossary term sheet; the page-to-page pager; the footer; the reading-progress strip; the back-to-top control; the coin chips; the desk cards; the content panel; the metric rows; the provenance tags; the section anchor links; the A–Z index; the catalog filters; the device storage card
+DESK: the desk command bar and brand; the headline price quote; the tape and price chart; the chart axis labels; the fleet balance cell; the bull / bear balance; the Top PicoProcessor panel; the fund cells; the Best Singular Trade; the microstructure panel; the loss control panel; the leaderboard; the processor wall; the order book; the horizon rail; the VISION view; the GLIMMER sheet; the portrait desk bar; the landscape desk layout; the portrait desk layout
+ASSETS: the coin marks; the official logo files; the Genesis Seal; the intaglio field; the quarter-diamond corners; the guilloche band; the reeded bezel; the icon sprite; the link-preview card; the favicons and home-screen icons; the splash screens; the REGALIA textures; the AURUM textures
+SYSTEMS: the service worker; the web app manifest; the response headers; the desk generator; the domain stamper; the GENESIS skin generator; the coin master; the QA suite; on-device storage; the market feed adapters; price formatting; the catalogs; the README; the glossary definitions; the sitemap and page metadata

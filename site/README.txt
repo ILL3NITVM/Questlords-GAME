@@ -91,12 +91,13 @@ Build 57 (GENESIS master skin, mastered coin marks):
 - QuadCOM page: GENESIS specimen. Learn: card 17, THE SKINS.
 
 Build 58 (production domain: https://quadcom.live):
-- Build order after any change: python3 tools/build-desks.py, python3 tools/build-catalog-page.py, then
-  python3 tools/build-domain.py (it stamps every page, so it runs last). All three are idempotent.
+- Build order after any change: python3 tools/build-desks.py, python3 tools/build-catalog-page.py,
+  python3 tools/build-ever-next.py, then python3 tools/build-domain.py (it stamps every page, so it runs last).
+  All are idempotent.
 - tools/build-domain.py: canonical URL, Open Graph and Twitter card tags on every page (from each page's own title and
   description; 404 and offline stay noindex with no canonical), sitemap.xml (12 public routes), robots.txt with the
   sitemap, _headers and CNAME.
-- assets/og-card.png: the 1200x630 link-preview card, rendered by tools/build-og-card.mjs (Playwright) from the GENESIS
+- assets/og-card.jpg: the 1200x630 link-preview card, rendered by tools/build-og-card.mjs (Playwright) from the GENESIS
   seal and the official mark. No live values.
 - _headers (read by Cloudflare Pages and Netlify; GitHub Pages ignores it and the site still works there):
   nosniff, Referrer-Policy, Permissions-Policy, X-Frame-Options and HSTS on every route; no-cache on sw.js and the
@@ -106,3 +107,18 @@ Build 58 (production domain: https://quadcom.live):
 - tools/qa/serve.py serves site/ with _headers applied, to test isolation locally: cd site && python3 tools/qa/serve.py 8193
 - CNAME contains quadcom.live for GitHub Pages; other hosts ignore it.
 - DNS for the host is set at the registrar and is not part of this repository.
+
+EVER NEXT (/ever-next/, the everlasting improvement feed):
+- Items are composed, not listed: surface x aspect x move x depth x cycle, from tools/ever_next_axes.py.
+  80 surfaces (every page, component, desk panel, asset and system here) x 32 aspects, paired only where an aspect
+  applies (1,297 pairings); 6 moves per aspect; 5 depths per move (OBSERVE, REFINE, SYSTEMATISE, PROVE, SUSTAIN);
+  escalating bars per aspect, one per cycle. 116,730 items per pass. After a pass the next begins, re-measured.
+- Self-feedback: tools/build-ever-next.py measures this repository on every build (asset weights against budgets,
+  sub-legible desk type, !important counts, infinite animations, QA coverage, open review findings) and writes each
+  finding as evidence. Measured items lead the feed; EVER_NEXT_SUMMARY.txt lists them with the full axes.
+- The page (ever-next/core.js composes, feed.js drives): FEED, TODAY (five, same for everyone), SWEEP (one aspect
+  across surfaces), POLISH (one surface through aspects), COMPOSE (a seeded bundle); facets, search, mix-and-match
+  chips, DONE / LATER / SKIP marks kept in this browser, and an export of those marks.
+- To grow it: add a surface, an aspect, a move or a bar to tools/ever_next_axes.py and rebuild. tools/qa/ever-next.mjs
+  checks the composer against the builder (count, unique ids, no unfilled text) and the page's modes.
+- Its first measurement cut the link-preview card from 427 KB (PNG) to 108 KB (JPEG).

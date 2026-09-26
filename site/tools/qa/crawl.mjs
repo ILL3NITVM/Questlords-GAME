@@ -1,6 +1,6 @@
 const { chromium } = await import(process.env.PLAYWRIGHT || 'playwright');
 const base = 'http://127.0.0.1:' + (process.argv[2] || 8192);
-const routes = ['/404.html', '/offline.html', '/', '/desk/', '/desk/bitcoin/', '/desk/dogecoin/', '/desk/xrp/', '/desk/litecoin/', '/learn/', '/how-it-works/', '/quadcom/', '/data/', '/glossary/', '/catalog/'];
+const routes = ['/404.html', '/offline.html', '/', '/desk/', '/desk/bitcoin/', '/desk/dogecoin/', '/desk/xrp/', '/desk/litecoin/', '/learn/', '/how-it-works/', '/quadcom/', '/data/', '/glossary/', '/catalog/', '/ever-next/'];
 const b = await chromium.launch({ channel: 'chromium', args: ['--use-angle=swiftshader'] });
 for (const [w, h] of [[390, 844], [1280, 800]]) for (const r of routes) {
   const ctx = await b.newContext({ viewport: { width: w, height: h }, serviceWorkers: 'block' }); const p = await ctx.newPage();

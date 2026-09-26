@@ -202,3 +202,32 @@ html[data-qc-texture="genesis"] .qc-seg{border-color:var(--gen-line)}
 .qc-motifs{margin:8px 0 0;padding-left:18px}.qc-motifs li{margin:6px 0}
 /* Three skins: on phones the control takes its own full-width row under the SKIN label. */
 @media (max-width:520px){.qc-row-static{flex-wrap:wrap}.qc-row-static .qc-seg{flex:1 0 100%;display:flex}.qc-row-static .qc-seg button{flex:1 1 0;min-width:0}}
+/* ── V58 EVER NEXT feed ─────────────────────────────────────────────── */
+.qc-en-controls{display:grid;gap:10px;margin:4px 0 12px}
+.qc-en-modes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:100%}
+.qc-en-modes button{min-width:0;padding:0 4px;font-size:10.5px}
+.qc-en-help{margin:0;font-size:13px;color:var(--muted)}
+.qc-en-facets{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.qc-en-facets label,.qc-en-compose label{display:grid;gap:4px;font-size:10.5px;letter-spacing:.1em;color:var(--dimtxt)}
+.qc-en-facets select,.qc-en-compose select,.qc-en-compose input{min-height:44px;background:#050605;color:var(--fg);border:1px solid rgba(231,191,89,.42);padding:0 8px;font:inherit;font-size:14px;letter-spacing:0}
+.qc-en-compose input{width:9ch}
+.qc-en-row{display:flex;flex-wrap:wrap;gap:8px;align-items:end}.qc-en-row .qc-search{flex:1 1 220px}
+.qc-en-row .qc-btn{margin:0}.qc-en-compose{display:flex;gap:8px;align-items:end}
+.qc-en-count{margin:0;font-size:12px;letter-spacing:.08em;color:var(--hot)}
+.qc-en-list{list-style:none;margin:0;padding:0}
+.qc-en-item{padding:12px 0;border-top:1px solid rgba(231,191,89,.14)}
+.qc-en-item.is-done .qc-en-text{color:var(--dimtxt);text-decoration:line-through;text-decoration-color:rgba(231,191,89,.5)}
+.qc-en-item.is-skip{opacity:.62}
+.qc-en-meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:11px;letter-spacing:.06em;color:var(--dimtxt)}
+.qc-en-id{color:var(--muted);font-variant-numeric:tabular-nums}.qc-en-depth{color:var(--hot);font-weight:800}
+.qc-en-sev{font-weight:800;color:var(--green)}.qc-en-sev.s2{color:var(--hot)}
+.qc-en-text{margin:6px 0 4px;font-size:14.5px;line-height:1.55;color:var(--fg)}
+.qc-en-ev{margin:4px 0;font-size:13px;line-height:1.5;color:var(--muted)}.qc-en-ev b{color:var(--green);font-weight:800}
+.qc-en-foot{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between;margin-top:6px}
+.qc-en-chips,.qc-en-actions{display:flex;flex-wrap:wrap;gap:6px}
+.qc-en-foot button{min-height:40px;padding:0 10px;border:1px solid rgba(231,191,89,.35);background:#070805;color:var(--muted);font:inherit;font-size:11px;letter-spacing:.06em;border-radius:6px}
+.qc-en-chips button{color:var(--fg)}
+.qc-en-foot button[aria-pressed="true"]{color:#0b0802;background:var(--hot);border-color:var(--hot)}
+.qc-en-foot button:hover,.qc-en-foot button:focus-visible{border-color:var(--hot)}
+.qc-en-more{display:block;margin:14px auto 0}
+.qc-en-facets label{min-width:0}.qc-en-facets select{width:100%;min-width:0;text-overflow:ellipsis}

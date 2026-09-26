@@ -287,7 +287,7 @@ BR · BRAND & MEDIA
 [BR07] NEXT        Provenance icons (observed, derived, inferred, model)
 [BR08] NEXT        Empty-state line art set
 [BR09] SHIPPED V58 OG image template (needs a domain)
-                 assets/og-card.png, rendered from the GENESIS seal and the mark by tools/build-og-card.mjs.
+                 assets/og-card.jpg, rendered from the GENESIS seal and the mark by tools/build-og-card.mjs.
 [BR10] NEXT        Splash screens for all current iPhone sizes
 [BR11] NEXT        Maskable icon review on Android launchers
 [BR12] NEXT        Monochrome icon for iOS tinted home screens
