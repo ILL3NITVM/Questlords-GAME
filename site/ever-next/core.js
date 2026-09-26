@@ -10,33 +10,38 @@
   const rng = seed => () => { seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
 
   function create(ax) {
-    const S = ax.surfaces, A = ax.aspects, D = ax.depths;
-    const pairS = [], pairA = [];
-    S.forEach((s, si) => A.forEach((a, ai) => { if (s.tags.some(t => a.needs.includes(t))) { pairS.push(si); pairA.push(ai); } }));
-    const evidence = new Map();
-    for (const e of ax.evidence) { const k = e.s + '|' + e.a; if (!evidence.has(k)) evidence.set(k, []); evidence.get(k).push(e); }
+    const S = ax.surfaces, A = ax.aspects, DN = ax.depths, DT = ax.depthText;
+    // Exact pairings from the builder: [surface, aspect, bitmask of the moves that apply to that surface].
+    const pairS = ax.pairs.map(p => p[0]), pairA = ax.pairs.map(p => p[1]), mask = ax.pairs.map(p => p[2]);
+    const bits = x => { let c = 0; for (; x; x &= x - 1) c++; return c; };
+    const evidence = new Map();   // "surface|aspect|move" -> findings on that move
+    for (const e of ax.evidence) for (const m of e.m) { const k = e.s + '|' + e.a + '|' + m; if (!evidence.has(k)) evidence.set(k, []); evidence.get(k).push(e); }
+    const evKey = i => S[pairS[P[i]]].id + '|' + A[pairA[P[i]]].id + '|' + M[i];
     let n = 0;
-    for (let p = 0; p < pairS.length; p++) n += 6 * D.length * A[pairA[p]].bars.length;
-    const P = new Uint16Array(n), M = new Uint8Array(n), DP = new Uint8Array(n), C = new Uint8Array(n), key = new Float64Array(n);
-    let k = 0;
+    for (let p = 0; p < pairS.length; p++) n += bits(mask[p]) * DN.length * A[pairA[p]].bars.length;
+    const P = new Uint16Array(n), M = new Uint8Array(n), DP = new Uint8Array(n), C = new Uint8Array(n);
+    let key = new Float64Array(n), k = 0;
     for (let p = 0; p < pairS.length; p++) {
-      const s = S[pairS[p]], a = A[pairA[p]], ev = evidence.get(s.id + '|' + a.id);
-      const measured = ev ? 2 - Math.max(...ev.map(e => e.sev)) : 2;  // 0 high, 1 note, 2 unmeasured
-      for (let c = 0; c < a.bars.length; c++) for (let d = 0; d < D.length; d++) for (let m = 0; m < 6; m++) {
+      const s = S[pairS[p]], a = A[pairA[p]];
+      for (let c = 0; c < a.bars.length; c++) for (let d = 0; d < DN.length; d++) for (let m = 0; m < 6; m++) {
+        if (!(mask[p] >> m & 1)) continue;
         P[k] = p; M[k] = m; DP[k] = d; C[k] = c;
-        key[k] = measured * 1e12 + c * 1e11 + d * 1e10 + fnv(s.id + a.id + m + d + c);
+        const ev = c === 0 ? evidence.get(s.id + '|' + a.id + '|' + m) : null;   // findings are judged against the first bar
+        const rank = ev ? 2 - Math.max(...ev.map(e => e.sev)) : 2;               // 0 high, 1 note, 2 unmeasured
+        key[k] = rank * 1e12 + c * 1e11 + d * 1e10 + fnv(s.id + a.id + m + d + c);
         k++;
       }
     }
     const order = new Uint32Array(n).map((_, i) => i).sort((x, y) => key[x] - key[y]);
+    key = null;   // 8 bytes per item, needed only to sort
 
     function item(i, pass) {
-      const s = S[pairS[P[i]]], a = A[pairA[P[i]]], d = D[DP[i]], c = C[i], m = M[i];
+      const s = S[pairS[P[i]]], a = A[pairA[P[i]]], mv = a.moves[M[i]], c = C[i];
       return {
-        idx: i, pass: pass || 1, surface: s, aspect: a, move: m, depth: DP[i], cycle: c,
-        id: `${s.id}.${a.id}.m${m + 1}.d${DP[i] + 1}.c${c + 1}`,
-        text: a.moves[m].replace('{s}', s.name) + ' ' + d.text,
-        depthName: d.name, bar: a.bars[c], evidence: evidence.get(s.id + '|' + a.id) || null,
+        idx: i, pass: pass || 1, surface: s, aspect: a, move: M[i], depth: DP[i], cycle: c, nature: mv.n,
+        id: `${s.id}.${a.id}.m${M[i] + 1}.d${DP[i] + 1}.c${c + 1}`,
+        text: mv.t.replace('{s}', s.name) + ' ' + DT[mv.n][DP[i]],
+        depthName: DN[DP[i]], bar: a.bars[c], evidence: c === 0 ? evidence.get(evKey(i)) || null : null,
       };
     }
     /* Facet test on the numbers alone; text is only composed when a search needs it. */
@@ -49,7 +54,7 @@
         if (f.aspect && a.id !== f.aspect) return false;
         if (f.depth !== '' && f.depth != null && DP[i] !== +f.depth) return false;
         if (f.cycle !== '' && f.cycle != null && C[i] !== +f.cycle) return false;
-        if (f.status === 'measured' && !evidence.has(s.id + '|' + a.id)) return false;
+        if (f.status === 'measured' && (C[i] !== 0 || !evidence.has(evKey(i)))) return false;
         if (f.status && f.status !== 'measured') {
           const it = item(i), st = marks && marks[it.id] ? marks[it.id][0] : '';
           if (f.status === 'open' ? st !== '' : st !== f.status) return false;
@@ -80,9 +85,10 @@
       }
       return picked;
     }
-    /* Five for today: up to two measured items, then three from the whole feed, all distinct aspects. */
+    /* Five for today: up to two measured items, then three from the whole feed, all distinct aspects.
+       Seeded by the UTC date, so everyone sees the same five on the same UTC day. */
     function today(date) {
-      const d = date || new Date(), seed = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+      const d = date || new Date(), seed = d.getUTCFullYear() * 10000 + (d.getUTCMonth() + 1) * 100 + d.getUTCDate();
       const measured = select({ status: 'measured' }, null), all = order;
       const two = compose(measured, 2, seed), used = new Set(two.map(i => pairA[P[i]]));
       const rest = compose(Array.from(all).filter(i => !used.has(pairA[P[i]])), 3, seed ^ 0x9e3779b9);

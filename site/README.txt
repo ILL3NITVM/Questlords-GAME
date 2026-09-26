@@ -92,16 +92,17 @@ Build 57 (GENESIS master skin, mastered coin marks):
 
 Build 58 (production domain: https://quadcom.live):
 - Build order after any change: python3 tools/build-desks.py, python3 tools/build-catalog-page.py,
-  python3 tools/build-ever-next.py, then python3 tools/build-domain.py (it stamps every page, so it runs last).
+  (optionally node tools/qa/measure-runtime.mjs 8192 with the site served), python3 tools/build-ever-next.py, then
+  python3 tools/build-domain.py (it stamps every page, so it runs last).
   All are idempotent.
 - tools/build-domain.py: canonical URL, Open Graph and Twitter card tags on every page (from each page's own title and
-  description; 404 and offline stay noindex with no canonical), sitemap.xml (12 public routes), robots.txt with the
+  description; 404 and offline stay noindex with no canonical), sitemap.xml (every public route), robots.txt with the
   sitemap, _headers and CNAME.
 - assets/og-card.jpg: the 1200x630 link-preview card, rendered by tools/build-og-card.mjs (Playwright) from the GENESIS
   seal and the official mark. No live values.
 - _headers (read by Cloudflare Pages and Netlify; GitHub Pages ignores it and the site still works there):
   nosniff, Referrer-Policy, Permissions-Policy, X-Frame-Options and HSTS on every route; no-cache on sw.js and the
-  manifest; COOP/COEP on /desk/* so the desks are cross-origin isolated and the engine's SharedArrayBuffer worker
+  manifest; COOP/COEP on each desk route (not the /desk/ hub) so the desks are cross-origin isolated and the engine's SharedArrayBuffer worker
   arena switches on (GLIMMER reports sab:true). Market data comes by CORS fetch and WebSocket, which isolation allows.
   Without these headers the engine falls back to copying, exactly as before.
 - tools/qa/serve.py serves site/ with _headers applied, to test isolation locally: cd site && python3 tools/qa/serve.py 8193
@@ -110,15 +111,24 @@ Build 58 (production domain: https://quadcom.live):
 
 EVER NEXT (/ever-next/, the everlasting improvement feed):
 - Items are composed, not listed: surface x aspect x move x depth x cycle, from tools/ever_next_axes.py.
-  80 surfaces (every page, component, desk panel, asset and system here) x 32 aspects, paired only where an aspect
-  applies (1,297 pairings); 6 moves per aspect; 5 depths per move (OBSERVE, REFINE, SYSTEMATISE, PROVE, SUSTAIN);
-  escalating bars per aspect, one per cycle. 116,730 items per pass. After a pass the next begins, re-measured.
-- Self-feedback: tools/build-ever-next.py measures this repository on every build (asset weights against budgets,
-  sub-legible desk type, !important counts, infinite animations, QA coverage, open review findings) and writes each
-  finding as evidence. Measured items lead the feed; EVER_NEXT_SUMMARY.txt lists them with the full axes.
-- The page (ever-next/core.js composes, feed.js drives): FEED, TODAY (five, same for everyone), SWEEP (one aspect
-  across surfaces), POLISH (one surface through aspects), COMPOSE (a seeded bundle); facets, search, mix-and-match
-  chips, DONE / LATER / SKIP marks kept in this browser, and an export of those marks.
-- To grow it: add a surface, an aspect, a move or a bar to tools/ever_next_axes.py and rebuild. tools/qa/ever-next.mjs
-  checks the composer against the builder (count, unique ids, no unfilled text) and the page's modes.
+  Surfaces have one kind (page, ui, datapanel, layout, image, texture, runtime, tool, doc) and traits (interactive,
+  motion, data, live). Each aspect names the kinds (and traits) it applies to, with explicit includes and excludes,
+  and a move may add its own condition, e.g. "f[data]:" applies only to surfaces that show values.
+- Every move has a nature (audit, fix, writing, test, human judgement) with its own five depths, OBSERVE → REFINE →
+  SYSTEMATISE → PROVE → SUSTAIN, so each stage fits the move. Each aspect raises its bar per cycle.
+  Counts are printed by the build (currently 957 pairings, 82,890 items per pass). After the last item the feed walks
+  the axes again as the next pass; measurements refresh only when the site is rebuilt, never in the browser.
+- The builder validates the axes: moves keep the surface as their object, and no pronoun may refer back to it, so
+  sentences stay grammatical for singular and plural surfaces.
+- Self-feedback: tools/build-ever-next.py measures the repository (asset budgets, !important counts, a three-level
+  QA coverage map that fails if it names a missing script, sourced review findings) and reads ever-next/runtime.json,
+  written by tools/qa/measure-runtime.mjs from a real browser (running infinite animations per skin and viewport;
+  visible text rendered below 7px). Each finding targets the specific moves it concerns; those items lead the feed.
+- The page (ever-next/core.js composes, feed.js drives): FEED, TODAY (five, the same for everyone on a UTC day),
+  SWEEP (one aspect across surfaces), POLISH (one surface through aspects), COMPOSE (a seeded bundle); facets, search,
+  mix-and-match chips, DONE / LATER / SKIP marks kept in this browser, and an export of those marks.
+- To grow it: add a surface, aspect, move or bar to tools/ever_next_axes.py and rebuild. tools/qa/ever-next.mjs checks
+  the composer against the builder (count, unique ids, no unfilled text, deterministic COMPOSE) and the page's modes.
 - Its first measurement cut the link-preview card from 427 KB (PNG) to 108 KB (JPEG).
+- The offline page lives at /offline/ (a directory route), because Cloudflare Pages and Netlify redirect /offline.html to
+  /offline, and the service worker deliberately never caches redirected responses: the fallback would silently vanish.

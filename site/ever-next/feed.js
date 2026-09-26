@@ -13,10 +13,13 @@
   const esc = t => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const PAGE = 40;
   let feed, mode = 'feed', results = [], pos = 0, endless = true;
+  const auto = {};   // facets SWEEP / POLISH filled in themselves; cleared again when leaving those modes
+  const announce = t => { const el = ctl.querySelector('[data-en-announce]'); if (el) { el.textContent = ''; setTimeout(() => { el.textContent = t; }, 30); } };
+  const plural = (n, w) => `${n.toLocaleString('en-US')} ${w}${n === 1 ? '' : 'S'}`;
 
   const HELP = {
     feed: 'Every item in order: measured first, then cycle by cycle and depth by depth. When a pass ends, the next pass begins.',
-    today: 'Five items for today, the same for everyone: up to two measured, three from the whole feed, all different aspects.',
+    today: 'Five items for today, the same for everyone on the same UTC day: up to two measured, three from the whole feed, all different aspects.',
     sweep: 'One aspect across every surface it applies to. Pick an aspect; depth starts at OBSERVE.',
     polish: 'One surface through every aspect that applies to it. Pick a surface; depth starts at OBSERVE.',
     compose: 'A seeded bundle from the current facets: distinct aspects and surfaces. The same seed always composes the same bundle.',
@@ -52,9 +55,10 @@
     const f = facets();
     help.textContent = HELP[mode];
     composeBox.hidden = mode !== 'compose';
-    if (mode === 'sweep' && !f.aspect) { F('aspect').value = feed.item(feed.today()[0]).aspect.id; f.aspect = F('aspect').value; }
-    if (mode === 'polish' && !f.surface) { F('surface').value = feed.item(feed.today()[0]).surface.id; f.surface = F('surface').value; }
-    if ((mode === 'sweep' || mode === 'polish') && f.depth === '') { F('depth').value = '0'; f.depth = '0'; }
+    const fill = (name, value) => { F(name).value = value; f[name] = value; auto[name] = value; };
+    if (mode === 'sweep' && !f.aspect) fill('aspect', feed.item(feed.today()[0]).aspect.id);
+    if (mode === 'polish' && !f.surface) fill('surface', feed.item(feed.today()[0]).surface.id);
+    if ((mode === 'sweep' || mode === 'polish') && f.depth === '') fill('depth', '0');
     if (mode === 'today') { results = feed.today(); endless = false; }
     else if (mode === 'compose') {
       if (!F('seed').value) F('seed').value = String(Date.now() % 1e6);
@@ -64,11 +68,13 @@
       endless = mode === 'feed';
     }
     const n = results.length;
-    count.textContent = mode === 'today' || mode === 'compose' ? `${n} ITEMS` :
-      n ? `${n.toLocaleString('en-US')} MATCHING ITEMS PER PASS${endless ? ' · PASSES CONTINUE ENDLESSLY' : ''}` : 'NO ITEMS MATCH · CLEAR A FACET';
+    count.textContent = mode === 'today' || mode === 'compose' ? plural(n, 'ITEM') :
+      n ? `${plural(n, 'MATCHING ITEM')} PER PASS${endless ? ' · PASSES CONTINUE ENDLESSLY' : ''}` : 'NO ITEMS MATCH · CLEAR A FACET';
     list.innerHTML = ''; pos = 0; renderMore();
   }
-  const setMode = m => { mode = m; for (const b of ctl.querySelectorAll('[data-mode]')) { const on = b.dataset.mode === m; b.setAttribute('aria-checked', on); b.tabIndex = on ? 0 : -1; } run(); };
+  const setMode = m => {
+    if (m !== mode) for (const [k, v] of Object.entries(auto)) { if (F(k).value === v) F(k).value = ''; delete auto[k]; }
+    mode = m; for (const b of ctl.querySelectorAll('[data-mode]')) { const on = b.dataset.mode === m; b.setAttribute('aria-checked', on); b.tabIndex = on ? 0 : -1; } run(); };
 
   ctl.querySelectorAll('[data-mode]').forEach((b, i, all) => {
     b.addEventListener('click', () => setMode(b.dataset.mode));
@@ -90,7 +96,12 @@
   list.addEventListener('click', e => {
     const li = e.target.closest('.qc-en-item'); if (!li) return;
     const set = e.target.closest('[data-set]');
-    if (set) { F(set.dataset.set).value = set.dataset.v; if (mode === 'today' || mode === 'compose') mode = 'feed'; setMode(mode); ctl.scrollIntoView({ block: 'start' }); return; }
+    if (set) {
+      const el = F(set.dataset.set); el.value = set.dataset.v; delete auto[set.dataset.set];
+      setMode(mode === 'today' || mode === 'compose' ? 'feed' : mode);
+      ctl.scrollIntoView({ block: 'start' }); el.focus({ preventScroll: true });   // keyboard focus lands on the facet it set
+      announce(`Filtered by ${set.textContent}`); return;
+    }
     const mk = e.target.closest('[data-mark]');
     if (mk) {
       const id = li.dataset.id, v = mk.dataset.mark, cur = marks[id] ? marks[id][0] : '';
@@ -102,7 +113,8 @@
     }
     if (e.target.closest('[data-copy]')) {
       const text = li.querySelector('.qc-en-id').textContent + ' — ' + li.querySelector('.qc-en-text').textContent;
-      (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(() => { e.target.textContent = 'COPIED'; setTimeout(() => { e.target.textContent = 'COPY'; }, 1400); }).catch(() => {});
+      (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(() => { e.target.textContent = 'COPIED'; announce(`Copied ${li.dataset.id}`); setTimeout(() => { e.target.textContent = 'COPY'; }, 1400); })
+        .catch(() => announce('Copy is not available in this browser'));
     }
   });
 

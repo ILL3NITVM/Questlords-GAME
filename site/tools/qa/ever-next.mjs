@@ -10,7 +10,7 @@ const ctx = {}; vm.createContext(ctx); vm.runInContext(readFileSync(path.join(si
 const feed = ctx.QCEverNext.create(ax);
 const fail = m => { console.log('FAIL', m); process.exitCode = 1; };
 if (feed.total !== ax.perPass) fail(`composer total ${feed.total} != builder perPass ${ax.perPass}`);
-if (feed.pairs !== ax.pairs) fail(`pairs ${feed.pairs} != ${ax.pairs}`);
+if (feed.pairs !== ax.pairs.length) fail(`pairs ${feed.pairs} != ${ax.pairs.length}`);
 const ids = new Set(); let bad = 0, maxLen = 0;
 for (let i = 0; i < feed.total; i++) { const it = feed.item(i); ids.add(it.id); if (/\{|\}|undefined|null/.test(it.text + it.bar)) bad++; maxLen = Math.max(maxLen, it.text.length); }
 if (ids.size !== feed.total) fail(`ids not unique: ${ids.size} of ${feed.total}`);

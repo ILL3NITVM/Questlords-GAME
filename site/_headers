@@ -7,9 +7,19 @@
   X-Frame-Options: SAMEORIGIN
   Strict-Transport-Security: max-age=31536000
 
-# Cross-origin isolation for the desks: unlocks SharedArrayBuffer for the engine's worker arena. Every desk
-# subresource is same-origin; market data arrives by CORS fetch and WebSocket, which isolation allows.
-/desk/*
+# Cross-origin isolation for each desk (not the /desk/ hub, which is a content page): unlocks SharedArrayBuffer
+# for the engine's worker arena. Every desk subresource is same-origin; market data arrives by CORS fetch and
+# WebSocket, which isolation allows. Any cross-origin embed added to a desk later must send CORP or CORS headers.
+/desk/bitcoin/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+/desk/dogecoin/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+/desk/litecoin/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+/desk/xrp/*
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
 

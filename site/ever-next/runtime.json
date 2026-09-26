@@ -1,0 +1,44 @@
+{
+ "page": "/desk/bitcoin/",
+ "animations": {
+  "genesis 390x844": [],
+  "genesis 1280x800": [],
+  "regalia 390x844": [
+   "qcBeacon",
+   "qcLogoBreath"
+  ],
+  "regalia 1280x800": [
+   "qcBeacon",
+   "qcLogoBreath",
+   "qcRiver"
+  ],
+  "aurum 390x844": [
+   "qcBeacon",
+   "qcLogoBreath"
+  ],
+  "aurum 1280x800": [
+   "qcBeacon",
+   "qcLogoBreath",
+   "qcRiver"
+  ],
+  "off 390x844": [
+   "qcBeacon",
+   "qcLogoBreath"
+  ],
+  "off 1280x800": [
+   "qcBeacon",
+   "qcLogoBreath",
+   "qcRiver"
+  ]
+ },
+ "tinyText": {
+  "390x844": {
+   "count": 62,
+   "minPx": 3.86
+  },
+  "1280x800": {
+   "count": 52,
+   "minPx": 3.81
+  }
+ }
+}

@@ -286,7 +286,7 @@ BR · BRAND & MEDIA
                  GENESIS quarter-diamond joins on site panels and desk panels; a bare pip on small desk cells.
 [BR07] NEXT        Provenance icons (observed, derived, inferred, model)
 [BR08] NEXT        Empty-state line art set
-[BR09] SHIPPED V58 OG image template (needs a domain)
+[BR09] SHIPPED V58 OG image template
                  assets/og-card.jpg, rendered from the GENESIS seal and the mark by tools/build-og-card.mjs.
 [BR10] NEXT        Splash screens for all current iPhone sizes
 [BR11] NEXT        Maskable icon review on Android launchers
