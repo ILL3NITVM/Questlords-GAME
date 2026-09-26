@@ -285,7 +285,7 @@ AREAS["H · VISUAL IDENTITY & SKIN"] = [
 ("S54","Target highlight in hot gold",""),
 ("N","Transparent logo PNG instead of blend-mode","Removes a compositing layer."),
 ("N","SVG logo for crisp rendering at every size",""),
-("S57","Skin toggle on public pages (currently desk-only)","GENESIS · REGALIA · OFF under MORE on every page, shared with the desks."),
+("S55","Skin toggle on public pages (currently desk-only)","Shipped in V55 as the MORE sheet skin control (IN01); V57 adds GENESIS to it."),
 ("N","AURUM variant for public pages",""),
 ("N","Paint mandala layers beneath the dark gradient","Guarantees skin never touches text contrast."),
 ("N","WebP/AVIF texture variants","Smaller downloads; PNG fallback."),

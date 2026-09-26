@@ -77,9 +77,12 @@ Build 57 (GENESIS master skin, mastered coin marks):
 - GENESIS, the master skin and the new default: python3 tools/build-genesis-skin.py writes deterministic SVG line art
   to assets/textures/genesis/, every motif derived from QuadCOM:
   - Seal: the official mark inside a four-fold guilloche rosette, ringed by 2000 ticks (one per PicoProcessor,
-    a longer tick every 100, a diamond at each quadrant). Used as a quiet page watermark and as a specimen.
-  - Intaglio panel field, quarter-diamond corner joins (four panels complete the mark across a gutter), guilloche
-    header band, quad rule, reeded coin bezels, and a bare pip for the desk's small cells.
+    a longer tick every 100, a diamond at each quadrant). A quiet watermark on site pages and a specimen on the
+    QuadCOM page. In the desks the breathing logo and header beacons are held still under GENESIS.
+  - Intaglio panel field, quarter-diamond corners, guilloche header band, quad rule (a hairline with four square
+    diamond nodes), reeded coin bezels, and a bare pip for the desk's small cells.
+  - An explicit OFF saved under the old key is carried over; the standalone repo desk (quadcom/) keeps REGALIA,
+    AURUM and OFF, since GENESIS lives in the site's asset tree.
   - Static: no glow and no animation. Ornament only: text, values and the black chart field are unchanged.
 - Skin preference key is now quadcom-v57-skin (the old key was written automatically on every desk visit, so it
   could not tell a choice from a default). Site: GENESIS · REGALIA · OFF under MORE. Desk texture control cycles

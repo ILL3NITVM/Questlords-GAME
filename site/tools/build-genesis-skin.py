@@ -10,12 +10,13 @@ Every motif is derived from QuadCOM itself rather than borrowed ornament:
               every 500 (the four quadrants).
   intaglio    Panel material: banknote-style engraved hairlines whose weight swells in four waves
               across each tile. Line art, not noise, so it stays crisp at every pixel density.
-  corner-*    Quarter-diamond joins. Each panel corner carries one quarter of the QuadCOM diamond;
-              wherever four panels meet, the gutter completes the mark.
+  corner-*    Quarter-diamond corners: each panel corner is cut with one quarter of the mark's diamond,
+              echoed by an engraved bracket.
   band        A guilloche band (two interlaced waves crossing four times per repeat) for header edges;
               band-quiet is the desk's lower-contrast cut.
   pip         The bare quarter-diamond, for the desk's small data cells.
-  rule        The quad rule: a hairline with diamond nodes at its quarter points, for section breaks.
+  node        One diamond of the quad rule. CSS draws the rule as a hairline with four nodes at its
+              quarter points, so the diamonds never stretch with the rule's width.
   bezel       A reeded coin bezel (a struck coin's edge) that frames every coin mark.
 All files are deterministic SVG line art: re-running this script produces identical bytes.
 The skin is ornament only. It never touches data ink, and the chart field stays black.
@@ -134,11 +135,10 @@ def intaglio(opacity):
     return svg(96, 24, "".join(body))
 
 def corner(rot):
-    # 24x24, drawn for the top-left corner and rotated for the others. A quarter of the mark's diamond
-    # sits on the corner point; an L of engraved hairlines runs along both edges.
-    d = (f'<path d="M0 0L9 0L0 9Z" fill="{GOLD}" fill-opacity=".72"/>'
-         f'<path d="M3.5 12.5L3.5 3.5L12.5 3.5M6 22V6h16" fill="none" stroke="{GOLD}" stroke-opacity=".55" stroke-width=".75"/>'
-         f'<path d="M12 0.5L14 2.5L12 4.5L10 2.5Z" fill="{HI}" fill-opacity=".5"/>')
+    # 24x24, drawn for the top-left corner and rotated for the others: the corner is cut with one quarter
+    # of the mark's diamond, echoed by an engraved bracket set clear of the panel border.
+    d = (f'<path d="M0 0L9 0L0 9Z" fill="{GOLD}" fill-opacity=".78"/>'
+         f'<path d="M5 17V5h12" fill="none" stroke="{GOLD}" stroke-opacity=".5" stroke-width=".75"/>')
     return svg(24, 24, f'<g transform="rotate({rot} 12 12)">{d}</g>')
 
 def pip():
@@ -154,12 +154,9 @@ def band(o1=.55, o2=.3):
     return svg(48, 10, f'<path d="{poly(a, False)}"{s} stroke-opacity="{o1}"/><path d="{poly(b, False)}"{s} stroke-opacity="{o1}"/>'
                        f'<path d="{poly(c, False)}"{s} stroke-opacity="{o2}"/>', ' preserveAspectRatio="none"')
 
-def rule():
-    # 400x12 quad rule: hairline with diamond nodes at the quarter points (stretched horizontally).
-    body = f'<path d="M0 6H400" stroke="{GOLD}" stroke-opacity=".45" stroke-width=".8"/>'
-    for x in (50, 150, 250, 350):
-        body += f'<path d="{poly([(x, 1.5), (x + 4.5, 6), (x, 10.5), (x - 4.5, 6)])}" fill="{GOLD}" fill-opacity="{".85" if x in (150, 250) else ".5"}"/>'
-    return svg(400, 12, body, ' preserveAspectRatio="none"')
+def node():
+    # 10x10 diamond node of the quad rule (kept square; the rule itself is a CSS hairline).
+    return svg(10, 10, f'<path d="M5 .5L9.5 5 5 9.5 .5 5Z" fill="{GOLD}" fill-opacity=".8"/>')
 
 def bezel():
     # 64x64 reeded bezel: an engraved ring with 120 reeds, drawn outside a 56px coin window.
@@ -179,7 +176,7 @@ FILES = {
     "corner-tl.svg": corner(0), "corner-tr.svg": corner(90),
     "corner-br.svg": corner(180), "corner-bl.svg": corner(270),
     "band.svg": band(), "band-quiet.svg": band(.3, .14), "pip.svg": pip(),
-    "rule.svg": rule(), "bezel.svg": bezel(),
+    "node.svg": node(), "bezel.svg": bezel(),
 }
 
 if __name__ == "__main__":

@@ -119,7 +119,7 @@ FB · FEEDBACK & STATUS
 IN · INPUTS & CONTROLS
 ──────────────────────
 [IN01] SHIPPED V55 Segmented control (radiogroup)
-                 REGALIA / OFF skin; arrow keys move and select; roving tabindex.
+                 Skin control: GENESIS / REGALIA / OFF since V57; arrow keys move and select; roving tabindex.
 [IN02] SHIPPED V55 Icon button (44px)
                  Used for sheet close.
 [IN03] NEXT        Search field with clear button and result count

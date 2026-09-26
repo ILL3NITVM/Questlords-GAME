@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from catalog_a import AREAS as A
 from catalog_b import AREAS as B
 AREAS = {**A, **B}
-LABEL = {"S57": "SHIPPED V57", "S56": "SHIPPED V56", "S54": "SHIPPED V54", "S53": "SHIPPED V53", "N": "NEXT", "D": "DEFERRED", "R": "REJECTED"}
+LABEL = {"S57": "SHIPPED V57", "S56": "SHIPPED V56", "S55": "SHIPPED V55", "S54": "SHIPPED V54", "S53": "SHIPPED V53", "N": "NEXT", "D": "DEFERRED", "R": "REJECTED"}
 assert len(AREAS) == 15, len(AREAS)
 for k, v in AREAS.items():
     assert len(v) == 40, (k, len(v))

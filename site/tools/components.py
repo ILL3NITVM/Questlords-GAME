@@ -71,7 +71,7 @@ F["FB · FEEDBACK & STATUS"] = [
 ("R","Toasts that steal focus","Rejected: the live region announces without moving focus."),
 ]
 F["IN · INPUTS & CONTROLS"] = [
-("S55","Segmented control (radiogroup)","REGALIA / OFF skin; arrow keys move and select; roving tabindex."),
+("S55","Segmented control (radiogroup)","Skin control: GENESIS / REGALIA / OFF since V57; arrow keys move and select; roving tabindex."),
 ("S55","Icon button (44px)","Used for sheet close."),
 ("N","Search field with clear button and result count","Upgrade of the V54 glossary search into a reusable component."),
 ("N","Toggle switch component",""),

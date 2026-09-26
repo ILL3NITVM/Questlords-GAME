@@ -177,18 +177,16 @@ mark{background:rgba(231,191,89,.28);color:inherit;border-radius:2px;padding:0 1
 /* ── GENESIS · the master skin ─────────────────────────────────────────────────────────────────
    Engraved, never lit: every motif is line art derived from QuadCOM (tools/build-genesis-skin.py).
    Seal watermark (2000-tick fleet ring, four-fold guilloche, the mark) · intaglio panel field ·
-   quarter-diamond corners that complete the mark across gutters · guilloche band · quad rule ·
-   reeded coin bezels. Static: no animation, no glow. Ornament only; text and data are untouched. */
+   quarter-diamond corners · guilloche band · quad rule · reeded coin bezels. Static: no animation, no glow. Ornament only; text and data are untouched. */
 html[data-qc-texture="genesis"]{--gen-line:rgba(217,180,95,.42);--gen-hair:rgba(217,180,95,.2);--gen-ink:#040504}
 html[data-qc-texture="genesis"] .qc-shell{background:url(/assets/textures/genesis/seal-watermark.svg) 50% -120px/min(1180px,150vw) auto no-repeat,radial-gradient(ellipse at 50% 0,rgba(217,180,95,.05),transparent 55%),var(--gen-ink)}
 html[data-qc-texture="genesis"] .qc-head{background:url(/assets/textures/genesis/band.svg) 0 100%/48px 10px repeat-x,rgba(4,5,4,.96)}
-html[data-qc-texture="genesis"] .qc-rule{height:12px;background:url(/assets/textures/genesis/rule.svg) 0 50%/100% 12px no-repeat}
+html[data-qc-texture="genesis"] .qc-rule{height:12px;background:url(/assets/textures/genesis/node.svg) 12.5% 50%/9px 9px no-repeat,url(/assets/textures/genesis/node.svg) 37.5% 50%/9px 9px no-repeat,url(/assets/textures/genesis/node.svg) 62.5% 50%/9px 9px no-repeat,url(/assets/textures/genesis/node.svg) 87.5% 50%/9px 9px no-repeat,linear-gradient(rgba(217,180,95,.45),rgba(217,180,95,.45)) 0 50%/100% 1px no-repeat}
 html[data-qc-texture="genesis"] .qc-panel{border-color:var(--gen-line);background:
  url(/assets/textures/genesis/corner-tl.svg) 0 0/22px 22px no-repeat,url(/assets/textures/genesis/corner-tr.svg) 100% 0/22px 22px no-repeat,
  url(/assets/textures/genesis/corner-bl.svg) 0 100%/22px 22px no-repeat,url(/assets/textures/genesis/corner-br.svg) 100% 100%/22px 22px no-repeat,
- url(/assets/textures/genesis/intaglio.svg) 0 0/96px 24px,linear-gradient(160deg,rgba(10,12,10,.94),rgba(3,4,3,.97) 70%);
- box-shadow:inset 0 0 0 3px var(--gen-ink),inset 0 0 0 4px var(--gen-hair)}
-html[data-qc-texture="genesis"] .qc-panel h2{padding-bottom:10px;background:url(/assets/textures/genesis/rule.svg) 0 100%/100% 8px no-repeat}
+ url(/assets/textures/genesis/intaglio.svg) 0 0/96px 24px,linear-gradient(160deg,rgba(10,12,10,.94),rgba(3,4,3,.97) 70%)}
+html[data-qc-texture="genesis"] .qc-panel h2{padding-bottom:12px;background:url(/assets/textures/genesis/node.svg) 12.5% 100%/9px 9px no-repeat,url(/assets/textures/genesis/node.svg) 37.5% 100%/9px 9px no-repeat,url(/assets/textures/genesis/node.svg) 62.5% 100%/9px 9px no-repeat,url(/assets/textures/genesis/node.svg) 87.5% 100%/9px 9px no-repeat,linear-gradient(rgba(217,180,95,.45),rgba(217,180,95,.45)) 0 calc(100% - 4px)/100% 1px no-repeat}
 html[data-qc-texture="genesis"] .qc-btn{background:linear-gradient(rgba(8,9,7,.9),rgba(3,4,3,.96));border-color:rgba(217,180,95,.55);box-shadow:inset 0 0 0 2px var(--gen-ink),inset 0 0 0 3px var(--gen-hair)}
 html[data-qc-texture="genesis"] .qc-btn.primary{background:url(/assets/textures/genesis/intaglio-dense.svg) 0 0/96px 24px,linear-gradient(180deg,#f0d489,#c49a3f 55%,#9f7826);color:#0b0802;box-shadow:inset 0 0 0 2px rgba(255,240,190,.35)}
 html[data-qc-texture="genesis"] .qc-tabbar{background:url(/assets/textures/genesis/band.svg) 0 0/48px 10px repeat-x,rgba(4,5,4,.97)}
