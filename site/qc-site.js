@@ -84,7 +84,7 @@ if(more&&moreBtn){
   /* Skin segmented control: shares the desk's preference key. GENESIS is the master skin; the desk's
      AURUM has no site counterpart and shows as REGALIA here, without being overwritten. */
   const KEY='quadcom-v57-skin',seg=[...panel.querySelectorAll('[data-skin]')],NAMES={genesis:'GENESIS skin on',regalia:'REGALIA skin on',off:'Skin off'};
-  const cur=()=>{try{const k=localStorage.getItem(KEY);return k==='off'?'off':k==='regalia'||k==='aurum'?'regalia':'genesis'}catch(_){return 'genesis'}};
+  const cur=()=>{try{let k=localStorage.getItem(KEY);if(k==null&&localStorage.getItem('quadcom-v46-skin')==='off')k='off';return k==='off'?'off':k==='regalia'||k==='aurum'?'regalia':'genesis'}catch(_){return 'genesis'}};
   const paint=()=>{const c=cur();for(const b of seg){const on=b.dataset.skin===c;b.setAttribute('aria-checked',String(on));b.tabIndex=on?0:-1}};
   for(const b of seg)b.addEventListener('click',()=>{const v=b.dataset.skin;try{const prev=localStorage.getItem(KEY);localStorage.setItem(KEY,v==='regalia'&&prev==='aurum'?'aurum':v)}catch(_){}
     document.documentElement.dataset.qcTexture=v;paint();toast(NAMES[v],{icon:'skin'})});
